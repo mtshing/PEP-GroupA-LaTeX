@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.7)  21 FEB 2025 04:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.22)  25 FEB 2025 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,14 +748,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 261--268
+Underfull \hbox (badness 10000) in paragraph at lines 277--286
 
  []
 
 
 
 [4]
-Overfull \hbox (6.21469pt too wide) detected at line 384
+Overfull \hbox (6.21469pt too wide) detected at line 402
 []
  []
 
@@ -764,7 +764,7 @@ Overfull \hbox (6.21469pt too wide) detected at line 384
 [5]
 
 [6]
-Overfull \hbox (0.73682pt too wide) detected at line 459
+Overfull \hbox (0.73682pt too wide) detected at line 478
 []
  []
 
@@ -779,15 +779,15 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20780 strings out of 475128
- 397131 string characters out of 5765407
- 804096 words of memory out of 5000000
- 43347 multiletter control sequences out of 15000+600000
+ 20810 strings out of 475128
+ 397663 string characters out of 5765400
+ 804492 words of memory out of 5000000
+ 43377 multiletter control sequences out of 15000+600000
  574587 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,26n,147p,494b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,26n,147p,494b,670s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "polar vectors.pdf" (8 pages, 199723 bytes).
+Output written on "polar vectors.pdf" (8 pages, 199245 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream

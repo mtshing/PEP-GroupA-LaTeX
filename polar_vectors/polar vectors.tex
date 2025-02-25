@@ -8,7 +8,7 @@
 \author{Tony Shing}
 %\pretitle{Supplementary}
 
-\topic{Note 6-1 - Mechanics}
+\topic{Note 6A - Mechanics}
 \title{Vectors in Polar Coordinates}
 
 \version{2025} % leave blank for omitting
@@ -88,18 +88,34 @@ This makes a big difference in differentiation, because the unit vectors are ess
     \item Vector in terms of $\{\hhat{x}, \hhat{y}\}$
     \aleq{
         \vvec{s} &= s_x \hhat{x} + s_y \hhat{y} \\
-        \dv{\vvec{s}}{t} &= \dv{s_x}{t}\hhat{x} + s_x\red{\underbrace{\dv{\hhat{x}}{t}}_{0}} 
-                            + \dv{s_y}{t}\hhat{y} + s_y\red{\underbrace{\dv{\hhat{y}}{t}}_{0}}
-    }
+        \dv{\vvec{s}}{t} &= \dv{s_x}{t}\hhat{x} + s_x\tikzmark{xh}\red{\underline{\dv{\hhat{x}}{t}}} 
+                            + \dv{s_y}{t}\hhat{y} + s_y\tikzmark{yh}\red{\underline{\dv{\hhat{y}}{t}}}
+    }\\
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[arrows=->, draw=red]    ($ (pic cs:xh) + (8pt, -4ex) $) -- ( $ (pic cs:xh) +(8pt,-2.5ex) $ );
+        \node[text=red] at ( $ (pic cs:xh) + (10pt,-4.8ex) $ )  {$\scriptstyle =0$};
+        %
+        \draw[arrows=->, draw=red]    ($ (pic cs:yh) + (8pt, -4ex) $) -- ( $ (pic cs:yh) +(8pt,-2.5ex) $ );
+        \node[text=red] at ( $ (pic cs:yh) + (10pt,-4.8ex) $ )  {$\scriptstyle =0$};
+    \end{tikzpicture}
+    %
     \red{$\hhat{x},\hhat{y}$ always point in the same direction. Never change by position $\Rightarrow$ Differentiation = 0.}
     %
     \item Vector in terms of $\{\hhat{r}, \hhat{\theta}\}$
     \aleq{
         \vvec{s} &= s_r\hhat{r} + s_\theta\hhat{\theta} \\
-        \dv{\vvec{s}}{t} &= \dv{s_r}{t}\hhat{r} + s_r \blue{\underbrace{\dv{\hhat{r}}{t}}_{\substack{\hhat{r}\text{ contains } \\ r\text{ \& }\theta}}}
-                            + \dv{s_\theta}{t}\hhat{\theta} + s_\theta \blue{\underbrace{\dv{\hhat{\theta}}{t}}_{\substack{\hhat{\theta}\text{ contains } \\ r\text{ \& }\theta}}}
-    }
-    \blue{$\hhat{r}, \hhat{\theta}$ are functions of $r$ \& $\theta$, and $r$, $\theta$ are functions of $t$. So differentiating against $t$ is non-zero in general.}
+        \dv{\vvec{s}}{t} &= \dv{s_r}{t}\hhat{r} + s_r \tikzmark{rh}\blue{\underline{\dv{\hhat{r}}{t}}}
+                            + \dv{s_\theta}{t}\hhat{\theta} + s_\theta \tikzmark{th}\blue{\underline{\dv{\hhat{\theta}}{t}}}
+    }\\[1em]
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[arrows=->, draw=RoyalBlue]    ($ (pic cs:rh) + (8pt, -4ex) $) -- ( $ (pic cs:rh) +(8pt,-2.5ex) $ );
+        \node[text=RoyalBlue] at ( $ (pic cs:rh) + (10pt,-4.8ex) $ )  {$\substack{\hhat{r}\text{ contains } \\ r\text{ \& }\theta}$};
+        %
+        \draw[arrows=->, draw=RoyalBlue]    ($ (pic cs:th) + (8pt, -4ex) $) -- ( $ (pic cs:th) +(8pt,-2.5ex) $ );
+        \node[text=RoyalBlue] at ( $ (pic cs:th) + (10pt,-4.8ex) $ )  {$\substack{\hhat{\theta}\text{ contains } \\ r\text{ \& }\theta}$};
+    \end{tikzpicture}
+    %
+    \blue{$\hhat{r}, \hhat{\theta}$ are functions of $r$ and $\theta$, and $(r, \theta)$ are functions of $t$. So differentiating against $t$ is non-zero in general.}
 \end{itemize}
 
 
@@ -264,7 +280,9 @@ So \red{the proper way to write a vector in terms of its polar coordinate is ...
 Normally when we describe a point on a 2D plane, we need two information, e.g. its $x$ and $y$ components.
 Why is there only 1 information ($r$ component) in the polar form? This is because the second piece of information is hidden in the unit vector $\hhat{r}$:
 \aleq{
-    \vvec{r} = r \tikzmark{rhat}\underline{\hhat{r}} \,\overset{\substack{\text{more} \\ \text{accurately}}}{=}\, r\cdot \hhat{r}_{\tikzmark{rhat2}\green{\text{at }(r,\theta)}}
+    \vvec{r} = r \tikzmark{rhat}\underline{\hhat{r}} 
+    \quad\overset{\substack{\text{more} \\ \text{accurately}}}{\Rightarrow}\quad 
+    \vvec{r} = r\cdot \hhat{r}_{\tikzmark{rhat2}\green{\text{at }(r,\theta)}}
 }\\
 \begin{tikzpicture}[remember picture,overlay]
     \draw[arrows=->]    ($ (pic cs:rhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:rhat) +(4pt,-1ex) $ );
@@ -431,24 +449,25 @@ Apply this on our displacement / velocity / acceleration vector will give the fa
     The \red{infinitestimal angular displacement vector} is formally defined in $\hhat{z}$ direction:
     \aleq{
         \Aboxed{
-            \dd{\vvec{\theta}} = (\dd{\theta})\hhat{z} = \frac{\hhat{r}_\green{\text{at }(r,\theta)}\cross\dd{\vvec{r}}}{r}
+            \dd{\vvec{\theta}} = (\dd{\theta})\hhat{z} = \frac{\hhat{r}_\green{\text{at }(r,\theta)}\cross\dd{\vvec{r}}}{r} = \frac{\text{Angular component of }\dd{\vvec{r}}}{r}\hhat{z}
         }
     }
-    Its magnitude is simply $\displaystyle \dd{\theta} = \frac{\abs{\dd{\vvec{r}}}}{r} = \frac{\text{arc length}}{\text{radius}}$.
+    %
+    %Its magnitude is simply $\displaystyle \dd{\theta} = \frac{\abs{\dd{\vvec{r}}}}{r} = \frac{\text{arc length}}{\text{radius}}$.
     %
     \item \textbf{Velocity vector:}
     \aleq{
         \hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{v} &= \cancelto{0}{\dv{r}{t}\cdot \hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{r}_\green{\text{at }(r,\theta)}} 
-        + r\cdot \dv{\theta}{t} \hhat{r}_\green{\text{at }(r,\theta)}\cdot \hhat{\theta}_\green{\text{at }(r,\theta)}\\[0.5em]
+        + r\cdot \dv{\theta}{t} \hhat{r}_\green{\text{at }(r,\theta)}\cross \hhat{\theta}_\green{\text{at }(r,\theta)}\\[0.5em]
         &= r\dv{\theta}{t}\hhat{z}
     }
     The \red{angular velocity vector} is formally defined in $\hhat{z}$ direction:
     \aleq{
         \Aboxed{
-            \vvec{\omega} = \omega \hhat{z} = \dv{\theta}{t}\hhat{z} = \frac{\hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{v}}{r}
+            \vvec{\omega} = \omega \hhat{z} = \dv{\theta}{t}\hhat{z} = \frac{\hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{v}}{r} =\frac{\text{Angular component of }\vvec{v}}{r}\hhat{z}
         }
     }
-    Its magnitude is our familiar definition $\displaystyle \omega = \frac{\abs{\vvec{v}}}{r}$.
+    %Its magnitude is our familiar definition $\displaystyle \omega = \frac{\abs{\vvec{v}}}{r}$.
     %
     \item \textbf{Acceleration vector:}
     \aleq{
@@ -463,8 +482,8 @@ Apply this on our displacement / velocity / acceleration vector will give the fa
             \vvec{\alpha} = \alpha\hhat{z} = \dv[2]{\theta}{t}\hhat{z} = \inv{r}\qty(\hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{a} - 2\dv{r}{t}\cdot\dv{\theta}{t}\hhat{z})
         }
     }
-    Its magnitude is $\displaystyle \alpha = \inv{r}\qty(\abs{\vvec{a}} - 2v_r\cdot\omega)$. 
-    When the radial distance is fixed, the Coriolis term vanishes and it recovers a prettier form $\displaystyle \alpha = \frac{\abs{\vvec{a}}}{r}$.
+    %Its magnitude is $\displaystyle \alpha = \inv{r}\qty(\abs{\vvec{a}} - 2v_r\cdot\omega)$. 
+    %When the radial distance is fixed, the Coriolis term vanishes and it recovers a prettier form $\displaystyle \alpha = \frac{\abs{\vvec{a}}}{r}$.
 \end{enumerate}
 
 
@@ -474,14 +493,16 @@ Apply this on our displacement / velocity / acceleration vector will give the fa
 \section{Relative Angular Velocity?}
 
 \begin{center}
-    \red{No. Never.}
+    \red{Relative angular velocity makes sense only when two observers share the same origin.}
 \end{center}
 
-As in the above derivations, the angular velocity is only one of the two components in the velocity vector. 
-It is forbidden to do vector addition on only one of the components. 
+As in the above derivations, the angular velocity is only about one of the two components in a velocity vector. 
+It is forbidden to do vector addition just by one component. 
+The only exception is that when the coordinate systems have the same origin.
 To do it appropriately, we must also consider the radial component and the unit vectors. 
+But then the vector addition will become a "mess" of trigonometry.
 
-\insertFig{relative angular velocity addition is bad}
+\insertFig{relative angular velocity addition is mostly useless}
 
 
 %%%
