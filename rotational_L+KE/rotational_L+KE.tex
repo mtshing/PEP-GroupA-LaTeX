@@ -1,0 +1,386 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../common/packages}
+\usepackage{../common/command}
+\usepackage{../common/format}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{Note 6B - Mechanics}
+\title{Angular Momentum and Rotational KE}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+%\heading{Lecture}{Tony}
+
+\begin{overview}
+    \begin{itemize}
+        \item Review: Center of Mass
+        \item Mathematical Origin of Angular Momemtum and Moment of Inertia, Parallel Axis Theorem
+        \item Rotational KE
+    \end{itemize}
+\end{overview}
+
+
+\begin{notation}
+    \begin{enumerate}
+        %
+        \item For clear viewing, all vector (with arrow $\vec{}$ or hat $\hat{}$ ) will also be in \textbf{bold font}.
+        %
+        \item Notations for physics quantities: Position vector = $\vvec{r}$, velocity vector = $\vvec{v}$, acceleration vector = $\vvec{a}$.
+        % 
+        \item Coordinates are represented by $(x,y)$ and $(r,\theta)$. Their conversion is according to the position vector's component: 
+        \aleq{
+            \vvec{r} = x\hhat{x}+y\hhat{y} = (r\cos{\theta})\hhat{x}+(r\sin{\theta})\hhat{y} = r\hhat{r}
+        }
+        Note that $\vvec{r}$ is the \red{\textbf{position vector}} and $r$ is the \red{\textbf{radial component}}. 
+        But in polar coordinate, \red{\textbf{length of position vector $\abs{\vvec{r}} = r$}} exactly.
+        %
+        \item All derivatives will be written in full form $\dv{}{t}$ for clarity, because dot notation is hard to read. E.g. 
+        \aleq{
+            \vvec{v} &= \dv{x}{t}\hhat{x} + \dv{y}{t}\hhat{y} \quad \Rightarrow \quad v_x = \dv{x}{t} \, ,\, v_y = \dv{y}{t}
+        }
+        %
+    \end{enumerate}
+\end{notation}
+
+
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{-1}
+\section{Review: Center of Mass}
+
+Given a set of point objects with individual masses $\{m_1, m_2, ..., m_n\}$ at positions $\{\vvec{r}_1, \vvec{r}_2, ..., \vvec{r}_n\}$,
+the coordinate of center of mass of these objects can be calculate with the formula:
+\aleq{
+    \Aboxed{
+        \vvec{r}_{CM} = \frac{m_1\vvec{r}_1 + m_2\vvec{r}_2 + ... + m_n\vvec{r}_n}{m_1+m_2+...+m_n} = \frac{\sum_i^n m_i \vvec{r}_i}{\sum_i^n m_i}
+    }
+}
+
+In case of a continuous distribution of masses, it becomes an integration:
+\aleq{
+    \Aboxed{
+        \vvec{r}_{CM} = \frac{\int \vvec{r}\dd{m}}{\int \dd{m}} \sim \frac{\int \vvec{r}\rho \dd{x}\dd{y}\dd{z}}{M_\text{total}}
+    }
+}
+with $\rho$ being the density as a function of position.
+
+\begin{proof}
+The formula can be proven by mathematical induction. Starting with 2 masses $m_1$ and $m_2$ at positions $\vvec{r}_1$ and $\vvec{r}_2$ respectively,
+the center of mass is "naïvely" defined as \red{the position where the net torque under gravity = 0}. 
+Assume both masses are on the x axis to simplify our visualization:
+
+\insertFig{two mass on x axis}
+
+From the figure, the x coordinates of the masses are $x_1$ and $x_2$. Let the coordinate of the center of mass be $x_{CM}$.
+Consider the torques with pivot at $x_{CM}$:
+\aleq{
+    \anticlockwise :\quad  m_1g(x_{CM}-x_1) &= m_2g(x_2-x_{CM}) \\
+    (m_1+m_2)x_{CM} &= m_1x_1 + m_2x_2 \\
+    x_{CM} &= \frac{m_1x_1+m_2x_2}{m_1+m_2}
+}
+
+Follow the logic of induction, assume the formula works for $k$ masses, i.e. 
+\aleq{
+    x_{CM}^{(k)} = \frac{m_1x_1+m_2x_2 +...+ m_kx_k}{m_1+m_2+...+m_k} 
+}
+
+The center of mass is where the net torque under gravity = 0 by the two objects \{Group of the first $k$ masses\} and the $(k+1)^\text{th}$ mass
+\aleq{
+    \anticlockwise :\quad  (m_1+m_2+...+m_k)g(x_{CM}^{(k+1)} - x_{CM}^{(k)}) &= m_{k+1}g(x_{k+1}-x_{CM}^{(k+1)}) \\
+    (m_1+m_2+...+m_k+m_{k+1})x_{CM}^{(k+1)} &= (m_1+m_2+...+m_k)x_{CM}^{(k)} + m_{k+1}x_{k+1} \\
+    &= (m_1x_1+m_2x_2+...+m_kx_k) + m_{k+1}x_{k+1} \\
+    x_{CM}^{(k+1)} &= \frac{m_1x_1+m_2x_2+...+m_{k+1}x_{k+1}}{m_1+m_2+...+m_{k+1}}
+}
+
+So the formula also works for $k+1$ masses. 
+Because the same operation can be done on $y$ and $z$ coordinates, we can promote this formula to the vector expression
+\aleq{
+    \vvec{r}_{CM} = \frac{m_1\vvec{r}_1+m_2\vvec{r}_2+...+m_n\vvec{r}_n}{m_1+m_2+...+m_n} 
+}
+
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linesep
+\section{Torque, Angular Momentum \& Moment of Inertia}
+
+%%%%%%
+\subsection{Mathematical Origin}
+
+Recall that if we take cross product to $\dd{\vvec{r}}/\vvec{v}/\vvec{a}$ with position vector, 
+we can isolate their angular components $\dd{\theta}/\omega/\alpha$. Do the same to force $\vvec{F}$, 
+we arrive at the definition of torque and angular momentum.
+\aleq{
+    \Aboxed{\vvec{\tau} &\defeq \vvec{r}\cross \vvec{F}} \\
+    &= r\hhat{r} \cross m\vvec{a} \\
+    &= rma_\theta \hhat{z} \\
+    &=rm\qty[2\dv{r}{t}\cdot\dv{\theta}{t} + r\cdot \dv[2]{\theta}{t}]\hhat{z} &(\text{\scriptsize Corriolis and Euler terms})\\
+    &= m\qty[\dv{r^2}{t}\cdot\dv{\theta}{t} + r^2\cdot \dv[2]{\theta}{t}]\hhat{z} &({\scriptstyle \text{ \nth{1} term: }2r\dd{r} \ \to\  \dd{(r^2)} })\\
+    &= \dv{t}\qty(mr^2\dv{\theta}{t})\hhat{z} &(\text{\scriptsize product rule})
+}
+
+Comparing with relation between force and momentum, we can define a similar quantity that represents the angular component of momentum,
+i.e. the angular momentum $L$,
+\aleq{
+    \vvec{F} = \dv{\vvec{p}}{t} = \dv{t}\qty(\text{momentum}) \qquad\text{v.s.}\qquad \vvec{\tau} = \dv{t}\qty(mr^2\dv{\theta}{t})\hhat{z} = \dv{t}\qty(\substack{\text{Something}\\\text{momentum-like}})
+}
+\aleq{
+    \Rightarrow \qquad \Aboxed{\vvec{L} \defeq mr^2\dv{\theta}{t}\hhat{z}}
+}
+
+And since momentum is the product of an inertia quantity (mass) and velocity, 
+we can propose that the angular momentum is also a product of some new inertial quantity and the velocity in rotation (angular velocity).
+So we arrive at the definition of moment of inertia $I$.
+\aleq{
+    \vvec{p}=m\vvec{v} = (\text{inertia})\cdot(\text{velocity}) \qquad\text{v.s.}\qquad \vvec{L} = (mr^2)\cdot \dv{\theta}{t} = \qty(\substack{\text{something}\\\text{related to}\\\text{inertia}})\cdot (\substack{\text{Angular}\\\text{velocity}})
+}
+\aleq{
+    \Rightarrow \qquad \Aboxed{I \defeq mr^2}
+}
+
+%%%%%%%%%%%%%%
+\subsection{Rules of using Moment of Inertia}
+
+Unlike mass, the inertia quantity in linear motion, moment of inertia is not a universal quantity.
+
+\begin{enumerate}
+    \item \textbf{Dependent on the choice of coordinate system}
+    \insertFig{moment of inertia coordinate dependent}
+    As illustrated, for observers from different coordinate system, because they may describe the same object with different position vectors,
+    their observed angular momentum, angular velocity and moment of inertia can all be different. 
+    \begin{table}[h!]
+    \centering
+        \begin{tabular}{ c c c }
+        & Observed by A & Observed by B \\ \hline \hline
+        $\vvec{\omega}$ & $\vvec{r}_A\cross\vvec{v}$ & $\vvec{r}_B\cross\vvec{v}$ \\ \hline
+        $\vvec{L}$ & $m\vvec{r}_A\cross\vvec{v}$ & $m\vvec{r}_B\cross\vvec{v}$ \\ \hline
+        $I$ & $m\abs{\vvec{r}_A}^2$ & $m\abs{\vvec{r}_B}^2$ 
+        \end{tabular}
+    \end{table}
+    The only special case is when the observers share the same origin - then they will observe the same moment of inertia. 
+    Thereforer \red{you should always fix an origin when doing rotation problems}.
+    %
+    \item \textbf{Not always well-defined in multi-body system}
+    \insertFig{many body for I}
+    Suppose we have many objects moving with their individual velocities.
+    As we know that the net torque can be found by summing each object's contribution, so does the angular momentum. 
+    \aleq{
+        \vvec{\tau}_\text{total} = \sum_i \vvec{\tau}_i 
+        \quad\Rightarrow\quad 
+        \vvec{L}_\text{total} = \sum_i \qty(m_i \vvec{r}_i\cross\vvec{v}_i) = \sum_i \qty(m_i \abs{\vvec{r}_i}^2\vvec{\omega}_i)
+    }
+    In general, there is no way to take out the "$mr^2$" terms out of the summation sign, and thus the moment of inertial is not well-defined. 
+    \red{The only exception is that when all objects move in the same angular velocity}. Then we can write it as 
+    \aleq{
+        \vvec{L}_\text{total} = \sum_i \qty(m_i \abs{\vvec{r}_i}^2\red{\vvec{\omega}}) = \qty(\sum_i m_i\abs{\vvec{r}_i}^2)\red{\vvec{\omega}} = I_\text{total}\ \red{\vvec{\omega}}
+    }
+    %
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Breaking down by Center of Mass}
+
+In many scenerios, the objects are not rotating about a fixed point. E.g. 
+\begin{itemize}
+    \item Planetary motion: The Moon is rotating around the Earth, but the Earth is also moving around the sun.
+    \item Rolling without slipping: The cylinder/sphere is rotating about its center, while its center is also moving.
+\end{itemize}
+
+In these cases, we should not choose the rotation center (the sun, the cylinder's CM, etc.) as the origin, 
+because the values of angular momentum and moment of inertia depends on the choices of origin -- 
+\red{Moving the origin will change the total angular momentum, making it difficult to apply angular momentum conservation.}
+\\\\
+A proper treatment is to separate the position vectors of the objects into two parts - 
+the position vector of the center of mass $\vvec{r}_{CM}$, and the displacement vectors of each object relative to the center of mass $\vvec{R}_{i}$.
+\aleq{
+    \begin{cases}
+        \vvec{r}_i &= \vvec{r}_{CM} + \vvec{R}_{i} \\
+        \vvec{v}_i &= \vvec{v}_{CM} + \vvec{V}_{i} \qquad\qquad \qty(\substack{\text{\scriptsize so as the velocity}\\\text{\scriptsize by differentiating }\vvec{r}} )
+    \end{cases}
+}
+
+\insertFig{r cm and R i}
+
+Substitute them into the definition of angular momentum, we get
+\aleq{
+    \vvec{L} &= \sum_i (m_i \vvec{r}_i\cross \vvec{v}_i) \\
+    &= \sum_i\qty[m_i(\vvec{r}_{CM}+\vvec{R}_i)\cross(\vvec{v}_{CM}+\vvec{V}_i)] \\
+    &= \sum_i m_i\qty[\vvec{r}_{CM}\cross\vvec{v}_{CM} + \vvec{r}_{CM}\cross\vvec{V}_i + \vvec{R}_i\cross\vvec{v}_{CM} + \vvec{R}_i\cross\vvec{V}_i] \\
+    &= \qty(\sum_i m_i)\qty[\vvec{r}_{CM}\cross\vvec{v}_{CM}] + \vvec{r}_{CM}\cross\tikzmark{L1}\cancelto{0}{\qty[\sum_i m_i\vvec{V}_i]}
+        + \tikzmark{L2}\cancelto{0}{\qty[\sum_i m_i\vvec{R}_i]}\cross\vvec{v}_{CM} + \sum_i \qty[m_i \vvec{R}_i \cross\vvec{V}_i] \\[3em]
+    &= \quad\tikzmark{L3}\red{\underline{\qty(\sum_i m_i)\qty[\vvec{r}_{CM}\cross\vvec{v}_{CM}]}} \quad + \quad \tikzmark{L4}\blue{\underline{\sum_i \qty[m_i \vvec{R}_i \cross\vvec{V}_i]}}\\[3.2em]
+    &= \quad\cunderline[YellowGreen]{\tikzmark{L5}M_{total}\abs{\vvec{r}_{CM}}^2}\vvec{\omega_{CM}} \quad+\quad \sum_i \qty[\cunderline[orange]{\tikzmark{L6}m_i\abs{\vvec{R}_i}^2}\vvec{\Omega}_i] \\[3.2em]
+    &= \quad \cunderline[YellowGreen]{\tikzmark{L7}I_{CM,O}}\vvec{\omega}_{CM} \quad+\quad \sum_i\qty[\cunderline[orange]{\tikzmark{L8}I_{i,CM}}\ \vvec{\Omega}_i]
+}
+\addArrow{L1}{(30pt,-3ex)}{(30pt, -4.8ex)}{(20pt, -7ex)}{$\substack{\text{Total velocity}\\\text{relative to CM = 0}}$}
+\addArrow{L2}{(32pt,-3ex)}{(32pt, -4.8ex)}{(45pt, -7ex)}{$\substack{\text{Total displacement}\\\text{different from CM = 0}}$}
+\addArrow[red]{L3}{(60pt,-4ex)}{(60pt, -5.8ex)}{(60pt, -8ex)}{$\substack{\text{Angular momentum only about}\\\text{CM's motion around origin}}$}
+\addArrow[RoyalBlue]{L4}{(45pt,-4ex)}{(45pt, -5.8ex)}{(45pt, -8ex)}{$\substack{\text{Angular momentum only about}\\\text{object's motion around CM}}$}
+\addArrow[YellowGreen]{L5}{(30pt,-2ex)}{(30pt, -3.5ex)}{(35pt, -6ex)}{$\substack{\text{Moment of inertia of}\\\text{an object with mass }M_\text{total}\\\text{relative to origin}}$}
+\addArrow[orange]{L6}{(22pt,-3ex)}{(22pt, -4.8ex)}{(27pt, -6ex)}{$\substack{\text{Moment of inertia of}\\\text{each object relative to CM}}$}
+\addArrow[YellowGreen]{L7}{(15pt,2ex)}{(25pt, 5ex)}{(0, 0)}{}
+\addArrow[orange]{L8}{(15pt,2ex)}{(45pt, 6ex)}{(0, 0)}{}
+
+
+This tells us that we can write the system's angular momentum by checking the \underline{center of mass's motion} and \underline{individual objects's motion around the center of mass} individually,
+which simplifies the calculation to angular momentum in many problems. 
+
+\begin{description}
+    \item[\underline{Note 1:}]~\\
+    \red{We can only use the center of mass for such breakdown.} $\sum_i\qty(m_i\vvec{R}_i)$ and $\sum_i\qty(m_i\vvec{V}_i)$ vanish only because of the CM's property. 
+    All 4 terms must be kept if an arbituary point is chosen (and the calculation cannot be simplified).
+    %
+    \item[\underline{Note 2:}]~\\
+    We can prove $\sum_i\qty(m_i\vvec{R}_i) = 0$ using the CM formula. Differentiate to get $\sum_i\qty(m_i\vvec{V}_i) = 0$.
+    \aleq{
+        \sum_i\qty(m_i\vvec{R}_i) &= \sum_i\qty[m_i(\vvec{r}_i - \vvec{r}_{CM})] \\
+        &= \sum_i\qty(m_i\vvec{r}_i) - \qty(\sum_i m_i)\vvec{r}_{CM} \\
+        &= \sum_i\qty(m_i\vvec{r}_i) - \cancel{\qty(\sum_i m_i)}\qty(\frac{\sum_i m_i\vvec{r}_i}{\cancel{\sum_i m_i}})\\
+        &= 0
+    }
+\end{description}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Parallel Axis Theorem}
+
+Another common scenerio is when all masses rotate at the same angular velocity $\vvec{\omega}_O$ about an arbituary but fixed point (not center of mass). E.g. Rigid body rotation.
+In such case, we can always choose the rotation center as the origin. 
+
+\insertFig{rigid body motion}
+
+The angular momentum writes as:
+\aleq{
+    \vvec{L} &= \sum_i (m_i \vvec{r}_i\cross \vvec{v}_i) \\
+    &= \sum_i(m_i\abs{\vvec{r}_i}^2\red{\vvec{\omega}_O}) \qquad \red{\leftarrow \substack{\text{All objects have}\\\text{the same angular velocity}\\\text{relative to }O}}\\
+    &= \sum_i(m_i\abs{\vvec{r}_{CM}+\vvec{R}_i}^2\vvec{\omega}_O) \\
+    &= \qty[\sum_i \qty(m_i \abs{\vvec{r}_{CM}}^2) + \sum_i\qty(m_i \abs{\vvec{R}_i}^2) + 2\cunderline[YellowGreen]{\tikzmark{L9}\cancel{\sum_i\qty(m_i \vvec{r}_{CM}\cdot\vvec{R}_i)}}]\vvec{\omega}_O \\
+    &= \qty[\cunderline[red]{\tikzmark{L10}M_\text{total}\abs{\vvec{r}_{CM}}^2} + \cunderline[RoyalBlue]{\tikzmark{L11}\sum_i\qty(m_i \abs{\vvec{R}_i}^2)}]\vvec{\omega}_O\\[3.2em]
+    &= \qty[\cunderline[red]{\tikzmark{L12}I_{CM,O}} + \cunderline[RoyalBlue]{\tikzmark{L13}I_{i,CM}}]\vvec{\omega}_O
+}
+\addArrow[YellowGreen]{L9}{(50pt,-4ex)}{(50pt, -5.8ex)}{(90pt, -8ex)}{$\textstyle =\vvec{r}_{CM}\cdot\qty(\sum_i m_i\vvec{R}_i) = \vvec{r}_{CM}\cdot 0$}
+\addArrow[red]{L10}{(30pt,-2ex)}{(30pt, -4ex)}{(30pt, -6.5ex)}{$\substack{\text{Moment of inertia of}\\\text{an object with mass }M_\text{total}\\\text{relative to origin}}$}
+\addArrow[RoyalBlue]{L11}{(45pt,-4ex)}{(45pt, -5.8ex)}{(45pt, -7.5ex)}{$\substack{\text{Moment of inertia}\\\text{relative to CM}}$}
+\addArrow[red]{L12}{(15pt,2ex)}{(25pt, 5ex)}{(0, 0)}{}
+\addArrow[RoyalBlue]{L13}{(15pt,2ex)}{(45pt, 6ex)}{(0, 0)}{}
+
+This tells us a special case where two moment of inertia relative to different points can be directly - 
+One of them must be chosen as the rotation center and the other must be the center of mass. 
+\aleq{
+    \Aboxed{I_\text{equiv} = I_{CM,O} + I_{i,CM}}
+}
+
+Similar to the previous, \red{we can only use the center of mass for such breakdown.}
+The dot product term cannot be canceled if an arbituary point is chosen (and the calculation cannot be simplified).
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linesep
+\section{Rotational KE}
+
+%%%%%%
+\subsection{Mathematical Origin}
+There is always only 1 expression to kinetic energy --- $\half m\abs{\vvec{v}}^2$. 
+It is only the matter of which coordinate system we used to expand $\vvec{v}$. 
+With $\{x,y\}$ coordinate, it is in the familar form:
+\aleq{
+    \vvec{v} = \dv{x}{t}\hhat{x} + \dv{y}{t}\hhat{y} 
+    \quad\Rightarrow\quad 
+    \half m\abs{\vvec{v}}^2 = \half m\qty[\qty(\dv{x}{t})^2 + \qty(\dv{y}{t})^2]
+    =\half m v_x^2 + \half m v_y^2
+}
+But with $\{r,\theta\}$ coordinate, it becomes:
+\aleq{
+    \vvec{v} = \dv{r}{t}\hhat{r} + r\dv{\theta}{t}\hhat{\theta} 
+    \quad\Rightarrow\quad 
+    \half m\abs{\vvec{v}}^2 = \half m\qty[\qty(\dv{r}{t})^2 + r^2\qty(\dv{\theta}{t})^2]
+    = \half m v_r^2 + \half mr^2\omega^2
+}
+
+We can spot the familiar term $ \half mr^2\omega^2 = \half I\omega^2$ in textbook, which is in fact only 1 of the components in the total KE. 
+We can write $\text{KE} =\half I\omega^2$ only if we are sure that the object is in pure rotation. 
+Otherwise you should always write the KE from radial velocity too.
+
+%%%%%%%
+\subsection{Breaking down by Center of Mass}
+
+Similar to angular momentum, we can do similar treatment on KE to isolate the center of mass's movement and individual objects' motions relative to center of mass.
+
+\insertFig{same pic as in angular momentum?}
+
+\aleq{
+    \text{KE} &= \sum_i \qty(\half m_i \abs{\vvec{v}_i}^2) \\
+    &= \sum_i \qty(\half m_i \abs{\vvec{v}_{CM}+\vvec{V}_i}^2)\\
+    &= \sum_i \qty(\half m_i \abs{\vvec{v}_{CM}}^2) + \sum_i \qty(\half m_i \abs{\vvec{V}_i}^2) + \cunderline[YellowGreen]{\cancel{\tikzmark{K1}\sum_i\qty(m_i \vvec{v}_{CM}\cdot\vvec{V}_i)}} \\
+    &= \cunderline[red]{\tikzmark{K2}\half M_\text{total}\abs{\vvec{v}_{CM}}^2} + \cunderline[RoyalBlue]{\tikzmark{K3}\sum_i \qty(\half m_i \abs{\vvec{V}_i}^2)}\\[3.2em]
+    &= \half M_\text{total}\abs{\vvec{v}_{CM}}^2 + \sum_i \qty[\cunderline[red]{\tikzmark{K4}\half m_i\qty(\dv{R_i}{t})^2} + \cunderline[RoyalBlue]{\tikzmark{K5}\half m_i R_i^2\qty(\dv{\Theta_i}{t})^2}]\\
+}
+\addArrow[YellowGreen]{K1}{(50pt,-4ex)}{(50pt, -5.8ex)}{(90pt, -8ex)}{$\textstyle =\vvec{v}_{CM}\cdot\qty(\sum_i m_i\vvec{V}_i) = \vvec{v}_{CM}\cdot 0$}
+\addArrow[red]{K2}{(30pt,-2.5ex)}{(30pt, -4.5ex)}{(30pt, -7ex)}{$\substack{\text{KE of a point object}\\\text{with mass }M_\text{total}}$}
+\addArrow[RoyalBlue]{K3}{(45pt,-4ex)}{(45pt, -5.8ex)}{(45pt, -7.5ex)}{$\substack{\text{KE only about}\\\text{motion relative to CM}}$}
+\addArrow[red]{K4}{(30pt,-2.8ex)}{(30pt, -4.2ex)}{(20pt, -5.5ex)}{\scriptsize Radial KE relative to CM}
+\addArrow[RoyalBlue]{K5}{(30pt,-2.8ex)}{(30pt, -4.2ex)}{(50pt, -5.5ex)}{\scriptsize Angular KE relative to CM}
+
+Similar to the previous, \red{we can only use the center of mass for such breakdown.}
+The dot product term cannot be canceled if an arbituary point is chosen (and the calculation cannot be simplified).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linesep
+\section{Usage on angular momentum and rotation KE}
+
+In practice, most of the problems will be either one of the two cases:
+\begin{enumerate}
+    \item Objects are rotating around a fixed center at the same angular velocity $\vvec{\omega}$.
+    \insertFig{fix origin cases}
+    Then we should:
+    \begin{itemize}
+        \item Choose the rotation center as the origin.
+        \item Calculate moment of inertia $I = I_O = \sum_i m_i\abs{\vvec{r}_O}^2$ relative to the origin. 
+        Parallel axis theorem is likely useful.
+        \item Directly write 
+        \aleq{
+            \vvec{L} &= I_O\vvec{\omega} \\
+            \text{KE} &=\half I_O\abs{\vvec{\omega}}^2
+        }
+    \end{itemize}
+    %
+    \item Objects are rotating around their CM, and the CM may or may not be moving.
+    \insertFig{move around CM cases}
+    Then we should:
+    \begin{itemize}
+        \item Choose any static point as the origin. 
+        Furthermore, if we choose an origin such that the position vector of center of mass is perpendicular to its velocity vector, 
+        the subsequent calculations may simplify more.
+        \item Depends on how the objects are moving relative to CM:
+        \begin{description}
+            \item[Pure rotation around CM (e.g. Rolling):] No radial terms.            
+            \aleq{
+                \vvec{L} &= M_\text{total}\vvec{r}_{CM} \cross \vvec{v}_{CM} + I_{i,CM}\vvec{\omega}\\
+                \text{KE} &= \half M_\text{total}\abs{\vvec{v}_{CM}}^2 + \half I_{i,CM}\abs{\vvec{\omega}}^2
+            }
+            \item[Otherwise:] Must individually write out the terms for each object.
+            \aleq{
+                \vvec{L} &= M_\text{total}\vvec{r}_{CM} \cross \vvec{v}_{CM} + \sum_i\qty(m_i \vvec{R}_i\cross\vvec{V}_i)\\
+                \text{KE} &= \half M_\text{total}\abs{\vvec{v}_{CM}}^2 + \sum_i\qty(\half m_i \abs{\vvec{V}_i}^2) + \sum_i\qty(\half m_i \abs{\vvec{R}_i}^2\abs{\vvec{\omega}_i}^2)
+            }
+        \end{description}
+    \end{itemize}
+\end{enumerate}
+
+\begin{center}
+    \red{Final reminder: Once you choose the origin, never change it again.}
+\end{center}
+
+\end{document}
