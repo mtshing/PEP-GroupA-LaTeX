@@ -1,8 +1,6 @@
 \documentclass[class=article, crop=false, 12pt]{standalone}
 \usepackage[subpreambles=true]{standalone}
-\usepackage{../common/packages}
-\usepackage{../common/command}
-\usepackage{../common/format}
+\usepackage{../.common/common}
 
 
 \author{Tony Shing}
@@ -128,7 +126,7 @@ Most of the time we deal with potential function belongs in such form, i.e. $V(r
     \item $\alpha=2$ : Simple harmonic motion -- $V(r) = \half k r^2$
 \end{itemize}
 
-Substituting the power law potential, it is found that the integral can be resolved into simple functions only when $\alpha = 2, -1$ or $-2$.  
+Substituting the power law potential, mathematicians found that the integral can be resolved into simple functions only when $\alpha = 2, -1$ or $-2$.  
 
 
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,7 +138,7 @@ The RHS integral can be simplified by trigonometric substitution.
 \aleq{
     -\int\frac{\dd{u}}{\sqrt{\frac{2mE}{L^2} \red{\pm} \frac{2m\red{ku}}{L^2} - u^2}} 
     &= -\int\frac{\dd{u}}{\sqrt{\frac{2mE}{L^2} + \frac{m^2k^2}{L^4} - \qty(u \mp \frac{mk}{L^2})^2}} 
-    & \qty(\substack{\text{Completing}\\[0.2em]\text{square}}) \\
+    & \qty(\substack{\text{completing}\\\text{square}}) \\
     %
     &= -\int \frac{\dd{\qty(u\mp\frac{mk}{L^2})}}{\sqrt{A^2 - \qty(u\mp\frac{mk}{L^2})^2}}
     & {\scriptstyle \qty(\text{take }A = \sqrt{\frac{2mE}{L^2} + \frac{m^2k^2}{L^4}})} \\
@@ -189,14 +187,14 @@ we arrive at the quadratic form of conic sections, i.e. $Ax^2+Bxy+Cy^2+Dx+Ey+F=0
     \qty(\epsilon^2\cos^2\theta_0-1)x^2 + \qty(\epsilon^2\sin^2\theta_0-1)y^2 + \qty(2\sin{\theta_0}\cos{\theta_0})xy -(2\epsilon r_0\cos\theta_0) x - (2\epsilon r_0 \sin\theta_0) y + r_0^2 = 0
 } 
 
-By choosing $\theta_0 = 0$, the conic section "lies flat". We can further simplify it in to the more "familiar" form:
+By choosing $\theta_0 = 0$, the conic section "lies flat". We can further simplify it in to the standard form:
 \aleq{
     (1-\epsilon^2)x^2 + y^2 + (2\epsilon r_0)x &= r_0^2 \\
     %
-    \qty(x + \frac{\epsilon r_0}{1-\epsilon^2})^2 + \frac{y^2}{1-\epsilon^2} &= \frac{r_0^2}{1-\epsilon^2} + \frac{\epsilon^2r_0^2}{(1-\epsilon^2)^2} \\
+    \qty(x + \frac{r_0\epsilon }{1-\epsilon^2})^2 + \frac{y^2}{1-\epsilon^2} &= \frac{r_0^2}{1-\epsilon^2} + \frac{r_0^2\epsilon^2}{(1-\epsilon^2)^2} \\
     &= \qty(\frac{r_0}{1-\epsilon^2})^2 \\
     %
-    \frac{\qty(x + \frac{\epsilon r_0}{1-\epsilon^2})^2}{\qty(\frac{r_0}{1-\epsilon^2})^2} + \frac{y^2}{\qty(\frac{r_0}{\sqrt{1-\epsilon^2}})^2} &= 1 \\[0.5em]
+    \frac{\qty(x + \frac{r_0\epsilon}{1-\epsilon^2})^2}{\qty(\frac{r_0}{1-\epsilon^2})^2} + \frac{y^2}{\qty(\frac{r_0}{\sqrt{1-\epsilon^2}})^2} &= 1 \\[0.5em]
     %
     \Rightarrow \quad 
     \Aboxed{
@@ -204,24 +202,24 @@ By choosing $\theta_0 = 0$, the conic section "lies flat". We can further simpli
     }
 } 
 
-Geometrically, no matter what kinds of conic section it is, we may identify these letters with the names
+Geometrically, no matter what kinds of conic section it is, we may identify these letters with the following names.
+Although they are mostly used in circular/elliptical orbits because they are positive real number only if $\epsilon<1$.
 
 \begin{itemize}
-    \item Semi-latus rectum $l = r_0$ \qquad ($l$ is the more commonly used symbol)
-    \item Semi-major axis $a = \abs{\frac{r_0}{1-\epsilon^2}}$
-    \item Semi-minor axis $b = \abs{\frac{r_0}{\sqrt{1-\epsilon^2}}}$ 
-    \item Focal distance $c = \frac{\epsilon r_0}{1-\epsilon^2}$ \qquad\qquad  (Another name for $c$ = linear encentricity)
+    \item \textbf{Semi-latus rectum} --- $l = r_0$ \qquad ($l$ is another commonly used symbol)
+    \item \textbf{Semi-major axis} --- $\boxed{a = \frac{r_0}{1-\epsilon^2} = -\frac{k}{2E}}$
+    \item \textbf{Semi-minor axis} --- $\boxed{b = \frac{r_0}{\sqrt{1-\epsilon^2}}}$ 
+    \item \textbf{Focal distance} --- $\boxed{c = \frac{r_0\epsilon}{1-\epsilon^2} = a\epsilon}$ \qquad\qquad  (Another name for $c$ = linear encentricity)
 \end{itemize}
 
 
 
 The value of encentricity controlled the type of conic section. 
-In the case of attractive force:
 
 \begin{itemize}
     \item \textbf{$\epsilon = 0$ \,---\, Circle}
     \begin{itemize}
-        \item $E = \frac{-mk^2}{2L^2}$.
+        \item $E = \frac{-mk^2}{2L^2} = -\frac{k}{2r_0}$.
         %
         \item Polar form: $r=\frac{r_0}{0+1} = r_0$. i.e. Radial distance = constant.
     \end{itemize}
@@ -243,7 +241,7 @@ In the case of attractive force:
     \begin{itemize}
         \item $E=0$
         %
-        \item From the polar form, $\theta=\theta_0 \Rightarrow r=\frac{r_0}{2}$. $r$ increases to $\infty$ when $\theta$ changes to $\pm\frac{\pi}{2}$.
+        \item From the polar form, $\theta=\theta_0 \Rightarrow r=\frac{r_0}{2}$. $r$ increases to $\infty$ when $\theta$ changes to $\pm \pi$.
         %
         \item Semi-major axis, semi-minor axis and focal distance are undefined (infinite). 
         Writing the standard form needs to start with
@@ -300,27 +298,74 @@ So combining,
 }
 \addArrow{kepler2}{(8pt, 2ex)}{(8pt, 4.5ex)}{(8pt, 6ex)}{\scriptsize $\substack{\text{True only if}\\L \text{ is not a function of }t}$}
 
+Note that this is true even for parabola and hyperbola orbits.
 
 \insertFig{kepler2 law illustration}
+
 
 %%%%%%%%%%%%%%%%%
 \vskip 1em
 \subsection{Kepler's \nth{3} Law -- Period of Elliptical Orbit}
 
-Kepler's \nth{3} Law only applies to circular and elliptical orbit, because the concept of "period" only applies to closed orbits. 
+The original statement for Kepler's \nth{3} Law only applies to circular and elliptical orbit, 
+because the concept of "period" only applies to closed orbits. 
 
 \quoting{The ratio of the square of an object's orbital period with the cube of the semi-major axis of its orbit is the same for all objects orbiting the same primary.}
 
-If we go back to the standard proof in section \ref{standard proof} stop at step 1, 
+If we go back to the standard proof in section \ref{standard proof} and stop at step 1, 
 without substituting $\dd{t} = \frac{mr^2}{L}\dd{\theta}$, we can integrate and obtain a relation between $t$ and $r$.
-
+Note that we can simplify this integral without removing the $\pm$ sign, so it applies to both attractive and repulsive cases.
 \aleq{
     \dd{t} &= \frac{\dd{r}}{\sqrt{\frac{2}{m}\qty(E-V(r) - \frac{L^2}{2mr^2})}} \\
+    %
     &= \frac{\dd{r}}{\sqrt{\frac{2}{m}\qty(E \red{\pm\frac{k}{r}} - \frac{L^2}{2mr^2})}} \\[0.5em]
-    \int \dd{t} &= \sqrt{\frac{m}{2}} \int \frac{r\dd{r}}{\sqrt{Er^2 \pm kr - \frac{L^2}{2m}}}
+    %
+    \int \dd{t} &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{r^2 \mp \frac{k}{E}r + \frac{L^2}{2mE}}}
+    & \qty(\substack{\text{Denominator} \\\text{multiply }-\frac{r^2}{E}}) \\
+    %
+    &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{-\qty(r\mp\frac{k}{2E})^2+\frac{k^2}{4E^2}+\frac{L^2}{2mE}}}
+    & \qty(\substack{\text{completing}\\\text{square}})
 }
 
-Again, the $\pm$ sign is for: \red{$+$ve = attractive force, $-$ve = repulsive force.} Integrate by trigonometric substitution gives
+We can substitute $a=-\frac{k}{2E}$ and $a^2\epsilon^2 = \frac{k^2}{4E^2}\qty(1+\frac{2EL^2}{mk^2})$ to simplify the notations. 
+\aleq{
+    \Rightarrow \int \dd{t} &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{-(r\pm a)^2+a^2\epsilon^2}}\\
+    %
+    &= \sqrt{-\frac{m}{2E}} \int \frac{(a\epsilon\cos{\varphi}\mp a) \dd{(a\epsilon\cos{\varphi}\mp a)}}{\sqrt{a^2\epsilon^2-(a\epsilon\cos{\varphi})^2}}
+    & {\scriptstyle \qty(\text{take } r\pm a = a\epsilon\cos{\varphi})} \\
+    %
+    &= \sqrt{-\frac{m}{2E}} \int -(a\epsilon\cos{\varphi}\mp a) \dd{\varphi}\\
+    %
+    &= \sqrt{-\frac{m}{2E}} (-a\epsilon\sin{\varphi} \pm a\varphi)  + C\\
+    %
+    &= \sqrt{\frac{a}{k}}(-a\epsilon\sin{\varphi} \pm a\varphi)  + C
+    & {\scriptstyle \qty(\text{by } a = -\frac{k}{2E})}
+}
+
+The symbol $\varphi$ is commonly denoted as the \textbf{eccentric anomaly}.
+Its geometrical relation with the rotation angle $\theta$ is as depicted:
+
+\insertFig{eccentric anomaly}
+
+$\varphi$ and $\theta$ can be inter-converted through $r$. Although this is usually done numerically. 
+\aleq{
+    \frac{r_0}{\epsilon\cos{\theta} \pm 1} = r = a\epsilon\cos{\varphi} \mp a \\[0.5em]
+    %
+    \Rightarrow \quad \frac{r_0}{a} = 1-\epsilon^2 = (1\mp \epsilon \cos{\varphi})(1\pm \epsilon\cos{\theta})
+}
+We can immediately check that in elliptical orbit, $\theta = 0 \Leftrightarrow \varphi = 0$ and $\theta=\pi \Leftrightarrow \varphi=\pi$. 
+So taking $\varphi$ from $0$ to $2\pi$ is the same as revolving one cycle of $\theta$ from $0$ to $2\pi$. 
+Substitute these into the $t$ v.s. $\varphi$ relation, we arrive at the familar Kepler's \nth{3} law formula.
+\aleq{
+    \text{1 Period} = \int^T_0 \dd{t} 
+    &= \eval{\sqrt{\frac{a}{k}}(-a\epsilon\sin{\varphi} \pm a\varphi)}_{\varphi =0}^{\varphi =2\pi} \\
+    \Aboxed{
+        T &= \frac{2\pi}{\sqrt{k}}a^{\frac{3}{2}}
+    }
+}
+
+\textbf{Note:} Trajectory are more frequently expressed in terms of $\varphi$ in space engineering texts because of the $t$ v.s. $\varphi$ relation --
+It is a lot easier for computing transit time along any segment of any orbit.
 
 
 
@@ -368,7 +413,7 @@ On the other hand, adding the two equation gives the Newton \nth{2} Law about th
 
 \insertFig{equiv: two obj orbit each other == 1 obj, redeuced mass, orbit around origin, r=r2-r1. finally retrieve back r1,r2 from u}
 
-Now the problem is reduced to two independent ODES for $\vvec{u}$ and $\vvec{r}_{CM}$ respectively (supposedly easier than solving two inter-related ODEs).
+Now the problem is reduced to two independent ODEs --- a still annoying one for $\vvec{u}$ and a trivial one for $\vvec{r}_{CM}$ respectively.
 \aleq{
     \begin{cases}
         \mu\dvv[2]{\vvec{u}}{t} &= -\vvec{F}(\abs{\vvec{u}}) \\[1em]
@@ -376,6 +421,7 @@ Now the problem is reduced to two independent ODES for $\vvec{u}$ and $\vvec{r}_
     \end{cases}
 }
 
+which is comparatively easier than solving a system of 2 ODEs. 
 Finally with $\vvec{u}$ and $\vvec{r}_{CM}$, we can retrieve back $\vvec{r}_1$ and $\vvec{r}_2$ by the geometric relation.
 \aleq{
     \begin{cases}
