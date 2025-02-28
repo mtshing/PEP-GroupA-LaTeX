@@ -1,0 +1,179 @@
+%\ProvidesPackage{command}
+% user defined commands and used packages are collected in here
+% self-defined command as \newcommand{\name}[no. of input]{\definition}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% symbol/equation shortcut
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\half}{\frac{1}{2}}  % 1/2
+\newcommand{\inv}[1]{\frac{1}{#1}}  % 1/x
+\newcommand\at[2]{\left.#1\right|_{#2}} % {}|x=0 for d/dx|_x=0 usage
+\newcommand{\nsqrt}[2]{\sqrt[\leftroot{-3}\uproot{6}#1]{#2}} %nth root
+\newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} % equal sign with "def" above
+
+\newcommand{\anticlockwise}{\circlearrowleft} % anticlockwise cicle arrow
+\newcommand{\clockwise}{\circlearrowright} % clockwise circle arrow
+
+
+
+% align* environment shortcut
+% cannot separate open/close for align* because it always scan for \end
+\newcommand{\aleq}[1]{\begin{align*} #1 \end{align*}}
+
+% set all matrix using parenthesis matrix
+\newcommand{\bmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+% determinant
+\newcommand{\bdet}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+
+% bold & italic font all vector for clear view
+% shortcut for typing efficiently
+% for bold only, use \va{} and vu{} from physics package
+\newcommand{\vvec}[1]{\va*{#1}}
+\newcommand{\hhat}[1]{\vu*{#1}}
+
+% derivatives (\dv, \pdv \fdvv) force to be fraction display mode
+\newcommand{\dvv}[3][\empty]{\dfrac{\dd[#1]{#2}}{\dd{#3^{#1}}}}
+\newcommand{\pdvv}[3][\empty]{\dfrac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\fdvv}[2]{\dfrac{\var{#1}}{\var{#2}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% frequently used formula
+% require package: amsmath, physics, xparse 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% grad / div / curl / laplcian all in format \cmd[x][y][z]{Ax}[Ay][Az]
+% input 1st-3rd are for custom symbols for coordinate system
+% input 4th-6th are for vector component / terms to calculate
+% only 4th input is mandatory. 5th/6th input default to be the same as 4th
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cartesian coordinate - default symbols: x,y,z
+
+% grad
+\NewDocumentCommand{\gradPla}{O{x} O{y} m O{#3}}{%
+  \pdv{#3}{#1}\vu*{#1} + \pdv{#4}{#2}\vu*{#2}}
+\NewDocumentCommand{\gradRec}{O{x} O{y} O{z} m O{#4} O{#4}}{%
+  \gradPla[#1][#2]{#4}[#5] + \pdv{#6}{#3}\vu*{#3}}
+
+% divergence
+\NewDocumentCommand{\divRec}{O{x} O{y} O{z} m O{#4} O{#4}}{%
+  \pdv{#4}{#1} + \pdv{#5}{#2} + \pdv{#6}{#3}}
+
+% curl
+% curlPla = for 2D, curlRec = for 3D
+\NewDocumentCommand{\curlPla}{O{x} O{y} m O{#3}}{%
+  \pdv{#3}{#1} - \pdv{#4}{#2}}
+\NewDocumentCommand{\curlRec}{O{x} O{y} O{z} m O{#4} O{#4}}{%
+  \qty(\curlPla[#2][#3]{#6}[#5])\vu*{#1} + \qty(\curlPla[#3][#1]{#4}[#6])\vu*{#2} + \qty(\curlPla[#1][#2]{#5}[#4])\vu*{#3}}
+\NewDocumentCommand{\curlRecDet}{O{x} O{y} O{z} m O{#4} O{#4}}{%
+  \bdet{
+    \vu*{#1} & \vu*{#2} & \vu*{#3} \\[0.7em]
+    \pdvv{}{#1} & \pdvv{}{#2} & \pdvv{}{#3} \\[0.7em]
+    #4 & #5 & #6
+  }}
+
+% laplacian
+\NewDocumentCommand{\lapPla}{O{x} O{y} m O{#3}}{%
+  \pdv[2]{#3}{#1} + \pdv[2]{#4}{#2}}
+\NewDocumentCommand{\lapRec}{O{x} O{y} O{z} m O{#4} O{#4}}{%
+  \lapPla[#1][#2]{#4}[#5] + \pdv[2]{#6}{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cylindrical coordinate - default symbols: \rho, \phi, z
+
+% grad
+% gradPol = for polar coor, gradCyl = for cylindrical
+\NewDocumentCommand{\gradPol}{O{\rho} O{\phi} m O{#3}}{%
+  \pdv{#3}{#1}\vu*{#1} + \frac{1}{#1}\pdv{#4}{#2}\vu*{#2}}
+\NewDocumentCommand{\gradCyl}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \gradPol[#1][#2]{#4}[#5] + \pdv{#6}{#3}\vu*{#3}}
+
+% divergence
+\NewDocumentCommand{\divCyl}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \frac{1}{#1}\pdv{(#1 #4)}{#1} + \frac{1}{#1}\pdv{#5}{#2} + \pdv{#6}{{#3}}}
+
+% curl
+% \curlCylR{}, \curlCylP{}, \curlCylZ{} = components
+% \curlCyl{} = full vector form, \curlCylDet{} = determinant form
+\NewDocumentCommand{\curlCylR}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \frac{1}{#1}\pdv{#6}{#2} - \pdv{#5}{#3}}
+\NewDocumentCommand{\curlCylP}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \pdv{#4}{#3} - \pdv{#6}{#1}}
+\NewDocumentCommand{\curlCylZ}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \frac{1}{#1}\qty(\pdv{(#1 #5)}{#1} - \pdv{#4}{#2})}
+\NewDocumentCommand{\curlCyl}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \qty(\curlCylR[#1][#2][#3]{#4}[#5][#6])\vu*{#1} + \qty(\curlCylP[#1][#2][#3]{#4}[#5][#6])\vu*{#2} + \curlCylZ[#1][#2][#3]{#4}[#5][#6]\vu*{#3}}
+\NewDocumentCommand{\curlCylDet}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \bdet{
+    \dfrac{\vu*{#1}}{#1} & \vu*{#2} & \dfrac{\vu*{#3}}{#1} \\[0.7em]
+    \pdvv{}{#1} & \pdvv{}{#2} & \pdvv{}{#3} \\[0.7em]
+    #4 & #5 & #6
+  }}
+
+% laplcian
+\NewDocumentCommand{\lapPol}{O{\rho} O{\phi} m O{#3}}{%
+  \frac{1}{#1}\pdv{#1}\qty(#1 \pdv{#3}{#1}) + \frac{1}{#1^2}\pdv[2]{#4}{#2}}
+\NewDocumentCommand{\lapCyl}{O{\rho} O{\phi} O{z} m O{#4} O{#4}}{%
+  \lapPol[#1][#2]{#4}[#5] + \pdv[2]{#6}{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% spherical coordinate - default symbols: r, \theta (polar angle), \phi (azimuthal angle)
+
+% grad
+\NewDocumentCommand{\gradSph}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \pdv{#4}{#1}\vu*{#1} + \frac{1}{#1}\pdv{#4}{#2}\vu*{#2} + \frac{1}{#1 \sin{#2}}\pdv{#4}{#3}\vu*{#3}}
+
+% divergence
+\NewDocumentCommand{\divSph}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \frac{1}{#1^2}\pdvv{(#1^2 #4_{#1})}{#1} + \frac{1}{#1\sin{#2}}\pdvv{(#4_{#2} \sin{#2})}{#2} + \frac{1}{#1\sin{#2}}\pdvv{#4_{#3}}{#3}}
+
+% curl
+% \curlSphR{}, \curlSphT{}, \curlSphP{} = components
+% \curlSph{} = full vector form, \curlSphDet{} = determinant form
+\NewDocumentCommand{\curlSphR}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \frac{1}{#1\sin{#2}}\qty( \pdv{(#6\sin{#2})}{#2} - \pdv{#5}{#3} )}
+\NewDocumentCommand{\curlSphT}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \frac{1}{#1}\qty( \frac{1}{\sin{#2}}\pdv{#4}{#3} - \pdv{(#1 #6)}{#1} )}
+\NewDocumentCommand{\curlSphP}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \frac{1}{#1}\qty( \pdv{(#1 #5)}{#1}-\pdv{#4}{#2} )}
+\NewDocumentCommand{\curlSph}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \curlSphR[#1][#2][#3]{#4}[#5][#6]\vu*{#1} + \curlSphT[#1][#2][#3]{#4}[#5][#6]\vu*{#2} + \curlSphP[#1][#2][#3]{#4}[#5][#6]\vu*{#3}}
+\NewDocumentCommand{\curlSphDet}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \bdet{
+    \dfrac{\vu*{#1}}{#1^2\sin{#2}} & \dfrac{\vu*{#2}}{#1\sin{#2}} & \dfrac{\vu*{#3}}{#1} \\[0.7em]
+    \pdvv{}{#1} & \pdvv{}{#2} & \pdvv{}{#3} \\[0.7em]
+    #4 & #1 #5 & #1\sin{#2}#6
+  }}
+
+% laplacian
+\NewDocumentCommand{\lapSph}{O{r} O{\theta} O{\phi} m O{#4} O{#4}}{%
+  \frac{1}{#1^2}\pdv{#1}\qty(#1^2\pdv{#4}{#1}) + \frac{1}{#1^2\sin{#2}}\pdv{#2}\qty(\sin{#2}\pdv{#5}{#2}) + \frac{1}{#1^2\sin[2]{#2}}\pdv[2]{#6}{#3}}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Others
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+

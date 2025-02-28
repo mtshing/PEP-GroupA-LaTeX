@@ -1,0 +1,77 @@
+%\ProvidesPackage{package}
+
+
+
+%%%%%%%%%%%%%%%%%%%%% packages %%%%%%%%%%%%%%%%%%%%%%
+
+% for create command with multiple optional arguments
+% e.g. \NewDocumentCommand{\mycmd}{ O{default1} O{default2} m }{#1 #2 #3}
+% O = optional with default values, o = optional but return empty if none, m = mandatory
+\usepackage{xparse}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm} % theorem environment
+\usepackage{mathtools}
+\usepackage{bm} % bold math symbol
+\usepackage{cancel} % for cancel/cross out line on equation
+
+\usepackage{physics} % many short form to math symbols
+% e.g.
+% type \qty before brackets automatically resize it by it contents
+% \abs = ||
+% \dd[]{} = d^n x, \dv[]{}{} = d^n f/dx, \pdv[]{}{} = partial d 
+% \eval_{}^{} = vertical bar + subst value (after integrate/differentiate)
+% \grad, \div, \curl
+% also some matrix notation
+
+\usepackage[super]{nth} % write 1st, 2nd... using command \nth{1}, \nth{2},,,
+
+%\usepackage{algorithm2e} % pseudocode environment
+%\usepackage{chemformula} % chemical symbol, equations
+
+% some general symbol, e.g. degree symbol, celcius, micro mu, 
+\usepackage{textcomp,gensymb}
+
+% more unicode symbol
+%\usepackage{wasysym}
+
+% fancier formatting on title
+\usepackage{titling}
+
+%\usepackage{makeidx} % allow index referencing (like index in book)
+\usepackage{chngcntr} % change index of figure/equation... relation to section/subsection
+
+%\usepackage{tabu} % tables
+%\usepackage{makecell} % allow line break within a cell in tables
+\usepackage{multicol}
+
+\usepackage{dirtytalk} % insert quotation
+
+% dvipsnames = more default colour name, table = for colouring table
+\usepackage[dvipsnames, table]{xcolor} 
+\usepackage{framed}
+% For text inside orange box spanning whole page width, use \begin{shaded}, \end{shaded}
+\colorlet{shadecolor}{orange!15}
+
+% figure thingy
+\usepackage{graphicx}
+\usepackage{subfig}
+
+
+% tikz thingy
+\usepackage{tikz}
+\usepackage{calc}
+\usetikzlibrary{tikzmark,calc}
+% use tikzmark to make arrow pointing a character
+% mark the character being point to by appending \tikzmark{label_name}. In tikzpicture envr, call this point by (pic cs:label_name)
+% enclose with $ $ for calculation
+% example: 
+% \begin{tikzpicture}[overlay,remember picture]
+%   \draw[arrows=->, draw=red] 
+%       ( $ (pic cs:label_name) +(6pt,-2.5ex) $ ) -- ( $ (pic cs:label_name) +(6pt,-0.5ex) $ );
+%   \node[anchor=north, text=red]
+%       at ( $ (pic cs:label_name) +(6pt,-2ex) $ )
+%       {my_text};
+% \end{tikzpicture}

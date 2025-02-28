@@ -1,0 +1,280 @@
+%\ProvidesPackage{wrapper}
+
+\usepackage[a4paper, total={6.77in, 9.6in}]{geometry} 
+\usepackage[utf8]{inputenc}
+\setlength{\parindent}{0pt} % no indent before new paragraph
+%\tabulinesep=1mm % vertical spacing in tabu environment
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if want section no. begin with 0, add this line
+%\setcounter{section}{-1} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (Misc format matters)
+
+% format for itemize and enumerate
+\renewcommand\labelitemi{\textbf{--}} 
+\renewcommand{\labelenumii}{\roman{enumii}}
+% for custom labeled item, use \begin{description} environment (no package needed)
+
+
+% for table, set default row height to be 1.5x of factory setting
+\renewcommand{\arraystretch}{1.5}
+
+
+% Print repeat text: \rpt[times,default=1]{text}
+\usepackage{forloop}
+\newcounter{loopcntr}
+\newcommand{\rpt}[2][1]{%
+  \forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}%
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (Everything related to colour)
+% coloured text, from xcolor package
+% can be used in math mode
+% colour definition needed to be called in full name when used in tikz
+% ***Use these as the 4 main colour, and the default gray
+\newcommand{\red}[1]{{\color{red}{#1}}}
+\newcommand{\green}[1]{{\color{YellowGreen}{#1}}}
+\newcommand{\blue}[1]{{\color{RoyalBlue}{#1}}}
+\newcommand{\orange}[1]{{\color{orange}{#1}}}
+\newcommand{\gray}[1]{{\color{gray}{#1}}}
+
+
+% coloured cancel line: \ccancel[color]{text}. default color = black
+% \cancel = diagonal slash, \bcancel = backward diagonal slash
+% \xcancel = cross out, \cancelto{toValue}{Expression} = arrow
+\newcommand{\ccancel}[2][black]{
+    \renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\newcommand{\ccancelto}[3][black]{
+    \renewcommand\CancelColor{\color{#1}}\cancelto{#2}{#3}}
+
+
+% coloured underline with black text:
+\newcommand{\cunderline}[2][black]{\color{#1}\underline{{\color{black}#2}}\color{black}}
+
+
+% arrow under equation terms for adding supplementary notes
+% require package: tikz, tikzmark & calc library from tikz
+% input: [color], tikzmark label, arrow head offset (tuple), arrow tail offset (tuple), text offset tuple, text
+% example: \addArrow[RoyalBlue]{rh}{(8pt,-2.5ex)}{(8pt, -4ex)}{(10pt,-5ex)}{$\scriptstyle =0$}
+\newcommand{\addArrow}[6][black]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[arrows=->, draw=#1]    ($ (pic cs:#2) + #4 $) -- ( $ (pic cs:#2) + #3 $ );
+    \node[text=#1] at ( $ (pic cs:#2) + #5 $ )  {#6};
+  \end{tikzpicture}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% redefining the format of section, example, etc by lecture number
+
+\newcounter{lecnum} % create the variable lecnum
+%\counterwithout{example}{section} % make example's index continuous through all section
+
+\renewcommand{\thesection}{\arabic{section}} % section title
+\renewcommand{\thepage}{P.\arabic{page}} % page number
+
+%\renewcommand{\thepage}{\thelecnum-\arabic{page}}
+%\renewcommand{\thesection}{\thelecnum.\arabic{section}}
+%\renewcommand{\theexample}{\thelecnum.\arabic{example}}
+%\renewcommand{\theequation}{\thelecnum.\arabic{equation}}
+%\renewcommand{\thefigure}{\thelecnum.\arabic{figure}}
+%\renewcommand{\thetable}{\thelecnum.\arabic{table}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem environment
+
+%\theoremstyle{definition}
+% \newtheorem{Envr. name}{Display}[Counter reset by new]
+%\newtheorem{example}{Example}[section]
+%\newtheorem*{definition}{Definition} % no counter for def
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{lemma}{Lemma}[theorem]
+%\newtheorem{conjecture}{Conjecture}[theorem]
+%\newtheorem{claim}{Claim}[theorem]
+%\newtheorem{exercise}{Exercise}[section]
+%\newtheorem*{remark}{Remark} % no counter for remark
+%\newtheorem*{note}{Note} % no counter for note
+% environment {proof} is provided in amsthm package (not amsmath!)
+
+\renewenvironment{proof}{%
+        \vskip 0.5em
+        \underline{\textit{Proof}}\par
+        \hspace{0.025\textwidth}\begin{minipage}{0.95\textwidth}
+        \vskip 0.5em
+    }
+    {
+        \hfill $\square$
+        \end{minipage}
+        \vskip 1.5em \par
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generate header: \fancyheading{Note no.}{Note title}{Author}
+%\newcommand{\fancyheading}[3]{
+%    \pagestyle{myheadings}
+%    \thispagestyle{plain}
+%    \newpage
+%    \setcounter{lecnum}{#1} % set lecnum to lecture number (as constant variable)
+%    \setcounter{page}{1}
+%    \setcounter{section}{0}
+%    \noindent
+%    \begin{center}
+%    \framebox{
+%        \vbox{
+%            \vspace{2mm}
+%            \hbox to 6.5in {\hfill \bf HKPhO Training Notes \hfill}
+%            \vspace{4mm}
+%            \hbox to 6.5in {\Large \hfill Lecture #1: #2  \hfill}
+%            \vspace{2mm}
+%            \hbox to 6.5in {\it Author: #3 \hfill  Date Generated: \today}
+%            \vspace{2mm}
+%            }
+%        }
+%    \end{center}
+%}
+
+
+
+
+% lecture note title 
+
+\newcommand*{\topic}[1]{\gdef\@topic{#1}}
+\newcommand*{\@topic}{}
+
+\newcommand*{\version}[1]{\gdef\@version{#1}}
+\newcommand*{\@version}{}
+
+\renewcommand\@maketitle{%
+        %
+        \setcounter{page}{1}
+        \setcounter{section}{0}
+        %
+        \hfill
+        \begin{minipage}{\textwidth}
+        {\@topic  \hfill  Physics Enrichment Program HKUST \par}
+        \vskip 0.5em \par
+        {{\Large \textbf{\@title}} \hfill
+            \begin{tabular}[b]{r @{}} 
+                Edited \@version \\ \textit{by \@author} 
+            \end{tabular} \par}
+        \end{minipage}
+        \vskip 1.5em \par
+    }
+
+
+\newenvironment{overview}{%
+        \hspace{0.025\textwidth}\begin{minipage}{0.95\textwidth}
+        \rule{\textwidth}{1pt}
+        \vskip 0.5em
+        \textbf{Overview:}
+    }
+    {
+        \par\noindent\rule{\textwidth}{1pt}
+        \end{minipage}
+    }
+
+
+\newenvironment{notation}{%
+        \vskip 0.5em
+        \hspace{0.04\textwidth}\begin{minipage}{0.92\textwidth}
+        \begin{framed}
+        \textit{Notations:}
+        \vskip 0.5em
+    }
+    {
+        \end{framed}
+        \end{minipage}
+    }
+
+
+\renewenvironment{abstract}{%
+    \hspace{0.025\textwidth}\begin{minipage}{0.95\textwidth}
+    \rule{\textwidth}{1pt}
+    \vskip 0.5em}
+{\par\noindent\rule{\textwidth}{1pt}
+    \end{minipage}}
+
+
+% A separating line, for dividing each main section
+\newcommand{\linesep}{%
+    \vskip 0.5em
+    \rule{\textwidth}{1pt}
+    \vskip 0.5em
+}
+
+% simple quoting text by centering and italic
+\newcommand{\quoting}[1]{%
+\begin{center}
+    \small \textit{#1}
+\end{center}    
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% print "-- The End --": \theend
+\newcommand{\theend}{
+    \begin{center}
+        \textbf{---} The End \textbf{---}
+    \end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% related exercise
+\newcommand{\MC}[2]{\textbf{#1}\;MC #2}
+\newcommand{\LQ}[2]{\textbf{#1}\;LQ #2}
+
+\newcommand{\EX}{
+    \textbf{Related Exercises} (Questions in \red{red} are more difficult):
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Out of syllabus Alert box: \outcbegin, \outcend
+\newcommand{\outcbegin}{
+    \begin{center}
+        \color{red}\framebox{
+            \parbox{4in}{\centering
+            \textbf{\large Out-of-Syllabus Warning}\\
+            The following contents are not required by HKPhO.\\
+            You can study them for your own interest.\\
+            \rpt[9]{$\downarrow\quad$}$\downarrow$
+            }
+        }
+    \end{center}
+}        
+
+\newcommand{\outcend}{
+    \begin{center}
+        \color{red}\framebox{
+            \parbox{4in}{\centering
+            \rpt[9]{$\uparrow\quad$}$\uparrow$\\
+            The more difficult contents end here.\\
+            \textbf{\large Out-of-Syllabus Warning}
+            }
+        }
+    \end{center}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% missing figure alert
+\newcommand{\insertFig}[1]{
+    \begin{center}
+        \red{(add figure here: #1)}
+    \end{center}
+}
+
