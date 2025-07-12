@@ -6,6 +6,24 @@
 %\tabulinesep=1mm % vertical spacing in tabu environment
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% some formatting command that are vanilla in latex
+% make short cut
+% \bf and \it are supplied in plain TEX but not recommended because they cant be applied at the same time
+
+% \textbf{...} = bold
+\renewcommand{\bf}[1]{\textbf{#1}}
+
+% textit{...} = italic
+\renewcommand{\it}[1]{\textit{#1}}
+
+% underline{...} = underline
+\newcommand{\ul}[1]{\underline{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% section titles should all be capitalized, even for subsections
+
 % if want section no. begin with 0, add this line
 %\setcounter{section}{-1} 
 
@@ -36,13 +54,14 @@
 % (Everything related to colour)
 % coloured text, from xcolor package
 % can be used in math mode
-% colour definition needed to be called in full name when used in tikz
+% colour definition still needed to be called in full name when used in tikz
 % ***Use these as the 4 main colour, and the default gray
 \newcommand{\red}[1]{{\color{red}{#1}}}
 \newcommand{\green}[1]{{\color{YellowGreen}{#1}}}
 \newcommand{\blue}[1]{{\color{RoyalBlue}{#1}}}
 \newcommand{\orange}[1]{{\color{orange}{#1}}}
 \newcommand{\gray}[1]{{\color{gray}{#1}}}
+
 
 
 % coloured cancel line: \ccancel[color]{text}. default color = black
@@ -55,8 +74,9 @@
 
 
 % coloured underline with black text:
+% long form \cunderline, short form \cul
 \newcommand{\cunderline}[2][black]{\color{#1}\underline{{\color{black}#2}}\color{black}}
-
+\newcommand{\cul}[2][black]{\cunderline[#1]{#2}}
 
 % arrow under equation terms for adding supplementary notes
 % require package: tikz, tikzmark & calc library from tikz
@@ -68,7 +88,7 @@
     \node[text=#1] at ( $ (pic cs:#2) + #5 $ )  {#6};
   \end{tikzpicture}
 }
-
+% tikzmark label is added by \tikzmark{"label"}, with "label" being unique throughout the whole doc
 
 
 
@@ -92,10 +112,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Theorem environment
 
-%\theoremstyle{definition}
+%\theoremstyle{plain} = default. 
+%   - sets the text in italic and adds extra space above and below the \newtheorems listed below it in the input. 
+%   - recommended for theorems, corollaries, lemmas, propositions, conjectures, criteria, and (possibly; depends on the subject area) algorithms.
+
+%\theoremstyle{definition} 
+%   - adds extra space above and below, but sets the text in roman. 
+%   - recommended for definitions, conditions, problems, and examples; i've alse seen it used for exercises.
+
+%\theoremstyle{remark} 
+%   - set in roman, with no additional space above or below. 
+%   - recommended for remarks, notes, notation, claims, summaries, acknowledgments, cases, and conclusions.
+
+% Define new theorem environment (by amsthm package)
 % \newtheorem{Envr. name}{Display}[Counter reset by new]
-%\newtheorem{example}{Example}[section]
+
+% use \begin{} \end{} to use these environment
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
 %\newtheorem*{definition}{Definition} % no counter for def
+
 %\newtheorem{theorem}{Theorem}[section]
 %\newtheorem{corollary}{Corollary}[section]
 %\newtheorem{lemma}{Lemma}[theorem]
@@ -104,8 +141,8 @@
 %\newtheorem{exercise}{Exercise}[section]
 %\newtheorem*{remark}{Remark} % no counter for remark
 %\newtheorem*{note}{Note} % no counter for note
-% environment {proof} is provided in amsthm package (not amsmath!)
 
+% environment {proof} is already provided in amsthm package (not amsmath!)
 \renewenvironment{proof}{%
         \vskip 0.5em
         \underline{\textit{Proof}}\par

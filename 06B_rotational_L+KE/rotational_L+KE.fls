@@ -1,9 +1,9 @@
-PWD d:/mings/Documents/PhyO/latex_notes/polar_vectors
+PWD d:/mings/Documents/PhyO/latex_notes/rotational_L+KE
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/mings/Documents/PhyO/latex_notes/polar_vectors/polar vectors.tex
-OUTPUT polar vectors.log
+INPUT d:/mings/Documents/PhyO/latex_notes/rotational_L+KE/rotational_L+KE.tex
+OUTPUT rotational_L+KE.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
@@ -43,9 +43,9 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/filehook/filehook.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/filehook/filehook.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/filehook/filehook-2020.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/filehook/filehook-2020.sty
-INPUT ./polar vectors.sta
-INPUT ./polar vectors.sta
-INPUT polar vectors.sta
+INPUT ./rotational_L+KE.sta
+INPUT ./rotational_L+KE.sta
+INPUT rotational_L+KE.sta
 INPUT c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty
@@ -83,8 +83,10 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/filemod/filemod-expmin.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/filemod/filemod-expmin.sty
-INPUT ../common/packages.sty
-INPUT ../common/packages.sty
+INPUT ../.common/common.sty
+INPUT ../.common/common.sty
+INPUT ../.common/packages.sty
+INPUT ../.common/packages.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -105,6 +107,8 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
@@ -117,28 +121,16 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/physics/physics.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/physics/physics.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/nth/nth.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/nth/nth.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/gensymb/gensymb.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/gensymb/gensymb.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfig/subfig.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfig/subfig.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/chngcntr/chngcntr.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/tabu/tabu.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/tabu/tabu.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
-INPUT c:/texlive/2024/texmf-dist/tex/generic/nth/nth.sty
-INPUT c:/texlive/2024/texmf-dist/tex/generic/nth/nth.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
@@ -156,8 +148,19 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT c:/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/subfig/subfig.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/subfig/subfig.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -260,26 +263,26 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 INPUT c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 INPUT c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
-INPUT ../common/command.sty
-INPUT ../common/command.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/forloop/forloop.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/forloop/forloop.sty
-INPUT ../common/format.sty
-INPUT ../common/format.sty
+INPUT ../.common/math.sty
+INPUT ../.common/math.sty
+INPUT ../.common/format.sty
+INPUT ../.common/format.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
-INPUT ./polar vectors.aux
-INPUT ./polar vectors.aux
-INPUT polar vectors.aux
-OUTPUT polar vectors.aux
-INPUT ./polar vectors.sta
-INPUT ./polar vectors.sta
-INPUT polar vectors.sta
-OUTPUT polar vectors.sta
+INPUT c:/texlive/2024/texmf-dist/tex/latex/forloop/forloop.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/forloop/forloop.sty
+INPUT ./rotational_L+KE.aux
+INPUT ./rotational_L+KE.aux
+INPUT rotational_L+KE.aux
+OUTPUT rotational_L+KE.aux
+INPUT ./rotational_L+KE.sta
+INPUT ./rotational_L+KE.sta
+INPUT rotational_L+KE.sta
+OUTPUT rotational_L+KE.sta
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -326,24 +329,13 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+OUTPUT rotational_L+KE.pdf
+INPUT c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT polar vectors.pdf
-INPUT c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1728.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
@@ -351,17 +343,18 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm
-INPUT polar vectors.aux
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb1200.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb0800.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb0600.tfm
+INPUT rotational_L+KE.aux
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb

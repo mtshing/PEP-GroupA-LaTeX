@@ -7,9 +7,22 @@
 % symbol/equation shortcut
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% add \qty before (), [] or {} auto size the brackets, 
+% do not need to type \left, \right separately
+% {} do not needed to be start with \
+% (feature from physics package)
+
+% the vertical bar for diff/int substitution can be shortcut with \eval
+% \eval{x}_{a}^{b}
+% the whole {x} can be omitted too, i.e. \eval_a^b
+% (feature from physics package)
+
+
 \newcommand{\half}{\frac{1}{2}}  % 1/2
 \newcommand{\inv}[1]{\frac{1}{#1}}  % 1/x
-\newcommand\at[2]{\left.#1\right|_{#2}} % {}|x=0 for d/dx|_x=0 usage
+\newcommand{\dinv}[1]{\dfrac{1}{#1}} % 1/x but force in displaystyle
+\newcommand{\at}[2]{\left.#1\right|_{#2}} % {}|x=0 for d/dx|_x=0 usage
 \newcommand{\nsqrt}[2]{\sqrt[\leftroot{-3}\uproot{6}#1]{#2}} %nth root
 \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} % equal sign with "def" above
 
@@ -33,17 +46,9 @@
 \newcommand{\vvec}[1]{\va*{#1}}
 \newcommand{\hhat}[1]{\vu*{#1}}
 
-% derivatives (\dv, \pdv \fdvv) force to be fraction display mode
-\newcommand{\dvv}[3][\empty]{\dfrac{\dd[#1]{#2}}{\dd{#3^{#1}}}}
-\newcommand{\pdvv}[3][\empty]{\dfrac{\partial^{#1} #2}{\partial #3^{#1}}}
-\newcommand{\fdvv}[2]{\dfrac{\var{#1}}{\var{#2}}}
-
-
-
-
-
-
-
+% a big left brace like \begin{cases} to contain multiple lined of aligned eq
+% but allow central alignment about &
+\newcommand{\bcase}[1]{\left\{ \ \begin{aligned} #1 \end{aligned}\right.}
 
 
 
@@ -54,6 +59,56 @@
 % frequently used formula
 % require package: amsmath, physics, xparse 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% derivatives (\dv, \pdv \fdvv) force to be fraction display mode
+
+%\newcommand{\dvv}[3][\empty]{\dfrac{\dd[#1]{#2}}{\dd{#3^{#1}}}}
+%\newcommand{\pdvv}[3][\empty]{\dfrac{\partial^{#1} #2}{\partial #3^{#1}}}
+%\newcommand{\fdvv}[2]{\dfrac{\var{#1}}{\var{#2}}}
+
+% \dvv = normal D
+\NewDocumentCommand{\dvv}{o m g}{
+  \IfNoValueTF{#1}{
+    \IfNoValueTF{#3}{
+      \dfrac{\dd}{\dd{#2}}
+    }{
+      \dfrac{\dd{#2}}{\dd{#3}}
+    }
+  }{
+    \IfNoValueTF{#3}{
+      \dfrac{\dd[#1]}{\dd{#2^{#1}}}
+    }{
+    \dfrac{\dd[#1]{#2}}{\dd{#3^{#1}}}
+    }
+  }
+}
+
+%\pdvv = partial D
+\NewDocumentCommand{\pdvv}{o m g}{
+  \IfNoValueTF{#1}{
+    \IfNoValueTF{#3}{
+      \dfrac{\partial}{\partial{#2}}
+    }{
+      \dfrac{\partial{#2}}{\partial{#3}}
+    }
+  }{
+    \IfNoValueTF{#3}{
+      \dfrac{\partial^{#1}}{\partial{#2^{#1}}}
+    }{
+    \dfrac{\partial^{#1}{#2}}{\partial{#3^{#1}}}
+    }
+  }
+}
+
+% \fdvv = functional D
+\NewDocumentCommand{\fdvv}{m g}{
+  \IfNoValueTF{#2}{
+    \dfrac{\var}{\var{#1}}
+  }{
+    \dfrac{\var{#1}}{\var{#2}}
+  }
+}
 
 
 

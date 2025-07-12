@@ -1,14 +1,12 @@
 \documentclass[class=article, crop=false, 12pt]{standalone}
 \usepackage[subpreambles=true]{standalone}
-\usepackage{../common/packages}
-\usepackage{../common/command}
-\usepackage{../common/format}
+\usepackage{../.common/common}
 
 
 \author{Tony Shing}
 %\pretitle{Supplementary}
 
-\topic{Note 6A - Mechanics}
+\topic{Note 6A (Mechanics)}
 \title{Vectors in Polar Coordinates}
 
 \version{2025} % leave blank for omitting
@@ -91,13 +89,15 @@ This makes a big difference in differentiation, because the unit vectors are ess
         \dv{\vvec{s}}{t} &= \dv{s_x}{t}\hhat{x} + s_x\tikzmark{xh}\red{\underline{\dv{\hhat{x}}{t}}} 
                             + \dv{s_y}{t}\hhat{y} + s_y\tikzmark{yh}\red{\underline{\dv{\hhat{y}}{t}}}
     }\\
-    \begin{tikzpicture}[remember picture,overlay]
-        \draw[arrows=->, draw=red]    ($ (pic cs:xh) + (8pt, -4ex) $) -- ( $ (pic cs:xh) +(8pt,-2.5ex) $ );
-        \node[text=red] at ( $ (pic cs:xh) + (10pt,-4.8ex) $ )  {$\scriptstyle =0$};
-        %
-        \draw[arrows=->, draw=red]    ($ (pic cs:yh) + (8pt, -4ex) $) -- ( $ (pic cs:yh) +(8pt,-2.5ex) $ );
-        \node[text=red] at ( $ (pic cs:yh) + (10pt,-4.8ex) $ )  {$\scriptstyle =0$};
-    \end{tikzpicture}
+    \addArrow[red]{xh}{(8pt,-2.5ex)}{(8pt, -4ex)}{(10pt,-4.8ex)}{$\scriptstyle =0$}
+    \addArrow[red]{yh}{(8pt,-2.5ex)}{(8pt, -4ex)}{(10pt,-4.8ex)}{$\scriptstyle =0$}
+    %\begin{tikzpicture}[remember picture,overlay]
+    %    \draw[arrows=->, draw=red]    ($ (pic cs:xh) + (8pt, -4ex) $) -- ( $ (pic cs:xh) +(8pt,-2.5ex) $ );
+    %    \node[text=red] at ( $ (pic cs:xh) + (10pt,-4.8ex) $ )  {$\scriptstyle =0$};
+    %    %
+    %    \draw[arrows=->, draw=red]    ($ (pic cs:yh) + (8pt, -4ex) $) -- ( $ (pic cs:yh) +(8pt,-2.5ex) $ );
+    %    \node[text=red] at ( $ (pic cs:yh) + (10pt,-4.8ex) $ )  {$\scriptstyle =0$};
+    %\end{tikzpicture}
     %
     \red{$\hhat{x},\hhat{y}$ always point in the same direction. Never change by position $\Rightarrow$ Differentiation = 0.}
     %
@@ -107,13 +107,15 @@ This makes a big difference in differentiation, because the unit vectors are ess
         \dv{\vvec{s}}{t} &= \dv{s_r}{t}\hhat{r} + s_r \tikzmark{rh}\blue{\underline{\dv{\hhat{r}}{t}}}
                             + \dv{s_\theta}{t}\hhat{\theta} + s_\theta \tikzmark{th}\blue{\underline{\dv{\hhat{\theta}}{t}}}
     }\\[1em]
-    \begin{tikzpicture}[remember picture,overlay]
-        \draw[arrows=->, draw=RoyalBlue]    ($ (pic cs:rh) + (8pt, -4ex) $) -- ( $ (pic cs:rh) +(8pt,-2.5ex) $ );
-        \node[text=RoyalBlue] at ( $ (pic cs:rh) + (10pt,-4.8ex) $ )  {$\substack{\hhat{r}\text{ contains } \\ r\text{ \& }\theta}$};
-        %
-        \draw[arrows=->, draw=RoyalBlue]    ($ (pic cs:th) + (8pt, -4ex) $) -- ( $ (pic cs:th) +(8pt,-2.5ex) $ );
-        \node[text=RoyalBlue] at ( $ (pic cs:th) + (10pt,-4.8ex) $ )  {$\substack{\hhat{\theta}\text{ contains } \\ r\text{ \& }\theta}$};
-    \end{tikzpicture}
+    \addArrow[RoyalBlue]{rh}{(8pt,-2.5ex)}{(8pt, -4ex)}{(10pt,-5ex)}{$\substack{\hhat{r}\text{ contains } \\ r\text{ \& }\theta}$}
+    \addArrow[RoyalBlue]{th}{(8pt,-2.5ex)}{(8pt, -4ex)}{(10pt,-5ex)}{$\substack{\hhat{\theta}\text{ contains } \\ r\text{ \& }\theta}$}
+    %\begin{tikzpicture}[remember picture,overlay]
+    %    \draw[arrows=->, draw=RoyalBlue]    ($ (pic cs:rh) + (8pt, -4ex) $) -- ( $ (pic cs:rh) +(8pt,-2.5ex) $ );
+    %    \node[text=RoyalBlue] at ( $ (pic cs:rh) + (10pt,-4.8ex) $ )  {$\substack{\hhat{r}\text{ contains } \\ r\text{ \& }\theta}$};
+    %    %
+    %    \draw[arrows=->, draw=RoyalBlue]    ($ (pic cs:th) + (8pt, -4ex) $) -- ( $ (pic cs:th) +(8pt,-2.5ex) $ );
+    %    \node[text=RoyalBlue] at ( $ (pic cs:th) + (10pt,-4.8ex) $ )  {$\substack{\hhat{\theta}\text{ contains } \\ r\text{ \& }\theta}$};
+    %\end{tikzpicture}
     %
     \blue{$\hhat{r}, \hhat{\theta}$ are functions of $r$ and $\theta$, and $(r, \theta)$ are functions of $t$. So differentiating against $t$ is non-zero in general.}
 \end{itemize}
@@ -282,28 +284,32 @@ Why is there only 1 information ($r$ component) in the polar form? This is becau
 \aleq{
     \vvec{r} = r \tikzmark{rhat}\underline{\hhat{r}} 
     \quad\overset{\substack{\text{more} \\ \text{accurately}}}{\Rightarrow}\quad 
-    \vvec{r} = r\cdot \hhat{r}_{\tikzmark{rhat2}\green{\text{at }(r,\theta)}}
+    \vvec{r} = r\cdot \hhat{r}_{\green{\text{at }(r,\tikzmark{rhat2}\theta)}}
 }\\
-\begin{tikzpicture}[remember picture,overlay]
-    \draw[arrows=->]    ($ (pic cs:rhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:rhat) +(4pt,-1ex) $ );
-    \node[anchor=east] at ( $ (pic cs:rhat) + (15pt,-4ex) $ )  {\scriptsize which direction?};
-    %
-    \draw[arrows=->, draw=YellowGreen]    ($ (pic cs:rhat2) + (22pt, -2.5ex) $) -- ( $ (pic cs:rhat2) +(22pt,-1ex) $ );
-    \node[anchor=west, text=YellowGreen] at ( $ (pic cs:rhat2) + (-5pt,-4ex) $ )  {\scriptsize in $\theta$ direction!};
-\end{tikzpicture}
+\addArrow{rhat}{(4pt,-1ex)}{(4pt, -2.5ex)}{(15pt,-4ex)}{\scriptsize which direction?}
+\addArrow[YellowGreen]{rhat2}{(2pt,-1ex)}{(2pt, -2.5ex)}{(10pt,-4ex)}{\scriptsize in $\theta$ direction!}
+%\begin{tikzpicture}[remember picture,overlay]
+%    \draw[arrows=->]    ($ (pic cs:rhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:rhat) +(4pt,-1ex) $ );
+%    \node[anchor=east] at ( $ (pic cs:rhat) + (15pt,-4ex) $ )  {\scriptsize which direction?};
+%    %
+%    \draw[arrows=->, draw=YellowGreen]    ($ (pic cs:rhat2) + (22pt, -2.5ex) $) -- ( $ (pic cs:rhat2) +(22pt,-1ex) $ );
+%    \node[anchor=west, text=YellowGreen] at ( $ (pic cs:rhat2) + (-5pt,-4ex) $ )  {\scriptsize in $\theta$ direction!};
+%\end{tikzpicture}
 
 We cannot tell which direction $\hhat{r}$ is pointing to, if we do not know the "$\green{\text{at }(r,\theta)}$" part. (Sadly, most text will omit writing this part.)
 Unlike x-y coordinate, we do not care the two unit vectors much because we always know that $\hhat{x}$ is the one pointing horizontally and $\hhat{y}$ is the one pointing vertically.
 \aleq{
     \vvec{r} = x\cdot \tikzmark{xhat}\underline{\hhat{x}} + y\cdot \tikzmark{yhat}\underline{\hhat{y}}
 }
-\begin{tikzpicture}[remember picture,overlay]
-    \draw[arrows=->]    ($ (pic cs:xhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:xhat) +(4pt,-1ex) $ );
-    \node[anchor=east] at ( $ (pic cs:xhat) + (15pt,-4ex) $ )  {\scriptsize always horiztonal};
-    %
-    \draw[arrows=->]    ($ (pic cs:yhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:yhat) +(4pt,-1ex) $ );
-    \node[anchor=west] at ( $ (pic cs:yhat) + (-5pt,-4ex) $ )  {\scriptsize always vertical};
-\end{tikzpicture}
+\addArrow{xhat}{(4pt,-1ex)}{(4pt, -2.5ex)}{(-20pt,-4ex)}{\scriptsize always horiztonal}
+\addArrow{yhat}{(4pt,-1ex)}{(4pt, -2.5ex)}{(25pt,-4ex)}{\scriptsize always vertical}
+%\begin{tikzpicture}[remember picture,overlay]
+%    \draw[arrows=->]    ($ (pic cs:xhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:xhat) +(4pt,-1ex) $ );
+%    \node[anchor=east] at ( $ (pic cs:xhat) + (15pt,-4ex) $ )  {\scriptsize always horiztonal};
+%    %
+%    \draw[arrows=->]    ($ (pic cs:yhat) + (4pt, -2.5ex) $) -- ( $ (pic cs:yhat) +(4pt,-1ex) $ );
+%    \node[anchor=west] at ( $ (pic cs:yhat) + (-5pt,-4ex) $ )  {\scriptsize always vertical};
+%\end{tikzpicture}
 
 \insertFig{same expression $r\hhat{r}$, all in different direction, because $\theta$ is not labelled}
 \insertFig{x, y always horizontal/vertical, no matter anywhere}
@@ -353,7 +359,7 @@ In textbooks you will usually find the form without "$\green{\text{at }(r,\theta
     \dd{\vvec{r}} = (\dd{r})\hhat{r} + (r\dd{\theta})\hhat{\theta}
 }
 
-It is normal if you find reading disability and are confused with all the $r, \vvec{r}$ and $\hhat{r}$. 
+P.S. It is totally normal if you are confused with all the $r, \vvec{r}$ and $\hhat{r}$ symbols. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -476,7 +482,8 @@ Apply this on our displacement / velocity / acceleration vector will give the fa
         + \qty[2\dv{r}{t}\cdot\dv{\theta}{t} + r\cdot \dv[2]{\theta}{t}]\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{\theta}_\green{\text{at }(r,\theta)}\\[0.5em]
         &= \qty[2\dv{r}{t}\cdot\dv{\theta}{t} + r\cdot \dv[2]{\theta}{t}]\hhat{z}
     }
-    Different from the above, the angular acceleration is defined as the \nth{2} derivative to the angular displacement and ignore the Coriolis term. Therefore its definition is uglier.
+    Different from the above, the angular acceleration is defined as the \nth{2} derivative to the angular displacement and ignore the Coriolis term. 
+    Therefore its definition is uglier. But most of its use cases are in pure rotation and so the Coriolis term is $0$ anyway.
     \aleq{
         \Aboxed{
             \vvec{\alpha} = \alpha\hhat{z} = \dv[2]{\theta}{t}\hhat{z} = \inv{r}\qty(\hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{a} - 2\dv{r}{t}\cdot\dv{\theta}{t}\hhat{z})
@@ -490,7 +497,21 @@ Apply this on our displacement / velocity / acceleration vector will give the fa
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linesep
-\section{Relative Angular Velocity?}
+\section{Relative Rotation}
+
+\subsection{Review: Relative Motion}
+
+A very naïve example to usually used to talk about relative motion:
+\begin{itemize}
+    \item A sees B in a car, moving at velocity $v$.
+    \item B sees an object C in the same car, moving at velocity $u$. 
+    \item We can conclude that the velocity of C relative to A is $u+v$. 
+\end{itemize}
+
+
+
+
+
 
 \begin{center}
     \red{Relative angular velocity makes sense only when two observers share the same origin.}

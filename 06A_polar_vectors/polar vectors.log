@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.22)  28 FEB 2025 04:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.22)  4 JUL 2025 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/mings/Documents/PhyO/latex_notes/rotational_L+KE/rotational_L+KE.tex
-(d:/mings/Documents/PhyO/latex_notes/rotational_L+KE/rotational_L+KE.tex
+**"d:/mings/Documents/PhyO/latex_notes/polar_vectors/polar vectors.tex"
+(d:/mings/Documents/PhyO/latex_notes/polar_vectors/polar vectors.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
@@ -63,7 +63,7 @@ Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
 \c@currfiledepth=\count273
 )
 \sa@out=\write3
- (./rotational_L+KE.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+ (./polar vectors.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
 Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
 )
 Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
@@ -121,7 +121,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \gincltex@box=\box54
 ) (c:/texlive/2024/texmf-dist/tex/latex/filemod/filemod-expmin.sty
 Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times (expandable; minimal)
-)) (../common/packages.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+)) (../.common/common.sty (../.common/packages.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2025-01-18 L3 programming layer (loader) 
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
@@ -605,18 +605,14 @@ Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 \l__sn_ya_dim=\dimen310
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (../common/command.sty (c:/texlive/2024/texmf-dist/tex/latex/forloop/forloop.sty
-Package: forloop 2023/05/03 v3.0 For Loops for LaTeX
-)
-\c@loopcntr=\count335
-) (../common/format.sty (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+)) (../.common/math.sty)) (../.common/format.sty (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count336
-\Gm@cntv=\count337
-\c@Gm@tempcnt=\count338
+\Gm@cnth=\count335
+\Gm@cntv=\count336
+\c@Gm@tempcnt=\count337
 \Gm@bindingoffset=\dimen311
 \Gm@wd@mp=\dimen312
 \Gm@odd@mp=\dimen313
@@ -630,27 +626,30 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks46
 \inpenc@posthook=\toks47
+) (c:/texlive/2024/texmf-dist/tex/latex/forloop/forloop.sty
+Package: forloop 2023/05/03 v3.0 For Loops for LaTeX
 )
+\c@loopcntr=\count338
 \c@lecnum=\count339
-) (./rotational_L+KE.aux)
-\openout1 = `rotational_L+KE.aux'.
+) (./polar vectors.aux)
+\openout1 = `"polar vectors.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
- (./rotational_L+KE.sta)
-\openout3 = `rotational_L+KE.sta'.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+ (./polar vectors.sta)
+\openout3 = `"polar vectors.sta"'.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -673,14 +672,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \symgns@font=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 16.
-Package gensymb Info: Math companion symbols declared on input line 16.
-LaTeX Info: Redefining \degree on input line 16.
-LaTeX Info: Redefining \celsius on input line 16.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 16.
-LaTeX Info: Redefining \ohm on input line 16.
-Package gensymb Info: Using \textohm for \ohm on input line 16.
-Package gensymb Info: Using \textmu for \micro on input line 16.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 14.
+Package gensymb Info: Math companion symbols declared on input line 14.
+LaTeX Info: Redefining \degree on input line 14.
+LaTeX Info: Redefining \celsius on input line 14.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 14.
+LaTeX Info: Redefining \ohm on input line 14.
+Package gensymb Info: Using \textohm for \ohm on input line 14.
+Package gensymb Info: Using \textmu for \micro on input line 14.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -719,11 +718,11 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -731,177 +730,53 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 95.
- (c:/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 128.
-
-
 
 [2]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 137.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 147.
-
-
-
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 198--209
+Underfull \hbox (badness 10000) in paragraph at lines 279--288
 
  []
 
 
 
 [4]
-Overfull \hbox (29.61946pt too wide) in paragraph at lines 234--236
-[]\OT1/cmr/m/n/12 This tells us that we can write the sys-tem's an-gu-lar mo-men-tum by check-ing the $[]$
+
+[5]
+Overfull \hbox (6.21469pt too wide) detected at line 408
+[]
  []
 
 
 
-[5]
-
 [6]
+Overfull \hbox (0.73682pt too wide) detected at line 484
+[]
+ []
+
+
 
 [7]
 
-[8] (./rotational_L+KE.aux)
+[8] (./polar vectors.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20276 strings out of 475128
- 390843 string characters out of 5765400
- 790310 words of memory out of 5000000
- 42840 multiletter control sequences out of 15000+600000
- 571745 words of font info for 81 fonts, out of 8000000 for 9000
+ 20194 strings out of 475128
+ 389320 string characters out of 5765400
+ 785149 words of memory out of 5000000
+ 42759 multiletter control sequences out of 15000+600000
+ 574587 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,25n,147p,496b,662s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on rotational_L+KE.pdf (8 pages, 196093 bytes).
+ 125i,27n,161p,493b,670s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "polar vectors.pdf" (8 pages, 201210 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

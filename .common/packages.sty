@@ -34,6 +34,9 @@
 % some general symbol, e.g. degree symbol, celcius, micro mu, 
 \usepackage{textcomp,gensymb}
 
+% allow inter-doc link, hyperlink
+\usepackage{hyperref}
+
 % more unicode symbol
 %\usepackage{wasysym}
 
@@ -43,11 +46,36 @@
 %\usepackage{makeidx} % allow index referencing (like index in book)
 \usepackage{chngcntr} % change index of figure/equation... relation to section/subsection
 
-%\usepackage{tabu} % tables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% table thingy
+
+% vanilla latex command = \begin{tabular}[pos]{cols}
+% where pos control vertical alignment of text (not useful)
+% cols control horizontal alignment of text
+% e.g. {col} = {c|c|c} = 3 center aligned col with 2 vertical sep line
+%   l = left align
+%   c = center align
+%   r = right align
+%   p{"width"} = text vertically top aligned, fixed col width
+
+\usepackage{array}
+% array allow fixed with control for individual columns 
+% more alphabets for {col}: 
+%   m{"width"} = text vertically middle aligned, fixed col width
+%   b{"width"} = text vertically bottom aligned, fixed col width
+%
+% but their text is default to left align. To fix that, add
+% >{\raggedright\arraybackslash} or >{\centering\arraybackslash} or >{\raggedleft\arraybackslash}
+% before the alphabet 
+
+\usepackage{tabularx}
+% use tabularx for fixing the width of whole table 
+% e.g. \begin{tabularx}{0.8\textwidth}{X|X|X}
+% X = any alphabet above
+
 %\usepackage{makecell} % allow line break within a cell in tables
 \usepackage{multicol}
-
-\usepackage{dirtytalk} % insert quotation
 
 % dvipsnames = more default colour name, table = for colouring table
 \usepackage[dvipsnames, table]{xcolor} 
@@ -55,7 +83,12 @@
 % For text inside orange box spanning whole page width, use \begin{shaded}, \end{shaded}
 \colorlet{shadecolor}{orange!15}
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % figure thingy
+
 \usepackage{graphicx}
 \usepackage{subfig}
 
