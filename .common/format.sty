@@ -13,13 +13,17 @@
 % \textbf{...} = bold
 \renewcommand{\bf}[1]{\textbf{#1}}
 
-% textit{...} = italic
+% \textit{...} = italic
 \renewcommand{\it}[1]{\textit{#1}}
 
 % underline{...} = underline
 \newcommand{\ul}[1]{\underline{#1}}
 
+% \boxed{...} = box around text. 
+% from amsmath package. can be used in equation mode to highlight part of the line
 
+% \Aboxed{...} = box around whole line of equation. 
+% from mathtools package
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % section titles should all be capitalized, even for subsections
@@ -56,12 +60,22 @@
 % can be used in math mode
 % colour definition still needed to be called in full name when used in tikz
 % ***Use these as the 4 main colour, and the default gray
+
+% red = default red
+\colorlet{blue}{RoyalBlue}
+\colorlet{green}{YellowGreen}
+\colorlet{yellow}{Dandelion}
+% orange = default orange
+% gray = default gray
+
+
+% shortcut for coloring text
 \newcommand{\red}[1]{{\color{red}{#1}}}
-\newcommand{\green}[1]{{\color{YellowGreen}{#1}}}
-\newcommand{\blue}[1]{{\color{RoyalBlue}{#1}}}
+\newcommand{\green}[1]{{\color{green}{#1}}}
+\newcommand{\blue}[1]{{\color{blue}{#1}}}
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}}
 \newcommand{\orange}[1]{{\color{orange}{#1}}}
 \newcommand{\gray}[1]{{\color{gray}{#1}}}
-
 
 
 % coloured cancel line: \ccancel[color]{text}. default color = black
@@ -73,24 +87,77 @@
     \renewcommand\CancelColor{\color{#1}}\cancelto{#2}{#3}}
 
 
-% coloured underline with black text:
+% coloured underline with black text
 % long form \cunderline, short form \cul
-\newcommand{\cunderline}[2][black]{\color{#1}\underline{{\color{black}#2}}\color{black}}
+\newcommand{\cunderline}[2][black]{{\color{#1}\underline{{\color{black}#2}}}}
 \newcommand{\cul}[2][black]{\cunderline[#1]{#2}}
+
+% coloured underbrace with black main body
+\newcommand{\cunderbrace}[3][black]{{\color{#1}\underbrace{\color{black}#2}_{#3}}}
+\newcommand{\cub}[3][black]{\cunderbrace[#1]{#2}{#3}}
+
+% coloured box around part of equation (equiv to \boxed)
+\newcommand{\cbox}[2][black]{{\color{#1}\boxed{{\color{black}#2}}}}
+
+% coloured box around whole line of equation (equiv to \Aboxed from mathtools)
+% example: \Acboxed[red]{the eq text}
+% copy from https://tex.stackexchange.com/questions/610245/how-aboxed-works
+\newcommand*\Acboxed[2][black]{%
+   \let\bgroup{\romannumeral-`}%
+   \@Acolorboxed{#1}#2&&\ENDDNE
+}
+\def\@Acolorboxed#1#2&#3&#4\ENDDNE{%
+  \ifnum0=`{}\fi
+  \setbox\z@\hbox{$\displaystyle#2{}\m@th$\kern\fboxsep \kern\fboxrule}%
+  \edef\@tempa{\kern\wd\z@ & \kern-\the\wd\z@ \fboxsep\the\fboxsep \fboxrule\the\fboxrule}%
+  \@tempa
+  \fcolorbox{#1}{white}{\m@th$\displaystyle#2#3$}%
+} 
+
+% tikzmark label is added by 
+% \tikzmark{"label name"} as a standalone node at exact position
+% \tikzmarknode{"label name"}{some text} use center point of text as a node
+% "label name" must be unique throughout the whole doc
 
 % arrow under equation terms for adding supplementary notes
 % require package: tikz, tikzmark & calc library from tikz
 % input: [color], tikzmark label, arrow head offset (tuple), arrow tail offset (tuple), text offset tuple, text
 % example: \addArrow[RoyalBlue]{rh}{(8pt,-2.5ex)}{(8pt, -4ex)}{(10pt,-5ex)}{$\scriptstyle =0$}
-\newcommand{\addArrow}[6][black]{%
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw[arrows=->, draw=#1]    ($ (pic cs:#2) + #4 $) -- ( $ (pic cs:#2) + #3 $ );
-    \node[text=#1] at ( $ (pic cs:#2) + #5 $ )  {#6};
+%\newcommand{\addArrow}[6][black]{%
+%  \begin{tikzpicture}[remember picture,overlay]
+%    \draw[arrows=->, draw=#1]    ($ (pic cs:#2) + #4 $) -- ( $ (pic cs:#2) + #3 $ );
+%    \node[text=#1] at ( $ (pic cs:#2) + #5 $ )  {#6};
+%  \end{tikzpicture}
+%}
+
+% short form
+\newcommand{\tkn}[1]{\tikzmarknode{#1}}
+\newcommand{\tkm}[1]{\tikzmark{#1}}
+
+% input: 
+% [color], arrow head tikzmark, text pos relative to arrow head tikzmark (tuple), text
+% [arrow head offset (tuple)], [text offset (tuple)] 
+\NewDocumentCommand{\addArrow}{O{black} m m m G{(0,0)} G{(0,0)}}{
+\begin{tikzpicture}[remember picture,overlay]
+    \node[text=#1] at ($(pic cs:#2) + #3 + #5 + #6 $) {#4};
+    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + 0.7*#3 + #5 $) -- ($ (pic cs:#2) + #5 $);
   \end{tikzpicture}
 }
-% tikzmark label is added by \tikzmark{"label"}, with "label" being unique throughout the whole doc
 
+% input: 
+% [color], arrow tail tikzmark, arrow head tikzmark, text, 
+% [horz line height offset], [arrow tail offset (tuple)], [arrow head offset (tuple)]
+\NewDocumentCommand{\addAboveArrow}{O{black} m m m G{4ex} G{(0,0)} G{(0,0)}}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 + (0,2ex)$) -- ($ (pic cs:#2) + #6 + (0,2ex) + (0,#5) $) -| node[pos=0.25,above, text=#1] {#4} ($(pic cs:#3) + #7 + (0,2ex)$);
+  \end{tikzpicture}
+}
 
+\NewDocumentCommand{\addUnderArrow}{O{black} m m m G{-4ex} G{(0,0)} G{(0,0)}}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 - (0,1ex)$) -- ($ (pic cs:#2) + #6 - (0,1ex) + (0,#5) $) -| node[pos=0.25,below, text=#1] {#4} ($(pic cs:#3) + #7 - (0,1ex)$);
+  \end{tikzpicture}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % redefining the format of section, example, etc by lecture number
@@ -131,6 +198,7 @@
 
 \theoremstyle{definition}
 \newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
 %\newtheorem*{definition}{Definition} % no counter for def
 
 %\newtheorem{theorem}{Theorem}[section]
