@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.22)  13 JUL 2025 02:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.22)  15 JUL 2025 02:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -737,6 +737,7 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \c@loopcntr=\count350
 \c@lecnum=\count351
 \c@example=\count352
+\c@exercise=\count353
 ) (./single_var_calculus.aux)
 \openout1 = `single_var_calculus.aux'.
 
@@ -763,16 +764,16 @@ LaTeX Font Info:    ... okay on input line 14.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count353
+\scratchcounter=\count354
 \scratchdimen=\dimen328
 \scratchbox=\box118
-\nofMPsegments=\count354
-\nofMParguments=\count355
+\nofMPsegments=\count355
+\nofMParguments=\count356
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count356
+\MPscratchCnt=\count357
 \MPscratchDim=\dimen329
-\MPnumerator=\count357
-\makeMPintoPDFobject=\count358
+\MPnumerator=\count358
+\makeMPintoPDFobject=\count359
 \everyMPtoPDFconversion=\toks50
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -923,41 +924,41 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 204.
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 204--209
+Underfull \hbox (badness 10000) in paragraph at lines 204--212
 
  []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 217.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--222
+Underfull \hbox (badness 10000) in paragraph at lines 220--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
@@ -970,19 +971,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--229
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 389.
+(hyperref)                removing `math shift' on input line 395.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 389.
+(hyperref)                removing `math shift' on input line 395.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 
  []
 
@@ -991,32 +992,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--417
 [7]
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 481--484
+Underfull \hbox (badness 10000) in paragraph at lines 491--495
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--515
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 514.
+(hyperref)                removing `\mathsurround' on input line 529.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 514.
+(hyperref)                removing `\z@' on input line 529.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 514.
+(hyperref)                removing `superscript' on input line 529.
 
 
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 
 
-[10] (./single_var_calculus.aux)
+[10]
+
+[11] (./single_var_calculus.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1025,18 +1033,18 @@ Package rerunfilecheck Info: File `single_var_calculus.out' has not changed.
 (rerunfilecheck)             Checksum: 2D2C16179B717105BED6BA96B0A7A0B3;3017.
  ) 
 Here is how much of TeX's memory you used:
- 26926 strings out of 475128
- 492428 string characters out of 5765400
- 888934 words of memory out of 5000000
- 49368 multiletter control sequences out of 15000+600000
+ 27615 strings out of 475128
+ 506340 string characters out of 5765400
+ 892280 words of memory out of 5000000
+ 50056 multiletter control sequences out of 15000+600000
  575463 words of font info for 95 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,22n,161p,615b,660s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,22n,161p,615b,825s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on single_var_calculus.pdf (10 pages, 202642 bytes).
+Output written on single_var_calculus.pdf (11 pages, 202112 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

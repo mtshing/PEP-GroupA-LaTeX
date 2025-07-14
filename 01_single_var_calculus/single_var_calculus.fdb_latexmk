@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1752346473.11664 "d:/mings/Documents/PhyO/latex_notes/01_single_var_calculus/single_var_calculus.tex" "single_var_calculus.pdf" "single_var_calculus" 1752346475.92123 0
+["pdflatex"] 1752517211.44852 "d:/mings/Documents/PhyO/latex_notes/01_single_var_calculus/single_var_calculus.tex" "single_var_calculus.pdf" "single_var_calculus" 1752517214.05742 0
   "../.common/common.sty" 1740729917 210 184c69e99b502a68f0b2a65d42ff1d9f ""
-  "../.common/format.sty" 1752335317 9638 22163001ebac3b80719870fe1655521c ""
-  "../.common/math.sty" 1752334975 8316 acc4598926d05c2bb60c8ed9131b67b8 ""
+  "../.common/format.sty" 1752504621 12506 2d4431b822169f4cfb49cb846d451d7a ""
+  "../.common/math.sty" 1752476987 8385 ebf0a4076c86991a35646d1092aa4650 ""
   "../.common/packages.sty" 1752341042 3667 1921c75037861a349f0cfccebee60ea2 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1738919453 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1738919338 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -232,11 +232,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1740216747 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1740216811 1979613 43d45d5fb7c41c4db4ea98a1306967f9 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/01_single_var_calculus/single_var_calculus.tex" 1752346470 23451 ede88aa49c2441cdcd6e6f34ed203529 ""
-  "single_var_calculus.aux" 1752346475 4767 c895b1b5ed5a81abfae39ac230d33cad "pdflatex"
-  "single_var_calculus.out" 1752346475 3017 2d2c16179b717105bed6ba96b0a7a0b3 "pdflatex"
-  "single_var_calculus.sta" 1752346475 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "single_var_calculus.tex" 1752346470 23451 ede88aa49c2441cdcd6e6f34ed203529 ""
+  "d:/mings/Documents/PhyO/latex_notes/01_single_var_calculus/single_var_calculus.tex" 1752517210 23419 fedafff5b92a9fbd351e595f81fd3dd4 ""
+  "single_var_calculus.aux" 1752517213 5404 1b646d96a315d9db45ae7fad267cc727 "pdflatex"
+  "single_var_calculus.out" 1752517213 3017 2d2c16179b717105bed6ba96b0a7a0b3 "pdflatex"
+  "single_var_calculus.sta" 1752517213 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "single_var_calculus.tex" 1752517210 23419 fedafff5b92a9fbd351e595f81fd3dd4 ""
   (generated)
   "single_var_calculus.aux"
   "single_var_calculus.log"

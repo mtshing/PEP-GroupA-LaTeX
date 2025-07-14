@@ -198,26 +198,32 @@ Other than the area under curve, we can also interpret a definite integral as a 
         \aleq{
             \int_b^a f(\blue{x}) \red{\dd{x}} \; 
             \defeq\;  
-            \lim_{\Delta x_i \to 0}\, \cul[YellowGreen]{\tikzmark{s1}\sum_{i=0}^{n-1}}\enspace 
-            \tikzmark{h1}\cul[RoyalBlue]{f(\blue{\xi_i})}\cdot
-            \tikzmark{w1}\cul[red]{\red{\Delta x_i}}
+            \lim_{\Delta x_i \to 0}\, \tkn{s1}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
+            \tkn{h1}{\cul[blue]{f(\blue{\xi_i})}}\cdot
+            \tkn{w1}{\cul[red]{\red{\Delta x_i}}}
         }
-        \addArrow[YellowGreen]{s1}{(10pt,-4.5ex)}{(10pt, -6ex)}{(10pt,-8ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
-        \addArrow[RoyalBlue]{h1}{(10pt,-1.5ex)}{(10pt, -3ex)}{(14pt,-5ex)}{$\substack{\text{height of} \\ \text{strips}}$}
-        \addArrow[red]{w1}{(12pt,-1.5ex)}{(12pt, -3ex)}{(20pt,-5ex)}{$\substack{\text{width of} \\ \text{strips}}$}
+        \addArrow[green]{s1}{(0,-4.5ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
+        {(0,-4ex)}
+        \addArrow[blue]{h1}{(0,-4ex)}{$\substack{\text{height of} \\ \text{strips}}$}
+        {(0,-1.5ex)}{(0,-0.5ex)}
+        \addArrow[red]{w1}{(2ex,-4ex)}{$\substack{\text{width of} \\ \text{strips}}$}
+        {(0,-1.5ex)}{(0,-0.5ex)}
     \\
 
     \item \ul{\nth{2} intepretation - Weighted sum}
         \aleq{
             \int_b^a f(\blue{x}) \red{\dd{x}} \; 
             \defeq\;  
-            \lim_{\Delta x_i \to 0}\, \cul[YellowGreen]{\tikzmark{s2}\sum_{i=0}^{n-1}}\enspace 
-            \tikzmark{h2}\cul[RoyalBlue]{f(\blue{\xi_i})}\cdot
-            \tikzmark{w2}\cul[red]{\red{\Delta x_i}}
+            \lim_{\Delta x_i \to 0}\, \tkn{s2}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
+            \tkn{h2}{\cul[blue]{f(\blue{\xi_i})}} \cdot
+            \tkn{w2}{\cul[red]{\red{\Delta x_i}}}
         }
-        \addArrow[YellowGreen]{s2}{(6pt,-4ex)}{(-4pt, -6ex)}{(-16pt,-7ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
-        \addArrow[RoyalBlue]{h2}{(10pt,-1.5ex)}{(10pt, -3ex)}{(14pt,-6ex)}{$\substack{\text{"weight"}\\\text{assigned to the} \\ \text{interval } [x_i, x_{i+1}]}$}
-        \addArrow[red]{w2}{(12pt,-1.5ex)}{(18pt, -3ex)}{(35pt,-6ex)}{$\substack{\text{length of} \\ \text{interval } \\ [x_i, x_{i+1}]}$}
+        \addArrow[green]{s2}{(-5.5ex,-3.5ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
+        {(0,-4ex)}
+        \addArrow[blue]{h2}{(0,-4ex)}{$\substack{\text{"weight"}\\\text{assigned to the} \\ \text{interval } [x_i, x_{i+1}]}$}
+        {(0,-1.5ex)}{(0,-1.5ex)}
+        \addArrow[red]{w2}{(5ex,-4ex)}{$\substack{\text{length of} \\ \text{interval } \\ [x_i, x_{i+1}]}$}
+        {(0,-1.5ex)}{(0,-1.5ex)}
     \\
 \end{itemize}
 
@@ -435,16 +441,20 @@ $\Rightarrow$ Instantaneous quantities = quantity measured at a "single" time po
     In fact, out of the 4 formulas we usually found in textbook, only 2 of them are independent.
     \aleq{
         \bcase{
-            v(t) &= v(0) + at \\
-            s(t) &= s(0) + v(0)t + \half at^2 \tikzmark{suvat1}\\ 
-            s(t)-s(0) &= \dfrac{v(t)-v(0)}{2}t \\ 
-            v(t)^2 - v(0)^2 &= 2a[s(t)-s(0)] \tikzmark{suvat2}
+            v(t) &= v(0) + at \tkm{suvat1}\\
+            s(t) &= s(0) + v(0)t + \half at^2 \tkm{suvat2}\\ 
+            s(t)-s(0) &= \dfrac{v(t)-v(0)}{2}t \tkm{suvat3}\\ 
+            v(t)^2 - v(0)^2 &= 2a[s(t)-s(0)] \tkm{suvat4}
         }
     }
-    \addArrow[red]{suvat1}{(8pt,0.5ex)}{(36pt, 3ex)}{(76pt,3ex)}{$\substack{\text{Definition}\\\text{nothing to explain}}$}
-    \addArrow[red]{suvat1}{(8pt,5ex)}{(36pt, 3.5ex)}{(76pt,3ex)}{}
-    \addArrow[YellowGreen]{suvat2}{(8pt,0.5ex)}{(36pt, 3ex)}{(86pt,3ex)}{$\substack{\text{Can be derived by}\\\text{substitution of the above 2}}$}
-    \addArrow[YellowGreen]{suvat2}{(8pt,5ex)}{(36pt, 3.5ex)}{(86pt,3ex)}{}
+    \addArrow[red]{suvat1}{(20ex,-0.5ex)}
+    {$\substack{\displaystyle\text{Definition}\\\displaystyle\text{nothing to explain}}$}
+    {(1ex,0.5ex)}{(4ex,-1ex)}
+    \addArrow[red]{suvat2}{(8ex,0.5ex)}{}{(1ex,0.5ex)}
+    \addArrow[green]{suvat3}{(16ex,-0.5ex)}
+    {$\substack{\displaystyle\text{Can be derived by}\\\displaystyle\text{substitution of the above 2}}$}
+    {(1ex,0.5ex)}{(6ex,-1ex)}
+    \addArrow[green]{suvat4}{(8ex,0.5ex)}{}{(1ex,0.5ex)}
 
     Having only 2 independent equations implies that we can at most solve 2 unknowns out of the 5 alphabets "SUVAT".
     So in such standard question, you should always able to find the info of at least 3 of the alphabets.
@@ -477,36 +487,41 @@ Take limit to the time interval $\Delta t = t_{i+1}-t_i \to 0$, then $t_{i+1}\ap
     \text{W.D} &\rightarrow \int \frac{F(t)+F(t)}{2} \cdot \qty[\dvv{s(t)}{t}] \dd{t}\\
     &= \int F(t)\cdot v(t) \dd{t} \\
     &= \int F(t) \cdot \dd{[s(t)]} \\
-    &= \int \tikzmark{Fstar}\cul[RoyalBlue]{F^*[s(t)]} \dd{[s(t)]}
+    &= \int \tkn{Fstar}{\cul[blue]{F^*[s(t)]}} \dd{[s(t)]}
 }\\\\
-\addArrow[RoyalBlue]{Fstar}{(20pt,-2ex)}{(20pt, -4ex)}{(20pt,-6ex)}
+\addArrow[blue]{Fstar}{(0,-3.5ex)}
 {$\substack{\displaystyle\text{More commonly, force is provided} \\ \displaystyle\text{as a function of displacement}}$}
+{(0,-2ex)}{(0,-1.5ex)}
 
 
 \begin{example} Gravitational force \& potential energy (PE)
 
     \aleq{
-        F(\tikzmark{Fr}\red{r}) = -\frac{GMm}{\red{r}^2}
+        F(\tkn{Fr}{\red{r}}) = -\frac{GMm}{\red{r}^2}
     }\\
-    \addArrow[red]{Fr}{(4pt,-1.5ex)}{(4pt, -3.5ex)}{(20pt,-5ex)}{Force is a function of distance from the masses}
+    \addArrow[red]{Fr}{(0,-3.5ex)}
+    {Force is a function of distance from the masses}
+    {(0,-1ex)}{(0,-0.5ex)}
     
     Then the W.D. by gravitational force from position $r_1$ to $r_2$ can be computed by integrating the force
     \aleq{
         \text{W.D.} &= \int_{r_1}^{r_2} -\frac{GMm}{r^2}\dd{r} \\
         &= \qty(\frac{GMm}{r_2}) - \qty(\frac{GMm}{r_1}) \\
-        &= \tikzmark{PEminus}\red{-}\qty(\text{GPE at }r_2 - \text{GPE at }r_1)
-    }\\
-    \addArrow[red]{PEminus}{(5pt,-1ex)}{(5pt, -2.5ex)}{(10pt,-5.5ex)}
+        &= \tkn{PEminus}{\red{-}}\qty(\text{GPE at }r_2 - \text{GPE at }r_1)
+    }\\\\
+    \addArrow[red]{PEminus}{(0,-3ex)}
     {$\substack{\displaystyle\text{W.D. by gravitation } \Rightarrow \text{ loss in PE} \\ \displaystyle\text{W.D. against gravitation }\Rightarrow \text{ gain in PE}}$}
-    
+    {(0,-0.5ex)}{(0,-2ex)}
+
     Reversely, we take the \red{minus} differentiation to the PE formula to find the force due to gravitation.
 
     \aleq{
         \text{PE} &= -\frac{GMm}{r} \\
-        \text{Gravitational force} &= \tikzmark{Fminus}\red{-} \dvv{r}(\text{PE}) = -\frac{GMm}{r^2}
+        \text{Gravitational force} &= \tkn{Fminus}{\red{-}} \dvv{r}(\text{PE}) = -\frac{GMm}{r^2}
     }\\
-    \addArrow[red]{Fminus}{(5pt,-1ex)}{(5pt, -3.5ex)}{(10pt,-4.5ex)}
+    \addArrow[red]{Fminus}{(0,-3.5ex)}
     {Add negative sign for attractive force}
+    {(0,-0.5ex)}{(0,-0.5ex)}
 
 \end{example}
 
