@@ -139,7 +139,7 @@
 % [arrow head offset (tuple)], [text offset (tuple)] 
 \NewDocumentCommand{\addArrow}{O{black} m m m G{(0,0)} G{(0,0)}}{
 \begin{tikzpicture}[remember picture,overlay]
-    \node[text=#1] at ($(pic cs:#2) + #3 + #5 + #6 $) {#4};
+    \node[text=#1, align=center] at ($(pic cs:#2) + #3 + #5 + #6 $) {#4};
     \draw[arrows=->, draw=#1]    ($(pic cs:#2) + 0.7*#3 + #5 $) -- ($ (pic cs:#2) + #5 $);
   \end{tikzpicture}
 }
@@ -149,13 +149,13 @@
 % [horz line height offset], [arrow tail offset (tuple)], [arrow head offset (tuple)]
 \NewDocumentCommand{\addAboveArrow}{O{black} m m m G{4ex} G{(0,0)} G{(0,0)}}{
   \begin{tikzpicture}[remember picture,overlay]
-    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 + (0,2ex)$) -- ($ (pic cs:#2) + #6 + (0,2ex) + (0,#5) $) -| node[pos=0.25,above, text=#1] {#4} ($(pic cs:#3) + #7 + (0,2ex)$);
+    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 + (0,2ex)$) -- ($ (pic cs:#2) + #6 + (0,2ex) + (0,#5) $) -| node[pos=0.25,above, text=#1, align=center] {#4} ($(pic cs:#3) + #7 + (0,2ex)$);
   \end{tikzpicture}
 }
 
 \NewDocumentCommand{\addUnderArrow}{O{black} m m m G{-4ex} G{(0,0)} G{(0,0)}}{
   \begin{tikzpicture}[remember picture,overlay]
-    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 - (0,1ex)$) -- ($ (pic cs:#2) + #6 - (0,1ex) + (0,#5) $) -| node[pos=0.25,below, text=#1] {#4} ($(pic cs:#3) + #7 - (0,1ex)$);
+    \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 - (0,1ex)$) -- ($ (pic cs:#2) + #6 - (0,1ex) + (0,#5) $) -| node[pos=0.25,below, text=#1, align=center] {#4} ($(pic cs:#3) + #7 - (0,1ex)$);
   \end{tikzpicture}
 }
 
