@@ -14,7 +14,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm} % theorem environment
 \usepackage{mathtools}
-\usepackage{bm} % bold math symbol
+%\usepackage{bm} % bold math symbol
 \usepackage{cancel} % for cancel/cross out line on equation
 
 \usepackage{physics} % many short form to math symbols
@@ -26,7 +26,8 @@
 % \grad, \div, \curl
 % also some matrix notation
 
-\usepackage[super]{nth} % write 1st, 2nd... using command \nth{1}, \nth{2},,,
+% write 1st, 2nd... using command \nth{1}, \nth{2}, ...
+\usepackage[super]{nth} 
 
 %\usepackage{algorithm2e} % pseudocode environment
 %\usepackage{chemformula} % chemical symbol, equations
@@ -80,17 +81,55 @@
 %\usepackage{makecell} % allow line break within a cell in tables
 %\usepackage{multicol}
 
-% dvipsnames = more default colour name, table = for colouring table
+% dvipsnames = more default colour name
+% table = for colouring table
 \usepackage[dvipsnames, table]{xcolor} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % figure thingy
 
-\usepackage{graphicx}
-\usepackage{subfig}
+% cant use \includegraphics without this
+\usepackage{graphicx} 
+
+\usepackage{wrapfig}
+
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelformat=empty} % default to be without (a), (b) in subcaption
+% standard syntax for making a grid of img. Use \\ to open new row
+%\begin{figure}
+%   \begin{subfigure}{.5\textwidth}
+%       \centering
+%       \includegraphics[height=3cm]{img_file_name}
+%   \caption{Test subfigure 1}
+%   \end{subfigure}
+%   %
+%   \begin{subfigure}{.5\textwidth}
+%       \centering
+%       \includegraphics[height=3cm]{img_file_name}
+%       \caption{Test subfigure 2}
+%   \end{subfigure}
+%   %
+%   \caption{Two subfigures}
+%\end{figure}
+
+% use minipage to divide into grids of img and text
+%
+%\begin{center}
+%    \begin{minipage}{0.48\linewidth}
+%        \centering
+%        \includegraphics[width=\linewidth]{example-image-a}
+%        \caption{Dummy Caption A.}
+%    \end{minipage}\hfill
+%        \begin{minipage}{0.48\linewidth}
+%        \centering
+%        \includegraphics[width=\linewidth]{example-image-b}
+%        \caption{Dummy Caption B.}
+%    \end{minipage}
+%\end{center}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tikz thingy
 \usepackage{tikz}
 \usepackage{calc}

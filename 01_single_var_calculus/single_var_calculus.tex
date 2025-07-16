@@ -24,16 +24,6 @@
     \end{itemize}
 \end{overview}
 
-\iffalse
-\begin{notation}
-    \begin{enumerate}
-        %
-        \item blah
-        %
-    \end{enumerate}
-\end{notation}
-\fi
-
 
 % content begins here
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,13 +47,31 @@ $x$ can approach $a$ from either the $+x$ or $-x$ direction.
 Therefore there can be two different limits.
 
 \begin{itemize}
-    \item \underline{Right hand limit} : $\displaystyle \lim_{x\to a^\red{+}} f(x) = L$
     \item \underline{Left hand limit}\ : $\displaystyle \lim_{x\to a^\red{-}} f(x) = L$
+    \item \underline{Right hand limit} : $\displaystyle \lim_{x\to a^\red{+}} f(x) = L$
 \end{itemize}
 
-\bf{By definition}, we say $f(x)$ has a limit at $a$ only if \bf{both side limits at $a$ exist}.
+\bf{By definition}, we say $f(x)$ has a limit at $a$ only if \bf{both side limits at $a$ exist and equal}.
 
-\insertFig{examples of limit not exist}
+\begin{figure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \includegraphics[height=10em]{lim1}
+        \caption{\centering  L.H. limit $\to -\infty$ \\ R.H. limit $=L$ \\$\therefore$ Limit not exists at $a$}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \includegraphics[height=10em]{lim2}
+        \caption{\centering  L.H. limit $=L$ \\ R.H. limit $\to -\infty$ \\ $\therefore$ Limit not exists at $a$}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \includegraphics[height=10em]{lim3}
+        \caption{\centering L.H. limit $=L_1$ \\ R.H. limit $=L_2$ \\ $\therefore$ Limit not exists at $a$}
+    \end{subfigure}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%
 \subsubsection{Evaluation on Limits}
@@ -89,7 +97,7 @@ These formula are useful for resolving the limits of more complicated functions.
     \item \ul{Definition of natural exponential function} : $\displaystyle \lim_\red{n\to +\infty} \qty(1+\frac{x}{n})^n = e^x$
 \end{itemize}
 
-\bf{Side note:} The formulas may look trivial, 
+\bf{Note:} The formulas may look trivial, 
 but they do require rigorous proofs to show that they work on all kinds of functions, 
 which is a topic belonging to \it{mathematical analysis}.
 
@@ -100,13 +108,28 @@ which is a topic belonging to \it{mathematical analysis}.
 The definition of differentiation on a function $f(x)$ is exactly evaluating the following limit:
 
 \aleq{
-    \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} \ \defeq\  \dv{x} f(x) \text{\it{ or} } f'(x)
+    \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} \ \defeq\  \dv{x} f(x) \ \text{ or }\  f'(x)
 }
-Both notation $\dv{x}$ and $f'(x)$ are commonly used. I will stick to $\dv{x}$ because it is more obvious to read. 
+(Both notation $\dv{x}$ and $f'(x)$ are commonly used, but I will stick to $\dv{x}$ for better readability.)\\ 
 
 Geometrically, differentiation means evaluating the slope of (tangent lines of) the function.
 
-\insertFig{from secant to tangent}
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{secant}
+    \end{minipage}
+    %
+    \hspace{0.05\textwidth}
+    %
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \red{
+            Slope of line $\overline{AB}  = \dfrac{f(x+\Delta x) - f(x)}{\Delta x}$ \\[1em]
+            When $\Delta x \to 0$, $\overline{AB}$ become a tangent line at $x$.
+        }
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -126,13 +149,29 @@ These formula are important for evalutaing differentiation of more complicated f
         (Note that quotient rule is the same as applying product rule on $\displaystyle \dvv{x}\qty[f(x)\cdot \inv{g(x)}]$)
     
     \item \ul{Chain rule} : $\dvv{x}[g(f(x))] = \dvv{[f(x)]}g(f(x)) \cdot \dvv{x}f(x)$
-    
-    \item \ul{Inverse function} : $\dvv{x} f^{-1}(x) = \dinv{\eval{\dvv{y}f(y)}_{y=f^{-1}(x)}}$
-        \insertFig{inverse function}
+\end{itemize}
 
+\begin{minipage}{0.6\textwidth}
+    \begin{itemize}
+    \item \ul{Inverse function} : $\dvv{x} f^{-1}(x) = \dinv{\eval{\dvv{y}f(y)}_{y=f^{-1}(x)}}$
+        
+    
     \item \ul{Polynomial function} : $\dvv{x} x^n = nx^{n-1}$
     
-    \item \ul{Trigonometric function} : $\dvv{x} 
+
+    \end{itemize}
+\end{minipage}
+%
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{inv_func}
+    \\
+    \scriptsize Inverse function = Diagonal flip
+\end{minipage}
+
+
+\begin{itemize}
+        \item \ul{Trigonometric function} : $\dvv{x} 
         \begin{cases} \sin{x}\\ \cos{x}\\ \tan{x} \end{cases}
         =\;
         \begin{cases} \cos{x}\\ -\sin{x}\\ \sec^2{x} \end{cases}
@@ -146,7 +185,6 @@ These formula are important for evalutaing differentiation of more complicated f
 \end{itemize}
 
 
-
 %%%%%%%%%%%%%%%%%%%
 \subsection{Integration}
 
@@ -155,7 +193,11 @@ These formula are important for evalutaing differentiation of more complicated f
 The geometrical meaning to definite integral is to compute the area under curve. 
 The construction is through the following steps:
 
-\insertFig{area under curve divide into strips}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{int_slice}
+\end{figure}
+
 
 \begin{enumerate}
     \item Choose $n-1$ points between $[a,b]$:
@@ -166,7 +208,26 @@ The construction is through the following steps:
     \item Within each strip, pick an arbitrary point \blue{$x=\xi_i$} at its base. 
     The strip's height can be approximated as $\approx f(\blue{\xi_i})$.
 
-    \insertFig{stripe height}
+    \begin{center}
+        \begin{minipage}{0.3\textwidth}
+            \centering
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.6\textwidth]{int_strip}
+            \end{figure}
+        \end{minipage}
+        %
+        $\quad \Rightarrow \quad$
+        %
+        \begin{minipage}{0.3\textwidth}
+            \centering
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.4\textwidth]{int_strip2}
+            \end{figure}
+        \end{minipage}
+    \end{center}
+    
 
     \item The approximated area of each strip is then (height)$\times$(base) $\approx f(\blue{\xi_i})\times [\red{x_{i+1}-x_i}]$.\\
         $\Rightarrow$ Total area under curve = Summing the areas of all strips 
@@ -193,63 +254,95 @@ Here comes the formal definition:
 
 Other than the area under curve, we can also interpret a definite integral as a weighted sum. This is in fact more useful in physics' applications.
 
-\begin{itemize}
-    \item \ul{\nth{1} intepretation - Area under curve}
-        \aleq{
-            \int_b^a f(\blue{x}) \red{\dd{x}} \; 
-            \defeq\;  
-            \lim_{\Delta x_i \to 0}\, \tkn{s1}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
-            \tkn{h1}{\cul[blue]{f(\blue{\xi_i})}}\cdot
-            \tkn{w1}{\cul[red]{\red{\Delta x_i}}}
-        }
-        \addArrow[green]{s1}{(0,-4.5ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
-        {(0,-4ex)}
-        \addArrow[blue]{h1}{(0,-4ex)}{$\substack{\text{height of} \\ \text{strips}}$}
-        {(0,-1.5ex)}{(0,-0.5ex)}
-        \addArrow[red]{w1}{(2ex,-4ex)}{$\substack{\text{width of} \\ \text{strips}}$}
-        {(0,-1.5ex)}{(0,-0.5ex)}
+\begin{minipage}{0.7\textwidth}
+    \begin{itemize}
+        \item \ul{\nth{1} intepretation - Area under curve}
+            \aleq{
+                \int_b^a f(\blue{x}) \red{\dd{x}} \; 
+                \defeq\;  
+                \lim_{\Delta x_i \to 0}\, \tkn{s1}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
+                \tkn{h1}{\cul[blue]{f(\blue{\xi_i})}}\cdot
+                \tkn{w1}{\cul[red]{\red{\Delta x_i}}}
+            }
+            \addArrow[green]{s1}{(0,-4.5ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
+            {(0,-4ex)}
+            \addArrow[blue]{h1}{(0,-4ex)}{$\substack{\text{height of} \\ \text{strips}}$}
+            {(0,-1.5ex)}{(0,-0.5ex)}
+            \addArrow[red]{w1}{(2ex,-4ex)}{$\substack{\text{width of} \\ \text{strips}}$}
+            {(0,-1.5ex)}{(0,-0.5ex)}
+        \\
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+    \hfill \\[1.5em]
+    \centering
+    \includegraphics[width=0.6\textwidth]{int_strip}
     \\
+    \scriptsize \hspace{5ex} Interpret as sum of area 
+\end{minipage}
 
-    \item \ul{\nth{2} intepretation - Weighted sum}
-        \aleq{
-            \int_b^a f(\blue{x}) \red{\dd{x}} \; 
-            \defeq\;  
-            \lim_{\Delta x_i \to 0}\, \tkn{s2}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
-            \tkn{h2}{\cul[blue]{f(\blue{\xi_i})}} \cdot
-            \tkn{w2}{\cul[red]{\red{\Delta x_i}}}
-        }
-        \addArrow[green]{s2}{(-5.5ex,-3.5ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
-        {(0,-4ex)}
-        \addArrow[blue]{h2}{(0,-4ex)}{$\substack{\text{"weight"}\\\text{assigned to the} \\ \text{interval } [x_i, x_{i+1}]}$}
-        {(0,-1.5ex)}{(0,-1.5ex)}
-        \addArrow[red]{w2}{(5ex,-4ex)}{$\substack{\text{length of} \\ \text{interval } \\ [x_i, x_{i+1}]}$}
-        {(0,-1.5ex)}{(0,-1.5ex)}
+
+\begin{minipage}{0.7\textwidth}
+    \begin{itemize}
+        \item \ul{\nth{2} intepretation - Weighted sum}
+            \aleq{
+                \int_b^a f(\blue{x}) \red{\dd{x}} \; 
+                \defeq\;  
+                \lim_{\Delta x_i \to 0}\, \tkn{s2}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
+                \tkn{h2}{\cul[blue]{f(\blue{\xi_i})}} \cdot
+                \tkn{w2}{\cul[red]{\red{\Delta x_i}}}
+            }
+            \addArrow[green]{s2}{(-5.5ex,-3.5ex)}{$\substack{\text{Sum} \\ \text{them all}}$}
+            {(0,-4ex)}
+            \addArrow[blue]{h2}{(0,-4ex)}{$\substack{\text{"weight"}\\\text{assigned to the} \\ \text{interval } [x_i, x_{i+1}]}$}
+            {(0,-1.5ex)}{(0,-1.5ex)}
+            \addArrow[red]{w2}{(5ex,-4ex)}{$\substack{\text{length of} \\ \text{interval } \\ [x_i, x_{i+1}]}$}
+            {(0,-1.5ex)}{(0,-1.5ex)}
+        \\
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+    \hfill \\[1.5em]
+    \centering
+    \includegraphics[trim=-6ex 0 0 0, width=0.9\textwidth]{int_weight}
     \\
-\end{itemize}
+    \scriptsize \hspace{5ex} Interpret as weighted sum 
+\end{minipage}
 
-\insertFig{graphical diff}
+\vspace{2em}
 
 
+\begin{example} Distribution graph of students' heights\\
 
-\begin{example} Distribution graph of students' heights\\[1em]
-
-    Suppose a class of 18 students have the following heights (in cm):
+    Suppose a class of 20 students have the following heights (in cm):
 
     \begin{center}
-        162 163 163 163 165 165 165 165 167 167 167 170 170 172 172 172 174 175
+        165 165 166 167 167 167 168 168 169 169 169 169 170 170 172 172 172 173 174 174
     \end{center}
 
     Their total height is the the sum of each possible heights but weighted by number of people of that height:
     \aleq{
         \text{Total height} &= \sum \text{"weight"} \times \text{height} \\
         &= \sum_h \qty(\substack{\text{Number of students}\\\text{with height } h})\times \qty( \text{height }h) \\
-        &= 1 \times 162 + 3 \times 163 + 4 \times 165 + 3 \times 167 + 2\times 170 + 3\times 172 + 1\times 174+1\times 175
+        &= 2 \times 165 + 1 \times 166 + 3 \times 167 + 2 \times 168 + 4\times 169 \\
+            &\quad + 2\times 170 + 3\times 172 + 1\times 173 + 2\times 174
     }
 
-    If we plot out the bar chart, we can see the similarity to area under curve - 
-    Total height of students = Sum of all bars' height ~ Total area under every bar. 
+    If we plot out the bar chart, we can see the similarity to area under curve: \\ 
+    (Total height of students) = (Sum of all bars' height) $\times 1$ = (Total area under every bar). 
 
-    \insertFig{bar chart}
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{bar1}
+        \end{minipage}
+        %
+        $\Rightarrow$
+        %
+        \begin{minipage}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{bar2}
+        \end{minipage}
+    \end{center}
+    
 
 \end{example}
 
@@ -275,11 +368,14 @@ In contrast to definite integral, the definition of indefinite integral is purel
     then $F(x)$ is called the \bf{antiderivative} or \bf{primitive} of $f(x)$.
 
     \item The \bf{indefinite integral} of $f(x)$ is the \bf{set of all antiderivative of $f(x)$}. 
+    
 \end{itemize}
 
 The emphasis is on the term "set" because $f(x)$ always has infinitely many antiderivatives.
 This is also the reason why a constant $C$ should always be added after computing indefinite integral.
 
+\newpage
+For example,
 \aleq{
     f(x) &= x^2 \\
     \Rightarrow \int f(x) \dd{x} &= \frac{x^3}{3} \red{\ +\ C} \\
@@ -404,7 +500,21 @@ In secondary school textbook, we have the definitions:
 
 But the term "average" is never accurate to describe things.
 
-\insertFig{high varying distance}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{vary_s}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \blue{
+            Average velocity $\dfrac{\Delta s}{\Delta t}$ \\[1em]
+            cannot describe drastic motion.
+        }
+    \end{minipage}
+\end{center}
+
 
 For accurate description, we need to shorten the time separation between two measurements as much as possible, i.e. limit to $0$.\\
 $\Rightarrow$ Instantaneous quantities = quantity measured at a "single" time point.
@@ -488,10 +598,10 @@ Take limit to the time interval $\Delta t = t_{i+1}-t_i \to 0$, then $t_{i+1}\ap
     &= \int F(t)\cdot v(t) \dd{t} \\
     &= \int F(t) \cdot \dd{[s(t)]} \\
     &= \int \tkn{Fstar}{\cul[blue]{F^*[s(t)]}} \dd{[s(t)]}
-}\\\\
-\addArrow[blue]{Fstar}{(0,-3.5ex)}
+}
+\addArrow[blue]{Fstar}{(18ex,3.5ex)}
 {$\substack{\displaystyle\text{More commonly, force is provided} \\ \displaystyle\text{as a function of displacement}}$}
-{(0,-2ex)}{(0,-1.5ex)}
+{(4ex,2ex)}{(12ex,-1ex)}
 
 
 \begin{example} Gravitational force \& potential energy (PE)
@@ -539,21 +649,70 @@ Momentum and impulse is in fact an equivalent description to Newton's \nth{2} La
     \end{tabular}
 \end{center}
 
-Recall that the definition of impulse as
-\aleq{
-    I &\sim F\cdot \Delta t \\
-    &= \qty(\text{Applied Force})\cdot \qty(\text{Duration}) \\
-    &= \text{Area under curve in F-t graph} \\
-    &= \text{Change in momentum}
-}
 
-\insertFig{impule, bar}
+Recall that the definition of impulse as \\[-2.5em]
+\begin{center}
+    \begin{minipage}{0.5\textwidth}
+        \aleq{
+            I &\sim F\cdot \Delta t \\
+            &= \qty(\text{Applied Force})\cdot \qty(\text{Duration}) \\
+            &= \text{Area under curve in F-t graph} \\
+            &= \text{Change in momentum}
+        }
+    \end{minipage}
+    %
+    \hspace{0.05\textwidth}
+    %
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imp_naive}
+    \end{minipage}
+    \hfill
+\end{center}
 
 But in reality, when objects collide, the applied force is not constant during the whole time.
+Imagine what should actually happen when you hit a baseball with a bat:
 
-\insertFig{impulse, distribution}
 
-So in general, force should be taken as a function of time. \\
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{imp_real}
+    \end{minipage}
+    %
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \green{\ul{This is the F-t graph in reality}}
+    \end{minipage}
+    \\[1em]
+    %
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=8em]{hit1}\\
+        \ul{First contact} \\
+        Contact area $\sim 0$ \\
+        $\Rightarrow F\sim 0$ 
+    \end{minipage}
+    %
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=8em]{hit2}
+        \ul{Strongest impact} \\
+        Contact area $=$ max \\
+        $\Rightarrow F= $ max 
+    \end{minipage}
+    %
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=8em]{hit3}
+        \ul{Right before separate} \\
+        Contact area $\sim 0$ \\
+        $\Rightarrow F\sim 0$ 
+    \end{minipage}
+\end{center}
+
+\hfill \\
+\bf{In general, force should be taken as a function of time.} \\
 
 Similar to how we computed W.D., 
 we can first consider the change in momentum in a very short time interval $[t_i, t_{i+1}]$
