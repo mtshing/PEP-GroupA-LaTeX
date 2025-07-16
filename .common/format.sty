@@ -25,6 +25,13 @@
 % \Aboxed{...} = box around whole line of equation. 
 % from mathtools package
 
+% simple quoting text by centering and italic
+\newcommand{\quoting}[1]{
+\begin{center}
+    \small \textit{#1}
+\end{center}    
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % section titles should all be capitalized, even for subsections
 
@@ -56,10 +63,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % (Everything related to colour)
-% coloured text, from xcolor package
-% can be used in math mode
-% colour definition still needed to be called in full name when used in tikz
-% ***Use these as the 4 main colour, and the default gray
+% coloured text from xcolor package
+
+% define shortcut to non-default colour name
+% can be used in anywhere, including text, equation mode and tikz
+% ***Use these as the main colour
 
 % red = default red
 \colorlet{blue}{RoyalBlue}
@@ -69,7 +77,8 @@
 % gray = default gray
 
 
-% shortcut for coloring text
+% shortcut for coloured text
+\newcommand{\black}[1]{{\color{black}{#1}}}
 \newcommand{\red}[1]{{\color{red}{#1}}}
 \newcommand{\green}[1]{{\color{green}{#1}}}
 \newcommand{\blue}[1]{{\color{blue}{#1}}}
@@ -83,6 +92,10 @@
 % \xcancel = cross out, \cancelto{toValue}{Expression} = arrow
 \newcommand{\ccancel}[2][black]{
     \renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\newcommand{\cbcancel}[2][black]{
+    \renewcommand\CancelColor{\color{#1}}\cbancel{#2}}
+\newcommand{\xbcancel}[2][black]{
+    \renewcommand\CancelColor{\color{#1}}\xbancel{#2}}
 \newcommand{\ccancelto}[3][black]{
     \renewcommand\CancelColor{\color{#1}}\cancelto{#2}{#3}}
 
@@ -92,7 +105,11 @@
 \newcommand{\cunderline}[2][black]{{\color{#1}\underline{{\color{black}#2}}}}
 \newcommand{\cul}[2][black]{\cunderline[#1]{#2}}
 
-% coloured underbrace with black main body
+% coloured underset text + underline black main body
+\newcommand{\cunderset}[3][black]{\underset{\color{#1} #3}{\cul[#1]{#2}}}
+\newcommand{\cus}[3][black]{\cunderset[#1]{#2}{#3}}
+
+% coloured underbrace text + black main body
 \newcommand{\cunderbrace}[3][black]{{\color{#1}\underbrace{\color{black}#2}_{#3}}}
 \newcommand{\cub}[3][black]{\cunderbrace[#1]{#2}{#3}}
 
@@ -290,15 +307,17 @@
     }
 
 
-\newenvironment{notation}{%
+% Notation box can be abused to be boxed enviornment
+\newenvironment{notation}[1][Notations:]{%
         \vskip 0.5em
         \hspace{0.04\textwidth}\begin{minipage}{0.92\textwidth}
-        \begin{framed}
-        \textit{Notations:}
+        \begin{oframed}
+        \underline{\textit{#1}}
         \vskip 0.5em
     }
     {
-        \end{framed}
+        \vskip 0.5em
+        \end{oframed}
         \end{minipage}
     }
 
@@ -318,12 +337,7 @@
     \vskip 0.5em
 }
 
-% simple quoting text by centering and italic
-\newcommand{\quoting}[1]{%
-\begin{center}
-    \small \textit{#1}
-\end{center}    
-}
+
 
 
 

@@ -32,13 +32,21 @@
 \newcommand{\anticlockwise}{\circlearrowleft} % anticlockwise cicle arrow
 \newcommand{\clockwise}{\circlearrowright} % clockwise circle arrow
 
+\newcommand{\lhs}{\text{L.H.S.}} % left hand side
+\newcommand{\rhs}{\text{R.H.S.}} % right hand side
 
+\newcommand{\Nth}{$^{th}$} % nth for non number
+
+\renewcommand{\Re}{\operatorname{Re}} % use amsmath default for real/img operator
+\renewcommand{\Im}{\operatorname{Im}}
 
 % align* environment shortcut
 % cannot separate open/close for align* because it always scan for \end
 \newcommand{\aleq}[1]{\begin{align*} #1 \end{align*}}
 
-% set all matrix using parenthesis matrix
+% matrix without parenthesis = used as an array
+\newcommand{\mat}[1]{\begin{matrix} #1 \end{matrix}}
+% convention: use parenthesis notation for all matrix
 \newcommand{\bmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
 % determinant
 \newcommand{\bdet}[1]{\begin{vmatrix} #1 \end{vmatrix}}
