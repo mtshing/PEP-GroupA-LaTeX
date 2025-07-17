@@ -15,8 +15,6 @@
 
 \maketitle
 
-%\heading{Lecture}{Tony}
-
 \begin{overview}
     \begin{itemize}
         \item Comparison between single variable functions \& multivariable functions
@@ -64,12 +62,15 @@ They are the functions that you have already learnt.
 For example, 
 \aleq{
     f(x) = \sqrt{x-1} \qquad \Rightarrow \qquad 
-    \bcase{\text{Domain } &= \text{ Any real number }\geq 1 \\
-    \text{Image } &= \text{ Any real number }\geq 0}
+    \bcase{
+        \text{\red{Domain} } &= \text{ Any real number }\geq 1 \\
+        \text{\blue{Image} } &= \text{ Any real number }\geq 0
+    }
 }
 
-
-\insertFig{number line map}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{sqrt_x-1}
+\end{center}
 
 
 %%%%%%%%%%%%%%
@@ -83,11 +84,32 @@ For example,
 For example,
 \aleq{
     f(x,y) = \sqrt{1-xy} \qquad \Rightarrow \qquad 
-    \bcase{\text{Domain } &= \text{Any pair of values }x,y\text{ where } xy\leq 1 \\
-    \text{Image } &= \text{ Any real number }\geq 0}
+    \bcase{
+        \text{\red{Domain} } &= \text{Any pair of values }x,y\text{ where } xy\leq 1 \\
+        \text{\blue{Image} } &= \text{ Any real number }\geq 0
+    }
 }
 
-\insertFig{1-sqrt(xy)}
+\begin{center}
+    \begin{minipage}{0.15\textwidth}
+        \red{
+            $(x,y)$ can be\\
+            any point in\\
+            this region
+        }
+    \end{minipage}
+    %
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[height=9em]{sqrt_1-xy_D}
+    \end{minipage}
+    %
+    \green{$\xrightarrow{\hspace{0.2\textwidth}}$}
+    %
+    \begin{minipage}{0.22\textwidth}
+        \centering
+        \includegraphics[height=9em]{sqrt_1-xy_I}
+    \end{minipage}
+\end{center}
 
 \ul{Example in Physics:}
 \begin{itemize}
@@ -95,11 +117,20 @@ For example,
     \aleq{
         U(x,y,z) = -\frac{GMm}{r} = -\frac{GMm}{\sqrt{x^2+y^2+z^2}}
     }
-
-    \item Density distribution in object $\rho(x,y,z)$
-    \insertFig{density distribution}
 \end{itemize}
 
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{itemize}
+        \item Density distribution in object $\rho(x,y,z)$
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+    \begin{figure}[t]
+        \strut\vspace*{-\baselineskip}\newline
+        \includegraphics[width=0.75\textwidth]{density}
+    \end{figure}
+    
+\end{minipage}
 
 %%%%%%%%%%%%%%
 \subsection{Single Variable Vector Function}
@@ -112,11 +143,40 @@ For example,
 For example,
 \aleq{
     \vvec{r}(t) = (x(t), y(t)) = (t^2, 3t^3) \qquad \Rightarrow \qquad 
-    \bcase{\text{Domain } &= \text{Any real number } t \\
-    \text{Image } &= (x,y) \text{ pairs restricting on } x=\qty(\frac{y}{3})^{\frac{2}{3}}}
+    \bcase{
+        \text{\red{Domain} } &= \text{Any real number } t \\
+        \text{\blue{Image} } &= (x,y) \text{ pairs restricting on } x=\qty(\frac{y}{3})^{\frac{2}{3}}
+    }
 }
 
-\insertFig{t2, 3t3}
+\begin{center}
+    \begin{minipage}{0.15\textwidth}
+        \red{
+            $t$ can be any\\
+            real number
+        }
+    \end{minipage}
+    %
+    \begin{minipage}{0.15\textwidth}
+        \includegraphics[height=9em]{t2_3t3_D}
+    \end{minipage}
+    %
+    \green{$\xrightarrow{\hspace{0.15\textwidth}}$}
+    %
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[height=9em]{t2_3t3_I}
+    \end{minipage}
+    %
+    \begin{minipage}{0.15\textwidth}
+        \blue{
+            \aleq{
+                x=t^2 &\text{ and } y=3t^3 \\
+                \Rightarrow x &= \qty(\dfrac{y}{3})^{\frac{3}{2}}
+            }
+        }
+    \end{minipage}
+\end{center}
 
 \ul{Example in Physics:}
 \begin{itemize}
@@ -141,11 +201,34 @@ For example,
 For example,
 \aleq{
     \vvec{r}(u,v) = (r_1(u,v), r_2(u,v)) = (u^2+v^2, u-1-v^2) \qquad \Rightarrow \qquad 
-    \bcase{\text{Domain } &= \text{The whole u-v plane} \\
-    \text{Image } &= \text{ Region depicted below}}
+    \bcase{
+        \text{\red{Domain} } &= \text{The whole u-v plane} \\
+        \text{\blue{Image} } &= \text{ Region depicted below}
+    }
 }
 
-\insertFig{u2v2}
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[height=7em]{ruv_D}
+    \end{minipage}
+    %
+    \green{$\xrightarrow{\hspace{0.2\textwidth}}$}
+    %
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[height=9em]{ruv_I}
+    \end{minipage}
+    %
+    \begin{minipage}{0.15\textwidth}
+        \blue{
+            Any point in\\
+            this region,\\
+            estimated on\\
+            computer
+        }
+    \end{minipage}
+\end{center}
 
 \ul{Example in Physics:}
 \begin{itemize}
@@ -173,7 +256,7 @@ For example, if $f(x) = \sin{x}, g(x) = e^{x}$, we can have these compositions:
 \aleq{
     f(f(x)) = \sin{(\sin{x})} \quad,\quad 
     f(g(x)) = \sin{(e^x)} \quad, \quad 
-    g(f(x)) = e^{sin{x}} \quad, \quad
+    g(f(x)) = e^{\sin{x}} \quad, \quad
     g(g(x)) = e^{e^x}
 }
 
@@ -205,7 +288,7 @@ We can have the following composition:
 But these are NOT allowed:
 \aleq{
     g(h(u,v)) \quad &\colon \quad \blue{(2 \xrightarrow{h} 2 \ \red{\Rightarrow}\ 1 \xrightarrow{g} 2)} \\
-    h(f(p,q)) \quad &\colon \quad \blue{(2 \xrightarrow{f} 1 \ \red{\Rightarrow}\ 2 \xrightarrow{h} 2)} \\
+    h(f(p,q)) \quad &\colon \quad \blue{(2 \xrightarrow{f} 1 \ \red{\Rightarrow}\ 2 \xrightarrow{h} 2)}
 }
 
 \linesep
@@ -221,30 +304,51 @@ This idea can be extended to multivariable function, i.e.
 
 The idea requires all the inputs $x_1, x_2, ...$ to be "close enough" to some corresponding values $a_1, a_2,...$,
 only after then the output of $f(...)$ will be "close" enough to some $L$. 
-We can visually compare it with single variable function as follow:
+We can visually compare it with single variable function as follow:\\
 
-\insertFig{limit sing var vs mul var}
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \ul{Single Variable Function}
+        \\[1em]
+        \includegraphics[height=6em]{limit_sing}
+        \\
+        $x$ can approach $a$ \\
+        from either left or right
+    \end{minipage}
+    %
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \ul{Multivariable Function}
+        \\[1em]
+        \includegraphics[height=6em]{limit_mul}
+        \\
+        $x$ can approach $a$ \\
+        from every direction
+    \end{minipage}
+\end{center}
 
-However, the "existance" of limit in multivariable functions has a much stricter requrement.
+Therefore, the "existance" of limit in multivariable functions has a much stricter requirement.
 \begin{itemize}
     \item Single variable function: 
     \begin{itemize}
-        \item Input $x$ must approach $a$ from either left ($x^-$) or right ($x^+$).
-        \item "Existance" of limit only require showing both left/right limit approach to the same output $L$.
+        \item Input $x$ must approach the point $a$ from either left ($x^-$) or right ($x^+$).
+        \item "Existance" of limit only require showing both left/right limits approach to the same output $L$.
     \end{itemize}
     
     \item Multivariable function, (e.g. functions with 2 inputs):
     \begin{itemize}
         \item Inputs $(x_1, x_2)$ can approach the point $(a_1, a_2)$ along any trajectories on the plane. 
-        \item "Existance" of limit require showing that along ALL trajectories
+        \item "Existance" of limit require showing that along ALL trajectories.
     \end{itemize}
 \end{itemize}
 
-\insertFig{2 dir vs inf dir approach}
 
  Proving a limit exist rigorously is a lot harder in multivariable function.
  But in physics, we almost never need to deal with any strange functions that has limit only along certain trajectories.
- We may assume that every function we encounter is well-behaved, and then calculation can be done like in single variable functions. E.g.
+ \red{We may assume that every function we encounter is well-behaved, 
+ and then calculation can be done like in single variable functions.} E.g.
+
 \aleq{
     \lim_{(x,y)\to \qty(\frac{\pi}{2},\frac{\pi}{2})} \sin{x}\cos{y} = \sin\qty(\frac{\pi}{2})\cos\qty(\frac{\pi}{2})
 }
@@ -288,26 +392,61 @@ E.g. $f(x,y,z) = x^2y\sin{z}$
 }
 
 The visualization to partial differentiation is straightforward. 
-Take a 2-inputs function $f(x,y)$ as example, we can draw the followings:
+Take a 2-inputs function $f(x,y)$ as example, we can demonstrate by the following illustrations:
 
-\insertFig{partial d geo interp}
-
-$\pdvv{x}$ = On the plane of constant $y$, find slope along $x$ direction.
-
-$\pdvv{y}$ = On the plane of constant $x$, find slope along $y$ direction.\\
-
-
-We can conclude: 
 \begin{center}
-    $\pdvv{x_i}$ = Find slope / rate of change of function with respect to $x_i$
+    \includegraphics[height=12em]{pdv}
+    \\[1em]
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \yellow{\ul{Make a slice at $y=a_y$}}\\
+        \includegraphics[height=12em]{pdx}
+        \\
+        \yellow{\Large $\Downarrow$}
+        \\
+        \includegraphics[height=12em]{pdx_sec}
+        \\
+        $\pdvv{x}$ = On the plane of constant $y$, \\
+        \hspace{6ex} find slope along $x$ direction.
+    \end{minipage}
+    %
+    \hfill\vline\hfill
+    %
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \blue{\ul{Make a slice at $x=a_x$}}\\
+        \includegraphics[height=12em]{pdy}
+        \\
+        \blue{\Large $\Downarrow$}
+        \\
+        \includegraphics[height=12em]{pdy_sec}
+        \\
+        $\pdvv{y}$ = On the plane of constant $x$, \\
+        \hspace{6ex} find slope along $y$ direction.
+    \end{minipage}
 \end{center}
 
 
-%%%%%%%%%%%%%%
-\subsection{Evaluation}
+\newpage
+We can conclude:
+\begin{center}
+    \begin{minipage}{0.75\textwidth}
+        \begin{framed}
+            \centering
+            $\pdvv{x_i}$ = Find slope / rate of change of function with respect to $x_i$
+        \end{framed}
+    \end{minipage}
+\end{center}
 
-Calculation rules for partial differentation are the same as you have learnt in single variable differentiation. 
-\red{The only exception is chain rule}, which is the\bf{sum of chain rule with respect to each of the input.}
+    
+
+
+%%%%%%%%%%%%%%
+\subsection{Evaluating Partial Differentiation}
+
+\red{Calculation rules for partial differentation are all the same as in single variable functions except chain rule.} 
+Due to how function composition works in multivariable calculus, 
+the multivariable version is the \bf{sum of chain rule with respect to each of the input.}
 
 \aleq{
     \pdvv{x_i}f(\vvec{g}(x_1,x_2,...,x_n)) &= \sum_j \pdvv{g_j}f(\vvec{g})\pdvv{g_j}{x_i} \\
@@ -394,7 +533,7 @@ We can also compute the composition directly for result checking:
         \qquad \Rightarrow \qquad
         f(\vvec{g}(t)) = \sqrt{t^2+t-1}
     }
-    Compute the derivative $\dvv{f(\vvec{g}(t))}{t}$, by
+    Compute the derivative $\dvv{t}f(\vvec{g}(t))$, by
     \begin{enumerate}
         \item directly differentiating against $t$
         \item first differentiate via chain rule over $(p,q)$
@@ -411,10 +550,10 @@ We can also compute the composition directly for result checking:
 The limit definition of multiple integral can be written as
 
 \aleq{
-    &\idotsint_\qty(\substack{\text{Some}\\\text{region}})
+    &\idotsint_\red{\qty(\substack{\text{Some}\\\text{region}})}
     f(x_1, x_2,...,x_n) \dd{x_1}\dd{x_2}...\dd{x_n} \\
     = & 
-    \lim_{\Delta x_1, \Delta x_2,...,\Delta x_n to 0} \sum_{\substack{\text{all divisions}\\\text{in the region}}}
+    \lim_{\Delta x_1, \Delta x_2,...,\Delta x_n \to 0} \sum_{\red{\substack{\text{all divisions}\\\text{in the region}}}}
     f(\xi_1, \xi_2, ..., \xi_n) \Delta x_1 \Delta x_2...\Delta x_n 
 }
 
@@ -433,10 +572,37 @@ For functions with 2 inputs.\\
     = \lim_{\Delta x, \Delta y \to 0} \sum_{\red{\substack{\text{All divisions}\\\text{in the area}}}} 
     \tkn{pillar_h}{\cul[blue]{f(\xi_x, \xi_y)}} \tkn{pillar_a}{\cul[yellow]{\Delta x\Delta y}}
 }\\
-\addArrow[blue]{pillar_h}{(0,-4ex)}{Pillar's height}{(0,-2ex)}
+\addArrow[blue]{pillar_h}{(0,-4.5ex)}{Pillar's height}{(0,-2ex)}
 \addArrow[yellow]{pillar_a}{(4ex,-4ex)}{Pillar's base area}{(0,-2ex)}{(7ex,0)}
 
-\insertFig{vol under surface}
+\begin{center}
+    \begin{minipage}{0.6\textwidth}
+        \includegraphics[width=\textwidth]{iint_pillar}
+    \end{minipage}
+    %
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \yellow{One pillar for every point}
+    \end{minipage}
+\end{center}
+
+\begin{center}
+    \begin{minipage}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{iint_reg}
+    \end{minipage}
+    %
+    \hspace{0.05\textwidth}
+    %
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{framed}
+            Double integral \\
+            = Sum the volumes of all pillars\\
+            within the red ring (region)
+        \end{framed}
+    \end{minipage}
+\end{center}
+
 
 
 \ul{Interpretation 2: Weighted sum over an area}
@@ -445,15 +611,31 @@ For functions with 2 inputs.\\
     \iint_{\red{\substack{\text{Some}\\\text{Area}}}} f(x,y) \dd{x}\dd{y} 
     = \lim_{\Delta x, \Delta y \to 0} \sum_{\red{\substack{\text{All divisions}\\\text{in the area}}}} 
     \tkn{weight2}{\cul[blue]{f(\xi_x, \xi_y)}} \tkn{area2}{\cul[yellow]{\Delta x\Delta y}}
-}
-\addArrow[blue]{weight2}{(0,-6ex)}{$\substack{\displaystyle \text{Weight for the}\\\displaystyle \text{grid at }(\xi_x,\xi_y)}$}{(0,-2ex)}
+}\\
+\addArrow[blue]{weight2}{(0,-6ex)}{Weight for the\\grid at $(\xi_x,\xi_y)$}{(0,-2ex)}{(0,-1ex)}
 \addArrow[yellow]{area2}{(4ex,-4ex)}{Area of each grid}{(0,-2ex)}{(7ex,0)}
 
-\insertFig{area grid divi}
+
+\begin{center}
+    \begin{minipage}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{iint_weight}
+    \end{minipage}
+    %
+    \hspace{0.05\textwidth}
+    %
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \begin{framed}
+            Double integral \\
+            = For each grid of weight $f(\xi_x,\xi_y)$,\\
+            Sum all grids within the red ring (region)
+        \end{framed}
+    \end{minipage}
+\end{center}
 
 For a physics example, the \it{area mass density distribution} $\sigma(x,y)$ may depends on position coordinate $(x,y)$.
 \begin{itemize}
-    \item Each small grid has an area $\dd{x} \dd{y}$
+    \item Each small grid has an area $(\dd{x} \dd{y})$
     \item At position $(\xi_x, \xi_y)$, the grid has a density $\sigma(x,y)$
 \end{itemize}
 
@@ -469,9 +651,11 @@ Thus,
 %%%%%%%%%%%%%%
 \subsection{Triple Integral}
 
-\ul{Interpretation 1: ??? under volume}\\
+\ul{Interpretation 1: ??? under volume}
 
-Sorry, we live in a 3D space. No idea how to draw 4D objects.\\
+\begin{center}
+(Sorry, we live in a 3D space. No idea how to draw 4D objects.)\\
+\end{center}
 
 
 \ul{Interpretation 2: Weighted sum over a volume}
@@ -481,17 +665,35 @@ Sorry, we live in a 3D space. No idea how to draw 4D objects.\\
     = \lim_{\Delta x, \Delta y, \Delta z \to 0} \sum_{\red{\substack{\text{All divisions}\\\text{in the volume}}}} 
     \tkn{weight3}{\cul[blue]{f(\xi_x, \xi_y, \xi_z)}} \tkn{vol3}{\cul[yellow]{\Delta x\Delta y \Delta z}}
 }
-\addArrow[blue]{weight3}{(0,-6ex)}{$\substack{\displaystyle \text{Weight for the}\\\displaystyle \text{cube at }(\xi_x,\xi_y, \xi_z)}$}{(0,-2ex)}
+\addArrow[blue]{weight3}{(0,-6ex)}{Weight for the\\cube at $(\xi_x,\xi_y,\xi_z)$}{(0,-2ex)}{(0,-1ex)}
 \addArrow[yellow]{vol3}{(4ex,-4ex)}{Volume of each cube}{(0,-2ex)}{(7ex,0)}
 
+\begin{center}
+    \begin{minipage}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{iiint_weight}
+    \end{minipage}
+    %
+    \hspace{0.05\textwidth}
+    %
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \begin{framed}
+            Triple integral \\
+            = For each cube of weight $f(\xi_x,\xi_y, \xi_z)$,\\
+            Sum all cubes within the red region
+        \end{framed}
+    \end{minipage}
+\end{center}
+
 Similar to double integral, if $\rho(x,y,z)$ is the \it{volume mass density distribution}, 
-Thus, 
+then, 
 \aleq{
     \text{Total mass} &= \text{Sum of mass of all small cubes}\\[1em]
     &= \sum_{\substack{\text{all small cubes}\\\text{in the volume}}} \qty(\substack{\text{density}\\\text{of each cube}})\qty(\substack{\text{volume}\\\text{of each cube}}) \\[1em]
-    &= \sum_{\substack{\text{all small cubes}\\\text{in the volume}}} \sigma(x,y) \cdot (\Delta x \Delta y) \\[1em]
-    &\approx \iiint_{\text{the volume}} \sigma(x,y) \dd{x}\dd{y}
+    &= \sum_{\substack{\text{all small cubes}\\\text{in the volume}}} \rho(x,y,z) \cdot (\Delta x \Delta y \Delta z) \\[1em]
+    &\approx \iiint_{\text{the volume}} \rho(x,y,z) \dd{x}\dd{y}\dd{z}
 }
+
 
 %%%%%%%%%%%%%%
 \subsection{Evaluating Multiple Integral}
@@ -506,12 +708,12 @@ Here are the main steps in your calculation:
         \item The integration order decide the expression. Follow the expression to integrate "from inside to outside".
         \aleq{
             \iiint f(x,y,z) \dd{x}\dd{y}\dd{z} = \yellow{\tkn{out}{\int}\qty(\blue{\tkn{mid}{\int}\qty(\tkn{in}{\red{\int f(x,y,z)\dd{x}}})\dd{y}})\dd{z}}
-        }
+        }\\
         \addArrow[red]{in}{(4ex,-3ex)}{inner = \nth{1}}{(0,-2ex)}{(2ex,0)}
         \addArrow[blue]{mid}{(0,-3ex)}{middle = \nth{2}}{(0,-2ex)}
         \addArrow[yellow]{out}{(-8ex,-3ex)}{outer = \nth{3}}{(0,-2ex)}{(-4ex,0)}
 
-        \item Calculation is just like how you do to single variable functions, but do it multiple times. 
+        \item Calculation is exactly how you do single variable integration, but do it multiple times. 
         \item While integrating one variable, treat the others as constants.
     \end{itemize}
 
@@ -528,21 +730,34 @@ Here are the main steps in your calculation:
     Integrate $f(x,y) = x^2y-xy^3$ over the region bounded by 
     $\begin{cases}x&=1\\x&=4\end{cases}$ and $\begin{cases}y&=2\\y&=3\end{cases}$
 
-    \insertFig{rect int}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{iint_eg}
+    \end{center}
 
     \ul{Integration order 1:} First $x$, then $y$.
     \begin{enumerate}
         \item Integrate $x$ = Sum all grid with the same $y$ coordinate to form horizontal strips.
-        \insertFig{hoz strip}
-        \aleq{
-            \int_{x=1}^{x=4}f(x,y)\dd{x}
-        }
+        
+        \begin{center}
+            \begin{minipage}{0.55\textwidth}
+                \centering
+                \includegraphics[width=0.95\textwidth]{iint_eg_x}
+            \end{minipage}
+            %
+            $\displaystyle \Rightarrow \quad  \int_{x=1}^{x=4}f(x,y)\dd{x}$
+        \end{center}
+
         
         \item Integrate $y$ = Sum all horizontal strips to from the integration region.
-        \insertFig{hoz stip to region}
-        \aleq{
-            \int_{y=2}^{y=3}\qty[\int_{x=1}^{y=4}f(x,y)\dd{x}]\dd{y}
-        }
+        
+        \begin{center}
+            \begin{minipage}{0.55\textwidth}
+                \centering
+                \includegraphics[width=0.95\textwidth]{iint_eg_xy}
+            \end{minipage}
+            %
+            $\displaystyle \Rightarrow \quad  \int_{y=2}^{y=3}\qty[\int_{x=1}^{y=4}f(x,y)\dd{x}]\dd{y}$
+        \end{center}
 
         \item In the calculation, follow the expression's order: Integrate $x$ first, then $y$. 
         Note that before integrating $y$, you need to clear all $x$ by substituting the given upper/lower bounds.
@@ -559,17 +774,29 @@ Here are the main steps in your calculation:
     \ul{Integration order 2:} First $y$, then $x$.
     \begin{enumerate}
         \item Integrate $y$ = Sum all grid with the same $x$ coordinate to form vertical strips.
-        \insertFig{vert strip}
-        \aleq{
-            \int_{y=3}^{y=2}f(x,y)\dd{y}
-        }
+        
+        \begin{center}
+            \begin{minipage}{0.35\textwidth}
+                \centering
+                \includegraphics[width=0.95\textwidth]{iint_eg_y}
+            \end{minipage}
+            %
+            $\displaystyle \Rightarrow \quad  \int_{y=3}^{y=2}f(x,y)\dd{y}$
+        \end{center}
+
         
         \item Integrate $y$ = Sum all horizontal strips to from the integration region.
-        \insertFig{hoz stip to region}
-        \aleq{
-            \int_{x=1}^{x=4}\qty[\int_{y=2}^{y=3}f(x,y)\dd{y}]\dd{x}
-        }
+        
+        \begin{center}
+            \begin{minipage}{0.55\textwidth}
+                \centering
+                \includegraphics[width=0.95\textwidth]{iint_eg_yx}
+            \end{minipage}
+            %
+            $\displaystyle \Rightarrow \quad  \int_{x=1}^{x=4}\qty[\int_{y=2}^{y=3}f(x,y)\dd{y}]\dd{x}$
+        \end{center}
 
+        \newpage
         \item In the calculation, follow the expression's order: Integrate $y$ first, then $x$. 
         Note that before integrating $x$, you need to clear all $y$ by substituting the given upper/lower bounds.
         \aleq{
@@ -586,47 +813,85 @@ Here are the main steps in your calculation:
 
 However, if the boundaries of the region is ugly, 
 some integration order make your life easier than the others.
-As a demonstration, consider integrating over the below region (with an arbituary $f(x,y)$):
 
-\insertFig{ugly region}
+\begin{example}
 
-\ul{Integration order 1:} First $y$, then $x$.
+    Consider integration over the below region (with an arbituary $f(x,y)$):
 
-\insertFig{vert bar than add }
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{iint_eg2}
+    \end{center}
 
-This approach is easy because all vertical strips have the same bounds:
-\begin{itemize}
-    \item Upper bound: The curve $y=x^2+1$
-    \item Lower bound: The curve $y=x-1$
-\end{itemize}
+    \ul{Integration order 1:} First $y$, then $x$.
 
-We can write the integral expression as a single term.
-\aleq{
-    \int_{x=0}^{x=1}\int_{y=x-1}^{y=x^2+1} f(x,y) \dd{y}\dd{x}
-}
+    \begin{center}
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=0.55\textwidth]{iint_eg2_y}
+        \end{minipage}
+        %
+        then
+        %
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{iint_eg2_yx}
+        \end{minipage}
+    \end{center}
 
-\ul{Integration order 2:} First $x$, then $y$.\\
+    This approach is easy because all vertical strips have the same bounds:
+    \begin{itemize}
+        \item Upper bound: The curve $y=x^2+1$
+        \item Lower bound: The curve $y=x-1$
+    \end{itemize}
 
-Note that the bounds of horizontal strips are different for different $y$:
+    We can write the integral expression as a single term.
+    \aleq{
+        \int_{x=0}^{x=1}\int_{y=x-1}^{y=x^2+1} f(x,y) \dd{y}\dd{x}
+    }
 
-\insertFig{different bound}
+    \ul{Integration order 2:} First $x$, then $y$.\\
 
-So we need to integrate each region individually.
+    Note that the bounds of horizontal strips are different for different $y$:
 
-\aleq{
-    I_1 = \int_{y=1}^{y=2}\int_{x=\sqrt{y+1}}^{x=1} f(x,y) \dd{x}\dd{y}
-}
-\aleq{
-    I_2 = \int_{y=0}^{y=1}\int_{x=0}^{x=1} f(x,y) \dd{x}\dd{y}
-}
-\aleq{
-    I_3 = \int_{y=0}^{y=-1}\int_{x=0}^{x=y+1} f(x,y) \dd{x}\dd{y}
-}
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{iint_eg2_x}
+    \end{center}
 
-And the final answer would be the sum to all 3 regions $I_1+I_2+I_3$. 
-Although we should get the same value as we integrate $y$ first then $x$,
-integrating $x$ first then $y$ takes a lot more effort.
+    So we need to integrate each region individually.
 
+    \begin{center}
+        \begin{minipage}{0.35\textwidth}
+            \centering
+            \includegraphics[width=0.75\textwidth]{iint_eg2_x_div1}
+        \end{minipage}
+        %
+        $\displaystyle I_1 = \int_{y=1}^{y=2}\int_{x=\sqrt{y+1}}^{x=1} f(x,y) \dd{x}\dd{y}$
+    \end{center}
+
+    \begin{center}
+        \begin{minipage}{0.35\textwidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{iint_eg2_x_div2}
+        \end{minipage}
+        %
+        $\displaystyle I_2 = \int_{y=0}^{y=1}\int_{x=0}^{x=1} f(x,y) \dd{x}\dd{y}$
+    \end{center}
+        
+    \begin{center}
+        \begin{minipage}{0.35\textwidth}
+            \centering
+            \includegraphics[width=0.78\textwidth]{iint_eg2_x_div3}
+        \end{minipage}
+        %
+        $\displaystyle I_3 = \int_{y=0}^{y=-1}\int_{x=0}^{x=y+1} f(x,y) \dd{x}\dd{y}$
+    \end{center}    
+
+
+    And the final answer would be the sum to all 3 regions $I_1+I_2+I_3$. 
+    Although we should get the same value as we integrate $y$ first then $x$,
+    integrating $x$ first then $y$ takes a lot more effort.
+
+\end{example}
 
 %%%
 \theend
