@@ -35,7 +35,7 @@
         \item Linear ODE with non-homogenoeous terms
     \end{itemize}
 
-    The final target is to familiar with solving equation for general harmonic oscillator, i.e.
+    The goal is to be familiar with solving the equation of motion for general harmonic oscillators, i.e.
     \aleq{
         -kx(t) + \gamma \dvv{t}x(t) + F(t) = m\dvv[2]{t}x(t)
     } 
@@ -55,6 +55,7 @@ We can classify differential equations with these characteristics:
     \item Homogenity
 \end{enumerate}
 
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Number of variables in the wanted function}
 
@@ -185,7 +186,7 @@ This is the simplet kind of ODE
 Here $\lambda$ is a constant number. 
 The solution is trivial by making use of the fact 
 \aleq{
-    \dv{t}e^{at} &= a\cdot e^{at} \\
+    \dv{t}e^{at} &= a\cdot e^{at}
 }
 which is exactly saying $f(t)=e^{at}$ is a solution to the equation
 $\dvv{t}f(t) - af(t) = 0$.
@@ -196,7 +197,7 @@ multiplying any constant to $f(t)$. So we have
 }\\
 \addArrow[red]{1stC}{(0,-3.5ex)}{$C$=any constant number}{(0,-1ex)}
 
-In fact, we can show that this is the only solution to this ODE by solving it with integration:
+In fact, we can show that this is the only solution to this ODE, by solving it with integration:
 \aleq{
     \dv{t}f(t) + \lambda f(t) &= 0 \\
     \inv{f(t)}\dvv{f(t)}{t} + \lambda &= 0\\
@@ -275,7 +276,7 @@ $f_2(t) = Ce^{\frac{-b- \sqrt{b^2-4ac}}{2a} t}$ as a solution.
 %%%%%%%%%%%%%%
 \subsection{Superposition of Solutions}
 
-However, \bf{solely taking $f_1(t)$ or $f_2(t)$ is NOT the general solution}
+However, \bf{$f_1(t)$ or $f_2(t)$ alone is NOT the general solution}
 because linear ODE allows superpositions (linear combination), i.e. 
 \begin{center}
     \red{
@@ -285,11 +286,12 @@ because linear ODE allows superpositions (linear combination), i.e.
     }
 \end{center}
 
+\hfill\\[-3em]
 \aleq{
     \Aboxed{\text{General Solution : } 
     f(t) = C_1e^{\frac{-b+ \sqrt{b^2-4ac}}{2a} t} 
     + C_2e^{\frac{-b- \sqrt{b^2-4ac}}{2a} t}}
-}\\
+}
 
 \begin{proof}
     Given that $f_1(t)$ and $f_2(t)$ are solutions:
@@ -334,6 +336,8 @@ because linear ODE allows superpositions (linear combination), i.e.
     \end{enumerate}
 \end{notation}
 
+
+\newpage
 %%%%%%%%%%%%%%
 \subsection{3 Sub-cases of the Solution}
 
@@ -432,15 +436,19 @@ which all are convenient to use in some scenarios.
             \sin{x} &= & &+x & &-\frac{x^3}{3} & &+\frac{x^5}{5}
         }
     }
-    It allows any complex number $p+iq$ to be expressed in polar form:
-    \aleq{
-        z &= p+iq \\
-        &= \sqrt{p^2+q^2}\cos\theta + i\sqrt{p^2+q^2}\sin\theta\\
-        &= \sqrt{p^2+q^2}(cos\theta + i\sin\theta) \\
-        &= \sqrt{p^2+q^2}e^{i\theta}
-    }
-
-    \insertFig{complex to polar}
+    It also allows any complex number $p+iq$ to be expressed in polar form:
+    \begin{minipage}{0.65\textwidth}
+        \aleq{
+            z &= p+iq \\
+            &= \sqrt{p^2+q^2}\cos\theta + i\sqrt{p^2+q^2}\sin\theta\\
+            &= \sqrt{p^2+q^2}(cos\theta + i\sin\theta) \\
+            &= \sqrt{p^2+q^2}e^{i\theta}
+        }
+    \end{minipage}
+    %
+    \begin{minipage}{0.33\textwidth}
+        \includegraphics[height=6.5em]{euler}
+    \end{minipage}
 
 \end{notation}
 
@@ -465,7 +473,8 @@ which all are convenient to use in some scenarios.
     \aleq{
         \Aboxed{a_n = \eval{\inv{n!}\dvv[n]{f(t)}{t}}_{t=k}}
     }
-
+\end{notation}
+\begin{notation}[]
     \begin{proof}
         Let $t=k+x$. Differentiate against $t$ and substitute $x=0$ (so $t$ becomes $k+0=k$),
         \aleq{
@@ -560,12 +569,17 @@ We may write
 
 Consider a spring-mass system with damping factor on the spring.
 When the spring is compressed by a displacement $x$, the forces on it are
-\begin{itemize}
-    \item Spring's elastic force: $-kx$ (Require $k>0$)
-    \item Damping force: $-\gamma v$ (Require $\gamma >0$)
-\end{itemize}
 
-\insertFig{damp shm}
+\begin{minipage}{0.7\textwidth}
+    \begin{itemize}
+        \item Spring's elastic force: $-kx$ (Require $k>0$)
+        \item Damping force: $-\gamma v$ (Require $\gamma >0$)
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.28\textwidth}
+    \includegraphics[height=6em]{shm_damp}
+\end{minipage}
+
 
 In a naive model, the damping force is usually assumed proportional and opposite to the mass's velocity.
 Otherwise it will be a lot more difficult to calculate.\\
@@ -602,10 +616,12 @@ So both $\gamma$ are negative. We may write
     &= \text{A sum of 2 exponentially decaying functions}
 }
 
-\insertFig{over damp}
+\begin{center}
+    \includegraphics[height=8em]{shm_damp_over}
+\end{center}
 
-It is called "over-damped" as the damping force is too large that 
-the mass can never return to its original position.
+It is called "over-damped" as the damping force is too large, 
+such that the mass can never return to its original position.
 
 
 %%%%%%%%%%%%%%
@@ -618,7 +634,9 @@ Write the solution in amplitude form:
     &= (\text{Exponentially Decay})\times(\text{Sinusoidal})
 }
 
-\insertFig{under damp}
+\begin{center}
+    \includegraphics[height=8em]{shm_damp_under}
+\end{center}
 
 It is called "under-damped" as the damping force is not strong enough to stop the mass.
 The mass will oscillate forever although the amplitude will decrease with time.
@@ -633,13 +651,18 @@ The general solution is
     x(t) = C_1 e^{-\frac{\gamma}{2m}t} + C_2t e^{-\frac{\gamma}{2m}t}
 }
 
-\insertFig{crit damp}
+\begin{center}
+    \includegraphics[height=6em]{shm_damp_crit}
+\end{center}
 
 It is called "critical-damped" because it is in between the other 2 cases.
-It looks like over-damped case but the mass can return to the original position.
+It looks like over-damped case but the mass can return to the original position.\\
 
-
-\insertFig{summary}
+\linesep
+\ul{\bf{Summary in 1 graph}}
+\begin{center}
+    \includegraphics[height=10em]{shm_damp_all}
+\end{center}
 
 
 \linesep
@@ -969,14 +992,19 @@ then we recover $f_p(t)$.
 
 Consider a spring-mass system driven by an external force.
 When the spring is compressed by a displacement $x$, the forces on it are
-\begin{itemize}
-    \item Spring's elastic force: $-kx$ (Require $k>0$)
-    \item Damping force: $-\gamma v$ (Require $\gamma >0$)
-    \item External force: $F(t)$ (No restriction)
-\end{itemize}
 
-\insertFig{forced shm}
+\begin{minipage}{0.7\textwidth}
+    \begin{itemize}
+        \item Spring's elastic force: $-kx$ (Require $k>0$)
+        \item Damping force: $-\gamma v$ (Require $\gamma >0$)
+        \item External force: $F(t)$ (No restriction)
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.28\textwidth}
+    \includegraphics[height=6em]{shm_force}
+\end{minipage}
 
+\hfill\\[1em]
 The Newton's \nth{2} Law writes:
 \aleq{
     (\text{total force}) = -kx -\gamma v + F(t) &= ma\\
@@ -1035,7 +1063,7 @@ By combining $\sin/\cos$ into 1 sinusoidal, $x_p(t)$ becomes
     &= \frac{F_0}{\sqrt{(\gamma\omega)^2 + (m\omega^2-k)^2}} \cos\qty[\omega t + \tan^{-1}\qty(\frac{\gamma \omega}{m\omega^2-k})]
 }
 
-
+\hfill\\[1em]
 \bf{\ul{Special Case: Resonance}}\\
 
 When the frequency of the external force equals to the natural frequency of harmonic oscillator $\sqrt{\frac{k}{m}}$, 
