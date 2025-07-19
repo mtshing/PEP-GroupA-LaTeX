@@ -502,9 +502,9 @@ Then
     &= \cul[red]{\qty(\pdvv{h_1}\sqrt{h_1+h_2}\eval_{\substack{h_1=u^2+v \\ h_2=u-v}} \cdot \pdvv{u}(u^2+v))}  
         + \cul[blue]{\qty(\pdvv{h_2}\sqrt{h_1+h_2} \eval_{\substack{h_1=u^2+v \\ h_2=u-v}}\cdot \pdvv{u}(u-v))}  \\[1em]
     &= \cul[red]{\qty(\inv{2\sqrt{h_1+h_2}}\eval_{\substack{h_1=u^2+v \\ h_2=u-v}}\cdot 2u)}
-         + \cul[blue]{\qty(\inv{2\sqrt{h_1+h_2}}\eval_{\substack{h_1=u^2+v \\ h_2=u-v}}\cdot (-1))} \\[1em]
-    &= \frac{2u}{2\sqrt{u^2+u}} + \frac{-1}{2\sqrt{u^2+u}} \\[1em]
-    &= \frac{2u-1}{2\sqrt{u^2+u}}\\[1em]
+         + \cul[blue]{\qty(\inv{2\sqrt{h_1+h_2}}\eval_{\substack{h_1=u^2+v \\ h_2=u-v}}\cdot (1))} \\[1em]
+    &= \frac{2u}{2\sqrt{u^2+u}} + \frac{1}{2\sqrt{u^2+u}} \\[1em]
+    &= \frac{2u+1}{2\sqrt{u^2+u}}\\[1em]
     %
     \pdvv{v}f(\vvec{h}(u,v)) 
     &= \cul[red]{\qty(\pdvv{h_1}f(h_1, h_2)\pdvv{v}h_1)} + \cul[blue]{\qty(\pdvv{h_2}f(h_1, h_2)\pdvv{v}h_2)} \\[1em]
@@ -521,14 +521,14 @@ We can also compute the composition directly for result checking:
     f(\vvec{h}(u,v)) = \sqrt{u^2+v + u-v} = \sqrt{u^2+u}
 }
 \aleq{
-    \Rightarrow\quad \pdvv{f}{u} = \frac{2u+1}{2\sqrt{u^2+u}} \qquad \text{and} \qquad \pdvv{f{v}} = 0
+    \Rightarrow\quad \pdvv{f}{u} = \frac{2u+1}{2\sqrt{u^2+u}} \qquad \text{and} \qquad \pdvv{f}{v} = 0
 }
 
 \begin{exercise}
     Given the functions and their composition: 
     \aleq{
         \begin{cases}
-            f(p,q)=\sqrt{p,q} \\ \vvec{g}(t) = (t-1,t^2)
+            f(p,q)=\sqrt{p+q} \\ \vvec{g}(t) = (t-1,t^2)
         \end{cases}
         \qquad \Rightarrow \qquad
         f(\vvec{g}(t)) = \sqrt{t^2+t-1}
