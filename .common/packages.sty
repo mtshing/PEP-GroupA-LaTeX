@@ -136,7 +136,8 @@
 % tikz thingy
 \usepackage{tikz}
 \usepackage{calc}
-\usetikzlibrary{tikzmark,calc}
+\usetikzlibrary{tikzmark, calc, positioning, matrix, quotes}
+
 % use tikzmark to make arrow pointing a character
 % mark the character being point to by appending \tikzmark{label_name}. In tikzpicture envr, call this point by (pic cs:label_name)
 % enclose with $ $ for calculation
@@ -148,3 +149,10 @@
 %       at ( $ (pic cs:label_name) +(6pt,-2ex) $ )
 %       {my_text};
 % \end{tikzpicture}
+
+% positioning library = allow relative position
+
+% quotes library = a better library for adding text to elements
+
+% matrix library convert every element into tikz node
+% tikz matrix must be syntax-ly enclosed by \begin{align*} \end{align*}, not just { and }

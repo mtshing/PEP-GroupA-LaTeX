@@ -4,9 +4,25 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% symbol/equation shortcut
+% environment shortcut
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% align* environment shortcut
+\newcommand{\aleq}[1]{\begin{align*} #1 \end{align*}}
+
+% a big left brace like \begin{cases} to contain multiple lined of aligned eq
+% but allow central alignment about &
+\newcommand{\bcase}[1]{\left\{ \ \begin{aligned} #1 \end{aligned}\right.}
+
+% short cut for array envr
+\newcommand{\barray}[2]{\begin{array}{#1} #2 \end{array}}
+
+% do \bcase{\barray{...}} for left bracketed system of equation
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% symbol shortcut
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % add \qty before (), [] or {} auto size the brackets, 
 % do not need to type \left, \right separately
@@ -18,15 +34,14 @@
 % the whole {x} can be omitted too, i.e. \eval_a^b
 % (feature from physics package)
 
-% not used any more
-%\newcommand{\at}[2]{\left.#1\right|_{#2}} % {}|x=0 for d/dx|_x=0 usage
 
-% \dfrac{} = force fraction in displaystyle
+% \dfrac{} = force fraction in displaystyle, from amsmath
 \newcommand{\half}{\frac{1}{2}}  % 1/2
 \newcommand{\inv}[1]{\frac{1}{#1}}  % 1/x
 \newcommand{\dinv}[1]{\dfrac{1}{#1}} % 1/x but force in displaystyle
 
 \newcommand{\nsqrt}[2]{\sqrt[\leftroot{-3}\uproot{6}#1]{#2}} %nth root
+
 \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} % equal sign with "def" above
 
 \newcommand{\anticlockwise}{\circlearrowleft} % anticlockwise cicle arrow
@@ -35,33 +50,91 @@
 \newcommand{\lhs}{\text{L.H.S.}} % left hand side
 \newcommand{\rhs}{\text{R.H.S.}} % right hand side
 
-\newcommand{\Nth}{$^{th}$} % nth for non number
+\newcommand{\Nth}{$^\text{th}$} % nth for non number
 
 \renewcommand{\Re}{\operatorname{Re}} % use amsmath default for real/img operator
 \renewcommand{\Im}{\operatorname{Im}}
 
-% align* environment shortcut
-% cannot separate open/close for align* because it always scan for \end
-\newcommand{\aleq}[1]{\begin{align*} #1 \end{align*}}
+\newcommand{\sgn}{\operatorname{sgn}} % sgn() sign function
 
-% matrix without parenthesis = used as an array
-\newcommand{\mat}[1]{\begin{matrix} #1 \end{matrix}}
-% convention: use parenthesis notation for all matrix
-\newcommand{\bmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
-% determinant
-\newcommand{\bdet}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+% det() operator is just \det
+\newcommand{\adj}{\operatorname{adj}} % matrix adjoint / adjugate
+\newcommand{\cof}{\operatorname{cof}} % matrix cofactor
 
-% bold & italic font all vector for clear view
-% shortcut for typing efficiently
-% for bold only, use \va{} and vu{} from physics package
+% default name = nabla. Add shortcut to call it del
+% can also called by \grad (from physics package, together with \div, \curl)
+\newcommand{\del}{\nabla}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% unifying notations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% bold & italic font for all vector
+% from physics package. make shortcut to type faster (typing * is annoying)
+% \vb{} = bold only, \va{} = bold + arrow head, \vu{} = bold + unit hat
+% starred = make italic
 \newcommand{\vvec}[1]{\va*{#1}}
 \newcommand{\hhat}[1]{\vu*{#1}}
 
-% a big left brace like \begin{cases} to contain multiple lined of aligned eq
-% but allow central alignment about &
-\newcommand{\bcase}[1]{\left\{ \ \begin{aligned} #1 \end{aligned}\right.}
+% bold and upright for alphabet that represent matrix
+\newcommand{\mmat}[1]{\vb{#1}}
 
 
+% matrix without parenthesis = used as an array
+% elements can only center-align. For left/right align control,
+% use \begin{array}{ccc} environment
+\newcommand{\mat}[1]{\begin{matrix} #1 \end{matrix}}
+
+% convention: use parenthesis notation for all matrix
+\newcommand{\bmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+% determinant
+\newcommand{\bdet}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+
+% some matrix shortcut from physics package
+% \xmat{element}{# row}{# col} = repeat element of given size.
+% \xmat* = also show index
+% \imat{# row}{# col} = identity matrix
+% \zmat{# row}{# col} = zero matrix
+
+
+% tikzmatrix - for creating drawable matrix
+% 1st input = matrix. delimiter must use \& instead of &, in order to be used in align* envr
+%             also last row must also end with \\
+% 2nd input = any \draw command. Remember to end each line with ";"
+% with tikz matrix library, matrix itself labeled as "m". Each entry is converted to a node, labeled as m-(row#)-(col#)
+\newcommand{\tkmat}[2]{
+  \begin{tikzpicture}[baseline=-0.5ex]
+  \matrix (m) [matrix of math nodes, ampersand replacement=\& ]
+              {#1}; 
+              #2
+  \end{tikzpicture} 
+}
+
+\newcommand{\tkbmat}[2]{
+  \begin{tikzpicture}[baseline=-0.5ex]
+  \matrix (m) [matrix of math nodes, ampersand replacement=\&, 
+                left delimiter=(, right delimiter=)
+              ]
+              {#1}; 
+              #2
+  \end{tikzpicture} 
+}
+
+\newcommand{\tkbdet}[2]{
+  \begin{tikzpicture}[baseline=-0.5ex]
+  \matrix (m) [matrix of math nodes, ampersand replacement=\&, 
+                left delimiter=|, right delimiter=|
+              ]
+              {#1}; 
+              #2
+  \end{tikzpicture} 
+}
+  
 
 
 
@@ -70,6 +143,7 @@
 % frequently used formula
 % require package: amsmath, physics, xparse 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 % derivatives (\dv, \pdv \fdvv) force to be fraction display mode
