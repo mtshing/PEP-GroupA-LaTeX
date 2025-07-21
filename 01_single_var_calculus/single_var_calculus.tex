@@ -524,12 +524,14 @@ $\Rightarrow$ Instantaneous quantities = quantity measured at a "single" time po
     \item Instantaneous acceleration $= \displaystyle \lim_{\Delta t \to 0} \dfrac{\Delta v}{\Delta t} = \dvv{t}v(t)$ 
 \end{itemize}
 \aleq{
+    \Acboxed{
     s(t) \xrightleftharpoons[\int \dd{t}]{\hspace{0.5cm}\dv{t}\hspace{0.5cm}} v(t)
     \xrightleftharpoons[\int \dd{t}]{\hspace{0.5cm}\dv{t}\hspace{0.5cm}} a(t)
+    }
 }
-\\
 
-\begin{example} Constant Acceleration Motion \\
+\hfill\\
+\begin{example} Constant Acceleration Motion\\
 
     By definition, the acceleration $a(t) = a$ is a constant. 
     Finding velocity and displacement are then straightforward integration.
@@ -593,23 +595,47 @@ The the total W.D. in a long period time
 }
 
 Take limit to the time interval $\Delta t = t_{i+1}-t_i \to 0$, then $t_{i+1}\approx t_i$ and $F(t_{i+1})\approx F(t_i)$.
+\addArrow[blue]{Fstar}{(18ex,3.5ex)}
+{$\substack{\displaystyle\text{More commonly, force is provided} \\ \displaystyle\text{as a function of displacement}}$}
+{(4ex,2ex)}{(12ex,-1ex)}
 \aleq{
     \text{W.D} &\rightarrow \int \frac{F(t)+F(t)}{2} \cdot \qty[\dvv{s(t)}{t}] \dd{t}\\
     &= \int F(t)\cdot v(t) \dd{t} \\
     &= \int F(t) \cdot \dd{[s(t)]} \\
     &= \int \tkn{Fstar}{\cul[blue]{F^*[s(t)]}} \dd{[s(t)]}
 }
-\addArrow[blue]{Fstar}{(18ex,3.5ex)}
-{$\substack{\displaystyle\text{More commonly, force is provided} \\ \displaystyle\text{as a function of displacement}}$}
-{(4ex,2ex)}{(12ex,-1ex)}
 
+\red{(Notice the sign difference)} If the force is associated with a potential energy,
+the change in P.E. formula acquires a minus sign.
+\aleq{
+    \Acboxed{
+        \text{W.D.}_{\red{(\text{by }F)}} = \int F(s) \dd{s}  \qquad\Leftrightarrow\qquad
+        \text{Change in P.E.} = \tkn{PEminus}{\red{-}} \int F(s) \dd{s}
+    }
+}
+\addArrow[red]{PEminus}{(0,-5ex)}
+{$\substack{\displaystyle\text{W.D. \bf{by} a force due to potential} \Rightarrow \text{ loss in P.E.} \\ 
+    \displaystyle\text{W.D. \bf{against} a force due to potential }\Rightarrow \text{ gain in P.E.}}$}
+{(0,-0.5ex)}{(0,-1.5ex)}
 
+\hfill\\[1em]
+Finally, their relations to force is by differentiation.
+\aleq{
+    \Acboxed{
+        F = \dvv{s}\qty(\text{W.D.}_{\red{(\text{by }F)}}) \qquad\Leftrightarrow \qquad
+        F = \tkn{PEminus2}{\red{-}}\dvv{s}\text{(P.E.)}
+    } 
+}
+\addArrow[red]{PEminus2}{(0,-5ex)}{Please remember the $-$ve\\as if it is a definition}
+{(0,-0.5ex)}{(0,-1.5ex)}
+
+\hfill\\
 \begin{example} Gravitational force \& potential energy (PE)
 
     \aleq{
-        F(\tkn{Fr}{\red{r}}) = -\frac{GMm}{\red{r}^2}
+        F(\tkn{Fr}{\blue{r}}) = -\frac{GMm}{\blue{r}^2}
     }\\
-    \addArrow[red]{Fr}{(0,-3.5ex)}
+    \addArrow[blue]{Fr}{(0,-3.5ex)}
     {Force is a function of distance from the masses}
     {(0,-1ex)}{(0,-0.5ex)}
     
@@ -617,24 +643,25 @@ Take limit to the time interval $\Delta t = t_{i+1}-t_i \to 0$, then $t_{i+1}\ap
     \aleq{
         \text{W.D.} &= \int_{r_1}^{r_2} -\frac{GMm}{r^2}\dd{r} \\
         &= \qty(\frac{GMm}{r_2}) - \qty(\frac{GMm}{r_1}) \\
-        &= \tkn{PEminus}{\red{-}}\qty(\text{GPE at }r_2 - \text{GPE at }r_1)
-    }\\\\
-    \addArrow[red]{PEminus}{(0,-3ex)}
+        &= -\qty(-\frac{GMm}{r_2}) - \qty(-\frac{GMm}{r_1}) \\
+        &= \tkn{GPEminus}{\red{-}}\qty(\text{GPE at }r_2 - \text{GPE at }r_1)
+    }
+    \addArrow[red]{GPEminus}{(0,-3ex)}
     {$\substack{\displaystyle\text{W.D. by gravitation } \Rightarrow \text{ loss in PE} \\ \displaystyle\text{W.D. against gravitation }\Rightarrow \text{ gain in PE}}$}
     {(0,-0.5ex)}{(0,-2ex)}
 
+    \hfill\\[1em]
     Reversely, we take the \red{minus} differentiation to the PE formula to find the force due to gravitation.
-
     \aleq{
         \text{PE} &= -\frac{GMm}{r} \\
         \text{Gravitational force} &= \tkn{Fminus}{\red{-}} \dvv{r}(\text{PE}) = -\frac{GMm}{r^2}
     }\\
-    \addArrow[red]{Fminus}{(0,-3.5ex)}
-    {Add negative sign for attractive force}
-    {(0,-0.5ex)}{(0,-0.5ex)}
+    \addArrow[red]{Fminus}{(0,-3.5ex)}{Negative sign indicates\\the force as attractive}
+    {(0,-0.5ex)}{(0,-2ex)}
 
 \end{example}
 
+\newpage
 %%%%%%%%%%%%%%%%%%%
 \subsection{Momentum, Impulse and Newton \nth{2} Law}
 
@@ -744,7 +771,7 @@ The more general way to write Newton's \nth{2} Law should be
 \aleq{
     F(t) &= \dvv{t}(m(t) v(t)) \\
     &= m(t) \dvv{v(t)}{t} + \dvv{m(t)}{t} v(t) \\
-    &= \boxed{ma + \dvv{m}{t}\cdot v}
+    \Acboxed{F &= ma + \dvv{m}{t}\cdot v}
 } 
 
 Only if we guarentee that the mass is a constant, it can be reduced to the common form $F=ma$.
