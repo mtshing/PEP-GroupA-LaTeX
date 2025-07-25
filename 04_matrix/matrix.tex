@@ -23,7 +23,13 @@
         \item Solving system of ODE - Coupled harmonic oscillators
     \end{itemize}
 
-    \insertFig{coupled shm}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{couple}
+        \end{minipage}
+    \end{center}
+
 \end{overview}
 
 
@@ -35,8 +41,6 @@
 \section{Matrices \& Determinants}
 
 Matrix is a mathematical tool to express an array of values.
-
-%\iffalse takes long to reload
 \aleq{
     \tkm{matbold}\mmat{A} = \tkbmat{
         a_{11} \& a_{12} \& a_{13} \\
@@ -52,7 +56,6 @@ Matrix is a mathematical tool to express an array of values.
 \addArrow[blue]{matbold}{(-6ex,0)}{Usually use\\bold font capital letter\\to represent matrix}{(-1ex,0.5ex)}{(-11ex,0)}
 \addArrow[red]{dim}{(6ex,1ex)}{Dimension\\of this matrix\\$=2\times 3$}{(1ex,0.5ex)}{(5ex,1.5ex)}
 \addArrow[green]{dim}{(5ex,-3ex)}{Each entry is called an "element"}{(-7.5ex,-2ex)}{(16ex,0)}
-%\fi
 
 We call the shape ((\# of rows) $\times$ (\# of columns)) of a matrix as its \bf{dimension}. 
 Depending on its shape, they may aquire special name:
@@ -93,7 +96,7 @@ Depending on its shape, they may aquire special name:
 \end{center}
 
 
-
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Matrix Arithmatics}
 
@@ -171,7 +174,6 @@ but with different definitions.
     }
 
     Their multiplication yield a product matrix of dimension $\ul{\blue{m}\times \red{p}}$. 
-    %\iffalse
     \aleq{
         \mmat{C} = \tkn{mult_symb}{\cul[green]{\mmat{AB}}} = \bmat{
             c_{11} & c_{12} & \cdots & c_{1\red{p}} \\
@@ -232,12 +234,13 @@ but with different definitions.
                 {Take every element} ($(m-1-3.north east |- m-5-3.south east) + (0.5ex,0)$);
         }
     }
-    %\fi
 
-    \ul{\bf{Caution:}} Matrices can multiply only if 
-    (\# of columns in \nth{1} matrix) = (\# of rows in \nth{2} matrix).
-    So in general matrices multiplication is not \it{commutative}. 
-    i.e. $\mmat{AB}\neq \mmat{BA}$. For example, 
+    \hfill\\
+    \ul{\bf{Caution:}} Matrices multiplication is not \it{commutative} in general.
+    i.e. $\mmat{AB}\neq \mmat{BA}$.\\
+
+    Matrices can multiply only if (\# of columns in \nth{1} matrix) = (\# of rows in \nth{2} matrix).
+    For example, 
     \aleq{
         \mmat{A} = \bmat{ 1 & 2 & 3\\ 4 & 5 & 6 }
         %
@@ -259,8 +262,9 @@ but with different definitions.
         & \text{ cannot be calculated.}
     }
 
-    \ul{Note: } Multiplication order can be "reversed" only after we take transpose,
+    \ul{Note:} Multiplication order can be "reversed" only after we take transpose,
     i.e. flipping the rows and columns.
+
     \aleq{
         (\mmat{AB})^\intercal &= \mmat{B}^\intercal \mmat{A}^\intercal \\[1em]
         %
@@ -461,7 +465,7 @@ but with different definitions.
 
 \end{enumerate}
 
-
+\hfill\\
 %%%%%%%%%%%%%%
 \subsection{Determinant}
 
@@ -1528,14 +1532,25 @@ which then it reduces to a system of ODEs with 4 unknowns.
 %%%%%%%%%%%%%%
 \subsection{Application: Coupled Spring-mass System}
 
-\insertFig{coupled shm}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{shm}
+    \end{minipage}
+\end{center}
 
 In this configuration, let the displacement of mass 1 $=x_1(t)$,
 displacement of mass 2 $=x_2(t)$.
 
 \begin{itemize}
-    \item \ul{Newton's \nth{2} Law for $m_1$}:
-    \insertFig{m1 free body}
+    \item \ul{Newton's \nth{2} Law for $m_1$}:\\[-2.5em]
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{shm_m1}
+        \end{minipage}
+    \end{center}
+
     \begin{itemize}
         \item Left spring ($k_1$) change in length = $|x_1|$
         \item Right spring ($k_2$) change in length = $|x_2-x_1|$
@@ -1544,8 +1559,15 @@ displacement of mass 2 $=x_2(t)$.
         \therefore \ F = m_1\dvv[2]{t}x_1 = -k_1x_1-k_2(x_1-x_2)-\gamma_1 \dvv{t}x_1
     }
 
-    \item \ul{Newton's \nth{2} Law for $m_2$}:
-    \insertFig{m2 free body}
+    \hfill\\
+    \item \ul{Newton's \nth{2} Law for $m_2$}:\\[-2.5em]
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{shm_m2}
+        \end{minipage}
+    \end{center}
+
     \begin{itemize}
         \item Left spring ($k_2$) change in length = $|x_2-x_1|$
         \item Right spring ($k_3$) change in length = $|x_2|$
@@ -1558,8 +1580,8 @@ displacement of mass 2 $=x_2(t)$.
 Group the 2 equations and transform it into a \nth{1} order system:
 \aleq{
     \bcase{\barray{cccccc}{
-        \dvv{t}u_1 &= &-\dfrac{\gamma}{m_1}u_1 & &-\dfrac{k_1+k_2}{m_1}x_1 &+ \dfrac{k_2}{m_1}x_2\\[1em] 
-        \dvv{t}u_2 &= & &-\dfrac{\gamma}{m_1} &+\dfrac{k_2}{m_2}x_1 &-\dfrac{k_2+k_3}{m_2}x_2\\[1em]
+        \dvv{t}u_1 &= &-\dfrac{\gamma_1}{m_1}u_1 & &-\dfrac{k_1+k_2}{m_1}x_1 &+ \dfrac{k_2}{m_1}x_2\\[1em] 
+        \dvv{t}u_2 &= & &-\dfrac{\gamma_2}{m_2}u_2 &+\dfrac{k_2}{m_2}x_1 &-\dfrac{k_2+k_3}{m_2}x_2\\[1em]
         \dvv{t}x_1 &= &u_1 & & &\\[1em]
         \dvv{t}x_2 &= & &u_2 & &
     }}
@@ -1567,11 +1589,11 @@ Group the 2 equations and transform it into a \nth{1} order system:
 \aleq{
     \Rightarrow \ \dvv{t}\bmat{u1\\u_2\\x_1\\x_2} = 
     \bmat{
-        -\dfrac{\gamma}{m_1} & 0 & -\dfrac{k_1+k_2}{m_1} & \dfrac{k_2}{m_1} \\
-        0 & -\dfrac{\gamma}{m_1} &\dfrac{k_2}{m_2} & -\dfrac{k_2+k_3}{m_2} \\
+        -\dfrac{\gamma_1}{m_1} & 0 & -\dfrac{k_1+k_2}{m_1} & \dfrac{k_2}{m_1} \\
+        0 & -\dfrac{\gamma_2}{m_2} &\dfrac{k_2}{m_2} & -\dfrac{k_2+k_3}{m_2} \\
         1 & 0 & 0 & 0 \\
         0 & 1 & 0 & 0
-    }\bmat{u1\\u_2\\x_1\\x_2}
+    }\bmat{u_1\\u_2\\x_1\\x_2}
 }
 
 \begin{center}
@@ -1632,35 +1654,44 @@ So the general solution is
 \hfill\\[1em]
 \bf{\ul{Physical Interpretation}}\\
 
-Note that the general solution is a superposition of 2 kinds of vibration of their own frequencies 
+The general solution is a superposition of 2 kinds of vibration of their own frequencies.\\ 
 (i.e. 2 modes of vibrations).
 
 \begin{itemize}
-    \item \ul{Frequency 1: $\sqrt{\frac{k_1}{m}}$}
+    \item \ul{Angular frequency 1: $\sqrt{\frac{k_1}{m}}$}
     \aleq{
         \bmat{x_1\\x_2} &= C_1\bmat{1\\1}e^{i\sqrt{\frac{k_1}{m}}t}
-        + C_2\bmat{1\\1}e^{-i\sqrt{\frac{k_1}{m}}t} \\
+        + C_2\bmat{1\\1}e^{-i\sqrt{\frac{k_1}{m}}t}
         %
-        &\sim \bmat{1\\1} A_1\cos\qty(\sqrt{\frac{k_1}{m}}t + \phi_1)
+        = \boxed{\bmat{1\\1} A_1\cos\qty(\sqrt{\frac{k_1}{m}}t + \phi_1)}
     }
 
-    In this pattern of vibration, $x_1=x_2=A\cos\qty(\sqrt{\frac{k_1}{m}}t+\phi)$
-
-    \insertFig{in phase mode}
+    In this pattern of vibration, $x_1=x_2=A\cos\qty(\sqrt{\frac{k_1}{m}}t+\phi)$\\[-1em]
+    \begin{center}
+        \begin{minipage}{0.75\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{shm_inphase}
+        \end{minipage}
+    \end{center}
 
     $m_1,m_2$ always move together $\Rightarrow$ Call this the "in phase" mode.
 
-    \item \ul{Frequency 1: $\sqrt{\frac{k_1+2k_2}{m}}$}
+    \item \ul{Angular frequency 2: $\sqrt{\frac{k_1+2k_2}{m}}$}
     \aleq{
         \bmat{x_1\\x_2} &= C_3\bmat{1\\1}e^{i\sqrt{\frac{k_1+2k_2}{m}}t}
-        + C_4\bmat{1\\1}e^{-i\sqrt{\frac{k_1+2k_2}{m}}t} \\
+        + C_4\bmat{1\\1}e^{-i\sqrt{\frac{k_1+2k_2}{m}}t}
         %
-        &\sim \bmat{1\\-1} A_2\cos\qty(\sqrt{\frac{k_1+2k_2}{m}}t + \phi_2)
+        =  \boxed{\bmat{1\\-1} A_2\cos\qty(\sqrt{\frac{k_1+2k_2}{m}}t + \phi_2)}
     }
 
     In this pattern of vibration, $x_1=-x_2=A\cos\qty(\sqrt{\frac{k_1+2k_2}{m}}t+\phi)$
 
-    \insertFig{out of phase mode}
+    \begin{center}
+        \begin{minipage}{0.8\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{shm_outphase}
+        \end{minipage}
+    \end{center}
 
     $m_1,m_2$ always move in opposite direction $\Rightarrow$ Call this the "out of phase" mode.
 

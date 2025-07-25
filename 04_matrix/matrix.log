@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.17)  20 JUL 2025 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 JUL 2025 18:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **d:/mings/Documents/PhyO/latex_notes/04_matrix/matrix.tex
 (d:/mings/Documents/PhyO/latex_notes/04_matrix/matrix.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files standalone
 (c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
@@ -124,7 +124,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ) (c:/texlive/2024/texmf-dist/tex/latex/filemod/filemod-expmin.sty
 Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times (expandable; minimal)
 )) (../.common/common.sty (../.common/packages.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-07-11 L3 programming layer (loader) 
+Package: expl3 2025-07-19 L3 programming layer (loader) 
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
@@ -628,22 +628,60 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen319
+\pgfdecoratedremainingdistance=\dimen320
+\pgfdecoratedinputsegmentcompleteddistance=\dimen321
+\pgfdecoratedinputsegmentremainingdistance=\dimen322
+\pgf@decorate@distancetomove=\dimen323
+\pgf@decorate@repeatstate=\count346
+\pgfdecorationsegmentamplitude=\dimen324
+\pgfdecorationsegmentlength=\dimen325
+)
+\tikz@lib@dec@box=\box73
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (c:/texlive/2024/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.code.tex (c:/texlive/2024/texmf-dist/tex/latex/spath3/spath3.sty
+Package: spath3 2024/05/31 v2.8 Functions for manipulating PGF soft paths
+\g__spath_output_int=\count347
+\l__spath_tmpa_dim=\dimen326
+\l__spath_tmpb_dim=\dimen327
+\l__spath_tmpa_int=\count348
+\l__spath_tmpb_int=\count349
+\l__spath_move_x_dim=\dimen328
+\l__spath_move_y_dim=\dimen329
+\l__spath_rectx_dim=\dimen330
+\l__spath_recty_dim=\dimen331
+\g__spath_anon_int=\count350
+)
+\l__cal_tmpa_int=\count351
+\l__cal_tmpb_int=\count352
+\g__cal_path_component_int=\count353
+\g__cal_label_int=\count354
+\l__cal_tmpa_dim=\dimen332
+\l__cal_tmpb_dim=\dimen333
+\l__cal_tmpc_dim=\dimen334
+\l__cal_tmpd_dim=\dimen335
+\l__cal_tmpe_dim=\dimen336
+\l__cal_tmpf_dim=\dimen337
+\l__cal_tmpg_dim=\dimen338
+\l__cal_tmph_dim=\dimen339
+\l__cal_taper_width_dim=\dimen340
+\l__cal_line_width_dim=\dimen341
 )) (../.common/math.sty) (../.common/format.sty (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count346
-\Gm@cntv=\count347
-\c@Gm@tempcnt=\count348
-\Gm@bindingoffset=\dimen319
-\Gm@wd@mp=\dimen320
-\Gm@odd@mp=\dimen321
-\Gm@even@mp=\dimen322
-\Gm@layoutwidth=\dimen323
-\Gm@layoutheight=\dimen324
-\Gm@layouthoffset=\dimen325
-\Gm@layoutvoffset=\dimen326
+\Gm@cnth=\count355
+\Gm@cntv=\count356
+\c@Gm@tempcnt=\count357
+\Gm@bindingoffset=\dimen342
+\Gm@wd@mp=\dimen343
+\Gm@odd@mp=\dimen344
+\Gm@even@mp=\dimen345
+\Gm@layoutwidth=\dimen346
+\Gm@layoutheight=\dimen347
+\Gm@layouthoffset=\dimen348
+\Gm@layoutvoffset=\dimen349
 \Gm@dimlist=\toks47
 ) (c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
@@ -654,10 +692,10 @@ Package: forloop 2023/05/03 v3.0 For Loops for LaTeX
  (c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ))
-\c@loopcntr=\count349
-\c@lecnum=\count350
-\c@example=\count351
-\c@exercise=\count352
+\c@loopcntr=\count358
+\c@lecnum=\count359
+\c@example=\count360
+\c@exercise=\count361
 )) (./matrix.aux)
 \openout1 = `matrix.aux'.
 
@@ -684,16 +722,16 @@ LaTeX Font Info:    ... okay on input line 14.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count353
-\scratchdimen=\dimen327
-\scratchbox=\box73
-\nofMPsegments=\count354
-\nofMParguments=\count355
+\scratchcounter=\count362
+\scratchdimen=\dimen350
+\scratchbox=\box74
+\nofMPsegments=\count363
+\nofMParguments=\count364
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count356
-\MPscratchDim=\dimen328
-\MPnumerator=\count357
-\makeMPintoPDFobject=\count358
+\MPscratchCnt=\count365
+\MPscratchDim=\dimen351
+\MPnumerator=\count366
+\makeMPintoPDFobject=\count367
 \everyMPtoPDFconversion=\toks51
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -761,81 +799,96 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\matrixtoks=\toks52
-\rowcount=\count359
-\colcount=\count360
-\matrixtoks=\toks53
-\rowcount=\count361
-\colcount=\count362
-\matrixtoks=\toks54
-\rowcount=\count363
-\colcount=\count364
-\matrixtoks=\toks55
-\rowcount=\count365
-\colcount=\count366
+<img/couple.png, id=83, 215.6055pt x 76.48575pt>
+File: img/couple.png Graphic file (type png)
+<use img/couple.png>
+Package pdftex.def Info: img/couple.png  used on input line 29.
+(pdftex.def)             Requested size: 139.4424pt x 49.46887pt.
 
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/couple.png>]
+\matrixtoks=\toks52
+\rowcount=\count368
+\colcount=\count369
+\matrixtoks=\toks53
+\rowcount=\count370
+\colcount=\count371
+\matrixtoks=\toks54
+\rowcount=\count372
+\colcount=\count373
+\matrixtoks=\toks55
+\rowcount=\count374
+\colcount=\count375
 \matrixtoks=\toks56
-\rowcount=\count367
-\colcount=\count368
+\rowcount=\count376
+\colcount=\count377
 \matrixtoks=\toks57
-\rowcount=\count369
-\colcount=\count370
+\rowcount=\count378
+\colcount=\count379
 \matrixtoks=\toks58
-\rowcount=\count371
-\colcount=\count372
+\rowcount=\count380
+\colcount=\count381
 \matrixtoks=\toks59
-\rowcount=\count373
-\colcount=\count374
+\rowcount=\count382
+\colcount=\count383
 
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
+
+ []
+
+
 
 [3]
 \matrixtoks=\toks60
-\rowcount=\count375
-\colcount=\count376
+\rowcount=\count384
+\colcount=\count385
 \matrixtoks=\toks61
-\rowcount=\count377
-\colcount=\count378
+\rowcount=\count386
+\colcount=\count387
 \matrixtoks=\toks62
-\rowcount=\count379
-\colcount=\count380
+\rowcount=\count388
+\colcount=\count389
 \matrixtoks=\toks63
-\rowcount=\count381
-\colcount=\count382
+\rowcount=\count390
+\colcount=\count391
 \matrixtoks=\toks64
-\rowcount=\count383
-\colcount=\count384
+\rowcount=\count392
+\colcount=\count393
 \matrixtoks=\toks65
-\rowcount=\count385
-\colcount=\count386
+\rowcount=\count394
+\colcount=\count395
 \matrixtoks=\toks66
-\rowcount=\count387
-\colcount=\count388
+\rowcount=\count396
+\colcount=\count397
 \matrixtoks=\toks67
-\rowcount=\count389
-\colcount=\count390
+\rowcount=\count398
+\colcount=\count399
 \matrixtoks=\toks68
-\rowcount=\count391
-\colcount=\count392
+\rowcount=\count400
+\colcount=\count401
 \matrixtoks=\toks69
-\rowcount=\count393
-\colcount=\count394
+\rowcount=\count402
+\colcount=\count403
 
 
 [4]
 
 [5]
 \matrixtoks=\toks70
-\rowcount=\count395
-\colcount=\count396
+\rowcount=\count404
+\colcount=\count405
 \matrixtoks=\toks71
-\rowcount=\count397
-\colcount=\count398
+\rowcount=\count406
+\colcount=\count407
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
 
 
 [6]
@@ -843,15 +896,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 575.
+(hyperref)                removing `math shift' on input line 579.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 575.
+(hyperref)                removing `\times' on input line 579.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 575.
+(hyperref)                removing `math shift' on input line 579.
 
 
 
@@ -862,7 +915,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [10]
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 913--917
+Underfull \hbox (badness 10000) in paragraph at lines 917--921
 
  []
 
@@ -871,19 +924,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 913--917
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 985.
+(hyperref)                removing `math shift' on input line 989.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vb' on input line 985.
+(hyperref)                removing `\vb' on input line 989.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vb' on input line 985.
+(hyperref)                removing `\vb' on input line 989.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 985.
+(hyperref)                removing `math shift' on input line 989.
 
 
 
@@ -895,97 +948,146 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [16]
 \matrixtoks=\toks72
-\rowcount=\count399
-\colcount=\count400
+\rowcount=\count408
+\colcount=\count409
 \matrixtoks=\toks73
-\rowcount=\count401
-\colcount=\count402
+\rowcount=\count410
+\colcount=\count411
 \matrixtoks=\toks74
-\rowcount=\count403
-\colcount=\count404
+\rowcount=\count412
+\colcount=\count413
 \matrixtoks=\toks75
-\rowcount=\count405
-\colcount=\count406
+\rowcount=\count414
+\colcount=\count415
 \matrixtoks=\toks76
-\rowcount=\count407
-\colcount=\count408
+\rowcount=\count416
+\colcount=\count417
 \matrixtoks=\toks77
-\rowcount=\count409
-\colcount=\count410
+\rowcount=\count418
+\colcount=\count419
 
 
 [17]
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1390--1391
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1395.
+(hyperref)                removing `\mathsurround' on input line 1399.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1395.
+(hyperref)                removing `\z@' on input line 1399.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1395.
+(hyperref)                removing `superscript' on input line 1399.
 
 
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1451--1452
+Underfull \hbox (badness 10000) in paragraph at lines 1455--1456
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1491.
+(hyperref)                removing `\mathsurround' on input line 1495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1491.
+(hyperref)                removing `\z@' on input line 1495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1491.
+(hyperref)                removing `superscript' on input line 1495.
 
 
 
 [20]
+<img/shm.png, id=215, 348.70274pt x 131.89275pt>
+File: img/shm.png Graphic file (type png)
+<use img/shm.png>
+Package pdftex.def Info: img/shm.png  used on input line 1538.
+(pdftex.def)             Requested size: 195.70428pt x 74.02444pt.
 
-[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1546--1547
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 1632--1634
+ []
+
+<img/shm_m1.png, id=216, 341.47575pt x 128.27925pt>
+File: img/shm_m1.png Graphic file (type png)
+<use img/shm_m1.png>
+Package pdftex.def Info: img/shm_m1.png  used on input line 1550.
+(pdftex.def)             Requested size: 183.95459pt x 69.10533pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1562--1563
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1563--1564
 
-[23] (./matrix.aux)
+ []
+
+<img/shm_m2.png, id=217, 334.851pt x 125.268pt>
+File: img/shm_m2.png Graphic file (type png)
+<use img/shm_m2.png>
+Package pdftex.def Info: img/shm_m2.png  used on input line 1567.
+(pdftex.def)             Requested size: 183.95459pt x 68.81732pt.
+
+
+[21 <./img/shm.png> <./img/shm_m1.png>]
+
+[22 <./img/shm_m2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1669--1670
+
+ []
+
+<img/shm_inphase.png, id=226, 587.19376pt x 75.28125pt>
+File: img/shm_inphase.png Graphic file (type png)
+<use img/shm_inphase.png>
+Package pdftex.def Info: img/shm_inphase.png  used on input line 1673.
+(pdftex.def)             Requested size: 344.92012pt x 44.22026pt.
+
+
+[23 <./img/shm_inphase.png>]
+<img/shm_outphase.png, id=232, 620.3175pt x 60.225pt>
+File: img/shm_outphase.png Graphic file (type png)
+<use img/shm_outphase.png>
+Package pdftex.def Info: img/shm_outphase.png  used on input line 1692.
+(pdftex.def)             Requested size: 367.9162pt x 35.7199pt.
+
+
+[24 <./img/shm_outphase.png>] (./matrix.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `matrix.out' has not changed.
 (rerunfilecheck)             Checksum: 359AB0DB538D2B7B79857A269CF8B646;4212.
  ) 
 Here is how much of TeX's memory you used:
- 29117 strings out of 469747
- 537842 string characters out of 5481688
- 977972 words of memory out of 5000000
- 56903 multiletter control sequences out of 15000+600000
+ 30797 strings out of 469747
+ 582508 string characters out of 5481688
+ 1011294 words of memory out of 5000000
+ 58562 multiletter control sequences out of 15000+600000
  640197 words of font info for 89 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,28n,159p,589b,1164s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,28n,159p,589b,1170s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on matrix.pdf (23 pages, 245521 bytes).
+Output written on matrix.pdf (24 pages, 290092 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 195 words of extra memory for PDF output out of 10000 (max. 10000000)
 
