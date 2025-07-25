@@ -3,7 +3,7 @@
 \usepackage[a4paper, total={6.77in, 9.6in}]{geometry} 
 \usepackage[utf8]{inputenc}
 \setlength{\parindent}{0pt} % no indent before new paragraph
-%\tabulinesep=1mm % vertical spacing in tabu environment
+\allowdisplaybreaks % equation environment from amsmath can break equation between page
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % some formatting command that are vanilla in latex
@@ -60,6 +60,21 @@
 }
 
 
+% this is \substack from amsmath, but content are in displaystyle
+\newenvironment{subdisparray}[1]{%
+  \vcenter\bgroup
+  \Let@ \restore@math@cr \default@tag
+  \baselineskip\fontdimen10 \scriptfont\tw@
+  \advance\baselineskip\fontdimen12 \scriptfont\tw@
+  \lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+  \lineskiplimit\lineskip
+  \ialign\bgroup\ifx c#1\hfil\fi
+    $\m@th\displaystyle##$\hfil\crcr
+}{%
+  \crcr\egroup\egroup
+}
+\newcommand{\mstack}[1]{\subdisparray{c}#1\endsubdisparray}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % (Everything related to colour)
@@ -109,7 +124,7 @@
 
 % coloured underset text + black main body (no underline)
 \newcommand{\cundertext}[3][black]{\underset{\color{#1} #3}{#2}}
-\newcommand{\cut}[3][black]{\cunderset[#1]{#2}{#3}}
+\newcommand{\cut}[3][black]{\cundertext[#1]{#2}{#3}}
 
 % coloured underline + coloured text + black main body
 \newcommand{\cunderset}[3][black]{\underset{\color{#1} #3}{\cul[#1]{#2}}}
@@ -162,7 +177,7 @@
 
 % input: 
 % [color], arrow head tikzmark, text pos relative to arrow head tikzmark (tuple), text
-% [arrow head offset (tuple)], [text offset (tuple)] 
+% [whole body (arrow+text) offset (tuple)], [text alone offset (tuple)] 
 \NewDocumentCommand{\addArrow}{O{black} m m m G{(0,0)} G{(0,0)}}{
 \begin{tikzpicture}[remember picture,overlay]
     \node[text=#1, align=center] at ($(pic cs:#2) + #3 + #5 + #6 $) {#4};
@@ -196,7 +211,7 @@
   \end{tikzpicture}
 }
 
-\NewDocumentCommand{\addUnderArrow}{O{black} m m m G{-4ex} G{(0,0)} G{(0,0)}}{
+\NewDocumentCommand{\addBelowArrow}{O{black} m m m G{-4ex} G{(0,0)} G{(0,0)}}{
   \begin{tikzpicture}[remember picture,overlay]
     \draw[arrows=->, draw=#1]    ($(pic cs:#2) + #6 - (0,1ex)$) -- ($ (pic cs:#2) + #6 - (0,1ex) + (0,#5) $) -| node[pos=0.25,below, text=#1, align=center] {#4} ($(pic cs:#3) + #7 - (0,1ex)$);
   \end{tikzpicture}

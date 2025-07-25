@@ -17,13 +17,13 @@
 %\usepackage{bm} % bold math symbol
 \usepackage{cancel} % for cancel/cross out line on equation
 
-\usepackage{physics} % many short form to math symbols
+\usepackage[arrowdel]{physics} % many short form to math symbols
 % e.g.
 % type \qty before brackets automatically resize it by it contents
 % \abs = ||
 % \dd[]{} = d^n x, \dv[]{}{} = d^n f/dx, \pdv[]{}{} = partial d 
 % \eval_{}^{} = vertical bar + subst value (after integrate/differentiate)
-% \grad, \div, \curl
+% \grad, \div, \curl  (arrowdel option = always have arrow head)
 % also some matrix notation
 
 % write 1st, 2nd... using command \nth{1}, \nth{2}, ...
@@ -137,6 +137,7 @@
 \usepackage{tikz}
 \usepackage{calc}
 \usetikzlibrary{tikzmark, calc, positioning, matrix, quotes}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
 
 % use tikzmark to make arrow pointing a character
 % mark the character being point to by appending \tikzmark{label_name}. In tikzpicture envr, call this point by (pic cs:label_name)

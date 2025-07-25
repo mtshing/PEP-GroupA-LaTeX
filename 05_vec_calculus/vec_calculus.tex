@@ -37,12 +37,26 @@
 
 Geometrically, vectors can be thought as objects that have both \bf{magnitude} and \bf{direction}.
 
+
+\begin{minipage}[t]{0.6\linewidth}
+    \hfill\\[-2em]
+    \begin{itemize}
+        \item We usually visualized a vector as an arrow, 
+        pointing from origin to some coordinate.
+
+    \end{itemize}
+\end{minipage}
+\hspace{2em}
+\begin{minipage}[t]{0.15\linewidth}
+    \centering
+    \begin{figure}[t]
+        \strut\vspace*{-\baselineskip}\newline
+        \includegraphics[width=\textwidth]{vec_arrow}
+    \end{figure}
+\end{minipage}
+
+
 \begin{itemize}
-    \item We usually visualized a vector as an arrow, 
-    pointing from origin to some coordinate
-
-    \insertFig{vector=coor}
-
     \item Vectors can be expressed by column matrices.
     Using row matrices is OK but mathematicians do interpret them differently.
     \aleq{
@@ -54,7 +68,7 @@ Geometrically, vectors can be thought as objects that have both \bf{magnitude} a
 Here are some notations and operations that you (should have) learnt about geometrical vectors.
 
 \begin{enumerate}
-    \item \bf{\ul{Norm}} (the magnitude)
+    \item \bf{\ul{Norm}} (The magnitude)
     \begin{itemize}
         \item Notation: $\Vert\vvec{a}\Vert$. 
         Can also use $|\vvec{a}|$ informally.
@@ -66,17 +80,25 @@ Here are some notations and operations that you (should have) learnt about geome
         \item Geometrically the length of the vector.
         Calculation follows Pythagoras theorem.
 
-        \insertFig{vector norm}
+        \begin{center}
+            \begin{minipage}{0.25\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{vec_arrow}
+            \end{minipage}
+            \begin{minipage}{0.4\linewidth}
+                $\Rightarrow \qquad \red{\Vert{\vvec{a}}\Vert = \sqrt{a_x^2+a_y^2+a_z^2}}$
+            \end{minipage}
+        \end{center}
 
     \end{itemize}
 
-    \item \bf{\ul{Unit vector}} (the direction)
+    \item \bf{\ul{Unit vector}} (The direction)
     \begin{itemize}
         \item Notation: $\hhat{a}$, 
         replacing the vector arrow $\,\vvec{}\,$ with a hat $\,\hhat{}\,$.
         
         \item Formed by a vector divided by its norm (length) :  
-        $\hhat{a} \equiv \frac{\vvec{a}}{\norm{\vvec{a}}}$, 
+        \blue{$\hhat{a} \equiv \frac{\vvec{a}}{\norm{\vvec{a}}}$}, 
         so that it is a vector that points in a given direction but always has norm $=1$.
 
     \end{itemize}
@@ -89,9 +111,13 @@ Here are some notations and operations that you (should have) learnt about geome
     
     And so any vectors in the 3D space can be expressed as a linear combination of these 3 unit vectors:
     \aleq{
-        \vvec{a} = \bmat{a_x\\a_y\\a_z} &= a_x\bmat{1\\0\\0} + a_y\bmat{0\\1\\0} + a_z\bmat{0\\0\\1} \\
-        &= a_x\hhat{x} + a_y\hhat{y} + a_z\hhat{z}
+        \vvec{a} = \bmat{a_x\\a_y\\a_z} 
+        &= \red{a_x}\blue{\bmat{1\\0\\0}} + \red{a_y}\blue{\bmat{0\\1\\0}} + \red{a_z}\blue{\bmat{0\\0\\1}} \\
+        &= \red{a_x}\blue{\hhat{x}} + \red{a_y}\blue{\hhat{y}} + \red{a_z}\blue{\hhat{z}}
     }
+
+    Vector is a combination of \red{(magnitude)}$\times$\blue{(direction)}.\\
+
 
     \item \bf{\ul{Addition/Subtraction}}
     \begin{itemize}
@@ -102,11 +128,17 @@ Here are some notations and operations that you (should have) learnt about geome
         }
 
         \item Geometrically, it can be depicted as parallelogram rule.
-        \insertFig{parallelogram rule}
+        
+        \begin{center}
+            \begin{minipage}{0.7\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{paralelogram}
+            \end{minipage}
+        \end{center}
 
     \end{itemize}
     
-
+    \hfill\\
     \item \bf{\ul{Multiplication with constants}}
     \begin{itemize}
         \item Operations are component-wise:
@@ -115,12 +147,22 @@ Here are some notations and operations that you (should have) learnt about geome
             &= (ka_x)\hhat{x} + (ka_y)\hhat{y} + (ka_z)\hhat{z}
         }
 
-        \item Geometrically, it can be depicted as extending/contracting the vector in the same/opposite direction.
-        
-        \insertFig{scaling}
-
     \end{itemize}
+
+    \begin{minipage}{0.7\linewidth}
+        \begin{itemize}
+            \item Geometrically, it can be depicted as extending / contracting the vector in the same/opposite direction.
+        \end{itemize}
+    \end{minipage}
+    \hspace{2em}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{scaling}
+    \end{minipage}
+        
     
+    
+    \hfill\\
     \item \bf{\ul{Dot product}} (Scalar product)
     
     A multiplication operation between 2 vectors, that yields \ul{a number}.
@@ -133,24 +175,40 @@ Here are some notations and operations that you (should have) learnt about geome
         Note that dot product is symmetric, i.e. $\vvec{a}\cdot\vvec{b} = \vvec{b}\cdot\vvec{a}$.
 
         \item Geometrically, dot product can be viewed as projection of one vector onto the other
-        \aleq{
-            \vvec{a}\cdot\vvec{b} = \norm{\vvec{a}}\norm{\vvec{b}}\cos{\theta}
-        }
-
-        \insertFig{dot prod}
+        \begin{center}
+            \begin{minipage}{0.4\linewidth}
+                \aleq{
+                    \vvec{a}\cdot\vvec{b} = \norm{\vvec{a}}\norm{\vvec{b}}\cos{\theta}
+                }
+            \end{minipage}
+            \begin{minipage}{0.1\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{dot}
+            \end{minipage}
+        \end{center}
 
         where $\theta$ is the angle between the vectors.
         Specifically if one of them is a unit vector,
         computing dot product yields the component of another vector in this unit vector's direction.
-        \aleq{
-            \vvec{a}\cdot \hhat{b} = \norm{\vvec{a}}\cus[blue]{\norm{\hhat{b}}}{=1}\cos{\theta} = \norm{\vvec{a}}\cos{\theta}
-        }
-
-        \insertFig{projection}
+        \begin{center}
+            \begin{minipage}{0.4\linewidth}
+                \aleq{
+                    \vvec{a}\cdot \hhat{b} = \norm{\vvec{a}}\cus[blue]{\norm{\hhat{b}}}{=1}\cos{\theta} 
+                    = \norm{\vvec{a}}\cos{\theta}
+                }
+            \end{minipage}
+            \hspace{2em}
+            \begin{minipage}{0.15\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{dot_proj}
+            \end{minipage}
+        \end{center}
+        
 
         We can use this property to separate components of a vector. E.g.
         \aleq{
-            \vvec{a}\cdot \hhat{x} = \bmat{a_x & a_y & a_z}\cdot \hhat{x} = \bmat{a_x & a_y & a_z}\bmat{1\\0\\0} = a_x = \text{ x component of }\vvec{a}
+            \vvec{a}\cdot \hhat{x} = \bmat{a_x & a_y & a_z}\cdot \hhat{x} 
+            = \bmat{a_x & a_y & a_z}\bmat{1\\0\\0} = a_x = \text{ x component of }\vvec{a}
         }
 
         and write something like
@@ -160,7 +218,7 @@ Here are some notations and operations that you (should have) learnt about geome
     \end{itemize}
 
 
-    
+    \hfill\\
     \item \bf{\ul{Cross product}} (Vector product)
     
     A multiplication operation between 2 vectors, that yields \ul{a new vector}. 
@@ -171,7 +229,7 @@ Here are some notations and operations that you (should have) learnt about geome
         {\scriptsize (There are definitions extended for vectors in higher dimension but they are totally out of our scope)}
     
         \item With the components of both vectors, 
-        it can be calculated as 
+        it can be calculated by determinant:
         \aleq{
             \vvec{c} = \vvec{a}\cross\vvec{b} = 
             \bdet{\hhat{x} & \hhat{y} & \hhat{z} \\ a_x & a_y & a_z \\ b_x & b_y & b_z}
@@ -181,13 +239,35 @@ Here are some notations and operations that you (should have) learnt about geome
         \item Geometrically, cross product outputs a vector that is perpendicular to the plane spanned by the original 2 vectors.
         This vector has a magnitude $\norm{\vvec{c}}=\norm{\vvec{a}}\norm{\vvec{b}}\sin{\theta}$.
 
-        \insertFig{cross prod}
+        \begin{center}
+            \begin{minipage}{0.55\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{cross}
+            \end{minipage}
+        \end{center}
+
+        The direction of the product vector can be found using right hand grip rule. 
+        The curl of the 4 fingers represent the rotation direction from $\vvec{a}$ to $\vvec{b}$.
+        Then the thumb will point into the direction of $\vvec{c}$.\\
+
+        \begin{example} (Order of $\hhat{x}$-$\hhat{y}$-$\hhat{z}$)\\
+
+            Conventionally, the direction of the 3 unit vectors follow the order of right hand grip rule.
+            We can verify with cross product:
+            \aleq{
+                \hhat{x}\cross\hhat{y} = \bdet{\hhat{x} & \hhat{y} & \hhat{z} \\ 1 & 0 & 0 \\ 0 & 1 & 0} = \hhat{z}
+            }
+            The same for $\hhat{y}\cross\hhat{z}=\hhat{x}$ and $\hhat{z}\cross\hhat{x}=\hhat{y}$.
+
+        \end{example}
 
     \end{itemize}
 
 \end{enumerate}
 
+
 \linesep
+\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Limits on Vector Functions}
 
@@ -202,7 +282,12 @@ is getting closer to match on a "limiting" vector $\vvec{L}$.
     \substack{}\text{ When }t\text{ approaches }t_0
 }
 
-\insertFig{vector limit}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{limit}
+    \end{minipage}
+\end{center}
 
 Equivalently, 
 it implies that the distance between $\vvec{F}(t)$ and $\vvec{L}$ need to be as small as possible
@@ -236,7 +321,7 @@ The definition and notation is similar (but picture is hard to visualize).
 \section{Vector Differentiation}
 
 \begin{notation}
-    In the following section, I will stick to the colour scheme that
+    In the following section, I will stick to the colour scheme:
     \begin{itemize}
         \item \red{red} = indices for inputs, e.g. $\red{\vvec{x}} = (x_\red{1}, x_\red{2}, ...,x_\red{n})$
         \item \blue{blue} = indices for outputs, e.g. $\blue{\vvec{F}} = (F_\blue{1}, F_\blue{2}, ...,F_\blue{n})$
@@ -283,7 +368,7 @@ The rules for calculation are basically the same as in single variable functions
     \item \ul{Scaling} :
     $\dvv{t}\qty[k\vvec{F}(t)] = k\dvv{t}\vvec{F}(t)$
 
-    \item \ul{Product rule} : One product rule for each kind of muliplications between vectors.
+    \item \ul{Product rule} : One product rule for each kind of muliplication between vectors.
     \aleq{
         \dvv{t}\qty[\vvec{F}(t)\cdot \vvec{G}(t)] &= 
         \qty[\dvv{t}\vvec{F}(t)]\cdot\vvec{G}(t) + \vvec{F}(t)\cdot \qty[\dvv{t}\vvec{G}(t)]\\
@@ -292,7 +377,7 @@ The rules for calculation are basically the same as in single variable functions
         \cus[red]{\qty[\dvv{t}\vvec{F}(t)]\cross\vvec{G}(t) + \vvec{F}(t)\cross \qty[\dvv{t}\vvec{G}(t)]}
         {\mstack{\text{"}F\cross G\text{" must stay the same order}\\\text{because order matters in cross Product}}}
     }
-    (And there is no quotient rule, obviously)
+    (And there is no quotient rule, obviously.)
 
 \end{itemize}
 
@@ -353,7 +438,7 @@ And join each column into one big matrix:
 
 
 
-
+\hfill\\
 %%%%%%%%%%%%%%
 \subsection{Differentiaton by Vector - Gradient}
 
@@ -370,17 +455,31 @@ Recall the definition of partial differentiation
 
 What if we want the slope in an arbituary direction?
 
-\insertFig{arbi slope}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{grad_plane}
+    \end{minipage}
+\end{center}
 
 Suppose we want to find the slope along the direction of some vector $\vvec{v}$.
 We know $\vvec{v}$ can be decomposed into component form of $\hhat{x}$/$\hhat{y}$.
-\aleq{
-    \vvec{v} &= u_x\hhat{x} + u_y\hhat{y}\\
-    &= (\norm{\vvec{v}}\cos{\theta})\hhat{x} + (\norm{\vvec{v}}\sin{\theta})\hhat{y}
-}
 
-\insertFig{dir of v}
 
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \aleq{
+            \vvec{v} &= u_x\hhat{x} + u_y\hhat{y}\\
+            &= (\norm{\vvec{v}}\cos{\theta})\hhat{x} + (\norm{\vvec{v}}\sin{\theta})\hhat{y}
+        }
+    \end{minipage}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{grad_u}
+    \end{minipage}
+\end{center}
+
+\hfill\\
 And the unit vector of $\hhat{v}$ can be expressed as 
 \aleq{
     \hhat{v} = \frac{\vvec{v}}{\norm{\vvec{v}}} 
@@ -391,24 +490,31 @@ To find the slope along $\vvec{v}$,
 first vary $f(x,y)$ to $f(x+v_x, y+v_y)$,
 and then divide by $\norm{\vvec{v}}$. 
 Finally limit $\norm{\vvec{v}} \to 0$ to turn it into differentiation.
+
+\addArrow[red]{Du}{(0,-3ex)}{\scriptsize Just a notation\\[-1ex]\scriptsize of differentiating\\[-1ex]\scriptsize in $\vvec{v}$'s direction}
+{(0,-1.5ex)}{(0,-1.5ex)}
 \aleq{
     \tkn{Du}{\cul[red]{D_{\hhat{v}}}} f(x,y) 
     &= \lim_{\norm{\vvec{v}} \to 0} \frac{f(x+v_x, y+v_y)-f(x,y)}{\norm{\vvec{v}}}\\[1em]
+    %
     &= \lim_{\norm{\vvec{v}} \to 0} \frac{f(x+v_x, y+v_y)\blue{-f(x,y+v_y)}}{\norm{\vvec{v}}}
         + \lim_{\norm{\vvec{v}} \to 0} \frac{\blue{f(x, y+v_y)}-f(x,y)}{\norm{\vvec{v}}}\\[1em]
+    %
     &= \lim_{\norm{\vvec{v}} \to 0} \frac{f(x+v_x, y+v_y)-f(x,y+v_y)}{\blue{v_x}}\blue{\cos{\theta}}
         + \lim_{\norm{\vvec{v}} \to 0} \frac{f(x, y+v_y)-f(x,y)}{\blue{v_y}}\blue{\sin{\theta}}\\[1em]
+    %
     &= \cut[green]{\cbox[green]{\lim_{\blue{v_x} \to 0} \frac{f(\cbox[green]{x+v_x}, y+v_y)-f(\cbox[green]{x},y+v_y)}{\cbox[green]{v_x}}}}
             {\text{This is exactly partial x}}\cos{\theta}
         + \cut[yellow]{\cbox[yellow]{\lim_{\blue{v_y} \to 0} \frac{f(x, \cbox[yellow]{y+v_y})-f(x,\cbox[yellow]{y})}{\cbox[yellow]{v_y}}}}
             {\text{This is exactly partial y}}\sin{\theta}\\[1em]
+    %
     &= \cul[green]{\qty(\pdvv{x}f(x,y))}\cos{\theta} + \cul[yellow]{\qty(\pdvv{y}f(x,y))}\sin{\theta}\\[1em]
+    %
     &= \qty(\hhat{x}\pdvv{x}f(x,y) + \hhat{y}\pdvv{y}f(x,y)) \cdot \qty((\cos{\theta})\hhat{x} + (\sin{\theta})\hhat{y})\\[1em]
+    %
     &= \tkn{indpU}{\cub[purple]{\bmat{\pdvv{x}f(x,y) & \pdvv{y}f(x,y)}}{}}
         \tkn{justU}{\cul[gray]{\bmat{\cos{\theta}\\\sin{\theta}}}}
 }
-\addArrow[red]{Du}{(0,-3ex)}{\scriptsize Just a notation\\[-1ex]\scriptsize of differentiating\\[-1ex]\scriptsize in $\vvec{v}$'s direction}
-{(0,-1.5ex)}{(0,-1.5ex)}
 \addArrow[purple]{indpU}{(0,-4ex)}{\large Some row vector independent of $\vvec{u}$}
 {(0,-4ex)}{(0,-0.5ex)}
 \addArrow[gray]{justU}{(5ex,0)}{\scriptsize This is just $\hhat{v}$\\[-1ex]$\scriptstyle =(\cos\theta)\hhat{x}+(\sin\theta)\hhat{y}$}
@@ -541,7 +647,7 @@ And join each row into one big matrix:
 
 
 
-
+\hfill\\
 %%%%%%%%%%%%%%
 \subsection{Chain Rule in Matrix Form}
 
@@ -609,6 +715,7 @@ The chain rule can be written as a matrix multiplication.
     }
 }
 
+\newpage
 As individual terms which is
 \aleq{
     \pdv{g_\blue{i}}{x_\red{j}} &= \sum_{\green{k=1}}^{\green{m}}\pdvv{g_\blue{i}}{f_\green{k}}\cdot\pdvv{f_\green{k}}{x_\red{j}}\\
@@ -671,6 +778,7 @@ As individual terms which is
 
 
 \linesep
+\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Line Integral}
 
@@ -678,26 +786,47 @@ As individual terms which is
 \subsection{Parametrizing Curves in Space}
 
 Recall that a single variable vector function is essentially describing a curve in a space.
-\aleq{
-    \vvec{r} = (x(t), y(t))
-}
 
-\insertFig{r(t)}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \aleq{
+            \vvec{r} = (x(t), y(t))
+        }
+        Any point on the curve only needs 1 input ($t$) to fully locate it.\\
+        \red{(Intuitively, Curve = 1D object = only 1 free variable.)}
 
-Any point on the curve only needs 1 input ($t$) to fully locate it.
-\red{(Intuitively, Curve = 1D object = only 1 free variable.)}\\
+    \end{minipage}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{curve}
+    \end{minipage}
+\end{center}
+
+
 
 Here we introduce the idea of \bf{parametrization}: 
 Choose a lower-dimension coordinate system on the object to describe every point on it,
 rather than using the environmental x/y/z coordinate.
 
-\insertFig{parametrization}
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{curve_para}
+    \end{minipage}
+\end{center}
 
 We can also do it to higher dimension objects,
 but the maths are way more complicated.
 
-\insertFig{surface parametrization}
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{surf_para}
+    \end{minipage}
+\end{center}
 
+\hfill\\[1em]
 \bf{\ul{Note}}: Parametrization to an object is never unique,
 because there can be infinitely many ways to choose a coordinate system.
 
@@ -705,49 +834,83 @@ because there can be infinitely many ways to choose a coordinate system.
     Parametrizing the curve $y=3x^{\frac{3}{2}}$.
 
     \begin{itemize}
-        \item Choice 1: Let $x=t^2$, then $y=3(t^2)^{\frac{3}{2}}=3t^2$ 
+        \item Choice 1: Let $x=t^2$, then $y=3(t^2)^{\frac{3}{2}}=3t^3$ 
         $\quad\Rightarrow\quad$ Parametrize as $\vvec{r}(t)=(t^2,3t^3)$.
 
         \item Choice 2: Let $x=t$, then $y=3t^{\frac{3}{2}}$ 
         $\quad\Rightarrow\quad$ Parametrize as $\vvec{r}(t)=(t,3t^{\frac{3}{2}})$
+
+        \item ...
     \end{itemize}
+
+    There are infinitely choice of $x(t)$. 
+    So the number of possible parametrization is infinite.
+
 \end{example}
 
-
+\newpage
 Here are some example parametrization to common objects.
 \begin{itemize}
     \item \ul{Straight line}
     \aleq{
         \vvec{r}(t) = (x(t), y(t)) = (x_0 + td_x, y_0 + td_y)
     }
-    \insertFig{straight line para}
+    \begin{center}
+        \begin{minipage}{0.28\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{para_line}
+        \end{minipage}
+    \end{center}
 
     \item \ul{Ellipse / Circle}
     \aleq{
         \vvec{r}(t) = (x(t), y(t)) = (x_0+a\cos{(\omega t+\phi)}, y_0+b\sin{(\omega t+\phi)})
     }
-    (If $a=b$, it becomes a circle.)
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{para_ellipse}
+        \end{minipage}
+        \begin{minipage}{0.4\linewidth}
+            (If $a=b$, it becomes a circle.)
+        \end{minipage}
+    \end{center}
 
-    \insertFig{circle para}
 \end{itemize}
 
 %%%%%%%%%%%%%%
 \subsection{Line Integral on Scalar Functions}
-Recall that 
-\begin{itemize}
-    \item $\int f(x,y)\dd{x} = $ Integrate along x-axis, at constant y.
-    \item $\int f(x,y)\dd{y} = $ Integrate along y-axis, at constant x.
-\end{itemize}
+Recall what we learnt in doing multiple integral
 
-\insertFig{intx inty}
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        $\displaystyle\int f(x,y)\dd{x} 
+        \ =\  \mstack{\text{Integrate along x-axis}\\\text{at constant y}}$\\
+        \includegraphics[height=11.5em]{auc_x}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+       $\displaystyle\int f(x,y)\dd{x} 
+        \ =\  \mstack{\text{Integrate along y-axis}\\\text{at constant x}}$\\
+        \includegraphics[height=11.5em]{auc_y}
+    \end{minipage}
+\end{center}
 
+\hfill\\
 What about integrating along an arbituary curve?
 
-\insertFig{int arb curve}
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[height=11.5em]{auc_line}
+    \end{minipage}
+\end{center}
 
-Recall that in integration on single variable function, 
+In integration on single variable function, 
 we first interpret it as a sum of area under curve.  
-We can write something similar for integration along an arbituary line.\\[1em]
+We can write something similar for integration along an arbituary curve.\\[1em]
 \addBelowArrow[red]{hh}{hhh}{Height of strip}{-3ex}{(0,0)}{(0,-0.5ex)}
 \addAboveArrow[blue]{xx}{xxx}{Width of strip}{3ex}
 \aleq{
@@ -760,8 +923,9 @@ We can write something similar for integration along an arbituary line.\\[1em]
 While the heights of the strips are simply the function's values, 
 the widths need to be estimated by Pythegoras theorem.
 
-\insertFig{int para curve}
-
+\begin{center}
+    \includegraphics[height=11.5em]{auc_line_para}
+\end{center}
 \aleq{
     \text{Width of interval }\norm{\Delta \vvec{r}_i}
     &= \sqrt{\qty[x(t_{i+1})-x(t_i)]^2 + \qty[y(t_{i+1})-y(t_i)]^2} \\[1ex]
@@ -778,23 +942,32 @@ So for the line integral calculation:
     &= \lim_{\Delta t_i \to 0} \sum_{i=1}^n f(\xi_{i,x}, \xi_{i,y})|\Delta t_i| \sqrt{\qty[\frac{\Delta x_i}{\Delta t_i}]^2 + \qty[\frac{\Delta y_i}{\Delta t_i}]^2}\\
     &= \tkn{real_lineint}{\cbox[red]{\int f(x(t),y(t)) \sqrt{\qty(\dvv{x(t)}{t})^2+\qty(\dvv{y(t)}{t})^2}\dd{t}}}
 }
-
-\addArrow[blue]{text_lineint}{(0,-5ex)}
+\addArrow[blue]{text_lineint}{(0,-3.5ex)}
 {\text{The notation}\\\text{you can find}\\in textbook}{(0,-3ex)}{(-2ex,-3ex)}
-\addArrow[red]{real_lineint}{(0,-5ex)}
+\addArrow[red]{real_lineint}{(0,-3.5ex)}
 {This is how you really calculate line integral\\e.g. along some line on x-y plane.\\(You have to decide how to parametrize the curve!)}
-{(0,-4ex)}{(0,-3ex)}
+{(0,-3.5ex)}{(0,-3ex)}
 
 \hfill\\[5em]
 In addition, We can also interpret line integral as a weighted sum,
 like in single variable integral.
-\aleq{
-    \int f(\blue{x,y}) \red{\dd{\vvec{r}}} \; 
-    \defeq\;  
-    \lim_{\Delta x_i \to 0}\, \tkn{s2}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
-    \tkn{h2}{\cul[blue]{f(\blue{\xi_{i,x}, \xi_{i,y}})}}
-    \tkn{w2}{\cul[red]{\red{\norm{\Delta \vvec{r}_i}}}}
-}
+
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \aleq{
+            \int f(\blue{x,y}) \red{\dd{\vvec{r}}} \; 
+            \defeq\;  
+            \lim_{\Delta x_i \to 0}\, \tkn{s2}{\cul[green]{\sum_{i=0}^{n-1}}}\enspace 
+            \tkn{h2}{\cul[blue]{f(\blue{\xi_{i,x}, \xi_{i,y}})}}
+            \tkn{w2}{\cul[red]{\red{\norm{\Delta \vvec{r}_i}}}}
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{weight}
+    \end{minipage}
+\end{center}
 \addArrow[green]{s2}{(-5.5ex,-3.5ex)}{\scriptsize Sum\\[-1ex]\scriptsize them all}
 {(0,-4ex)}{(-1ex,0)}
 \addArrow[blue]{h2}{(0,-4ex)}{\scriptsize "weight"\\[-1ex]\scriptsize assigned to the interval \\[-1ex]\scriptsize $[(x_i, y_i), (x_{i+1},y_{i+1})]$}
@@ -802,8 +975,7 @@ like in single variable integral.
 \addArrow[red]{w2}{(8ex,-4ex)}{\scriptsize length of \\[-1ex]\scriptsize interval \\[-1ex]\scriptsize $[(x_i, y_i), (x_{i+1},y_{i+1})]$}
 {(0,-1.5ex)}{(2ex,-1.5ex)}
 
-\insertFig{weight sum interpret}
-
+\hfill\\[1em]
 \bf{\ul{More on notations}}
 \begin{enumerate}
     \item \ul{Extend to N-variables Functions}\\
@@ -831,11 +1003,20 @@ like in single variable integral.
     \item \ul{Loop Integral}\\
     It is possible that the curve to be integrated along forms a closed loop (e.g. a circle).
     A special symbol is assigned specifically for this use case:
-    \aleq{
-        \oint_C f(\vvec{r})\dd{\vvec{r}}
-    }
+    
 
-    \insertFig{loop int}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \aleq{
+                \tkn{loop}{\cul[blue]{\oint}} f(\vvec{r})\dd{\vvec{r}}
+            }
+        \end{minipage}
+        \begin{minipage}{0.15\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{loop}
+        \end{minipage}
+    \end{center}
+    \addArrow[blue]{loop}{(-5ex,0)}{A circle to represent\\a loop}{(-2ex,0.5ex)}{(-9ex,0)}
 
     This is because loop integral has some interesting properties and appears in many theorems.
     We shall encounter them later, especially in electrodynamics.
@@ -862,7 +1043,7 @@ If $f(x,y)$ is to be replaced by a vector function, we have 2 possibilities:
     \red{(Because order matters in cross product, it is quite common to see $\displaystyle \int_C \dd{\vvec{r}}\cross\vvec{F}$)}
 \end{itemize}
 
-
+\hfill\\
 \bf{\ul{Calculation}}
 
 Here demonstrates with dot product line integral. 
@@ -875,7 +1056,7 @@ Cross product is exactly the same.
 Notice that this is a summation of \cul[blue]{all dot product} along a curve.
 If we express each dot product by the curve parameter $t$: 
 \aleq{
-    \vvec{F(x(t_i), y(t_i))} \cdot \Delta\vvec{r}_i 
+    \vvec{F}(x(t_i), y(t_i)) \cdot \Delta\vvec{r}_i 
     &= \vvec{F}(x(t_i),y(t_i))\cdot \qty[\vvec{r}(t_{i+1})-\vvec{r}(t_i)]\\
     &= \vvec{F}(x(t_i),y(t_i))\cdot \qty[\frac{\vvec{r}(t_{i+1})-\vvec{r}(t_i)}{t_{i+1}-t_i}](t_{i+1}-t_i)\\
     &= \vvec{F}(x(t_i),y(t_i))\cdot \qty(\frac{\Delta \vvec{r}_i}{\Delta t_i})\Delta t_i\\
@@ -896,14 +1077,29 @@ So for the line integral calculation:
 {(0,-4ex)}{(5ex,-3ex)}
 
 
-\hfill\\[4em]
+\newpage
 \bf{\ul{Geometrical intepretation}}\\
 
-The function $vvec{F}(x,y)$ can be plotted as a "field of vectors",
+The function $\vvec{F}(x,y)$ can be plotted as a "field of vectors",
 i.e. at each point $(x,y)$, there is a vector $(F_x,F_y)$
 
-\insertFig{vector field}
+\begin{center}
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \includegraphics[height=8.5em]{field_scalar}\\
+        Scalar function:\\
+        Every point is assigned a number\\
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \includegraphics[height=8.5em]{field_vec}\\
+        Vector function:\\
+        Every point is assigned a vector\\
+    \end{minipage}
+\end{center}
 
+\hfill\\[1em]
 The quantity $\vvec{F}\cdot \dd{\vvec{r}}$ is like,
 \begin{itemize}
     \item Find the vector on each segment
@@ -911,8 +1107,14 @@ The quantity $\vvec{F}\cdot \dd{\vvec{r}}$ is like,
 \end{itemize}
 Then compute the such dot product for each segment and sum them all.
 
-\insertFig{sum dot prod}
+\begin{center}
+    \begin{minipage}{0.9\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{dot_sum}
+    \end{minipage}
+\end{center}
 
+\hfill\\
 \begin{example}
     An object is moving on a surface with a positional dependent friction force
     \aleq{
@@ -927,9 +1129,16 @@ Then compute the such dot product for each segment and sum them all.
 
     Find the W.D. due to friction on this trajectory.
 
+    \newpage
     \begin{enumerate}
         \item Begin with parametrizing the trajectory
-        \insertFig{trajectory}
+        \begin{center}
+            \begin{minipage}{0.65\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{curve_para_eg}
+            \end{minipage}
+        \end{center}
+
 
         Recall that parametrization for circle is usaully in the from
         \aleq{
@@ -952,7 +1161,7 @@ Then compute the such dot product for each segment and sum them all.
         \aleq{
             \bcase{
                 \theta=0 \quad\Leftrightarrow\quad (x,y)=(1,5)\\
-                \theta=\frac{\pi}{2} \quad\Leftrightarrow\quad (x,y)=(2,4)
+                \theta=\frac{\pi}{2} \quad\Leftrightarrow\quad (x,y)=(4,2)
             }
         }
 
@@ -979,27 +1188,47 @@ Then compute the such dot product for each segment and sum them all.
 If $f(\vvec{r})$ is a \ul{continuous scalar function}, 
 and $\grad f(\vvec{r})$ is its gradient vector (field), 
 then the line integral
-\aleq{
-    \int_{\red{\substack{\text{start}\\\text{from }\vvec{r}_1}}}^{\red{\substack{\text{end}\\\text{at }\vvec{r}_2}}}
-        \grad f(\vvec{r}) \cdot \dd{\vvec{r}} 
-    = f(\red{\vvec{r}_2}) - f(\red{\vvec{r}_1})
-}
 
-is \ul{independent of what curve is integrated along}.
-(which means we can skip all the steps of curve parametrization.)
+\hfill\\[-3.5em]
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \aleq{
+            \int_{\red{\substack{\text{start}\\\text{from }\vvec{r}_1}}}^{\red{\substack{\text{end}\\\text{at }\vvec{r}_2}}}
+                \grad f(\vvec{r}) \cdot \dd{\vvec{r}} 
+            = f(\red{\vvec{r}_2}) - f(\red{\vvec{r}_1})
+        }
+    \end{minipage}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{int_path}
+    \end{minipage}
+\end{center}
 
-\insertFig{int all equal}
+is \ul{independent of what curve we are integrating along}.
+
+\begin{center}
+    (We can skip all the steps of curve parametrization!)\\
+\end{center}
+
 
 To illustrate, recall that $\grad f\cdot \hhat{u} =$ slope in $\hhat{u}$'s direction.
 So,
-\aleq{
-    \grad f \cdot \dd{\vvec{r}} 
-    &= \grad f \cdot \cut[blue]{\cbox[blue]{\frac{\dd{\vvec{r}}}{\norm{\dd{\vvec{r}}}}}}{\text{unit vector}}\norm{\dd{\vvec{r}}}\\[1ex]
-    &= \qty(\mstack{\text{slope in}\\\dd{\vvec{r}}\text{ direction}})\times \qty(\mstack{\displaystyle\text{Base}\\\displaystyle\text{length}})\\[1em]
-    &= \qty(\mstack{\text{Change in height} \\ \text{along }\dd{\vvec{r}}})
-}
 
-\insertFig{change in height}
+
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \aleq{
+            \grad f \cdot \dd{\vvec{r}} 
+            &= \grad f \cdot \cut[blue]{\cbox[blue]{\frac{\dd{\vvec{r}}}{\norm{\dd{\vvec{r}}}}}}{\text{unit vector}}\norm{\dd{\vvec{r}}}\\[1ex]
+            &= \qty(\mstack{\text{slope in}\\\dd{\vvec{r}}\text{ direction}})\times \qty(\mstack{\displaystyle\text{Base}\\\displaystyle\text{length}})\\[1em]
+            &= \qty(\mstack{\text{Change in height} \\ \text{along }\dd{\vvec{r}}})
+        }
+    \end{minipage}
+    \begin{minipage}{0.38\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{int_slope}
+    \end{minipage}
+\end{center}
 
 Therefore,
 \aleq{
@@ -1013,7 +1242,12 @@ Therefore,
 And this should be intuitive - when the landscape is continuous,
 the net height change should be always independent of which path is taken.
 
-\insertFig{path taken}
+\begin{center}
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{int_height}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%
@@ -1028,7 +1262,7 @@ if it equals to the gradient vector of some scalar function $U(\vvec{r})$.
 \addArrow[green]{minus}{(0,-4ex)}{Have a minus sign\\by definition}{(0,-1ex)}{(0,-2ex)}
 \addArrow[blue]{PE}{(12ex,-4ex)}{Scalar function\\= the potential energy}{(0,-1ex)}{(5ex,-1ex)}
 
-\hfill\\[3em]
+\hfill\\[2em]
 If the force's vector field is conservative, it has a nice property:
 \aleq{
     \mstack{\text{Total W.D. along}\\\text{any path between }\vvec{r}_1,\vvec{r}_2}
@@ -1045,16 +1279,25 @@ Taking any path will cost the same work done.
     \aleq{
         \vvec{F}(\vvec{r}) = \frac{GMm}{\norm{\vvec{r}}^2} 
     }
+
+    \hfill\\[-3.5em]
+    \begin{center}
+        \begin{minipage}{0.8\linewidth}
+            which is why we can compute the gravitational potential energy change by
+            \aleq{
+                \Delta U(\vvec{r}) = -\int_{\vvec{r}_1\to\vvec{r}_2} \vvec{F}\cdot\dd{\vvec{r}}
+                = -\qty(\frac{GMm}{\norm{\vvec{r}_2}^2} - \frac{GMm}{\norm{\vvec{r}_2}^2} )
+            }
+        \end{minipage}
+        \begin{minipage}{0.15\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{ufo}
+        \end{minipage}
+    \end{center}
     
-    which is why we can compute the gravitational potential energy change by
-    \aleq{
-        \Delta U(\vvec{r}) = -\int_{\vvec{r}_1\to\vvec{r}_2} \vvec{F}\cdot\dd{\vvec{r}}
-        = -\qty(\frac{GMm}{\norm{\vvec{r}_2}^2} - \frac{GMm}{\norm{\vvec{r}_2}^2} )
-    }
     without EVER doing annoying line integral. 
     (And so it can appear in your high school syllabus)
 
-    \insertFig{UFO}
 
 \end{example}
 

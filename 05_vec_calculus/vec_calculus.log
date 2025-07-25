@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  23 JUL 2025 18:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 JUL 2025 22:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -799,176 +799,390 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+<img/vec_arrow.png, id=71, 141.52875pt x 121.05225pt>
+File: img/vec_arrow.png Graphic file (type png)
+<use img/vec_arrow.png>
+Package pdftex.def Info: img/vec_arrow.png  used on input line 54.
+(pdftex.def)             Requested size: 73.38724pt x 62.7702pt.
+File: img/vec_arrow.png Graphic file (type png)
+<use img/vec_arrow.png>
+Package pdftex.def Info: img/vec_arrow.png  used on input line 86.
+(pdftex.def)             Requested size: 108.51096pt x 92.81337pt.
+
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (21.47507pt too wide) in paragraph at lines 118--119
-[]\OT1/cmr/m/n/12 Geometrically, it can be de-picted as ex-tend-ing/contracting the vec-tor in the same/opposite
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/vec_arrow.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+<img/paralelogram.png, id=87, 395.67825pt x 104.7915pt>
+File: img/paralelogram.png Graphic file (type png)
+<use img/paralelogram.png>
+Package pdftex.def Info: img/paralelogram.png  used on input line 135.
+(pdftex.def)             Requested size: 303.82935pt x 80.46904pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+<img/scaling.png, id=88, 144.54pt x 110.814pt>
+File: img/scaling.png Graphic file (type png)
+<use img/scaling.png>
+Package pdftex.def Info: img/scaling.png  used on input line 160.
+(pdftex.def)             Requested size: 91.9773pt x 70.51488pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
  []
 
 
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+[2 <./img/paralelogram.png>]
+<img/dot.png, id=98, 67.452pt x 98.16675pt>
+File: img/dot.png Graphic file (type png)
+<use img/dot.png>
+Package pdftex.def Info: img/dot.png  used on input line 186.
+(pdftex.def)             Requested size: 43.40703pt x 63.17401pt.
+<img/dot_proj.png, id=100, 92.14426pt x 75.8835pt>
+File: img/dot_proj.png Graphic file (type png)
+<use img/dot_proj.png>
+Package pdftex.def Info: img/dot_proj.png  used on input line 203.
+(pdftex.def)             Requested size: 65.10391pt x 53.61597pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 220--222
+[3 <./img/scaling.png> <./img/dot.png> <./img/dot_proj.png>]
+<img/cross.png, id=107, 313.77225pt x 124.66576pt>
+File: img/cross.png Graphic file (type png)
+<use img/cross.png>
+Package pdftex.def Info: img/cross.png  used on input line 245.
+(pdftex.def)             Requested size: 238.72542pt x 94.84966pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 
 
-[4]
-Overfull \hbox (12.49765pt too wide) detected at line 319
-[]
+[4 <./img/cross.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+<img/limit.png, id=115, 304.7385pt x 105.39375pt>
+File: img/limit.png Graphic file (type png)
+<use img/limit.png>
+Package pdftex.def Info: img/limit.png  used on input line 288.
+(pdftex.def)             Requested size: 244.6341pt x 84.60617pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
  []
 
 
 
-[5]
-Overfull \hbox (0.50984pt too wide) detected at line 409
-[]
- []
-
-
+[5 <./img/limit.png>]
 
 [6]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
+Overfull \hbox (12.49765pt too wide) detected at line 404
+[]
+ []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
 
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 426.
+ []
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 467--469
+<img/grad_plane.png, id=131, 471.56175pt x 178.86826pt>
+File: img/grad_plane.png Graphic file (type png)
+<use img/grad_plane.png>
+Package pdftex.def Info: img/grad_plane.png  used on input line 461.
+(pdftex.def)             Requested size: 342.48624pt x 129.91496pt.
+<img/grad_u.png, id=132, 174.05025pt x 104.18925pt>
+File: img/grad_u.png Graphic file (type png)
+<use img/grad_u.png>
+Package pdftex.def Info: img/grad_u.png  used on input line 478.
+(pdftex.def)             Requested size: 97.85214pt x 58.57608pt.
 
- []
-
-
-Overfull \hbox (5.63797pt too wide) detected at line 488
+Overfull \hbox (0.50984pt too wide) detected at line 517
 []
  []
 
 
 
-[8]
+[8 <./img/grad_plane.png> <./img/grad_u.png>]
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 687--689
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 532.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
 
  []
 
 
+Overfull \hbox (5.63797pt too wide) detected at line 594
+[]
+ []
+
+
+
+[9]
 
 [10]
+Underfull \hbox (badness 10000) in paragraph at lines 650--652
+
+ []
+
+
 
 [11]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 797.
-
-
-
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 816--822
+<img/curve.png, id=158, 127.07475pt x 87.9285pt>
+File: img/curve.png Graphic file (type png)
+<use img/curve.png>
+Package pdftex.def Info: img/curve.png  used on input line 802.
+(pdftex.def)             Requested size: 97.85214pt x 67.70915pt.
+<img/curve_para.png, id=159, 390.258pt x 136.1085pt>
+File: img/curve_para.png Graphic file (type png)
+<use img/curve_para.png>
+Package pdftex.def Info: img/curve_para.png  used on input line 815.
+(pdftex.def)             Requested size: 293.5639pt x 102.3864pt.
+<img/surf_para.png, id=160, 326.4195pt x 134.30174pt>
+File: img/surf_para.png Graphic file (type png)
+<use img/surf_para.png>
+Package pdftex.def Info: img/surf_para.png  used on input line 825.
+(pdftex.def)             Requested size: 293.5639pt x 120.78642pt.
+
+
+[13 <./img/curve.png> <./img/curve_para.png> <./img/surf_para.png>]
+<img/para_line.png, id=167, 186.6975pt x 98.769pt>
+File: img/para_line.png Graphic file (type png)
+<use img/para_line.png>
+Package pdftex.def Info: img/para_line.png  used on input line 861.
+(pdftex.def)             Requested size: 128.7696pt x 68.12656pt.
+<img/para_ellipse.png, id=168, 272.217pt x 102.98476pt>
+File: img/para_ellipse.png Graphic file (type png)
+<use img/para_ellipse.png>
+Package pdftex.def Info: img/para_ellipse.png  used on input line 872.
+(pdftex.def)             Requested size: 183.95459pt x 69.59654pt.
+<img/auc_x.png, id=169, 289.08pt x 192.72pt>
+File: img/auc_x.png Graphic file (type png)
+<use img/auc_x.png>
+Package pdftex.def Info: img/auc_x.png  used on input line 890.
+(pdftex.def)             Requested size: 202.68544pt x 135.1236pt.
+<img/auc_y.png, id=170, 289.68225pt x 188.50426pt>
+File: img/auc_y.png Graphic file (type png)
+<use img/auc_y.png>
+Package pdftex.def Info: img/auc_y.png  used on input line 897.
+(pdftex.def)             Requested size: 207.65166pt x 135.1236pt.
+<img/auc_line.png, id=171, 445.06274pt x 194.52675pt>
+File: img/auc_line.png Graphic file (type png)
+<use img/auc_line.png>
+Package pdftex.def Info: img/auc_line.png  used on input line 907.
+(pdftex.def)             Requested size: 309.1649pt x 135.1236pt.
+
+Overfull \hbox (15.601pt too wide) in paragraph at lines 907--908
+ [][] 
+ []
+
+
+
+[14 <./img/para_line.png> <./img/para_ellipse.png> <./img/auc_x.png> <./img/auc_y.png> <./img/auc_line.png>]
+<img/auc_line_para.png, id=177, 514.3215pt x 168.63pt>
+File: img/auc_line_para.png Graphic file (type png)
+<use img/auc_line_para.png>
+Package pdftex.def Info: img/auc_line_para.png  used on input line 927.
+(pdftex.def)             Requested size: 412.13269pt x 135.1236pt.
+
+
+[15 <./img/auc_line_para.png>]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 963.
+
+<img/weight.png, id=182, 96.36pt x 80.7015pt>
+File: img/weight.png Graphic file (type png)
+<use img/weight.png>
+Package pdftex.def Info: img/weight.png  used on input line 968.
+(pdftex.def)             Requested size: 73.38724pt x 61.46184pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 988--994
+
+ []
+
+<img/loop.png, id=183, 92.7465pt x 89.73524pt>
+File: img/loop.png Graphic file (type png)
+<use img/loop.png>
+Package pdftex.def Info: img/loop.png  used on input line 1016.
+(pdftex.def)             Requested size: 68.98122pt x 66.74396pt.
+
+
+[16 <./img/weight.png> <./img/loop.png>]
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
+
+ []
+
+<img/field_scalar.png, id=195, 174.05025pt x 113.223pt>
+File: img/field_scalar.png Graphic file (type png)
+<use img/field_scalar.png>
+Package pdftex.def Info: img/field_scalar.png  used on input line 1089.
+(pdftex.def)             Requested size: 153.53383pt x 99.87396pt.
+<img/field_vec.png, id=196, 181.27725pt x 113.82526pt>
+File: img/field_vec.png Graphic file (type png)
+<use img/field_vec.png>
+Package pdftex.def Info: img/field_vec.png  used on input line 1096.
+(pdftex.def)             Requested size: 159.06253pt x 99.87396pt.
+<img/dot_sum.png, id=197, 520.94624pt x 112.62074pt>
+File: img/dot_sum.png Graphic file (type png)
+<use img/dot_sum.png>
+Package pdftex.def Info: img/dot_sum.png  used on input line 1113.
+(pdftex.def)             Requested size: 440.3384pt x 95.19534pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1118
 
  []
 
 
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 899--901
+[18 <./img/field_scalar.png> <./img/field_vec.png> <./img/dot_sum.png>]
+<img/curve_para_eg.png, id=203, 384.83775pt x 164.41425pt>
+File: img/curve_para_eg.png Graphic file (type png)
+<use img/curve_para_eg.png>
+Package pdftex.def Info: img/curve_para_eg.png  used on input line 1138.
+(pdftex.def)             Requested size: 298.92796pt x 127.71825pt.
 
- []
-
-
-
-[14]
-Overfull \hbox (11.9565pt too wide) detected at line 969
+Overfull \hbox (11.9565pt too wide) detected at line 1178
 []
  []
 
 
 
-[15]
+[19 <./img/curve_para_eg.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1192--1193
 
-[16]
+ []
 
-[17] (./vec_calculus.aux)
+<img/int_path.png, id=211, 104.7915pt x 92.14426pt>
+File: img/int_path.png Graphic file (type png)
+<use img/int_path.png>
+Package pdftex.def Info: img/int_path.png  used on input line 1203.
+(pdftex.def)             Requested size: 73.38724pt x 64.53145pt.
+<img/int_slope.png, id=212, 242.1045pt x 133.09724pt>
+File: img/int_slope.png Graphic file (type png)
+<use img/int_slope.png>
+Package pdftex.def Info: img/int_slope.png  used on input line 1229.
+(pdftex.def)             Requested size: 185.9243pt x 102.21507pt.
+<img/int_height.png, id=213, 210.18526pt x 190.311pt>
+File: img/int_height.png Graphic file (type png)
+<use img/int_height.png>
+Package pdftex.def Info: img/int_height.png  used on input line 1248.
+(pdftex.def)             Requested size: 171.24686pt x 155.06287pt.
+
+
+[20 <./img/int_path.png> <./img/int_slope.png> <./img/int_height.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1284
+
+ []
+
+<img/ufo.png, id=218, 100.57574pt x 98.16675pt>
+File: img/ufo.png Graphic file (type png)
+<use img/ufo.png>
+Package pdftex.def Info: img/ufo.png  used on input line 1294.
+(pdftex.def)             Requested size: 73.38724pt x 71.63266pt.
+
+
+[21 <./img/ufo.png>] (./vec_calculus.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
@@ -977,18 +1191,18 @@ Package rerunfilecheck Info: File `vec_calculus.out' has not changed.
 (rerunfilecheck)             Checksum: 8A4EF509F6EE10CB272ED02192A4DE24;3362.
  ) 
 Here is how much of TeX's memory you used:
- 30592 strings out of 469747
- 582398 string characters out of 5481688
- 994904 words of memory out of 5000000
- 58363 multiletter control sequences out of 15000+600000
+ 30952 strings out of 469747
+ 589993 string characters out of 5481688
+ 993913 words of memory out of 5000000
+ 58718 multiletter control sequences out of 15000+600000
  646871 words of font info for 110 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,30n,159p,601b,1047s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on vec_calculus.pdf (17 pages, 245141 bytes).
+Output written on vec_calculus.pdf (21 pages, 484524 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

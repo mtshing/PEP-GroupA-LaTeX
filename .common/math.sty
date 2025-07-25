@@ -61,9 +61,7 @@
 \newcommand{\adj}{\operatorname{adj}} % matrix adjoint / adjugate
 \newcommand{\cof}{\operatorname{cof}} % matrix cofactor
 
-% default name = nabla. Add shortcut to call it del
-% can also called by \grad (from physics package, together with \div, \curl)
-\newcommand{\del}{\nabla}
+
 
 
 
@@ -80,8 +78,15 @@
 \newcommand{\vvec}[1]{\va*{#1}}
 \newcommand{\hhat}[1]{\vu*{#1}}
 
+% use absolute value for norm. \norm is default double bar in physics package
+\renewcommand{\norm}[1]{|#1|}
+
 % bold and upright for alphabet that represent matrix
 \newcommand{\mmat}[1]{\vb{#1}}
+
+% require del to always have vector head
+% can also call \grad (from physics package, together with \div, \curl)
+\newcommand{\del}{\vvec{\nabla}}
 
 
 % matrix without parenthesis = used as an array
