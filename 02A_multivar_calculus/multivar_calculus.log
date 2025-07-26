@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.17)  19 JUL 2025 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  26 JUL 2025 19:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **d:/mings/Documents/PhyO/latex_notes/02A_multivar_calculus/multivar_calculus.tex
 (d:/mings/Documents/PhyO/latex_notes/02A_multivar_calculus/multivar_calculus.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files standalone
 (c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
@@ -124,7 +124,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ) (c:/texlive/2024/texmf-dist/tex/latex/filemod/filemod-expmin.sty
 Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times (expandable; minimal)
 )) (../.common/common.sty (../.common/packages.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-07-11 L3 programming layer (loader) 
+Package: expl3 2025-07-19 L3 programming layer (loader) 
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
@@ -628,22 +628,60 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen319
+\pgfdecoratedremainingdistance=\dimen320
+\pgfdecoratedinputsegmentcompleteddistance=\dimen321
+\pgfdecoratedinputsegmentremainingdistance=\dimen322
+\pgf@decorate@distancetomove=\dimen323
+\pgf@decorate@repeatstate=\count346
+\pgfdecorationsegmentamplitude=\dimen324
+\pgfdecorationsegmentlength=\dimen325
+)
+\tikz@lib@dec@box=\box73
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (c:/texlive/2024/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.code.tex (c:/texlive/2024/texmf-dist/tex/latex/spath3/spath3.sty
+Package: spath3 2024/05/31 v2.8 Functions for manipulating PGF soft paths
+\g__spath_output_int=\count347
+\l__spath_tmpa_dim=\dimen326
+\l__spath_tmpb_dim=\dimen327
+\l__spath_tmpa_int=\count348
+\l__spath_tmpb_int=\count349
+\l__spath_move_x_dim=\dimen328
+\l__spath_move_y_dim=\dimen329
+\l__spath_rectx_dim=\dimen330
+\l__spath_recty_dim=\dimen331
+\g__spath_anon_int=\count350
+)
+\l__cal_tmpa_int=\count351
+\l__cal_tmpb_int=\count352
+\g__cal_path_component_int=\count353
+\g__cal_label_int=\count354
+\l__cal_tmpa_dim=\dimen332
+\l__cal_tmpb_dim=\dimen333
+\l__cal_tmpc_dim=\dimen334
+\l__cal_tmpd_dim=\dimen335
+\l__cal_tmpe_dim=\dimen336
+\l__cal_tmpf_dim=\dimen337
+\l__cal_tmpg_dim=\dimen338
+\l__cal_tmph_dim=\dimen339
+\l__cal_taper_width_dim=\dimen340
+\l__cal_line_width_dim=\dimen341
 )) (../.common/math.sty) (../.common/format.sty (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count346
-\Gm@cntv=\count347
-\c@Gm@tempcnt=\count348
-\Gm@bindingoffset=\dimen319
-\Gm@wd@mp=\dimen320
-\Gm@odd@mp=\dimen321
-\Gm@even@mp=\dimen322
-\Gm@layoutwidth=\dimen323
-\Gm@layoutheight=\dimen324
-\Gm@layouthoffset=\dimen325
-\Gm@layoutvoffset=\dimen326
+\Gm@cnth=\count355
+\Gm@cntv=\count356
+\c@Gm@tempcnt=\count357
+\Gm@bindingoffset=\dimen342
+\Gm@wd@mp=\dimen343
+\Gm@odd@mp=\dimen344
+\Gm@even@mp=\dimen345
+\Gm@layoutwidth=\dimen346
+\Gm@layoutheight=\dimen347
+\Gm@layouthoffset=\dimen348
+\Gm@layoutvoffset=\dimen349
 \Gm@dimlist=\toks47
 ) (c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
@@ -654,10 +692,10 @@ Package: forloop 2023/05/03 v3.0 For Loops for LaTeX
  (c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ))
-\c@loopcntr=\count349
-\c@lecnum=\count350
-\c@example=\count351
-\c@exercise=\count352
+\c@loopcntr=\count358
+\c@lecnum=\count359
+\c@example=\count360
+\c@exercise=\count361
 )) (./multivar_calculus.aux)
 \openout1 = `multivar_calculus.aux'.
 
@@ -684,16 +722,16 @@ LaTeX Font Info:    ... okay on input line 14.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count353
-\scratchdimen=\dimen327
-\scratchbox=\box73
-\nofMPsegments=\count354
-\nofMParguments=\count355
+\scratchcounter=\count362
+\scratchdimen=\dimen350
+\scratchbox=\box74
+\nofMPsegments=\count363
+\nofMParguments=\count364
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count356
-\MPscratchDim=\dimen328
-\MPnumerator=\count357
-\makeMPintoPDFobject=\count358
+\MPscratchCnt=\count365
+\MPscratchDim=\dimen351
+\MPnumerator=\count366
+\makeMPintoPDFobject=\count367
 \everyMPtoPDFconversion=\toks51
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1012,21 +1050,21 @@ Package pdftex.def Info: img/iint_eg2_x_div3.png  used on input line 883.
 [15 <./img/iint_eg2_x.png> <./img/iint_eg2_x_div1.png> <./img/iint_eg2_x_div2.png> <./img/iint_eg2_x_div3.png>] (./multivar_calculus.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `multivar_calculus.out' has not changed.
 (rerunfilecheck)             Checksum: 9BEDAE5FE9B2C48AAA6BB70B835139B5;2901.
  ) 
 Here is how much of TeX's memory you used:
- 28325 strings out of 469747
- 524530 string characters out of 5481688
- 908695 words of memory out of 5000000
- 56140 multiletter control sequences out of 15000+600000
+ 29947 strings out of 469747
+ 567967 string characters out of 5481688
+ 942028 words of memory out of 5000000
+ 57742 multiletter control sequences out of 15000+600000
  640163 words of font info for 87 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,28n,159p,612b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,28n,159p,612b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on multivar_calculus.pdf (15 pages, 413914 bytes).
+Output written on multivar_calculus.pdf (15 pages, 413913 bytes).
 PDF statistics:
  262 PDF objects out of 1000 (max. 8388607)
  180 compressed objects within 2 object streams
