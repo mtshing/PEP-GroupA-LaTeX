@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.17)  17 JUL 2025 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  27 JUL 2025 02:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **d:/mings/Documents/PhyO/latex_notes/03_ode/ode.tex
 (d:/mings/Documents/PhyO/latex_notes/03_ode/ode.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files standalone
 (c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
@@ -124,7 +124,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ) (c:/texlive/2024/texmf-dist/tex/latex/filemod/filemod-expmin.sty
 Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times (expandable; minimal)
 )) (../.common/common.sty (../.common/packages.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-07-11 L3 programming layer (loader) 
+Package: expl3 2025-07-19 L3 programming layer (loader) 
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
@@ -622,22 +622,66 @@ Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 \l__sn_ya_dim=\dimen318
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen319
+\pgfdecoratedremainingdistance=\dimen320
+\pgfdecoratedinputsegmentcompleteddistance=\dimen321
+\pgfdecoratedinputsegmentremainingdistance=\dimen322
+\pgf@decorate@distancetomove=\dimen323
+\pgf@decorate@repeatstate=\count346
+\pgfdecorationsegmentamplitude=\dimen324
+\pgfdecorationsegmentlength=\dimen325
+)
+\tikz@lib@dec@box=\box73
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (c:/texlive/2024/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.code.tex (c:/texlive/2024/texmf-dist/tex/latex/spath3/spath3.sty
+Package: spath3 2024/05/31 v2.8 Functions for manipulating PGF soft paths
+\g__spath_output_int=\count347
+\l__spath_tmpa_dim=\dimen326
+\l__spath_tmpb_dim=\dimen327
+\l__spath_tmpa_int=\count348
+\l__spath_tmpb_int=\count349
+\l__spath_move_x_dim=\dimen328
+\l__spath_move_y_dim=\dimen329
+\l__spath_rectx_dim=\dimen330
+\l__spath_recty_dim=\dimen331
+\g__spath_anon_int=\count350
+)
+\l__cal_tmpa_int=\count351
+\l__cal_tmpb_int=\count352
+\g__cal_path_component_int=\count353
+\g__cal_label_int=\count354
+\l__cal_tmpa_dim=\dimen332
+\l__cal_tmpb_dim=\dimen333
+\l__cal_tmpc_dim=\dimen334
+\l__cal_tmpd_dim=\dimen335
+\l__cal_tmpe_dim=\dimen336
+\l__cal_tmpf_dim=\dimen337
+\l__cal_tmpg_dim=\dimen338
+\l__cal_tmph_dim=\dimen339
+\l__cal_taper_width_dim=\dimen340
+\l__cal_line_width_dim=\dimen341
 )) (../.common/math.sty) (../.common/format.sty (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count346
-\Gm@cntv=\count347
-\c@Gm@tempcnt=\count348
-\Gm@bindingoffset=\dimen319
-\Gm@wd@mp=\dimen320
-\Gm@odd@mp=\dimen321
-\Gm@even@mp=\dimen322
-\Gm@layoutwidth=\dimen323
-\Gm@layoutheight=\dimen324
-\Gm@layouthoffset=\dimen325
-\Gm@layoutvoffset=\dimen326
+\Gm@cnth=\count355
+\Gm@cntv=\count356
+\c@Gm@tempcnt=\count357
+\Gm@bindingoffset=\dimen342
+\Gm@wd@mp=\dimen343
+\Gm@odd@mp=\dimen344
+\Gm@even@mp=\dimen345
+\Gm@layoutwidth=\dimen346
+\Gm@layoutheight=\dimen347
+\Gm@layouthoffset=\dimen348
+\Gm@layoutvoffset=\dimen349
 \Gm@dimlist=\toks47
 ) (c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
@@ -648,10 +692,10 @@ Package: forloop 2023/05/03 v3.0 For Loops for LaTeX
  (c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ))
-\c@loopcntr=\count349
-\c@lecnum=\count350
-\c@example=\count351
-\c@exercise=\count352
+\c@loopcntr=\count358
+\c@lecnum=\count359
+\c@example=\count360
+\c@exercise=\count361
 )) (./ode.aux)
 \openout1 = `ode.aux'.
 
@@ -678,16 +722,16 @@ LaTeX Font Info:    ... okay on input line 14.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count353
-\scratchdimen=\dimen327
-\scratchbox=\box73
-\nofMPsegments=\count354
-\nofMParguments=\count355
+\scratchcounter=\count362
+\scratchdimen=\dimen350
+\scratchbox=\box74
+\nofMPsegments=\count363
+\nofMParguments=\count364
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count356
-\MPscratchDim=\dimen328
-\MPnumerator=\count357
-\makeMPintoPDFobject=\count358
+\MPscratchCnt=\count365
+\MPscratchDim=\dimen351
+\MPnumerator=\count366
+\makeMPintoPDFobject=\count367
 \everyMPtoPDFconversion=\toks51
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -935,27 +979,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--460
 [8 <./img/euler.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 495.
+(hyperref)                removing `math shift' on input line 494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 495.
+(hyperref)                removing `superscript' on input line 494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 495.
+(hyperref)                removing `math shift' on input line 494.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 497.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 496.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 497.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 496.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 497.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 496.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 497.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 496.
 
 
 
@@ -963,10 +1007,10 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 497.
 <img/shm_damp.png, id=164, 168.02776pt x 114.4275pt>
 File: img/shm_damp.png Graphic file (type png)
 <use img/shm_damp.png>
-Package pdftex.def Info: img/shm_damp.png  used on input line 580.
+Package pdftex.def Info: img/shm_damp.png  used on input line 579.
 (pdftex.def)             Requested size: 103.5249pt x 70.49927pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--586
+Underfull \hbox (badness 10000) in paragraph at lines 583--585
 
  []
 
@@ -975,100 +1019,106 @@ Underfull \hbox (badness 10000) in paragraph at lines 584--586
 [10 <./img/shm_damp.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 604.
+(hyperref)                removing `math shift' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 604.
+(hyperref)                removing `\gamma' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 604.
+(hyperref)                removing `superscript' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 604.
+(hyperref)                removing `math shift' on input line 603.
 
 <img/shm_damp_over.png, id=171, 407.121pt x 116.23425pt>
 File: img/shm_damp_over.png Graphic file (type png)
 <use img/shm_damp_over.png>
-Package pdftex.def Info: img/shm_damp_over.png  used on input line 620.
+Package pdftex.def Info: img/shm_damp_over.png  used on input line 619.
 (pdftex.def)             Requested size: 329.2568pt x 93.99902pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 628.
+(hyperref)                removing `math shift' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 628.
+(hyperref)                removing `\gamma' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 628.
+(hyperref)                removing `superscript' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 628.
+(hyperref)                removing `math shift' on input line 627.
 
 <img/shm_damp_under.png, id=172, 432.4155pt x 115.632pt>
 File: img/shm_damp_under.png Graphic file (type png)
 <use img/shm_damp_under.png>
-Package pdftex.def Info: img/shm_damp_under.png  used on input line 638.
+Package pdftex.def Info: img/shm_damp_under.png  used on input line 637.
 (pdftex.def)             Requested size: 351.53467pt x 93.99902pt.
 
 
 [11 <./img/shm_damp_over.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 647.
+(hyperref)                removing `math shift' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 647.
+(hyperref)                removing `\gamma' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 647.
+(hyperref)                removing `superscript' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 647.
+(hyperref)                removing `math shift' on input line 646.
 
 <img/shm_damp_crit.png, id=177, 380.622pt x 95.1555pt>
 File: img/shm_damp_crit.png Graphic file (type png)
 <use img/shm_damp_crit.png>
-Package pdftex.def Info: img/shm_damp_crit.png  used on input line 655.
+Package pdftex.def Info: img/shm_damp_crit.png  used on input line 654.
 (pdftex.def)             Requested size: 282.01593pt x 70.49927pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 658--660
+Underfull \hbox (badness 10000) in paragraph at lines 657--659
 
  []
 
 <img/shm_damp_all.png, id=178, 428.802pt x 162.6075pt>
 File: img/shm_damp_all.png Graphic file (type png)
 <use img/shm_damp_all.png>
-Package pdftex.def Info: img/shm_damp_all.png  used on input line 664.
+Package pdftex.def Info: img/shm_damp_all.png  used on input line 663.
 (pdftex.def)             Requested size: 309.85605pt x 117.49878pt.
 
 
 [12 <./img/shm_damp_under.png> <./img/shm_damp_crit.png> <./img/shm_damp_all.png>]
+<img/shm_g.png, id=183, 101.178pt x 54.2025pt>
+File: img/shm_g.png Graphic file (type png)
+<use img/shm_g.png>
+Package pdftex.def Info: img/shm_g.png  used on input line 722.
+(pdftex.def)             Requested size: 73.38724pt x 39.31606pt.
 
-[13]
+
+[13 <./img/shm_g.png>]
 
 [14]
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 855--857
+Underfull \hbox (badness 10000) in paragraph at lines 866--868
 
  []
 
 
-Overfull \hbox (44.4357pt too wide) detected at line 891
+Overfull \hbox (44.4357pt too wide) detected at line 902
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 899--901
+Underfull \hbox (badness 10000) in paragraph at lines 910--912
 
  []
 
@@ -1077,15 +1127,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 899--901
 [16]
 
 [17]
-<img/shm_force.png, id=211, 166.221pt x 118.64325pt>
+<img/shm_force.png, id=212, 166.221pt x 118.64325pt>
 File: img/shm_force.png Graphic file (type png)
 <use img/shm_force.png>
-Package pdftex.def Info: img/shm_force.png  used on input line 1004.
+Package pdftex.def Info: img/shm_force.png  used on input line 1015.
 (pdftex.def)             Requested size: 98.77208pt x 70.49927pt.
 
 
 [18 <./img/shm_force.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1066--1068
+Underfull \hbox (badness 10000) in paragraph at lines 1077--1079
 
  []
 
@@ -1094,24 +1144,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 1066--1068
 [19] (./ode.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `ode.out' has not changed.
 (rerunfilecheck)             Checksum: 2469A585717BA419EB4A4CDE994873CE;5079.
  ) 
 Here is how much of TeX's memory you used:
- 27102 strings out of 469747
- 497081 string characters out of 5481688
- 897233 words of memory out of 5000000
- 54914 multiletter control sequences out of 15000+600000
+ 28863 strings out of 469747
+ 544600 string characters out of 5481688
+ 936178 words of memory out of 5000000
+ 56646 multiletter control sequences out of 15000+600000
  637972 words of font info for 81 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,29n,159p,583b,764s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,29n,159p,583b,811s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ode.pdf (19 pages, 301102 bytes).
+Output written on ode.pdf (19 pages, 303063 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
+ 307 PDF objects out of 1000 (max. 8388607)
  243 compressed objects within 3 object streams
  61 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

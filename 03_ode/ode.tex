@@ -460,8 +460,7 @@ which all are convenient to use in some scenarios.
     
     If the following is a "good" approximation (applicable when $x$ is small enough)
     \aleq{
-        f(k+ x) \approx a_0 + a_1 ( x) + a_2 (x)^2 
-        + a_3 (x)^3 + ... a_n (x)^n
+        f(k+ x) \approx a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots + a_n x^n
     }
     with $k$ being a known value, then we can determine $a_0, a_1, ..., a_n$:  
     \aleq{
@@ -479,10 +478,10 @@ which all are convenient to use in some scenarios.
         Let $t=k+x$. Differentiate against $t$ and substitute $x=0$ (so $t$ becomes $k+0=k$),
         \aleq{
             \mat{
-                f(k+0) &= &a_0 &+ a_1\cancel{(0)} &+ a_2\cancel{(0)}^2 &+ a_3\cancel{(0)}^3 &+a_4\cancel{(0)}^4 &+...\\[1.2em]
-                \eval{\dvv{f(t)}{t}}_{t=k} &= & &+a_1 &+ 2a_2\cancel{(0)} &+ 3a_3\cancel{(0)}^2 &+4a_4\cancel{(0)}^3 &+...\\[1.2em]
-                \eval{\dvv[2]{f(t)}{t}}_{t=k} &= & & &+2a_2 &+ (3\cdot 2)a_3\cancel{(0)} &+ (4\cdot 3)a_4 \cancel{(0)}^2 &+...\\[1.2em]
-                \eval{\dvv[3]{f(t)}{t}}_{t=k} &= & & & &+ (3\cdot 2)a_3 &+ (4\cdot 3\cdot 2)a_4 \cancel{(0)} &+...
+                f(k+0) &= &a_0 &+ a_1\cancel{(0)} &+ a_2\cancel{(0)}^2 &+ a_3\cancel{(0)}^3 &+a_4\cancel{(0)}^4 &+\dots\\[1.2em]
+                \eval{\dvv{f(t)}{t}}_{t=k} &= & &+a_1 &+ 2a_2\cancel{(0)} &+ 3a_3\cancel{(0)}^2 &+4a_4\cancel{(0)}^3 &+\dots\\[1.2em]
+                \eval{\dvv[2]{f(t)}{t}}_{t=k} &= & & &+2a_2 &+ (3\cdot 2)a_3\cancel{(0)} &+ (4\cdot 3)a_4 \cancel{(0)}^2 &+\dots\\[1.2em]
+                \eval{\dvv[3]{f(t)}{t}}_{t=k} &= & & & &+ (3\cdot 2)a_3 &+ (4\cdot 3\cdot 2)a_4 \cancel{(0)} &+\dots
             }
         }
         And so on. 
@@ -671,7 +670,7 @@ It looks like over-damped case but the mass can return to the original position.
 
 Now we consider non-homogeneous linear ODE. For example,
 \aleq{
-    a\dvv[2]{t}f(t) + b\dvv{t}f(t) + cf(t) = \cus[red]{g(t)}{\substack{\text{non-homogeneous term}\\\text{not containing }f(t)}} \neq 0
+    a\dvv[2]{t}f(t) + b\dvv{t}f(t) + cf(t) = \cus[red]{g(t)}{\substack{\text{non-homogeneous term}\\\text{i.e. not containing }f(t)}} \neq 0
 }
 
 The general solution to a non-homogeneous linear ODE is made of 2 parts:
@@ -709,12 +708,23 @@ Show by substitution to be clearer:
 
 Consider a spring-mass system that is subject to gravity. 
 The Newton's \nth{2} Law writes:
-\aleq{
-    m\dvv[2]{t} x(t) = -kx(t) - mg
-}
 
-\insertFig{shm gravity}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \aleq{
+            m\dvv[2]{t} x(t) = -kx(t) - mg
+        }   
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{shm_g}
+    \end{minipage}
+\end{center}
 
+
+\hfill\\[1ex]
 The simplest way to solve it is by grouping $mg$ into $x(t)$. 
 \aleq{
     m\dvv[2]{t} \qty[x(t) + \tkn{mgk}{\cul[blue]{\frac{mg}{k}}}] = -k\qty[x(t) + \frac{mg}{k}]
@@ -722,6 +732,7 @@ The simplest way to solve it is by grouping $mg$ into $x(t)$.
 \addArrow[blue]{mgk}{(4ex,-4ex)}{$\dfrac{mg}{k}$ is a constant. So $\dvv{t}\qty(\dfrac{mg}{k}) = 0$}
 {(0,-3ex)}{(17ex,1ex)}
 
+\hfill\\
 Then substitute $y(t) = x(t) + \dfrac{mg}{k}$. 
 We can see that this ODE of $y(t)$ is the same as equation of motion of a spring-mass system without gravity.
 \aleq{
@@ -1034,7 +1045,7 @@ we can guess $x_p(t) = A\cos{(\omega t)} + B\sin{(\omega t)}$.
     \begin{array}{crcl}
     &\red{k \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]}  &= &\red{k \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]} \\[0.8em]
     &\red{\gamma \times \qty[\black{\dvv{t}(A\cos{(\omega t)} + B\sin{(\omega t)})}]}  &= &\red{\gamma \times \qty[\black{-\omega A\sin{(\omega t)} + B\omega\cos{(\omega t)}}]} \\[0.8em]
-    +\Bigr)\  &\red{m \times \qty[\black{\dvv[2]{t}(-\omega^2 A\cos{(\omega t)} -\omega^2 B\sin{(\omega t)})}]}  &= &\red{k \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]} \\[0.8em]
+    +\Bigr)\  &\red{m \times \qty[\black{\dvv[2]{t}(-\omega^2 A\cos{(\omega t)} -\omega^2 B\sin{(\omega t)})}]}  &= &\red{m \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]} \\[0.8em]
     \hline\\[-1.5em]
     &m\dvv[2]{t}x_p(t) + \gamma\dvv{t}x_p(t) + kx_p(t) &= & (-\omega^2A m + \omega B \gamma + Ak)\cos{\omega t} \\
         & & & \quad + (-\omega^2Bm -\omega A\gamma +Bk)\sin{\omega t}\\
