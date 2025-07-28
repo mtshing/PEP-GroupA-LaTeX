@@ -1,7 +1,7 @@
 \documentclass[class=article, crop=false, 12pt]{standalone}
 \usepackage[subpreambles=true]{standalone}
 \usepackage{../.common/common}
-
+\allowdisplaybreaks % equation environment from amsmath can break equation between page
 
 \author{Tony Shing}
 %\pretitle{Supplementary}
@@ -469,7 +469,7 @@ We know $\vvec{v}$ can be decomposed into component form of $\hhat{x}$/$\hhat{y}
 \begin{center}
     \begin{minipage}{0.5\linewidth}
         \aleq{
-            \vvec{v} &= u_x\hhat{x} + u_y\hhat{y}\\
+            \vvec{v} &= v_x\hhat{x} + v_y\hhat{y}\\
             &= (\norm{\vvec{v}}\cos{\theta})\hhat{x} + (\norm{\vvec{v}}\sin{\theta})\hhat{y}
         }
     \end{minipage}
@@ -515,7 +515,7 @@ Finally limit $\norm{\vvec{v}} \to 0$ to turn it into differentiation.
     &= \tkn{indpU}{\cub[purple]{\bmat{\pdvv{x}f(x,y) & \pdvv{y}f(x,y)}}{}}
         \tkn{justU}{\cul[gray]{\bmat{\cos{\theta}\\\sin{\theta}}}}
 }
-\addArrow[purple]{indpU}{(0,-4ex)}{\large Some row vector independent of $\vvec{u}$}
+\addArrow[purple]{indpU}{(0,-4ex)}{\large Some row vector independent of $\vvec{v}$}
 {(0,-4ex)}{(0,-0.5ex)}
 \addArrow[gray]{justU}{(5ex,0)}{\scriptsize This is just $\hhat{v}$\\[-1ex]$\scriptstyle =(\cos\theta)\hhat{x}+(\sin\theta)\hhat{y}$}
 {(5ex,0)}{(5ex,0)}
@@ -729,10 +729,10 @@ As individual terms which is
     Recall this example we have seen in note of multivariable calculus, 
     \aleq{
         \bcase{
-            f(p,q) &= \sqrt{p+q} \\ \vec{h}(u,v) &= (u^2+v, u-v)
+            f(p,q) &= \sqrt{p+q} \\ \vvec{h}(u,v) &= (u^2+v, u-v)
         }
         \qquad\Rightarrow\qquad
-        f(\vvec{h(u,v)}) = \sqrt{u^2+u}
+        f(\vvec{h}(u,v)) = \sqrt{u^2+u}
     }
 
     We can first express their derivatives in matrix form.
@@ -765,10 +765,10 @@ As individual terms which is
     Given the functions and their composition:
     \aleq{
         \bcase{
-            f(p,q) &= \sqrt{p+q} \\ \vec{g}(t) &= (t-1, t^2)
+            f(p,q) &= \sqrt{p+q} \\ \vvec{g}(t) &= (t-1, t^2)
         }
         \qquad\Rightarrow\qquad
-        f(\vvec{g(t)}) = \sqrt{t^2+t-1}
+        f(\vvec{g}(t)) = \sqrt{t^2+t-1}
     }
 
     Compute the derivative $\dvv{t}f(\vvec{g}(t))$, 

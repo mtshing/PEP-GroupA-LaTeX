@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 JUL 2025 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  28 JUL 2025 21:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -916,16 +916,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--443
 
 
 [7]
-<img/grad_plane.png, id=131, 471.56175pt x 178.86826pt>
+<img/grad_plane.png, id=131, 464.937pt x 178.86826pt>
 File: img/grad_plane.png Graphic file (type png)
 <use img/grad_plane.png>
 Package pdftex.def Info: img/grad_plane.png  used on input line 461.
-(pdftex.def)             Requested size: 342.48624pt x 129.91496pt.
-<img/grad_u.png, id=132, 174.05025pt x 104.18925pt>
+(pdftex.def)             Requested size: 342.48624pt x 131.76544pt.
+<img/grad_u.png, id=132, 169.8345pt x 104.7915pt>
 File: img/grad_u.png Graphic file (type png)
 <use img/grad_u.png>
 Package pdftex.def Info: img/grad_u.png  used on input line 478.
-(pdftex.def)             Requested size: 97.85214pt x 58.57608pt.
+(pdftex.def)             Requested size: 97.85214pt x 60.37776pt.
 
 Overfull \hbox (0.50984pt too wide) detected at line 517
 []
@@ -1193,13 +1193,13 @@ Package rerunfilecheck Info: File `vec_calculus.out' has not changed.
 Here is how much of TeX's memory you used:
  30952 strings out of 469747
  589993 string characters out of 5481688
- 993913 words of memory out of 5000000
+ 994909 words of memory out of 5000000
  58718 multiletter control sequences out of 15000+600000
  646871 words of font info for 110 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,30n,159p,601b,1047s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on vec_calculus.pdf (21 pages, 484524 bytes).
+Output written on vec_calculus.pdf (21 pages, 483738 bytes).
 PDF statistics:
  303 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams
