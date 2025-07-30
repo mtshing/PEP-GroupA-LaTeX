@@ -14,7 +14,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm} % theorem environment
 \usepackage{mathtools}
-%\usepackage{bm} % bold math symbol
+\usepackage{empheq} % begin{empheq}[box=\fbox]{align} envr for boxing multiple equation
 \usepackage{cancel} % for cancel/cross out line on equation
 
 \usepackage[arrowdel]{physics} % many short form to math symbols
@@ -37,6 +37,12 @@
 
 % allow inter-doc link, hyperlink
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
 
 % more unicode symbol
 %\usepackage{wasysym}
@@ -78,7 +84,7 @@
 % e.g. \begin{tabularx}{0.8\textwidth}{X|X|X}
 % X = any alphabet above
 
-%\usepackage{makecell} % allow line break within a cell in tables
+\usepackage{makecell} % allow line break within a cell in tables
 %\usepackage{multicol}
 
 % dvipsnames = more default colour name
