@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1753279058.43624 "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" "polar_vectors.pdf" "polar_vectors" 1753279061.41254 0
+["pdflatex"] 1753431349.1347 "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" "polar_vectors.pdf" "polar_vectors" 1753431352.24612 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1753263713 14638 a4cfb4d6be8058df2ca3416a4b67f927 ""
   "../.common/math.sty" 1753131444 11053 cfb92c36460df367f0430dfe562c3e27 ""
@@ -240,11 +240,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" 1753279057 23156 cbb251f6bf2d43474576e9ea8d10cd9f ""
-  "polar_vectors.aux" 1753279061 3899 6d7d2d2106105f3c7ceb8c9bc0565df3 "pdflatex"
-  "polar_vectors.out" 1753279061 1814 6de96f6e42471484bf1c9106febc7e49 "pdflatex"
-  "polar_vectors.sta" 1753279061 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "polar_vectors.tex" 1753279057 23156 cbb251f6bf2d43474576e9ea8d10cd9f ""
+  "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" 1753431348 23137 811ffdab146e590a0447d2e96edbf7db ""
+  "polar_vectors.aux" 1753431351 3899 6d7d2d2106105f3c7ceb8c9bc0565df3 "pdflatex"
+  "polar_vectors.out" 1753431351 1814 6de96f6e42471484bf1c9106febc7e49 "pdflatex"
+  "polar_vectors.sta" 1753431351 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "polar_vectors.tex" 1753431348 23137 811ffdab146e590a0447d2e96edbf7db ""
   (generated)
   "polar_vectors.aux"
   "polar_vectors.log"

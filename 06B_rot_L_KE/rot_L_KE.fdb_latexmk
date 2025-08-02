@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1753439022.66767 "d:/mings/Documents/PhyO/latex_notes/06B_rot_L_KE/rot_L_KE.tex" "rot_L_KE.pdf" "rot_L_KE" 1753439026.12724 0
+["pdflatex"] 1753456623.46881 "d:/mings/Documents/PhyO/latex_notes/06B_rot_L_KE/rot_L_KE.tex" "rot_L_KE.pdf" "rot_L_KE" 1753456627.27716 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
-  "../.common/format.sty" 1753263713 14638 a4cfb4d6be8058df2ca3416a4b67f927 ""
+  "../.common/format.sty" 1753446451 14669 53e1095fa211e4afd6ec2a7f7b26ff3e ""
   "../.common/math.sty" 1753131444 11053 cfb92c36460df367f0430dfe562c3e27 ""
   "../.common/packages.sty" 1753181910 5304 5bfc6a9bc283fc28e6875a43d12632cd ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1752685028 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -232,11 +232,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/06B_rot_L_KE/rot_L_KE.tex" 1753439021 25823 a67d174ce86ea44e4556eaf9846e1671 ""
-  "rot_L_KE.aux" 1753439025 8068 679aaa34e23a4332104cdc5b878f0d7e "pdflatex"
-  "rot_L_KE.out" 1753439025 1753 8ff6a81d7c668a833d86430fe5613631 "pdflatex"
-  "rot_L_KE.sta" 1753439025 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "rot_L_KE.tex" 1753439021 25823 a67d174ce86ea44e4556eaf9846e1671 ""
+  "d:/mings/Documents/PhyO/latex_notes/06B_rot_L_KE/rot_L_KE.tex" 1753456615 25823 b44fada1fda8ec423e6dbfbb7e9d7f9a ""
+  "rot_L_KE.aux" 1753456626 8064 5fc04c126c34abb8a9060501780f204f "pdflatex"
+  "rot_L_KE.out" 1753456626 1753 8ff6a81d7c668a833d86430fe5613631 "pdflatex"
+  "rot_L_KE.sta" 1753456626 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "rot_L_KE.tex" 1753456615 25823 b44fada1fda8ec423e6dbfbb7e9d7f9a ""
   (generated)
   "rot_L_KE.aux"
   "rot_L_KE.log"
