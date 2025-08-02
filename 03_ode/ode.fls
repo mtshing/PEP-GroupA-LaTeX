@@ -115,6 +115,8 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/mathtools/empheq.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/mathtools/empheq.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/physics/physics.sty
@@ -178,6 +180,8 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -443,6 +447,7 @@ INPUT ./ode.out
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb

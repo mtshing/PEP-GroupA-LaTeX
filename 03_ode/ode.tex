@@ -257,7 +257,9 @@ In fact, we can show that this is the only solution to this ODE, by solving it w
 
 The equation comes in the form
 \aleq{
-    a\dvv[2]{t}f(t) + b\dvv{t}f(t) + cf(t) = 0
+    \Aboxed{
+        a\dvv[2]{t}f(t) + b\dvv{t}f(t) + cf(t) = 0
+    }
 }
 
 where $a,b,c$ are all constants. 
@@ -273,6 +275,7 @@ substitute $f(t) = e^{\lambda t}$ :
 We can either take $f_1(t) = Ce^{\frac{-b+ \sqrt{b^2-4ac}}{2a} t}$ or 
 $f_2(t) = Ce^{\frac{-b- \sqrt{b^2-4ac}}{2a} t}$ as a solution. 
 
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Superposition of Solutions}
 
@@ -288,7 +291,7 @@ because linear ODE allows superpositions (linear combination), i.e.
 
 \hfill\\[-3em]
 \aleq{
-    \Aboxed{\text{General Solution : } 
+    \Acboxed[red]{\text{General Solution : } 
     f(t) = C_1e^{\frac{-b+ \sqrt{b^2-4ac}}{2a} t} 
     + C_2e^{\frac{-b- \sqrt{b^2-4ac}}{2a} t}}
 }
@@ -337,7 +340,7 @@ because linear ODE allows superpositions (linear combination), i.e.
 \end{notation}
 
 
-\newpage
+
 %%%%%%%%%%%%%%
 \subsection{3 Sub-cases of the Solution}
 
@@ -350,9 +353,10 @@ Both $\lambda_\pm = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$ are real number.
 Nothing can be further simplified. 
 We would just keep the form
 \aleq{
-    \Aboxed{ f(t) = C_1 e^{\lambda_+ t} + C_2 e^{\lambda_- t} \qquad(\text{Both }\lambda \text{ real})}
+    \Acboxed{ f(t) = C_1 e^{\lambda_+ t} + C_2 e^{\lambda_- t} \qquad(\text{Both }\lambda \text{ real})}
 }
 
+\hfill\\[-3em]
 %%%%%%%%%%%%%%
 \subsubsection{Case 2: $b^2-4ac<0$}
 
@@ -362,20 +366,21 @@ We can separate their real and imaginary parts. Denote as
     \Re[\lambda_\pm] = -\frac{b}{2a} \ \red{\defeq p} \qquad,\qquad 
     \Im[\lambda_\pm] = \pm \frac{\sqrt{4ac-b^2}}{2a} \ \red{\defeq \pm q}
 }
-which is just a re-labelling to $\lambda_\pm \defeq p\pm iq$. \\
+This is just a re-labelling to $\lambda_\pm \defeq p\pm iq$. \\
 
-Then we can apply the \bf{Euler formula}
+Then we can apply the \bf{Euler formula} (See next page for explanation to this formula.)
 \aleq{
     \Aboxed{e^{i\theta} = \cos\theta + i\sin\theta}
 }
+
 
 Rewriting $f(t)$ as 
 \aleq{
     f(t) &= C_1 e^{(p+iq)t} + C_2 e^{(p-iq)t} \\
     &= e^{pt} \qty[C_1 e^{iqt} + C_2 e^{-iqt}] \\
-    &= e^{pt} \qty[C_1 (\cos {qt} + i\sin {qt}) + C_2 (\cos{qt} - \sin{qt})] \\
-    &= e^{pt} [\cub[blue]{(C_1+C_2)}{\substack{\text{Both are constants.}\\\text{Can combine.}}}\cos {qt} 
-    + i\cub[blue]{(C_1-C_2)}{\substack{\text{Both are constants.}\\\text{Can combine.}}}\sin {qt}] \\[0.5em]
+    &= e^{pt} \qty[C_1 (\cos {qt} + i\sin {qt}) + C_2 (\cos{qt} - i\sin{qt})] \\
+    &= e^{pt} [\cub[blue]{(C_1+C_2)}{\substack{\text{Both C are constants.}\\\text{Can combine.}}}\cos {qt} 
+    + \cub[blue]{i(C_1-C_2)}{\substack{\text{The i and both C}\\\text{are constants.}\\\text{Can combine.}}}\sin {qt}] \\[0.5em]
     \Aboxed{f(t) &= e^{pt} \qty[C_1' \cos{qt} + C_2'\sin{qt}] \qquad(\text{Both }\lambda \text{ complex})}
 }
 
@@ -396,19 +401,17 @@ Combine the $\sin/\cos$ into 1 sinusoidal function by change of variables:
     }
 }
 
-Such that 
+and use the cosine addition rule $\cos{(a+b)} = \cos{a}\cos{b}-\sin{a}\sin{b}$, such that 
 \aleq{
     f(t) &= e^{pt} \qty[C_1' \cos{qt} + C_2'\sin{qt}] \\
     &= e^{pt}\qty[(A\cos{\phi}) \cos{qt} + (-A\sin{\phi})\sin{qt}] \\
     \Aboxed{f(t) &= e^{pt}\cdot A\cos{(qt+\phi)}  \qquad(\text{Both }\lambda \text{ complex})}
 }
 
-Here we have used the cosine addition rule $\cos{(a+b)} = \cos{a}\cos{b}-\sin{a}\sin{b}$.  \\
-
 As a conclusion, we have reached 3 different forms of solution for the case $b^2-4ac<0$, 
 which all are convenient to use in some scenarios.
 \aleq{
-    \boxed{
+    \cbox[red]{
         f(t) = 
         \begin{cases}
             C_1 e^{(p+iq)t} + C_2 e^{(p-iq)t} & (\text{Complex form})\\
@@ -493,8 +496,8 @@ which all are convenient to use in some scenarios.
 %%%%%%%%%%%%%%
 \subsubsection{Case 3: $b^2-4ac=0$}
 
-This case is problematic in that $\lambda_+ = \lambda_- = \frac{b^2}{2a} \defeq p$.
-We can only get 1 independent solution $Ce^{pt}$ by using the $e^{\lambda t}$ trick.
+This case is problematic in that $\lambda_+ = \lambda_- = -\frac{b^2}{2a} \defeq p$.
+We can only get 1 solution $Ce^{pt}$ by using the $e^{\lambda t}$ trick.
 
 \begin{center}
     \red{
@@ -503,8 +506,10 @@ We can only get 1 independent solution $Ce^{pt}$ by using the $e^{\lambda t}$ tr
     }
 \end{center}
 
-How to find the remaining independent function in our \nth{2} order ODE? 
-The method is called \bf{reduction of order}.
+The problem arises because \blue{we assumed the solution looks like $e^{\lambda t}$,
+but did not consider if it does not.} 
+How can we find the second solution to our \nth{2} order ODE? 
+The procedure is called \bf{reduction of order}.
 
 \begin{enumerate}
     \item Let the other independent function be $v(t)e^{pt}$. 
@@ -514,11 +519,11 @@ The method is called \bf{reduction of order}.
         a\dvv[2]{t}[v(t)e^{pt}] + b\dvv{t}[v(t)e^{pt}] + c[v(t)e^{pt}] = 0
     }
 
-    \item Do product rule for each term:
+    \item Prepare substitution in the next step by doing product rule in each term:
     \aleq{
         \dvv[2]{t}[v(t)e^{pt}] &= \dvv[2]{t}v(t)e^{pt} + 2\dvv{t}v(t)\dvv{t}e^{pt}
         + v(t) \dvv[2]{t}e^{pt} \\
-        &= e^{pt}\qty[\dvv[2]{t}v(t) + 2p\dvv{t}v(t) + p^2v(t)] \\
+        &= e^{pt}\qty[\dvv[2]{t}v(t) + 2p\dvv{t}v(t) + p^2v(t)] \\[1em]
         %
         \dvv{t}[v(t)e^{pt}] &= \dvv{t}e^{pt} + v(t)\dvv{t}e^{pt} \\
         &= e^{pt}\qty[\dvv{t}v(t) + pv(t)]
@@ -527,24 +532,27 @@ The method is called \bf{reduction of order}.
     \item Group terms by derivatives of $v(t)$ and solve it
     \aleq{
         0 &= a\cancel{e^{pt}}\qty[\dvv[2]{t}v(t) + 2p\dvv{t}v(t) + p^2v(t)] 
-        + b \cancel{e^{pt}}\qty[\dvv{t}v(t) + pv(t)] + c\qty[v(t)\cancel{e^{pt}}]\\[1.2em]
+        + b \cancel{e^{pt}}\qty[\dvv{t}v(t) + pv(t)] + c\qty[v(t)\cancel{e^{pt}}]\\[2ex]
         %
         &= a\dvv[2]{t}v(t) - 2\cub[red]{(ap+b)}{\substack{=0 \\\text{because }p=\frac{-b}{2a}}} \dvv{t}v(t)
-        + \cub[blue]{(ap^2 + bp + c)}{\substack{=0 \\ \text{because }p=\frac{-b}{2a} \text{ is the soln.}\\\text{to } ax^2+bx+c=0}}\\
+        + \cub[blue]{(ap^2 + bp + c)}{\substack{=0 \\ \text{because }p=\frac{-b}{2a} \text{ is the soln.}\\\text{to } ax^2+bx+c=0}}\\[-3ex]
         %
-        &= a\dvv[2]{t}v(t) \\[1.2em]
+        &= a\dvv[2]{t}v(t) \\[2ex]
         %
         v(t) &= C_1t + C_2
     }
 \end{enumerate}
 
 where $C_1, C_2$ are some constants. 
-Therefore we find the other independent function to be $(C_1t +C_2)e^{pt}$. 
+So the other independent function is 
+\aleq{
+    f(t) = v(t)e^{pt} = (C_1t +C_2)e^{pt} 
+}
 Note that it already contains the first independent function $C e^{pt}$.
 We may write 
 \aleq{
-    \Aboxed{
-        f(t) = C_1e^{pt} + C_2 te^{pt} \qquad(\lambda \text{ equal})
+    \Acboxed[red]{
+        f(t) = C_1 t e^{pt} + C_2 e^{pt} \qquad(\lambda \text{ equal})
     }
 }
 
@@ -559,10 +567,14 @@ We may write
         &\vdots \\
         \dd[n](uv) &= \sum_{r=0}^{n} C_r^n (\dd[r]{u})(\dd[n-r]{v})
     }
-    The coefficients for each term are binomial coefficients $C_r^n = \dfrac{n!}{r!(n-r)!}$, which can be computed beforehand.
+    The coefficients for each term are binomial coefficients $C_r^n = \dfrac{n!}{r!(n-r)!}$, 
+    which can be computed beforehand.
 \end{notation}
 
 
+
+
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Application: Damped Harmonic Oscillator}
 
@@ -608,8 +620,8 @@ Check the sign of $\lambda_\pm$. Since
     \gamma &> \sqrt{\gamma^2-4mk} \\
     0 &> \frac{-\gamma + \sqrt{\gamma^2-4mk}}{2m} = \lambda_+ \\
 }
-Also $\lambda_- = \dfrac{-\gamma + \sqrt{\gamma^2-4mk}}{2m} <\lambda_+$. 
-So both $\gamma$ are negative. We may write
+Also $\lambda_- = \dfrac{-\gamma - \sqrt{\gamma^2-4mk}}{2m} <\lambda_+$. 
+So both $\gamma$ are negative. We can take out their negative signs by writing
 \aleq{
     x(t) &= C_1 e^{-|\lambda_+|t} + C_2 e^{-|\lambda_-|t} \\
     &= \text{A sum of 2 exponentially decaying functions}
@@ -629,7 +641,7 @@ such that the mass can never return to its original position.
 Write the solution in amplitude form:
 \aleq{
     x(t) &= e^{pt} \cdot A\cos{(qt+\phi)} \\
-    &= e^{\frac{\gamma}{2m}t} \cdot A\cos\qty(\frac{\sqrt{4mk-\gamma^2}}{2m}t + \phi) \\
+    &= e^{-\frac{\gamma}{2m}t} \cdot A\cos\qty(\frac{\sqrt{4mk-\gamma^2}}{2m}t + \phi) \\
     &= (\text{Exponentially Decay})\times(\text{Sinusoidal})
 }
 
@@ -726,13 +738,12 @@ The Newton's \nth{2} Law writes:
 
 \hfill\\[1ex]
 The simplest way to solve it is by grouping $mg$ into $x(t)$. 
+\addBentArrow[blue]{mgk}{(-4ex,-4ex)}{\scriptsize $\dfrac{mg}{k}$ is a constant. So $\dvv{t}\qty(\dfrac{mg}{k}) = 0$}
+{(0,-3ex)}{(-13ex,1.5ex)}
 \aleq{
     m\dvv[2]{t} \qty[x(t) + \tkn{mgk}{\cul[blue]{\frac{mg}{k}}}] = -k\qty[x(t) + \frac{mg}{k}]
-}\\
-\addArrow[blue]{mgk}{(4ex,-4ex)}{$\dfrac{mg}{k}$ is a constant. So $\dvv{t}\qty(\dfrac{mg}{k}) = 0$}
-{(0,-3ex)}{(17ex,1ex)}
+}
 
-\hfill\\
 Then substitute $y(t) = x(t) + \dfrac{mg}{k}$. 
 We can see that this ODE of $y(t)$ is the same as equation of motion of a spring-mass system without gravity.
 \aleq{
@@ -800,13 +811,17 @@ which form a famaily of function:
 %%%%%%%%%%%%%%
 \subsubsection{Method of Undetermined Coefficient}
 
-According to the ODE,
+According to the ODE, 
+We can construct $g(t)$ by some combinations of derivatives of $f_p(t)$ - 
+so \blue{$g(t)$ and $f_p(t)$ must be in the same family of derivatives.} 
 \aleq{
-    g(t) &= a\dvv[2]{t}f_p(t) + b\dvv{t}f_p(t) + cf_p(t) \\[1em]
-    &= \sum (\text{constant})\cdot(\text{Derivatives of }f_p(t))
+    g(t) &= a\dvv[2]{t}f_p(t) + b\dvv{t}f_p(t) + cf_p(t) 
+    = \sum (\text{constant})\cdot(\text{Derivatives of }f_p(t))
 }
 
-Conversely, we can make a good guess by \red{assuming $f_p(t) = \dfrac{g(t)}{c} + \qty(\text{Some Derivatives of }g(t))$}. 
+Conversely, \red{if the two functions are from the same family,
+we should also be able to construct $f_p(t)$ from some combination of derivatives of $g(t)$,}
+i.e. we can make a good guess by assuming $f_p(t) = \dfrac{g(t)}{c} + \qty(\text{Some Derivatives of }g(t))$. 
 Then
 \aleq{
     \begin{array}{crcl}
@@ -824,6 +839,7 @@ then we recover $f_p(t)$.
 
 
 %%%%%%%%%%%%%%
+\hfill\\[-2ex]
 \begin{example}
     \aleq{
         a\dvv[2]{t}f(t) + b\dvv{t}f(t) + cf(t) = t^2+2t
@@ -1044,8 +1060,8 @@ we can guess $x_p(t) = A\cos{(\omega t)} + B\sin{(\omega t)}$.
 \aleq{
     \begin{array}{crcl}
     &\red{k \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]}  &= &\red{k \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]} \\[0.8em]
-    &\red{\gamma \times \qty[\black{\dvv{t}(A\cos{(\omega t)} + B\sin{(\omega t)})}]}  &= &\red{\gamma \times \qty[\black{-\omega A\sin{(\omega t)} + B\omega\cos{(\omega t)}}]} \\[0.8em]
-    +\Bigr)\  &\red{m \times \qty[\black{\dvv[2]{t}(-\omega^2 A\cos{(\omega t)} -\omega^2 B\sin{(\omega t)})}]}  &= &\red{m \times \qty[\black{A\cos{(\omega t)} + B\sin{(\omega t)}}]} \\[0.8em]
+    &\red{\gamma \times \qty[\black{\dvv{t}(A\cos{(\omega t)} + B\sin{(\omega t)})}]}  &= &\red{\gamma \times \qty[\black{-\omega A\sin{(\omega t)} + \omega B\cos{(\omega t)}}]} \\[0.8em]
+    +\Bigr)\  &\red{m \times \qty[\black{\dvv[2]{t}(A\cos{(\omega t)} + B\sin{(\omega t)})}]}  &= &\red{m \times \qty[\black{-\omega^2 A\cos{(\omega t)} -\omega^2 B\sin{(\omega t)}}]} \\[0.8em]
     \hline\\[-1.5em]
     &m\dvv[2]{t}x_p(t) + \gamma\dvv{t}x_p(t) + kx_p(t) &= & (-\omega^2A m + \omega B \gamma + Ak)\cos{\omega t} \\
         & & & \quad + (-\omega^2Bm -\omega A\gamma +Bk)\sin{\omega t}\\
@@ -1070,11 +1086,13 @@ Solving, yield
 By combining $\sin/\cos$ into 1 sinusoidal, $x_p(t)$ becomes
 \aleq{
     x_p(t) &= A\cos{\omega t} + B\sin{\omega t} \\
-    &= \sqrt{A^2+B^2}\cos\qty[\omega t + \tan^{-1}\qty(\frac{B}{A})] \\
-    &= \frac{F_0}{\sqrt{(\gamma\omega)^2 + (m\omega^2-k)^2}} \cos\qty[\omega t + \tan^{-1}\qty(\frac{\gamma \omega}{m\omega^2-k})]
+    &= \sqrt{A^2+B^2}\cos\qty[\omega t - \tan^{-1}\qty(\frac{B}{A})] \\
+    &= \frac{F_0}{\sqrt{(\gamma\omega)^2 + (m\omega^2-k)^2}} \cos\qty[\omega t - \tan^{-1}\qty(\frac{\gamma \omega}{m\omega^2-k})]
 }
 
-\hfill\\[1em]
+(This is again trigonometry, by $\cos(a-b)=\cos{a}\cos{b}+\sin{a}\sin{b}$.)
+
+\newpage
 \bf{\ul{Special Case: Resonance}}\\
 
 When the frequency of the external force equals to the natural frequency of harmonic oscillator $\sqrt{\frac{k}{m}}$, 
