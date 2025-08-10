@@ -1,6 +1,7 @@
 \documentclass[class=article, crop=false, 12pt]{standalone}
 \usepackage[subpreambles=true]{standalone}
 \usepackage{../.common/common}
+\allowdisplaybreaks % equation environment from amsmath can break equation between page
 
 
 \author{Tony Shing}
@@ -25,16 +26,6 @@
     \end{itemize}
 \end{overview}
 
-
-\begin{notation}
-    2D coordinates are represented by $(x,y)$ and $(r,\theta)$. Their conversion is according to the position vector's component: 
-        \aleq{
-            \vvec{r} = x\hhat{x}+y\hhat{y} = (r\cos{\theta})\hhat{x}+(r\sin{\theta})\hhat{y} = r\hhat{r}
-        }
-        Note that $\vvec{r}$ is the \red{\bf{position vector}} and $r$ is the \red{\bf{radial component}}. 
-        But in polar coordinate, \red{\bf{length of position vector $\norm{\vvec{r}} = r$}} exactly.
-
-\end{notation}
 
 
 % content begins here
@@ -61,28 +52,54 @@ We require:
     i.e. extend from the origin to the current point.
     
     \item $\hhat{\theta}$ should always be perpendicular to $\hhat{r}$, 
-    like a anti-clockwise torque. 
+    like an anti-clockwise torque. 
     
 \end{itemize}
 
-\insertFig{Compare two pair of unit vector in xy and polar respectively -> xy same, polar different}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{unit_xy}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    v.s.
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{unit_rth}
+    \end{minipage}
+\end{center}
 
 
 From the figure, we can see that the pairs of unit vectors at different positions are pointing in different directions. 
 Notation-wise we should write them as:
 \aleq{
-    \hhat{r}_\red{\text{at }(r_1, \theta_1)} \neq \hhat{r}_\red{\text{at }(r_2, \theta_2)} 
+    \hhat{r}_\green{\text{at }(r_1, \theta_1)} \neq \hhat{r}_\green{\text{at }(r_2, \theta_2)} 
     \quad, \quad
-    \hhat{\theta}_\red{\text{at }(r_1, \theta_1)} \neq \hhat{\theta}_\red{\text{at }(r_2, \theta_2)} 
+    \hhat{\theta}_\green{\text{at }(r_1, \theta_1)} \neq \hhat{\theta}_\green{\text{at }(r_2, \theta_2)} 
 }
 
-This makes a big difference in differentiation, because the unit vectors are essentially functions of the coordinates. Compare
+\begin{center}
+    \begin{minipage}{0.55\textwidth}
+        \begin{framed}
+            \centering
+            The unit vectors are functions of coordinates. 
+        \end{framed}
+    \end{minipage}
+\end{center}
+
+Unfortunately, this "\green{at $(r,\theta)$}" is almost NEVER emphasized in regular textbooks.
+
+\newpage
+This makes a big difference in vector differentiation.
+We can show this by product rules: 
 \begin{itemize}
-    \item Vector in terms of $\{\hhat{x}, \hhat{y}\}$\\
-    \cul[red]{$\hhat{x},\hhat{y}$ always point in the same direction.} 
-    Never change by position $\Rightarrow$ Differentiation = 0.
+    \item \bf{\ul{Vector in terms of $\{\hhat{x}, \hhat{y}\}$}}\\
+    \cul[red]{$\hhat{x},\hhat{y}$ always point in the same direction,
+    independent of position. }
+    They can be treated as constants. $\Rightarrow$ Differentiation = 0.
     \aleq{
-        \vvec{s} &= s_x \hhat{x} + s_y \hhat{y} \\
+        \vvec{s} &= s_x \hhat{x} + s_y \hhat{y} \\[1ex]
         \dv{\vvec{s}}{t} 
         &= \dv{s_x}{t}\hhat{x} + s_x\tkn{xh}{\red{\ul{\dv{\hhat{x}}{t}}}} 
             + \dv{s_y}{t}\hhat{y} + s_y\tkn{yh}{\red{\ul{\dv{\hhat{y}}{t}}}}
@@ -91,26 +108,34 @@ This makes a big difference in differentiation, because the unit vectors are ess
     \addArrow[red]{yh}{(0,-2ex)}{$\scriptstyle =0$}{(0, -2.5ex)} 
     
 
-    \item Vector in terms of $\{\hhat{r}, \hhat{\theta}\}$\\
-    \cul[blue]{$\hhat{r}, \hhat{\theta}$ are functions of $r$ and $\theta$, 
-    and $(r, \theta)$ are functions of $t$.} 
-    So differentiating against $t$ is non-zero in general.
+    \item \bf{\ul{Vector in terms of $\{\hhat{r}, \hhat{\theta}\}$}}\\
+    \cul[blue]{$\hhat{r}, \hhat{\theta}$ shall be functions of position $(r, \theta)$.}
+    Then along a trajectory, $(r, \theta)$ are functions of $t$.
+    $\Rightarrow$ Differentiating them against $t$ can be non-zero.
     \aleq{
-        \vvec{s} &= s_r\hhat{r} + s_\theta\hhat{\theta} \\
+        \vvec{s} &= s_r\hhat{r} + s_\theta\hhat{\theta} \\[1ex]
         \dv{\vvec{s}}{t} &= \dv{s_r}{t}\hhat{r} + s_r \tkn{rh}{\blue{\ul{\dv{\hhat{r}}{t}}}}
                             + \dv{s_\theta}{t}\hhat{\theta} + s_\theta \tkn{th}{\blue{\ul{\dv{\hhat{\theta}}{t}}}}
     }
-    \addArrow[blue]{rh}{(0,-2ex)}{$\substack{\hhat{r}\text{ contains } \\ r\text{ \& }\theta}$}{(0, -2.5ex)}{(0,-1ex)}
-    \addArrow[blue]{th}{(0,-2ex)}{$\substack{\hhat{\theta}\text{ contains } \\ r\text{ \& }\theta}$}{(0, -2.5ex)}{(0,-1ex)}
+    \addArrow[blue]{rh}{(0,-2ex)}{$\substack{\hhat{r}\text{ is a function of } \\ r\text{ \& }\theta}$}{(0, -2.5ex)}{(0,-1ex)}
+    \addArrow[blue]{th}{(0,-2ex)}{$\substack{\hhat{\theta}\text{ is a function of } \\ r\text{ \& }\theta}$}{(0, -2.5ex)}{(0,-1ex)}
 
 \end{itemize}
 
-\hfill\\
+\vskip 1.5em
 \bf{\ul{Note 1}}: The above are just product rules, but applied on (component)$\times$(unit vector).\\
 
-\bf{\ul{Note 2}}: Unit vectors are functions of coordinate for any non-rectangular coordinate.
+\bf{\ul{Note 2}}: In general, unit vectors are functions of coordinate for any non-rectangular coordinate.
 
-\insertFig{curve space unit vectors}
+\begin{center}
+    E.g. 
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{unit_curve}
+    \end{minipage}
+    \\[1ex]
+    \it{(This is also the thing which physicists need to solve in general relativity.)}
+\end{center}
 
 
 
@@ -121,46 +146,105 @@ Because $\{\hhat{x}, \hhat{y}\}$ never change by position,
 we usually call a rectangular coordinate as \bf{"ambient coordinate"},
 and use them as a reference to express other unit vectors. 
 To tell how to differentiate the polar unit vectors, 
-we can first express them in the $\bigcirc\hhat{x} + \square\hhat{y}$ form. 
-Then differentiation is solely on the components.
+we can \cul[red]{first express them in the $\bigcirc\hhat{x} + \square\hhat{y}$ form, 
+then differentiation} \cul[red]{is solely on the components.}
 
-\insertFig{polar coor -> xy coor}
+\begin{enumerate}
+    \item We can relate $\{\hhat{r}, \hhat{\theta}\}$ and $\{\hhat{x}, \hhat{y}\}$ by trigonometry:
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \aleq{
+                \Acboxed{
+                    \begin{cases}
+                        \hhat{r}_\green{\text{at }(r,\theta)} = (\cos\theta)\hhat{x} + (\sin\theta)\hhat{y} \\[1ex]
+                        \hhat{\theta}_\green{\text{at }(r,\theta)} = (-\sin\theta)\hhat{x} + (\cos\theta)\hhat{y}
+                    \end{cases}
+                }
+            }
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{xy_rth}
+        \end{minipage}
+    \end{center}
 
-The relations between $\{\hhat{r}, \hhat{\theta}\}$ and $\{\hhat{x}, \hhat{y}\}$ are purely trigonometric:
-\aleq{
-    \begin{cases}
-        \hhat{r}_\green{\text{at }(r,\theta)} = \green{\cos\theta} \cdot\hhat{x} + \green{\sin\theta}\cdot\hhat{y} \\
-        \hhat{\theta}_\green{\text{at }(r,\theta)} = -\green{\sin\theta}\cdot\hhat{x} + \green{\cos\theta}\cdot\hhat{y}
-    \end{cases}
-}
+    \begin{proof}
+        It can be proven by just drawing triangles and play with sine/cosine. 
+        But here I would like to provide you a method using vector properties.
 
-Obviously $\hhat{r}$ and $\hhat{\theta}$ are function to $\theta$ only. So
-\aleq{
-    \Aboxed{\pdv{\hhat{r}}{r} = \pdv{\hhat{\theta}}{r} = 0}
-}
+        \begin{itemize}
+            \item $\hhat{r}$ is a radial unit vector and its projection to $\hhat{x}$ and $\hhat{y}$ are just cosine and sine.
+            \aleq{
+                \hhat{r}\cdot \hhat{x} = \norm{\hhat{r}}\cos\theta = \cos\theta
+                \qquad &\text{and}\qquad 
+                \hhat{r}\cdot \hhat{y} = \norm{\hhat{r}}\sin\theta = \sin\theta \\
+                %
+                &\ \Downarrow \\
+                %
+                \hhat{r}_\green{\text{at }(r,\theta)} 
+                    = (\hhat{r}\cdot\hhat{x})\hhat{x} + (\hhat{r}\cdot\hhat{y})\hhat{y} &\,= (\cos\theta)\hhat{x} + (\sin\theta)\hhat{y}
+            }
 
-and differentiating on $\theta$ gives
-\aleq{
-    \Aboxed{
-    \begin{cases}
-        \red{\pdvv{\hhat{r}}{\theta}} = -\sin\theta \hhat{x} + \cos\theta \hhat{y} = \red{\hhat{\theta}_{\text{at }(r,\theta)}} \\[1em]
-        \red{\pdvv{\hhat{\theta}}{\theta}} = -\cos\theta \hhat{x} - \sin\theta \hhat{y} = \red{-\hhat{r}_{\text{at }(r,\theta)}}
-    \end{cases}
+            \item We want $\hhat{\theta}$ to be perpendicular to $\hhat{r}$ and also have a length of $1$.
+            Let $\hhat{\theta} = (\theta_x) \hhat{x} + (\theta_y) \hhat{y}$, then
+            \aleq{
+                \hhat{\theta}\cdot\hhat{r} = (\theta_x)(\cos\theta) + (\theta_y)(\sin\theta) &= 0
+                \qquad \text{and}\qquad 
+                (\theta_x)^2 + (\theta_y)^2 = 1 \\
+                %
+                &\ \Downarrow \\
+                %
+                \theta_x= -\sin\theta
+                \qquad &\text{and}\qquad 
+                \theta_y = \cos\theta \\
+                %
+                &\ \Downarrow \\
+                %
+                \hhat{\theta}_\green{\text{at }(r,\theta)} = (-\sin&\theta)\hhat{x} + (\cos\theta)\hhat{y}
+            }
+        \end{itemize}
+        
+    \end{proof}
+
+    \item From the relation, we can see that $\hhat{r}$ and $\hhat{\theta}$ are function to $\theta$ only. So
+    \aleq{
+        \Aboxed{\green{\eval{\black{\pdvv{\hhat{r}}{r}}}_{\text{at }(r,\theta)}} 
+        = \green{\eval{\black{\pdvv{\hhat{\theta}}{\theta}}}_{\text{at }(r,\theta)}} = 0}
     }
-}
 
-The two unit vectors give each other upon differentiation by $\theta$ is purely a numerical coincident. 
-(This is related to rotational symmetry.) 
-Also worth mentioning, 
-the differentiating against $t$  is simply applying the (partial-D) chain rule:
-\aleq{
-    \Aboxed{
-    \begin{cases}
-        \red{\dvv{\hhat{r}}{t}} = \cancelto{0}{\pdvv{\hhat{r}}{r}}\dvv{r}{t} + \pdvv{\hhat{r}}{\theta}\dvv{\theta}{t} = \red{\dvv{\theta}{t}\cdot\hhat{\theta}_{\text{at }(r,\theta)}} \\[1em]
-        \red{\dvv{\hhat{\theta}}{t}} = \cancelto{0}{\pdvv{\hhat{\theta}}{r}}\dvv{r}{t} + \pdvv{\hhat{\theta}}{\theta}\dvv{\theta}{t} = \red{-\dvv{\theta}{t}\cdot\hhat{r}_{\text{at }(r,\theta)}}
-    \end{cases}
+    and differentiating on $\theta$ gives
+    \aleq{
+        \Aboxed{
+        \begin{cases}
+            \green{\eval{\black{\pdvv{\hhat{r}}{\theta}}}_{\text{at }(r,\theta)}} 
+                = -\sin\theta \hhat{x} + \cos\theta \hhat{y} = \hhat{\theta}_\green{\text{at }(r,\theta)} \\[1.2em]
+            %
+            \green{\eval{\black{\pdvv{\hhat{\theta}}{\theta}}}_{\text{at }(r,\theta)}} 
+                = -\cos\theta \hhat{x} - \sin\theta \hhat{y} = -\hhat{r}_\green{\text{at }(r,\theta)}
+        \end{cases}
+        }
     }
-}
+    \cul[red]{Differentiating the two unit vectors by $\theta$ results in each other!}
+    This numerical coincident is related to rotational symmetry.
+
+    \item If the positions $(r,\theta) = (r(t),\theta(t))$ are functions of time $t$,
+    the differentiation with respect to $t$ can be computed by the (partial-D) chain rule:
+    \aleq{
+        \Aboxed{
+        \begin{cases}
+            \green{\eval{\black{\pdvv{\hhat{r}}{t}}}_{\text{at }(r,\theta)}} 
+                = \cancel{\pdvv{\hhat{r}}{r}}\dvv{r}{t} + \pdvv{\hhat{r}}{\theta}\dvv{\theta}{t} 
+                = \dvv{\theta}{t}\cdot\hhat{\theta}_\green{\text{at }(r,\theta)} \\[1em]
+            %
+            \green{\eval{\black{\pdvv{\hhat{\theta}}{t}}}_{\text{at }(r,\theta)}} 
+                = \cancel{\pdvv{\hhat{\theta}}{r}}\dvv{r}{t} + \pdvv{\hhat{\theta}}{\theta}\dvv{\theta}{t} 
+                = -\dvv{\theta}{t}\cdot\hhat{r}_\green{\text{at }(r,\theta)}
+        \end{cases}
+        }
+    }
+
+\end{enumerate}
 
 
 
@@ -175,11 +259,14 @@ the differentiating against $t$  is simply applying the (partial-D) chain rule:
 
 A position vector in the $\bigcirc\hhat{x} + \square\hhat{y}$ form has its components equal to the coordinate it is pointing to, i.e.
 \aleq{
-    \text{Pointing at coordinate }(X,Y) \,\Leftrightarrow\, \text{ Expression }=X\hhat{x} + Y\hhat{y} 
+    \text{Pointing at coordinate }(X,Y) \quad\Leftrightarrow\quad \text{ Expression }=X\hhat{x} + Y\hhat{y} 
 }
 
-This is not true for vector expressed in other coordinates, 
-e.g. \red{You cannot write a vector pointing at polar coordinate $(R,\Theta)$ as $R\hhat{r}+\Theta\hhat{\theta}$.}
+But \cul[red]{this is not true for vector expressed in other coordinates}. E.g. 
+\aleq{
+    \text{Pointing at polar coordinate }(R,\Theta) \quad\cxcancel[red]{\Leftrightarrow}\quad \text{ Expression }=R\hhat{r}+\Theta\hhat{\theta} 
+}
+
 For proper conversion, we must first use the conversion between the unit vectors. 
 Observed their relations can be written as a matrix:
 \aleq{
@@ -202,6 +289,13 @@ One can easily check that:
     =\bmat{1 & 0 \\ 0 & 1}
 }
 
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rotate_xy}
+    \end{minipage}
+\end{center}
+
 Substitute this into a position vector tells us how to write a position vector properly
  by its polar coordinate $(r, \theta)$ and unit vectors $\{\hhat{r}, \hhat{\theta}\}$.
 \aleq{
@@ -222,7 +316,7 @@ Substitute this into a position vector tells us how to write a position vector p
 }
 
 So the proper way to write a vector in terms of its polar coordinate is 
-... \red{just by its radial component.} Isn't that weird?\\
+... \bf{just by its radial component.} Isn't that weird?\\
 
 Normally when we describe a point on a 2D plane, 
 we need two information - its $x$ and $y$ components.
@@ -230,31 +324,40 @@ Why is there only 1 information ($r$ component) in the polar form?
 This is because the second piece of information is hidden in the unit vector $\hhat{r}$:
 \aleq{
     \vvec{r} = r \tkn{rhat}{\cul[yellow]{\hhat{r}}}
-    \qquad\xRightarrow{\text{writing more accurately}}\qquad 
+    \qquad\qquad\xRightarrow{\text{writing more accurately}}\qquad 
     \vvec{r} = r\cdot \hhat{r}_{\green{\text{at }(r,\tkn{rhat2}{\ul{\theta}})}}
 }
 \addArrow[yellow]{rhat}{(0,-2.5ex)}{which direction?}{(0,-0.5ex)}{(0,-0.5ex)}
 \addArrow[green]{rhat2}{(0,-2.5ex)}{in $\theta$ direction!}{(0,-0.5ex)}{(0,-0.5ex)}
 
-\hfill\\
-We cannot tell which direction $\hhat{r}$ is pointing to, 
-if we do not know the "$\green{\text{at }(r,\theta)}$" part. 
-(Sadly, most text will omit writing this part.)
+\vskip 1em
+We cannot really tell which direction $\hhat{r}$ is pointing to, 
+if we do not know the "$\green{\text{at }(r,\theta)}$" part.\\
 
-\insertFig{same expression $r\hhat{r}$, all in different direction, because $\theta$ is not labelled}
-
-Unlike x-y coordinate, 
-we do not care the two unit vectors much because we always know that 
+As a comparison in x-y coordinate, 
+we almost never care about the two unit vectors because we always know that 
 $\hhat{x}$ is the one pointing horizontally and $\hhat{y}$ is the one pointing vertically.
 \aleq{
-    \vvec{r} = x\cdot \tkn{xhat}{\ul{\hhat{x}}} + y\cdot \tkn{yhat}{\ul{\hhat{y}}}
+    \vvec{r} = x\cdot \tkn{xhat}{\cul[red]{\hhat{x}}} + y\cdot \tkn{yhat}{\cul[blue]{\hhat{y}}}
 }
-\addArrow{xhat}{(-3ex,-2.5ex)}{always\\horiztonal}{(0,-1ex)}{(0,-1.5ex)}
-\addArrow{yhat}{(3ex,-2.5ex)}{always\\vertical}{(0,-1ex)}{(0,-1.5ex)}
+\addArrow[red]{xhat}{(-3ex,-2.5ex)}{always\\horiztonal}{(0,-1ex)}{(0,-1.5ex)}
+\addArrow[blue]{yhat}{(3ex,-2.5ex)}{always\\vertical}{(0,-1ex)}{(0,-1.5ex)}
 
+\vskip 2em
+\begin{notation}
+    2D coordinates are represented by $(x,y)$ and $(r,\theta)$. Their conversion is according to the position vector's component: 
+        \aleq{
+            \vvec{r} = x\hhat{x}+y\hhat{y} = (r\cos{\theta})\hhat{x}+(r\sin{\theta})\hhat{y} = r\hhat{r}
+        }
+        Note that 
+        \begin{itemize}
+            \item $\vvec{r}$ = {\bf{position vector}}
+            \item $r$ = {\bf{radial component}}
+            \item $\hhat{r}$ = {\bf{radial unit vector}}
+        \end{itemize} 
+        In polar coordinate, \red{\bf{length of position vector $\norm{\vvec{r}} = r$}} exactly.
 
-\insertFig{x, y always horizontal/vertical, no matter anywhere}
-
+\end{notation}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,40 +377,74 @@ But in polar form, you cannot!
 This is the fault of omitting the "$\green{\text{at }(r,\theta)}$" part. 
 Remember, $\hhat{r}$ at different position are differnt vectors. 
 The true component subtraction will require a lot of trigonometry. 
-\aleq{
-    \vvec{r}_2 - \vvec{r}_1 = 
-    (r_2\cdot \hhat{r}_\green{\text{at }(r_2,\theta_2)}) - (r_1 \cdot \hhat{r}_\green{\text{at }(r_1,\theta_1)}) 
-    = (\text{Awful!})
-}
 
-\insertFig{polar vector subtraction require nasty geometry}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \aleq{
+            \vvec{r}_2 - \vvec{r}_1 = 
+            (r_2\cdot \hhat{r}_\green{\text{at }(r_2,\theta_2)}) - (r_1 \cdot \hhat{r}_\green{\text{at }(r_1,\theta_1)}) 
+            = (\text{Awful!})
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{nasty_trigo}
+    \end{minipage}
+\end{center}
+
 
 Furthermore, if we really try to subtract by component, 
 the result "vector" on the polar grid is not even a straightline. 
 (This happens in every curved coordinate system.)
-
-\insertFig{curved vector}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{not_straight_1}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \yellow{Not a straight line.\\
+        Cannot even call it a vector.}
+    \end{minipage}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{not_straight_3}
+    \end{minipage}
+\end{center}
 
 The only valid definition is the \bf{infinitestimal displacement vector}, 
 i.e. when we subtract two very close vector, 
 their difference is approximately a straight line and we can take limit to its length to $0$. 
-\aleq{
-    \dd{\vvec{r}} &= \dd{\qty(r\hhat{r}_\green{\text{at }(r,\theta)})} \\
-    &= \dd{(r)}\cdot \hhat{r}_\green{\text{at }(r,\theta)} + r\cdot \dd\qty(\hhat{r}_\green{\text{at }(r,\theta)})\\
-    \Aboxed{
-        \dd{\vvec{r}} &= \dd{(r)}\cdot \hhat{r}_\green{\text{at }(r,\theta)} 
-            + r\cdot \dd{(\theta)} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)}
-    }
-}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \aleq{
+            \dd{\vvec{r}} &= \dd{\qty(r\hhat{r}_\green{\text{at }(r,\theta)})} \\
+            &= \dd{(r)}\cdot \hhat{r}_\green{\text{at }(r,\theta)} + r\cdot \dd\qty(\hhat{r}_\green{\text{at }(r,\theta)})\\
+            \Aboxed{
+                \dd{\vvec{r}} &= \dd{(r)}\cdot \hhat{r}_\green{\text{at }(r,\theta)} 
+                    + r\cdot \dd{(\theta)} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)}
+            }
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{not_straight_2}
+    \end{minipage}
+\end{center}
 
-\insertFig{components in displacement vector}
 
 The differential $\dd{(\hhat{r}_\green{\text{at }(r,\theta)})}$ comes from 
 $\dvv{\hhat{r}}{\theta} = \hhat{\theta}$ which is derived previously. 
 In textbooks you will usually find the form without "$\green{\text{at }(r,\theta)}$", 
 which is
 \aleq{
-    \dd{\vvec{r}} = (\dd{r})\hhat{r} + (r\dd{\theta})\hhat{\theta}
+    \Aboxed{
+        \dd{\vvec{r}} = (\dd{r})\hhat{r} + (r\dd{\theta})\hhat{\theta}
+    }
 }
 
 
@@ -328,20 +465,26 @@ From the infinitestimal displacement, we immediately get
 }
 
 We can identify the two components of a velocity vector. 
-Notation-wise they may also be written as
-\aleq{
-    \vvec{v} = \qty(\dv{r}{t}) \hhat{r} + \qty(r\dv{\theta}{t}) \hhat{\theta} 
-    = v_r\hhat{r} + r\omega \hhat{\theta} = v_r \hhat{r} + v_\theta \hhat{\theta}
-}
-\begin{itemize}
-    \item Radial component - $\displaystyle v_r = \dv{r}{t}$ 
-    \item Angular component - $\displaystyle v_\theta = r\dv{\theta}{t} = r\omega$
-\end{itemize}
-
-\insertFig{components in velocity vector}
+It is common to denote $\dvv{\theta}{t} = \omega$ as the angular speed.
 
 
+\begin{minipage}{0.5\linewidth}
+    \aleq{
+        \vvec{v} &= v_r \hhat{r} + v_\theta \hhat{\theta} \\[1ex]
+        &= \qty(\dv{r}{t}) \hhat{r} + \qty(r\dv{\theta}{t}) \hhat{\theta} \\[1ex]
+        &= v_r\hhat{r} + r\omega \hhat{\theta} 
+    }
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.2\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{v_component}
+\end{minipage}
 
+
+
+
+\vskip 3.5em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Acceleration Vector}
 
@@ -349,40 +492,46 @@ Acceleration is defined by differentiating the velocity once again.
 But with $\hhat{r}$ and $\hhat{\theta}$ being function of $t$ as well, 
 the full expansion gives a lengthy product rule.
 \aleq{
-    \vvec{a}(t) &= \dv{\vvec{v}(t)}{t} \\[0.5em]
+    \vvec{a}(t) &= \dv{\vvec{v}(t)}{t} \\[1em]
+    %
     &= \dv{t}\qty(\dv{r}{t}\cdot \hhat{r}_\green{\text{at }(r,\theta)} 
-    + r\cdot \dv{\theta}{t} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)}) \\[1em]
+    + r\cdot \dv{\theta}{t} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)}) \\[1.2em]
     %
-    &= \dv[2]{r}{t}\cdot\hhat{r}_\green{\text{at }(r,\theta)} + \dv{r}{t}\cdot \dv{t}\qty(\hhat{r}_\green{\text{at }(r,\theta)}) 
-    + \dv{r}{t}\cdot\dv{\theta}{t} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)} + r\cdot \dv[2]{\theta}{t}\cdot \hhat{\theta}_\green{\text{at }(r,\theta)} 
-    + r\cdot \dv{\theta}{t} \cdot\dv{t}\qty(\hhat{\theta}_\green{\text{at }(r,\theta)}) \\[1em]
+    &= \dv[2]{r}{t}\cdot\hhat{r}_\green{\text{at }(r,\theta)} 
+        + \dv{r}{t}\cdot \cus[red]{\dv{t}\qty(\hhat{r}_\green{\text{at }(r,\theta)})}{\dv{\hhat{r}}{t}=\dv{\theta}{t}\hhat{\theta}}
+        + \dv{r}{t}\cdot\dv{\theta}{t} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)} 
+        + r\cdot \dv[2]{\theta}{t}\cdot \hhat{\theta}_\green{\text{at }(r,\theta)} 
+        + r\cdot \dv{\theta}{t} \cdot \cus[red]{\dv{t}\qty(\hhat{\theta}_\green{\text{at }(r,\theta)})}{\dv{\hhat{\theta}}{t}=-\dv{\theta}{t}\hhat{r}} \\[1.2em]
     %
-    &= \dv[2]{r}{t}\cdot\hhat{r}_\green{\text{at }(r,\theta)} + \dv{r}{t}\cdot\dv{\theta}{t}\cdot\hhat{\theta}_\green{\text{at }(r,\theta)}
-    + \dv{r}{t}\cdot\dv{\theta}{t} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)} + r\cdot \dv[2]{\theta}{t}\cdot \hhat{\theta}_\green{\text{at }(r,\theta)} 
-    + r\cdot \dv{\theta}{t} \cdot\dv{\theta}{t}\cdot \hhat{r}_\green{\text{at }(r,\theta)} \\[1em]
+    &= \dv[2]{r}{t}\cdot\hhat{r}_\green{\text{at }(r,\theta)} 
+        + \dv{r}{t}\cdot\cul[red]{\dv{\theta}{t}\cdot\hhat{\theta}_\green{\text{at }(r,\theta)}}
+        + \dv{r}{t}\cdot\dv{\theta}{t} \cdot \hhat{\theta}_\green{\text{at }(r,\theta)} 
+        + r\cdot \dv[2]{\theta}{t}\cdot \hhat{\theta}_\green{\text{at }(r,\theta)} 
+        \cul[red]{-} r\cdot \dv{\theta}{t} \cdot \cul[red]{\dv{\theta}{t}\cdot \hhat{r}_\green{\text{at }(r,\theta)}} \\[1.2em]
     %
     &= \qty[\dv[2]{r}{t} - r\cdot \qty(\dv{\theta}{t})^2]\hhat{r}_\green{\text{at }(r,\theta)}
     + \qty[2\dv{r}{t}\cdot\dv{\theta}{t} + r\cdot \dv[2]{\theta}{t}]\hhat{\theta}_\green{\text{at }(r,\theta)}
 } 
 
+\newpage
 There are 4 terms in total. Notation-wise we identify them as:
 \begin{enumerate}
     \item \it{(Along $\hhat{r}$)} \bf{\ul{Radial acceleration}} : $\displaystyle \dv[2]{r}{t}$
     
-    \item \it{(Along $\hhat{r}$)} \bf{\ul{Centripetal acceleration}} : $\displaystyle - r\cdot \qty(\dv{\theta}{t})^2 = -r\cdot \omega^2$\\
+    \item \it{(Along $\hhat{r}$)} \bf{\ul{Centripetal acceleration}} : $\displaystyle - r\cdot \qty(\dvv{\theta}{t})^2 = -r\cdot \omega^2$\\
     \blue{Minus sign for pointing toward origin.}
     
-    \item \it{(Along $\hhat{\theta}$)} \bf{\ul{Coriolis acceleration}} : $\displaystyle 2\dv{r}{t}\cdot\dv{\theta}{t} = 2 v_r\cdot \omega$\\
+    \item \it{(Along $\hhat{\theta}$)} \bf{\ul{Coriolis acceleration}} : $\displaystyle 2\dv{r}{t}\cdot\dvv{\theta}{t} = 2 v_r\cdot \omega$\\
     \blue{This term appears only if radial distance is changing, i.e. $\dv{r}{t}\neq 0$.}
     
     \item \it{(Along $\hhat{\theta}$)} \bf{\ul{Euler acceleration}} : $\displaystyle r\cdot \dv[2]{\theta}{t} = r\alpha$\\
-    \blue{This term appears only if the angular component is accelerating, i.e. $\dv[2]{\theta}{t} \neq 0$.}
+    \blue{This term appears only if the angular speed is accelerating, i.e. $\dv[2]{\theta}{t} \neq 0$.}
 \end{enumerate}
 
-They are also the 4 acceleration terms corresponding to the pseudo-forces in a rotating reference frame. 
+They are also the \red{\bf{4 pseudo-acceleration}} terms in a rotating reference frame.
 
 
-
+\vskip 2em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Angular Quantities}
 
@@ -394,15 +543,17 @@ we essentially \ul{remove its radial component} and only leave the angular compo
         \hhat{r}_\green{\text{at }(r,\theta)} \cross \hhat{\theta}_\green{\text{at }(r,\theta)} & = \hhat{z}\tkm{zhat}
     }
 }
-\addArrow[red]{cross0}{(6ex,0)}{Cross product with itself = 0}{(1ex,0.5ex)}{(13ex,0)}
+\addArrow[red]{cross0}{(6ex,0)}{\scriptsize Cross product with itself = 0}{(1ex,0.5ex)}{(10ex,0)}
 \addArrow{zhat}{(8ex,0)}{\scriptsize $\hhat{z}$ is independent\\[-1ex]\scriptsize of position}{(1ex,0.5ex)}{(4ex,0)}
 
 
 So for a general vector $\vvec{s}$,
 \aleq{
     \hhat{r}_\green{\text{at }(r,\theta)} \cross \vvec{s} 
-    &= \hhat{r}_\green{\text{at }(r,\theta)} \cross (s_r \hhat{r}_\green{\text{at }(r,\theta)} + s_\theta \hhat{\theta}_\green{\text{at }(r,\theta)}) \\
-    &= s_r(\hhat{r}_\green{\text{at }(r,\theta)} \cross \hhat{r}_\green{\text{at }(r,\theta)}) + s_\theta(\hhat{r}_\green{\text{at }(r,\theta)} \cross \hhat{\theta}_\green{\text{at }(r,\theta)})\\
+    &= \hhat{r}_\green{\text{at }(r,\theta)} \cross (s_r \hhat{r}_\green{\text{at }(r,\theta)} 
+        + s_\theta \hhat{\theta}_\green{\text{at }(r,\theta)}) \\
+    &= s_r(\hhat{r}_\green{\text{at }(r,\theta)} \cross \hhat{r}_\green{\text{at }(r,\theta)}) 
+        + s_\theta(\hhat{r}_\green{\text{at }(r,\theta)} \cross \hhat{\theta}_\green{\text{at }(r,\theta)})\\
     &= 0 + \tkn{thcomponent}{\cul[red]{s_\theta}} \hhat{z}
 }
 \addArrow[red]{thcomponent}{(0,-2ex)}{\scriptsize Successfully filter out\\[-1ex]\scriptsize the $\theta$ component}
@@ -413,7 +564,7 @@ Apply this on our displacement / velocity / acceleration vector will give the fa
 angular displacement / angular velocity / angular acceleration.
 
 \begin{enumerate}
-    \item \bf{\ul{Angular position vector:}}\\
+    \item \bf{\ul{Angular position vector:}}\\[1ex]
     Such thing does not exist, 
     because position vector does not have angular component. 
     \aleq{
@@ -421,12 +572,13 @@ angular displacement / angular velocity / angular acceleration.
         = r(\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{r}_\green{\text{at }(r,\theta)})=0
     }
     
-    \item \bf{\ul{Angular displacement vector:}}\\
+    \item \bf{\ul{Angular displacement vector:}}\\[1ex]
     Only exists in the infinitestimal version.
     \aleq{
-        \hhat{r}_\green{\text{at }(r,\theta)}\cross\dd{\vvec{r}} &= (\dd{r})\cancelto{0}{\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{r}_\green{\text{at }(r,\theta)}} 
-        + (r\dd{\theta})\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{\theta}_\green{\text{at }(r,\theta)} \\[0.5em]
-        &= r\dd{\theta}\hhat{z}
+        \hhat{r}_\green{\text{at }(r,\theta)}\cross\dd{\vvec{r}} 
+        = (\dd{r})\cancelto{0}{\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{r}_\green{\text{at }(r,\theta)}} 
+            + (r\dd{\theta})\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{\theta}_\green{\text{at }(r,\theta)}
+        = r\dd{\theta}\hhat{z}
     }
 
     The infinitestimal angular displacement vector is formally defined in $\hhat{z}$ direction:
@@ -438,8 +590,15 @@ angular displacement / angular velocity / angular acceleration.
         }
     }
     
-    Its magnitude yields $\displaystyle \dd{\theta} = \frac{\norm{\dd{\vvec{r}}}}{r} = \frac{\text{arc length}}{\text{radius}}$.
-    
+    \begin{minipage}{0.55\linewidth}
+        Its magnitude yields $\displaystyle \dd{\theta} = \frac{\norm{\dd{\vvec{r}}}}{r} = \frac{\text{arc length}}{\text{radius}}$.
+    \end{minipage}
+    \hspace{0.01\textwidth}
+    \begin{minipage}{0.42\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{angular_theta}
+    \end{minipage}
+
     \item \bf{\ul{Angular velocity vector:}}
     \aleq{
         \hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{v} &= \dv{r}{t}\cdot \cancelto{0}{\hhat{r}_\green{\text{at }(r,\theta)}\cross\hhat{r}_\green{\text{at }(r,\theta)}} 
@@ -453,7 +612,17 @@ angular displacement / angular velocity / angular acceleration.
             = \frac{\hhat{r}_\green{\text{at }(r,\theta)}\cross\vvec{v}}{r} =\frac{(\text{Angular component of }\vvec{v})}{r}\hhat{z}
         }
     }
-    Its magnitude yields our familiar definition $\displaystyle \omega = \frac{\norm{\vvec{v}}}{r}$.
+    
+
+    \begin{minipage}{0.6\linewidth}
+        Its magnitude yields our familiar definition $\displaystyle \omega = \frac{\norm{\vvec{v}}}{r}$.
+    \end{minipage}
+    \hspace{0.01\textwidth}
+    \begin{minipage}{0.32\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{angular_v}
+    \end{minipage}
+
     
     \item \bf{\ul{Angular acceleration vector:}}
     \aleq{
@@ -487,12 +656,16 @@ A naïve example to talk about relative motion:
 \end{itemize}
 
 
-\insertFig{moving car}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{car}
+    \end{minipage}
+\end{center}
 
 The above works in form of vector, 
 i.e. it does not matter what trajectories are ABC actually moving in.
 We can break it down component-wise if we write the velocities in x/y coordinate.
-
 \aleq{
     \vvec{V}_{AC} &= \vvec{V}_{AB} + \vvec{V}_{BC}\\
     \qty(V_{AC,x}\hhat{x} + V_{AC,y}\hhat{y})
@@ -501,10 +674,15 @@ We can break it down component-wise if we write the velocities in x/y coordinate
     &= \qty(V_{AB,x}+V_{BC,x})\hhat{x} + \qty(V_{AB,y}+V_{BC,y})\hhat{y}
 }
 
-But in polar coordinate, note that \ul{angular velocity is only the angular component in the velocity vector}.
+But in polar coordinate, \ul{angular velocity is only the angular component in the velocity vector}.
 It does not make any sense if we add vectors just by one of their components.
 
-\insertFig{traj different origin}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rel_traj}
+    \end{minipage}
+\end{center}
 
 
 One must write 

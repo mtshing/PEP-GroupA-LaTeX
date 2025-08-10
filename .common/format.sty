@@ -109,9 +109,9 @@
 \newcommand{\ccancel}[2][black]{
     \renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 \newcommand{\cbcancel}[2][black]{
-    \renewcommand\CancelColor{\color{#1}}\cbancel{#2}}
-\newcommand{\xbcancel}[2][black]{
-    \renewcommand\CancelColor{\color{#1}}\xbancel{#2}}
+    \renewcommand\CancelColor{\color{#1}}\bcancel{#2}}
+\newcommand{\cxcancel}[2][black]{
+    \renewcommand\CancelColor{\color{#1}}\xcancel{#2}}
 \newcommand{\ccancelto}[3][black]{
     \renewcommand\CancelColor{\color{#1}}\cancelto{#2}{#3}}
 
@@ -271,7 +271,7 @@
 \renewenvironment{proof}{%
         \vskip 0.5em
         \underline{\textit{Proof}}\par
-        \hspace{0.025\textwidth}\begin{minipage}{0.95\textwidth}
+        \hspace{0.025\textwidth}\begin{minipage}{0.95\linewidth}
         \vskip 0.5em
     }
     {
