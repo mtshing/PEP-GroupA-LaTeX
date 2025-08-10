@@ -12,6 +12,12 @@
 % for equation with numbers label (in order to use referencing)
 \newcommand{\aleqr}[1]{\begin{align} #1 \end{align}}
 
+% gather* environment is like align* but all lines are centered
+\newcommand{\gaeq}[1]{\begin{gather*} #1 \end{gather*}}
+% for equation with numbers label (in order to use referencing)
+\newcommand{\gaeqr}[1]{\begin{gather} #1 \end{gather}}
+
+
 % a big left brace like \begin{cases} to contain multiple lined of aligned eq
 % but allow central alignment about &
 \newcommand{\bcase}[1]{\left\{ \ \begin{aligned} #1 \end{aligned}\right.}
@@ -59,9 +65,7 @@
 
 \newcommand{\sgn}{\operatorname{sgn}} % sgn() sign function
 
-% det() operator is just \det
-\newcommand{\adj}{\operatorname{adj}} % matrix adjoint / adjugate
-\newcommand{\cof}{\operatorname{cof}} % matrix cofactor
+
 
 
 
@@ -80,15 +84,31 @@
 \newcommand{\vvec}[1]{\va*{#1}}
 \newcommand{\hhat}[1]{\vu*{#1}}
 
+% require del to always have vector head
+% can also call \grad (from physics package, together with \div, \curl)
+\newcommand{\del}{\vvec{\nabla}}
+
+% angle bracket for inner product
+% \ip{}{} is already taken by bra ket inner product from physics package
+\newcommand{\inner}[2]{\langle #1,#2 \rangle}
+
+
+
 % use absolute value for norm. \norm is default double bar in physics package
-\renewcommand{\norm}[1]{|#1|}
+%\renewcommand{\norm}[1]{|#1|}
 
 % bold and upright for alphabet that represent matrix
 \newcommand{\mmat}[1]{\vb{#1}}
 
-% require del to always have vector head
-% can also call \grad (from physics package, together with \div, \curl)
-\newcommand{\del}{\vvec{\nabla}}
+% use intercal for matrix transpose
+\newcommand{\mtra}{^\intercal}
+
+% smaller matrix inverse -1, to match the size of transpose
+\newcommand{\minv}[1][1]{^{\text{-}#1}}
+
+% det() operator is just \det
+\newcommand{\adj}{\operatorname{adj}} % matrix adjoint / adjugate
+\newcommand{\cof}{\operatorname{cof}} % matrix cofactor
 
 
 % matrix without parenthesis = used as an array
@@ -143,7 +163,19 @@
 }
   
 
-
+% symbol for stats quantity. Always use mid bracket
+%\newcommand{\E}[1]{\mathrm{E}\qty[#1]}
+%\newcommand{\Var}[1]{\mathrm{Var}\qty[#1]}
+%\newcommand{\Cov}[1]{\mathrm{Cov}\qty[#1]}
+\NewDocumentCommand{\E}{g}{
+  \IfNoValueTF{#1}{\mathrm{E}}{\mathrm{E}\qty[#1]}
+}
+\NewDocumentCommand{\Var}{g}{
+  \IfNoValueTF{#1}{\mathrm{Var}}{\mathrm{Var}\qty[#1]}
+}
+\NewDocumentCommand{\Cov}{g}{
+  \IfNoValueTF{#1}{\mathrm{Cov}}{\mathrm{Cov}\qty[#1]}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

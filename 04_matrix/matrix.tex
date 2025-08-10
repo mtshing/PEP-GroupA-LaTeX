@@ -320,14 +320,14 @@ but with different definitions.
     \item \bf{\ul{Multiplicative Inverse}}
     
     \red{Matrix's multiplicative inverse is only well-defined for square matrices.}
-    We denote the multiplicative inverse of a matrix $\mmat{A}$ as $\mmat{A}^{-1}$.
-    i.e. $\mmat{A}\mmat{A}^{-1} = \mmat{A}^{-1}\mmat{A} = \mmat{I}$.
+    We denote the multiplicative inverse of a matrix $\mmat{A}$ as $\mmat{A}\minv$.
+    i.e. $\mmat{A}\mmat{A}\minv = \mmat{A}\minv\mmat{A} = \mmat{I}$.
 
     There are two well-known way to compute a matrix's inverse. 
     The first formula appears more frequently in textbooks, 
     but is extremely complicate to compute.
     \aleq{
-        \mmat{A}^{-1} = \inv{\det(\mmat{A})}\adj(\mmat{A})
+        \mmat{A}\minv = \frac{\adj(\mmat{A})}{\det(\mmat{A})}
     }
 
     The other method is in fact the more efficient method - 
@@ -798,16 +798,16 @@ which simplify the notations.
 %%%%%%%%%%%%%%
 \subsection{Solving Equations with Matrix Inverse}
 
-Notice that if $\mmat{A}$ has an inverse $\mmat{A}^{-1}$, 
+Notice that if $\mmat{A}$ has an inverse $\mmat{A}\minv$, 
 then we can do
 \aleq{
     \mmat{Ax} &= \mmat{b} \\
-    \mmat{A}^{-1}(\mmat{Ax}) &= \mmat{A}^{-1}\mmat{b} \\
-    \mmat{x} &= \mmat{A}^{-1}\mmat{b}
+    \mmat{A}\minv(\mmat{Ax}) &= \mmat{A}\minv\mmat{b} \\
+    \mmat{x} &= \mmat{A}\minv\mmat{b}
 }
 
 So if we successfully find $\mmat{A}$'s inverse,
-the solution to the system of equation is exactly $\mmat{A}^{-1}\mmat{b}$.
+the solution to the system of equation is exactly $\mmat{A}\minv\mmat{b}$.
 
 \begin{example}
     Consider the system of equation: 
@@ -887,7 +887,7 @@ the solution to the system of equation is exactly $\mmat{A}^{-1}\mmat{b}$.
     }
 
     \aleq{
-        \Rightarrow \quad \mmat{A}^{-1} =
+        \Rightarrow \quad \mmat{A}\minv =
         \bmat{
             0 & \frac{1}{3} & \frac{1}{3} \\
             1 & \frac{2}{3} & -\frac{1}{3} \\
@@ -901,7 +901,7 @@ the solution to the system of equation is exactly $\mmat{A}^{-1}\mmat{b}$.
 
     Therefore, the solution to this system of equation is 
     \aleq{
-        \mmat{A}^{-1}\mmat{b} = \inv{3}
+        \mmat{A}\minv\mmat{b} = \inv{3}
             \bmat{
                 0 & 1 & 1 \\ 3 & 2 & -1 \\ 3 & 4 & -2 
             }
@@ -927,14 +927,15 @@ we first introduce these two theorems without rigorous proofs:
     
     Recall the inverse formula that nobody uses:
     \aleq{
-        \mmat{A}^{-1} = \frac{[\cof(a_{ij})]^\intercal}{\det(\mmat(A))}
+        \mmat{A}\minv = \frac{\adj(\mmat{A})}{\det(\mmat{A})}
     }
-    where $[\cof(a_{ij})]$ is the matrix composed by cofactor of \it{every elements} of $\mmat{A}$.
+    where $\adj(\mmat{A}) = [\cof(a_{ij})]\mtra$ is a matrix composed by cofactor of \it{every elements} of $\mmat{A}$,
+    and then take its transpose.
     We can observe that if $\det(\mmat{A}) = 0$, 
-    then $\mmat{A}^{-1}$ is undefined. 
+    then $\mmat{A}\minv$ is undefined. 
     \aleq{
         \Aboxed{
-            \det(\mmat{A})\neq 0 \quad\Leftrightarrow\quad \mmat{A}^{-1} \text{ exists} 
+            \det(\mmat{A})\neq 0 \quad\Leftrightarrow\quad \mmat{A}\minv \text{ exists} 
         }
     }
 
@@ -945,7 +946,7 @@ we first introduce these two theorems without rigorous proofs:
     So for a system of equation $\mmat{Ax}=\mmat{b}$,
     \aleq{
         \Aboxed{
-            \mmat{A}^{-1} \text{ exists} \quad\Leftrightarrow\quad \mmat{x}=\mmat{A}^{-1}\mmat{b} \text{ is a unique solution}
+            \mmat{A}\minv \text{ exists} \quad\Leftrightarrow\quad \mmat{x}=\mmat{A}\minv\mmat{b} \text{ is a unique solution}
         }
     }
 
@@ -994,14 +995,14 @@ This is called the \bf{"trivial solution"}.
 \begin{enumerate}
     \item If $\det(\mmat{A})\neq 0$, 
     \aleq{
-        \mmat{A}^{-1} \text{ exists} \ \Rightarrow \ 
+        \mmat{A}\minv \text{ exists} \ \Rightarrow \ 
         \text{Solution must be unique} \ \Rightarrow \ 
         \Aboxed{\mmat{x}=\mmat{0} \text{ is the only solution}}
     }
 
     \item If $\det(\mmat{A}) = 0$, 
     \aleq{
-        \mmat{A}^{-1} \text{ not exists} \ \Rightarrow \ 
+        \mmat{A}\minv \text{ not exists} \ \Rightarrow \ 
         \text{Solution is not unique} \ \Rightarrow \ 
         \Aboxed{\text{Infinitely many solutions}}
     }
@@ -1041,11 +1042,11 @@ the solution can be separated into 2 parts:
     \item If $\det(\mmat{A})\neq 0$, 
     \begin{itemize}
         \item The only solution to $\mmat{Ax}_c=\mmat{0}$ is $\mmat{x}_c=\mmat{0}$.
-        \item Since $\mmat{Ax}_p=\mmat{b}$, we can find $\mmat{x}_p = \mmat{A}^{-1}\mmat{b}$.
+        \item Since $\mmat{Ax}_p=\mmat{b}$, we can find $\mmat{x}_p = \mmat{A}\minv\mmat{b}$.
     \end{itemize}
     \aleq{
         \Aboxed{
-            \text{The unique soluion is }\mmat{x} = \mmat{x}_c+\mmat{x}_p=\mmat{A}^{-1}\mmat{b}
+            \text{The unique soluion is }\mmat{x} = \mmat{x}_c+\mmat{x}_p=\mmat{A}\minv\mmat{b}
         }
     }
 
@@ -1139,7 +1140,7 @@ the solution can be separated into 2 parts:
     Transforming back to $x/y/z$, it reads
     \aleq{
         \bcase{
-            x -7z &= 0 \\ y-2z &=0 \\ 0 &=0 
+            x +7z &= 0 \\ y-2z &=0 \\ 0 &=0 
         }
     }
     where $z$ can be any constant. So the solution is 
@@ -1196,7 +1197,7 @@ the solution can be separated into 2 parts:
     Transforming back to $x/y/z$, it reads
     \aleq{
         \bcase{
-            x -7z &= -1 \\ y-2z &=2 \\ 0 &=0 
+            x +7z &= -1 \\ y-2z &=2 \\ 0 &=0 
         }
     }
     where $z$ can be any constant. So the solution is 
@@ -1322,7 +1323,7 @@ This is why there are infinitely many solutions.
         }
         Two different eigenvalues.
 
-        \item Substitute back \cul[red]{each} $lambda$ into $(\mmat{A}-\lambda\mmat{I})\mmat{x}=\mmat{0}$ and solve $\mmat{x}$:
+        \item Substitute back \cul[red]{each} $\lambda$ into $(\mmat{A}-\lambda\mmat{I})\mmat{x}=\mmat{0}$ and solve $\mmat{x}$:
         \begin{itemize}
             \item For \red{$\lambda=3$}
             \aleq{
@@ -1432,10 +1433,14 @@ The standard steps for solving such system:
         \lambda\mmat{k} &= \mmat{Ak}
     }
     To be the solution, we require
-    \begin{itemize}
-        \item $\lambda$ to be $\mmat{A}$'s eigenvalue.
-        \item $\mmat{k}=\bmat{k_1\\k_2}$ to be $\mmat{A}$'s eigenvector.
-    \end{itemize}
+    \aleq{
+        \bmat{x_1\\x_2} = \mmat{x} = \mmat{k}e^{\lambda t} = \bmat{k_1\\k_2}e^{\lambda t}
+        \qquad\text{with}\qquad
+        \bcase{
+            &\lambda \text{ to be } \mmat{A} \text{ 's eigenvalue} \\
+            &\mmat{k}=\bmat{k_1\\k_2} \text{ to be }\mmat{A} \text{ 's eigenvector}
+        }
+    }
 
     \item After solving for $\lambda$ and $\mmat{k}$,
     the general solution is then the superposition of all its eigenvectors.
@@ -1452,9 +1457,12 @@ The standard steps for solving such system:
     \addArrow[red]{v2}{(0,-5ex)}{\scriptsize Eigenvector 2}{(0,-5ex)}
     \addArrow[blue]{L2}{(1ex,-5.5ex)}{\scriptsize Eigenvalue 2}{(0,-1ex)}
 
-    \hfill\\[2em]
+    \vskip 2em
+    The $C_1,C_2$ shall be matched by initial conditions, e.g. knowing $\mmat{x}(0)$ when $t=0$. 
+
 \end{enumerate}
 
+\vskip 1em
 \begin{example}
     \aleq{
         \bcase{
@@ -1502,11 +1510,26 @@ For simplicity, let's deal with a system with 2 unknown functions only.
     }
 }
 
-We can convert it to a \nth{1} order system by letting 
+If we naively write it in terms of some $2\times2$ matrices, like
+\aleq{
+    \dvv[2]{t}\bmat{x_1\\x_2} &= \bmat{a & b\\p & q}\dvv{t}\bmat{x_1\\x_2} + \bmat{c & d\\r & s}\bmat{x_1\\x_2}\\[1ex]
+    \dvv[2]{t}\mmat{x} &= \mmat{A}\dvv{t}\mmat{x} + \mmat{B}\mmat{x}
+}
+
+Substitute $\mmat{x} = \bmat{k_1\\k_2}e^{\lambda t}$ does NOT gives you the form of eigenvalue problem.
+\aleq{
+    \lambda^2\bmat{k_1\\k_2}\ccancel[red]{e^{\lambda t}}
+    &= \lambda\bmat{a & b\\p & q}\bmat{k_1\\k_2}\ccancel[red]{e^{\lambda t}} 
+        + \bmat{c & d\\r & s}\bmat{k_1\\k_2}\ccancel[red]{e^{\lambda t}}\\[1ex]
+    \lambda^2\mmat{k} &= \lambda \mmat{A}\mmat{k} + \tkn{not_eigen}{\mmat{B}\mmat{k}}
+}
+\addArrow[red]{not_eigen}{(5ex,0)}{\scriptsize Don't know how to solve}{(3ex,0.5ex)}{(8ex,0)}
+
+Instead, we can convert it to a \nth{1} order system by letting 
 \aleq{
     \dvv{t} x_1(t) = u_1(t) \quad ,\quad \dvv{t}x_2{t} = u_2(t)
 }
-which then it reduces to a system of ODEs with 4 unknowns.
+which then it reduces to a system of \nth{1} order ODEs with 4 unknowns.
 \aleq{
     \bcase{
         \tkm{dvu1}\cul[green]{\dvv{t}u_1(t)} &= a u_1(t) + b u_2(t) + cx_1(t) + dx_2(t)\\ 
@@ -1526,9 +1549,10 @@ which then it reduces to a system of ODEs with 4 unknowns.
 }
 
 \begin{center}
-    (Solving this by hand is a nightmare)
+    \red{Now we can solve it as a eigenvalue problem. But solving by hand is a nightmare}
 \end{center}
 
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Application: Coupled Spring-mass System}
 
@@ -1559,7 +1583,7 @@ displacement of mass 2 $=x_2(t)$.
         \therefore \ F = m_1\dvv[2]{t}x_1 = -k_1x_1-k_2(x_1-x_2)-\gamma_1 \dvv{t}x_1
     }
 
-    \hfill\\
+    \vskip 1ex
     \item \ul{Newton's \nth{2} Law for $m_2$}:\\[-2.5em]
     \begin{center}
         \begin{minipage}{0.4\linewidth}
@@ -1597,7 +1621,7 @@ Group the 2 equations and transform it into a \nth{1} order system:
 }
 
 \begin{center}
-    (Not recommend to waste time on solving it)
+    \red{(Absolutely not recommend to waste time on solving it)}
 \end{center}
 
 
@@ -1651,7 +1675,6 @@ So the general solution is
         + C_4\bmat{1\\-1}e^{-i\sqrt{\frac{k_1+2k_2}{m}}t}
 }
 
-\hfill\\[1em]
 \bf{\ul{Physical Interpretation}}\\
 
 The general solution is a superposition of 2 kinds of vibration of their own frequencies.\\ 
@@ -1678,8 +1701,8 @@ The general solution is a superposition of 2 kinds of vibration of their own fre
 
     \item \ul{Angular frequency 2: $\sqrt{\frac{k_1+2k_2}{m}}$}
     \aleq{
-        \bmat{x_1\\x_2} &= C_3\bmat{1\\1}e^{i\sqrt{\frac{k_1+2k_2}{m}}t}
-        + C_4\bmat{1\\1}e^{-i\sqrt{\frac{k_1+2k_2}{m}}t}
+        \bmat{x_1\\x_2} &= C_3\bmat{1\\-1}e^{i\sqrt{\frac{k_1+2k_2}{m}}t}
+        + C_4\bmat{1\\-1}e^{-i\sqrt{\frac{k_1+2k_2}{m}}t}
         %
         =  \boxed{\bmat{1\\-1} A_2\cos\qty(\sqrt{\frac{k_1+2k_2}{m}}t + \phi_2)}
     }
