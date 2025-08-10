@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1754809442.00998 "d:/mings/Documents/PhyO/latex_notes/04_matrix/matrix.tex" "matrix.pdf" "matrix" 1754809449.15306 0
+["pdflatex"] 1754841977.49778 "d:/mings/Documents/PhyO/latex_notes/04_matrix/matrix.tex" "matrix.pdf" "matrix" 1754841984.87673 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1753530894 14580 8504b88247ce37376b1d0d30acd04272 ""
-  "../.common/math.sty" 1754497799 12207 5a27602b1d2591a89642fc699cce9d7a ""
+  "../.common/math.sty" 1754838014 12206 a06b327610a3215a1d1231bbb5e18e65 ""
   "../.common/packages.sty" 1753906031 5483 7372c66d5d4b93f0b22397e4fddfbefe ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1752685028 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1738919338 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -231,17 +231,17 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/04_matrix/matrix.tex" 1754809441 62675 a1be8a8a03797eb20ce30f35c8850b62 ""
+  "d:/mings/Documents/PhyO/latex_notes/04_matrix/matrix.tex" 1754841974 62947 f605f4004f2e6be1fbaeb4e26bd7b9e1 ""
   "img/couple.png" 1753439238 4592 6962a363bc1e5849ff98762d4ac62b8b ""
   "img/shm.png" 1753439378 9033 a220c99971a246b0926a0a006de2ce1b ""
   "img/shm_inphase.png" 1753439440 9619 ce0dea3e3179172943f2e1ad3be96b9c ""
   "img/shm_m1.png" 1753439391 9777 503e26aa6a594f2938c4a53c9bc9f98e ""
   "img/shm_m2.png" 1753439409 9608 d68d7533de3487fb13a8396dbed0b16a ""
   "img/shm_outphase.png" 1753439465 9689 128fa129909b24a1824108d7e97957c4 ""
-  "matrix.aux" 1754809448 9491 c00e11c41d3441b3f205f0cce3f2bd20 "pdflatex"
-  "matrix.out" 1754809448 4212 359ab0db538d2b7b79857a269cf8b646 "pdflatex"
-  "matrix.sta" 1754809448 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "matrix.tex" 1754809441 62675 a1be8a8a03797eb20ce30f35c8850b62 ""
+  "matrix.aux" 1754841984 9491 c00e11c41d3441b3f205f0cce3f2bd20 "pdflatex"
+  "matrix.out" 1754841984 4212 359ab0db538d2b7b79857a269cf8b646 "pdflatex"
+  "matrix.sta" 1754841984 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "matrix.tex" 1754841974 62947 f605f4004f2e6be1fbaeb4e26bd7b9e1 ""
   (generated)
   "matrix.aux"
   "matrix.log"

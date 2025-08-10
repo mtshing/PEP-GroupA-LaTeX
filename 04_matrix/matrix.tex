@@ -1265,24 +1265,34 @@ satisfying $\mmat{Ax}=\lambda\mmat{x}$. Then
     \item $\lambda =$ Eigenvalue of $\mmat{A}$. 
 \end{itemize}
 
-\ul{Theorem}: $\lambda$ is an eigenvalue of $\mmat{A} \Leftrightarrow \det(\mmat{A}-\lambda\mmat{I}) = 0$
+\begin{center}
+    \begin{minipage}{0.6\textwidth}
+        \begin{framed}
+            \centering
+            \ul{Theorem}: $\lambda$ is an eigenvalue of $\mmat{A} \Leftrightarrow \det(\mmat{A}-\lambda\mmat{I}) = 0$
+        \end{framed}
+    \end{minipage}
+\end{center}
 
 \begin{proof}
+    Because matrix multiplying the identity $\mmat{I}$ yields itself,
     \aleq{
         \mmat{Ax} &= \lambda\mmat{x} = \lambda\mmat{Ix} \\
         \mmat{Ax} - \lambda\mmat{Ix} &= \mmat{0} \\
         (\mmat{A}-\lambda\mmat{I})\mmat{x} &= \mmat{0} 
     }
+
+    Note that the above is a \cul[red]{homogeneous} system of linear equations.
+    \begin{itemize}
+        \item If $\det(\mmat{A}-\lambda\mmat{I})\neq 0$,
+        The only solution is $\mmat{x}=\mmat{0}$ \red{\scriptsize (reject)}
+
+        \item If $\det(\mmat{A}-\lambda\mmat{I})= 0$,
+        There are infinitely many solutions.
+    \end{itemize}
 \end{proof}
 
-Note that the above is a \cul[red]{homogeneous} system of linear equations.
-\begin{itemize}
-    \item If $\det(\mmat{A}-\lambda\mmat{I})\neq 0$,
-    The only solution is $\mmat{x}=\mmat{0}$ \red{\scriptsize (reject)}
 
-    \item If $\det(\mmat{A}-\lambda\mmat{I})= 0$,
-    There are infinitely many solutions.
-\end{itemize}
 
 In fact, if $\mmat{x}$ is an eigenvector that satisfies $\mmat{Ax}=\lambda \mmat{x}$, 
 for any $k=$constant, 

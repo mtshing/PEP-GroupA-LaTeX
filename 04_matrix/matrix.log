@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  10 AUG 2025 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  11 AUG 2025 00:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -995,36 +995,36 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [17]
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1406
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1400.
+(hyperref)                removing `\mathsurround' on input line 1410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1400.
+(hyperref)                removing `\z@' on input line 1410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1400.
+(hyperref)                removing `superscript' on input line 1410.
 
 
 
 [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1503.
+(hyperref)                removing `\mathsurround' on input line 1513.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1503.
+(hyperref)                removing `\z@' on input line 1513.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1503.
+(hyperref)                removing `superscript' on input line 1513.
 
 
 
@@ -1034,56 +1034,56 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <img/shm.png, id=219, 348.70274pt x 131.89275pt>
 File: img/shm.png Graphic file (type png)
 <use img/shm.png>
-Package pdftex.def Info: img/shm.png  used on input line 1562.
+Package pdftex.def Info: img/shm.png  used on input line 1572.
 (pdftex.def)             Requested size: 195.70428pt x 74.02444pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1570--1571
+Underfull \hbox (badness 10000) in paragraph at lines 1580--1581
 
  []
 
 <img/shm_m1.png, id=220, 341.47575pt x 128.27925pt>
 File: img/shm_m1.png Graphic file (type png)
 <use img/shm_m1.png>
-Package pdftex.def Info: img/shm_m1.png  used on input line 1574.
+Package pdftex.def Info: img/shm_m1.png  used on input line 1584.
 (pdftex.def)             Requested size: 183.95459pt x 69.10533pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1587--1588
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1598
 
  []
 
 <img/shm_m2.png, id=221, 334.851pt x 125.268pt>
 File: img/shm_m2.png Graphic file (type png)
 <use img/shm_m2.png>
-Package pdftex.def Info: img/shm_m2.png  used on input line 1591.
+Package pdftex.def Info: img/shm_m2.png  used on input line 1601.
 (pdftex.def)             Requested size: 183.95459pt x 68.81732pt.
 
 
 [22 <./img/shm.png> <./img/shm_m1.png> <./img/shm_m2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1679
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1689
 
  []
 
 
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
+Underfull \hbox (badness 10000) in paragraph at lines 1702--1703
 
  []
 
 <img/shm_inphase.png, id=231, 587.19376pt x 75.28125pt>
 File: img/shm_inphase.png Graphic file (type png)
 <use img/shm_inphase.png>
-Package pdftex.def Info: img/shm_inphase.png  used on input line 1696.
+Package pdftex.def Info: img/shm_inphase.png  used on input line 1706.
 (pdftex.def)             Requested size: 344.92012pt x 44.22026pt.
 
-Overfull \hbox (12.84554pt too wide) detected at line 1708
+Overfull \hbox (12.84554pt too wide) detected at line 1718
 []
  []
 
 <img/shm_outphase.png, id=232, 620.3175pt x 60.225pt>
 File: img/shm_outphase.png Graphic file (type png)
 <use img/shm_outphase.png>
-Package pdftex.def Info: img/shm_outphase.png  used on input line 1715.
+Package pdftex.def Info: img/shm_outphase.png  used on input line 1725.
 (pdftex.def)             Requested size: 367.9162pt x 35.7199pt.
 
 
@@ -1096,15 +1096,15 @@ Package rerunfilecheck Info: File `matrix.out' has not changed.
 (rerunfilecheck)             Checksum: 359AB0DB538D2B7B79857A269CF8B646;4212.
  ) 
 Here is how much of TeX's memory you used:
- 31311 strings out of 469747
- 591485 string characters out of 5481688
- 1020095 words of memory out of 5000000
- 59069 multiletter control sequences out of 15000+600000
+ 31313 strings out of 469747
+ 591541 string characters out of 5481688
+ 1020079 words of memory out of 5000000
+ 59071 multiletter control sequences out of 15000+600000
  640197 words of font info for 89 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,28n,159p,589b,1169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on matrix.pdf (24 pages, 291124 bytes).
+Output written on matrix.pdf (24 pages, 291281 bytes).
 PDF statistics:
  320 PDF objects out of 1000 (max. 8388607)
  255 compressed objects within 3 object streams
