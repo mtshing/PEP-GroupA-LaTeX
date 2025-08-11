@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  31 JUL 2025 05:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  12 AUG 2025 04:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -824,12 +824,28 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 57--59
+<img/tran1.png, id=55, 669.702pt x 257.763pt>
+File: img/tran1.png Graphic file (type png)
+<use img/tran1.png>
+Package pdftex.def Info: img/tran1.png  used on input line 53.
+(pdftex.def)             Requested size: 183.95459pt x 70.80048pt.
+<img/tran2.png, id=56, 284.86424pt x 207.174pt>
+File: img/tran2.png Graphic file (type png)
+<use img/tran2.png>
+Package pdftex.def Info: img/tran2.png  used on input line 60.
+(pdftex.def)             Requested size: 68.98122pt x 50.1685pt.
+<img/tran3.png, id=57, 522.15076pt x 181.27725pt>
+File: img/tran3.png Graphic file (type png)
+<use img/tran3.png>
+Package pdftex.def Info: img/tran3.png  used on input line 70.
+(pdftex.def)             Requested size: 183.95459pt x 63.86288pt.
+<img/tran4.png, id=58, 286.06876pt x 278.84175pt>
+File: img/tran4.png Graphic file (type png)
+<use img/tran4.png>
+Package pdftex.def Info: img/tran4.png  used on input line 77.
+(pdftex.def)             Requested size: 68.98122pt x 67.23824pt.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
@@ -837,129 +853,391 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--69
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
-
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/tran1.png> <./img/tran2.png> <./img/tran3.png> <./img/tran4.png>]
+Overfull \hbox (2.12584pt too wide) in paragraph at lines 90--91
+[]$[]$ 
  []
 
+<img/tran_force.png, id=71, 505.89pt x 357.7365pt>
+File: img/tran_force.png Graphic file (type png)
+<use img/tran_force.png>
+Package pdftex.def Info: img/tran_force.png  used on input line 99.
+(pdftex.def)             Requested size: 176.13266pt x 124.54915pt.
+<img/tran_geom.png, id=72, 652.839pt x 449.2785pt>
+File: img/tran_geom.png Graphic file (type png)
+<use img/tran_geom.png>
+Package pdftex.def Info: img/tran_geom.png  used on input line 140.
+(pdftex.def)             Requested size: 176.13266pt x 121.21083pt.
 
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
-
- []
-
-
+[2 <./img/tran_force.png> <./img/tran_geom.png>]
 
 [3]
+<img/long1.png, id=90, 639.5895pt x 226.446pt>
+File: img/long1.png Graphic file (type png)
+<use img/long1.png>
+Package pdftex.def Info: img/long1.png  used on input line 211.
+(pdftex.def)             Requested size: 206.95067pt x 73.26927pt.
+<img/long2.png, id=91, 874.467pt x 305.943pt>
+File: img/long2.png Graphic file (type png)
+<use img/long2.png>
+Package pdftex.def Info: img/long2.png  used on input line 220.
+(pdftex.def)             Requested size: 266.73907pt x 93.32414pt.
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 309--312
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
+
+ []
+
+<img/long_node.png, id=93, 1082.24326pt x 311.36325pt>
+File: img/long_node.png Graphic file (type png)
+<use img/long_node.png>
+Package pdftex.def Info: img/long_node.png  used on input line 244.
+(pdftex.def)             Requested size: 347.23637pt x 99.89958pt.
+<img/long_force.png, id=94, 802.197pt x 147.55125pt>
+File: img/long_force.png Graphic file (type png)
+<use img/long_force.png>
+Package pdftex.def Info: img/long_force.png  used on input line 254.
+(pdftex.def)             Requested size: 303.82935pt x 55.88318pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Overfull \hbox (17.30673pt too wide) detected at line 377
+
+[4 <./img/long1.png> <./img/long2.png> <./img/long_node.png> <./img/long_force.png>]
+<img/spring.png, id=101, 626.94225pt x 124.66576pt>
+File: img/spring.png Graphic file (type png)
+<use img/spring.png>
+Package pdftex.def Info: img/spring.png  used on input line 317.
+(pdftex.def)             Requested size: 215.66292pt x 42.88417pt.
+
+
+[5 <./img/spring.png>]
+<img/long_freebody.png, id=108, 386.6445pt x 322.20375pt>
+File: img/long_freebody.png Graphic file (type png)
+<use img/long_freebody.png>
+Package pdftex.def Info: img/long_freebody.png  used on input line 337.
+(pdftex.def)             Requested size: 114.97337pt x 95.81133pt.
+
+
+[6 <./img/long_freebody.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 390--393
+
+ []
+
+<img/init1.png, id=113, 392.667pt x 222.8325pt>
+File: img/init1.png Graphic file (type png)
+<use img/init1.png>
+Package pdftex.def Info: img/init1.png  used on input line 402.
+(pdftex.def)             Requested size: 122.31705pt x 69.41057pt.
+<img/init2.png, id=114, 437.2335pt x 165.0165pt>
+File: img/init2.png Graphic file (type png)
+<use img/init2.png>
+Package pdftex.def Info: img/init2.png  used on input line 407.
+(pdftex.def)             Requested size: 122.31705pt x 46.164pt.
+
+Overfull \hbox (17.30673pt too wide) detected at line 473
 []
  []
 
 
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
-
- []
-
-
-
-[6]
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 522--524
-
- []
+[7 <./img/init1.png> <./img/init2.png>]
+<img/super1.png, id=123, 569.12625pt x 252.34274pt>
+File: img/super1.png Graphic file (type png)
+<use img/super1.png>
+Package pdftex.def Info: img/super1.png  used on input line 496.
+(pdftex.def)             Requested size: 171.24686pt x 75.92673pt.
+<img/super2.png, id=124, 421.575pt x 202.95825pt>
+File: img/super2.png Graphic file (type png)
+<use img/super2.png>
+Package pdftex.def Info: img/super2.png  used on input line 501.
+(pdftex.def)             Requested size: 171.24686pt x 96.7608pt.
 
 
-
-[8]
+[8 <./img/super1.png> <./img/super2.png>]
 
 [9]
+<img/init_eg.png, id=197, 375.804pt x 221.628pt>
+File: img/init_eg.png Graphic file (type png)
+<use img/init_eg.png>
+Package pdftex.def Info: img/init_eg.png  used on input line 641.
+(pdftex.def)             Requested size: 146.78195pt x 86.56308pt.
+File: img/init_eg.png Graphic file (type png)
+<use img/init_eg.png>
+Package pdftex.def Info: img/init_eg.png  used on input line 658.
+(pdftex.def)             Requested size: 146.78195pt x 86.56308pt.
+<img/init_eg2.png, id=198, 419.166pt x 238.491pt>
+File: img/init_eg2.png Graphic file (type png)
+<use img/init_eg2.png>
+Package pdftex.def Info: img/init_eg2.png  used on input line 663.
+(pdftex.def)             Requested size: 146.78195pt x 99.97108pt.
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 711--713
+
+[10 <./img/init_eg.png> <./img/init_eg2.png>]
+<img/stand1.png, id=206, 313.77225pt x 143.3355pt>
+File: img/stand1.png Graphic file (type png)
+<use img/stand1.png>
+Package pdftex.def Info: img/stand1.png  used on input line 683.
+(pdftex.def)             Requested size: 122.31705pt x 55.87654pt.
+<img/stand2.png, id=207, 353.52075pt x 158.994pt>
+File: img/stand2.png Graphic file (type png)
+<use img/stand2.png>
+Package pdftex.def Info: img/stand2.png  used on input line 688.
+(pdftex.def)             Requested size: 122.31705pt x 55.01068pt.
+<img/stand_weird1.png, id=208, 315.579pt x 158.994pt>
+File: img/stand_weird1.png Graphic file (type png)
+<use img/stand_weird1.png>
+Package pdftex.def Info: img/stand_weird1.png  used on input line 699.
+(pdftex.def)             Requested size: 122.31705pt x 61.62408pt.
+<img/stand_weird2.png, id=209, 314.3745pt x 158.994pt>
+File: img/stand_weird2.png Graphic file (type png)
+<use img/stand_weird2.png>
+Package pdftex.def Info: img/stand_weird2.png  used on input line 704.
+(pdftex.def)             Requested size: 122.31705pt x 61.86183pt.
+<img/stand_weird3.png, id=210, 313.17pt x 151.767pt>
+File: img/stand_weird3.png Graphic file (type png)
+<use img/stand_weird3.png>
+Package pdftex.def Info: img/stand_weird3.png  used on input line 709.
+(pdftex.def)             Requested size: 122.31705pt x 59.27689pt.
+
+
+[11 <./img/stand1.png> <./img/stand2.png> <./img/stand_weird1.png> <./img/stand_weird2.png> <./img/stand_weird3.png>]
+<img/dirichlet.png, id=216, 421.575pt x 305.34074pt>
+File: img/dirichlet.png Graphic file (type png)
+<use img/dirichlet.png>
+Package pdftex.def Info: img/dirichlet.png  used on input line 807.
+(pdftex.def)             Requested size: 122.31705pt x 88.59314pt.
+
+
+[12 <./img/dirichlet.png>]
+<img/neumann.png, id=221, 424.58624pt x 311.36325pt>
+File: img/neumann.png Graphic file (type png)
+<use img/neumann.png>
+Package pdftex.def Info: img/neumann.png  used on input line 874.
+(pdftex.def)             Requested size: 122.31705pt x 89.69914pt.
+<img/neumann_end2.png, id=222, 324.61275pt x 299.9205pt>
+File: img/neumann_end2.png Graphic file (type png)
+<use img/neumann_end2.png>
+Package pdftex.def Info: img/neumann_end2.png  used on input line 887.
+(pdftex.def)             Requested size: 88.06468pt x 81.36403pt.
+<img/neumann_end1.png, id=223, 380.01974pt x 164.41425pt>
+File: img/neumann_end1.png Graphic file (type png)
+<use img/neumann_end1.png>
+Package pdftex.def Info: img/neumann_end1.png  used on input line 892.
+(pdftex.def)             Requested size: 171.24686pt x 74.08858pt.
+
+
+[13 <./img/neumann.png> <./img/neumann_end2.png> <./img/neumann_end1.png>]
+Overfull \hbox (31.8805pt too wide) detected at line 971
+[]
+ []
+
+<img/fix_free.png, id=230, 433.01775pt x 302.93175pt>
+File: img/fix_free.png Graphic file (type png)
+<use img/fix_free.png>
+Package pdftex.def Info: img/fix_free.png  used on input line 990.
+(pdftex.def)             Requested size: 122.31705pt x 85.56912pt.
+
+
+[14 <./img/fix_free.png>]
+Overfull \hbox (0.87476pt too wide) in paragraph at lines 1042--1042
+ []|\OT1/cmr/m/n/12 n=0| 
+ []
+
+<img/mode_D0.png, id=240, 401.70074pt x 195.129pt>
+File: img/mode_D0.png Graphic file (type png)
+<use img/mode_D0.png>
+Package pdftex.def Info: img/mode_D0.png  used on input line 1044.
+(pdftex.def)             Requested size: 136.99449pt x 66.54544pt.
+<img/mode_N0.png, id=241, 387.849pt x 202.95825pt>
+File: img/mode_N0.png Graphic file (type png)
+<use img/mode_N0.png>
+Package pdftex.def Info: img/mode_N0.png  used on input line 1051.
+(pdftex.def)             Requested size: 136.99449pt x 71.68678pt.
+
+Overfull \hbox (3.15544pt too wide) in paragraph at lines 1050--1057
+ []|[]| 
+ []
+
+File: img/mode_D0.png Graphic file (type png)
+<use img/mode_D0.png>
+Package pdftex.def Info: img/mode_D0.png  used on input line 1059.
+(pdftex.def)             Requested size: 136.99449pt x 66.54544pt.
+
+Overfull \hbox (0.87476pt too wide) in paragraph at lines 1067--1067
+ []|\OT1/cmr/m/n/12 n=1| 
+ []
+
+<img/mode_D1.png, id=242, 392.06474pt x 190.311pt>
+File: img/mode_D1.png Graphic file (type png)
+<use img/mode_D1.png>
+Package pdftex.def Info: img/mode_D1.png  used on input line 1069.
+(pdftex.def)             Requested size: 136.99449pt x 66.49658pt.
+<img/mode_N1.png, id=243, 387.849pt x 186.6975pt>
+File: img/mode_N1.png Graphic file (type png)
+<use img/mode_N1.png>
+Package pdftex.def Info: img/mode_N1.png  used on input line 1075.
+(pdftex.def)             Requested size: 136.99449pt x 65.94334pt.
+<img/mode_O1.png, id=244, 389.0535pt x 190.311pt>
+File: img/mode_O1.png Graphic file (type png)
+<use img/mode_O1.png>
+Package pdftex.def Info: img/mode_O1.png  used on input line 1081.
+(pdftex.def)             Requested size: 136.99449pt x 67.01347pt.
+
+Overfull \hbox (0.87476pt too wide) in paragraph at lines 1088--1088
+ []|\OT1/cmr/m/n/12 n=2| 
+ []
+
+<img/mode_D2.png, id=245, 284.86424pt x 139.722pt>
+File: img/mode_D2.png Graphic file (type png)
+<use img/mode_D2.png>
+Package pdftex.def Info: img/mode_D2.png  used on input line 1090.
+(pdftex.def)             Requested size: 136.99449pt x 67.19371pt.
+<img/mode_N2.png, id=246, 289.68225pt x 141.52875pt>
+File: img/mode_N2.png Graphic file (type png)
+<use img/mode_N2.png>
+Package pdftex.def Info: img/mode_N2.png  used on input line 1096.
+(pdftex.def)             Requested size: 136.99449pt x 66.93098pt.
+
+Overfull \hbox (1.2055pt too wide) in paragraph at lines 1095--1100
+ []|[]| 
+ []
+
+<img/mode_O2.png, id=247, 298.716pt x 137.313pt>
+File: img/mode_O2.png Graphic file (type png)
+<use img/mode_O2.png>
+Package pdftex.def Info: img/mode_O2.png  used on input line 1102.
+(pdftex.def)             Requested size: 136.99449pt x 62.97408pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1115
 
  []
 
 
 
-[11]
-Overfull \hbox (43.63037pt too wide) detected at line 790
+[15 <./img/mode_D0.png> <./img/mode_N0.png> <./img/mode_D1.png> <./img/mode_N1.png> <./img/mode_O1.png> <./img/mode_D2.png> <./img/mode_N2.png> <./img/mode_O2.png>]
+<img/sum.png, id=255, 764.25525pt x 221.628pt>
+File: img/sum.png Graphic file (type png)
+<use img/sum.png>
+Package pdftex.def Info: img/sum.png  used on input line 1123.
+(pdftex.def)             Requested size: 244.6341pt x 70.93932pt.
+<img/sum_11.png, id=256, 288.47775pt x 216.81pt>
+File: img/sum_11.png Graphic file (type png)
+<use img/sum_11.png>
+Package pdftex.def Info: img/sum_11.png  used on input line 1140.
+(pdftex.def)             Requested size: 97.85214pt x 73.54239pt.
+<img/sum_12.png, id=257, 287.27325pt x 213.79875pt>
+File: img/sum_12.png Graphic file (type png)
+<use img/sum_12.png>
+Package pdftex.def Info: img/sum_12.png  used on input line 1142.
+(pdftex.def)             Requested size: 97.85214pt x 72.82436pt.
+<img/sum_13.png, id=258, 283.65974pt x 216.20775pt>
+File: img/sum_13.png Graphic file (type png)
+<use img/sum_13.png>
+Package pdftex.def Info: img/sum_13.png  used on input line 1144.
+(pdftex.def)             Requested size: 97.85214pt x 74.58185pt.
+<img/sum_21.png, id=259, 283.0575pt x 222.8325pt>
+File: img/sum_21.png Graphic file (type png)
+<use img/sum_21.png>
+Package pdftex.def Info: img/sum_21.png  used on input line 1152.
+(pdftex.def)             Requested size: 97.85214pt x 77.03029pt.
+<img/sum_22.png, id=260, 287.8755pt x 218.61674pt>
+File: img/sum_22.png Graphic file (type png)
+<use img/sum_22.png>
+Package pdftex.def Info: img/sum_22.png  used on input line 1154.
+(pdftex.def)             Requested size: 97.85214pt x 74.31201pt.
+<img/sum_23.png, id=261, 292.6935pt x 228.25275pt>
+File: img/sum_23.png Graphic file (type png)
+<use img/sum_23.png>
+Package pdftex.def Info: img/sum_23.png  used on input line 1156.
+(pdftex.def)             Requested size: 97.85214pt x 76.30928pt.
+<img/sum_31.png, id=262, 289.68225pt x 214.401pt>
+File: img/sum_31.png Graphic file (type png)
+<use img/sum_31.png>
+Package pdftex.def Info: img/sum_31.png  used on input line 1164.
+(pdftex.def)             Requested size: 97.85214pt x 72.421pt.
+<img/sum_32.png, id=263, 284.86424pt x 216.20775pt>
+File: img/sum_32.png Graphic file (type png)
+<use img/sum_32.png>
+Package pdftex.def Info: img/sum_32.png  used on input line 1166.
+(pdftex.def)             Requested size: 97.85214pt x 74.26843pt.
+<img/sum_33.png, id=264, 287.8755pt x 237.2865pt>
+File: img/sum_33.png Graphic file (type png)
+<use img/sum_33.png>
+Package pdftex.def Info: img/sum_33.png  used on input line 1168.
+(pdftex.def)             Requested size: 97.85214pt x 80.65823pt.
+
+Overfull \hbox (13.10077pt too wide) in paragraph at lines 1170--1171
+ [] 
+ []
+
+
+Overfull \hbox (6.44217pt too wide) in paragraph at lines 1131--1172
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1182
+
+ []
+
+<img/periodic.png, id=265, 524.55975pt x 160.1985pt>
+File: img/periodic.png Graphic file (type png)
+<use img/periodic.png>
+Package pdftex.def Info: img/periodic.png  used on input line 1189.
+(pdftex.def)             Requested size: 195.70428pt x 59.76628pt.
+
+
+[16 <./img/sum.png> <./img/sum_11.png> <./img/sum_12.png> <./img/sum_13.png> <./img/sum_21.png> <./img/sum_22.png> <./img/sum_23.png> <./img/sum_31.png> <./img/sum_32.png> <./img/sum_33.png> <./img/periodic.png>]
+Overfull \hbox (36.23271pt too wide) detected at line 1249
 []
  []
 
 
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 863--866
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1253
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--898
-
- []
-
-
-
-[13]
-Overfull \hbox (36.23271pt too wide) detected at line 960
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 960--964
-
- []
-
-
-Overfull \hbox (23.99652pt too wide) in paragraph at lines 919--967
+Overfull \hbox (23.99652pt too wide) in paragraph at lines 1208--1256
 [] $[]$ 
  []
 
 
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 971--972
+Underfull \hbox (badness 10000) in paragraph at lines 1260--1261
 
  []
 
 
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 1012--1013
+[17]
+<img/square.png, id=274, 777.50475pt x 264.99pt>
+File: img/square.png Graphic file (type png)
+<use img/square.png>
+Package pdftex.def Info: img/square.png  used on input line 1273.
+(pdftex.def)             Requested size: 293.5639pt x 100.0503pt.
+<img/square_mode.png, id=275, 563.706pt x 292.09125pt>
+File: img/square_mode.png Graphic file (type png)
+<use img/square_mode.png>
+Package pdftex.def Info: img/square_mode.png  used on input line 1310.
+(pdftex.def)             Requested size: 391.41605pt x 202.82231pt.
+
+
+[18 <./img/square.png> <./img/square_mode.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1346--1350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1359
 
  []
 
 
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 1057--1061
-
- []
-
-
-
-[17] (./wave.aux)
+[19] (./wave.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
@@ -968,18 +1246,18 @@ Package rerunfilecheck Info: File `wave.out' has not changed.
 (rerunfilecheck)             Checksum: D89FEB56A9B9267E30BCC187250FF3B0;2429.
  ) 
 Here is how much of TeX's memory you used:
- 30514 strings out of 469747
- 577291 string characters out of 5481688
- 961129 words of memory out of 5000000
- 58287 multiletter control sequences out of 15000+600000
- 639169 words of font info for 83 fonts, out of 8000000 for 9000
+ 31017 strings out of 469747
+ 587450 string characters out of 5481688
+ 962349 words of memory out of 5000000
+ 58791 multiletter control sequences out of 15000+600000
+ 639767 words of font info for 85 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,26n,159p,585b,1059s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on wave.pdf (17 pages, 250060 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on wave.pdf (19 pages, 896902 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 354 words of extra memory for PDF output out of 10000 (max. 10000000)
 

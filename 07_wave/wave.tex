@@ -1,7 +1,7 @@
 \documentclass[class=article, crop=false, 12pt]{standalone}
 \usepackage[subpreambles=true]{standalone}
 \usepackage{../.common/common}
-
+\allowdisplaybreaks % equation environment from amsmath can break equation between page
 
 \author{Tony Shing}
 %\pretitle{Supplementary}
@@ -47,75 +47,121 @@ We usually use an elastic string to visualize transverse wave travel.
 \begin{itemize}
     \item When the string lies flat - Each string segment has a width $\Delta x$.
     
-    \insertFig{flat string}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{tran1}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        $\Rightarrow$
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.15\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{tran2}
+        \end{minipage}
+    \end{center}
+
     \item When the string shakes - The segment jumps up and down,
     horizontal length remains the same, but gain a vertial length.
     
-    \insertFig{curve string}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{tran3}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        $\Rightarrow$
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.15\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{tran4}
+        \end{minipage}
+    \end{center}
 \end{itemize}
 
 Transverse wave is \red{height of string segments} at different position / time,
 which is described by the function $y(x,t)$.\\
 
+\newpage
 \bf{\ul{Deriving wave eqauation}}
 
+    \begin{minipage}{0.55\linewidth}
+        \begin{enumerate}
+            \item \bf{\ul{Equations of forces by Newton's \nth{2} Law}}
+            \vskip 1em
+            Tension \blue{$\vvec{F}$} must be a function of $x$ because 
+            it must be different everywhere along the string.
+        \end{enumerate}
+    \end{minipage}
+    \hspace{0.02\textwidth}\hfill
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{tran_force}
+    \end{minipage}
+    
+    \vskip 1ex
+    \begin{itemize}
+        \item[] Separate the tensions' components and write Newton's \nth{2} law in both directions:
+        \aleq{
+            \bcase{
+                \rightarrow : &\quad F_\rightarrow(x+\Delta x,t) - F_\rightarrow(x,t) = \tkn{horzT0}{\cul[red]{0}} \\[1ex]
+                \uparrow : &\quad F_\uparrow(x+\Delta x, t) - F_\uparrow(x,t) = (\tkn{mu}{\cul[blue]{\mu}}\Delta x) a_\uparrow
+            }
+        }
+        \addArrow[red]{horzT0}{(10ex,0)}{\scriptsize Horizontal acceleration = 0\\[-1ex]\scriptsize because the string segment\\[-1ex]\scriptsize only jump up \& down}
+        {(1.5ex,0.5ex)}{(8ex,0)}
+        \addArrow[blue]{mu}{(0,-3ex)}{\scriptsize $\mu = $ Density per unit length\\[-1ex]\scriptsize $\Rightarrow \mu\Delta x = $ Mass of the string segment}
+        {(0,-1.5ex)}{(0,-1ex)}
+
+        \hfill\\[1em]
+        \bf{\ul{Note}}: There must be no gravity, or else the \nth{2} law becomes
+        \aleq{
+            F_\uparrow(x+\Delta x, t) - F_\uparrow(x,t) - \cus[blue]{(\mu \Delta x)g}{\text{Extra term}}= (\mu \Delta x) a_\uparrow
+        }
+        \phantom{\bf{\ul{Note}}:} which will not give us the result of wave equation.
+    \end{itemize}
+
+
+    \vskip 1em
+    \begin{minipage}{0.55\linewidth}
+        \begin{enumerate}
+            \item[2.] \bf{\ul{Analysis by the string's geometry}}
+            \vskip 1em
+            Tension \blue{$\vvec{F}$} must be parallel to the slope 
+            at the 2 end points of the segment. 
+            (Otherwise it cannot be tension.)
+            
+            Meanwhile the slope of the graph $=\pdvv{x}y(x,t)$.
+        \end{enumerate}
+    \end{minipage}
+    \hspace{0.02\textwidth}\hfill
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{tran_geom}
+    \end{minipage}
+
+    \vskip 2em
+    \begin{itemize}
+        \item[] Observe that the inclination of tension $\vvec{F}$ can be calculated by $\dfrac{F_\uparrow}{F_\rightarrow}$,
+        \aleq{
+            \Rightarrow \text{ Relation at end points : } \bcase{
+                \frac{F_\uparrow(x+\Delta x, t)}{F_\rightarrow(x+\Delta x, t)} &= \pdvv{x}y(x,t)\eval_{\text{at }x+\Delta x}\\[1em]
+                \frac{F_\uparrow(x, t)}{F_\rightarrow(x, t)} &= \pdvv{x}y(x,t)\eval_{\text{at }x}\\
+            }
+        }
+    \end{itemize}
+    
+\newpage
 \begin{enumerate}
-    \item Equations of forces by Newton's \nth{2} Law
-    
-    \insertFig{tension}
-
-    Tension \blue{$\vvec{F}$} must be a function of $x$ because 
-    it must be different everywhere along the string.\\
-
-    Separate the tensions' horizontal and vertical components:
-    \aleq{
-        \bcase{
-            \rightarrow : &\quad F_\rightarrow(x+\Delta x,t) - F_\rightarrow(x,t) = \tkn{horzT0}{\cul[red]{0}} \\
-            \uparrow : &\quad F_\uparrow(x+\Delta x, t) - F_\uparrow(x,t) = (\tkn{mu}{\cul[blue]{\mu}}\Delta x) a_\uparrow
-        }
-    }
-    \addArrow[red]{horzT0}{(10ex,0)}{\scriptsize Horizontal acceleration = 0\\[-1ex]\scriptsize because the string segment\\[-1ex]\scriptsize only jump up \& down}
-    {(1.5ex,0.5ex)}{(8ex,0)}
-    \addArrow[blue]{mu}{(0,-3ex)}{\scriptsize $\mu = $ Density per unit length\\[-1ex]\scriptsize $\Rightarrow \mu\Delta x = $ Mass of the string segment}
-    {(0,-1.5ex)}{(0,-1ex)}
-
-
-    \hfill\\[1em]
-    \bf{\ul{Note}}: There must be no gravity, or the \nth{2} law becomes
-    \aleq{
-        F_\uparrow(x+\Delta x, t) - F_\uparrow(x,t) - \cus[blue]{(\mu \Delta x)g}{\text{Extra term}}= (\mu \Delta x) a_\uparrow
-    }
- 
-    \item Analysis by the string's geometry
-    
-    \insertFig{string geometry}
-
-    Tension \blue{$\vvec{F}$} must be parallel to the slope 
-    at the 2 end points of the segment.\\
-
-    Beause the graph of string's height variation = the graph of $y(x,t)$ 
-    at some fix time $t$, 
-    \aleq{
-        \text{Slope of the graph}=\pdvv{x}y(x,t) 
-    }
-
-    And the inclination of tension $\vvec{F}$ can be calculated as $\dfrac{F_\uparrow}{F_\rightarrow}$.
-    \aleq{
-        \Rightarrow \text{ Relation at end points : } \bcase{
-            \frac{F_\uparrow(x+\Delta x, t)}{F_\rightarrow(x+\Delta x, t)} &= \pdvv{x}y(x,t)\eval_{\text{at }x+\Delta x}\\
-            \frac{F_\uparrow(x, t)}{F_\rightarrow(x, t)} &= \pdvv{x}y(x,t)\eval_{\text{at }x}\\
-        }
-    }
-
-    \item Substitute the above two results:
+    \item[3.] Substitute the above into the Newton's \nth{2} law in vertical direction:
     \addArrow[green]{Fleftright}{(4ex,9.5ex)}
     {\scriptsize Can be grouped together\\[-1ex]\scriptsize because they are equal.\\[-1ex]\scriptsize This is from the Newton's \nth{2} Law\\[-1ex]\scriptsize for horizontal direction}
     {(-0.5ex,3ex)}{(-18ex,-6ex)}
     \addArrow[green]{Fleftright}{(50ex,9.5ex)}{}
     {(0.5ex,3ex)}
-    \addArrow[red]{dt2y}{(5ex,10ex)}
+    \addArrow[red]{dt2y}{(5ex,8ex)}
     {\scriptsize Vertical acceleration\\[-1ex]\scriptsize = \nth{2} derivative of \\[-1ex]\scriptsize segment's height over $t$}
-    {(0,3ex)}{(-14ex,-5ex)}
+    {(0,3ex)}{(-14ex,-3ex)}
     \addBentArrow*[blue]{dx2y}{(12.5ex,6ex)}
     {\scriptsize This is just the derivative $\frac{f(x+\Delta x)-f(x)}{\Delta x}$\\[-1ex]\scriptsize $\Rightarrow$ become \nth{2} derivative over $x$}
     {(6ex,0.5ex)}{(12ex,-5ex)}
@@ -126,12 +172,13 @@ which is described by the function $y(x,t)$.\\
             - \cul[green]{F_\rightarrow(x,t)}\qty[\pdvv{x}y(x,t)\eval_{\text{at }x}]\\[2em]
         %
         &= \tkn{Fleftright}{\cul[green]{F_\leftrightarrow}}\qty[\pdvv{x}y(x,t)\eval_{\text{at }x+\Delta x} 
-            - \pdvv{x}y(x,t)\eval_{\text{at }x}]\\
+            - \pdvv{x}y(x,t)\eval_{\text{at }x}]\\[1em]
         %
-        \mu \cul[red]{a_\uparrow} &= {F_\leftrightarrow}\cub[blue]{\qty[\frac{\pdvv{x}y(x,t)\eval_{\cbox[blue]{\scriptstyle \text{at }x+\Delta x}} 
-            - \pdvv{x}y(x,t)\eval_{\cbox[blue]{\scriptstyle \text{at }x}}}{\cbox[blue]{\Delta x}}]}{}\\
+        \mu \cul[red]{a_\uparrow} 
+        &= {F_\leftrightarrow} \ \cub[blue]{\frac{\eval{\pdvv{x}y(x,t)}_{\cbox[blue]{\scriptstyle \text{at }x+\Delta x}} 
+            - \eval{\pdvv{x}y(x,t)}_{\cbox[blue]{\scriptstyle \text{at }x}}}{\cbox[blue]{\Delta x}}}{}\\
         %
-        \mu\tkn{dt2y}{\cul[red]{\pdvv[2]{t}y(x,t)}} &= F_\leftrightarrow \tkn{dx2y}{\cul[blue]{\pdvv[2]{x}y(x,t)}}\\
+        \mu\tkn{dt2y}{\cul[red]{\pdvv[2]{t}y(x,t)}} &= F_\leftrightarrow \tkn{dx2y}{\cul[blue]{\pdvv[2]{x}y(x,t)}}\\[1em]
         %
         \Aboxed{
             \frac{\mu}{F_\leftrightarrow} \pdvv[2]{t}y(x,t) &= \pdvv[2]{x}y(x,t)
@@ -149,6 +196,7 @@ we can identify the wave speed of transverse wave as
 
 
 \linesep
+\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model of Longitudinal Wave}
 
@@ -157,34 +205,55 @@ We usually use a slinky to visualize longitudinal wave travel.
 \begin{itemize}
     \item When the slinky is static - Each peak are of equal spacing.
     
-    \insertFig{static slinky}
+    \begin{center}
+        \begin{minipage}{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{long1}
+        \end{minipage}
+    \end{center}
+
     \item When the slinky shakes - the peaks become unevenly distributed.
     
-    \insertFig{shake slinky}
+    \begin{center}
+        \begin{minipage}{0.58\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{long2}
+        \end{minipage}
+    \end{center}
+
 \end{itemize}
 
 Longitudinal wave is \red{displacement of slinky segments} at different position / time,
-which is described by the function $\Psi(x,t)$.\\
+described by the function $\Psi(x,t)$.\\
 
 \bf{\ul{Deriving wave eqauation}}
 
 \begin{enumerate}
 
-    \item Although the slinky is continuous, 
-    we can divide it into many very small segments and only look at the motions of the center of these segments - 
+    \item Although a slinky is a continuous line of mass, 
+    we can divide it into many very small segments and only model the motions of the center of these segments - 
     using their centers as nodes to represent the motion of the segment.
-    Under this approximation, we assume
 
     \begin{itemize}
-        \item The segment is "rigid". 
-        The whole segment moves at the same velocity / acceleration as its center node.
+        \item The mass of a segment concentrate at its center. 
+        We only need to consider the velocity and acceleration on the nodes.
 
-        \insertFig{rigid segment}
+        \begin{center}
+            \begin{minipage}{0.8\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{long_node}
+            \end{minipage}
+        \end{center}
 
-        \item Elastic forces are only between the center nodes. 
-        Think of it as a spring-mass system composed of many nodes.
+        \item Interaction between segments are like elastic forces $\sim kx$ between nodes. 
+        You can think of it as a spring-mass system composed of infinitely many masses.
 
-        \insertFig{force is only between node}
+        \begin{center}
+            \begin{minipage}{0.7\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{long_force}
+            \end{minipage}
+        \end{center}
 
     \end{itemize}
 
@@ -237,11 +306,37 @@ which is described by the function $\Psi(x,t)$.\\
         }
     }
     
+\end{enumerate}
+\begin{notation}[Side note:]
 
+    Spring constant $k$ depends on the length of the material. 
+    For example, we can compute the equivalent spring constants for two springs in series to be half of the original.
+    \begin{center}
+        \begin{minipage}{0.5\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{spring}
+        \end{minipage}
+    \end{center}
+    If we stack more springs in series, we can see that $k\propto \qty(\inv{\text{Length of material}})$. 
+    To remove this dependency on length, we define the Young's modulus, 
+    which is a property that only depends on the material's type. 
+    \aleq{
+        \Aboxed{
+            F = -k(\Delta L) = -\frac{Y}{L}(\Delta L) 
+        }
+    }
 
-    \item The Newton's \nth{2} Law on the center segment's center is therefore
-    
-    \insertFig{free body center segment}
+\end{notation}
+
+\newpage
+\begin{enumerate}
+    \item[4.] The Newton's \nth{2} Law on the center segment's center is therefore
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{long_freebody}
+        \end{minipage}
+    \end{center}
 
     \addArrow[red]{dt2psi}{(2ex,4ex)}
     {\scriptsize Horizontal acceleration\\[-1ex]\scriptsize = \nth{2} derivative of \\[-1ex]\scriptsize segment's displacement over $t$}
@@ -251,22 +346,24 @@ which is described by the function $\Psi(x,t)$.\\
     {(0,-1ex)}{(-3ex,-1ex)}
     \addArrow[green]{dxpsi1}{(3ex,5.5ex)}{\scriptsize \nth{1} derivative of $x$}{(0,3ex)}{(8ex,-3ex)}
     \addArrow[green]{dxpsi2}{(12ex,5.5ex)}{}{(0,3ex)}
-    \addBentArrow*[blue]{dx2psi}{(15ex,6ex)}
+    \addBentArrow*[blue]{dx2psi}{(13ex,6ex)}
     {\scriptsize This is just the derivative $\frac{f(x+\Delta x)-f(x)}{\Delta x}$\\[-1ex]\scriptsize $\Rightarrow$ become \nth{2} derivative over $x$}
-    {(4ex,0.5ex)}{(12ex,-5ex)}
+    {(6ex,0.5ex)}{(12ex,-5ex)}
     \aleq{
         m\cul[red]{a_\rightarrow} &= F_L - F_R \\[1em]
         %
         (\tkn{mu2}{\cul[yellow]{\mu}}\Delta x)\tkn{dt2psi}{\cul[red]{\pdvv[2]{t}\Psi(x,t)}} 
-            &= Y \qty[\cul[green]{\frac{\Psi(x+\Delta x,t)-\Psi(x, t)}{\Delta x}} - \cul[green]{\frac{\Psi(x,t)-\Psi(x-\Delta x, t)}{\Delta x}}]\\[1em]
+            &= Y \qty[\cul[green]{\frac{\Psi(x+\Delta x,t)-\Psi(x, t)}{\Delta x}} 
+                - \cul[green]{\frac{\Psi(x,t)-\Psi(x-\Delta x, t)}{\Delta x}}]\\[1em]
         %
-        &= Y \qty[\tkn{dxpsi1}{\cul[green]{\pdv{x}\Psi(x,t)\eval_{\text{at }x+\Delta x}}} - \tkn{dxpsi2}{\cul[green]{\pdv{x}\Psi(x,t)\eval_{\text{at }x}}}] \\[1em]
+        &= Y \qty[\tkn{dxpsi1}{\cul[green]{\pdv{x}\Psi(x,t)\eval_{\text{at }x+\Delta x}}} 
+            - \tkn{dxpsi2}{\cul[green]{\pdv{x}\Psi(x,t)\eval_{\text{at }x}}}] \\[1.5em]
         %
-        \mu \pdvv[2]{t}\Psi(x,t) 
-        &= Y \cub[blue]{\qty[\frac{\pdv{x}\Psi(x,t)\eval_{\cbox[blue]{\text{at }x+\Delta x}} 
-            - \pdv{x}\Psi(x,t)\eval_{\cbox[blue]{\text{at }x}}}{\cbox[blue]{\Delta x}}]}{} \\
+        \mu \pdvv[2]{t}\Psi(x,t)
+        &= Y \  \cub[blue]{\dfrac{\eval{\pdvv{x}\Psi(x,t)}_{\cbox[blue]{\scriptstyle\text{at }x+\Delta x}} 
+            - \eval{\pdvv{x}\Psi(x,t)}_{\cbox[blue]{\scriptstyle\text{at }x}}}{\cbox[blue]{\Delta x}}}{} \\
         %
-        &= Y \pdvv[2]{x}\tkn{dx2psi}{\cul[blue]{\Psi(x,t)}}\\[1ex]
+        &= Y \tkn{dx2psi}{\cul[blue]{\pdvv[2]{x}\Psi(x,t)}}\\[1em]
         %
         \Aboxed{
             \frac{\mu}{Y}\pdvv[2]{t}\Psi(x,t) &= \pdvv[2]{x}\Psi(x,t)
@@ -283,26 +380,10 @@ we can identify the wave speed of longitudinal wave as
 }
 
 
-\begin{notation}[Side note:]
 
-    Spring constant $k$ depends on the length of the material. 
-    For example, we can compute the equivalent spring constants for two springs in series to be half of the original.
-
-    \insertFig{spring in series}
-
-    If we stack more springs in series, we can see that $k\propto \qty(\inv{\text{Length of material}})$. 
-    To remove this dependency on length, we define the Young's modulus, 
-    which is a property that only depends on the material's type. 
-    \aleq{
-        \Aboxed{
-            F = -k(\Delta L) = -\frac{Y}{L}(\Delta L) 
-        }
-    }
-
-
-\end{notation}
 
 \linesep
+\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Wave Equation \& Initial Value Problem}
 
@@ -313,11 +394,26 @@ how will system evolve at later time?\\
 For example in wave propagation, 
 given that at $t=0$, 
 a string is hold to a shape described by the function $\Psi(x,0)$. 
-After releasing, how will the waveform evolves? 
+After released, how will the waveform evolve? 
 
-\insertFig{release string}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{init1}
+    \end{minipage}
+    $\qquad\Rightarrow\qquad$
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{init2}
+    \end{minipage}
+    $\qquad\Rightarrow\qquad$
+    \begin{minipage}{0.1\linewidth}
+        \centering
+        \red{\huge ?}
+    \end{minipage}
+\end{center}
 
-i.e. We would like to solve $\cub[blue]{\Psi(x,t)}{\substack{\text{the waveform}\\\text{in the future}}}$ 
+We would like to solve $\cub[blue]{\Psi(x,t)}{\substack{\text{the waveform}\\\text{in the future}}}$ 
 by the given $\cub[blue]{\Psi(x,0)}{\substack{\text{the waveform}\\\text{at the start}}}$ 
 and $\cub[blue]{\pdvv{t}\Psi(x,t)\eval_{t=0}}{\substack{\text{velocity at each point}\\\text{at the start}}}$.
 
@@ -382,38 +478,51 @@ For example,
 \end{proof}
 
 
-\bf{\ul{Physical Interpretation}}\\
+\bf{\ul{Physical Interpretation}}
 
 \begin{itemize}
-    \item $f(x+vt) =$ A waveform travelling to the left ($-x$ direction).
-    \item $g(x-vt) =$ A waveform travelling to the right ($+x$ direction).
+    \item $f(x+vt)$ : When $t$ increases, need to decrease $x$ to maintain the same value of $f$.\\
+    \phantom{$f(x+vt)$ : }$\Rightarrow$ This is a waveform travelling in the $-x$ direction with speed $v$.
+
+    \item $g(x-vt)$ : When $t$ increases, need to increase $x$ to maintain the same value of $f$.\\
+    \phantom{$g(x-vt)$ : }$\Rightarrow$ This is a waveform travelling in the $+x$ direction with speed $v$.
 \end{itemize}
 
-When they are added together, they form superposition.
+When they come to each other, they join together (superposition) to create a new waveform. 
 
-\insertFig{wave superposition}
+\begin{center}
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{super1}
+    \end{minipage}
+    $\qquad\xRightarrow{\substack{\text{Waves collide}\\\text{=}\\\text{Superposition}}}\qquad$
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth,trim=0 0 0 -3em]{super2}
+    \end{minipage}
+\end{center}
 
 
-
-
-
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsection{Solution to Initial Value Problem}
 
-\it{(The derivation is long but not important. Welcome to skip to the result.)}
+\it{(This derivation is long but not important. Welcome to skip to the result.)}
 
 \begin{enumerate}
     \item From the initial conditions, break them down by $\Psi=f+g$.
     \aleqr{
-        \Psi(x,0) &= f(x+0) + g(x-0) \label{eq:fg0}\\[1ex]
+        \Psi(x,0) &= f(x+0) + g(x-0) \label{eq:fg0}\\[1em]
         \pdvv{t}\Psi(x,t)\eval_{t=0} &= v\dvv{f(u)}{u}\eval_{u=x+0} - v\dvv{g(u)}{u}\eval_{u=x-0} \label{eq:dfg0}
     }
 
+    \vskip 1ex
     \item Differentiate Eq.\eqref{eq:fg0} with respect to $x$:
     \aleqr{
         \dvv{x}\Psi(x,0) = \dvv{f(u)}{u}\eval_{u=x+0} + \dvv{g(u)}{u}\eval_{u=x-0} \label{eq:fg1}
     }
 
+    \vskip 1ex
     \item Isolate $\dvv{f(u)}{u}\eval_{u=x+0}$ and $\dvv{g(u)}{u}\eval_{u=x-0}$ 
     from Eq.\eqref{eq:fg1} and Eq.\eqref{eq:dfg0}.
     \aleqr{
@@ -429,47 +538,53 @@ When they are added together, they form superposition.
         \label{eq:dg0}
     }
 
+    \newpage
     \item Integrate both Eq.\eqref{eq:df0} and Eq.\eqref{eq:dg0}.
+    \addArrow[red]{C1}{(0,6ex)}{\scriptsize $C_1 = $ some integration constant}
+    {(2ex,3ex)}{(12ex,-3.5ex)}
+    \addArrow[red]{C2}{(0,6ex)}{\scriptsize $C_2 = $ some integration constant}
+    {(2ex,3ex)}{(12ex,-3.5ex)}
     \aleq{
         \text{Eq.\eqref{eq:df0}} 
         \qquad\Rightarrow\qquad 
         \int \dvv{f(u)}{u}\eval_{u=x+0} \dd{x} 
-        &= \half\int\qty[\cul[red]{\dvv{x}\Psi(x,0)} + \dinv{v}\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x} \\[1.5em]
+        &= \half\int\qty[\cul[red]{\dvv{x}\Psi(x,0)} + \dinv{v}\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x} \\[1.2em]
         %
         \int \dvv{f(x)}{x} \dd{x} 
-        &= \half\qty[\tkn{C1}{\cul[red]{\Psi(x,0) + C_1}} + \dinv{v}\int\qty[\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x}] \\[1em]
+        &= \half\qty[\tkn{C1}{\cul[red]{\Psi(x,0) + C_1}} + \dinv{v}\int\qty[\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x}] \\[0.8em]
         %
         f(x) &= \half \biggl[\Psi(x,0) + C_1 
             + \dinv{v}\cub[green]{\int_{\green{s=0}}^{\green{s=x}}\qty[\pdvv{t}\Psi(\green{s},t)\eval_{t=0}]\dd{\green{s}}}
-            {\substack{s \text{ = A dummy variable to replace }x\\\text{For convenience in later steps}}}\biggr]\\[2em]
+            {\substack{s \text{ = A dummy variable to replace }x\\\text{For convenience in later steps}}}\biggr]\\[1em]
         %
         \text{Eq.\eqref{eq:dg0}} 
         \qquad\Rightarrow\qquad 
         \int \dvv{g(u)}{u}\eval_{u=x-0} \dd{x} 
-        &= \half\int\qty[\cul[red]{\dvv{x}\Psi(x,0)} - \dinv{v}\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x} \\[1.5em]
+        &= \half\int\qty[\cul[red]{\dvv{x}\Psi(x,0)} - \dinv{v}\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x} \\[1.2em]
         %
         \int \dvv{g(x)}{x} \dd{x} 
-        &= \half\qty[\tkn{C2}{\cul[red]{\Psi(x,0) + C_2}} - \dinv{v}\int\qty[\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x}] \\[1em]
+        &= \half\qty[\tkn{C2}{\cul[red]{\Psi(x,0) + C_2}} - \dinv{v}\int\qty[\pdvv{t}\Psi(x,t)\eval_{t=0}]\dd{x}] \\[0.8em]
         %
         g(x) &= \half \biggl[\Psi(x,0) + C_2 
             - \dinv{v}\cub[green]{\int_{\green{s=0}}^{\green{s=x}}\qty[\pdvv{t}\Psi(\green{s},t)\eval_{t=0}]\dd{\green{s}}}
             {\substack{s \text{ = A dummy variable to replace }x\\\text{For convenience in later steps}}}\biggr]
     }
-    \addArrow[red]{C1}{(0,6ex)}{\scriptsize $C_1 = $ some integration constant}
-    {(2ex,3ex)}{(12ex,-3.5ex)}
-    \addArrow[red]{C2}{(0,6ex)}{\scriptsize $C_2 = $ some integration constant}
-    {(2ex,3ex)}{(12ex,-3.5ex)}
 
+    \vskip 1ex
     \item Replace the "$x$" in $f(x)$ by "$x+vt$", and the "$x$" in $g(x)$ by "$x-vt$".
     \aleq{
         f(\blue{x+vt}) &= \half \qty[\Psi(\blue{x+vt},0) + C_1 
-            + \dinv{v}\int_{s=0}^{s=\blue{x+vt}}\qty[\pdvv{t}\Psi(s,t)\eval_{t=0}]\dd{s}]\\[1em]
+            + \dinv{v}\int_{s=0}^{s=\blue{x+vt}}\qty[\pdvv{t}\Psi(s,t)\eval_{t=0}]\dd{s}]\\[0.5em]
         %
         g(\blue{x-vt}) &= \half \qty[\Psi(\blue{x-vt},0) + C_1 
             - \dinv{v}\int_{s=0}^{s=\blue{x-vt}}\qty[\pdvv{t}\Psi(s,t)\eval_{t=0}]\dd{s}]
     }
 
-    \item Add these two expression together to yield $\Psi(x,t)$
+    \vskip 1ex
+    \item Add these two expression together to give $\Psi(x,t)$
+    \addArrow[yellow]{combine_bound}{(-8ex,8ex)}{\scriptsize Combine integral by their bounds}
+    {(-3ex,2ex)}{(18ex,-4.5ex)}
+    \addArrow[yellow]{combine_bound}{(-56ex,9ex)}{}{(-3.5ex,1ex)}{(19ex,-2.5ex)}
     \aleq{
         \Psi(x,t) &= f(x+vt) + g(x-vt) \\
         %
@@ -484,9 +599,7 @@ When they are added together, they form superposition.
         %
         &= \half\qty[\Psi(x+vt,0) + \Psi(x-vt,0)] + \half (C_1+C_2) + \dinv{2v}\tkn{combine_bound}{\cul[yellow]{\int_{s=x-vt}^{s=x+vt}}} \qty[\pdvv{t}\Psi(s,t)\eval_{t=0}]\dd{s} 
     }
-    \addArrow[yellow]{combine_bound}{(-8ex,8ex)}{\scriptsize Combine integral by their bounds}
-    {(-3ex,2ex)}{(18ex,-4.5ex)}
-    \addArrow[yellow]{combine_bound}{(-56ex,9ex)}{}{(-3.5ex,1ex)}{(19ex,-2.5ex)}
+    
 
     \item Finally, substitute $t=0$ to find out what $C_1+C_2$ is.
     \aleq{
@@ -520,21 +633,36 @@ Finally, we reach the solution to the initial value problem of wave equation.
             0 & \text{for }\abs{x}>a
         \end{cases}
     }
-    and knowing that the string is static at the beginning (i.e. velocity $= 0$ everywhere).\\
+    and knowing that the string is static at the beginning (i.e. velocity $= 0$ everywhere).
 
-    \insertFig{ivp eg}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{init_eg}
+        \end{minipage}
+    \end{center}
 
     We can find how the wave will evolve by direct substituting these info into the general solution.
     \aleq{
         \Psi(x,t) &= \half\qty[\Psi(x+vt) + \Psi(x-vt)] 
             + \dinv{2v}\int_{x-vt}^{x+vt} \cut[yellow]{\ccancelto[yellow]{0}{\qty[\pdvv{t}\Psi(s,t)\eval_{t=0}]}}{\text{Because no initial velocity}}\dd{s}\\[1ex]
         %
-        &= \cub[blue]{\half\qty(b-\frac{b\abs{x+vt}}{a})}{\substack{\text{This is a function of }x+vt\\\text{i.e. the waveform travelling}\\\text{in }-\text{ve direction}}} 
-        + \cub[green]{\half\qty(b-\frac{b\abs{x-vt}}{a})}{\substack{\text{This is a function of }x-vt\\\text{i.e. the waveform travelling}\\\text{in }+\text{ve direction}}} 
+        &= \cub[red]{\half\qty(b-\frac{b\abs{x+vt}}{a})}{\substack{\text{This is a function of }x+vt\\\text{i.e. the waveform travelling}\\\text{in }-\text{ve direction}}} 
+        + \cub[blue]{\half\qty(b-\frac{b\abs{x-vt}}{a})}{\substack{\text{This is a function of }x-vt\\\text{i.e. the waveform travelling}\\\text{in }+\text{ve direction}}} 
         + 0
     }
 
-    \insertFig{ivp eg result}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{init_eg}
+        \end{minipage}
+        $\qquad\xRightarrow{\text{After release}}\qquad$
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth, trim=0 0 0 -4em]{init_eg2}
+        \end{minipage}
+    \end{center}
 
 \end{example}
 
@@ -547,13 +675,41 @@ The boundary value problem is asking the follow:
 If we are only given the value of the function at the end points and the initial state, 
 how will system evolve at later time?
 
-\insertFig{standing wave}
+\begin{center}
+    E.g. 
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{stand1}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{stand2}
+    \end{minipage}
+\end{center}
 
 In a standing wave configuraton, 
 a string is usually tied at both ends (or free ends). 
 It is very important to know: \cul[red]{what kinds of "vibration pattern" are allowed?}
 
-\insertFig{question mark standing wave}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{stand_weird1}
+    \end{minipage}
+    $\quad\Rightarrow\quad$
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{stand_weird2}
+    \end{minipage}
+    {\LARGE \ or\ } 
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{stand_weird3}
+    \end{minipage}
+    {\LARGE \ ?\ } 
+\end{center}
 
 And if the standing wave starts in a shape described by the function $\Psi(x,0)$. 
 After releasing, how will the waveform evolves? 
@@ -578,8 +734,7 @@ one as a function position $x$ and the other as a function of time $t$.
 {\scriptsize This part only\\[-1ex]\scriptsize depends on $t$}
 {(1ex,-1ex)}{(0,-1ex)}
 
-
-\hfill\\[1em]
+\vskip 1em
 Substitute into the equation,
 \aleq{
     \pdvv[2]{x}[\blue{X(x)}\red{T(t)}] &= \inv{v^2}\pdvv[2]{t}[\blue{X(x)}\red{T(t)}]\\[1ex]
@@ -593,7 +748,7 @@ Substitute into the equation,
 {\scriptsize $T(t)$ not depends on $x$.\\[-0.5ex]\scriptsize Can be taken out of $\pdv[2]{x}$}
 {(0,-1ex)}{(0,-1.2ex)}
 
-\hfill\\[1ex]
+\vskip 2em
 Rearrange so that the L.H.S is a function of $x$ only, 
 and R.H.S. is a function of $t$ only.
 \aleq{
@@ -601,12 +756,11 @@ and R.H.S. is a function of $t$ only.
     &= \cub[red]{\inv{v^2}\dinv{\red{T(t)}}\pdvv[2]{t}[\red{T(t)}]}{\text{only contain t}} 
     = \tkn{k2}{\qty(\mstack{\text{Some}\\\text{Constant}})} = \green{-k^2}
 }
-\addBentArrow[green]{k2}{(4ex,-8ex)}
-{The only possibility for two functions\\of different variables to equal\\is when both equal to a constant}
-{(0,-2ex)}{(16ex,2.5ex)}
+\addArrow[green]{k2}{(0,-8ex)}
+{The only possibility for two functions\\of different variables to be identical\\is when both equal to a constant}
+{(0,-2ex)}{(0,-2ex)}
 
 
-\hfill\\[1em]
 The constant is written as $-k^2$ is just for convenience.
 We can now split the part with $x$ and the part with $t$,
 forming two independent \nth{2} order linear ODEs. 
@@ -639,17 +793,24 @@ from the boundary conditions and initial conditions.
 \subsection{Boundary Conditions \& Solutions}
 
 In standing wave, 
-the boundary condition at the end of the string is either being fixed 
+the boundary condition at the ends of the string can be either fixed 
 or free to move up / down. 
 Here introduces two most common boundary conditions,
-and the corresponding solutions.
+and their corresponding solutions.
 
 %%%%%%%%%%%%%%
 \subsubsection{Dirichlet Condition}
 
-The \bf{Dirichlet condition} in standing wave is essentially having \bf{2 fixed ends},
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{dirichlet}
+    \end{minipage}
+\end{center}
+
+The \bf{Dirichlet condition} in standing wave is having \bf{2 fixed ends},
 i.e. requires the magnitude at both ends to be fixed at $0$ (at any time $t$).
-If the string is of length $L$, then it writes:
+If the string is of length $L$, it writes:
 \aleq{
     \Aboxed{
         \bcase{
@@ -659,9 +820,8 @@ If the string is of length $L$, then it writes:
     }
 } 
 
-\insertFig{Dirichlet}
 
-From the conditions, we must have $X(0)=X(L)=0$.
+By these conditions, we must have $X(0)=X(L)=0$.
 \begin{itemize}
     \item At $x=0$, $X(0)=C\cos(0)+D\sin(0) = 0$. 
     It holds only if $C=0$.
@@ -708,13 +868,33 @@ All the constants $A_n$, $B_n$ shall be determined only after an initial conditi
 %%%%%%%%%%%%%%
 \subsubsection{Neumann Condition}
 
-The \bf{Neumann condition} in standing wave is essentially having \bf{2 free ends} - 
-the end segments are free to move up and down following string body's motion.\\
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{neumann}
+    \end{minipage}
+\end{center}
 
+The \bf{Neumann condition} in standing wave is having \bf{2 free ends} - 
+the end segments are free to move up and down.
 To achieve so, the ends' holdings must not exert any vertical force at the end segment 
 (otherwise the ends are not freely moving with the string body.) 
-Having only horizontal force on the end segments means that the slope at both ends to be $0$ (at any time $t$).
-If the string is of length $L$, then it writes:
+
+\begin{center}
+    \hspace{0.1\textwidth}
+    \begin{minipage}{0.18\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{neumann_end2}
+    \end{minipage}
+    $\qquad\Rightarrow\qquad$
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{neumann_end1}
+    \end{minipage}
+\end{center}
+
+Having only horizontal force on the end segments means that the slopes at both ends are be $0$ (at any time $t$).
+If the string is of length $L$, it writes:
 \aleq{
     \Aboxed{
         \bcase{
@@ -724,9 +904,10 @@ If the string is of length $L$, then it writes:
     }
 } 
 
-\insertFig{Neumann ends}
 
-From the conditions, we must have $\eval{\dvv{X(x)}{x}}_{x=0}=\eval{\dvv{X(x)}{x}}_{x=L}=0$.
+
+By these conditions, we must have $\eval{\dvv{X(x)}{x}}_{x=0}=\eval{\dvv{X(x)}{x}}_{x=L}=0$.
+
 \begin{itemize}
     \item At $x=0$, $\eval{\dvv{X(x)}{x}}_{x=0}=-C\sin(0)+D\cos(0) = 0$. 
     It holds only if $D=0$.
@@ -735,7 +916,7 @@ From the conditions, we must have $\eval{\dvv{X(x)}{x}}_{x=0}=\eval{\dvv{X(x)}{x
     It holds only if $kL=n\pi$, with $n=\tkn{neumann0}{0},1,2,3,...$.\\
     \addArrow[gray]{neumann0}{(0,-3ex)}
     {\scriptsize This time we can keep $n=0$,\\[-1ex] \scriptsize because it gives $X(x)=C\cos 0 = C$.\\[-1ex]\scriptsize Motion is retained in $T(t)$.}
-    {(0,-1ex)}{(3ex,-2.5ex)}
+    {(0,-1ex)}{(-3ex,-2.5ex)}
 
 \end{itemize}
 
@@ -761,7 +942,7 @@ Notice that
     }
 \end{itemize}
 
-So for each integer $n=0,1,2,3...$, we can construct one set of $\Psi(x,t)$:
+For each integer $n=0,1,2,3...$, we can construct one set of $\Psi(x,t)$:
 \aleq{
     \Psi_\green{n}(x,t) &= \blue{X_\green{n}(x)}\red{T_\green{n}(t)} \\
     &= \begin{cases}
@@ -785,13 +966,13 @@ the general solution is the (linear) combination of all possible solutions.
             \red{\biggl[}A_\green{n}\cos\qty(\frac{\green{n}\pi}{L}vt) 
                 + B_\green{n}\sin\qty(\frac{\green{n}\pi}{L}vt)\red{\biggr]}
         %
-        \qquad (\text{Neumann Condition})
+        \quad (\text{Neumann Condition})
     }
 }
 
 All the constants $A_n$, $B_n$ shall be determined only after an initial condition is given.
 
-
+\vskip 1em
 \begin{exercise}
     We can carry out similar steps to obtain the general solution in other combination of boundary conditions.
     \begin{enumerate}
@@ -803,7 +984,12 @@ All the constants $A_n$, $B_n$ shall be determined only after an initial conditi
 
     As a practice, you may try to derive for the case with one fixed end and one open end.
 
-    \insertFig{1 fix 1 open}
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{fix_free}
+        \end{minipage}
+    \end{center}
 
     You should get 
     \aleq{
@@ -837,23 +1023,86 @@ Each $n$ has its corresponding $X_n(x)$ and $T_n(t)$.
 
 Each $\Psi_\green{n}(x,t)$ is \bf{a unique set of vibration pattern} in standing wave,
 and they evolve independently from each other.
-Therefore we call them the \bf{normal modes} of standing wave. i.e.
+Therefore we call them the \bf{normal modes} of standing wave.
 \aleq{
-    \qty(\mstack{\text{The n\Nth mode}\\\Psi_\green{n}(x,t)})
+    \text{i.e.}\qquad \qty(\mstack{\text{The n\Nth mode}\\\Psi_\green{n}(x,t)})
     = \blue{\qty(\mstack{\text{Waveform of}\\\text{the n\Nth mode}\\X_\green{n}(x)})} \times 
         \red{\qty(\mstack{\text{Time evolution}\\\text{of the n\Nth mode}\\T_\green{n}(t)})}
 }
 
-We can draw the graphs fro each $\Psi_n(x,t)$ as shown:
+\vskip 1ex
+We can draw the graphs for each $\Psi_n(x,t)$. {\scriptsize (Here frequency = angular frequency $\omega$)}
 \begin{center}
-    \begin{tabular}{c|c|c|c}
+    \begin{tabular}{>{\centering\arraybackslash}m{4ex}|
+            >{\centering\arraybackslash}m{0.28\linewidth}|
+            >{\centering\arraybackslash}m{0.28\linewidth}|
+            >{\centering\arraybackslash}m{0.28\linewidth}}
         & Dirichlet (2 fixed ends) & Neumann (2 free ends) & 1 fixed-1 free end\\
         \hline
-        n=0 & & & \\
+        n=0 &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_D0}\\[-1.5ex]
+            \blue{$X(x)=0$}\\[-1.5ex]
+            So $\Psi(x,t)=0$.\\[-1.5ex]
+            Nothing moves.
+        \end{tabular}
+        &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_N0}\\[-1.5ex]
+            \blue{$X(x)=$ const. = flat line}\\[-1.5ex]
+            \red{$T(t)= At + B$} \\[-1.5ex]
+            $\Psi(x,t)=$ whole line moves\\[-1.5ex]
+            up/down at constant speed
+        \end{tabular}
+        &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_D0}\\[-1.5ex]
+            \blue{$X(x)=0$}\\[-1.5ex]
+            So $\Psi(x,t)=0$.\\[-1.5ex]
+            Nothing moves.
+        \end{tabular}
+        \\
         %
-        n=1 & & & \\
+        \hline
+        n=1 &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_D1}\\[-1.5ex]
+            \blue{$X(x)$ : Shape = 0.5 sine}\\[-0.8ex]
+            \red{$T(t)$ : Frequency = $\dfrac{\pi v}{L}$}\\[1ex]
+        \end{tabular}
+        &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_N1}\\[-1.5ex]
+            \blue{$X(x)$ : Shape = 0.5 cosine}\\[-0.8ex]
+            \red{$T(t)$ : Frequency = $\dfrac{\pi v}{L}$}\\[1ex]
+        \end{tabular}
+        &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_O1}\\[-1.5ex]
+            \blue{$X(x)$ : Shape = 0.25 sine}\\[-0.8ex]
+            \red{$T(t)$ : Frequency = $\dfrac{\pi v}{2L}$}\\[1ex]
+        \end{tabular}
+        \\
         %
-        n=2 & & &
+        \hline
+        n=2 &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_D2}\\[-1.5ex]
+            \blue{$X(x)$ : Shape = full sine}\\[-0.5ex]
+            \red{$T(t)$ : Frequency = $\dfrac{2\pi v}{L}$}\\[1ex]
+        \end{tabular}
+        &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_N2}\\[-1.5ex]
+            \blue{$X(x)$ : Shape = full cosine}\\[-0.5ex]
+            \red{$T(t)$ : Frequency = $\dfrac{2\pi v}{L}$}\\[1ex]
+        \end{tabular}
+        &
+        \begin{tabular}[c]{@{}c@{}}
+            \includegraphics[width=\linewidth]{mode_O2}\\[-1.5ex]
+            \blue{$X(x)$ : Shape = 0.5 sine}\\[-0.5ex]
+            \red{$T(t)$ : Frequency = $\dfrac{3\pi v}{2L}$}\\[1ex]
+        \end{tabular}
     \end{tabular}
     \\
     $\vdots$\\
@@ -861,29 +1110,64 @@ We can draw the graphs fro each $\Psi_n(x,t)$ as shown:
 \end{center}
 
 Here I shall emphasize: 
-\bf{\red{The combination of standing wave's pattern (waveform) and frequency (time evolution) is fixed}}
-- It is impossible to let the string vibrate in one the above pattern but with a faster/slower frequency.\\
+\cul[red]{\bf{The combination of standing wave's pattern (waveform) and}} \cul[red]{\bf{vibration frequency (time evolution) is fixed}}
+- It is impossible to let the string vibrate in one of the above patterns but at a different frequency.\\
 
 When we encounter a wave pattern that is not in one of the normal wave's waveform,
 we must first break it down into a sum of different normal modes.
 For example
 
-\insertFig{sum of mode}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{sum}
+    \end{minipage}
+    \ = \ (\green{\nth{1} mode}) + (\blue{\nth{2} mode})
+\end{center}
 
 Because each mode has its own vibration frequency, 
 the resulted wave will not maintain a regular shape like the initial waveform.
-
 \begin{center}
-    \begin{tabular}{c|ccc}
-        & $t=0$ & $t=\dfrac{L}{2v}$ & $t=\dfrac{L}{v}$ \\
+    \begin{tabular}{>{\centering\arraybackslash}m{13ex}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.15\linewidth}}
+        & $t=0$ & $t=\dfrac{L}{2v}$ & $t=\dfrac{L}{v}$ \\[1ex]
         \hline
-        \makecell{\green{\nth{1} mode}\\ Period $=\dfrac{2\pi}{\frac{\pi}{L}v} = \frac{2L}{v}$}
-        & & & \\
+        \makecell{\green{\nth{1} mode}\\ Period $= \dfrac{2L}{v}$}
+        &
+        \includegraphics[width=\linewidth]{sum_11}
+        &
+        \includegraphics[width=\linewidth]{sum_12}
+        &
+        \includegraphics[width=\linewidth]{sum_13}
+        &
+        \green{Only completed $\frac{1}{2}$ of its period}
+        \\[1ex]
         %
-        \makecell{\blue{\nth{2} mode}\\ Period $=\dfrac{2\pi}{\frac{2\pi}{L}v} = \frac{L}{v}$}
-        & & & \\
+        \hline
+        \makecell{\blue{\nth{2} mode}\\ Period $= \dfrac{L}{v}$}
+        &
+        \includegraphics[width=\linewidth]{sum_21}
+        &
+        \includegraphics[width=\linewidth]{sum_22}
+        &
+        \includegraphics[width=\linewidth]{sum_23}
+        &
+        \blue{Already completed 1 full period}
+        \\[1ex]
         %
-        \red{Sum} & & &
+        \hline
+        \red{Sum}
+        & 
+        \includegraphics[width=\linewidth]{sum_31}
+        &
+        \includegraphics[width=\linewidth]{sum_32}
+        &
+        \includegraphics[width=\linewidth]{sum_33}
+        &
+        \makecell{\red{Irregular pattern}\\[1ex] Period \\ = follow the\\ lowest mode}
     \end{tabular}
 \end{center}
 
@@ -899,7 +1183,12 @@ The tool is called \bf{Fourier Series}.\\
 Denote a periodic function as $f(x) = f(x+L)$, 
 which has a period $L$,
 
-\insertFig{periodic func}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{periodic}
+    \end{minipage}
+\end{center}
 
 it can be expanded as a series of sin and cosine terms:
 \aleq{
@@ -960,7 +1249,7 @@ The \bf{Fourier coefficients} $a_n$ (including $a_0$) and $b_n$ can be calculate
     }
     \hfill\\[-4em]
     \aleq{
-        \Rightarrow \qquad a_n = \dfrac{2}{L}\int^L_0 f(x)\cos\qty(\dfrac{2\pi \blue{n}}{L}x) \dd{x} 
+        \Rightarrow \qquad a_\blue{n} = \dfrac{2}{L}\int^L_0 f(x)\cos\qty(\dfrac{2\pi \blue{n}}{L}x) \dd{x} 
     }
     As an exercise, you can also prove the same formula for $b_n$.
 
@@ -978,14 +1267,19 @@ The \bf{Fourier coefficients} $a_n$ (including $a_0$) and $b_n$ can be calculate
         \end{cases}
     }
 
-    \insertFig{square wave}
+    \begin{center}
+        \begin{minipage}{0.6\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{square}
+        \end{minipage}
+    \end{center}
 
     The Fourier coefficients can be directly computed:
     \aleq{
         a_n &= \frac{2}{L}\int_0^{\frac{L}{2}} \red{1}\cdot \cos\qty(\frac{2\pi n}{L}x) \dd{x}
             + \frac{2}{L}\int_{\frac{L}{2}}^L \red{-1}\cdot \cos\qty(\frac{2\pi n}{L}x) \dd{x}\\[1ex]
         %    
-        &= 0 \\[1em]
+        &= 0 \\[1ex]
         %
         b_n &= \frac{2}{L}\int_0^{\frac{L}{2}} \red{1}\cdot \sin\qty(\frac{2\pi n}{L}x) \dd{x}
             + \frac{2}{L}\int_{\frac{L}{2}}^L \red{-1}\cdot \sin\qty(\frac{2\pi n}{L}x) \dd{x}\\[1ex]
@@ -999,19 +1293,23 @@ The \bf{Fourier coefficients} $a_n$ (including $a_0$) and $b_n$ can be calculate
 
     So its Fourier series write as
     \aleq{
-        f(x) = \frac{4}{\pi}\qty[\cul[yellow]{
-            \cul[blue]{
-                \tkn{sq1}{\cul[green]{\sin(\frac{2\pi}{L}\cdot x)}} 
+        f(x) = \frac{4}{\pi}\qty[\cul[green]{
+            \cul[yellow]{
+                \tkn{sq1}{\cul[blue]{\sin(\frac{2\pi}{L}\cdot x)}} 
                 + \dinv{3}\tkm{sq2}\sin(\frac{2\pi}{L}\cdot 3x)} 
             + \tkm{sq3}\dinv{5}\sin(\frac{2\pi}{L}\cdot 5x)} + \dots]
     }
-    \addArrow[green]{sq1}{(0,-4ex)}{First mode}{(0,-3ex)}
-    \addArrow[blue]{sq2}{(0,-7ex)}{First 2 modes}{(0,-3.2ex)}
-    \addArrow[yellow]{sq3}{(0,-10ex)}{First 3 modes}{(0,-3.5ex)}
+    \addArrow[blue]{sq1}{(0,-3ex)}{First mode}{(0,-3ex)}
+    \addArrow[yellow]{sq2}{(0,-5.5ex)}{First 2 modes}{(0,-3.2ex)}
+    \addArrow[green]{sq3}{(0,-8ex)}{First 3 modes}{(0,-3.5ex)}{(0,1ex)}
 
-    \hfill\\[3em]
-
-    \insertFig{square modes}
+    \vskip 3em
+    \begin{center}
+        \begin{minipage}{0.8\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{square_mode}
+        \end{minipage}
+    \end{center}
 
     At this point, we have already obtained each $\blue{X_\green{n}(x)}$ as
     \aleq{
