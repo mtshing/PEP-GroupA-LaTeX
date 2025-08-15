@@ -85,7 +85,13 @@
 % X = any alphabet above
 
 \usepackage{makecell} % allow line break within a cell in tables
-%\usepackage{multicol}
+% just \makecell{text}
+
+% for more compact line break within cell, use 
+% \begin{tabular}[c]{@{}c@{}} text \end{tabular}
+
+% for multiline in equation, use 
+% $\begin{aligned} \end{aligned}
 
 % dvipsnames = more default colour name
 % table = for colouring table

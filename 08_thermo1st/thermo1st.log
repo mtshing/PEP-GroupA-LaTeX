@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  31 JUL 2025 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  16 AUG 2025 02:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -837,66 +837,231 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `superscript' on input line 34.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 48.
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 48.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 51.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 51.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 54.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 54.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 57.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\var' on input line 57.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 57.
+ []
 
 
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./thermo1st.aux)
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+[2]
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 265.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 265.
+
+
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 322.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 322.
+
+
+
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 381.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 381.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 423.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\var' on input line 423.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 423.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--452
+
+ []
+
+
+Overfull \hbox (1.29929pt too wide) in paragraph at lines 476--478
+[]\OT1/cmr/m/n/12 In gen-eral, adi-a-betic re-la-tion of com-mon ma-te-ri-als would have the form $[][]$,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
+
+ []
+
+
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 751.
+
+
+
+[11]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 764.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
+
+ []
+
+
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
+
+ []
+
+
+
+[13]
+
+[14]
+
+[15] (./thermo1st.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `thermo1st.out' has not changed.
-(rerunfilecheck)             Checksum: E4BE98C4A108AA5F2B0146963EA06650;1923.
+(rerunfilecheck)             Checksum: C8AEBD11D9B9256329AE4FE95AF844EE;2059.
  ) 
 Here is how much of TeX's memory you used:
- 28675 strings out of 469747
- 538389 string characters out of 5481688
- 936199 words of memory out of 5000000
- 56503 multiletter control sequences out of 15000+600000
- 639252 words of font info for 86 fonts, out of 8000000 for 9000
+ 30084 strings out of 469747
+ 569476 string characters out of 5481688
+ 960449 words of memory out of 5000000
+ 57854 multiletter control sequences out of 15000+600000
+ 640236 words of font info for 90 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,13n,159p,595b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thermo1st.pdf (1 page, 61795 bytes).
+ 125i,34n,159p,595b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on thermo1st.pdf (15 pages, 180095 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
