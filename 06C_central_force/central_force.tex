@@ -70,6 +70,8 @@ by showing that the curl on the force is $0$.
 %%%%%%%%%%%%
 \subsection{Standard Derivation} 
 
+(\it{Every textbook does the same proof})
+
 \begin{itemize}
     \item The force from potential is the only force and is conservative $\Rightarrow$ Energy conserves.
     \aleq{
@@ -81,7 +83,7 @@ by showing that the curl on the force is $0$.
     }
 \end{itemize}
 
-The standard rundown (\it{every textbook does the same}) is to treat $E$ and $L$ as adjustable parameters 
+The standard rundown is to treat $E$ and $L$ as adjustable parameters 
 and derive the function of the object's trajectory $r(\theta)$.
 
 \label{standard proof}
@@ -184,7 +186,7 @@ because they were the only types of orbits observed.
 
 \quoting{The orbit of every planet is an ellipse with the sun at one of the two foci.}
 
-With modern mathematics, we can show that \red{every conic sections are possible trajectories}. 
+With coordinate geometry, we can show that \red{every conic sections are possible trajectories}. 
 Convert to cartesian coordinate by substituting $r=\sqrt{x^2+y^2}$, $\cos{\theta}=\frac{x}{r}$ 
 and $\sin{\theta}=\frac{y}{r}$,
 \aleq{
@@ -262,21 +264,30 @@ because we can compute the object's energy and angular momentum directly from th
 
 (You can also re-derive the definition of encentricity from them).\\
 
-The value of encentricity determines the ratio of $a,b,c$ to $r_0$, 
+The value of $\epsilon$ determines the ratio of $a,b,c$ relative to $r_0$, 
 so as the type of conic section. 
 
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{all_traj}
+    \end{minipage}
+\end{center}
+
+
+\newpage
 %%%%%%%%%%%%%%
 \subsubsection{$\epsilon = 0$ \,--\, Circle}
 
 \begin{itemize}
        
-    \item \ul{Standard form}: We can see that $a=b=c=r_0$. 
+    \item \ul{Standard form}: We can see that $a=b=r_0$ and $c=0$. 
     \aleq{
         \Aboxed{
-            (x+r_0)^2 + y^2 =r_0^2
+            x^2 + y^2 =r_0^2
         }
     }
-    which is the equation of a circle at center $(-r_0,0)$ and radius $r_0$.
+    which is the equation of a circle at center $(0,0)$ and radius $r_0$.
 
     \item \ul{Polar equation}: $r=\dfrac{r_0}{\epsilon\cos\theta \pm 1} = \dfrac{r_0}{0 \pm 1} = \pm r_0$. 
     \begin{itemize}
@@ -286,20 +297,23 @@ so as the type of conic section.
     \end{itemize}
     
     \item \ul{Energy}: By substituting $\epsilon=0$ to $a$, $\boxed{E=-\frac{k}{2r_0}}$.
-
 \end{itemize}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{circle}
+    \end{minipage}
+\end{center}
 
-\insertFig{circle}
-
+\newpage
 %%%%%%%%%%%%%%
 \subsubsection{$0<\epsilon <1$ \,--\, Ellipse}
 
 \begin{itemize}
-
     \item \ul{Standard form}: We have $a= \dfrac{r_0}{1-\epsilon^2} > \dfrac{r_0}{\sqrt{1-\epsilon^2}} = b$.
     \aleq{
         \Aboxed{
-            \frac{(x+a\epsilon)^2}{a^2} + \frac{y^2}{b^2} =r_0^2
+            \frac{(x+a\epsilon)^2}{a^2} + \frac{y^2}{b^2} = 1
         }
     }
     This is the equation of an ellipse with its center shifted to $(-a\epsilon,0)$,
@@ -324,7 +338,12 @@ so as the type of conic section.
     \item \ul{Energy}: By substituting $\epsilon$ and $r_0$ into $a$, $\boxed{ -\dfrac{mk^2}{2L^2} < E < 0}$
 \end{itemize}
 
-\insertFig{ellipse}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{ellipse}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%
@@ -365,7 +384,12 @@ so as the type of conic section.
 
 \end{itemize}
 
-\insertFig{parabola}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{parabola}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%
@@ -376,7 +400,9 @@ so as the type of conic section.
     Take out the magnitude part: $b=i\cdot \dfrac{r_0}{\sqrt{\epsilon^2-1}} = ib'$,
     the standard form becomes:
     \aleq{
-        \frac{(x+a\epsilon)^2}{a^2} - \frac{y^2}{b'^2} &= 1
+        \Aboxed{
+            \frac{(x+a\epsilon)^2}{a^2} - \frac{y^2}{b'^2} &= 1
+        }
     }
     This is the equation of an hyperbola with its center shifted to $(-a\epsilon,0)$,
     while $(0,0)$ becomes one of the foci of the ellipse.
@@ -389,7 +415,7 @@ so as the type of conic section.
         \begin{itemize}
             \item The \bf{perihelion} point - When $\theta=0$, $r$ is min - $\boxed{r_p = \frac{r_0}{1+\epsilon}}$
             
-            \item The \bf{aphelion} point does not exist - When $\cos\qty(\pm\theta) = \dinv{\epsilon}$, $r=\infty$.
+            \item The \bf{aphelion} point does not exist - When $\cos\qty(\pm\theta) = -\dinv{\epsilon}$, $r=\infty$.
     
         \end{itemize}
 
@@ -397,7 +423,7 @@ so as the type of conic section.
         \begin{itemize}
             \item The \bf{perihelion} point - When $\theta=0$, $r$ is min - $\boxed{r_p = \frac{r_0}{\epsilon-1}}$
             
-            \item The \bf{aphelion} point does not exist - When $\cos\qty(\pm\theta) = -\dinv{\epsilon}$, $r=\infty$.
+            \item The \bf{aphelion} point does not exist - When $\cos\qty(\pm\theta) = \dinv{\epsilon}$, $r=\infty$.
     
         \end{itemize}
     \end{itemize}
@@ -408,9 +434,12 @@ so as the type of conic section.
 
 \end{itemize}
 
-
-
-\insertFig{hyperbola}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{hyperbola}
+    \end{minipage}
+\end{center}
 
 
 
@@ -423,29 +452,37 @@ The original statement for Kelper's \nth{2} Law says:
 
 \quoting{A line joining a planet and the Sun sweeps out equal areas during equal intervals of time.}
 
-It is written in such way because the concept of angular momentum did not exist during Kelper's life 
-(Newton was birth after Kepler's death).
-With mathematics, we can show:
+With our physics knowledge nowadays, 
+we know that this statement is equivalent to saying "\bf{angular momentum conserves along an orbit}".
+The statement is written in this way because the concept of angular momentum did not exist during Kelper's life 
+(Newton was birth after Kepler's death).\\
+
+With the equations derived previously, we can show:
 
 \begin{itemize}
-    \item The angle $\theta$ of an arc is related to sweeping time by $\dd{t} = \frac{mr^2}{L}\dd{\theta}$
-    \item The arc's area is $\iint r\dd{\theta}\dd{r} = \int \half r^2 \dd{\theta}$
+    \item The angle $\theta$ of an arc is related to sweeping time by $\dd{t} = \dfrac{mr^2}{L}\dd{\theta}$
+    \item The arc's area is $\displaystyle \iint r\dd{\theta}\dd{r} = \int \half r^2 \dd{\theta}$
 \end{itemize}
 
-So combining,
+Combining,
+
 \aleq{
-    \text{Area}_{(t_2-t_1)} = \int_{t_1}^{t_2} \half \cdot \frac{L}{m} \dd{t} \tkn{kepler2}{=} \frac{L}{2m}{(t_2-t_1)}
+    \text{Area}_{(t_2-t_1)} = \int_{t_1}^{t_2} \half \cdot \frac{L}{m} \dd{t} \ \tkn{kepler2}{=}\  \frac{L}{2m}{(t_2-t_1)}
 }
-\addArrow[red]{kepler2}{(0,4.5ex)}{$\substack{\text{True only if}\\L \text{ is not a function of }t}$}
+\addArrow[red]{kepler2}{(0,4.5ex)}{$\substack{\text{True only if}\\L \text{ is NOT a function of }t}$}
 {(0,1.5ex)}{(0,1.5ex)}
 
 Note that this is true even for parabola and hyperbola orbits.
 
-\insertFig{kepler2 law illustration}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{kelper2}
+    \end{minipage}
+\end{center}
 
 
-
-
+\newpage
 %%%%%%%%%%%%%%%%%
 \subsection{Kepler's \nth{3} Law - Period of Elliptical Orbit}
 
@@ -453,78 +490,133 @@ The original statement for Kepler's \nth{3} Law only applies to circular and ell
 because the concept of "period" only applies to closed orbits. 
 
 \begin{center}
+    \vskip 1em
     \begin{minipage}{0.9\textwidth}
         \quoting{The ratio of the square of an object's orbital period with the cube of the semi-major axis of its orbit 
             is the same for all objects orbiting the same primary object.}
     \end{minipage}
 \end{center}
 
+\vskip 1em
 If we go back to the standard proof in section \ref{standard proof} and stop at step 1, 
 without substituting $\dd{t} = \frac{mr^2}{L}\dd{\theta}$, 
 we can integrate and obtain a relation between $t$ and $r$.
-Note that we can simplify this integral without removing the $\pm$ sign, 
-so it applies to both attractive and repulsive cases.
+
 \aleq{
-    \dd{t} &= \frac{\dd{r}}{\sqrt{\frac{2}{m}\qty(E-V(r) - \frac{L^2}{2mr^2})}} \\
+    \dd{t} &= \frac{\dd{r}}{\sqrt{\frac{2}{m}\qty(E-V(r) - \frac{L^2}{2mr^2})}} \\[1ex]
     %
-    &= \frac{\dd{r}}{\sqrt{\frac{2}{m}\qty(E \red{\pm\frac{k}{r}} - \frac{L^2}{2mr^2})}} \\[0.5em]
+    &= \frac{\dd{r}}{\sqrt{\frac{2}{m}\qty(E \red{\pm\frac{k}{r}} - \frac{L^2}{2mr^2})}} 
+    & \qty(\substack{+\ : \text{ attractive} \\-\ : \text{ repulsive}}) \\[0.5em]
     %
     \int \dd{t} &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{r^2 \mp \frac{k}{E}r + \frac{L^2}{2mE}}}
-    & \qty(\substack{\text{Denominator} \\\text{multiply }-\frac{r^2}{E}}) \\
+    & \qty(\substack{\text{Denominator} \\\text{multiply }-\frac{r^2}{E}}) \\[1ex]
     %
     &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{-\qty(r\mp\frac{k}{2E})^2+\frac{k^2}{4E^2}+\frac{L^2}{2mE}}}
     & \qty(\substack{\text{completing}\\\text{square}})
 }
 
-We can substitute $a=-\frac{k}{2E}$ and $a^2\epsilon^2 = \frac{k^2}{4E^2}\qty(1+\frac{2EL^2}{mk^2})$ to simplify the notations. 
+Substitute $a=-\frac{k}{2E}$ and $a^2\epsilon^2 = \frac{k^2}{4E^2}\qty(1+\frac{2EL^2}{mk^2})$ to simplify the notations. 
 \aleq{
-    \Rightarrow \int \dd{t} &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{-(r\pm a)^2+a^2\epsilon^2}}\\
+    \Rightarrow \int \dd{t} &= \sqrt{-\frac{m}{2E}} \int \frac{r\dd{r}}{\sqrt{-(r\pm a)^2+a^2\epsilon^2}}\\[1ex]
     %
-    &= \sqrt{-\frac{m}{2E}} \int \frac{(a\epsilon\cos{\varphi}\mp a) \dd{(a\epsilon\cos{\varphi}\mp a)}}{\sqrt{a^2\epsilon^2-(a\epsilon\cos{\varphi})^2}}
-    & {\scriptstyle \qty(\text{take } r\pm a = a\epsilon\cos{\varphi})} \\
+    &= \sqrt{-\frac{m}{2E}} \int \frac{(a\mp a\epsilon\cos{\varphi}) \dd{(a \mp a\epsilon\cos{\varphi})}}{\sqrt{a^2\epsilon^2-(a\epsilon\cos{\varphi})^2}}
+    & {\scriptstyle \qty(\text{take } r = a \,\mp\, a\epsilon\cos{\varphi})} \\[1ex]
     %
-    &= \sqrt{-\frac{m}{2E}} \int -(a\epsilon\cos{\varphi}\mp a) \dd{\varphi}\\
+    &= \sqrt{-\frac{m}{2E}} \int \frac{(a\mp a\epsilon\cos{\varphi})}{a\epsilon\sin{\varphi}} (\pm a\epsilon\sin{\varphi})\dd{\varphi}\\[1ex]
     %
-    &= \sqrt{-\frac{m}{2E}} (-a\epsilon\sin{\varphi} \pm a\varphi)  + C\\
+    &= \sqrt{-\frac{m}{2E}} \int (\pm a - a\epsilon\cos{\varphi}) \dd{\varphi}\\[1ex]
     %
-    &= \sqrt{\frac{a}{k}}(-a\epsilon\sin{\varphi} \pm a\varphi)  + C
+    &= \sqrt{-\frac{m}{2E}} (\pm a-a\epsilon\sin{\varphi} )  + C\\[1ex]
+    %
+    &= \sqrt{\frac{a}{k}}(\pm a -a\epsilon\sin{\varphi} )  + C
     & {\scriptstyle \qty(\text{by } a = -\frac{k}{2E})}
 }
 
 The symbol $\varphi$ is commonly denoted as the \bf{eccentric anomaly}.
-Its geometrical relation with the rotation angle $\theta$ is as depicted:
+Note that the above is derived without removing the $\pm$ sign, 
+so the definition applies to both attractive and repulsive force cases.
 
-\insertFig{eccentric anomaly}
-
-$\varphi$ and $\theta$ can be inter-converted through their relations with $r$. 
-Although this is usually done numerically. 
+\newpage
+Algebraically, $\varphi$ and $\theta$ can be inter-converted through their relations with $r$. 
+Although this can be done only  numerically. 
 \aleq{
     \cub[red]{\frac{r_0}{\epsilon\cos{\theta} \pm 1} }{\text{Polar Equation}} 
     \ =\ r\ &=\
-    \cub[blue]{ a\epsilon\cos{\varphi} \mp a}{\text{Definition of }\varphi} \\[1ex]
+    \cub[blue]{ a \mp a\epsilon\cos{\varphi}}{\text{Definition of }\varphi} \\[1ex]
     %
     \Rightarrow \quad \frac{r_0}{a} = 1-\epsilon^2 
     = (\text{A constant}) &= (1\mp \epsilon \cos{\varphi})(1\pm \epsilon\cos{\theta})
 }
 
-We can immediately check that in elliptical orbit, 
+
+Then we can immediately check that in elliptical orbit, 
 $\theta = 0 \Leftrightarrow \varphi = 0$ and $\theta=\pi \Leftrightarrow \varphi=\pi$. 
 So taking $\varphi$ from $0$ to $2\pi$ is the same as revolving one cycle of $\theta$ from $0$ to $2\pi$. 
 Substitute these into the $t$ v.s. $\varphi$ relation, we arrive at the familar Kepler's \nth{3} law formula.
 \aleq{
     \text{1 Period} = \int^T_0 \dd{t} 
-    &= \eval{\sqrt{\frac{a}{k}}(-a\epsilon\sin{\varphi} \pm a\varphi)}_{\varphi =0}^{\varphi =2\pi} \\
+    &= \eval{\sqrt{\frac{a}{k}}(\red{+} a -a\epsilon\sin{\varphi})}_{\varphi =0}^{\varphi =2\pi} \\
     \Aboxed{
         T &= \frac{2\pi}{\sqrt{k}}a^{\frac{3}{2}}
     }
 }
 
-\bf{Note:} Trajectory are more frequently expressed in terms of $\varphi$ in space engineering texts because of the $t$ v.s. $\varphi$ relation --
-It is a lot easier for computing transit time along any segment of any orbit.
 
+\begin{notation}[Side note:]
+    In an elliptical orbit, we can view $\varphi$ as a parmetrization to the standard form:
+    \aleq{
+        \frac{(x+a\epsilon)^2}{a^2} + \frac{y^2}{b^2} = 1
+        \qquad\Rightarrow\qquad
+        \text{take}\quad \bcase{
+            x+a\epsilon &= a\cos{\varphi}\\
+            y &= b\sin{\varphi}
+        }
+    }
 
+    \vskip 1ex
+    \begin{center}
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \red{\ul{x coordinate $= -(a\epsilon - a\cos{\varphi})$}\\}
+            \includegraphics[width=\textwidth, trim=0 80 0 30, clip]{ea1}
+        \end{minipage}
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \blue{\ul{y coordinate $= b\sin{\varphi}$}\\}
+            \includegraphics[width=\textwidth, trim=0 80 0 30, clip]{ea2}
+        \end{minipage}
+    \end{center}
 
+\end{notation}
+\begin{notation}[]
+    We can verify that the distance from the origin $\sqrt{x^2+y^2}$ is exactly $r=a-a\epsilon\cos{\varphi}$.
+    \aleq{
+        x^2 + y^2 &= (a\epsilon - a\cos\varphi)^2 + (b\sin\varphi)^2\\
+        &= \qty(\frac{r_0}{1-\epsilon^2})^2(\epsilon - \cos\varphi)^2 + \qty(\frac{r_0}{\sqrt{1-\epsilon^2}})^2(\sin\varphi)^2\\
+        &= \qty(\frac{r_0}{1-\epsilon^2})^2\qty(\epsilon^2-2\epsilon\cos\varphi + \cos^2\varphi + (1-\epsilon^2)\sin^2\varphi)\\
+        &= \qty(\frac{r_0}{1-\epsilon^2})^2\qty(1-2\epsilon\cos\varphi + \epsilon^2\cos^2\varphi)\\[1ex]
+        &= a^2(1-\epsilon\cos\varphi)^2
+    }
 
+    Moreover, in hyperbola orbit, the parametrization by $\varphi$ becomes
+    \aleq{
+        \frac{(x+a\epsilon)^2}{a^2} - \frac{y^2}{b^2} = 1
+        \qquad\Rightarrow\qquad
+        \text{take}\quad \bcase{
+            x+a\epsilon &= a\cosh{\varphi}\\
+            y &= b\sinh{\varphi}
+        }
+    }
+
+    Trajectory are more frequently expressed in terms of $\varphi$ in space engineering texts because 
+    the $t$ v.s. $\varphi$ relation is readily available for computing transit time.
+    \aleq{
+        t - t_0 = \sqrt{\frac{a}{k}}(\pm a -a\epsilon\sin{\varphi})
+    }
+
+    It is a lot easier than using $\theta$.
+
+\end{notation}
 
 
 
@@ -540,41 +632,55 @@ In a two body system, where their interaction forces satisfy:
 Then it is easy to show that the equation of motions can be rewritten into the form of one body subjecting to the same force. 
 Thus we can solve their trajectories by solving only 1 ODE.
 
-\insertFig{two body config}
+\vskip 0.5em
+\underline{\textit{Proof}}\par
+\hspace{0.025\textwidth}\begin{minipage}{0.95\linewidth}
+\vskip 0.5em
 
-The pairs of Newton \nth{2} Law should start in this form:
-\aleq{
-    \begin{cases}
-        m_1\dvv[2]{\vvec{r}_1}{t} &= \vvec{F}(\abs{\vvec{r}_2-\vvec{r}_1}) \\[1em]
-        m_2\dvv[2]{\vvec{r}_2}{t} &= -\vvec{F}(\abs{\vvec{r}_{2}-\vvec{r}_1})
-    \end{cases}
-}
+    The pairs of Newton \nth{2} Law should start in this form:
+    \aleq{
+        \begin{cases}
+            m_1\dvv[2]{\vvec{r}_1}{t} &= \vvec{F}(\abs{\vvec{r}_2-\vvec{r}_1}) \\[1em]
+            m_2\dvv[2]{\vvec{r}_2}{t} &= -\vvec{F}(\abs{\vvec{r}_{2}-\vvec{r}_1})
+        \end{cases}
+    }
 
-We can immediately see that, after dividing the masses and subtracting one of them by the other, we arrive at
-\aleq{
-    \dv[2]{\vvec{r}_2}{t} - \dvv[2]{\vvec{r}_1}{t} &= -\qty(\inv{m_2}+\inv{m_1})\vvec{F}(\abs{\vvec{r}_{2}-\vvec{r}_1})\\
-    \Rightarrow \qquad \dv[2]{\vvec{u}}{t} &= -\qty(\inv{m_2}+\inv{m_1})\vvec{F}(\abs{\vvec{u}}) 
-}
+\end{minipage}
 
-by taking $\vvec{u} = \vvec{r}_2 - \vvec{r}_1$. It is common to denote $\mu = \inv{\inv{m_1}+\inv{m_2}}$ as the \bf{reduced mass}, 
-so that it is equivalent to the Newton \nth{2} Law describing an object of mass $\mu$ moving along its trajectory $\vvec{u}$ subjecting to a force $-\vvec{F}(\abs{\vvec{u}})$. 
-On the other hand, adding the two equation gives the Newton \nth{2} Law about the center of mass, $\vvec{r}_{CM} = \frac{m_1\vvec{r}_1+m_2\vvec{r}_2}{m_1+m_2}$:
-\aleq{
-    m_2\dv[2]{\vvec{r}_2}{t} + m_1\dvv[2]{\vvec{r}_1}{t} &= 0 \\
-    \Rightarrow \qquad \dv[2]{t}\qty(m_1\vvec{r}_1+m_2\vvec{r}_2) &= \dv[2]{t}\qty(\frac{m_1\vvec{r}_1+m_2\vvec{r}_2}{m_1+m_2}) = 0
-}
+\begin{minipage}{0.95\linewidth}
+    We can immediately see that, after dividing the masses and subtracting one of them by the other, we arrive at
+    \aleq{
+        \dv[2]{\vvec{r}_2}{t} - \dvv[2]{\vvec{r}_1}{t} &= -\qty(\inv{m_2}+\inv{m_1})\vvec{F}(\abs{\vvec{r}_{2}-\vvec{r}_1})\\
+        \Rightarrow \qquad \dv[2]{\vvec{u}}{t} &= -\qty(\inv{m_2}+\inv{m_1})\vvec{F}(\abs{\vvec{u}}) 
+    }
 
-\insertFig{equiv: two obj orbit each other == 1 obj, redeuced mass, orbit around origin, r=r2-r1. finally retrieve back r1,r2 from u}
+    by taking $\vvec{u} = \vvec{r}_2 - \vvec{r}_1$. It is common to denote $\mu = \inv{\inv{m_1}+\inv{m_2}}$ as the \bf{reduced mass}, 
+    so that it is equivalent to the Newton \nth{2} Law describing an object of mass $\mu$ moving along its trajectory $\vvec{u}$ subjecting to a force $-\vvec{F}(\abs{\vvec{u}})$. 
+    On the other hand, adding the two equation gives the Newton \nth{2} Law about the center of mass, $\vvec{r}_{CM} = \frac{m_1\vvec{r}_1+m_2\vvec{r}_2}{m_1+m_2}$:
+    \aleq{
+        m_2\dv[2]{\vvec{r}_2}{t} + m_1\dvv[2]{\vvec{r}_1}{t} &= 0 \\
+        \Rightarrow \qquad \dv[2]{t}\qty(m_1\vvec{r}_1+m_2\vvec{r}_2) &= \dv[2]{t}\qty(\frac{m_1\vvec{r}_1+m_2\vvec{r}_2}{m_1+m_2}) = 0
+    }
 
-Now the problem is reduced to two independent ODEs --- a still annoying one for $\vvec{u}$ and a trivial one for $\vvec{r}_{CM}$ respectively.
-\aleq{
-    \begin{cases}
-        \mu\dvv[2]{\vvec{u}}{t} &= -\vvec{F}(\abs{\vvec{u}}) \\[1em]
-        \dvv[2]{\vvec{r}_{CM}}{t} &= 0
-    \end{cases}
-}
 
-which is comparatively easier than solving a system of 2 ODEs. 
+    Now the problem is reduced to two independent ODEs --- a still annoying one for $\vvec{u}$ that involves the central force,
+    and a trivial one for $\vvec{r}_{CM}$.
+    \aleq{
+        \Acboxed{
+            \begin{cases}
+                \mu\dvv[2]{\vvec{u}}{t} = -\vvec{F}(\abs{\vvec{u}}) \\[1em]
+                \dvv[2]{\vvec{r}_{CM}}{t} = 0
+            \end{cases}
+        }
+    }
+
+    which is comparatively easier than solving a system of 2 ODEs. 
+
+    
+\hfill $\square$
+\end{minipage}
+\vskip 1.5em \par
+
 Finally with $\vvec{u}$ and $\vvec{r}_{CM}$, we can retrieve back $\vvec{r}_1$ and $\vvec{r}_2$ by the geometric relation.
 \aleq{
     \begin{cases}
