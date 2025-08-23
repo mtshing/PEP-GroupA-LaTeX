@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  11 AUG 2025 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  24 AUG 2025 04:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1041,38 +1041,38 @@ File: img/circ_track.png Graphic file (type png)
 <use img/circ_track.png>
 Package pdftex.def Info: img/circ_track.png  used on input line 317.
 (pdftex.def)             Requested size: 195.70428pt x 146.26897pt.
-<img/satallite.png, id=95, 325.215pt x 310.761pt>
-File: img/satallite.png Graphic file (type png)
-<use img/satallite.png>
-Package pdftex.def Info: img/satallite.png  used on input line 371.
-(pdftex.def)             Requested size: 122.96268pt x 117.49878pt.
-<img/rolling.png, id=96, 378.213pt x 303.534pt>
-File: img/rolling.png Graphic file (type png)
-<use img/rolling.png>
-Package pdftex.def Info: img/rolling.png  used on input line 379.
-(pdftex.def)             Requested size: 146.40596pt x 117.49878pt.
 
 
 [6 <./img/circ_track.png>]
+<img/satallite.png, id=100, 325.215pt x 310.761pt>
+File: img/satallite.png Graphic file (type png)
+<use img/satallite.png>
+Package pdftex.def Info: img/satallite.png  used on input line 382.
+(pdftex.def)             Requested size: 122.96268pt x 117.49878pt.
+<img/rolling.png, id=101, 378.213pt x 303.534pt>
+File: img/rolling.png Graphic file (type png)
+<use img/rolling.png>
+Package pdftex.def Info: img/rolling.png  used on input line 390.
+(pdftex.def)             Requested size: 146.40596pt x 117.49878pt.
 <img/r_cm.png, id=102, 844.95676pt x 202.95825pt>
 File: img/r_cm.png Graphic file (type png)
 <use img/r_cm.png>
-Package pdftex.def Info: img/r_cm.png  used on input line 411.
+Package pdftex.def Info: img/r_cm.png  used on input line 423.
 (pdftex.def)             Requested size: 464.8033pt x 111.64595pt.
 
-Overfull \hbox (1.77608pt too wide) detected at line 446
+Overfull \hbox (1.77608pt too wide) detected at line 458
 []
  []
 
 
 
 [7 <./img/satallite.png> <./img/rolling.png> <./img/r_cm.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 451--454
+Underfull \hbox (badness 10000) in paragraph at lines 463--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
@@ -1082,10 +1082,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 471--472
 <img/mars.png, id=113, 337.86224pt x 309.5565pt>
 File: img/mars.png Graphic file (type png)
 <use img/mars.png>
-Package pdftex.def Info: img/mars.png  used on input line 487.
+Package pdftex.def Info: img/mars.png  used on input line 499.
 (pdftex.def)             Requested size: 122.31705pt x 112.06847pt.
 
-Overfull \hbox (17.16257pt too wide) detected at line 518
+Overfull \hbox (17.16257pt too wide) detected at line 530
 []
  []
 
@@ -1095,24 +1095,24 @@ Overfull \hbox (17.16257pt too wide) detected at line 518
 <img/same_omega.png, id=119, 243.309pt x 175.25475pt>
 File: img/same_omega.png Graphic file (type png)
 <use img/same_omega.png>
-Package pdftex.def Info: img/same_omega.png  used on input line 549.
+Package pdftex.def Info: img/same_omega.png  used on input line 561.
 (pdftex.def)             Requested size: 163.12756pt x 117.49878pt.
 <img/rigid_body.png, id=120, 176.45924pt x 177.66376pt>
 File: img/rigid_body.png Graphic file (type png)
 <use img/rigid_body.png>
-Package pdftex.def Info: img/rigid_body.png  used on input line 559.
+Package pdftex.def Info: img/rigid_body.png  used on input line 571.
 (pdftex.def)             Requested size: 116.70578pt x 117.49878pt.
 
 
 [10 <./img/same_omega.png> <./img/rigid_body.png>]
-Overfull \hbox (5.56406pt too wide) detected at line 688
+Overfull \hbox (5.56406pt too wide) detected at line 700
 []
  []
 
 
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
@@ -1127,15 +1127,15 @@ Package rerunfilecheck Info: File `rot_L_KE.out' has not changed.
 (rerunfilecheck)             Checksum: EF32FB8C444EE5353AB1523BC4E9B05E;1968.
  ) 
 Here is how much of TeX's memory you used:
- 31112 strings out of 469747
- 590722 string characters out of 5481688
- 964834 words of memory out of 5000000
- 58912 multiletter control sequences out of 15000+600000
+ 31114 strings out of 469747
+ 590733 string characters out of 5481688
+ 964867 words of memory out of 5000000
+ 58914 multiletter control sequences out of 15000+600000
  638817 words of font info for 82 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,29n,159p,594b,919s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on rot_L_KE.pdf (12 pages, 378848 bytes).
+Output written on rot_L_KE.pdf (12 pages, 378906 bytes).
 PDF statistics:
  206 PDF objects out of 1000 (max. 8388607)
  148 compressed objects within 2 object streams

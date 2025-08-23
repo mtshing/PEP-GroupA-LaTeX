@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1754850420.88479 "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" "polar_vectors.pdf" "polar_vectors" 1754850424.45263 0
+["pdflatex"] 1755950349.55712 "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" "polar_vectors.pdf" "polar_vectors" 1755950354.0233 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
-  "../.common/format.sty" 1754843609 14580 e24bb1e79bd3c3db77b15430d21e5352 ""
+  "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1754838014 12206 a06b327610a3215a1d1231bbb5e18e65 ""
-  "../.common/packages.sty" 1753906031 5483 7372c66d5d4b93f0b22397e4fddfbefe ""
+  "../.common/packages.sty" 1755244219 5655 270da426d8fa7c8a49ba66d903de0601 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1752685028 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb0500.tfm" 1738919338 1536 b98adede9dcc202ab8d9da465c99405c ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb0600.tfm" 1738919338 1536 5e9084c3fe3d395ce8031dce35abc4c7 ""
@@ -245,7 +245,7 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" 1754850420 29062 f99e228a57a8586904fdbec88d1cdd2b ""
+  "d:/mings/Documents/PhyO/latex_notes/06A_polar_vectors/polar_vectors.tex" 1755950348 29099 8782f708058d880d0e328edec32deb2f ""
   "img/angular_theta.png" 1754849834 25743 d98567c205ac0b0369b0b90168017b68 ""
   "img/angular_v.png" 1754850214 18959 b855040dba787bab72e131898e9a55d5 ""
   "img/car.png" 1754146324 6877 914d21621b853147edaf200185b978db ""
@@ -260,10 +260,10 @@
   "img/unit_xy.png" 1754145235 6448 1641e9dc775c558f8398546750c04b64 ""
   "img/v_component.png" 1754850184 7946 46cadc50c49a4ee0fb3914af36521432 ""
   "img/xy_rth.png" 1754145608 10519 258b5c08c64cc4663fa2adafcacf04a6 ""
-  "polar_vectors.aux" 1754850424 3905 af230ca7d30d4d9b2f36b50af7c7ee83 "pdflatex"
-  "polar_vectors.out" 1754850424 1814 6de96f6e42471484bf1c9106febc7e49 "pdflatex"
-  "polar_vectors.sta" 1754850423 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "polar_vectors.tex" 1754850420 29062 f99e228a57a8586904fdbec88d1cdd2b ""
+  "polar_vectors.aux" 1755950353 3905 af230ca7d30d4d9b2f36b50af7c7ee83 "pdflatex"
+  "polar_vectors.out" 1755950353 1814 6de96f6e42471484bf1c9106febc7e49 "pdflatex"
+  "polar_vectors.sta" 1755950353 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "polar_vectors.tex" 1755950348 29099 8782f708058d880d0e328edec32deb2f ""
   (generated)
   "polar_vectors.aux"
   "polar_vectors.log"

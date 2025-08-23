@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755873136.65944 "d:/mings/Documents/PhyO/latex_notes/06C_central_force/central_force.tex" "central_force.pdf" "central_force" 1755873140.03517 0
+["pdflatex"] 1755980757.87111 "d:/mings/Documents/PhyO/latex_notes/06C_central_force/central_force.tex" "central_force.pdf" "central_force" 1755980761.34278 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1754838014 12206 a06b327610a3215a1d1231bbb5e18e65 ""
@@ -246,11 +246,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "central_force.aux" 1755873139 2283 76a661cfddb42a840dd9b000c6a24be0 "pdflatex"
-  "central_force.out" 1755873139 2337 dd0b8c976eaa6b0ac09ccf88fb27caf0 "pdflatex"
-  "central_force.sta" 1755873139 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "central_force.tex" 1755873135 26769 1f462925fb89bebe48bba1816c96ab38 ""
-  "d:/mings/Documents/PhyO/latex_notes/06C_central_force/central_force.tex" 1755873135 26769 1f462925fb89bebe48bba1816c96ab38 ""
+  "central_force.aux" 1755980760 2283 76a661cfddb42a840dd9b000c6a24be0 "pdflatex"
+  "central_force.out" 1755980760 2337 dd0b8c976eaa6b0ac09ccf88fb27caf0 "pdflatex"
+  "central_force.sta" 1755980760 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "central_force.tex" 1755980757 26769 1f462925fb89bebe48bba1816c96ab38 ""
+  "d:/mings/Documents/PhyO/latex_notes/06C_central_force/central_force.tex" 1755980757 26769 1f462925fb89bebe48bba1816c96ab38 ""
   "img/all_traj.png" 1755846714 53846 9093e464cdc49663716088ee70ddd7ba ""
   "img/circle.png" 1755846125 19040 7d3294820ba21680abb91596123221db ""
   "img/ea1.png" 1755870599 32779 3dc6e9712a4f0f928bd35fe305958133 ""
@@ -258,7 +258,7 @@
   "img/ellipse.png" 1755846963 25026 d1ab19d2934ff1139127a44282b3ad90 ""
   "img/hyperbola.png" 1755846174 27571 631aee445308f03daff2a2f933687a69 ""
   "img/kelper2.png" 1755863129 28750 5eb00514824dc4829a6d7c8efdbffa8f ""
-  "img/parabola.png" 1755846160 16057 f21f3f3fa6c6a7f3732d673ae851488e ""
+  "img/parabola.png" 1755980732 16159 8b7cac7cef06b5c46e01e9f3417e0ce1 ""
   (generated)
   "central_force.aux"
   "central_force.log"

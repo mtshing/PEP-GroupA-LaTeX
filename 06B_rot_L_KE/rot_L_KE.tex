@@ -165,10 +165,10 @@ Multiple integral is the essential tool to compute moment of inertia of objects.
 
     \aleq{
         I &= \iiint r^2 \dd{m} \\[1em]
-        &= \int_0^R \int_{0}^{\frac{\pi}{2}} \int_0^{2\pi} r^2 \cdot \rho\cdot r\sin^2\theta\dd{\phi}\dd{\theta}\dd{r} \\[1em]
-        &= \int_0^R \int_{0}^{\frac{\pi}{2}} \int_0^{2\pi} r^3(1+r^2) \sin^2\theta\dd{\phi}\dd{\theta}\dd{r} \\[1em]
-        &= \int_0^R r^3(1+r^2) \cdot \tkn{hemi}{\cul[blue]{2\pi r^2 \dd{r}}} \\[1em]
-        &= \pi\qty(\frac{R^4}{2} + \frac{R^6}{3})
+        &= \int_0^R \int_{0}^{\frac{\pi}{2}} \int_0^{2\pi} r^2 \cdot \rho\cdot r^2\sin\theta\dd{\phi}\dd{\theta}\dd{r} \\[1em]
+        &= \int_0^R \int_{0}^{\frac{\pi}{2}} \int_0^{2\pi} r^2(1+r^2) \cdot r^2 \sin\theta\dd{\phi}\dd{\theta}\dd{r} \\[1em]
+        &= \int_0^R r^2(1+r^2) \cdot \tkn{hemi}{\cul[blue]{2\pi r^2 \dd{r}}} \\[1em]
+        &= 2\pi\qty(\frac{R^5}{5} + \frac{R^7}{7})
     }
     \addBentArrow[blue]{hemi}{(10ex,-3ex)}{\scriptsize Area of half a sphere shell = $2\pi r^2$ \\[-1ex]\scriptsize thickness = $\dd{r}$}
     {(0,-1ex)}{(10ex,1ex)}
@@ -225,7 +225,7 @@ So we arrive at the definition of \bf{moment of inertia} $I$.
     \vvec{p}=m\vvec{v} = (\text{inertia})\cdot(\text{velocity}) 
     \qquad\text{v.s.}\qquad 
     \vvec{L} = (mr^2)\cdot \dv{\theta}{t} 
-        = \qty(\mstack{\text{something}\\\text{related to}\\\text{inertia}})\cdot \qty(\mstack{\text{Angular}\\\text{velocity}})
+        = \qty(\mstack{\text{something}\\\text{related to}\\[0.4ex]\text{inertia}})\cdot \qty(\mstack{\text{Angular}\\\text{velocity}})
 }
 \aleq{
     \Aboxed{I \defeq mr^2}
@@ -346,10 +346,21 @@ the rotational motion quantities are not universal.
     }
 
     which contains addition terms other than the usual form $L=mRv$. 
-    Please beware of that $L=mRv$ is true only if the origin is chosen to be the center of the circular trajectory.
+    Moreover, it is a function of $t$, so it is NOT conserved.
+    We get this result because:
+    \begin{itemize}
+        \item The object is in a circular motion. 
+        Linear momentum $mv$ cannot be conserved at all.
+
+        \item Angular momentum is just the angular component of linear momentum.
+    \end{itemize}
+
+    Please beware of that in circular motion,
+    $L=mRv$ is a conserved quantity only if the origin is chosen to be the center of the circular trajectory.
+    
 \end{example}
 
-
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Motions Relative to Center of Mass}
 
@@ -382,9 +393,10 @@ So in the above examples, you should still choose the sun / the floor as the ori
     \end{minipage}
 \end{center}
 
-\vskip 2em
-However this will cause a lot of complication because the position vector $\vvec{r}$ and velocity vector $\vvec{v}$ 
-to each point are not perpendicular. Calculating the total torque or angular momentum requires integration.
+%\vskip 2em
+However this causes a lot of complications because the position vector $\vvec{r}$ and velocity vector $\vvec{v}$ 
+to each point are not perpendicular. 
+Calculating the total torque or angular momentum requires integration over cross products.
 \aleq{
     \vvec{\tau} = \sum_{i} \vvec{r}_i\cross\vvec{F}_i \ &\to\  \int \vvec{r}\cross\dd{\vvec{F}} \\
     %
@@ -404,7 +416,7 @@ and the displacement vectors of each object relative to the center of mass $\vve
     }
 }
 
-\vskip 1em
+%\vskip 1em
 \begin{center}
     \begin{minipage}{0.95\linewidth}
         \centering
