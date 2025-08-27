@@ -22,6 +22,10 @@
 % but allow central alignment about &
 \newcommand{\bcase}[1]{\left\{ \ \begin{aligned} #1 \end{aligned}\right.}
 
+% no case symbol, simply aligned
+% this is useful in Abox envir to contain multiple line of equations
+\newcommand{\balg}[1]{\begin{aligned} #1 \end{aligned}}
+
 % short cut for array envr
 \newcommand{\barray}[2]{\begin{array}{#1} #2 \end{array}}
 

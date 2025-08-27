@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  27 AUG 2025 02:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  27 AUG 2025 23:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/mings/Documents/PhyO/latex_notes/08_thermo1st/thermo1st.tex
-(d:/mings/Documents/PhyO/latex_notes/08_thermo1st/thermo1st.tex
+**d:/mings/Documents/PhyO/latex_notes/09_entropy/entropy.tex
+(d:/mings/Documents/PhyO/latex_notes/09_entropy/entropy.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
@@ -63,7 +63,7 @@ Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
 \c@currfiledepth=\count286
 )
 \sa@out=\write3
- (./thermo1st.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+ (./entropy.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
 Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
 )
 Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
@@ -721,8 +721,8 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \c@lecnum=\count364
 \c@example=\count365
 \c@exercise=\count366
-)) (./thermo1st.aux)
-\openout1 = `thermo1st.aux'.
+)) (./entropy.aux)
+\openout1 = `entropy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -742,8 +742,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
- (./thermo1st.sta)
-\openout3 = `thermo1st.sta'.
+ (./entropy.sta)
+\openout3 = `entropy.sta'.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -775,9 +775,9 @@ LaTeX Info: Redefining \ohm on input line 14.
 Package gensymb Info: Using \textohm for \ohm on input line 14.
 Package gensymb Info: Using \textmu for \micro on input line 14.
 Package hyperref Info: Link coloring ON on input line 14.
- (./thermo1st.out) (./thermo1st.out)
+ (./entropy.out) (./entropy.out)
 \@outlinefile=\write5
-\openout5 = `thermo1st.out'.
+\openout5 = `entropy.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -825,99 +825,108 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 34.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 34.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 34.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
-
- []
-
-
-
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 157--164
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 185.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 185.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 185.
+
+
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 265.
+(hyperref)                removing `\mathsurround' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 265.
+(hyperref)                removing `\z@' on input line 259.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 259.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+
+ []
 
 
 
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 322.
+ []
 
 
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 381.
+(hyperref)                removing `\mathsurround' on input line 354.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 381.
+(hyperref)                removing `\z@' on input line 354.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--389
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 354.
 
 
 
 [6]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 423.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\var' on input line 423.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 423.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--452
-
- []
-
-
-Overfull \hbox (1.29929pt too wide) in paragraph at lines 476--478
-[]\OT1/cmr/m/n/12 In gen-eral, adi-a-betic re-la-tion of com-mon ma-te-ri-als would have the form $[][]$,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--478
-
- []
-
-
-
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 511.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+
+ []
+
+
 
 [8]
 
@@ -925,113 +934,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 476--478
 
 [10]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 750.
-
-
-
 [11]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 763.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 778--779
+Underfull \hbox (badness 10000) in paragraph at lines 840--842
 
  []
 
 
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 868--869
+Underfull \hbox (badness 10000) in paragraph at lines 852--857
 
  []
 
@@ -1039,29 +950,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 868--869
 
 [13]
 
-[14]
-
-[15] (./thermo1st.aux)
+[14] (./entropy.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
-Package rerunfilecheck Info: File `thermo1st.out' has not changed.
-(rerunfilecheck)             Checksum: C8AEBD11D9B9256329AE4FE95AF844EE;2059.
+Package rerunfilecheck Info: File `entropy.out' has not changed.
+(rerunfilecheck)             Checksum: 96345FB8884077E727D50B75E66B16C9;2804.
  ) 
 Here is how much of TeX's memory you used:
- 30084 strings out of 469747
- 569476 string characters out of 5481688
- 960449 words of memory out of 5000000
- 57854 multiletter control sequences out of 15000+600000
- 640236 words of font info for 90 fonts, out of 8000000 for 9000
+ 29073 strings out of 469747
+ 546667 string characters out of 5481688
+ 956454 words of memory out of 5000000
+ 56852 multiletter control sequences out of 15000+600000
+ 641190 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,34n,159p,595b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on thermo1st.pdf (15 pages, 180101 bytes).
+ 125i,34n,159p,591b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on entropy.pdf (14 pages, 219512 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 67 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

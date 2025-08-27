@@ -114,9 +114,9 @@ here are some terminologies you should understand.
 
     You can think of a state function like some potential function.
     \aleq{
-        \mstack{\text{Total change}\\\text{of }F(P,V)} 
-        = \int_{\substack{\yellow{\text{Any process}}\\\blue{(P_1,V_1)}\to\red{(P_2,V_2)}}} \dd{F}
-        = F(\red{P_2,V_2}) - F(\blue{P_1,V_1})
+        \mstack{\text{Total change}\\\text{of }F(P,V,T)} 
+        = \int_{\substack{\yellow{\text{Any process}}\\\blue{(P_1,V_1,T_1)}\to\red{(P_2,V_2,T_2)}}} \dd{F}
+        = F(\red{P_2,V_2,T_2}) - F(\blue{P_1,V_1,T_1})
     }
 
 
@@ -193,8 +193,8 @@ And here are some examples that are NOT state function in thermodynamics:
         \item \red{$\var$} $\Rightarrow$ Path dependent.
         Must do the integral explicitly.
         \begin{itemize}
-            \item Without knowing the given path, we must write $\int \red{\var}{W}, \int \red{\var}{Q}$
-            \item After the path is known, we can write $\int_\green{C} \red{\dd}{W}, \int_\green{C} \red{\dd}{Q}$
+            \item Without knowing the given path, we must write $\displaystyle \int \red{\var}{W}, \int \red{\var}{Q}$
+            \item After the path is known, we can write $\displaystyle \int_\blue{C} \red{\dd}{W}, \int_\blue{C} \red{\dd}{Q}$
         \end{itemize}
     \end{itemize}
 \end{notation}
@@ -487,18 +487,17 @@ Therefore,
 %%%%%%%%%%%%%%
 \subsection{Summary}
 
-Summarizing under a table:
+Summarizing all useful formula under a table:
 
 \begin{center}
     \begin{tabular}{c|c|c|c}
-        & \makecell{$\dd{U}$ \\ \green{is a state function}} 
-        & \makecell{$\var{W}$ \\ \green{derive from definition:}\\\green{$\var{W} = \int P\dd{V}$}} 
-        & \makecell{$\var{Q}$ \\ \green{derive by \nth{1} law:}\\\green{$\var{Q} = \dd{U} + \var{W}$}}
+        & \makecell{$U$ \\ \green{is a state function}} 
+        & \makecell{$W$ \\ \green{derive from definition:}\\\green{$\var{W} = P\dd{V}$}} 
+        & \makecell{$Q$ \\ \green{derive by \nth{1} law:}\\\green{$\var{Q} = \dd{U} + \var{W}$}}
         \\[1em]
         \hline
         Iso. V 
         &
-
         $\begin{aligned} 
             & \,\cbox[red]{U(P_2,V,T_2) - U(P_1,V,T_1)}\\
             =& \,\cbox[blue]{\frac{i}{2}V(P_2-P_1)}\\
@@ -509,7 +508,7 @@ Summarizing under a table:
         \makecell{
             \phantom{\scriptsize abc}\\
             $\begin{aligned}
-                &= \cbox[red]{\dd{U} + 0}\\
+                &= \cbox[red]{\int \dd{U} + 0}\\
                 &= \cbox[red]{\int C_V \dd{T}} \\
                 &= \cbox[blue]{\cub[blue]{\frac{i}{2}Nk}{C_V}(T_2-T_1)}
             \end{aligned}$\\
@@ -534,7 +533,7 @@ Summarizing under a table:
         \makecell{
             \phantom{\scriptsize abc}\\
             $\begin{aligned}
-                &= \cbox[red]{\dd{U} + \var{W}}\\
+                &= \cbox[red]{\int \dd{U} + \int \var{W}}\\
                 &= \cbox[red]{\int C_P \dd{T}} \\
                 &= \cbox[blue]{\cub[blue]{\frac{i+2}{2}Nk}{C_P}(T_2-T_1)}
             \end{aligned}$\\
@@ -560,7 +559,7 @@ Summarizing under a table:
         }
         & 
         $\begin{aligned}
-            &= \cbox[red]{\dd{U} + \var{W}}\\
+            &= \cbox[red]{\int \dd{U} + \int \var{W}}\\
             &= \cbox[blue]{NkT\ln\qty(\frac{V_2}{V_1})}
         \end{aligned}$
         \\[1em]
@@ -633,7 +632,7 @@ In general, you can follow these steps:
                     \\
                     \hline
                     \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
-                    & iso. T
+                    & Iso. T
                     & $T_1=T_2$
                     \\
                     \hline
@@ -643,12 +642,12 @@ In general, you can follow these steps:
                     \\
                     \hline
                     \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
-                    & iso. P
-                    & $P_3=T_4$
+                    & Iso. P
+                    & $P_3=P_4$
                     \\
                     \hline
                     \cbox[blue]{4} $\rightarrow$ \cbox[blue]{1}
-                    & iso. V
+                    & Iso. V
                     & $V_4=V_1$
                 \end{tabular}
             \end{minipage}
@@ -670,7 +669,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
-            & iso. T
+            & Iso. T
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -696,7 +695,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
-            & iso. P
+            & Iso. P
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -709,7 +708,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{4} $\rightarrow$ \cbox[blue]{1}
-            & iso. V
+            & Iso. V
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -799,6 +798,7 @@ In general, you can follow these steps:
         }$
     }
 
+    \vskip 1em
     We have to re-derive $\dd{U}, \var{W}$ and $\var{Q}$ before we can proceed to solve any thermal cycle.
 
     \begin{enumerate}
@@ -857,8 +857,7 @@ In general, you can follow these steps:
             \ln(V^{\frac{4}{3}}) &= -\ln P + (\text{constant})\\
             PV^{\frac{4}{3}} &= (\text{constant})
         }
-
-        The adiabetic constant for photon gas is $\gamma =\frac{4}{3} \neq \frac{C_V}{C_P}$, obviously.
+        The adiabetic constant for photon gas is $\gamma =\dfrac{4}{3} \neq \dfrac{C_V}{C_P}$, obviously.
 
     \end{enumerate}
 
@@ -995,7 +994,7 @@ In general, you can follow these steps:
         T^3V &= (\text{const.})
     }
 
-    And the relations between state parameters:
+    And the relations between state parameters that we derived in step 1:
     \aleq{
         \bcase{
             & T_1=T_2,\  T_3=T_4\\
