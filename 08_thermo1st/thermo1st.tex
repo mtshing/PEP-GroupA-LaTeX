@@ -54,15 +54,15 @@ so work done \cul[blue]{by} system is $\cul[blue]{-}\var{W}$.
 %%%%%%%%%%%%%%
 \subsection{Terminologies in Thermodynamics}
 
-Before we deep dive into the world of thermodynamics, 
-here are some terminologies you should understand.
+To deep dive into thermodynamics, 
+here are some terminologies you must understand.
 
 \begin{enumerate}
     \item \bf{\ul{State}}\\
     We describe a system in a "specific state" 
     if the system can be "well-distinguished" by a set of parameters.
     \begin{center}
-        \red{Different parameters \quad$\Leftrightarrow$\quad Different states}
+            \red{\ul{\ul{Different parameters \quad$\Leftrightarrow$\quad Different states}}}
     \end{center}
 
     For example,
@@ -82,25 +82,43 @@ here are some terminologies you should understand.
     \vskip 1ex
     \item \bf{\ul{State Space}}\\
     The state space is an abstract representation of \cul[red]{the set of all possible states} using state parameters.
-    Because ideal gas system only takes 3 parameters, 
-    we can draw it out as a 3D space, 
-    with each coordinate representing a possible state of the gas
+    
+    \begin{center}
+        \begin{minipage}{0.37\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{state_sp}
+        \end{minipage}
+        \begin{minipage}{0.6\linewidth}
+            \centering
+            Because ideal gas system only takes 3 parameters,\\ 
+            we can draw it out as a 3D space,\\ 
+            with each coordinate representing\\
+            a possible state of the gas.
+        \end{minipage}
+    \end{center}
 
-    \insertFig{state space}
-
-    \vskip 1ex
     \item \bf{\ul{Process}}\\
     It is the transition between states.
     If the state space can plotted out, 
     processes are the paths connecting different states.
 
-    \insertFig{process}
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{state_pro}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\linewidth}
+            \centering
+            For ideal gas, because only 2 of $(P,V,T)$ \\
+            are independent,
+            we can project the processes' path onto a 2D plane, 
+            creating the P-V diagram\\
+             (or P-T/V-T diagram).
+        \end{minipage}
+    \end{center}
 
-    For ideal gas, because only 2 of $(P,V,T)$ are independent,
-    we can project the processes' path onto a 2D plane 
-    creating the P-V diagram (or P-T/V-T diagram).
 
-    \vskip 1ex
     \item \bf{\ul{State Function}}\\
     State functions are functions that only take state parameters as inputs.
     \begin{center}
@@ -110,7 +128,17 @@ here are some terminologies you should understand.
     For example, for a scalar state function,
     we can draw it as a smooth height map:
 
-    \insertFig{height map -> PV diagram}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{state_func1}
+        \end{minipage}
+        $\qquad\Rightarrow\qquad$
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{state_func2}
+        \end{minipage}
+    \end{center}
 
     You can think of a state function like some potential function.
     \aleq{
@@ -132,12 +160,24 @@ Here are some examples of state function in thermodynamics:
     
     \item \ul{Internal energy} - such as potential energy and kinetic energy. 
     
-    \insertFig{PE}
+    \begin{center}
+        \begin{minipage}{0.12\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{PE}
+        \end{minipage}
+        \begin{minipage}{0.7\linewidth}
+            \centering
+            Here the state parameter is the height.\\
+            Change in PE only depends on initial and final height,
+            independent of the path we take.
+        \end{minipage}
+    \end{center}
 
     \item \ul{Entropy} \gray{(Only in some situation)}
     
 \end{itemize}
 
+\vskip 1em
 And here are some examples that are NOT state function in thermodynamics:
 \begin{itemize}
     \item \ul{Work Done} \\
@@ -157,11 +197,20 @@ And here are some examples that are NOT state function in thermodynamics:
     it cannot be a state function. 
     In fact, we always visualize W.D. as the area under curve (= process!) in the P-V diagram,
     indicating that it is a property of a process.
-    \aleq{
-        \sum_{\text{segments }i} P_iV_i \sim \int_\text{process} P\dd{V} = \text{Area under curve}
-    }
+    
 
-    \insertFig{PV work done}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{PV}
+        \end{minipage}
+        \hspace{0.02\textwidth}
+        \begin{minipage}{0.6\linewidth}
+            \aleq{
+                \sum_{\text{segments }i} P_iV_i \sim \int_\text{process} P\dd{V} = \text{Area under curve}
+            }
+        \end{minipage}
+    \end{center}
 
     \item \ul{Heat}\\
     According to the \nth{1} law,
@@ -171,7 +220,7 @@ And here are some examples that are NOT state function in thermodynamics:
     \addArrow[red]{H_U}{(-3ex,-3ex)}{\scriptsize State function}{(0,-1ex)}{(-2ex,0)}
     \addArrow[blue]{H_W}{(3ex,-3ex)}{\scriptsize Process dependent}{(0,-1ex)}{(2ex,0)}
 
-    So heat must also be dependent of a process.
+    So heat must also depend on the process.
 
 \end{itemize}
 
@@ -199,7 +248,7 @@ And here are some examples that are NOT state function in thermodynamics:
     \end{itemize}
 \end{notation}
 
-
+\vskip 1em
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The 4 Most Common Processes}
@@ -222,7 +271,7 @@ Normally, thermodynamics texts only concern these 4 processes:
         \hline
         Isothermal & $T=$ const. \\
         \hline
-        Adiabetic & $\var{Q} = 0$
+        Adiabatic & $\var{Q} = 0$
     \end{tabular}
 \end{center}
 
@@ -245,26 +294,36 @@ In case of ideal gas,
 the function form of $U$ is derived using kinetic theory:
 \vskip 1em
 \aleq{
-    U(P,V,T) = \tkn{dof}{\frac{\cbox[blue]{i}}{2}}\tkn{U_ideal1}{\cul[green]{PV}} = \tkn{gas_law}{\frac{i}{2}\tkn{U_ideal2}{\cul[green]{NkT}}}
+    U(P,V,T) = \tkn{dof}{\frac{\cbox[blue]{i}}{2}}\tkn{U_ideal1}{\cul[green]{PV}} = \tkn{gas_law}{\frac{i}{2}\tkn{U_ideal2}{\cul[green]{nRT}}}
 }
 \addArrow[blue]{dof}{(0,3ex)}
 {\scriptsize $i=$ degree of freedom}{(0,4ex)}
 \addBelowArrow[green]{U_ideal1}{U_ideal2}{\scriptsize By ideal gas law}{-2ex}
 
 Therefore,
+\vskip -3ex
 \aleq{
     \Acboxed[blue]{
-        \Delta U = \frac{i}{2}(P_2V_2 - P_1V_1) = \frac{i}{2}Nk\tkn{U_Tonly}{(\cul[green]{T_2-T_1})}
+        \Delta U = \frac{i}{2}(P_2V_2 - P_1V_1) = \frac{i}{2}nR\tkn{U_Tonly}{(\cul[green]{T_2-T_1})}
     }
 }
 \addArrow[green]{U_Tonly}{(0,-5ex)}{$U$ of ideal gas can be written as a function of only $T$!}{(0,-1ex)}
 
 
-
+\vskip 2em
 %%%%%%%%%%%%%%
 \subsection{Isovolumetric Process (const. $V$)}
 
-\insertFig{iso V}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{isoV}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        Always vertical line in PV diagram.
+    \end{minipage}
+\end{center}
 
 \begin{enumerate}
     \item \ul{Work Done} \\
@@ -300,28 +359,38 @@ Therefore,
 
     When the internal energy of ideal gas law is given,
     \aleq{
-        U_2-U_1 &= \frac{i}{2}(P_2V_2 - P_1V_1) = \frac{i}{2}Nk(T_2-T_1) \\
+        U_2-U_1 &= \frac{i}{2}(P_2V_2 - P_1V_1) = \frac{i}{2}nR(T_2-T_1) \\
         &= \frac{i}{2}V(P_2-P_1) 
     }
     so we have
     \aleq{
         \Acboxed[blue]{
-            \int_{\yellow{\text{iso. }V}} \dd{Q} \equiv U_2-U_1 = \frac{i}{2}V(P_2-P_1) = \frac{i}{2}Nk(T_2-T_1)
+            \int_{\yellow{\text{iso. }V}} \dd{Q} \equiv U_2-U_1 = \frac{i}{2}V(P_2-P_1) = \frac{i}{2}nR(T_2-T_1)
         }
     }
     and
     \aleq{
         \Acboxed[blue]{
-            C_\yellow{V}(T) \equiv \qty(\dvv{U}{T}) = \frac{i}{2}Nk = (\text{A constant})
+            C_\yellow{V}(T) \equiv \qty(\dvv{U}{T}) = \frac{i}{2}nR = (\text{Constant})
         }
     }
 
 \end{enumerate}
 
+\vskip 2em
 %%%%%%%%%%%%%%
 \subsection{Isobaric Process (const. $P$)}
 
-\insertFig{iso P}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{isoP}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        Always horizontal line in PV diagram.
+    \end{minipage}
+\end{center}
 
 \begin{enumerate}
     \item \ul{Work Done}\\
@@ -337,7 +406,7 @@ Therefore,
     Substituting ideal gas law, we can also write
     \aleq{
         \Acboxed[blue]{
-            \int_\yellow{\text{iso. }P} \dd{W} = Nk(T_2-T_1)
+            \int_\yellow{\text{iso. }P} \dd{W} = nR(T_2-T_1)
         }
     }
 
@@ -364,14 +433,14 @@ Therefore,
         \int_\yellow{\text{iso. }P} \dd{Q} &\equiv (U_2-U_1) + P(V_2-V_1) \\
         &= \frac{i}{2}P(V_2-V_1) + P(V_2-V_1) \\
         \Acboxed[blue]{
-            \int_\yellow{\text{iso. }P} \dd{Q} &= \frac{i+2}{2}P(V_2-V_1) = \frac{i+2}{2}Nk(T_2-T_1)
+            \int_\yellow{\text{iso. }P} \dd{Q} &= \frac{i+2}{2}P(V_2-V_1) = \frac{i+2}{2}nR(T_2-T_1)
         }
     }
 
     and 
     \aleq{
         \Acboxed[blue]{
-            C_\yellow{P}(T) \equiv \qty(\dvv{U}{T}) + P\qty(\dvv{P}{T})= \frac{i+2}{2}Nk = (\text{A constant})
+            C_\yellow{P}(T) \equiv \qty(\dvv{U}{T}) + P\qty(\dvv{P}{T})= \frac{i+2}{2}nR = (\text{Constant})
         }
     }
 \end{enumerate}
@@ -380,21 +449,30 @@ Therefore,
 %%%%%%%%%%%%%%
 \subsection{Isothermal Process (const. $T$)}
 
-\insertFig{iso T}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{isoT}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        They look like this \red{only for ideal gas!}
+    \end{minipage}
+\end{center}
 
 \begin{enumerate}
     \item \ul{Work Done}\\
     We are unable to reduce the form $\cbox[red]{\displaystyle \int_\yellow{\text{iso. }T}\var{W} = \int P\dd{V}}$ 
     unless we know what is the relation between $P$ and $V$ of the material.\\
 
-    For ideal gas, this relation is already known: $\displaystyle P = \frac{NkT}{V}$.
+    For ideal gas, this relation is already known: $\displaystyle P = \frac{nRT}{V}$.
     Then the integral becomes
     \aleq{
         \Acboxed[blue]{
             \int_\yellow{\text{iso. }T} \var{W} 
-            = \int \frac{NkT}{V}\dd{V} 
-            = Nk\tkn{isoT}{\cul[blue]{T}}\int \frac{\dd{V}}{V} 
-            = NkT\ln\qty(\frac{V_2}{V_1})
+            = \int \frac{nRT}{V}\dd{V} 
+            = nR\tkn{isoT}{\cul[blue]{T}}\int \frac{\dd{V}}{V} 
+            = nRT\ln\qty(\frac{V_2}{V_1})
         }
     }
     \addArrow[blue]{isoT}{(0,-5ex)}{$T=$ constant}{(0,-1ex)}
@@ -405,7 +483,7 @@ Therefore,
 
     For ideal gas, because its internal energy can be written in a form that only has $T$,
     \aleq{
-        \int \dd{U} = \frac{i}{2}Nk(T_2-T_1) = 0
+        \int \dd{U} = \frac{i}{2}nR(T_2-T_1) = 0
     }
 
     Then 
@@ -413,16 +491,25 @@ Therefore,
         \Acboxed[blue]{
             \int_\yellow{\text{iso. }T} \var{Q} 
             = 0 + \int_\yellow{\text{iso. }T} \var{W} 
-            = NkT\ln\qty(\frac{V_2}{V_1})
+            = nRT\ln\qty(\frac{V_2}{V_1})
         }
     }
 
 \end{enumerate}
 
 %%%%%%%%%%%%%%
-\subsection{Adiabetic Process ($\var{Q}=0$)}
+\subsection{Adiabatic Process ($\var{Q}=0$)}
 
-\insertFig{adiabetic}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{adiabatic}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \red{$\gamma$ is different for different material.}
+    \end{minipage}
+\end{center}
 
 \begin{enumerate}
     \item \ul{Heat}\\
@@ -437,6 +524,7 @@ Therefore,
 
     \item \ul{Work Done}\\
     By \nth{1} law, 
+    \vskip -2em
     \aleq{
         \var{Q} &= \dd{U} + \var{W} \\
         \Acboxed[red]{
@@ -445,13 +533,13 @@ Therefore,
     }
 
 
-    \item \ul{Adiabetic Relation}\\
-    Because the $P,V,T$ of initial and final states in an adiabetic process are different, 
-    we also need to derive the equation of the line connecting the two states.
-    The set of equations of the lines is generally called \bf{adiabetic relation}.\\
+    \item \ul{Adiabatic Relation}\\
+    Because all $P,V,T$ of initial and final states in an adiabatic process are different, 
+    we need to derive the equation of the line connecting the two states.
+    The set of equations of the lines is called \bf{adiabatic relation}.\\
 
-    The relation depends on the function form of $U(P,V)$.
-    Although we can always start the derivation from
+    The relation depends on the form of $U(P,V,T)$.
+    We always start the derivation from
     \aleq{
         \Acboxed[red]{
             -\dd{U} = \var{W} = P\dd{V}
@@ -473,12 +561,12 @@ Therefore,
         }
     }
 
-    In general, adiabetic relation of common materials would have the form $\cbox[red]{PV^\gamma = (\text{constant})}$,
-    where the index $\gamma$ is called \bf{adiabetic constant}. \\
+    In general, adiabatic relation of common materials would have the form $\cbox[red]{PV^\gamma = (\text{constant})}$,
+    where the index $\gamma$ is called \bf{adiabatic constant}. \\
 
     For ideal gas, $\cbox[blue]{\gamma = \frac{i+2}{i} = \frac{C_P}{C_V}}$.
     However this value \cul[red]{does NOT apply to every material}. 
-    To some material, its adiabetic "constant" may not even be a constant.  
+    To some material, its adiabatic "constant" may not even be a constant.  
 
 
 \end{enumerate}
@@ -501,7 +589,7 @@ Summarizing all useful formula under a table:
         $\begin{aligned} 
             & \,\cbox[red]{U(P_2,V,T_2) - U(P_1,V,T_1)}\\
             =& \,\cbox[blue]{\frac{i}{2}V(P_2-P_1)}\\
-            =& \,\cbox[blue]{\frac{i}{2}Nk(T_2-T_1)}
+            =& \,\cbox[blue]{\frac{i}{2}nR(T_2-T_1)}
         \end{aligned}$
         & 0
         & 
@@ -510,7 +598,7 @@ Summarizing all useful formula under a table:
             $\begin{aligned}
                 &= \cbox[red]{\int \dd{U} + 0}\\
                 &= \cbox[red]{\int C_V \dd{T}} \\
-                &= \cbox[blue]{\cub[blue]{\frac{i}{2}Nk}{C_V}(T_2-T_1)}
+                &= \cbox[blue]{\cub[blue]{\frac{i}{2}nR}{C_V}(T_2-T_1)}
             \end{aligned}$\\
             \phantom{\scriptsize abc}
         }
@@ -522,12 +610,12 @@ Summarizing all useful formula under a table:
         $\begin{aligned} 
             & \,\cbox[red]{U(P,V_2,T_2) - U(P,V_2,T_1)}\\
             =& \,\cbox[blue]{\frac{i}{2}P(V_2-V_1)}\\
-            =& \,\cbox[blue]{\frac{i}{2}Nk(T_2-T_1)}
+            =& \,\cbox[blue]{\frac{i}{2}nR(T_2-T_1)}
         \end{aligned}$
         & 
         $\begin{aligned}
             & \,\cbox[red]{P(V_2-V_1)} \\
-            =& \,\cbox[blue]{Nk(T_2-T_1)}
+            =& \,\cbox[blue]{nR(T_2-T_1)}
         \end{aligned}$
         & 
         \makecell{
@@ -535,7 +623,7 @@ Summarizing all useful formula under a table:
             $\begin{aligned}
                 &= \cbox[red]{\int \dd{U} + \int \var{W}}\\
                 &= \cbox[red]{\int C_P \dd{T}} \\
-                &= \cbox[blue]{\cub[blue]{\frac{i+2}{2}Nk}{C_P}(T_2-T_1)}
+                &= \cbox[blue]{\cub[blue]{\frac{i+2}{2}nR}{C_P}(T_2-T_1)}
             \end{aligned}$\\
             \phantom{\scriptsize abc}\\
         }
@@ -553,25 +641,25 @@ Summarizing all useful formula under a table:
             \phantom{\scriptsize abc}\\
             $\begin{aligned}
                 & \,\cbox[red]{\int P\dd{V}} \\
-                =& \,\cbox[blue]{NkT\ln\qty(\frac{V_2}{V_1})}
+                =& \,\cbox[blue]{nRT\ln\qty(\frac{V_2}{V_1})}
             \end{aligned}$\\
             \phantom{\scriptsize abc}
         }
         & 
         $\begin{aligned}
             &= \cbox[red]{\int \dd{U} + \int \var{W}}\\
-            &= \cbox[blue]{NkT\ln\qty(\frac{V_2}{V_1})}
+            &= \cbox[blue]{nRT\ln\qty(\frac{V_2}{V_1})}
         \end{aligned}$
         \\[1em]
         \hline
-        Adiabetic
+        Adiabatic
         & 
         \makecell{
             \phantom{\scriptsize abc}\\
             $\begin{aligned} 
                 & \,\cbox[red]{U(P_2,V_2,T_2) - U(P_1,V_1,T_1)}\\
                 =& \,\cbox[blue]{\frac{i}{2}(P_2V_2-P_1V_2)}\\
-                =& \,\cbox[blue]{\frac{i}{2}Nk(T_2-T_1)}
+                =& \,\cbox[blue]{\frac{i}{2}nR(T_2-T_1)}
             \end{aligned}$\\
             \phantom{\scriptsize abc}
         }
@@ -580,7 +668,7 @@ Summarizing all useful formula under a table:
         $\begin{aligned} 
             &= \cbox[red]{-\dd{U}}\\
             &= \cbox[blue]{-\frac{i}{2}(P_2V_2-P_1V_2)}\\
-            &= \cbox[blue]{-\frac{i}{2}Nk(T_2-T_1)}
+            &= \cbox[blue]{-\frac{i}{2}nR(T_2-T_1)}
         \end{aligned}$
         & 0
     \end{tabular}
@@ -595,11 +683,22 @@ Summarizing all useful formula under a table:
 \section{Solving Thermal Cycle}
 
 In this section, 
-we will deal with one of the extremely common problem in thermodynamics - 
+we will deal with one of the basic but extremely common problem in thermodynamics - 
 given an arbituary thermal cycle, 
 derive the formula of effciency / coefficient of performance (COP). 
 
-\insertFig{random cycle}
+\begin{center}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{any_cycle}
+    \end{minipage}
+    $\qquad\Rightarrow\qquad$
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        Efficiency? COP?
+    \end{minipage}
+\end{center}
+
 
 In general, you can follow these steps:
 \begin{notation}[]
@@ -611,17 +710,27 @@ In general, you can follow these steps:
     \end{enumerate}
 \end{notation}
 
+\vskip 3em
 \begin{example}
     A thermal cycle of \cul[blue]{ideal gas} with all 4 kinds processes.
-    \begin{enumerate}
-        \item Iso. T (expansion)
-        \item Adiabetic (expansion)
-        \item Iso. P (contraction)
-        \item Iso. V
-    \end{enumerate}
+    
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \begin{enumerate}
+            \item Iso. T (expansion)
+            \item Adiabatic (expansion)
+            \item Iso. P (contraction)
+            \item Iso. V
+        \end{enumerate}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rand_cycle}
+        \end{minipage}
+    \end{center}
 
-    \insertFig{cycle of 4 process}
-
+    \vskip 1em
     \begin{enumerate}
         \item Write down the relations of $P,V,T$ between initial/final states of each process.
         \begin{center}
@@ -637,7 +746,7 @@ In general, you can follow these steps:
                     \\
                     \hline
                     \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
-                    & Adiabetic
+                    & Adiabatic
                     & $P_2V_2^\gamma=P_3V_3^\gamma$
                     \\
                     \hline
@@ -656,10 +765,11 @@ In general, you can follow these steps:
                 \centering
                 \red{
                 You can use ideal gas law to get more relations.\\
-                But may do it later.}
+                But do it later.}
             \end{minipage}
         \end{center}
         
+    \newpage
     \item Write down the $\dd{U}, \var{W}, \var{Q}$ for each process.
     \begin{center}
         \begin{tabular}{>{\centering\arraybackslash}m{2cm} 
@@ -674,20 +784,20 @@ In general, you can follow these steps:
                 \phantom{\scriptsize abc}\\
                 $\bcase{
                     \Delta U &= 0\\
-                    \int \var{W} &= NkT_1\ln\qty(\frac{V_2}{V_1})\\
-                    \int \var{Q} &= NkT_1\ln\qty(\frac{V_2}{V_1}) \quad \red{>0}\\
+                    \int \var{W} &= nRT_1\ln\qty(\frac{V_2}{V_1})\\
+                    \int \var{Q} &= nRT_1\ln\qty(\frac{V_2}{V_1}) \quad \red{>0}\\
                 }$\\
                 \phantom{\scriptsize abc}
             }
             \\
             \hline
             \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
-            & Adiabetic
+            & Adiabatic
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
-                    \Delta U &= \frac{i}{2}(P_3V_3-P_2V_2) = \frac{i}{2}Nk(T_3-T_2)\\
-                    \int \var{W} &= -\frac{i}{2}(P_3V_3-P_2V_2) = -\frac{i}{2}Nk(T_3-T_2)\\
+                    \Delta U &= \frac{i}{2}(P_3V_3-P_2V_2) = \frac{i}{2}nR(T_3-T_2)\\
+                    \int \var{W} &= -\frac{i}{2}(P_3V_3-P_2V_2) = -\frac{i}{2}nR(T_3-T_2)\\
                     \int \var{Q} &= 0\\
                 }$\\
                 \phantom{\scriptsize abc}
@@ -699,9 +809,9 @@ In general, you can follow these steps:
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
-                    \Delta U &= \frac{i}{2}P_3(V_4-V_3) = \frac{i}{2}Nk(T_4-T_3)\\
-                    \int \var{W} &= P_3(V_4-V_3) = Nk(T_4-T_3)\\
-                    \int \var{Q} &= \frac{i+2}{2}P_3(V_4-V_3) = \frac{i+2}{2}Nk(T_4-T_3)\quad \red{<0}\\
+                    \Delta U &= \frac{i}{2}P_3(V_4-V_3) = \frac{i}{2}nR(T_4-T_3)\\
+                    \int \var{W} &= P_3(V_4-V_3) = nR(T_4-T_3)\\
+                    \int \var{Q} &= \frac{i+2}{2}P_3(V_4-V_3) = \frac{i+2}{2}nR(T_4-T_3)\quad \red{<0}\\
                 }$\\
                 \phantom{\scriptsize abc}
             }
@@ -721,7 +831,7 @@ In general, you can follow these steps:
         \end{tabular}
     \end{center}
     
-    
+    \vskip 1ex
     \item Identify if the $\var{Q}$ of each process is an input or output. 
     Recall in the \nth{1} law's convention,
     \aleq{
@@ -731,7 +841,7 @@ In general, you can follow these steps:
     \addArrow[red]{eg_U}{(0,-3ex)}{Increase in $U$\\of the system}{(0,-1ex)}{(0,-2ex)}
     \addArrow[red]{eg_W}{(5ex,-3ex)}{W.D. \ul{by}\\the system}{(0,-1ex)}{(4ex,-1ex)}
 
-    \vskip 1em
+    \vskip 2em
     If $\var{Q}> 0$, it is a heat input, otherwise it is a heat output. 
     We can check for each process,
     \begin{itemize}
@@ -739,34 +849,48 @@ In general, you can follow these steps:
         \item With heat output: \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
     \end{itemize}
 
-    \vskip 1em
+
+    \newpage
     \item Calculate efficiency / COP according to the signs of $\var{Q}$.
     By definition, 
-    \aleq{
-        \Aboxed{
-            \text{Efficiency} = \eta \ \defeq\  \frac{\text{W.D.}}{\text{Heat input}} 
-            = 1- \qty|\frac{\text{Heat output}}{\text{Heat intput}}|
-        }
-    }
     
-    \insertFig{engine eff}
-
-    and
-    \aleq{
-        \Aboxed{
-            \mstack{\text{Coefficienty of}\\\text{Performance}\\(\text{COP})} 
-            \ \defeq\  
-            \frac{\text{Heat remove}}{\text{Work done}} 
-                = \qty|\frac{\text{Heat output}}{\text{Heat intput - Heat output}}|
-                = \frac{1-\eta}{\eta}
-        }
-    }
-
-    \insertFig{engine cop}
+    \begin{center}
+        \begin{minipage}{0.6\linewidth}
+            \aleq{
+                \Aboxed{
+                    \text{Efficiency} = \eta \ \defeq\  \frac{\text{W.D.}}{\text{Heat input}} 
+                    = 1- \qty|\frac{Q_\text{out}}{Q_\text{in}}|
+                }
+            }
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.2\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{engine}
+        \end{minipage}\\[1ex]
+        %
+        and\phantom{00000000000000000000}\\[1ex]
+        %
+        \begin{minipage}{0.78\linewidth}
+            \aleq{
+                \Aboxed{
+                    \mstack{\text{Coefficient of}\\[0.3ex]\text{Performance}\\[0.3ex](\text{COP})} 
+                    \ \defeq\  
+                    \frac{\text{Heat remove}}{\text{W.D.}} 
+                        = \qty|\frac{Q_\text{out}}{Q_\text{in}-Q_\text{out}}|
+                        = \frac{1-\eta}{\eta}
+                }
+            }
+        \end{minipage}
+        \begin{minipage}{0.2\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{fridge}
+        \end{minipage}
+    \end{center}
 
     For example in the cycle with 4 processes, we can compute the efficiency as
     \aleq{
-        \eta = 1 - \qty|\frac{\dfrac{i+2}{2}Nk(T_4-T_3)}{\dfrac{i}{2}Nk(T_1-T_4) + NT_1\ln\qty(\dfrac{V_2}{V_1})}|
+        \eta = 1 - \qty|\frac{\dfrac{i+2}{2}nR(T_4-T_3)}{\dfrac{i}{2}nR(T_1-T_4) + NT_1\ln\qty(\dfrac{V_2}{V_1})}|
     }
     
     \end{enumerate}
@@ -793,8 +917,8 @@ In general, you can follow these steps:
     \gray{
         In comparison, we cannot use any properties of ideal gas, i.e. 
         $\bcase{
-            U &= \frac{i}{2}PV = \frac{i}{2}NkT\\
-            P &= \frac{NkT}{V}
+            U &= \frac{i}{2}PV = \frac{i}{2}nRT\\
+            P &= \frac{nRT}{V}
         }$
     }
 
@@ -846,37 +970,47 @@ In general, you can follow these steps:
             }
         }
 
-        \item \ul{Adiabetic}\\
+        \item \ul{Adiabatic}\\
         By definition of the process, $\int \var{Q}$ is always $0$.
-        Then we can derive the adiabetic relation:
+        Then we can derive the adiabatic relation:
         \aleq{
             P\dd{V} &= -\dd{U}\\
             &= -\dd{(3PV)} = -3(P\dd{V}+V\dd{P})\\
             4P\dd{V} &= -3V\dd{P}\\
             \frac{4}{3} \int \frac{\dd{V}}{V} &= -\int\frac{\dd{P}}{P}\\
             \ln(V^{\frac{4}{3}}) &= -\ln P + (\text{constant})\\
-            PV^{\frac{4}{3}} &= (\text{constant})
+            \Acboxed[green]{
+                PV^{\frac{4}{3}} &= (\text{constant})
+            }
         }
-        The adiabetic constant for photon gas is $\gamma =\dfrac{4}{3} \neq \dfrac{C_V}{C_P}$, obviously.
+        The adiabatic constant for photon gas is $\gamma =\dfrac{4}{3} \neq \dfrac{C_V}{C_P}$, obviously.
 
     \end{enumerate}
 
 \end{example}
 
+\vskip 2em
 \begin{example}
 
     Carnot cycle by photon gas \\
 
-    By definitoin, a Carnot cycle is made of 4 processes:
+    By definition, a Carnot cycle is made of 4 processes:
 
-    \begin{enumerate}
-        \item Iso. T (expansion)
-        \item Adiabetic (expansion)
-        \item Iso. T (contraction)
-        \item Adiabetic (contraction)
-    \end{enumerate}
-
-    \insertFig{cycle of photon carnot}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \begin{enumerate}
+                \item Iso. T (expansion)
+                \item Adiabatic (expansion)
+                \item Iso. T (contraction)
+                \item Adiabatic (contraction)
+            \end{enumerate}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{photon}
+        \end{minipage}
+    \end{center}
 
     \begin{enumerate}
         \item Write down the relations of $P,V,T$ between initial/final states of each process.
@@ -888,22 +1022,22 @@ In general, you can follow these steps:
                     \\
                     \hline
                     \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
-                    & iso. P \& T
+                    & Iso. P \& T
                     & $P_1=P_2, T_1=T_2$
                     \\
                     \hline
                     \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
-                    & Adiabetic
+                    & Adiabatic
                     & $P_2V_2^\gamma=P_3V_3^\gamma$
                     \\
                     \hline
                     \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
-                    & iso. P \& T
+                    & Iso. P \& T
                     & $P_3=P_4, T_3=T_4$
                     \\
                     \hline
                     \cbox[blue]{4} $\rightarrow$ \cbox[blue]{1}
-                    & Adiabetic
+                    & Adiabatic
                     & $P_4V_4^\gamma=P_1V_1^\gamma$
                 \end{tabular}
             \end{minipage}
@@ -918,7 +1052,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
-            & iso. P \& T
+            & Iso. P \& T
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -931,7 +1065,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
-            & Adiabetic
+            & Adiabatic
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -944,7 +1078,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
-            & iso. P
+            & Iso. P
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -957,7 +1091,7 @@ In general, you can follow these steps:
             \\
             \hline
             \cbox[blue]{4} $\rightarrow$ \cbox[blue]{1}
-            & iso. V
+            & Iso. V
             & \makecell[l]{
                 \phantom{\scriptsize abc}\\
                 $\bcase{
@@ -987,11 +1121,11 @@ In general, you can follow these steps:
         }
     }
 
-    To simplify, we can use the adiabetic relation:
+    To simplify, we can use the adiabatic relation:
     \aleq{
         PV^{\frac{4}{3}} &= (\text{const.})\\
-        \inv{3}aT^4V^{\frac{4}{3}} &= (\text{const.})\\
-        T^3V &= (\text{const.})
+        \Rightarrow\ \inv{3}aT^4V^{\frac{4}{3}} &= (\text{const.})\\
+        \Rightarrow\qquad T^3V &= (\text{const.})
     }
 
     And the relations between state parameters that we derived in step 1:
