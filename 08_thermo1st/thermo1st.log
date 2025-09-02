@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  2 SEP 2025 05:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  2 SEP 2025 13:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -886,85 +886,85 @@ Package pdftex.def Info: img/PV.png  used on input line 205.
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 315.
+(hyperref)                removing `math shift' on input line 316.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 315.
+(hyperref)                removing `math shift' on input line 316.
 
 <img/isoV.png, id=88, 482.40225pt x 264.99pt>
 File: img/isoV.png Graphic file (type png)
 <use img/isoV.png>
-Package pdftex.def Info: img/isoV.png  used on input line 320.
+Package pdftex.def Info: img/isoV.png  used on input line 321.
 (pdftex.def)             Requested size: 146.78195pt x 80.62976pt.
 
 
 [5 <./img/isoV.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 382.
+(hyperref)                removing `math shift' on input line 383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 382.
+(hyperref)                removing `math shift' on input line 383.
 
 <img/isoP.png, id=96, 449.88075pt x 273.4215pt>
 File: img/isoP.png Graphic file (type png)
 <use img/isoP.png>
-Package pdftex.def Info: img/isoP.png  used on input line 387.
+Package pdftex.def Info: img/isoP.png  used on input line 388.
 (pdftex.def)             Requested size: 146.78195pt x 89.2072pt.
 
 
 [6 <./img/isoP.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 450.
+(hyperref)                removing `math shift' on input line 451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 450.
+(hyperref)                removing `math shift' on input line 451.
 
 <img/isoT.png, id=103, 440.24475pt x 275.22826pt>
 File: img/isoT.png Graphic file (type png)
 <use img/isoT.png>
-Package pdftex.def Info: img/isoT.png  used on input line 455.
+Package pdftex.def Info: img/isoT.png  used on input line 456.
 (pdftex.def)             Requested size: 146.78195pt x 91.76212pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--467
+Underfull \hbox (badness 10000) in paragraph at lines 465--468
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 501.
+(hyperref)                removing `math shift' on input line 502.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\var' on input line 501.
+(hyperref)                removing `\var' on input line 502.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 501.
+(hyperref)                removing `math shift' on input line 502.
 
 <img/adiabatic.png, id=104, 421.575pt x 274.02374pt>
 File: img/adiabatic.png Graphic file (type png)
 <use img/adiabatic.png>
-Package pdftex.def Info: img/adiabatic.png  used on input line 506.
+Package pdftex.def Info: img/adiabatic.png  used on input line 507.
 (pdftex.def)             Requested size: 146.78195pt x 95.40799pt.
 
 
 [7 <./img/isoT.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 536--540
+Underfull \hbox (badness 10000) in paragraph at lines 537--541
 
  []
 
 
-Overfull \hbox (1.62567pt too wide) in paragraph at lines 564--566
+Overfull \hbox (1.62567pt too wide) in paragraph at lines 565--567
 []\OT1/cmr/m/n/12 In gen-eral, adi-a-batic re-la-tion of com-mon ma-te-ri-als would have the form $[][]$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--566
+Underfull \hbox (badness 10000) in paragraph at lines 565--567
 
  []
 
@@ -976,12 +976,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 564--566
 <img/any_cycle.png, id=124, 380.01974pt x 211.38976pt>
 File: img/any_cycle.png Graphic file (type png)
 <use img/any_cycle.png>
-Package pdftex.def Info: img/any_cycle.png  used on input line 693.
+Package pdftex.def Info: img/any_cycle.png  used on input line 694.
 (pdftex.def)             Requested size: 97.85214pt x 54.43105pt.
 <img/rand_cycle.png, id=125, 500.46976pt x 321.6015pt>
 File: img/rand_cycle.png Graphic file (type png)
 <use img/rand_cycle.png>
-Package pdftex.def Info: img/rand_cycle.png  used on input line 729.
+Package pdftex.def Info: img/rand_cycle.png  used on input line 730.
 (pdftex.def)             Requested size: 146.78195pt x 94.322pt.
 
 
@@ -989,127 +989,127 @@ Package pdftex.def Info: img/rand_cycle.png  used on input line 729.
 
 [11]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 864.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 865.
 
 <img/engine.png, id=146, 383.031pt x 360.1455pt>
 File: img/engine.png Graphic file (type png)
 <use img/engine.png>
-Package pdftex.def Info: img/engine.png  used on input line 869.
+Package pdftex.def Info: img/engine.png  used on input line 870.
 (pdftex.def)             Requested size: 91.9773pt x 86.48064pt.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 883.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 884.
 
 <img/fridge.png, id=147, 384.2355pt x 362.5545pt>
 File: img/fridge.png Graphic file (type png)
 <use img/fridge.png>
-Package pdftex.def Info: img/fridge.png  used on input line 887.
+Package pdftex.def Info: img/fridge.png  used on input line 888.
 (pdftex.def)             Requested size: 91.9773pt x 86.7825pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 902--903
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
 
  []
 
 
 
 [12 <./img/engine.png> <./img/fridge.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 995--996
+Underfull \hbox (badness 10000) in paragraph at lines 996--997
 
  []
 
 <img/photon.png, id=156, 587.19376pt x 426.393pt>
 File: img/photon.png Graphic file (type png)
 <use img/photon.png>
-Package pdftex.def Info: img/photon.png  used on input line 1011.
+Package pdftex.def Info: img/photon.png  used on input line 1012.
 (pdftex.def)             Requested size: 146.78195pt x 106.58496pt.
 
 
@@ -1128,13 +1128,13 @@ Package rerunfilecheck Info: File `thermo1st.out' has not changed.
 Here is how much of TeX's memory you used:
  30234 strings out of 469747
  572468 string characters out of 5481688
- 960475 words of memory out of 5000000
+ 960476 words of memory out of 5000000
  58004 multiletter control sequences out of 15000+600000
  640236 words of font info for 90 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,34n,159p,595b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on thermo1st.pdf (15 pages, 418841 bytes).
+Output written on thermo1st.pdf (15 pages, 418889 bytes).
 PDF statistics:
  250 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
