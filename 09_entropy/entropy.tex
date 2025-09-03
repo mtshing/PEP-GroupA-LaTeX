@@ -48,57 +48,111 @@ In thermodynamics, a system is undergoing a "reversible" process only if
 The term "\bf{quasi-static}" literally describes the system as looking like static,
 but at the same time is also changing, 
 like in a "half-equilibium-half-transititioning" state.
-For example, we can look at the reality during the process of a gas compression.
+To understand why we need such definition,
+we can look at the reality during the process of a gas compression.
 
-\begin{enumerate}
-    \item \ul{Before Compression}, we can assume the gas being evenly distributed.
-    The particles' speeds are mostly the same everywhere in the container,
-    and so we can assign a well-defined single value as the pressure in the container.
+\vskip 1em
+\begin{minipage}{0.68\linewidth}
+    \begin{enumerate}
+        \item \ul{Before Compression}, 
+        gas particles are evenly distributed.
+        Particles' collisions are about the same everywhere in the container,
+        so we can assign \cul[red]{a single well-defined value} as the pressure in the container.
+    \end{enumerate}
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    \centering
+    \includegraphics[height=9em]{compress1}
+\end{minipage}
 
-    \insertFig{gas compress 1}
+\vskip 1em
+\begin{minipage}{0.68\linewidth}
+    \begin{enumerate}
+        \item[2.] \ul{Right at the beginning of the push}, 
+        only particles near the piston can feel the piston pushing. 
+        So region near the piston has a different pressure from region far away from the piston.
+        The pressure in the container becomes ambiguous.
+    \end{enumerate}
+\end{minipage}
+\hspace{0.01\textwidth}
+\begin{minipage}{0.3\linewidth}
+    \centering
+    \includegraphics[height=9em]{compress2}
+\end{minipage}
 
-    \item \ul{Right at the beginning of the push}, 
-    only the gas particles near the piston can feel the piston pushing. 
-    So region near the piston has a different pressure from region far away from the piston.
-    The pressure in the container becomes ambiguous.
+\begin{minipage}{0.68\linewidth}
+    \begin{enumerate}
+        \item[3.] \ul{When piston just comes to stop}, 
+        particles pushed by piston start to mix with the rest of the gas particles.
+        The pressure in the container is still ambiguous.
+    \end{enumerate}
+\end{minipage}
+\hspace{0.01\textwidth}
+\begin{minipage}{0.3\linewidth}
+    \centering
+    \includegraphics[height=9.5em]{compress3}
+\end{minipage}
 
-    \insertFig{gas compress 2}
+\vskip 1em
+\begin{minipage}{0.67\linewidth}
+    \begin{enumerate}
+        \item[4.] \ul{After some time},
+        particles become well-mixed and KE becomes evenly distributed.
+        We can again assign a single well-defined value as the pressure in the container.
+    \end{enumerate}
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    \centering
+    \includegraphics[height=9em]{compress4}
+\end{minipage}
 
-    \item \ul{When piston just comes to stop}, 
-    particles pushed by piston start to mix with the rest of the gas particles.
-    The pressure in the container is still ambiguous.
+\vskip 2em
+Now comes the problem: 
+we cannot use a single value to represent the pressure during the compression. 
+Is it really correct to represent a process with a single line in the PV diagram,
+as we did in the last note?
 
-    \insertFig{gas compress 3}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{PV_inf4}
+    \end{minipage}
+    {\Large $\qquad=\qquad$}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{PV_inf3}
+    \end{minipage}
+    {\huge ?}
+\end{center}
 
-    \item \ul{After some time},
-    the particles become well-mixed and kinetic energy becomes even distributed among particles.
-    We can again assign a well-defined single value as the pressure in the container.
-
-    \insertFig{gas compress 4}
-
-\end{enumerate}
-
-So now comes the question: 
-we found that we cannot use a single value to represent the pressure during the compression. 
-Is it really correct to represent a process with a single line in the PV diagram?
-
-\insertFig{ambiguous PV}
-
-In reality, this is indeed \cul[red]{incorrect}.
-But in order to use the derived results (those we have seen in the last note),
-physicists theorize the process to be "infinitestimal" in order to apply them in thermodynamics:
+\vskip 1em
+In reality, \red{this is indeed incorrect}.
+But in order to use the derived results,
+physicists theorize the process to be "infinitestimal":
 \begin{itemize}
     \item The piston is moving extremely slow,
     only compress a very tiny volume at each step.
     
     \item Time allowed for the gas to fully mix is extremely long. 
-    So we can assure the KE are even distributed. 
+    So we can assure the pressure have enough time to distribute evenly. 
 \end{itemize}
 
-Then such step is repeated for many many times, 
-we can "approximate" the state parameters to be well-defined and changing continuously along the process.
+When such step is repeated for many many times, 
+we can "approximate" the state parameters to be well-defined and changing continuously along the process,
+by having many intermediate states in between.
 
-\insertFig{doted to continuous}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{PV_inf1}
+    \end{minipage}
+    {\Large $\qquad \approx \qquad$}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{PV_inf2}
+    \end{minipage}
+\end{center}
+
 
 Such process is called "Quasi-Static" process:
 \aleq{
@@ -117,7 +171,31 @@ Such process is called "Quasi-Static" process:
 
 Quasi-static processes are the ideal processes in thermodynamics because they are \cul[red]{reversible}.
 
-\insertFig{quasi static reversible}
+\begin{center}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \hspace{2em}\includegraphics[height=5.5em]{quasi1}
+        {\scriptsize \phantom{abc}\\[-1ex]\phantom{abc}}
+    \end{minipage}
+    \quad\  $\mstack{\Rightarrow\\\phantom{a}}$\quad 
+    \begin{minipage}{0.23\linewidth}
+        \centering
+        \hspace{3em}\includegraphics[height=5.5em]{quasi2}\\
+        {\scriptsize A small push only affects\\[-1ex]very few particles}
+    \end{minipage}
+    $\mstack{\Rightarrow\\\phantom{a}}$
+    \begin{minipage}{0.23\linewidth}
+        \centering
+        \hspace{2em}\includegraphics[height=5.5em]{quasi3}\\
+        {\scriptsize The particles counter\\[-1ex]strike the piston}
+    \end{minipage}
+    $\mstack{\Rightarrow\\\phantom{a}}$\quad\quad
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \hspace{2em}\includegraphics[height=5.5em]{quasi1}\\
+        {\scriptsize Restore\\[-1ex]\phantom{abc}}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%
@@ -130,10 +208,7 @@ However, quasi-static process is impractical because
 \end{itemize}
 
 \red{All thermodynamics processes, when carried out in reality, are irreversible.}
-The lines in the P-V diagram shall not be as well-defined as we have seen, 
-
-\insertFig{ideal PV cycle vs reality PV cycle}
-
+The lines in the P-V diagram shall not be as well-defined as we have seen.
 Adapting this reality to what we have learnt in the last note,
 \begin{enumerate}
     \item Formula to $\var{W}$ and $\var{Q}$ are only for the ideal reversible case. 
@@ -153,21 +228,24 @@ Adapting this reality to what we have learnt in the last note,
     
 \end{enumerate}
 
+\begin{notation}[Side Note:]
+    Irreversibility only happens in the thermodynamics pespective.\\
 
-\bf{\ul{Note}}: Such irreversibility only happens in thermodynamics system.
-In the mechanical perspective, 
-the state parameters are positions and velocities of the particles $(x_i, v_i)$.
-If we can compute
-the equation motion of the particles,
-we can predict when the particles return to their initial positions and velocities. 
-So every process is reversible as long as energy is conserved.\\
+    In mechanical perspective, 
+    state parameters are positions and velocities of the particles $(x_i, v_i)$
+    which are continuous and well-defined all the time
+    because they can be predicted by Newton's \nth{2} law.
+    We can tell when the system will return to its original state.\\
 
-In the next note, we shall discuss more the differences between mechanical and thermodynamics perspectives,
-and how do these lead to irreversibility of a system.
+    In the next note, we shall discuss the differences between mechanical and thermodynamics perspectives,
+    and how do these lead to irreversibility of a system.
+\end{notation}
 
 
 
 \linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Historical Development of Thermodynamics \nth{2} Law}
 
 The following sections present several important discoveries within the early period of thermodynamics researches.
 \begin{itemize}
@@ -180,17 +258,13 @@ The following sections present several important discoveries within the early pe
 The era of classical thermodynamics ended around 1860s, 
 when \it{statistical mechanics} started taking place. 
 
-\linesep
-% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Historical Development of Thermodynamics \nth{2} Law}
-
 %%%%%%%%%%%%%%
 \subsection{Carnot's Engine \& Carnot's Theorem}
 
 \href{https://en.wikipedia.org/wiki/Nicolas_L\%C3\%A9onard_Sadi_Carnot}{Nicolas Léonard Sadi Carnot}
 was the first person who suggested the concepts of \bf{heat engine}:
 \begin{itemize}
-    \item one can extract energy for our use, via the process when heat flow from hot object to cold object.
+    \item One can extract energy for our use, via the process when heat flow from hot object to cold object.
     It is just like we can extract KE from objects that fall from a high place to low place.
 
     \item A heat engine is a operator that runs \cul[red]{cyclic} processes which can extract energy to do work, 
@@ -200,7 +274,7 @@ was the first person who suggested the concepts of \bf{heat engine}:
     a heat engine can run a cycle of processes indefinitely. 
 \end{itemize}
 
-\insertFig{first carnot engine = piston transfer back and forth}
+
 
 He also proposed one of the foundation in thermodynamics: \bf{Carnot's theorem}.
 \quoting{
@@ -208,37 +282,55 @@ He also proposed one of the foundation in thermodynamics: \bf{Carnot's theorem}.
     the engine that runs reversible processes is the most efficient in converting heat to work done.
 }
 
-The reversible engine that he proposed was the Carnot cycle, 
-which gives the theoretical maximum of engine efficiency.
-Any other engines that run reversible cycles would also have the same maximum efficiency.
+The reversible engine that he proposed was the Carnot engine, 
+which \bf{limits the theoretical maximum of engine efficiency for any engines that operate between two fixed temperatures}.
+Any other engines that run reversible cycles would also have the same efficiency.
 
-\insertFig{Carnot cycle}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{carnot_piston}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        This is the original proposal of Carnot engine.
+    \end{minipage}
+\end{center}
 
-\begin{tabular}{>{\centering\arraybackslash}m{3cm} >{\centering\arraybackslash}m{3cm}}
-    & Process
-    \\
-    \hline
-    \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
-    & iso. T
-    \\
-    \hline
-    \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
-    & Adiabetic
-    \\
-    \hline
-    \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
-    & iso. T
-    \\
-    \hline
-    \cbox[blue]{4} $\rightarrow$ \cbox[blue]{1}
-    & Adiabetic
-\end{tabular}
-
-
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \begin{tabular}{>{\centering\arraybackslash}m{3cm} >{\centering\arraybackslash}m{3cm}}
+            & Process
+            \\
+            \hline
+            \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
+            & Iso. T
+            \\
+            \hline
+            \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
+            & Adiabetic
+            \\
+            \hline
+            \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4}
+            & Iso. T
+            \\
+            \hline
+            \cbox[blue]{4} $\rightarrow$ \cbox[blue]{1}
+            & Adiabetic
+        \end{tabular}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{carnot_cycle}
+    \end{minipage}
+\end{center}
 
 Unfortunately, Carnot did not prove his theorem correctly - 
 his arguments were based on thermal \nth{1} law and involved circular reasoning. 
-Carnot passed away in 1832 and did not live long enough to see his work being recognized. 
+He passed away in 1832 and did not live long enough to see his work being recognized.\\
+
 It was until around 1850s, 
 scientists realized that Carnot's theorem shall not be proven by \nth{1} law.
 It must be described as an independent law - the thermodynamics \nth{2} law.
@@ -279,44 +371,105 @@ We can prove that they are logically equivalent to Carnot's theorem by contradic
     Suppose Clausius' statement is wrong - 
     \it{there exists an engine that can convert 100\% of a heat flow to W.D.}
 
-    \insertFig{wrong cla}
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{clausius1}
+        \end{minipage}
+    \end{center}
 
     Then we can operate it together with a refridgerator that runs Carnot cycle:
 
-    \insertFig{cla to kel}
+    \begin{center}
+        \begin{minipage}{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{clausius2}
+        \end{minipage}
+    \end{center}
 
     By energy conservation, we have
     \aleq{
-        Q'_1 = Q'_2 + W = Q_2 + Q_1 > Q_1
+        Q'_\text{in} = Q'_\text{out} + \text{W.D.} = Q'_\text{out} + Q_\text{in} > Q_\text{in}
     }
 
-    which is equivalent to a cycle with net heat flow of $Q'_2$ from colder reservoir to hotter reservoir,
+    which is equivalent to a cycle with net heat flow of $Q'_\text{out}$ from colder reservoir to hotter reservoir,
     without any external W.D. supply. 
     \it{This is a contradiction to Kelvin's statement}.
 
-    \insertFig{cla logic wrong}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[height=9em]{clausius3}
+        \end{minipage}
+        \qquad{\huge$\equiv$}\qquad
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=9em]{clausius4}
+        \end{minipage}
+    \end{center}
 
-    
+
+    \vskip 1em
     \item \ul{Kelvin fails $\Rightarrow$ Clausius fails}\\
     Suppose Kelvin's statement is wrong -
     \it{heat can flow from a colder reservoir to a hotter reservoir without needing any external W.D.}
 
-    \insertFig{wrong kel}
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{kelvin1}
+        \end{minipage}
+    \end{center}
 
     Then we can operate it together with an engine that runs Carnot cycle:
 
-    \insertFig{kel to cla}
+    \begin{center}
+        \begin{minipage}{0.5\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{kelvin2}
+        \end{minipage}
+    \end{center}
 
-    If we maintain the heat flow out of colder reservoir ($Q$) equal to the heat flow into the colder reservoir ($Q_2$),
-    such that $T_2$ is kept constant, by energy conservation we writes
+    We can maintain the heat flow out of colder reservoir ($Q$) to equal to the heat flow into the colder reservoir ($Q'_\text{out}$),
+    such that temperature of cold reservoir is kept constant. 
+    By energy conservation we writes
     \aleq{
-        Q = Q_2 = Q_1 - W
+        Q = Q'_\text{out} = Q'_\text{in} - \text{W.D.}
     }
 
     which is equivalent to having 100\% of the heat extracted from hot reservoir to be converted into W.D..
     \it{This is a contradiction to Clausius' statement}.
 
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[height=9em]{kelvin3}
+        \end{minipage}
+        \qquad{\huge$\equiv$}\qquad
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=9em]{kelvin4}
+        \end{minipage}
+    \end{center}
 
+
+    \vskip 1em
+    \item \ul{Clausius fails $\Rightarrow$ Carnot fails}\\
+    This is automatically proven, since Clausius's statement failing means that 
+    there exists an engine of 100\% efficiency,
+    contradicted to the maximum limit of Carnot engine.
+
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{clausius1}
+        \end{minipage}
+        \qquad$\Rightarrow$\qquad
+        Efficiency $= \dfrac{\text{W.D.}}{Q_\text{in}} = 100\%$ 
+    \end{center}
+
+
+    \vskip 1em
     \item \ul{Carnot fails $\Rightarrow$ Kelvin fails}\\
     Suppose Carnot's theorem is wrong - 
     \it{there is a hypothetical engine that runs irreversible process but has a higher efficiency than a Carnot engine}.
@@ -328,11 +481,28 @@ We can prove that they are logically equivalent to Carnot's theorem by contradic
 
     Then we can operate it together with a Carnot refridgerator.
 
-    \insertFig{Car to Cal}
+    \begin{center}
+        \begin{minipage}{0.8\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{carnot_clausius}
+        \end{minipage}
+    \end{center}
 
     If we look at the net heat flow into the hot reservoir,
+    \begin{enumerate}
+        \item[1.] Heat $Q_\text{in}$ is input into the irreversible engine of efficiency $\eta_1$.
+        So amount of heat converted to W.D. $=\eta_1Q_\text{in}$.
+
+        \item[2.] Reversible engine of efficinency $\eta_2$ can be reverted into a refridgerator of COP $=\qty(\frac{1-\eta_2}{\eta_2})$.
+        Amount of heat removed from cold reservoir $=\text{W.D.}\times \text{COP} = \eta_1Q_\text{in}\qty(\frac{1-\eta_2}{\eta_2})$.
+
+        \item[3.] Total heat returning to hot reservoir $= \eta_1Q_\text{in} + \eta_1Q_\text{in}\qty(\frac{1-\eta_2}{\eta_2}) = \frac{\eta_1}{\eta_2} Q_\text{in}$.
+        
+    \end{enumerate}
+    Observing that 
     \aleq{
-        \frac{\eta_1}{\eta_2}Q - Q >0  \quad\text{ if }\quad{\eta_1>\eta_2}
+        \qty(\mstack{\text{Heat flow into}\\\text{hot reservoir}}) - \qty(\mstack{\text{Heat flow out of}\\\text{hot reservoir}})
+        \ =\ \frac{\eta_1}{\eta_2}Q_\text{in} - Q_\text{in} >0  \quad\text{ if }\quad{\eta_1>\eta_2}
     }
 
     which is equivalent to having heat flowing from cold reservoir to hot reservoir spontaneously.
@@ -353,19 +523,22 @@ We can prove that they are logically equivalent to Carnot's theorem by contradic
 
 \subsection{Temperature Measurement Before \nth{19} Century}
 
-Some oldest temperature scales were defined using expansion/contraction of material under heat.
-For example, the Celsius scale was defined by the change in length of mercury/alcohol in a thin glass tube,
-using water's freezing and boiling as reference points and divide the expansion into 100 grids.
-
-\insertFig{Celsius thermometer}
+The oldest temperature scales were defined using interpolation between two reference points.
+For example, the Celsius scale was defined by the expansion in length of mercury/alcohol in a thin glass tube,
+using water's freezing and boiling as reference points and divide into 100 grids.\\
 
 Meanwhile, thermodynamics properties of ideal gas were already well-investigated through experiments.
 For example, scientists already knew that the P-T relation is linear,
 i.e. it can be plotted as a straight line.
 
-\insertFig{PT graph}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{temp_inter}
+    \end{minipage}
+\end{center}
 
-However, data were limited by the freezing point of material being used to measure temperature.
+However, data were limited by the freezing point of material in the thermometer.
 Without experimental support, it was impossible to tell if there were new physics beyond $-273.15^\circ$C.
 
 
@@ -373,13 +546,13 @@ Without experimental support, it was impossible to tell if there were new physic
 \subsection{Thermodynamics Temperature Scale}
 
 The Kelvin temperature scale is not just naively shifting the $0$ point from $0^\circ$C to $-273.15^\circ$C,
-but is a derived scale based on the efficiency of Carnot engine.
+but is a theoretical scale based on the efficiency of Carnot engine.
 \aleq{
     \eta &= 1 - \frac{Q_C}{Q_H}
     = 1 - \frac{\text{Heat input to colder reservoir}}{\text{Heat output from hotter reservoir}}\\[1em]
     &\sim 1- \frac{T_C}{T_H}
-    = 1 - \frac{\text{How hot is the colder reservoir}}{\text{How hot is the hotter reservoir}}\\[1em]
-    &=\qty(\mstack{\text{Some function of "Relative hottness"}\\[0.5ex]\text{between hotter and colder reservoir}})
+    = 1 - \frac{\text{How cold is the colder reservoir}}{\text{How hot is the hotter reservoir}}\\[1em]
+    &=\qty(\mstack{\text{Some function of "\bf{\red{Relative hottness}}"}\\[0.5ex]\text{between hotter and colder reservoir}})
     %&= f\qty(\mstack{\text{Some function of}\\\text{how hot the hotter reservoir}\\\text{is relative to}\\\text{the colder reservoir}})
 }
 
@@ -388,30 +561,36 @@ the engine efficiency is purely determined by how hot the hotter reservoir relat
 If we can measure the engine efficiency, 
 we can create a scale of hottness between reservoirs.
 
-\insertFig{
-    same cold reservoir -> run with hot reservoir 1 gives eta1,
-    run with hot reservoir 1 gives eta2
-    -> res1 is hotter than res2 if eta1>eta2
-}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{temp_eff}
+    \end{minipage}
+\end{center}
 
 
-Let's say the hottness/coldness of 2 heat reservoirs $H$ and $C$ are measured using some scale $\theta$,
-assigned with a "relative hottness" of $\theta_H$ and $\theta_C$ respectively.
+Suppose we measure the "hottness" of 2 heat reservoirs $H$ and $C$ \cul[red]{using a new scale $\theta$}.
+Quantify their "hottness" to be some numbers $\theta_H$ and $\theta_C$ respectively.
+
+\vskip 1em
+\begin{minipage}{0.6\linewidth}
+    \begin{enumerate}
+        \item Operate a Carnot engine between the two reservoirs.
+        Let the efficiency to be some function of $\theta_H$ and $\theta_C$.
+        \aleq{
+            \eta = 1-\frac{Q_C}{Q_H} = 1- f(\theta_C, \theta_H)
+        }
+    \end{enumerate}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.3\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{temp_engine1}
+\end{minipage}
+
+\vskip 1.5em
 \begin{enumerate}
-    \item Operate a Carnot engine between the two reservoirs.
-    Let the efficiency be written as a function of $\theta_H$ and $\theta_C$.
-    \aleq{
-        \eta = 1-\frac{Q_C}{Q_H} = 1- f(\theta_C, \theta_H)
-    }
-
-    \insertFig{carnot engine}
-
-    \item We can insert a warm reservoir $W$ in between them,
-    whose relative hottness is in between. i.e. $\theta_H > \theta_W > \theta_C$.
-
-    \insertFig{middle engine}
-
-    \item We also have these mathematical relations:
+    \item[2.] Observe that $f$ needs to satisfy these mathematical relations:
     \begin{itemize}
         \item $\dfrac{Q_C}{Q_H} = \dfrac{Q_C}{Q_W}\cdot \dfrac{Q_W}{Q_H} 
             \quad\Rightarrow\quad f(\theta_C,\theta_H) = f(\theta_C, \theta_W)\cdot f(\theta_W, \theta_H)$
@@ -421,8 +600,10 @@ assigned with a "relative hottness" of $\theta_H$ and $\theta_C$ respectively.
             \quad\Rightarrow\quad f(\theta_C, \theta_H) = \dinv{f(\theta_H, \theta_C)}$
     \end{itemize}
 
-    \item What kinds of function $f(\cdot,\cdot)$ satisfy these relations?
-    There are infinitely many choices, for example,
+    \newpage
+    \item[3.] What kinds of function $f(\cdot,\cdot)$ satisfy these relations?
+    Although we may naively take $f(\theta_C,\theta_H) = \frac{\theta_C}{\theta_H}$,
+    there are in fact infinitely many choices. For example,
 
     \begin{itemize}
         \item Taking $f(\theta_C,\theta_H) = \dfrac{\theta_C}{\theta_H}$, then
@@ -432,11 +613,16 @@ assigned with a "relative hottness" of $\theta_H$ and $\theta_C$ respectively.
         An engine working between reservoirs with "hottness" 1 and 10 yield the same efficiency
         as working between reservoirs with "hottness" 10 and 100.
 
-        \insertFig{exp scale}
+        \begin{center}
+            \begin{minipage}{0.5\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{temp_scale_log}
+            \end{minipage}
+        \end{center}
 
         \ul{This scale of hottness is a logarithmic scale relative to efficiency}.
 
-        \vskip 1em
+        \vskip 2em
         \item Taking $f(\theta_C,\theta_H) = e^{\theta_C - \theta_H}$, then
         \aleq{
             f(0,10) = e^{10-0} = e^{20-10} = f(10,20)
@@ -444,16 +630,20 @@ assigned with a "relative hottness" of $\theta_H$ and $\theta_C$ respectively.
         An engine working between reservoirs with "hottness" 0 and 10 yield the same efficiency
         as working between reservoirs with "hottness" 10 and 20.
 
-        \insertFig{linear scale}
+        \begin{center}
+            \begin{minipage}{0.5\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{temp_scale_lin}
+            \end{minipage}
+        \end{center}
 
         \ul{This scale of hottness is a linear scale relative to efficiency}.
 
     \end{itemize}
 
-
-    \item Finally, which scale was chosen in history? 
-    Because the Celcius scale already existed at that time
-    and was in used in thermodynamics experiment and theories, 
+    \vskip 1em
+    \item[4.] Because the Celcius scale already existed at that time
+    and was widely used in thermodynamics experiment and theories, 
     such as deriving the efficiency of Carnot engine,
     \aleq{
         \mstack{\text{Carnot engine's}\\\text{efficiency}} = 1-\frac{T_L+273.15}{T_H+273.15}
@@ -478,25 +668,34 @@ Through the Kelvin scale,
 we can relate temperature with engine efficiency to explain why the \red{absolute zero temperature cannot be reached}. 
 Consider a Carnot engine working between two reservoirs,
 with the colder side at absolute zero ($\theta=0$).
-Then the efficiency of this engine becomes
-\aleq{
-    \eta = 1 - \frac{0}{\theta_H} = 1
-}
+Then the efficiency of this engine is
 
-\insertFig{abs 0 carnot}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \aleq{
+            \eta = 1 - \frac{0}{\theta_H} = 1
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{temp_0K}
+    \end{minipage}
+\end{center}
 
-This is equivalent to having heat 100\% converted into work done,
+100\% of the heat is converted into work done,
 which is a violation to the Clausius statement.\\
 
 In addition, if we choose a different temperature scale 
 \begin{itemize}
     \item Choose $f(\theta_C,\theta_H) = \dfrac{\theta_C}{\theta_H}$ \quad$\Rightarrow$\quad 
-    the point of $100\%$ efficiency corresponds to $\theta_C=0$.
+    The point of $100\%$ efficiency corresponds to $\theta_C=0$.
 
     \item Choose $f(\theta_C,\theta_H) = e^{\theta_C - \theta_H}$ \quad$\Rightarrow$\quad 
-    the point of $100\%$ efficiency corresponds to $\theta_C=-\infty$.
+    The point of $100\%$ efficiency corresponds to $\theta_C=-\infty$.
 \end{itemize}
 
+\vskip 1ex
 So you may also claim that negative temperature is not physical because of our choice of scale. 
 
 
@@ -530,7 +729,7 @@ we can derive the formula of $\dd{S}$ for the 4 common thermodynamics processes.
             $\begin{aligned}
                 &= \cbox[red]{\int \frac{\dd{U}}{T} + 0}\\
                 &= \cbox[red]{\int \frac{C_V}{T} \dd{T}} \\
-                &= \cbox[blue]{\cub[blue]{\frac{i}{2}Nk}{C_V}\ln\qty(\frac{T_2}{T_1})}
+                &= \cbox[blue]{\cub[blue]{\frac{i}{2}nR}{C_V}\ln\qty(\frac{T_2}{T_1})}
             \end{aligned}$\\
             \phantom{\scriptsize abc}
         }
@@ -540,7 +739,7 @@ we can derive the formula of $\dd{S}$ for the 4 common thermodynamics processes.
             $\begin{aligned}
                 &= \cbox[red]{\int \frac{\dd{U}}{T} + \int \frac{\var{W}}{T}}\\
                 &= \cbox[red]{\int \frac{C_P}{T} \dd{T}} \\
-                &= \cbox[blue]{\cub[blue]{\frac{i+2}{2}Nk}{C_P}\ln\qty(\frac{T_2}{T_1})}
+                &= \cbox[blue]{\cub[blue]{\frac{i+2}{2}nR}{C_P}\ln\qty(\frac{T_2}{T_1})}
             \end{aligned}$\\
             \phantom{\scriptsize abc}\\
         }
@@ -548,7 +747,7 @@ we can derive the formula of $\dd{S}$ for the 4 common thermodynamics processes.
         $\begin{aligned}
             &= \cbox[red]{\int \frac{\dd{U}}{T} + \int \frac{\var{W}}{T}}\\
             &= \cbox[red]{\inv{T}\qty(\int \dd{U} + \int\var{W})}\\
-            &= \cbox[blue]{Nk\ln\qty(\frac{V_2}{V_1})}
+            &= \cbox[blue]{nR\ln\qty(\frac{V_2}{V_1})}
         \end{aligned}$
         &
         $0$
@@ -594,17 +793,23 @@ we can show that $S$ is indeed a state function by computing its line integral a
             + \ccancelto[blue]{0}{\int_\text{Adiabetic 2} \frac{\dd{Q}_\green{\text{in}}}{T}}
     }
 
-    \insertFig{Carnot cycle}
+    \begin{center}
+        \begin{minipage}{0.35\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{carnot_cycle_Q}
+        \end{minipage}
+    \end{center}
 
     Denote the heat exchange:
     \begin{itemize}
         \item Along \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2} : $Q_{H,\text{in}}$
-        = the amount of heat flow into the engine in one cycle.
+        = The amount of heat flow into the engine in one cycle.
         
         \item Along \cbox[blue]{3} $\rightarrow$ \cbox[blue]{4} : $Q_{L,\text{out}}$
-        = the amount of heat flow out of the engine in one cycle.
+        = The amount of heat flow out of the engine in one cycle.
     \end{itemize}
 
+    \vskip 1ex
     The efficiency formula of Carnot engine tells that 
     \aleq{
         \eta = 1 - \frac{Q_{L,\text{out}}}{Q_{H,\text{in}}} &= 1 - \frac{T_L}{T_H}\\[1ex]
@@ -627,15 +832,44 @@ we can show that $S$ is indeed a state function by computing its line integral a
 
 
 
-    \item Second we show that any arbituary cycle can be cut into many Carnot cycle.
+    \item Second we show that any arbituary cycle can be approximated and cut into many Carnot cycle.
     
-    \insertFig{cut arbituary cycle}
+    \begin{center}
+        \begin{minipage}{0.28\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{carnot_overlay1}
+        \end{minipage}
+        $\xRightarrow{\text{overlay}}$
+        \begin{minipage}{0.28\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{carnot_overlay2}
+        \end{minipage}
+        $\xRightarrow{\phantom{\text{over}}}$
+        \begin{minipage}{0.28\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{carnot_overlay3}
+        \end{minipage}\\[1em]
+        (\blue{Blue = Adiabatic lines}, \red{Red = Isothermal lines})
+    \end{center}
 
     By the property of line integral,
     integrating along the same path but in opposite direction yields negative of the original value,
     just like $\int_a^b f \dd{x} = -\int_b^a f \dd{x}$.
 
-    \insertFig{loop cancel}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.75\textwidth]{loop1}\\
+            $\displaystyle \oint_\blue{\substack{\text{Blue}\\\text{loop}}} f\dd{\vvec{r}} 
+                + \oint_\red{\substack{\text{Red}\\\text{loop}}} f\dd{\vvec{r}}$
+        \end{minipage}
+        \qquad{\huge $=$}\qquad
+        \begin{minipage}{0.38\linewidth}
+            \centering
+            \includegraphics[width=0.75\textwidth]{loop2}\\
+            $\displaystyle \oint_{\substack{\text{Black}\\\text{loop}}} f\dd{\vvec{r}}$
+        \end{minipage}
+    \end{center}
 
     So we can conclude that $S$ is a state function.
     \aleq{
@@ -649,15 +883,23 @@ we can show that $S$ is indeed a state function by computing its line integral a
 
 \end{enumerate}
 
+\newpage
 \begin{example}
-    Consider a simple cycle of ideal gas that only involves 3 states 
-    \begin{enumerate}
-        \item Iso. P (expansion)
-        \item Iso. V
-        \item Iso. T (contraction)
-    \end{enumerate}
-
-    \insertFig{cycle of 3 process}
+    Consider a simple cycle of ideal gas that only involves 3 states and 3 processes: 
+    \begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \begin{enumerate}
+            \item Iso. P (expansion)
+            \item Iso. V
+            \item Iso. T (contraction)
+        \end{enumerate}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rand_cycle}
+    \end{minipage}
+    \end{center}
 
     We can demonstrate that the entropy change after one cycle is indeed $0$.
     First write down the relations of $P,V,T$ between initial/final states of each process:
@@ -693,19 +935,19 @@ we can show that $S$ is indeed a state function by computing its line integral a
             \hline\\[-3ex]
             \cbox[blue]{1} $\rightarrow$ \cbox[blue]{2}
             & Iso. P
-            & $\dfrac{i+2}{2}Nk\ln\qty(\dfrac{T_2}{T_1}) \quad \red{> 0}$
+            & $\dfrac{i+2}{2}nR\ln\qty(\dfrac{T_2}{T_1}) \quad \red{> 0}$
             %
             \\[2ex]
             \hline\\[-1ex]
             \cbox[blue]{2} $\rightarrow$ \cbox[blue]{3}
             & Iso. V
-            & $\dfrac{i}{2}Nk\ln\qty(\dfrac{T_3}{T_2}) \quad \red{< 0}$
+            & $\dfrac{i}{2}nR\ln\qty(\dfrac{T_3}{T_2}) \quad \red{< 0}$
             %
             \\[2ex]
             \hline\\[-1ex]
             \cbox[blue]{3} $\rightarrow$ \cbox[blue]{1}
             & Iso. T
-            & $Nk\ln\qty(\dfrac{V_1}{V_3}) \quad \red{< 0}$
+            & $nR\ln\qty(\dfrac{V_1}{V_3}) \quad \red{< 0}$
             %
         \end{tabular}
     \end{center}
@@ -714,19 +956,20 @@ we can show that $S$ is indeed a state function by computing its line integral a
     Using the state parameters relation and ideal gas property $P_1 = P_2 \Rightarrow \dfrac{T_1}{T_2} = \dfrac{V_1}{V_2}$, 
     \aleq{
         \Delta S &= 
-        \dfrac{i+2}{2}Nk\ln\qty(\dfrac{T_2}{T_1}) + \dfrac{i}{2}Nk\ln\qty(\dfrac{T_3}{T_2}) + Nk\ln\qty(\dfrac{V_1}{V_3}) \\[1ex]
+        \dfrac{i+2}{2}nR\ln\qty(\dfrac{T_2}{T_1}) + \dfrac{i}{2}nR\ln\qty(\dfrac{T_3}{T_2}) + nR\ln\qty(\dfrac{V_1}{V_3}) \\[1ex]
         %
-        &= \dfrac{i+2}{2}Nk\ln\qty(\dfrac{T_2}{T_1}) + \dfrac{i}{2}Nk\ln\qty(\dfrac{\red{T_1}}{T_2}) + Nk\ln\qty(\dfrac{V_1}{\red{V_2}}) \\[1ex]
+        &= \dfrac{i+2}{2}nR\ln\qty(\dfrac{T_2}{T_1}) + \dfrac{i}{2}nR\ln\qty(\dfrac{\red{T_1}}{T_2}) + nR\ln\qty(\dfrac{V_1}{\red{V_2}}) \\[1ex]
         %
-        &= \dfrac{i+2}{2}Nk\ln\qty(\dfrac{T_2}{T_1}) + \dfrac{i}{2}Nk\ln\qty(\dfrac{T_1}{T_2}) + Nk\ln\qty(\blue{\dfrac{T_1}{T_2}}) \\[1ex]
+        &= \dfrac{i+2}{2}nR\ln\qty(\dfrac{T_2}{T_1}) + \dfrac{i}{2}nR\ln\qty(\dfrac{T_1}{T_2}) + nR\ln\qty(\blue{\dfrac{T_1}{T_2}}) \\[1ex]
         %
         &= 0
     }
 
+    As entropy is a state function, it is guarenteed to be the same after any \cul[red]{cycle of reversible processes}.
 \end{example}
 
 
-
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Clausius Theorem}
 
@@ -766,6 +1009,7 @@ thermal interactions (i.e. heat exchange) between two objects occurs only if the
 \end{enumerate}
 
 Combining the two conditions, 
+\vskip -1em
 \aleq{
     \frac{Q_{H,\text{out}}}{T_H} 
     &< 
@@ -788,31 +1032,46 @@ heat flow from hot objects to cold objects are not reversible unless work done i
 To reduce the change in entropy, 
 we can connect the two objects by a Carnot engine,
 splitting the heat transfer process into two steps:
-\begin{enumerate}
-    \item Heat flow from hot object to engine.
-    Because $Q'_{H,\text{out}} = Q'_{E,\text{in}}$ and it requires $T_H > T_{E,H}$ for heat transfer to occur,
+
+\vskip 1em
+\begin{minipage}{0.7\linewidth}
+    \begin{enumerate}
+    \item \ul{Heat flow from hot object to engine} : 
+    Because $Q'_{H,\text{out}} = Q'_{E,\text{in}}$\\ 
+    and it requires $T_H > T_{E,H}$ for heat transfer to occur,
     \aleq{
         \frac{Q'_{H,\text{out}}}{T_H} 
         < 
         \frac{Q'_{E,\text{in}}}{T_{E,H}}
     }
-
-    \insertFig{hot res to engine}
-
-    \item Heat flow from engine to cold object.
+    \end{enumerate}
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}{0.2\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{engine_res1}
+\end{minipage}
+\\[1em]
+\begin{minipage}{0.7\linewidth}
+    \begin{enumerate}
+    \item[2.] Heat flow from engine to cold object.
     Because $Q'_{E,\text{out}} = Q'_{C,\text{in}}$ and it requires $T_{E,C} > T_C$ for heat transfer to occur,
     \aleq{
         \frac{Q'_{E,\text{out}}}{T_{E,C}}
         < 
         \frac{Q'_{C,\text{in}}}{T_C} 
     }
+    \end{enumerate}
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}{0.2\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{engine_res2}
+\end{minipage}
 
-    \insertFig{engine to cold res}
-
-\end{enumerate}
-
+\vskip 2em
 The total entropy change is still $>0$,
-but it would be smaller than that when engine does not exist:
+but it is smaller than that when engine does not exist:
 \aleq{
     0<
     %
@@ -829,7 +1088,20 @@ Because the engine converts part of the heat transfer into W.D.,
 this W.D. can be "saved up" and used to revert the heat flow later. 
 The system is "less irreversible".
 
-\insertFig{heat transfer no engine vs has engine}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=8em]{engine_res3}\\
+        Without engine,\\ heat flow irreversibly.
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[height=8em]{engine_res4}\\
+        With engine, W.D. can be saved up\\
+        to reverse heat flow.
+    \end{minipage}
+\end{center}
 
 Ideally, if
 \begin{itemize}
@@ -838,22 +1110,22 @@ Ideally, if
 \end{itemize}
 
 then the total $\Delta S=0$ and the work done extracted by the engine can be used to invert the heat flow completely.
-Only then we can say the system is reversible.\\
+Only then we can say the system is reversible.
 
 
 
 \vskip 2em
 \begin{example}
     Water can enter a supercool phase under certain condition.
-    In this phase, the water is below $0^\circ$C but remains in liquid state.
+    In this phase, the water is below $0^\circ$C under atmospheric pressure, 
+    but remains in liquid state. 
+    This state is "meta-stable" - if the water received a shock, 
+    the water will freeze into ice spontaneously.\\
     
-    \insertFig{supercool water?}
-
-    Supercooled water can exist in atmospheric pressure but it is "quasi-stable".
-    If received a shock, 
-    the water will freeze into ice spontaneously.
-    We can demonstrate that this freezing process is an irreversible process
-    by computing the the entropy change.\\
+    You can watch a video demonstration \href{https://www.youtube.com/watch?v=kEHdyiBMgAg}{here}.\\
+    
+    We can show that this freezing process is an irreversible process
+    by computing the entropy change.\\
 
     Given the following data:
     \begin{itemize}
@@ -863,13 +1135,19 @@ Only then we can say the system is reversible.\\
         \item Latent heat of fusion of water $L = 334000$ J/kg.
     \end{itemize}
 
+    \vskip 1ex
     We can form a cycle with two processes:
     \begin{itemize}
         \item \ul{Ice to Supercooled water} : With the help of a refridgerator. Reversible.
         \item \ul{Supercooled water to ice} : Spontaneously freezing.
     \end{itemize}
 
-    \insertFig{making supercool water by machine (rev), then spont freeze (irev)}
+    \begin{center}
+        \begin{minipage}{0.7\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{supercool}
+        \end{minipage}
+    \end{center}
 
     Note that in the melting/freezing process, 
     heat exchange occurs between the ice/supercooled water and \cul[red]{the envirnoment}.
@@ -890,8 +1168,8 @@ Only then we can say the system is reversible.\\
             &\approx 1145
         }
         
-        Because this is a reversible process, 
-        the total change in entropy of (ice + environment) must be $0$.
+        This is a reversible process.
+        The total entropy change of (ice + environment) must be $0$.
         \aleq{
             \Delta S_\text{envr, \red{rev}} = - \Delta S_\text{ice, \red{rev}}  = -1145
         }
@@ -916,8 +1194,8 @@ Only then we can say the system is reversible.\\
         }
     \end{enumerate}
 
-    So there is a net gain of entropy $1190-1145 \approx 45$ J/K/kg 
-    after a cycle of "ice $\xrightarrow{\text{refridgerator}}$ supercooled water $\xrightarrow{\text{spontaneous freezing}}$ ice".
+    So there is an increase of entropy $1190-1145 \approx 45$ J/K/kg 
+    when supercooled water of $-10^\circ$C spontaneously freezes.
 
 \end{example}
 
