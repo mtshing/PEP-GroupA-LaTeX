@@ -47,8 +47,23 @@ the state of object can be described and predicted exactly.
 If we know the initial position $x_0$ and velocity $v_0$ of an object at the moment, 
 then we can predict its future motion $(x(t), v(t))$ by solving differential equations 
 (i.e. Newton's 2nd law). 
-
-\insertFig{some trajectory}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{trajectory}
+    \end{minipage}
+    \qquad$\Rightarrow$\qquad
+    \begin{minipage}{0.2\linewidth}
+        \aleq{
+            \begin{cases}
+                \dv[2]{\vvec{x}_1}{t} = \sum_i F_{i,1}\\[1ex]
+                \dv[2]{\vvec{x}_2}{t} = \sum_i F_{i,2}\\
+                \phantom{abcde}\vdots\\
+                \dv[2]{\vvec{x}_n}{t} = \sum_i F_{i,n}\\
+            \end{cases}
+        }
+    \end{minipage}
+\end{center}
 
 The procedure is the same for a system of many-body system. 
 E.g. With $1000$ objects, 
@@ -79,11 +94,26 @@ E.g. We have been using the state parameters $(P,V,T)$, which are all statistica
     \item $T \propto$ \ul{Average} velocity of particles. 
 \end{itemize}
 
-\insertFig{vol, temp}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=7em]{AvgV}\\
+        If there is no container,\\
+        the gas has no fixed volume.
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=7em]{AvgT}\\
+        Maxwell-Boltzmann distribution\\
+        at different temperature.
+    \end{minipage}
+\end{center}
 
 This is the \bf{macrostate description} - 
 states are described by the objects' collective behavior instead of looking into them one by one. 
-Description by macrostate is much simpler than by microstate because it requires much fewer number of parameters (from $\sim 10^{23}$ to around $10$). 
+Description by macrostate is much simpler than by microstate because it requires much fewer number of parameters 
+(from $\sim 10^{23}$ to less than $10$). 
 However this also implies a lost of details about the system.
 
 
@@ -103,9 +133,14 @@ Microstates and marcostates are in a many-to-one correspondance:
 
 \end{itemize}
 
-The \bf{multiplicity $W$ of a macrostate} is defined as the number of microstates that correspond to it. 
+The \bf{multiplicity $W$ of a macrostate} is the number of microstates that correspond to it. 
 
-\insertFig{box of gas}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{multiplicity}
+    \end{minipage}
+\end{center}
 
 
 
@@ -119,7 +154,12 @@ The \bf{multiplicity $W$ of a macrostate} is defined as the number of microstate
         \item Multiplicity of each macrostate?
     \end{enumerate}
 
-    \insertFig{ball in box}
+    \begin{center}
+        \begin{minipage}{0.95\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{2box}
+        \end{minipage}
+    \end{center}
 
     \begin{enumerate}
         \item For microstate, 
@@ -132,7 +172,7 @@ The \bf{multiplicity $W$ of a macrostate} is defined as the number of microstate
         There are 5 different kinds of macrostates in total.
 
         \item By binomial theorem, 
-        The multiplicity of each of the macrostates are $C^4_L = \{1,4,6,4,1\}$ respectively. 
+        The multiplicity of each of the macrostates are $C^4_R = \{1,4,6,4,1\}$ respectively. 
 
     \end{enumerate}
 \end{example}
@@ -140,6 +180,7 @@ The \bf{multiplicity $W$ of a macrostate} is defined as the number of microstate
 
 
 \linesep
+\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Boltzmann Entropy}
 
@@ -157,36 +198,44 @@ Then
 \end{itemize}
 
 Therefore, if we take many snapshot from time to time,
-we will find that the macrostate 2L-2R has the highest probability $\dfrac{6}{16}$ to be observed.\\
+we will find that the macrostate 2L-2R has the highest probability $\dfrac{6}{16}$ to be observed.
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{2box_prob}
+    \end{minipage}
+\end{center}
 
-\insertFig{box}
-
-Now consider the a more extreme case, 
-say we begin with $1000$ balls in the $L$ box. 
+\vskip 1ex
+Now consider a more extreme case - 
+we begin with $1000$ balls in the $L$ box. 
 After allowing the balls to move freely between the boxes,
-what will we observe? 
+what will be observed later? 
 \begin{itemize}
-    \item The multiplicity of macrostate 1000L-0R is $C^{1000}_0 = 1$, 
-        so its probability of occurence is $\dfrac{1}{2^{1000}} \sim 10^{-301}$.
+    \item Multiplicity of macrostate 1000L-0R is $C^{1000}_0 = 1$, 
+        so its probability is $\dfrac{1}{2^{1000}} \sim 10^{-301}$.
 
-    \item The multiplicity of macrostate 500L-500R is $C^{1000}_{500}$, 
-        so its probability of occurence is $\dfrac{C^{1000}_{500}}{2^{1000}} \sim 10^{-2}$.
+    \item Multiplicity of macrostate 500L-500R is $C^{1000}_{500}$, 
+        so its probability is $\dfrac{C^{1000}_{500}}{2^{1000}} \sim 10^{-2}$.
 \end{itemize}
 
-Which means on average,
-we will observe the balls evenly distributed two boxes for $10^{299}$ times before observing them all on 1 side.
-But our universe is only 13 billion years old $\sim 10^{14}$ seconds - 
-This is equivenlently saying that 1000L-0R state could never be observed again.
+On average,
+we will observe the balls evenly distributed in two boxes for $10^{299}$ times before observing them all in one box for 1 time.
+But our universe is only 13 billion years old ($\sim 10^{14}$ seconds) - 
+This is equivenlently saying: 1000L-0R state could never be observed again.
 \begin{itemize}
     \item We can always see the system evolves from 1000L-0R to 500L-500R.
     \item We can almost never see the system evolves from 500L-500R to 1000L-0R.
 \end{itemize}
 
 \begin{center}
-    \red{This is the irreversibility!}
+    \red{This is the truth of irreversibility!}
 \end{center}
 
+Technically all processes are reversible,
+but it takes a \it{really long} time for the reverse to happen.
 
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsection{Boltzmann's Hypothesis}
 
@@ -211,20 +260,34 @@ So a smart guy,
 
 \vskip 2em
 What mathematical requirements should $\phi(\cdot)$ satisfy?
-Consider a closed system of 2 boxes $A$ and $B$,
-which are in a macrostate with a multiplicity $W_A$ and $W_B$ respectively.
+Consider combining two 2-boxes systems $A$ and $B$,
+each with different colour of balls.
+Their individual macrostate are denoted with multiplicity $W_A$ and $W_B$ respectively.
+
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{2box_combine1}
+    \end{minipage}
+    \qquad$\Rightarrow$\qquad
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{2box_combine2}
+    \end{minipage}
+\end{center}
+
 \begin{itemize}
-    \item If we look at them independently, 
+    \item Recall that total $S$ of multiple objects is calculated by addition.
     \aleq{
         S_\text{total} = S_A + S_B = \phi(W_A) + \phi(W_B)
     }
 
-    \insertFig{separate box}
-
     \item If we look at them as a combined system,
     because calculating multiplicity is just counting the number of combination,
     \aleq{
-        W_\text{total} &= W_A \times W_B\\
+        W_\text{total} &= \qty(\mstack{\text{\# of ways}\\\text{to arrange balls}\\\text{in box A}})
+        \times \qty(\mstack{\text{\# of ways}\\\text{to arrange balls}\\\text{in box B}})\\[1ex]
+        &= W_A \times W_B\\[1ex]
         \Rightarrow\quad S_\text{total} &= \phi(W_A\times W_B)
     }
 \end{itemize}
@@ -235,7 +298,7 @@ What function(s) satisfy such relation $\phi(W_A)+\phi(W_B) = \phi(W_A\times W_B
     \ln(W_A) + \ln(W_B) = \ln(W_A\times W_B)
 }
 
-This is how we arrive at the Boltzmann entropy formula:
+This is how we arrive at the Boltzmann's entropy hypothesis:
 \aleq{
     \Aboxed{
         S = \tkn{boltz_k}{\cul[red]{k}}\ln W
@@ -254,7 +317,7 @@ Ideal gas, the system being most familiar by physicists,
 is used to set the baseline. 
 
 \begin{enumerate}
-    \item Firstly, we consider the gas expanding under an isothermal process.
+    \item Firstly, consider the gas expanding under an isothermal process.
     The entropy change is
     \aleq{
         \Delta S = \int \frac{\var{Q}}{T} = nR\ln\qty(\frac{V_2}{V_1})
@@ -262,18 +325,29 @@ is used to set the baseline.
 
     \item Change in multiplicity on an isotheral path can be modelled by
     \begin{enumerate}
-        \item Divide the box volume $V_1$ into grids of (arbituary) size $\Delta V$.
-        \insertFig{divide grid}
+        \item[2.1.] Divide the box volume $V_1$ into unit cells of (arbituary) volume $\Delta V$.
+        \begin{center}
+            \begin{minipage}{0.4\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{gas_partition1}
+            \end{minipage}
+        \end{center}
 
-        \item Put $n$ particles in the box. Then
+        \item[2.2.] Put $n$ particles in the box. Then
         \begin{itemize}
             \item \# of ways to put 1 particle $=\dfrac{V_1}{\Delta V}$
             \item \# of ways to put $N$ particles $=\qty(\dfrac{V_1}{\Delta V})^N$
         \end{itemize}
         So the multiplicity is proportional to $W_1 \propto \qty(\dfrac{V_1}{\Delta V})^N$.
 
-        \item Let the box expand to volume $V_2$. 
-        Now there are more grids in the box.
+        \item[2.3.] Let the box expand to volume $V_2$. 
+        Now there are more unit cells in the box.
+        \begin{center}
+            \begin{minipage}{0.5\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{gas_partition2}
+            \end{minipage}
+        \end{center}
         \begin{itemize}
             \item \# of ways to put 1 particle $=\dfrac{V_2}{\Delta V}$
             \item \# of ways to put $N$ particles $=\qty(\dfrac{V_2}{\Delta V})^N$
@@ -282,22 +356,23 @@ is used to set the baseline.
     \end{enumerate}
 
     \item Plugging in the above into the formula $S=\ln(W)$,
+    \addArrow[red]{S_n}{(-5ex,-2ex)}
+    {\scriptsize \# of particle\\[-1ex]\scriptsize but in moles}{(-1ex,-1ex)}{(-3ex,-1ex)}
+    \addArrow[green]{S_R}{(0,-2ex)}{\scriptsize Ideal gas\\[-1ex]\scriptsize constant}{(0,-1ex)}{(0,-1ex)}
+    \addArrow[blue]{S_N}{(5ex,-2ex)}{\scriptsize \# of particle}{(1ex,-1ex)}{(4ex,0)}
+    \addBentArrow[yellow]{S_NA}{(7ex,-2ex)}{\scriptsize Avogadro's number}{(0,-1.5ex)}{(5.5ex,1ex)}
     \aleq{
         \Delta S &= S_2 - S_1\\
         nR\ln\qty(\frac{V_2}{V_1}) &= k\ln(W_2) - k\ln(W_1) \\
         &= k\ln\qty[\frac{\frac{V_2}{\Delta V}}{\frac{V_1}{\Delta V}}]\\
         &= Nk\ln\qty(\frac{V_2}{V_1})\\
-        \tkn{S_n}{\cul[red]{n}}\tkn{S_R}{\cul[green]{R}} &= \tkn{S_N}{\cul[blue]{N}}k\\[2em]
-        k &= \frac{R}{\tkn{S_NA}{\cul[yellow]{N_A}}} \\
-        &\approx 1.38\times 10^{-23}
+        \tkn{S_n}{\cul[red]{n}}\tkn{S_R}{\cul[green]{R}} &= \tkn{S_N}{\cul[blue]{N}}k\\[3em]
+        k &= \frac{R}{\tkn{S_NA}{\cul[yellow]{N_A}}}
+        \approx 1.38\times 10^{-23}
     }
-    \addArrow[red]{S_n}{(-5ex,-2ex)}
-    {\scriptsize \# of particle\\[-1ex]\scriptsize but in moles}{(-1ex,-1ex)}{(-3ex,-1ex)}
-    \addArrow[green]{S_R}{(0,-2ex)}{\scriptsize Ideal gas\\[-1ex]\scriptsize constant}{(0,-1ex)}{(0,-1ex)}
-    \addArrow[blue]{S_N}{(5ex,-2ex)}{\scriptsize \# of particle}{(1ex,-1ex)}{(4ex,0)}
-    \addArrow[yellow]{S_NA}{(7ex,0)}{\scriptsize Avogadro's number}{(2ex,0.5ex)}{(5ex,0)}
 \end{enumerate}
 
+\newpage
 \begin{example}
     We can use Boltzmann's entropy formula to estimate the change multiplicity in real life process,
     to see how much "irreversible" they are.
@@ -328,15 +403,25 @@ is used to set the baseline.
 \end{example}
 
 %%%%%%%%%%%%%%
-\subsection{Entropy as Disorder-ness}
+\subsection{Entropy as Disorderness}
 
 In physics textbook, 
-we regards entropy as disorderness due to Boltzmann hypothesis. 
-The idea is intuitive - there are more ways to make things look messy than to make things look tidy, 
-so a messy state implies higher multiplicity and thus higher entropy. 
-Just like clothes should be in wardrobes and books should be on bookshelves if you want your room looking clean, 
-but you can put them anywhere else if you want your room looking messy.
+we regards entropy as disorderness due to Boltzmann hypothesis - 
+there are more ways to make things look messy than to make things look tidy.
+\begin{itemize}
+    \item A tidy place = Everything is in fixed position. E.g. Clothes should be in wardrobes and books should be on bookshelves.
+    So multiplicity is low, and so does entropy.
 
+    \item A messy place = More randomness. E.g. Put your clothes anywhere other than wardrobes if you want your room looking messy.
+    So multiplicity is high, and so does entropy.
+\end{itemize}
+
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{comic}
+    \end{minipage}
+\end{center}
 
 
 \linesep
@@ -370,7 +455,7 @@ Let's recap some temperature scales we know in history:
 
 However after entropy is established as a state function,
 physicists find a new mathematical way to define temperature - 
-through the relation between internal energy and entropy.\\
+through the relation between internal energy and entropy.
 \begin{itemize}
     \item We previously write internal energy $U$ of a material as a state function of 3 variables $(P,V,T)$,
     but only two of them are independent because there is the equation of state (e.g. ideal gas law).
@@ -455,35 +540,43 @@ we can derive some interesting properties about non-ideal gas materials.
 
 \end{enumerate}
 
-
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsection{Example 1: Crystal Vaccancy Model}
 
 A crystal is a regular arrangement of atoms/molecules.\\
 
-\ul{Pure crystal}
+\ul{Perfect crystal} : There is only 1 possible arrangement.
+        $\Rightarrow$ Multiplicity $=1$
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{crystal_perfect}
+    \end{minipage}
+\end{center}
 
-\insertFig{pure crystal}
+\newpage
+\ul{Crystal with defect} : There are many possibilities to introduce defects.
+$\Rightarrow$ High multiplicity
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{crystal_missing}\\
+        Vaccancy (missing atoms)
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{crystal_impure}\\
+        Substitution by impurities
+    \end{minipage}
+\end{center}
 
-There is only 1 possible arrangement. 
-$\Rightarrow$ Multiplicity $=1$.\\
-
-
-\ul{Crystal with defect}
-
-
-\insertFig{Crystal with defect}
-
-For example, vaccancy (missing atoms),
-or having impurities at some position.
-Have many combination.
-$\Rightarrow$ High multiplicity\\
-
-
+\vskip 1ex
 In a crystal with defect, 
 we also expect there is a energy change per defect because 
 the atomic bondings around the defect are different.
-Thus we can use the temperature - internal energy - entropy
+Thus we can use the $T$-$S$-$U$ relation
 to model the expected number of defects.
 
 \begin{enumerate}
@@ -501,7 +594,8 @@ to model the expected number of defects.
         &\approx k\qty[(N+n)\ln(N+n) - N\ln N - n\ln n]
     }
     Here we have used the \bf{Stirling approximation}:
-    $\ln N! \approx N\ln N - N$, when $N$ is a very big number.
+    \fbox{$\ln N! \approx N\ln N - N$}, 
+    which applies when $N$ is a very big number.
 
     \item \it{Assume} that each impurity/vaccancy brings an increase of internal energy by $\epsilon$,
     which $\epsilon$ may be some values measurable from experiments.
@@ -519,8 +613,8 @@ to model the expected number of defects.
         %
         \pdvv{U}{n} &= \pdvv{n}n\epsilon = \epsilon\\[1ex]
         %
-        \Rightarrow\quad \inv{T} &= \pdvv{S}{U} 
-        = \dfrac{\qty(\pdvv{S}{n})}{\qty(\pdvv{U}{n})}
+        \Rightarrow\quad \inv{T} = \pdvv{S}{U} 
+        &= \dfrac{\qty(\pdvv{S}{n})}{\qty(\pdvv{U}{n})}
         = \frac{k}{\epsilon}\ln \qty(\frac{N+n}{n})
     }
 \end{enumerate}
@@ -540,29 +634,38 @@ meaning that crystal in real life must have some defects (statistically).
 
 A rubber band can be considered a long chain of atom (e.g. polymer).\\
 
-\ul{Full extension}
-
-\insertFig{straight}
-
-When being pulled straight, 
-its length is the longest.
+\ul{Full extension} : The string is completely straight.
 There is only 1 possible arrangement. 
-$\Rightarrow$ Multiplicity $=1$.\\
+$\Rightarrow$ Multiplicity $=1$.
+
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rubber_straight}
+    \end{minipage}
+\end{center}
 
 
-\ul{Entangled state}
+\ul{Entangled state} : The string curled up and the total length shorten.
+Have many possible arrangements.
+$\Rightarrow$ High multiplicity.
 
-
-\insertFig{entangled}
-
-The string curled up and the total length shorten.
-Have many combination.
-$\Rightarrow$ High multiplicity\\
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rubber_curl}
+    \end{minipage}
+\end{center}
 
 For simplicity, we only consider a 1D chain - 
 the connections to next atom can only be pointing left or right.
 
-\insertFig{1D chain}
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rubber_1D}
+    \end{minipage}
+\end{center}
 
 \begin{enumerate}
     \item Suppose the chain has $N+1$ atoms (so a total of $N$ connections).
@@ -573,13 +676,25 @@ the connections to next atom can only be pointing left or right.
         W = C^N_{n_L} = \frac{N!}{n_L!(N-n_L)!}
     }
 
+    \begin{center}
+        \begin{minipage}{0.6\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rubber_1D_arrow}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.2\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rubber_1D_connect}
+        \end{minipage}
+    \end{center}
+
     \item Calculating the Boltzmann entropy:
     \aleq{
         S &= k\ln\qty(\frac{N!}{n_L!(N-n_L)!}) \\
         &= k\qty[\ln N! - \ln n_L! - \ln (N-n_L)!] \\
         &\approx k\qty[N\ln N - n_L\ln n_L - (N-n_L)\ln (N-n_L)]
     }
-    Again, the Stirling approximation formula is used.
+    Again, the Stirling approximation formula is used here.
 
     \item We can relate the internal energy in a rubber band with its stored elastic energy.
     Let the connection between atoms be of length $d$, 
@@ -587,7 +702,17 @@ the connections to next atom can only be pointing left or right.
     When a tension $F$ is applied on both side of the chain
     to unfold 1 right connection into 1 left connection,
 
-    \insertFig{unfold chain}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rubber_unfold1}
+        \end{minipage}
+        \qquad$\Rightarrow$\qquad
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rubber_unfold2}
+        \end{minipage}
+    \end{center}
 
     \begin{itemize}
         \item Number of left connection $n_L \rightarrow n_L+1$.
@@ -602,6 +727,7 @@ the connections to next atom can only be pointing left or right.
         \pdvv{U}{(\Delta n)} = \pdvv{(W.D.)}{(\Delta n)} &\approx \frac{(F+2Fd(\Delta n))-F}{\Delta n} = 2Fd 
     }
 
+    \vskip 1ex
     \item Finally, apply the $T$-$S$-$U$ relation.
     We observe that both $S$ and $U$ are functions of $\Delta n$
     \aleq{
@@ -611,8 +737,8 @@ the connections to next atom can only be pointing left or right.
         %
         \pdvv{U}{(\Delta n)} &= 2Fd \\[1ex]
         %
-        \Rightarrow\quad \inv{T} &= \pdvv{S}{U} 
-        = \dfrac{\qty(\pdvv{S}{n})}{\qty(\pdvv{U}{n})}
+        \Rightarrow\quad \inv{T} = \pdvv{S}{U} 
+        &= \dfrac{\qty(\pdvv{S}{n})}{\qty(\pdvv{U}{n})}
         = \frac{k}{2Fd}\ln \qty(\frac{N-n_L}{n_L})
     }
 
@@ -623,10 +749,11 @@ Substitute by the length of the chain $L=(2n_L-N)d$ and change of subject to $F$
     (\text{Tension}) = F = 
     \frac{kT}{2d}\ln\qty(\frac{Nd+L}{Nd-L})
 }
-Observe that $F$ increases if $T$ increases.
-\cul[red]{The chain of atoms would like to contract under heat!}
+Observe that when $L$ is kept constant,
+$F$ increases if $T$ increases.
+\cul[red]{The rubber band would} \cul[red]{like to contract under heat!}
 
-
+\newpage
 %%%%%%%%%%%%%%
 \subsection{Negative Temperature?}
 
@@ -638,7 +765,7 @@ In our new definition of temperature
 
 if there is a system whose entropy decreases ($S\downarrow$) 
 when its internal energy increases ($U\uparrow$), 
-$\inv{T} = \pdv{S}{U}<0$, i.e. negative temperature.
+$\dinv{T} = \pdvv{S}{U}<0$, i.e. negative temperature.
 
 \begin{center}
     \red{Negative temperature happens only in systems with finite number of microstate.}
@@ -648,30 +775,76 @@ For example, let's revisite the 2 boxes system.
 But this time we assign potential energy difference between the boxes -
 balls in the right box would have higher energy than in the left box by $\epsilon$.
 
-\insertFig{energy level}
+\begin{center}
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{2box_E0}
+    \end{minipage}
+\end{center}
 
-When total energy $=3\epsilon$,
-there are 4 possible microstates.
+\begin{minipage}{0.6\linewidth}
+    \begin{itemize}
+        \item When total energy $=3\epsilon$,
+        there are 4 possible \\ microstates.
+        Entropy $\sim \ln(4) = 1.38$.
+    \end{itemize}
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}{0.35\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{2box_E3}
+\end{minipage}
 
-\insertFig{4 microstate}
+\begin{minipage}{0.6\linewidth}
+    \begin{itemize}
+        \item When total energy increases to $4\epsilon$,
+        there is only 1 possible microstates.
+        Entropy decreases to $\sim \ln(1) = 0$.
+    \end{itemize}
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}{0.35\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{2box_E4}
+\end{minipage}
 
-When total energy $=4\epsilon$,
-there is only 1 possible microstates.
+\vskip 1em
+Plotting the graph of $W$ and $S$ against internal energy $U$ respectively: 
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{WU1}
+    \end{minipage}
+    \quad{\huge $\Rightarrow$}\quad
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{WU2}
+    \end{minipage}
+\end{center}
 
-\insertFig{1 microstate}
-
-\insertFig{W vs E}
-
+\newpage
 Imagine there are many more particles,
 the bar chart will become a smooth curve like so:
 
-\insertFig{smooth curve}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{WU3}
+    \end{minipage}
+\end{center}
 
 The temperature scale defined by entropy is kind of "weird"...
 
-\insertFig{low energy -> high energy}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{temp_scale}
+    \end{minipage}
+\end{center}
 
-In this sense, \red{temperature is no long about hot or cold anymore.}
+When we use entropy to define temperature scale, 
+\red{temperature is no longer about hot or cold.}
+(And we still cannot go below $0$K!)
 
 
 %%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  30 AUG 2025 02:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  5 SEP 2025 13:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -824,7 +824,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
+<img/trajectory.png, id=59, 347.49825pt x 308.95425pt>
+File: img/trajectory.png Graphic file (type png)
+<use img/trajectory.png>
+Package pdftex.def Info: img/trajectory.png  used on input line 53.
+(pdftex.def)             Requested size: 122.31705pt x 108.74846pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--72
 
  []
 
@@ -832,232 +838,352 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--57
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/trajectory.png>]
+<img/AvgV.png, id=77, 281.25075pt x 246.32025pt>
+File: img/AvgV.png Graphic file (type png)
+<use img/AvgV.png>
+Package pdftex.def Info: img/AvgV.png  used on input line 100.
+(pdftex.def)             Requested size: 93.91165pt x 82.24915pt.
+<img/AvgT.png, id=78, 625.73775pt x 340.27126pt>
+File: img/AvgT.png Graphic file (type png)
+<use img/AvgT.png>
+Package pdftex.def Info: img/AvgT.png  used on input line 107.
+(pdftex.def)             Requested size: 151.2495pt x 82.24915pt.
+<img/multiplicity.png, id=79, 680.5425pt x 355.92975pt>
+File: img/multiplicity.png Graphic file (type png)
+<use img/multiplicity.png>
+Package pdftex.def Info: img/multiplicity.png  used on input line 141.
+(pdftex.def)             Requested size: 342.48624pt x 179.12125pt.
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
- []
+[2 <./img/avgV.png> <./img/avgT.png> <./img/multiplicity.png>]
+<img/2box.png, id=84, 8792.85pt x 4526.9125pt>
+File: img/2box.png Graphic file (type png)
+<use img/2box.png>
+Package pdftex.def Info: img/2box.png  used on input line 160.
+(pdftex.def)             Requested size: 464.8033pt x 239.27591pt.
 
 
+[3 <./img/2box.png>]
+<img/2box_prob.png, id=98, 4883.24374pt x 853.1875pt>
+File: img/2box_prob.png Graphic file (type png)
+<use img/2box_prob.png>
+Package pdftex.def Info: img/2box_prob.png  used on input line 205.
+(pdftex.def)             Requested size: 391.41605pt x 68.38658pt.
 
-[3]
 
-[4]
+[4 <./img/2box_prob.png>]
+<img/2box_combine1.png, id=106, 1932.21875pt x 1013.7875pt>
+File: img/2box_combine1.png Graphic file (type png)
+<use img/2box_combine1.png>
+Package pdftex.def Info: img/2box_combine1.png  used on input line 270.
+(pdftex.def)             Requested size: 146.78195pt x 77.00533pt.
+<img/2box_combine2.png, id=107, 3011.25pt x 682.55pt>
+File: img/2box_combine2.png Graphic file (type png)
+<use img/2box_combine2.png>
+Package pdftex.def Info: img/2box_combine2.png  used on input line 275.
+(pdftex.def)             Requested size: 220.16919pt x 49.8976pt.
+<img/gas_partition1.png, id=108, 679.94025pt x 291.489pt>
+File: img/gas_partition1.png Graphic file (type png)
+<use img/gas_partition1.png>
+Package pdftex.def Info: img/gas_partition1.png  used on input line 332.
+(pdftex.def)             Requested size: 173.61487pt x 74.42433pt.
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 371--374
 
- []
+[5 <./img/2box_combine1.png> <./img/2box_combine2.png>]
+<img/gas_partition2.png, id=116, 793.16325pt x 360.74776pt>
+File: img/gas_partition2.png Graphic file (type png)
+<use img/gas_partition2.png>
+Package pdftex.def Info: img/gas_partition2.png  used on input line 348.
+(pdftex.def)             Requested size: 217.02191pt x 98.70226pt.
 
 
+[6 <./img/gas_partition1.png> <./img/gas_partition2.png>]
+<img/comic.png, id=123, 602.25pt x 694.595pt>
+File: img/comic.png Graphic file (type png)
+<use img/comic.png>
+Package pdftex.def Info: img/comic.png  used on input line 422.
+(pdftex.def)             Requested size: 195.70428pt x 225.70891pt.
 
-[6]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
+[7 <./img/comic.png>]
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 408.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 493.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 423.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 508.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--470
-
- []
-
-
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 477--481
-
- []
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 518.
 
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
  []
 
+<img/crystal_perfect.png, id=138, 249.3315pt x 241.50224pt>
+File: img/crystal_perfect.png Graphic file (type png)
+<use img/crystal_perfect.png>
+Package pdftex.def Info: img/crystal_perfect.png  used on input line 554.
+(pdftex.def)             Requested size: 110.08646pt x 106.6298pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--551
+
+[9 <./img/crystal_perfect.png>]
+<img/crystal_missing.png, id=146, 256.5585pt x 242.1045pt>
+File: img/crystal_missing.png Graphic file (type png)
+<use img/crystal_missing.png>
+Package pdftex.def Info: img/crystal_missing.png  used on input line 564.
+(pdftex.def)             Requested size: 110.08646pt x 103.88495pt.
+<img/crystal_impure.png, id=147, 252.945pt x 244.5135pt>
+File: img/crystal_impure.png Graphic file (type png)
+<use img/crystal_impure.png>
+Package pdftex.def Info: img/crystal_impure.png  used on input line 570.
+(pdftex.def)             Requested size: 110.08646pt x 106.41847pt.
+
+
+[10 <./img/crystal_missing.png> <./img/crystal_impure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
 
  []
 
+<img/rubber_straight.png, id=156, 639.5895pt x 38.544pt>
+File: img/rubber_straight.png Graphic file (type png)
+<use img/rubber_straight.png>
+Package pdftex.def Info: img/rubber_straight.png  used on input line 644.
+(pdftex.def)             Requested size: 293.5639pt x 17.69164pt.
+<img/rubber_curl.png, id=157, 563.706pt x 110.814pt>
+File: img/rubber_curl.png Graphic file (type png)
+<use img/rubber_curl.png>
+Package pdftex.def Info: img/rubber_curl.png  used on input line 656.
+(pdftex.def)             Requested size: 293.5639pt x 57.70982pt.
+<img/rubber_1D.png, id=158, 664.884pt x 75.8835pt>
+File: img/rubber_1D.png Graphic file (type png)
+<use img/rubber_1D.png>
+Package pdftex.def Info: img/rubber_1D.png  used on input line 666.
+(pdftex.def)             Requested size: 293.5639pt x 33.50462pt.
+<img/rubber_1D_arrow.png, id=159, 657.657pt x 68.05424pt>
+File: img/rubber_1D_arrow.png Graphic file (type png)
+<use img/rubber_1D_arrow.png>
+Package pdftex.def Info: img/rubber_1D_arrow.png  used on input line 682.
+(pdftex.def)             Requested size: 275.9389pt x 28.55453pt.
+<img/rubber_1D_connect.png, id=160, 267.399pt x 72.27pt>
+File: img/rubber_1D_connect.png Graphic file (type png)
+<use img/rubber_1D_connect.png>
+Package pdftex.def Info: img/rubber_1D_connect.png  used on input line 687.
+(pdftex.def)             Requested size: 91.9773pt x 24.85928pt.
+<img/rubber_unfold1.png, id=161, 234.8775pt x 86.12175pt>
+File: img/rubber_unfold1.png Graphic file (type png)
+<use img/rubber_unfold1.png>
+Package pdftex.def Info: img/rubber_unfold1.png  used on input line 708.
+(pdftex.def)             Requested size: 137.96945pt x 50.58798pt.
+<img/rubber_unfold2.png, id=162, 278.2395pt x 24.09pt>
+File: img/rubber_unfold2.png Graphic file (type png)
+<use img/rubber_unfold2.png>
+Package pdftex.def Info: img/rubber_unfold2.png  used on input line 713.
+(pdftex.def)             Requested size: 183.95459pt x 15.927pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--561
 
- []
+[11 <./img/rubber_straight.png> <./img/rubber_curl.png> <./img/rubber_1D.png> <./img/rubber_1D_arrow.png> <./img/rubber_1D_connect.png>]
+
+[12 <./img/rubber_unfold1.png> <./img/rubber_unfold2.png>]
+<img/2box_E0.png, id=176, 393.26926pt x 212.59425pt>
+File: img/2box_E0.png Graphic file (type png)
+<use img/2box_E0.png>
+Package pdftex.def Info: img/2box_E0.png  used on input line 781.
+(pdftex.def)             Requested size: 171.24686pt x 92.57181pt.
+<img/2box_E3.png, id=177, 396.88275pt x 204.16275pt>
+File: img/2box_E3.png Graphic file (type png)
+<use img/2box_E3.png>
+Package pdftex.def Info: img/2box_E3.png  used on input line 795.
+(pdftex.def)             Requested size: 171.24686pt x 88.09357pt.
+<img/2box_E4.png, id=178, 395.076pt x 207.174pt>
+File: img/2box_E4.png Graphic file (type png)
+<use img/2box_E4.png>
+Package pdftex.def Info: img/2box_E4.png  used on input line 808.
+(pdftex.def)             Requested size: 171.24686pt x 89.80066pt.
+<img/WU1.png, id=179, 615.4995pt x 379.4175pt>
+File: img/WU1.png Graphic file (type png)
+<use img/WU1.png>
+Package pdftex.def Info: img/WU1.png  used on input line 816.
+(pdftex.def)             Requested size: 195.70428pt x 120.64029pt.
+<img/WU2.png, id=180, 608.2725pt x 424.58624pt>
+File: img/WU2.png Graphic file (type png)
+<use img/WU2.png>
+Package pdftex.def Info: img/WU2.png  used on input line 821.
+(pdftex.def)             Requested size: 195.70428pt x 136.60246pt.
 
 
+[13 <./img/2box_E0.png> <./img/2box_E3.png> <./img/2box_E4.png> <./img/WU1.png> <./img/WU2.png>]
+<img/WU3.png, id=186, 953.36176pt x 425.1885pt>
+File: img/WU3.png Graphic file (type png)
+<use img/WU3.png>
+Package pdftex.def Info: img/WU3.png  used on input line 832.
+(pdftex.def)             Requested size: 391.41605pt x 174.56845pt.
+<img/temp_scale.png, id=187, 1131.62775pt x 475.7775pt>
+File: img/temp_scale.png Graphic file (type png)
+<use img/temp_scale.png>
+Package pdftex.def Info: img/temp_scale.png  used on input line 841.
+(pdftex.def)             Requested size: 342.48624pt x 143.99028pt.
 
-[9]
 
-[10]
-
-[11] (./stat_mech.aux)
+[14 <./img/WU3.png> <./img/temp_scale.png>] (./stat_mech.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `stat_mech.out' has not changed.
-(rerunfilecheck)             Checksum: ED9628FCE3D966E8A5DEF59DC7D9F266;2509.
+(rerunfilecheck)             Checksum: 2F36DAC1E61ECDBD89A9E401AD55B6F9;2504.
  ) 
 Here is how much of TeX's memory you used:
- 29423 strings out of 469747
- 554408 string characters out of 5481688
- 949500 words of memory out of 5000000
- 57204 multiletter control sequences out of 15000+600000
- 637833 words of font info for 78 fonts, out of 8000000 for 9000
+ 29728 strings out of 469747
+ 561335 string characters out of 5481688
+ 945501 words of memory out of 5000000
+ 57506 multiletter control sequences out of 15000+600000
+ 643194 words of font info for 98 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,17n,159p,596b,839s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on stat_mech.pdf (11 pages, 178276 bytes).
+ 125i,23n,159p,596b,884s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on stat_mech.pdf (14 pages, 1318079 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
+ 261 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
  52 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
