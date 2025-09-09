@@ -172,9 +172,34 @@ The formula for PMF (discrete cases) can be extended to PDF (continuous cases).
 %%%%%%%%%%%%%%%%%
 \subsection{Thermal Fluctuation}
 
+From the last notes, 
+we have learnt that 
+\begin{itemize}
+    \item We can describe different states of a thermodynamics system by some macrostate parameters.
+    \item We can compute the multiplicity, and thus entropy of the system using the macrostate parameters.
+    \item Every system will eventually evolve into a state with maximum entropy. 
+\end{itemize}
+
+In theory, if we know the expression of entropy $S$ relating to a macrostate parameter $x$,
+we can compute the corresponding $x=x_0$ at the maximum entropy state by solving
+\aleq{
+    \begin{cases}
+    \dvv{S}{x}\eval_{x=x_0} = 0 
+    & \qty(\substack{\text{Entropy is the max.}\\\text{when }x=x_0}\\\Rightarrow \text{Slope }=0)\\
+    %
+    \dvv[2]{S}{x}\eval_{x=x_0} <0
+    & \qty(\substack{\text{Slope is decreasing}\\\text{at the maximum}})
+    \end{cases}
+}
+
+However, a fundamental principle of statistical physics is that every macrostate parameter is a statistical property - 
+there are always random fluctuation in the macrostate parameters such that, 
+with a small probability,
+the 
+
 In thermodynamics, every state parameter is a statistical property - 
 a state being labeled with parameter $x=x_0$ only means the \cul[red]{expected value of observing $x$ is $x_0$}.
-Its actual value can random fluctuate, 
+Its actual value can randomly fluctuate, 
 different in value from time to time.\\
 
 For example, in the 2-boxes system with 1000 balls, 
@@ -192,8 +217,9 @@ $N_R$ must fluctuate, even when it has reached the maximum entropy state 500L-50
 
 \insertFig{moving ball in and out}
 
-Because of this randomness, 
-we expect that measurement to any parameter $x$ will form some probabiilty distribution centered around its expected value $x=x_0$.
+Because of randomness, 
+all thermodynamics state parameter $x$ form some probabiilty distribution centered around its expected value $x=x_0$.
+So we can proceed to ask:
 \begin{center}
     \red{When the system is in the macrostate $x=x_0$,
     what is the probability to observe $x$ to be $x_0 + \Delta x$?}
@@ -201,6 +227,10 @@ we expect that measurement to any parameter $x$ will form some probabiilty distr
 
 Recall that the probability of observing a macrostate with parameter $x$ 
 is proportional to the number of microstates (i.e. multiplicity) it corresponds to,
+\begin{itemize}
+    \item The expected value of 
+\end{itemize}
+
 \aleq{
     P\qty(x=x_0) 
     \ &\propto\ %\frac{\qty(\mstack{\text{\# of microstates that}\\\text{leads to observing }x=0})}{\qty(\text{Total \# of microstates})}
@@ -213,9 +243,17 @@ It can be calculated as
 \aleq{
     Z = 
     \bcase{
-        \sum_{\substack{\text{all possible}\\x_i}}W(x_i) = x_i
+        \sum_{\substack{\text{all possible}\\x_i}}W(x_i) 
+        = \sum_{\substack{\text{all possible}\\x_i}}e^{\frac{S(x_i)}{k}}
+        & \text{if }x \text{ can only take discrete values}
+        %
+        \int_{-\infty}^\infty W(x) \dd{x} 
+        = \int_{-\infty}^\infty e^{\frac{S(x)}{k}} \dd{x} 
+        & \text{if }x \text{ can take continuous values}
     }
 }
+
+
 
 \begin{notation}[Side note:]
     Recall the statement of Clausius theorem - 
