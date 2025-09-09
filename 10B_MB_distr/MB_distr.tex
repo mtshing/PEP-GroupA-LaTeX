@@ -167,7 +167,10 @@ The formula for PMF (discrete cases) can be extended to PDF (continuous cases).
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Thermal Fluctuation}
+\section{Boltzmann Distribution}
+
+%%%%%%%%%%%%%%%%%
+\subsection{Thermal Fluctuation}
 
 In thermodynamics, every state parameter is a statistical property - 
 a state being labeled with parameter $x=x_0$ only means the \cul[red]{expected value of observing $x$ is $x_0$}.
@@ -177,9 +180,9 @@ different in value from time to time.\\
 For example, in the 2-boxes system with 1000 balls, 
 the macrostates are described by one state parameter $N_R=$ the number of balls in the right box. 
 Because the balls are always free to move between the boxes, 
-$N_R$ must fluctuate. 
+$N_R$ must fluctuate, even when it has reached the maximum entropy state 500L-500R. 
 \begin{itemize}
-    \item Starting from 500L-500R. 
+    \item
     One of the ball may temporarily move from the left box to the right box.
     The system's state change to 499L-501R. 
 
@@ -192,22 +195,27 @@ $N_R$ must fluctuate.
 Because of this randomness, 
 we expect that measurement to any parameter $x$ will form some probabiilty distribution centered around its expected value $x=x_0$.
 \begin{center}
-    \red{What is the probability for $x$ to deviate by $\Delta x$? 
-    i.e. Observing $x$ to be $x_0 + \Delta x$?}
+    \red{When the system is in the macrostate $x=x_0$,
+    what is the probability to observe $x$ to be $x_0 + \Delta x$?}
 \end{center}
-
-
-
-%%%%%%%%%%%%%%
-\subsection{Entropy Fluctuation}
 
 Recall that the probability of observing a macrostate with parameter $x$ 
 is proportional to the number of microstates (i.e. multiplicity) it corresponds to,
 \aleq{
     P\qty(x=x_0) 
-    \ =\ \frac{\qty(\mstack{\text{\# of microstates that}\\\text{leads to observing }x=x_0})}{\qty(\text{Total \# of microstates})}
+    \ &\propto\ %\frac{\qty(\mstack{\text{\# of microstates that}\\\text{leads to observing }x=0})}{\qty(\text{Total \# of microstates})}
+    \mstack{\text{\# of microstates that}\\\text{leads to observing }x=x_0}\\
+    &= \inv{Z}W(x=x_0) = \inv{Z}e^{\frac{S(x=x_0)}{k}}
 }
 
+where $Z$ is some constant for normalization (because probability should add up to $1$).
+It can be calculated as
+\aleq{
+    Z = 
+    \bcase{
+        \sum_{\substack{\text{all possible}\\x_i}}W(x_i) = x_i
+    }
+}
 
 \begin{notation}[Side note:]
     Recall the statement of Clausius theorem - 
