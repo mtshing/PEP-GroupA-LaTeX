@@ -172,7 +172,8 @@ The \bf{multiplicity $W$ of a macrostate} is the number of microstates that corr
         There are 5 different kinds of macrostates in total.
 
         \item By binomial theorem, 
-        The multiplicity of each of the macrostates are $C^4_R = \{1,4,6,4,1\}$ respectively. 
+        The multiplicity of each of the macrostates are $C^4_R = \{1,4,6,4,1\}$ respectively,
+        where $R$ is the number of balls in the right box. 
 
     \end{enumerate}
 \end{example}
@@ -180,7 +181,6 @@ The \bf{multiplicity $W$ of a macrostate} is the number of microstates that corr
 
 
 \linesep
-\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Boltzmann Entropy}
 
@@ -188,21 +188,26 @@ The \bf{multiplicity $W$ of a macrostate} is the number of microstates that corr
 \subsection{Origin of Irreversibility}
 
 Imagine we allow the balls to move freely between the two boxes. 
-\it{Assume} the two boxes to be identical (Can this assumption be wrong?), 
+\it{Assume} the two boxes to be identical, 
 so that each ball has equal probability to be found in either box. 
 Then
 \begin{itemize}
     \item Each microstate has an equal probability $\dfrac{1}{16}$ to be found.
-    \item The probability of being in a macrostate is proportional to its multiplicity. 
+    \item The probability of being in a macrostate is proportional to its multiplicity $W$. 
     
 \end{itemize}
 
 Therefore, if we take many snapshot from time to time,
 we will find that the macrostate 2L-2R has the highest probability $\dfrac{6}{16}$ to be observed.
 \begin{center}
-    \begin{minipage}{0.8\linewidth}
+    \begin{minipage}{0.4\linewidth}
         \centering
-        \includegraphics[width=\textwidth]{2box_prob}
+        \includegraphics[width=\textwidth]{2box_prob1}
+    \end{minipage}
+    \quad$\Rightarrow$\quad
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{2box_prob2}
     \end{minipage}
 \end{center}
 
@@ -212,20 +217,28 @@ we begin with $1000$ balls in the $L$ box.
 After allowing the balls to move freely between the boxes,
 what will be observed later? 
 \begin{itemize}
-    \item Multiplicity of macrostate 1000L-0R is $C^{1000}_0 = 1$, 
-        so its probability is $\dfrac{1}{2^{1000}} \sim 10^{-301}$.
+    \item Multiplicity of macrostate 1000L-0R is $C^{1000}_0 = 1$.
+        %so its probability is $\dfrac{1}{2^{1000}} \sim 10^{-301}$.
 
-    \item Multiplicity of macrostate 500L-500R is $C^{1000}_{500}$, 
-        so its probability is $\dfrac{C^{1000}_{500}}{2^{1000}} \sim 10^{-2}$.
+    \item Multiplicity of macrostate 500L-500R is $C^{1000}_{500} \approx 2.7\times 10^{299}$.
+        %so its probability is $\dfrac{C^{1000}_{500}}{2^{1000}} \sim 10^{-2}$.
 \end{itemize}
 
-On average,
-we will observe the balls evenly distributed in two boxes for $10^{299}$ times before observing them all in one box for 1 time.
-But our universe is only 13 billion years old ($\sim 10^{14}$ seconds) - 
-This is equivenlently saying: 1000L-0R state could never be observed again.
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{2box_prob3}
+    \end{minipage}
+\end{center}
+
+which means on average,
+we will observe the balls evenly distributed in two boxes for $\sim 10^{299}$ times before observing them all in one box for 1 time.
+Note that the age of our universe is only $\sim 10^{14}$ seconds - 
+Even if we are as old as our universe,
+1000L-0R state could never be observed.
 \begin{itemize}
-    \item We can always see the system evolves from 1000L-0R to 500L-500R.
-    \item We can almost never see the system evolves from 500L-500R to 1000L-0R.
+    \item If it starts at state 1000L-0R, later we will observe it evolves into state 500L-500R.
+    \item If it starts at state 500L-500R, we will (almost) never see it evolves into state 1000L-0R.
 \end{itemize}
 
 \begin{center}
@@ -639,7 +652,7 @@ There is only 1 possible arrangement.
 $\Rightarrow$ Multiplicity $=1$.
 
 \begin{center}
-    \begin{minipage}{0.6\linewidth}
+    \begin{minipage}{0.55\linewidth}
         \centering
         \includegraphics[width=\textwidth]{rubber_straight}
     \end{minipage}
@@ -651,7 +664,7 @@ Have many possible arrangements.
 $\Rightarrow$ High multiplicity.
 
 \begin{center}
-    \begin{minipage}{0.6\linewidth}
+    \begin{minipage}{0.4\linewidth}
         \centering
         \includegraphics[width=\textwidth]{rubber_curl}
     \end{minipage}
@@ -823,8 +836,8 @@ Plotting the graph of $W$ and $S$ against internal energy $U$ respectively:
 \end{center}
 
 \newpage
-Imagine there are many more particles,
-the bar chart will become a smooth curve like so:
+In cases where the internal energy can be taken as continuous values,
+the $S$-$U$ graph will become a smooth curve like so:
 
 \begin{center}
     \begin{minipage}{0.8\linewidth}
@@ -833,7 +846,7 @@ the bar chart will become a smooth curve like so:
     \end{minipage}
 \end{center}
 
-The temperature scale defined by entropy is kind of "weird"...
+So the temperature scale defined by entropy is kind of "weird"...
 
 \begin{center}
     \begin{minipage}{0.7\linewidth}
@@ -842,8 +855,9 @@ The temperature scale defined by entropy is kind of "weird"...
     \end{minipage}
 \end{center}
 
-When we use entropy to define temperature scale, 
-\red{temperature is no longer about hot or cold.}
+Under this definition,
+\red{temperature is no longer about hot or cold.}\\
+
 (And we still cannot go below $0$K!)
 
 
