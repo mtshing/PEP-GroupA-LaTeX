@@ -260,24 +260,30 @@ The probability distribution of $x=x_0+\Delta x$ is therefore approximately
     &= \inv{Z'} \cdot e^{\inv{2k}\dv[2]{S}{x}\eval_{x_0}(x-x_0)^2}
 }
 
-This equation is in the form of \bf{normal distribution} (also called Gaussian distribution),
+This probability is in the form of \bf{normal distribution} (also called Gaussian distribution),
 whose standard formula is written as
 \aleq{
     P(x) = \inv{\sqrt{2\pi\sigma^2}} \cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 }
 A normal distribution is governed by two variables, $\mu$ and $\sigma$, 
-which are the mean and S.D. of the distribution respectively.
+which are the mean and standard derivation of the distribution respectively.
 
 \insertFig{gaussian distribution}
 
 By comparison, we can identify that the distribution of $x$ follows a normal distribution whose
 \begin{itemize}
-    \item Mean $=x_0$\\
-    On average, fluctuate of $x$ will be near $x=x_0$ 
-    which is the value of $x$ when the system is in the maximum entropy state.
+    \item \ul{Mean}: 
+    \aleq{
+        \mu=x_0  
+    }
+    As expected, $x$ should fluctuate around $x=x_0$,
+    the value of $x$ when the system is in the maximum entropy state.
     
-    \item S.D. $=-\sqrt{k\qty(\dv[2]{S}{x}\eval_{x_0})^{-1}}$\\
-    The magnitude of fluctuation depends on the relation of $x$ with entropy $S$.
+    \item \ul{Standard derivation}:
+    \aleq{
+        -\sqrt{k\qty(\dv[2]{S}{x}\eval_{x_0})^{-1}}
+    }
+    i.e. The magnitude of fluctuation depends on the \nth{2} derivative of $S$ with respect to $x$.
 
 \end{itemize}
 
@@ -299,9 +305,75 @@ By comparison, we can identify that the distribution of $x$ follows a normal dis
 
 
 %%%%%%%%%%%%%%
+\subsection{Thermal Equilibrium}
+
+In a closed system, the total energy must conserve within the system.
+However because thermal fluctuation is allowed,
+the internal energy of individual objects in the system are not constants
+but fluctuate around some values.\\ 
+
+For simplicity, we can consider a system with only 2 objects $A$ and $B$.
+Because the total energy $U_\text{total}$ is conserved, 
+if $A$ has an internal energy $U_A$, $B$ must have an internal energy $U_B = U_\text{total}- U_A$.
+\begin{center}
+    We can choose $U_A$ as the state parameter and investigate its fluctuation.
+\end{center}
+
+Suppose the two objects' entropy can be expressed in terms of their internal energy: 
+\aleq{
+    S_A = S_A(U) \quad\text{and}\quad S_B = S_B(U)
+}
+We can determine at what condition when the system is at the maximum entropy state.  
+Because entropy of a system is the sum of entropy of individual objects,
+\aleq{
+    S_\text{total} = S_A(U_A) + S_B(U_B) = S_A(U_A) + S_B(U_\text{total} - U_A)
+}
+
+At the maximum entropy state, $\dvv{U_A}S_text{total} = 0$.
+\aleq{
+    \dvv{U_A} S_\text{total} 
+    &= \dvv{S_A}{U_A} + \dvv{S_B}{U_A} \\
+    &= \dvv{S_A}{U_A} + \dvv{S_B}{U_B} \dvv{U_A}(U_\text{total} - U_A)\\
+    &= \dvv{S_A}{U_A} - \dvv{S_B}{U_B}\\
+    &=0\\
+    \inv{T_A} \ \defeq\ \dvv{S_A}{U_A} = \dvv{S_B}{U_B} \ \defeq\ \inv{T_B}
+}
+which is saying: from the object's entropy-energy relation,
+we can define a state parameter $T=\dvv{U}{S}$ (called "temperature").
+This "$T$" parameter can be used to indicate \bf{thermal equilibrium}: 
+\begin{minipage}{0.8\textwidth}
+    \begin{center}
+        \begin{framed}
+            \centering
+            Thermal equilibrium occurs at the maximum entropy state of a system, 
+            when every object's "$T$" parameter must be equal.
+        \end{framed}
+    \end{center}
+\end{minipage}
+
+Beware that having equal temperature still allows fluctuation in internal energy.
+Since the \nth{2} derivative of $S$ by $U_A$ is 
+\aleq{
+    \dvv[2]{S}{U_A} = \dvv{U_A}\qty(\inv{T}) = -\inv{T^2}dvv{T}{U_A} = -\inv{T^2C_V}
+}
+where $C_V$ is the heat capacity of object $A$ under constant volume process.
+So the distribution of $U_A$ is a normal distribution 
+\begin{itemize}
+    \item Centered around some equilibrium value.\\
+    (we cannot solve the value without knowing what exactly are S_A(U) and S_B(U).)
+
+    \item Standard derivation $= T\sqrt{kC_V}$.\\
+    This is the characteristic magnitude of energy fluctuation of the system.  
+\end{itemize}
+
+
+%%%%%%%%%%%%%
 \subsection{Boltzmann Factor}
 
-Consider a closed system, i.e. the total energy conserves within the system.
+In reality, the only closed system is the whole universe.
+Even a "small" fluctuation in energy is actually quite big to an individual object!
+
+
 
 
 
@@ -355,6 +427,7 @@ Every object in the universe is constantly under thermal contact with other obje
 sometimes you may observe its internal energy to be some value $U_1$,
 and sometimes you may observe it to be another value $U_2$.
 
+v
 \begin{center}
     \red{What is the probability to observe that the object carry internal energy $U_i$?}
 \end{center}
