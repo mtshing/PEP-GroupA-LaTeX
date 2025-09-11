@@ -81,7 +81,7 @@ we obtain a list of different probabilities for getting any integer between 2 to
     \aleq{
         P(x_i) = \frac{1}{N}
     }
-    Then the expected value, variance and S.D. will reduce to the formula that we can find in high school textbook.
+    Then the expected value, variance and S.D. will reduce to the mean and S.D. formula that we can find in high school textbook.
     \aleq{
         \E{x} &= \sum_{\text{all possible }x_i} x_i P(x_i) = \frac{\sum_i x_i}{N} \ \defeq\ \bar{x} \\[1ex]
         %
@@ -170,41 +170,39 @@ The formula for PMF (discrete cases) can be extended to PDF (continuous cases).
 \section{Boltzmann Distribution}
 
 %%%%%%%%%%%%%%%%%
-\subsection{Thermal Fluctuation}
+\subsection{Fluctuation of State Parameters}
 
-From the last notes, 
-we have learnt that 
+From previous notes, we have learnt that 
 \begin{itemize}
-    \item We can describe different states of a thermodynamics system by some macrostate parameters.
-    \item We can compute the multiplicity, and thus entropy of the system using the macrostate parameters.
-    \item Every system will eventually evolve into a state with maximum entropy. 
+    \item Different states of a thermodynamics system are distinguished by macrostate parameters.
+    \item Change of macrostate is caused by random motion. 
+    \item Every \it{closed} system will eventually evolve into a state with maximum multiplicity, 
+    because the probability to observe a macrostate is proportional to its multiplicity.
 \end{itemize}
 
-In theory, if we know the expression of entropy $S$ relating to a macrostate parameter $x$,
-we can compute the corresponding $x=x_0$ at the maximum entropy state by solving
-\aleq{
-    \begin{cases}
-    \dvv{S}{x}\eval_{x=x_0} = 0 
-    & \qty(\substack{\text{Entropy is the max.}\\\text{when }x=x_0}\\\Rightarrow \text{Slope }=0)\\
-    %
-    \dvv[2]{S}{x}\eval_{x=x_0} <0
-    & \qty(\substack{\text{Slope is decreasing}\\\text{at the maximum}})
-    \end{cases}
-}
+In general, if we can express the entropy $S$ of system in terms of a macrostate parameter $x$,
+We can compute the corresponding $x=x_0$ at the maximum entropy state by solving
+    \aleq{
+        \begin{cases}
+            \eval{\dvv{S}{x}}_{x=x_0} = 0 
+            & \qty(\substack{\text{Entropy is at its maximum}\\\Rightarrow \text{ Slope }=\, 0 \text{ at }x=x_0})\\[1em]
+            %
+            \eval{\dvv[2]{S}{x}}_{x=x_0} <0
+            & \qty(\substack{\text{Slope keeps decreasing}\\\text{near the maximum}})
+        \end{cases}
+    }
 
-However, a fundamental principle of statistical physics is that every macrostate parameter is a statistical property - 
-there are always random fluctuation in the macrostate parameters such that, 
-with a small probability,
-the 
-
-In thermodynamics, every state parameter is a statistical property - 
-a state being labeled with parameter $x=x_0$ only means the \cul[red]{expected value of observing $x$ is $x_0$}.
-Its actual value can randomly fluctuate, 
-different in value from time to time.\\
+However, because of random motion, 
+even if the system has reached its maximum entropy state,
+its state parameters can still fluctuate.
+Every so often, the parameter $x$ may deviate by some small amount $\Delta x$, 
+causing the system entering a lower entropy state. 
+But this change will revert very soon again due to random motion.\\
 
 For example, in the 2-boxes system with 1000 balls, 
-the macrostates are described by one state parameter $N_R=$ the number of balls in the right box. 
-Because the balls are always free to move between the boxes, 
+its macrostates can be distinguished by one state parameter - 
+$N_R=$ the number of balls in the right box. 
+Because the balls are free to move (randomly) between the boxes, 
 $N_R$ must fluctuate, even when it has reached the maximum entropy state 500L-500R. 
 \begin{itemize}
     \item
@@ -217,100 +215,95 @@ $N_R$ must fluctuate, even when it has reached the maximum entropy state 500L-50
 
 \insertFig{moving ball in and out}
 
-Because of randomness, 
-all thermodynamics state parameter $x$ form some probabiilty distribution centered around its expected value $x=x_0$.
-So we can proceed to ask:
-\begin{center}
-    \red{When the system is in the macrostate $x=x_0$,
-    what is the probability to observe $x$ to be $x_0 + \Delta x$?}
-\end{center}
 
+In fact, we can even determine the probability distribution of observing fluctuation $\Delta x$.
 Recall that the probability of observing a macrostate with parameter $x$ 
 is proportional to the number of microstates (i.e. multiplicity) it corresponds to,
-\begin{itemize}
-    \item The expected value of 
-\end{itemize}
-
 \aleq{
-    P\qty(x=x_0) 
-    \ &\propto\ %\frac{\qty(\mstack{\text{\# of microstates that}\\\text{leads to observing }x=0})}{\qty(\text{Total \# of microstates})}
-    \mstack{\text{\# of microstates that}\\\text{leads to observing }x=x_0}\\
-    &= \inv{Z}W(x=x_0) = \inv{Z}e^{\frac{S(x=x_0)}{k}}
+    P\qty(x=x_0) \ &\propto\ 
+    \qty(\mstack{\text{\# of microstates that}\\\text{leads to observing }x=x_0})\\[1em]
+    &= \frac{W(x=x_0)}{Z} = \frac{e^{\frac{S(x=x_0)}{k}}}{Z}
 }
 
-where $Z$ is some constant for normalization (because probability should add up to $1$).
-It can be calculated as
+where $Z$ is just some constant for normalization (because probability should add up to $1$).
 \aleq{
     Z = 
-    \bcase{
-        \sum_{\substack{\text{all possible}\\x_i}}W(x_i) 
+    \begin{cases}
+        \displaystyle \sum_{\substack{\text{all possible}\\x_i}}W(x_i) 
         = \sum_{\substack{\text{all possible}\\x_i}}e^{\frac{S(x_i)}{k}}
-        & \text{if }x \text{ can only take discrete values}
+        & \text{if }x \text{ must take discrete values}\\[2.5em]
         %
-        \int_{-\infty}^\infty W(x) \dd{x} 
+        \displaystyle \int_{-\infty}^\infty W(x) \dd{x} 
         = \int_{-\infty}^\infty e^{\frac{S(x)}{k}} \dd{x} 
         & \text{if }x \text{ can take continuous values}
-    }
+    \end{cases}
 }
 
+Let $x=x_0$ when the system is at its maximum entropy state,
+the fluctuation in entropy $\Delta S$ can be related to 
+the fluctuation of the state parameter $\Delta x$ by Taylor series expansion:
+\aleq{
+    S(x_0+\Delta x) &= S(x_0) + \Delta S\\ 
+    %
+    &= \cub[green]{S(x_0)}{\text{A constant}} + \cub[red]{\ccancelto[red]{0}{\dvv{S}{x}\eval_{x=x_0}}}{\substack{S\, =\, \text{max.}\\\text{so slope }=\,0}} (\Delta x) 
+        + \half \cub[blue]{\dvv[2]{S}{x}\eval_{x=x_0}}{\substack{S\,=\,\text{max.}\\\text{\nth{2} derivative }<\,0}} (\Delta x)^2 + \cdots
+}
+
+The probability distribution of $x=x_0+\Delta x$ is therefore approximately
+\aleq{
+    P\qty(x) &=
+    \frac{e^{\frac{S(x)}{k}}}{Z} \\
+    %
+    &\approx \cub[green]{\inv{Z} \cdot e^{\frac{S(x_0)}{k}}}{\substack{\text{Both are constant}\\\text{can combine}}} 
+    \cdot e^{\inv{2k}\dv[2]{S}{x}\eval_{x_0}(\Delta x)^2}\\[1ex]
+    %
+    &= \inv{Z'} \cdot e^{\inv{2k}\dv[2]{S}{x}\eval_{x_0}(x-x_0)^2}
+}
+
+This equation is in the form of \bf{normal distribution} (also called Gaussian distribution),
+whose standard formula is written as
+\aleq{
+    P(x) = \inv{\sqrt{2\pi\sigma^2}} \cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+}
+A normal distribution is governed by two variables, $\mu$ and $\sigma$, 
+which are the mean and S.D. of the distribution respectively.
+
+\insertFig{gaussian distribution}
+
+By comparison, we can identify that the distribution of $x$ follows a normal distribution whose
+\begin{itemize}
+    \item Mean $=x_0$\\
+    On average, fluctuate of $x$ will be near $x=x_0$ 
+    which is the value of $x$ when the system is in the maximum entropy state.
+    
+    \item S.D. $=-\sqrt{k\qty(\dv[2]{S}{x}\eval_{x_0})^{-1}}$\\
+    The magnitude of fluctuation depends on the relation of $x$ with entropy $S$.
+
+\end{itemize}
 
 
 \begin{notation}[Side note:]
-    Recall the statement of Clausius theorem - 
+    Recall in Clausius theorem - 
     entropy of a closed system must either be a constant 
     or increase along any process.
-    However this is only true for the expected value. 
+    But because macrostate parameters are always fluctuating due to random process,
+    entropy is also subject to fluctuation. 
+    Clausius theorem should be more accurately written as:
     \aleq{
         \Delta S \geq 0 \quad\xRightarrow{\text{More accurately}}\quad \Delta S_\red{\text{avg.}} \geq 0
     }
 
-    Irreversibility exists only because systems tend to evolve from 
-    macrostates of low multiplicity to high multiplicity.
-    The reverse is allowed to happen,
-    although at a much lower chance.\\
-
-    The fluctuation in multiplicity is most likely observed after the system has reached its maximum entropy state - 
-    because any fluctuation will cause the system evolves into a lower multiplicity state.
-    Afte some time  multiplicity increases again due to probability.
 \end{notation}
 
 
 
 
-
-
-
-And multiplicity is related to the entropy of the macrostate. 
-So if we know the function form of multiplicity or entropy related to the parameter, i.e. $W(x)$ or $S(x)$,
-we can tell the probability of observing a particular value of $x$.
-\aleq{
-    P\qty(x=x_0) 
-    \ =\ \frac{e^{\frac{S(x_0)}{k}}}{Z}
-    \qquad\text{where}\qquad Z = \sum_{\substack{\text{all possible}\\x_0}}e^{\frac{S(x_0)}{k}} 
-}
-
-In particular, if the system is at its maximum entropy state when $x=x^\ast$,
-we can relate the fluctuation in entropy $\Delta S$ can be related to 
-the fluctuation of the state parameter $\Delta x$ by Taylor series expansion:
-\aleq{
-   S(x^\ast+\Delta x) &= S(x^\ast) + \Delta S\\ 
-   &= S(x^\ast) + \pdvv{S}{x}\eval_{x=x^\ast} (\Delta x) + \half \pdvv[2]{S}{x}\eval_{x=x^\ast} (\Delta x)^2 + \cdots
-}
-
-
-Suppose the system has a state parameter $x$ 
-(E.g. In the 2-boxes model, we have $x$ = number of balls in the right box).
-What is the probability to observe it fluctuates by a magnitude $\Delta x$?\\
-
-
-
-In general, we can express the entropy $S$ of a system as a function of another state parameter $x$ 
-
-
-
-
 %%%%%%%%%%%%%%
-\subsection{Boltzmann Distribution}
+\subsection{Boltzmann Factor}
+
+Consider a closed system, i.e. the total energy conserves within the system.
+
+
 
 The fluctuation for internal energy is a bit more interesting - 
 because energy of a closed system must be a constant, 

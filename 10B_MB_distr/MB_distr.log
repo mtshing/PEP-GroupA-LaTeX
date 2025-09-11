@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  9 SEP 2025 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  11 SEP 2025 15:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1025,123 +1025,115 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 162.
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 162.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--176
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--225
+Underfull \hbox (badness 10000) in paragraph at lines 195--201
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 255--258
-
- []
-
-
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 365--368
 
  []
 
-
-
-[5]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 412.
- (c:/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 451.
+(c:/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 412.
-
-Underfull \hbox (badness 10000) in paragraph at lines 477--480
-
- []
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 451.
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 481--483
+Underfull \hbox (badness 10000) in paragraph at lines 516--519
 
  []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+Underfull \hbox (badness 10000) in paragraph at lines 520--522
+
+ []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 521.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 538.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 560.
 
 
 
 [7]
 
-[8] (./MB_distr.aux)
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 577.
+
+
+
+[8]
+
+[9] (./MB_distr.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `MB_distr.out' has not changed.
-(rerunfilecheck)             Checksum: 9163DE16AB2E18A6E2DBC3514BA3C314;2243.
+(rerunfilecheck)             Checksum: 4255BC9B679452FA9A4F62837E71CE9C;2294.
  ) 
 Here is how much of TeX's memory you used:
- 29331 strings out of 469747
- 552428 string characters out of 5481688
+ 29334 strings out of 469747
+ 552490 string characters out of 5481688
  947475 words of memory out of 5000000
- 57144 multiletter control sequences out of 15000+600000
+ 57146 multiletter control sequences out of 15000+600000
  635333 words of font info for 71 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,19n,159p,594b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on MB_distr.pdf (8 pages, 213413 bytes).
+ 125i,26n,159p,594b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on MB_distr.pdf (9 pages, 222759 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
