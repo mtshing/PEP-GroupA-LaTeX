@@ -74,7 +74,7 @@ So the system's state can be uniquely described by $1000$ initial positions and 
 This is an example of \bf{microstate description} - 
 the state parameters are properties of individual objects.
 \aleq{
-    \text{state} = (\vvec{x}_1, \vvec{v}_1, \vvec{x}_2, \vvec{v}_2,..., \vvec{x}_N, \vvec{v}_N)
+    \text{state} = (\vvec{r}_1, \vvec{v}_1, \vvec{r}_2, \vvec{v}_2,..., \vvec{r}_N, \vvec{v}_N)
 }
 
 However taking measurement to all objects is impossible in reality. 
@@ -187,9 +187,9 @@ The \bf{multiplicity $W$ of a macrostate} is the number of microstates that corr
 %%%%%%%%%%%%%%
 \subsection{Origin of Irreversibility}
 
-Imagine we allow the balls to move freely between the two boxes. 
+Imagine we allow the balls to move \cul[red]{randomly} between the two boxes. 
 \it{Assume} the two boxes to be identical, 
-so that each ball has equal probability to be found in either box. 
+so that each ball should have equal probability to be found in either box. 
 Then
 \begin{itemize}
     \item Each microstate has an equal probability $\dfrac{1}{16}$ to be found.
@@ -418,15 +418,17 @@ is used to set the baseline.
 %%%%%%%%%%%%%%
 \subsection{Entropy as Disorderness}
 
-In physics textbook, 
-we regards entropy as disorderness due to Boltzmann hypothesis - 
-there are more ways to make things look messy than to make things look tidy.
+In physics books, 
+we usually regards entropy as disorderness due to Boltzmann hypothesis - 
+because there are more ways to make things look messy than to make things look tidy.
 \begin{itemize}
-    \item A tidy place = Everything is in fixed position. E.g. Clothes should be in wardrobes and books should be on bookshelves.
-    So multiplicity is low, and so does entropy.
+    \item A tidy place = Everything is in its fixed position. 
+    E.g. Clothes should be in wardrobes and books should be on bookshelves.
+    Multiplicity is low, and so entropy is low.
 
-    \item A messy place = More randomness. E.g. Put your clothes anywhere other than wardrobes if you want your room looking messy.
-    So multiplicity is high, and so does entropy.
+    \item A messy place = Many randomness. 
+    E.g. You can put your clothes anywhere other than wardrobes if you want your room looks messy.
+    Multiplicity is high, and so entropy is high.
 \end{itemize}
 
 \begin{center}

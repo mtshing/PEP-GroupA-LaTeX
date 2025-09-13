@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1757338416.61341 "d:/mings/Documents/PhyO/latex_notes/10A_stat_mech/stat_mech.tex" "stat_mech.pdf" "stat_mech" 1757338424.6014 0
+["pdflatex"] 1757691750.96687 "d:/mings/Documents/PhyO/latex_notes/10A_stat_mech/stat_mech.tex" "stat_mech.pdf" "stat_mech" 1757691760.60102 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1756235949 12369 609d8642c64698220069e692719c9cbe ""
@@ -232,7 +232,7 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/10A_stat_mech/stat_mech.tex" 1757338414 30396 81e38370913ce80b9da8846ea52d5d51 ""
+  "d:/mings/Documents/PhyO/latex_notes/10A_stat_mech/stat_mech.tex" 1757691748 30451 cde9b3d67893885cd27b21370be079ed ""
   "img/2box.png" 1757046665 1237289 1df59cf904841aab8dd3e5a613d69f25 ""
   "img/2box_E0.png" 1757009770 8519 5d9d0468ba9a16de25fff80138efb086 ""
   "img/2box_E4.png" 1757009725 10482 04be27e988f006be71430721f68cb8d6 ""
@@ -263,10 +263,10 @@
   "img/rubber_unfold2.png" 1757009931 1523 27afc24c56bd061e7a4692c90aa80b5c ""
   "img/temp_scale.png" 1757009516 72326 0ba7da1c620a7dfd54018d1ea2b92671 ""
   "img/trajectory.png" 1757012144 24641 c7661a3e5f94484889019a6b857fea37 ""
-  "stat_mech.aux" 1757338424 3758 c07fe1ca266be064f121ddab18289279 "pdflatex"
-  "stat_mech.out" 1757338424 2504 2f36dac1e61ecdbd89a9e401ad55b6f9 "pdflatex"
-  "stat_mech.sta" 1757338423 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "stat_mech.tex" 1757338414 30396 81e38370913ce80b9da8846ea52d5d51 ""
+  "stat_mech.aux" 1757691760 3758 c07fe1ca266be064f121ddab18289279 "pdflatex"
+  "stat_mech.out" 1757691760 2504 2f36dac1e61ecdbd89a9e401ad55b6f9 "pdflatex"
+  "stat_mech.sta" 1757691759 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "stat_mech.tex" 1757691748 30451 cde9b3d67893885cd27b21370be079ed ""
   (generated)
   "stat_mech.aux"
   "stat_mech.log"
