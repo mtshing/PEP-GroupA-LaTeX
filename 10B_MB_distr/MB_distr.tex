@@ -19,8 +19,8 @@
 \begin{overview}
     \begin{itemize}
         \item Prerequisite: Probability, extending to continuous random variables
-        \item Boltzmann factor
-        \item Deriving Maxwell-Boltzmann distribution
+        \item Thermal fluctuation and Boltzmann factor
+        \item Maxwell-Boltzmann distribution, average speed of ideal gas
     \end{itemize}
 
 \end{overview}
@@ -49,7 +49,7 @@ we obtain a list of different probabilities for getting any integer between 2 to
 
 \begin{itemize}
     \item \bf{\ul{Normalization requriement}}:
-    The probability of all possible outcomes add up to 1.
+    The probabilities of all possible outcomes add up to 1.
     \aleq{
         \sum_{\text{all possible }x_i} P(x_i) = 1
     }
@@ -136,7 +136,7 @@ the probability per "length" of $x$.
 The formula for PMF (discrete cases) can be extended to PDF (continuous cases).
 \begin{itemize}
     \item \bf{\ul{Normalization requriement}}: 
-    The probability of all possible cases add up to 1.
+    The probabilities of all possible cases add up to 1.
     From the condition for PMF, we can extend the sum to integral for PDF.
     \aleq{
         \sum_{\text{all possible }x_i} P(x_i) = 1 
@@ -167,7 +167,7 @@ The formula for PMF (discrete cases) can be extended to PDF (continuous cases).
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Boltzmann Distribution}
+\section{Fluctuation \& Equilibrium}
 
 %%%%%%%%%%%%%%%%%
 \subsection{Fluctuation of State Parameters}
@@ -216,7 +216,7 @@ $N_R$ must fluctuate, even when it has reached the maximum entropy state 500L-50
 \insertFig{moving ball in and out}
 
 
-In fact, we can even determine the probability distribution of observing fluctuation $\Delta x$.
+In fact, we can determine the probability distribution of observing fluctuation $\Delta x$.
 Recall that the probability of observing a macrostate with parameter $x$ 
 is proportional to the number of microstates (i.e. multiplicity) it corresponds to,
 \aleq{
@@ -233,7 +233,7 @@ where $Z$ is just some constant for normalization (because probability should ad
         = \sum_{\substack{\text{all possible}\\x_i}}e^{\frac{S(x_i)}{k}}
         & \text{if }x \text{ must take discrete values}\\[2.5em]
         %
-        \displaystyle \int_{-\infty}^\infty W(x) \dd{x} 
+        \displaystyle \int_{\substack{\text{possible}\\\text{range of }x}} W(x) \dd{x} 
         = \int_{-\infty}^\infty e^{\frac{S(x)}{k}} \dd{x} 
         & \text{if }x \text{ can take continuous values}
     \end{cases}
@@ -270,20 +270,14 @@ which are the mean and standard derivation of the distribution respectively.
 
 \insertFig{gaussian distribution}
 
-By comparison, we can identify that the distribution of $x$ follows a normal distribution whose
+By comparison, we can identify that the distribution of $x$ follows a normal distribution with
 \begin{itemize}
-    \item \ul{Mean}: 
-    \aleq{
-        \mu=x_0  
-    }
+    \item \ul{Mean}: $\mu=x_0$\\
     As expected, $x$ should fluctuate around $x=x_0$,
-    the value of $x$ when the system is in the maximum entropy state.
+    which is the value of $x$ when the system is in the maximum entropy state.
     
-    \item \ul{Standard derivation}:
-    \aleq{
-        -\sqrt{k\qty(\dv[2]{S}{x}\eval_{x_0})^{-1}}
-    }
-    i.e. The magnitude of fluctuation depends on the \nth{2} derivative of $S$ with respect to $x$.
+    \item \ul{Standard derivation}: $\sigma = -\qty(\inv{k}\dv[2]{S}{x}\eval_{x_0})^{-\half}$\\
+    i.e. The size of fluctuation depends on the \nth{2} derivative of $S$ with respect to $x$.
 
 \end{itemize}
 
@@ -293,7 +287,7 @@ By comparison, we can identify that the distribution of $x$ follows a normal dis
     entropy of a closed system must either be a constant 
     or increase along any process.
     But because macrostate parameters are always fluctuating due to random process,
-    entropy is also subject to fluctuation. 
+    entropy can fluctuate too. 
     Clausius theorem should be more accurately written as:
     \aleq{
         \Delta S \geq 0 \quad\xRightarrow{\text{More accurately}}\quad \Delta S_\red{\text{avg.}} \geq 0
@@ -310,13 +304,16 @@ By comparison, we can identify that the distribution of $x$ follows a normal dis
 In a closed system, the total energy must conserve within the system.
 However because thermal fluctuation is allowed,
 the internal energy of individual objects in the system are not constants
-but fluctuate around some values.\\ 
+but fluctuate around some values.
+
+\insertFig{2 object exchange heat}
 
 For simplicity, we can consider a system with only 2 objects $A$ and $B$.
 Because the total energy $U_\text{total}$ is conserved, 
 if $A$ has an internal energy $U_A$, $B$ must have an internal energy $U_B = U_\text{total}- U_A$.
 \begin{center}
-    We can choose $U_A$ as the state parameter and investigate its fluctuation.
+    \blue{Solely using $U_A$ is enough to distinguish different states.\\
+    We can investigate the fluctuation of $U_A$ as a state parameter.}
 \end{center}
 
 Suppose the two objects' entropy can be expressed in terms of their internal energy: 
@@ -329,337 +326,495 @@ Because entropy of a system is the sum of entropy of individual objects,
     S_\text{total} = S_A(U_A) + S_B(U_B) = S_A(U_A) + S_B(U_\text{total} - U_A)
 }
 
-At the maximum entropy state, $\dvv{U_A}S_text{total} = 0$.
+At the maximum entropy state, $\dvv{U_A}S_\text{total} = 0$.
 \aleq{
     \dvv{U_A} S_\text{total} 
-    &= \dvv{S_A}{U_A} + \dvv{S_B}{U_A} \\
-    &= \dvv{S_A}{U_A} + \dvv{S_B}{U_B} \dvv{U_A}(U_\text{total} - U_A)\\
-    &= \dvv{S_A}{U_A} - \dvv{S_B}{U_B}\\
-    &=0\\
-    \inv{T_A} \ \defeq\ \dvv{S_A}{U_A} = \dvv{S_B}{U_B} \ \defeq\ \inv{T_B}
+    &= \dvv{S_A}{U_A} + \dvv{S_B}{U_A} \\[1ex]
+    &= \dvv{S_A}{U_A} + \dvv{S_B}{U_B} \cdot \dvv{U_A}(U_\text{total} - U_A)\\[1ex]
+    &= \dvv{S_A}{U_A} - \dvv{S_B}{U_B}\\[1ex]
+    &=0\\[1ex]
+    \gray{\inv{T_A} \ \defeq\ \, }\dvv{S_A}{U_A} &= \dvv{S_B}{U_B} \gray{\ \, \defeq\ \inv{T_B}}
 }
-which is saying: from the object's entropy-energy relation,
-we can define a state parameter $T=\dvv{U}{S}$ (called "temperature").
-This "$T$" parameter can be used to indicate \bf{thermal equilibrium}: 
-\begin{minipage}{0.8\textwidth}
-    \begin{center}
+
+\vskip 1ex
+This result implies - If the objects' entropy-energy relation $S(U)$ is known,
+we can define a state parameter $T=\dvv{U}{S}$ (so-called "temperature"), 
+which can be used to indicate \bf{thermal equilibrium}: 
+\begin{center}
+    \begin{minipage}{0.8\textwidth}
         \begin{framed}
             \centering
             Thermal equilibrium occurs at the maximum entropy state of a system, 
             when every object's "$T$" parameter must be equal.
         \end{framed}
-    \end{center}
-\end{minipage}
-
-Beware that having equal temperature still allows fluctuation in internal energy.
-Since the \nth{2} derivative of $S$ by $U_A$ is 
-\aleq{
-    \dvv[2]{S}{U_A} = \dvv{U_A}\qty(\inv{T}) = -\inv{T^2}dvv{T}{U_A} = -\inv{T^2C_V}
-}
-where $C_V$ is the heat capacity of object $A$ under constant volume process.
-So the distribution of $U_A$ is a normal distribution 
-\begin{itemize}
-    \item Centered around some equilibrium value.\\
-    (we cannot solve the value without knowing what exactly are S_A(U) and S_B(U).)
-
-    \item Standard derivation $= T\sqrt{kC_V}$.\\
-    This is the characteristic magnitude of energy fluctuation of the system.  
-\end{itemize}
-
-
-%%%%%%%%%%%%%
-\subsection{Boltzmann Factor}
-
-In reality, the only closed system is the whole universe.
-Even a "small" fluctuation in energy is actually quite big to an individual object!
-
-
-
-
-
-The fluctuation for internal energy is a bit more interesting - 
-because energy of a closed system must be a constant, 
-there shall not be fluctuation for the \ul{total internal energy}.
-However, we can consider the fluctuation of internal energy on individual objects in the system.
-
-
-A direct consequence of entropy fluctuation is that objects in a closed system are allowed to exchange energy
-(as long as total energy conserves).
-
-
-
-Now we can apply the fluctuation 
-However one thing very different between energy and other state parameters is that -
-energy must conserve in any scenario. 
-
-
-
-
-
-
-In the simplest 2-boxes model, without energy consideration,
-we used $x=n_L=$ number of balls in the left box as the state parameter. 
-
-when two such model is put together,
-total multiplicity is just a 
-
-When x=nL, 
-nL can take whatever value, 
-
-energy is a conserved quantity
-if one object has high energy then the other must have low energy
-
-Multiplicity under Energy Constraint
-
-
-
-Recall that in the 2-boxes system with energy difference,
-the multiplicity of the system is a function to internal energy.
-If the system is closed, 
-i.e. its internal energy is constant because it is not in thermal contact with anything, 
-then neither its multiplicity or entropy can vary.
-
-\insertFig{bar chart S}
-
-\bf{But in reality, the only closed system is the whole universe}
-because 100\% heat insulation from heat radiation does not exist.
-Every object in the universe is constantly under thermal contact with other objects - 
-sometimes you may observe its internal energy to be some value $U_1$,
-and sometimes you may observe it to be another value $U_2$.
-
-v
-\begin{center}
-    \red{What is the probability to observe that the object carry internal energy $U_i$?}
+    \end{minipage}
 \end{center}
 
-
-
-
-Previously, we have only dealt with closed system - 
-any objects that involve in heat exchange are considered as part of the system.
-\\
-
-\iffalse
-A "feature" of closed systems is that, 
-once the system has reached the maximum entropy state,
-there will be no more thermal interactions -
-the system is fixed at this state FOREVER.\\
-(P.S. The maximum entropy state of the universe is called "Heat death".)
-
-\insertFig{heat exchange of two object -> eqm forever}
-
-
-Anyway we are unable to consider every object in the universe.
-To correctly model objects' thermal behaviors,
-they should be treated as open systems - 
-the internal energy on the object is no longer a fixed value because of heat fluctuation,
-the ,
-but can lie in a range of values.
-
-
-
-
-
-if we know the probability distribution of $U$, 
-i.e. how frequent is this object found to have energy $U$, 
-then we can calculate the total multiplicity as the expected value under this distribution:
+Remember: Thermal equilibrium only requires objects to have equal temperature.
+Fluctuation in internal energy is still allowed.
+Since the \nth{2} derivative of $S$ by $U_A$ is 
 \aleq{
-    W_\text{obj} &= \sum_{\substack{\text{all possible}\\U_i}} 
-    \qty(\mstack{\text{Multiplicity when}\\\text{the object}\\\text{has energy } U_i}) \times 
-    \qty(\mstack{\text{Probability of}\\\text{the object}\\\text{having energy } U_i})\\[0.5em]
-    %
-    &=  
-    \begin{cases}
-        \displaystyle
-        \sum_{\substack{\text{all possible}\\U_i}} W(U_i)P(U_i) 
-        &\text{(if }U\text{ can only have discrete values)}\\[2em]
-        %
-        \displaystyle
-        \int_{\substack{\text{possible}\\\text{range}\\\text{of }U}} W(U) P(U)\dd{U}
-        &\text{(if }U\text{ can be a continuous range of values)}
-    \end{cases}
+    \dvv[2]{S}{U_A} = \dvv{U_A}\qty(\inv{T}) = -\inv{T^2}\dvv{T}{U_A} = -\inv{T^2C_V}
+}
+where $C_V$ is the heat capacity of object $A$ under constant volume process.
+So the distribution of $U_A$ is a normal distribution:
+\begin{itemize}
+    \item Centered around some equilibrium value $U_{0}$.\\
+    (we cannot solve the value without knowing what exactly are $S_A(U)$ and $S_B(U)$.)
+
+    \item Standard derivation $= T\sqrt{kC_V}$.\\
+    This is the characteristic size of energy fluctuation of a system.
+\end{itemize}
+
+\insertFig{normal distribution with standard derivation: 95\% lies within 2SD}
+
+How large is this energy fluctuation?
+Asumming room temperature $T\sim 300$K,
+\begin{itemize}
+    \item In daily life scale: 
+    \begin{itemize}
+        \item Heat capacity of materials $C_V\sim 10^3$J/K. 
+        \item Energy fluctuation on objects is therefore of magnitude $\sim 10^{-10}$J
+    \end{itemize}
+    which is completely negligible in our daily life.
+
+    \item In atomic scale:
+    \begin{itemize}
+        \item One ideal gas particle has a heat capacity $C_V= \frac{3}{2}k$.
+        \item Energy fluctuation on one particle is therefore $T\sqrt{kC_V} \sim kT \sim 10^{-21}$J.
+        \item Mass of a proton/neutron is in the scale $m\sim 10^{-27}$kg.
+    \end{itemize}
+    A sudden fluctuation in energy is enough to accelerate a particle's speed by $\sim 1000$m/s!
+    \aleq{
+        \Delta U = kT \approx \half m(\Delta v)^2 \sim 10^{-21} \qquad\Rightarrow\qquad \Delta v = \sqrt{\frac{kT}{m}} \sim 10^3
+    }
+\end{itemize}
+ 
+This tells us what actually happens in thermal equilibrium:
+\begin{center}
+    \begin{minipage}{0.9\textwidth}
+        \begin{framed}
+            \centering
+            The concept of thermal equilibrium is "sensible" only for objects in large scale,\\
+            so that any effects of energy fluctuation are averaged out by random motion.\\
+            But in microscopic scale, the particles are interacting violently all the time.
+        \end{framed}
+    \end{minipage}
+\end{center}
+
+\insertFig{normal scale: quiet; microscale: crazy}
+
+
+%%%%%%%%%%%%
+\subsection{Boltzmann Factor}
+
+Because of the scale of energy fluctuation is so big for a particle,
+we cannot expect the internal energy of a particle to always stay around the value which maximize the entropy of the object.
+(It is the \cul[red]{average} $U$ that maximizes the entropy, not the $U$ on a single particle.)
+\begin{center}
+    \red{What is the probability for a particle having a specific energy $U$ under thermal equilibrium?}
+\end{center}
+
+We can model by isolating a particle with the rest of every particle in a box. 
+Although the particle may be moving crazily due to thermal fluctuation, 
+we know that the rest of the particles are "collectively" forming a thermal equilibrium of temperature $T$.
+
+\insertFig{heat bath model: bath = rest of particle, temp T; obj = 1 particle, no T defined}
+
+Let the total energy to be a constant $U_\text{total}$.
+Obviously, the energy carried by 1 particle $U_p$ should be way less than that carried by the rest $U_\text{rest}$.
+We can write
+\aleq{
+    U_\text{total} = U_\text{rest} + U_p = \text{const.} 
+    \qquad\text{and}\qquad 
+    U_\text{rest} \gg U_p
 }
 
-\vskip 1ex
-How do you find $P(U)$?
-\fi
-
-%%%%%%%%%%%%%%
-\subsection{The Boltzmann Factor}
-
-We model the object as \cul[red]{thermally} contacting with a HUGE heat bath (i.e. the universe),
-where the only form of energy exchange is by heat transfer.
-
-\insertFig{heat bath contact}
-
-We require the following assumptions: 
-\begin{enumerate}
-    \item The heat bath is so HUGE that any energy exchange has no effect on it.
-    Its state parameters (e.g. temperature, entropy,...) remains constant all the time. 
-
-    \item The total energy of the object + heat bath is conserved.
-    \aleq{
-        U_\text{total} = U_\text{bath} + U_\text{obj} = \text{const.}
-    }
-    \item Energy carried by the heat bath is much greater than the energy carried by the object. i.e.
-    \aleq{
-        U_\text{bath} \gg U_\text{obj}
-    }
-\end{enumerate}
-
-Let the entropy of the heat bath be $S_\text{bath}$,
-which must be some function to its internal energy $U_\text{bath}$ 
-(although we do not know what this function is).
+Let the entropy of the rest of the particle be some function $S_\text{rest} = S_\text{rest}(U_\text{rest})$.
 We can make a Taylor expansion by
 \aleq{
-    S_\text{bath} &= S_\text{bath}(U_\text{bath}) \\
+    S_\text{rest} &= S_\text{rest}(U_\text{rest}) \\
     %
-    &= S_\text{bath}(\red{U_\text{total} - U_\text{obj}})\\[1ex]
+    &= S_\text{rest}(U_\text{total} - U_p)\\[1ex]
     %
-    &\approx S_\text{bath}(U_\text{total}) - \dvv{S_\text{bath}}{U}\eval_{U=U_\text{total}}\cdot U_\text{obj}\\
+    &\approx S_\text{rest}(U_\text{total}) - \dvv{S_\text{rest}}{U}\eval_{U=U_\text{total}}\cdot U_p\\
     %
-    &= S_\text{bath}(U_\text{total}) - \frac{U_\text{obj}}{T_\text{bath}}
+    &\approx S_\text{rest}(U_\text{total}) - \frac{U_p}{T}
 }
 
-The total multiplicity of the \{heat bath + object\} is thus
+The total multiplicity of the box is thus
 \aleq{
-    S_\text{total} &= S_\text{bath}+ S_\text{obj}\\
+    S_\text{total} &= S_\text{rest}+ S_p\\
     %
-    W_\text{total} &= e^\frac{S_\text{bath}+ S_\text{obj}}{k} \\
+    W_\text{total} &= e^\frac{S_\text{rest}+ S_p}{k} \\
     %
-    &\approx e^\frac{S_\text{bath}(U_\text{total}) -  \frac{U_\text{obj}}{T_\text{bath}}}{k} \cdot e^\frac{S_\text{obj}}{k}\\
+    &\approx e^\frac{S_\text{rest}(U_\text{total}) -  \frac{U_p}{T}}{k} \cdot e^\frac{S_p}{k}\\
     %
-    &= e^\frac{S_\text{bath}(U_\text{total})}{k} \cdot e^{-\frac{U_\text{obj}}{kT_\text{bath}}} \cdot e^\frac{S_\text{obj}}{k}\\
+    &= e^\frac{S_\text{rest}(U_\text{total})}{k} \cdot e^{-\frac{U_p}{kT}} \cdot e^\frac{S_p}{k}\\
     %
-    &= \tkn{W_const}{\cul[red]{e^\frac{S_\text{bath}(U_\text{total})}{k}}} \cdot e^{-\frac{U_\text{obj}}{kT_\text{bath}}} \cdot \tkn{W_obj}{\cul[blue]{W_\text{obj}}}
+    &= \tkn{W_const}{\cul[red]{e^\frac{S_\text{bath}(U_\text{total})}{k}}} \cdot e^{-\frac{U_p}{kT}} \cdot \tkn{W_obj}{\cul[blue]{W_p(U_p)}}
 }
 \addArrow[red]{W_const}{(-3ex,-2ex)}
 {\scriptsize $U_\text{total}$ is a constant\\[-1ex]\scriptsize so this term is just a constant}
-{(0,-1ex)}{(0,-1.5ex)}
+{(0,-1ex)}{(-3ex,-1.5ex)}
 \addArrow[blue]{W_obj}{(3ex,-2ex)}
-{\scriptsize Multiplicity of the object\\[-1ex]\scriptsize is some function of $U_\text{obj}$}
-{(0,-1.5ex)}{(0,-1.5ex)}
+{\scriptsize Multiplicity of the particle\\[-1ex]\scriptsize is some function of $U_p$}
+{(0,-1.5ex)}{(5ex,-1.5ex)}
 
 \vskip 1em
-Now the total multiplicity is expressed purely a function of $U_\text{obj}$.
-This is the total multiplicity (i.e. number of microstates) when the object has a particular value of internal energy $U_\text{obj}$ 
-with the heat bath maintained at temperature $T_\text{bath}$:
+Now the total multiplicity is a function of $U_p$ only.
+Thus we can calculate the probability that the particle acquire an internal energy $U_p$:
 \aleq{
-    W_\text{total}(U_\text{obj}) = \qty(\text{const.})\cdot e^{-\frac{U_\text{obj}}{kT_\text{bath}}} \cdot W_\text{obj}\qty(U_\text{obj})
+    P\qty(U=U_p) \ &\propto\ 
+    \qty(\mstack{\text{\# of microstates that}\\\text{leads to observing }U=U_p})\\[1ex]
+    %
+    &= W_\text{total}(U_p)\\[1ex]
+    %
+    &\propto e^{-\frac{U_p}{kT}}\cdot W_p(U_p)
 }
 
-To find the probability which the object has a particular value of internal energy $U_\text{obj}$,
-we simply divide it by the total multiplicity (total number of microstates),
-which is summed from all possible $U_\text{obj}$.
+\vskip 1ex
+Upon normalizing, we define the \bf{Boltzmann distribution} - 
+the probability of finding a particle with internal energy $U$ within an object/system 
+that is in thermal equilibrium of temperature $T$.
 \aleq{
-    P(U_\text{obj}) = \frac{W_\text{total}(U_\text{obj})}{\displaystyle \sum_{\substack{\text{all possible}\\U_\text{obj}}}W_\text{total}(U_\text{obj})}
+    \Aboxed{
+        P\qty(U) &= \frac{e^{-\frac{U}{kT}}\cdot W_p(U)}{Z}
+    }
 }
 
-But the thing we are actually interested in is the probability to find the object having centain value of internal energy.
-Recall the relation between multiplicity and probability:
-\aleq{
-    W(U) = 
-}
+The components of the Boltzmann distribution also have some fancy names:
+\begin{itemize}
+    \item The term $e^{-\frac{U}{kT}}$ is called the \bf{Boltzmann factor}.
+    
+    \item The normalization constant $Z$ is called \bf{partition function}, which calculates as
+    
+    \aleq{
+        Z = 
+        \begin{cases}
+            \displaystyle \sum_{\substack{\text{all possible}\\\text{values of }U}}e^{-\frac{U}{kT}}\cdot W_p(U) 
+            & \text{if }U \text{ must take discrete values}\\[2.5em]
+            %
+            \displaystyle \int_{\substack{\text{possible}\\\text{range of }U}} e^{-\frac{U}{kT}}\cdot W_p(U) \dd{U} 
+            & \text{if }U \text{ can take continuous values}
+        \end{cases}
+    }
+
+\end{itemize}
 
 
+\begin{example}
+    Suppose now the fluctuation is not on one particle, but four particles - 
+    which these four particles is contained in a 2-boxes system, 
+    and particles in the right box would have higher potential energy than in the left box by $\epsilon$.
 
-Let the entropy-energy relation of the heat bath and the object be some functions 
-(which we may or may not know its formula),
-\aleq{
-    \qquad,\qquad
-    S_\text{obj} = S_\text{obj}(U_\text{obj}) 
-}
+    \insertFig{bath model -> connect to 2 boxes model -> show energy diagram}
 
+    Given that the thermal equilibrium side is at temperature $T$.
+    What is the probability to find each of the macrostate of 2-boxes system?
+    First we can tabulate the macrostates and their multiplicity:\\
 
+    where the normalization constant (partition function) is just the sum of all the multiplicity:
+    \aleq{
+        Z = e^0\cdot 1 + e^{-\frac{\epsilon}{kT}}\cdot 4 + e^{-\frac{2\epsilon}{kT}}\cdot 6
+            + e^{-\frac{3\epsilon}{kT}}\cdot 4 + e^{-\frac{4\epsilon}{kT}}\cdot 1
+    }
 
-
-%%%%%%%%%%%%%%
-\subsection{Example: System with Discrete Energy States}
-
-
-
-
+\end{example}    
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Density of State of Ideal Gas}
+\section{Speed Distribution of Ideal Gas}
 
-
-
-The most important application of the above ideas is to find the
-energy-probability relation for states in ideal gas,
-when heat exchange is allowed.\\
-
-i.e. States with which energy are most probable to be found,
-given that it is at temperature $T$?\\
-
-Since energy of ideal gas can be any real number,
-we first need to adapt the formula from last section for continuous distribution.
+Because the energy of an ideal gas particle can be chosen from a continuous range of value,
+we should use the continuous version of Boltzmann distribution:
+writing the probability of a particle acquiring an energy in the range $[U_0,U_0+\dd{U}]$ as
 \aleq{
-    \sum_{\substack{\text{all possible}\\U}} e^{-\frac{U}{kT}} W(U) 
-    \qquad\rightarrow\qquad
-    \int_0^\infty e^{-\frac{U}{kT}}W(U) \dd{U}
-}W
-
-What is the $W(U)$ for ideal gas?
-
-
-
-%%%%%%%%%%%%%%
-\subsection{Entropy of Ideal Gas}
-
-
-%%%%%%%%%%%%%%
-\subsection{Average Speed of Ideal Gas}
-
-In textbooks you can find 2 different formulas 
-related to the average speed about ideal gas. 
-How are they derived?
-
-\begin{enumerate}
-    \item \bf{\ul{Average Speed}} = Expected value to $\abs{v}$, i.e. $\E(\abs{v})$.
-    \aleq{
-        \E(\abs{v}) &= \int^\infty_0 \abs{v} \cdot P(\abs{v}) \dd{\abs{v}}\\
-        %
-        &= \int^\infty_0 \abs{v} \cdot \sqrt{\frac{2m^3}{\pi k^2 T^3}} \abs{v}^2 e^{-\frac{m\abs{v}^2}{2kT}} \dd{\abs{v}}\\
-        %
-        &= \sqrt{\frac{2m^3}{\pi k^2 T^3}} \qty(\frac{2kT}{m})^2 \int^\infty_0 \qty(\sqrt{\frac{m}{2kT}}v)^3 e^{-\qty(\sqrt{\frac{m}{2kT}}v)^2} \dd{\qty(\sqrt{\frac{m}{2kT}}v)}\\
-        %
-        &= \sqrt{\frac{32kT}{\pi m}} \int^\infty_0 x^3 e^{-x^2} \dd{x} \\
-        %
-        &= \sqrt{\frac{32kT}{\pi m}} \cdot \half\\
-        %
-        &= \sqrt{\frac{8kT}{\pi m}}  \defeq  v_\text{avg}
-    }
-
-    \item \bf{\ul{Root Mean Square Speed}} = $\sqrt{\text{Expected value to } \abs{v}^2}$, i.e. $\sqrt{\E(\abs{v}^2)}$.
-    \aleq{
-        \E(\abs{v}^2) &= \int^\infty_0 \abs{v}^2 \cdot P(\abs{v}) \dd{\abs{v}}\\
-        %
-        &= \int^\infty_0 \abs{v}^2 \cdot \sqrt{\frac{2m^3}{\pi k^2 T^3}} \abs{v}^2 e^{-\frac{m\abs{v}^2}{2kT}} \dd{\abs{v}}\\
-        %
-        &= \sqrt{\frac{2m^3}{\pi k^2 T^3}} \qty(\frac{2kT}{m})^3 \int^\infty_0 \qty(\sqrt{\frac{m}{2kT}}v)^3 e^{-\qty(\sqrt{\frac{m}{2kT}}v)^2} \dd{\qty(\sqrt{\frac{m}{2kT}}v)}\\
-        %
-        &= \sqrt{\frac{64k^2T^2}{\pi m^2}} \int^\infty_0 x^4 e^{-x^2} \dd{x} \\
-        %
-        &= \sqrt{\frac{64k^2T^2}{\pi m^2}}\cdot \frac{3\sqrt{\pi}}{8} \\
-        %
-        &= \frac{3kT}{m}\\
-        %
-        \sqrt{\E(\abs{v}^2)} &= \sqrt{\frac{3kT}{m}}  \defeq  v_\text{rms}
-    }
-\end{enumerate}
-
-\bf{\ul{Note}}: Because the average KE
-(which is something we can measure)
-is calculated as 
-\aleq{
-    \text{Avg. KE} &= \E\qty(\half m\abs{v}^2) \\
-    &= \half m \E(\abs{v}^2)\\
-    &= \half m v_\text{rms}^2 
+    P\qty(U_0<U<U_0+\dd{U}) = f(U_0)\dd{U} = \frac{e^{-\frac{U_0}{kT}}\cdot W_p(U_0)}{Z}\dd{U}
 }
 
-The root mean square speed is way more useful than the average speed.
+What is the function of multiplicity, $W_p(U)\dd{U}$, for ideal gas particles?
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Multiplicity of Ideal Gas}
+
+In the mechanics picture,
+microstates of a particle are described by its position and velocity:
+\aleq{
+    \text{microstate} = (\vvec{r}, \vvec{v}) = (x,y,z, v_x, v_y, v_z)
+}
+
+Suppose the gas particle is in a container of size $L\times L \times L$ and 
+there is no potential energy difference anywhere.
+The possibilities of the 6 state parameters are
+\begin{itemize}
+    \item $x,y,z$ = Equal probability to be any real number within $[0,L]$.
+    
+    \item $v_x,v_y,v_z$ = Equal probability to be any real number as long as $\sqrt{v_x^2+v_y^2+v_z^2}<(\text{speed of light})$
+    
+\end{itemize} 
+
+To visualize, the possible states can be plotted in a 6-dimension state space of $(x,y,z, v_x, v_y, v_z)$ 
+
+\insertFig{3D x3D space; xyz form cube; v form sphere}
+
+
+Because there is no potential energy difference anywhere in the box,
+we can choose the potential energy of the particle to be $0$.
+So the particle's internal energy is equal to its kinetic energy, which is a function of the velocities only.
+\aleq{
+    U = \text{K.E.} + \text{P.E.} = \half m(v_x^2+v_y^2+v_z^2) + 0
+}
+
+So what is the multiplicity of a marcostate with internal energy in the range $[U_0,U_0+\dd{U}]$?
+It is the number of microstates $(x,y,z, v_x,v_y,v_z)$ that satisfy $U_0\leq \half m(v_x^2+v_y^2+v_z^2)\leq U_0+\dd{U}$.
+
+\insertFig{xyz every point satisfy anyway, v form sphere}
+
+In the $x$-$y$-$z$ space, every point is allowed. 
+
+In the $v_x$-$v_y$-$v_z$ space, 
+only the points with $\norm{\vvec{v}} = \sqrt{v_x^2+v_y^2+v_z^2}$ in between $\qty[\sqrt{\frac{2U_0}{m}}, \sqrt{\frac{2(U_0+\dd{U})}{m}}]$ are allowed.\\
+
+\begin{itemize}
+    \item Because multiplicity due to different $(x,y,z)$ is the the same for any value of $U$,
+    it shall be canceled by normalization when we compute probability.
+    We can ignore it from now on.
+
+    \item For the multiplicity due to different $(v_x,v_y,v_z)$,
+    although technically there are infinitely many points inside the spherical shell,
+    this number of points must be proportional to the volume of the spherical shell.
+    \aleq{
+        (\text{Volume of the shell}) = 4\pi \norm{\vvec{v}}^2 \dd{\norm{\vvec{v}}}
+        \quad\Rightarrow\quad
+        (\text{\# of points within})\propto 4\pi \norm{\vvec{v}}^2 \dd{\norm{\vvec{v}}}
+    }
+    Again, because any proportionality constant should be the same for any value of $U$, 
+    it shall be canceled by normalization when we compute probability.
+
+\end{itemize}
+
+By change of variable $\norm{\vvec{v}} = \sqrt{\frac{2U}{m}}$ and $\dd{\norm{\vvec{v}}} = \sqrt{\inv{2mU}}\dd{U}$,
+we get $W(U)\dd{U}$:
+\aleq{
+    W(U_0)\dd{U} &= \qty(\mstack{\text{\# of microstates that satisfy}\\U \in [U_0,U_0+\dd{U}]})\\[1ex]
+    %
+    &= \qty(\mstack{\text{\# of microstates that satisfy}\\\textstyle \norm{\vvec{v}} \in \qty[\sqrt{\frac{2U_0}{m}}, \sqrt{\frac{2(U_0+\dd{U})}{m}}]})\\[1ex]
+    %
+    &\cul[red]{\propto}\ \qty(\mstack{\text{Volume of spherical shell in between radius}\\\textstyle \sqrt{\frac{2U_0}{m}}\leq \norm{\vvec{v}}\leq \sqrt{\frac{2(U_0+\dd{U})}{m}}})\\[1ex]
+    %
+    &= 4\pi \norm{\vvec{v}}^2 \dd{\norm{\vvec{v}}}\\[1ex]
+    %
+    &= 4\pi\qty(\frac{2U_0}{m})\sqrt{\inv{2mU_0}}\dd{U}\\[1ex]
+    %
+    &= 4\pi\sqrt{\frac{2}{m^3}}\sqrt{U_0}\dd{U}
+}
+
+\begin{notation}[Side note:]
+    Note that because of the \cul[red]{proportionality symbol} above,
+    the $W(U)$ we arrived at is NOT the number of state of ideal gas,
+    but the \bf{density of state} - the number of state per unit volume in the $v_x$-$v_y$-$v_z$ space.\\
+
+    Calculating the exact number of state requires quantum mechanics.
+    Because at the smallest scale, 
+    quantum mechanics tells us that internal energy of particles can only take quantized values.
+    Then we can actually count the number of allowed states.
+\end{notation}
+
+
+%%%%%%%%%%%%%%
+\subsection{Normalization: Gaussian Integral}
+
+Now we can write down the Boltzmann distribution of ideal gas:
+\aleq{
+    P(U)\sim f(U)\dd{U} = \frac{e^{-\frac{U}{kT}}\cdot W_p(U)}{Z} 
+    = \frac{\ccancelto[red]{\text{constant}}{4\pi\sqrt{\frac{2}{m^3}}}\cdot  e^{-\frac{U}{kT}}\sqrt{U}\dd{U}}{\ccancelto[red]{}{Z}}
+    = \frac{e^{-\frac{U}{kT}}\sqrt{U}\dd{U}}{Z}
+}
+
+The remaining is to calculate the normalization constant $Z$. 
+Let $x^2 = \frac{U}{kT}$ and $2x\dd{x} = \inv{kT}\dd{U}$,
+\aleq{
+    \tkn{half_range}{\cul[red]{\int_0^\infty}} f(U) \dd{U} 
+    &= \inv{Z}\int_0^\infty e^{-\frac{U}{kT}}\sqrt{U}\dd{U}\\[1ex]
+    %
+    &= \inv{Z}\int_0^\infty e^{-x^2}\sqrt{x^2kT} \cdot (kT)\cdot 2x\dd{x}\\[1ex]
+    %
+    &= \frac{2(kT)^{\frac{3}{2}}}{Z} \int_0^\infty e^{-x^2}x^2\dd{x}\\[1ex]
+    %
+    &\equiv 1 \quad(\text{Required by normalization})
+}
+\addBentArrow[red]{half_range}{(-4ex,-2ex)}
+{\scriptsize $U$ of ideal gas = K.E.\\[-1ex]\scriptsize can only take positive values}{(0,-3ex)}{(-8ex,0)}
+
+This integral is extremely tricky to compute.
+First we do integration by-part,
+\aleq{
+    \int_0^\infty e^{-x^2}x^2\dd{x} 
+    &= \int_0^\infty \half e^{-x^2}x\dd{x^2} \\[1ex]
+    %
+    &= -\int_0^\infty \half x \dd{e^{-x^2}} \\[1ex]
+    %
+    &= \ccancelto[red]{0}{-\eval{\qty(\half xe^{-x^2})}_0^\infty} + \half \int_0^\infty e^{-x^2} \dd{x}\\[1ex]
+    %
+    &= \half \int_0^\infty e^{-x^2} \dd{x}
+}
+
+The integral on $e^{-x^2}$ is called the \bf{Gaussian integral},
+which can be analytically computed only if the bounds are $\pm \infty$.
+\aleq{
+    \Aboxed{
+        \int_{-\infty}^\infty e^{-x^2} \dd{x} \equiv \sqrt{\pi}
+    }
+}
+
+But the range in our integral is only $[0,\infty]$, not $[-\infty, \infty]$,
+we only take half of it (because $e^{-x^2}$ is an even function, $f(x)=f(-x)$).
+So the normalization constant $Z$ is 
+\aleq{
+    Z &= 2(kT)^{\frac{3}{2}}\int_0^\infty e^{-x^2}x^2\dd{x}\\[1ex]
+    &= 2(kT)^{\frac{3}{2}}\cdot \half\cdot \frac{\sqrt{\pi}}{2}\\[1ex]
+    &= \frac{\sqrt{\pi k^3T^3}}{2}
+}
+
+The complete expression of Boltzmann distribution for ideal gas is therefore
+\aleq{
+    \Aboxed{
+        f(U)\dd{U} = \frac{2}{\sqrt{\pi k^3T^3}}e^{-\frac{U}{kT}}\sqrt{U}\dd{U}
+    }
+}
+
+
+\begin{notation}[Side note:]
+    The standard method of computing Gaussian integral is as follow:
+    \begin{enumerate}
+        \item Let $\displaystyle I = \int_{-\infty}^{\infty} e^{-\half ax^2} \dd{x}$. 
+        The trick of computation is to promote it to 2D:
+        \aleq{
+            I^2 &= \qty(\int_{-\infty}^{\infty} e^{-\half ax^2} \dd{x} )
+                \cdot \qty(\int_{-\infty}^{\infty} e^{-\half ay^2} \dd{y}) \\[1em]
+            %
+            &= \int_{x=-\infty}^{x=\infty}\int_{y=-\infty}^{y=\infty} 
+                e^{-\half ax^2} e^{-\half ay^2} \dd{y} \dd{x} \\[1em]
+            %
+            &= \int_{x=-\infty}^{x=\infty}\int_{y=-\infty}^{y=\infty} 
+                e^{-\half a(x^2+y^2)} \dd{y} \dd{x} 
+        }
+
+        \item The we can do a change of coordinate from $x$-$y$ to polar $r$-$\theta$: 
+        \aleq{
+            \iint f(x,y)\dd{x}\dd{y} \quad\Leftrightarrow\quad \iint f(r,\theta)\, r\dd{r}\dd{\theta}
+        }
+        \begin{itemize}
+            \item Converting the integrand:
+            \aleq{
+                e^{-\half a(x^2+y^2)} \quad\Leftrightarrow e^{-\half ar^2}
+            }
+            
+
+            \item The integration range is always the whole 2D plane:
+            \aleq{
+                (x,y) \in \{-\infty,\infty\}\times \{-\infty,\infty\} 
+                \quad \Leftrightarrow\quad
+                (r,\theta) \in \{0,\infty\}\times  \{0,2\pi\}
+            }
+        \end{itemize}
+
+        \item So the integral becomes 
+        \aleq{
+            I^2 &= \int_{r=0}^{r=\infty} \int_{\theta=0}^{\theta=2\pi} e^{-\half ar^2}r\dd{\theta}\dd{r}\\
+            %
+            &= 2\pi \cdot \int_{r=0}^{r=\infty} e^{-\half ar^2} \dd{\qty(\frac{r^2}{2})}\\
+            %
+            &= \frac{2\pi}{a}\\
+            %
+            I &= \sqrt{\frac{2\pi}{a}}
+        }
+            
+    \end{enumerate}
+\end{notation}
+
+
+%%%%%%%%%%%%%%
+\subsection{Speed Distribution \& Average Speed}
+
+The final derivation is the famous Maxwell-Boltzmann distribution,
+which plots the probability of finding ideal gas particles at different speed $v$.
+The derivation is straightforward,
+by substituting $U = \half mv^2$ and $\dd{U}=mv\dd{v}$ into the Boltzmann distribution.
+\aleq{
+    f(U)\dd{U} &= \frac{2}{\sqrt{\pi k^3T^3}}e^{-\frac{U}{kT}}\sqrt{U}\dd{U}\\
+    %
+    &= \frac{2}{\sqrt{\pi k^3T^3}}e^{-\frac{mv^2}{2kT}}\sqrt{\half mv^2} \cdot mv\dd{v}\\
+    %
+    \Aboxed{
+        f(v)\dd{v} &= \sqrt{\frac{2m^3}{\pi k^3T^3}} v^2e^{-\frac{mv^2}{2kT}} \dd{v}
+    }
+}
+
+
+In physics textbooks you can find 2 different formulas related to the average speed of ideal gas. 
+these are derived as the expected values over the Maxwell-Boltzmann distribution.
+
+\begin{enumerate}
+    \item \bf{\ul{Average Speed}} = Expected value to $v$, i.e. $\E{v}$.
+    \aleq{
+        \E{v} &= \int^\infty_0 v \cdot f(v) \dd{v}\\[1ex]
+        %
+        &= \int^\infty_0 v \cdot \sqrt{\frac{2m^3}{\pi k^2 T^3}} v^2 e^{-\frac{mv^2}{2kT}} \dd{v}\\[1ex]
+        %
+        &= \sqrt{\frac{2m^3}{\pi k^2 T^3}} \qty(\frac{2kT}{m})^2 
+        \int^\infty_0 \tkn{x1}{\cul[blue]{\qty(\sqrt{\frac{m}{2kT}}v)^3 e^{-\qty(\sqrt{\frac{m}{2kT}}v)^2} \dd{\qty(\sqrt{\frac{m}{2kT}}v)}}}\\[1ex]
+        %
+        &= \sqrt{\frac{32kT}{\pi m}} \tkn{int1}{\cul[red]{\int^\infty_0 x^3 e^{-x^2} \dd{x}}} \\[1ex]
+        %
+        &= \sqrt{\frac{32kT}{\pi m}} \cdot \half\\[1ex]
+        %
+        \Aboxed{
+            v_\text{avg}\ \defeq\ \E{v} &= \sqrt{\frac{8kT}{\pi m}}
+        }
+    }
+    \addArrow[blue]{x1}{(0,-3ex)}{\scriptsize Let $x=\sqrt{\frac{m}{2kT}}v$}{(0,-3.2ex)}{(0,-0.8ex)}
+    \addBentArrow[red]{int1}{(5ex,-2ex)}
+    {\scriptsize This integral can be computed\\[-1ex]\scriptsize by substitution and by-part\\[-1ex]\scriptsize No need to use Gaussian integral}{(0,-3ex)}{(11.5ex,-0.5ex)}
+
+    \item \bf{\ul{Root Mean Square Speed}} = $\sqrt{\text{Expected value to } v^2}$, i.e. $\sqrt{\E{v^2}}$.
+    \aleq{
+        \E{v^2} 
+        &= \int^\infty_0 v^2 \cdot f(v) \dd{v}\\[1ex]
+        %
+        &= \int^\infty_0 v^2 \cdot \sqrt{\frac{2m^3}{\pi k^2 T^3}} v^2 e^{-\frac{mv^2}{2kT}} \dd{v}\\[1ex]
+        %
+        &= \sqrt{\frac{2m^3}{\pi k^2 T^3}} \qty(\frac{2kT}{m})^3 
+        \int^\infty_0 \tkn{x2}{\cul[blue]{\qty(\sqrt{\frac{m}{2kT}}v)^3 e^{-\qty(\sqrt{\frac{m}{2kT}}v)^2} \dd{\qty(\sqrt{\frac{m}{2kT}}v)}}}\\[1ex]
+        %
+        &= \sqrt{\frac{64k^2T^2}{\pi m^2}} \tkn{int2}{\cul[red]{\int^\infty_0 x^4 e^{-x^2} \dd{x}}} \\[1ex]
+        %
+        &= \sqrt{\frac{64k^2T^2}{\pi m^2}}\cdot \frac{3\sqrt{\pi}}{8} \\[1ex]
+        %
+        &= \frac{3kT}{m}\\[1ex]
+        %
+        \Aboxed{
+            v_\text{rms} \ \defeq\  \sqrt{\E{v^2}} &= \sqrt{\frac{3kT}{m}}
+        }
+    }
+    \addArrow[blue]{x2}{(0,-3ex)}{\scriptsize Let $x=\sqrt{\frac{m}{2kT}}v$}{(0,-3.2ex)}{(0,-0.8ex)}
+    \addBentArrow[red]{int2}{(5ex,-2ex)}
+    {\scriptsize This requires computing\\[-1ex] \scriptsize Gaussian integral}{(0,-3ex)}{(8ex,0)}
+
+\end{enumerate}
+
+Because the average KE (which is something we can measure) is calculated as 
+\aleq{
+    \text{Avg. KE} &= \E{\qty(\half m\abs{v}^2)} \\
+    &= \half m \E{\abs{v}^2}\\
+    &= \half m v_\text{rms}^2 
+    = \frac{3}{2}kT
+}
+
+The root mean square speed is used much more commonly than the average speed.
 
 %%%
 \theend
