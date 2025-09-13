@@ -168,10 +168,10 @@ ax.annotate("", xytext=(0, -1.5), xy=(0, 1.5), zorder=-5,
             arrowprops=dict(arrowstyle="->, head_length=0.6, head_width=0.3", ec="#cccccc", shrinkA=0, shrinkB=0))
 
 
-# plot red line for a
+# plot red line for r0/2
 ax.annotate('', xy=(r0/2, -0.1), xytext=(0, -0.1), zorder=0,
             arrowprops=dict(arrowstyle="<->, head_length=0.6, head_width=0.3", ec="r", shrinkA=0, shrinkB=0))
-ax.text(r0/4, -0.2, r"$a$", ha="center",color="r")
+ax.text(r0/4, -0.25, r"$\frac{r_0}{2}$", ha="center",color="r")
 
 # annotate for perihelion
 ax.annotate('Perihelion', xy=(r0/2, 0), xytext=(30, 40), zorder=0, textcoords="offset points", c="#ff7f0e", ha="center",
