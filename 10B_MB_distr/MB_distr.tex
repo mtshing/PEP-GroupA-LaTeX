@@ -590,25 +590,26 @@ The components of the Boltzmann distribution also have some fancy names:
     \begin{center}
     \begin{tabular}{>{\centering\arraybackslash}m{5ex}|
         >{\centering\arraybackslash}m{0.25\linewidth}|
-        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.15\linewidth}|
+        >{\centering\arraybackslash}m{0.15\linewidth}|
         >{\centering\arraybackslash}m{0.2\linewidth}}
         %
-        $U$ & Macrostate & Multiplicity & Probability \\[1ex]
+        $U$ & Macrostate & $W_p(U)$ & $W_\text{total}(U)$ & Probability \\[1ex]
         \hline
         %
-        $0$ & \includegraphics[width=\linewidth]{2box_E1} & $1$ & $\dinv{Z}$\\[1ex]
+        $0$ & \includegraphics[width=\linewidth]{2box_E1} & $1$ & $e^0\cdot 1$ & $\dfrac{e^0\cdot 1}{Z}$\\[1ex]
         \hline
         %
-        $\epsilon$ & \includegraphics[width=\linewidth]{2box_E2} & $4$ & $\dfrac{4}{Z}$\\[1ex]
+        $\epsilon$ & \includegraphics[width=\linewidth]{2box_E2} & $4$ & $e^{-\frac{\epsilon}{kT}}\cdot 4$ & $\dfrac{e^{-\frac{\epsilon}{kT}}\cdot 4}{Z}$\\[1ex]
         \hline
         %
-        $2\epsilon$ & \includegraphics[width=\linewidth]{2box_E3} & $6$ & $\dfrac{6}{Z}$\\[1ex]
+        $2\epsilon$ & \includegraphics[width=\linewidth]{2box_E3} & $6$ & $e^{-\frac{2\epsilon}{kT}}\cdot 6$ & $\dfrac{e^{-\frac{2\epsilon}{kT}}\cdot 6}{Z}$\\[1ex]
         \hline
         %
-        $3\epsilon$ & \includegraphics[width=\linewidth]{2box_E4} & $4$ & $\dfrac{4}{Z}$\\[1ex]
+        $3\epsilon$ & \includegraphics[width=\linewidth]{2box_E4} & $4$ & $e^{-\frac{3\epsilon}{kT}}\cdot 4$ & $\dfrac{e^{-\frac{3\epsilon}{kT}}\cdot 4}{Z}$\\[1ex]
         \hline
         %
-        $4\epsilon$ & \includegraphics[width=\linewidth]{2box_E5} & $1$ & $\dfrac{1}{Z}$\\[1ex]
+        $4\epsilon$ & \includegraphics[width=\linewidth]{2box_E5} & $1$ & $e^{-\frac{4\epsilon}{kT}}\cdot 1$ & $\dfrac{e^{-\frac{4\epsilon}{kT}}\cdot 1}{Z}$\\[1ex]
         \hline
         \end{tabular}
 \end{center}

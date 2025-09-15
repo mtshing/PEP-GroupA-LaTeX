@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  16 SEP 2025 00:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  16 SEP 2025 00:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1142,54 +1142,54 @@ Package pdftex.def Info: img/2box_bath.png  used on input line 582.
 <img/2box_E1.png, id=119, 398.08725pt x 215.6055pt>
 File: img/2box_E1.png Graphic file (type png)
 <use img/2box_E1.png>
-Package pdftex.def Info: img/2box_E1.png  used on input line 599.
+Package pdftex.def Info: img/2box_E1.png  used on input line 600.
 (pdftex.def)             Requested size: 122.31705pt x 66.24483pt.
 <img/2box_E2.png, id=120, 399.894pt x 210.18526pt>
 File: img/2box_E2.png Graphic file (type png)
 <use img/2box_E2.png>
-Package pdftex.def Info: img/2box_E2.png  used on input line 602.
+Package pdftex.def Info: img/2box_E2.png  used on input line 603.
 (pdftex.def)             Requested size: 122.31705pt x 64.28761pt.
 <img/2box_E3.png, id=121, 396.88275pt x 204.16275pt>
 File: img/2box_E3.png Graphic file (type png)
 <use img/2box_E3.png>
-Package pdftex.def Info: img/2box_E3.png  used on input line 605.
+Package pdftex.def Info: img/2box_E3.png  used on input line 606.
 (pdftex.def)             Requested size: 122.31705pt x 62.9222pt.
 <img/2box_E4.png, id=122, 395.076pt x 207.174pt>
 File: img/2box_E4.png Graphic file (type png)
 <use img/2box_E4.png>
-Package pdftex.def Info: img/2box_E4.png  used on input line 608.
+Package pdftex.def Info: img/2box_E4.png  used on input line 609.
 (pdftex.def)             Requested size: 122.31705pt x 64.14107pt.
 <img/2box_E5.png, id=123, 394.47375pt x 201.75375pt>
 File: img/2box_E5.png Graphic file (type png)
 <use img/2box_E5.png>
-Package pdftex.def Info: img/2box_E5.png  used on input line 611.
+Package pdftex.def Info: img/2box_E5.png  used on input line 612.
 (pdftex.def)             Requested size: 122.31705pt x 62.5584pt.
 
 
 [10 <./img/2box_E1.png> <./img/2box_E2.png> <./img/2box_E3.png> <./img/2box_E4.png> <./img/2box_E5.png>]
-Overfull \hbox (5.23097pt too wide) in paragraph at lines 654--656
+Overfull \hbox (5.23097pt too wide) in paragraph at lines 655--657
 []$\OML/cmm/m/it/12 v[]; v[]; v[]$ \OT1/cmr/m/n/12 = Equal prob-a-bil-ity to be any real num-ber as long as $[] \OML/cmm/m/it/12 < c[]$ 
  []
 
 <img/state.png, id=128, 1288.815pt x 507.0945pt>
 File: img/state.png Graphic file (type png)
 <use img/state.png>
-Package pdftex.def Info: img/state.png  used on input line 664.
+Package pdftex.def Info: img/state.png  used on input line 665.
 (pdftex.def)             Requested size: 391.41605pt x 154.00201pt.
 <img/state_x.png, id=129, 480.5955pt x 484.209pt>
 File: img/state_x.png Graphic file (type png)
 <use img/state_x.png>
-Package pdftex.def Info: img/state_x.png  used on input line 682.
+Package pdftex.def Info: img/state_x.png  used on input line 683.
 (pdftex.def)             Requested size: 128.28119pt x 129.24866pt.
 <img/state_v.png, id=130, 475.7775pt x 464.33475pt>
 File: img/state_v.png Graphic file (type png)
 <use img/state_v.png>
-Package pdftex.def Info: img/state_v.png  used on input line 691.
+Package pdftex.def Info: img/state_v.png  used on input line 692.
 (pdftex.def)             Requested size: 132.43272pt x 129.24866pt.
 
 
 [11 <./img/state.png> <./img/state_x.png> <./img/state_v.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 735--738
+Underfull \hbox (badness 10000) in paragraph at lines 736--739
 
  []
 
@@ -1203,136 +1203,136 @@ Underfull \hbox (badness 10000) in paragraph at lines 735--738
 <img/MB1.png, id=154, 686.565pt x 281.1303pt>
 File: img/MB1.png Graphic file (type png)
 <use img/MB1.png>
-Package pdftex.def Info: img/MB1.png  used on input line 877.
+Package pdftex.def Info: img/MB1.png  used on input line 878.
 (pdftex.def)             Requested size: 391.41605pt x 160.27167pt.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 903.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 927.
 
 
 
 [15 <./img/MB1.png>]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
 
 <img/MB2.png, id=162, 686.565pt x 198.0198pt>
 File: img/MB2.png Graphic file (type png)
 <use img/MB2.png>
-Package pdftex.def Info: img/MB2.png  used on input line 949.
+Package pdftex.def Info: img/MB2.png  used on input line 950.
 (pdftex.def)             Requested size: 391.41605pt x 112.89058pt.
 
 
@@ -1355,7 +1355,7 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  125i,26n,159p,594b,942s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on MB_distr.pdf (17 pages, 772615 bytes).
+Output written on MB_distr.pdf (17 pages, 772935 bytes).
 PDF statistics:
  250 PDF objects out of 1000 (max. 8388607)
  174 compressed objects within 2 object streams
