@@ -209,14 +209,24 @@ $N_R$ must fluctuate, even when it has reached the maximum entropy state 500L-50
     One of the ball may temporarily move from the left box to the right box.
     The system's state change to 499L-501R. 
 
-    \item After some time, another ball moves from the right box to the left box.
+    \item Very soon, another ball moves from the right box to the left box.
     The system's state returns to 500L-500R.
 \end{itemize}
 
-\insertFig{moving ball in and out}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{ball1}
+    \end{minipage}
+    \quad$\Leftrightarrow$\quad\ 
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{ball2}
+    \end{minipage}
+\end{center}
 
 
-In fact, we can determine the probability distribution of observing fluctuation $\Delta x$.
+We can determine the probability distribution of observing a fluctuation $\Delta x$.
 Recall that the probability of observing a macrostate with parameter $x$ 
 is proportional to the number of microstates (i.e. multiplicity) it corresponds to,
 \aleq{
@@ -249,7 +259,7 @@ the fluctuation of the state parameter $\Delta x$ by Taylor series expansion:
         + \half \cub[blue]{\dvv[2]{S}{x}\eval_{x=x_0}}{\substack{S\,=\,\text{max.}\\\text{\nth{2} derivative }<\,0}} (\Delta x)^2 + \cdots
 }
 
-The probability distribution of $x=x_0+\Delta x$ is therefore approximately
+Therefore the probability distribution of $x=x_0+\Delta x$ is approximately
 \aleq{
     P\qty(x) &=
     \frac{e^{\frac{S(x)}{k}}}{Z} \\
@@ -268,7 +278,12 @@ whose standard formula is written as
 A normal distribution is governed by two variables, $\mu$ and $\sigma$, 
 which are the mean and standard derivation of the distribution respectively.
 
-\insertFig{gaussian distribution}
+\begin{center}
+    \begin{minipage}{0.9\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{gauss1}
+    \end{minipage}
+\end{center}
 
 By comparison, we can identify that the distribution of $x$ follows a normal distribution with
 \begin{itemize}
@@ -306,7 +321,20 @@ However because thermal fluctuation is allowed,
 the internal energy of individual objects in the system are not constants
 but fluctuate around some values.
 
-\insertFig{2 object exchange heat}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{eqm}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.45\linewidth}
+        Energy fluctuation can always occur via
+        \begin{itemize}
+            \item Particles vibrations (conduction)
+            \item Radiation
+        \end{itemize}
+    \end{minipage}
+\end{center}
 
 For simplicity, we can consider a system with only 2 objects $A$ and $B$.
 Because the total energy $U_\text{total}$ is conserved, 
@@ -345,7 +373,7 @@ which can be used to indicate \bf{thermal equilibrium}:
         \begin{framed}
             \centering
             Thermal equilibrium occurs at the maximum entropy state of a system, 
-            when every object's "$T$" parameter must be equal.
+            which is when every object's "$T$" parameter is equal.
         \end{framed}
     \end{minipage}
 \end{center}
@@ -366,11 +394,25 @@ So the distribution of $U_A$ is a normal distribution:
     This is the characteristic size of energy fluctuation of a system.
 \end{itemize}
 
-\insertFig{normal distribution with standard derivation: 95\% lies within 2SD}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{gauss2}
+    \end{minipage}
+\end{center}
 
+\begin{itemize}
+    \item Within $84.1\%-15.9\%= 68.2\%$ of the times,
+    size of energy fluctuation $\leq T\sqrt{kC_V}$.
+
+    \item Within $97.7\%-2.3\%= 95.4\%$ of the times,
+    size of energy fluctuation $\leq 2T\sqrt{kC_V}$.
+\end{itemize}
+
+\vskip 1em
 How large is this energy fluctuation?
 Asumming room temperature $T\sim 300$K,
-\begin{itemize}
+\begin{enumerate}
     \item In daily life scale: 
     \begin{itemize}
         \item Heat capacity of materials $C_V\sim 10^3$J/K. 
@@ -378,6 +420,7 @@ Asumming room temperature $T\sim 300$K,
     \end{itemize}
     which is completely negligible in our daily life.
 
+    \vskip 1ex
     \item In atomic scale:
     \begin{itemize}
         \item One ideal gas particle has a heat capacity $C_V= \frac{3}{2}k$.
@@ -388,8 +431,9 @@ Asumming room temperature $T\sim 300$K,
     \aleq{
         \Delta U = kT \approx \half m(\Delta v)^2 \sim 10^{-21} \qquad\Rightarrow\qquad \Delta v = \sqrt{\frac{kT}{m}} \sim 10^3
     }
-\end{itemize}
+\end{enumerate}
  
+\newpage
 This tells us what actually happens in thermal equilibrium:
 \begin{center}
     \begin{minipage}{0.9\textwidth}
@@ -402,7 +446,12 @@ This tells us what actually happens in thermal equilibrium:
     \end{minipage}
 \end{center}
 
-\insertFig{normal scale: quiet; microscale: crazy}
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{violent}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%
@@ -412,14 +461,34 @@ Because of the scale of energy fluctuation is so big for a particle,
 we cannot expect the internal energy of a particle to always stay around the value which maximize the entropy of the object.
 (It is the \cul[red]{average} $U$ that maximizes the entropy, not the $U$ on a single particle.)
 \begin{center}
-    \red{What is the probability for a particle having a specific energy $U$ under thermal equilibrium?}
+    \red{What is the probability for a particle having a specific energy $U$,\\
+    when it is in thermal equilibrium?}
 \end{center}
 
 We can model by isolating a particle with the rest of every particle in a box. 
 Although the particle may be moving crazily due to thermal fluctuation, 
 we know that the rest of the particles are "collectively" forming a thermal equilibrium of temperature $T$.
 
-\insertFig{heat bath model: bath = rest of particle, temp T; obj = 1 particle, no T defined}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \green{The rest of the particles\\
+        collectively forming\\
+        a thermal equilibrium\\
+        of temperature $T$.}
+    \end{minipage}
+    \green{$\xrightarrow{\phantom{00000}}$}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{bath}
+    \end{minipage}
+    \blue{$\xleftarrow{\phantom{00000}}$}
+    \begin{minipage}{0.26\linewidth}
+        \centering
+        \blue{One particle in this box.\\
+        Its motion depends on energy fluctuation.}
+    \end{minipage}
+\end{center}
 
 Let the total energy to be a constant $U_\text{total}$.
 Obviously, the energy carried by 1 particle $U_p$ should be way less than that carried by the rest $U_\text{rest}$.
@@ -475,8 +544,8 @@ Thus we can calculate the probability that the particle acquire an internal ener
 
 \vskip 1ex
 Upon normalizing, we define the \bf{Boltzmann distribution} - 
-the probability of finding a particle with internal energy $U$ within an object/system 
-that is in thermal equilibrium of temperature $T$.
+the probability of finding a particle with internal energy $U$ within an object/system
+ in thermal equilibrium of temperature $T$.
 \aleq{
     \Aboxed{
         P\qty(U) &= \frac{e^{-\frac{U}{kT}}\cdot W_p(U)}{Z}
@@ -488,7 +557,6 @@ The components of the Boltzmann distribution also have some fancy names:
     \item The term $e^{-\frac{U}{kT}}$ is called the \bf{Boltzmann factor}.
     
     \item The normalization constant $Z$ is called \bf{partition function}, which calculates as
-    
     \aleq{
         Z = 
         \begin{cases}
@@ -502,17 +570,48 @@ The components of the Boltzmann distribution also have some fancy names:
 
 \end{itemize}
 
-
+\vskip 1em
 \begin{example}
     Suppose now the fluctuation is not on one particle, but four particles - 
     which these four particles is contained in a 2-boxes system, 
     and particles in the right box would have higher potential energy than in the left box by $\epsilon$.
 
-    \insertFig{bath model -> connect to 2 boxes model -> show energy diagram}
+    \begin{center}
+        \begin{minipage}{0.6\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{2box_bath}
+        \end{minipage}
+    \end{center}
 
     Given that the thermal equilibrium side is at temperature $T$.
     What is the probability to find each of the macrostate of 2-boxes system?
-    First we can tabulate the macrostates and their multiplicity:\\
+    We can list the macrostates and their multiplicity:
+
+    \begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{5ex}|
+        >{\centering\arraybackslash}m{0.25\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}}
+        %
+        $U$ & Macrostate & Multiplicity & Probability \\[1ex]
+        \hline
+        %
+        $0$ & \includegraphics[width=\linewidth]{2box_E1} & $1$ & $\dinv{Z}$\\[1ex]
+        \hline
+        %
+        $\epsilon$ & \includegraphics[width=\linewidth]{2box_E2} & $4$ & $\dfrac{4}{Z}$\\[1ex]
+        \hline
+        %
+        $2\epsilon$ & \includegraphics[width=\linewidth]{2box_E3} & $6$ & $\dfrac{6}{Z}$\\[1ex]
+        \hline
+        %
+        $3\epsilon$ & \includegraphics[width=\linewidth]{2box_E4} & $4$ & $\dfrac{4}{Z}$\\[1ex]
+        \hline
+        %
+        $4\epsilon$ & \includegraphics[width=\linewidth]{2box_E5} & $1$ & $\dfrac{1}{Z}$\\[1ex]
+        \hline
+        \end{tabular}
+\end{center}
 
     where the normalization constant (partition function) is just the sum of all the multiplicity:
     \aleq{
@@ -552,13 +651,19 @@ The possibilities of the 6 state parameters are
 \begin{itemize}
     \item $x,y,z$ = Equal probability to be any real number within $[0,L]$.
     
-    \item $v_x,v_y,v_z$ = Equal probability to be any real number as long as $\sqrt{v_x^2+v_y^2+v_z^2}<(\text{speed of light})$
+    \item $v_x,v_y,v_z$ = Equal probability to be any real number as long as 
+    $\sqrt{v_x^2+v_y^2+v_z^2}<c{\ \scriptstyle (\text{speed of light})}$
     
 \end{itemize} 
 
 To visualize, the possible states can be plotted in a 6-dimension state space of $(x,y,z, v_x, v_y, v_z)$ 
 
-\insertFig{3D x3D space; xyz form cube; v form sphere}
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{state}
+    \end{minipage}
+\end{center}
 
 
 Because there is no potential energy difference anywhere in the box,
@@ -571,16 +676,30 @@ So the particle's internal energy is equal to its kinetic energy, which is a fun
 So what is the multiplicity of a marcostate with internal energy in the range $[U_0,U_0+\dd{U}]$?
 It is the number of microstates $(x,y,z, v_x,v_y,v_z)$ that satisfy $U_0\leq \half m(v_x^2+v_y^2+v_z^2)\leq U_0+\dd{U}$.
 
-\insertFig{xyz every point satisfy anyway, v form sphere}
+\begin{center}
+    \begin{minipage}{0.46\linewidth}
+        \centering
+        \includegraphics[height=11em]{state_x}\\
+        In the $x$-$y$-$z$ space,\\
+        every point in the cube is allowed.
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \vline
+    \hspace{0.02\textwidth}
+    \begin{minipage}{0.46\linewidth}
+        \centering
+        \includegraphics[height=11em]{state_v}\\
+        In the $v_x$-$v_y$-$v_z$ space,\\
+        only the points with $\norm{\vvec{v}} = \sqrt{v_x^2+v_y^2+v_z^2}$ in between 
+        $\qty[\sqrt{\frac{2U_0}{m}}, \sqrt{\frac{2(U_0+\dd{U})}{m}}]$ are allowed.\\
+    \end{minipage}
+\end{center}
 
-In the $x$-$y$-$z$ space, every point is allowed. 
 
-In the $v_x$-$v_y$-$v_z$ space, 
-only the points with $\norm{\vvec{v}} = \sqrt{v_x^2+v_y^2+v_z^2}$ in between $\qty[\sqrt{\frac{2U_0}{m}}, \sqrt{\frac{2(U_0+\dd{U})}{m}}]$ are allowed.\\
 
-\begin{itemize}
+\begin{enumerate}
     \item Because multiplicity due to different $(x,y,z)$ is the the same for any value of $U$,
-    it shall be canceled by normalization when we compute probability.
+    it will be canceled by normalization when we compute probability.
     We can ignore it from now on.
 
     \item For the multiplicity due to different $(v_x,v_y,v_z)$,
@@ -591,10 +710,10 @@ only the points with $\norm{\vvec{v}} = \sqrt{v_x^2+v_y^2+v_z^2}$ in between $\q
         \quad\Rightarrow\quad
         (\text{\# of points within})\propto 4\pi \norm{\vvec{v}}^2 \dd{\norm{\vvec{v}}}
     }
-    Again, because any proportionality constant should be the same for any value of $U$, 
-    it shall be canceled by normalization when we compute probability.
+    Any proportionality constant should be the same for any value of $U$, 
+    anyway it will be canceled by normalization when we compute probability.
 
-\end{itemize}
+\end{enumerate}
 
 By change of variable $\norm{\vvec{v}} = \sqrt{\frac{2U}{m}}$ and $\dd{\norm{\vvec{v}}} = \sqrt{\inv{2mU}}\dd{U}$,
 we get $W(U)\dd{U}$:
@@ -615,26 +734,26 @@ we get $W(U)\dd{U}$:
 \begin{notation}[Side note:]
     Note that because of the \cul[red]{proportionality symbol} above,
     the $W(U)$ we arrived at is NOT the number of state of ideal gas,
-    but the \bf{density of state} - the number of state per unit volume in the $v_x$-$v_y$-$v_z$ space.\\
+    but the \bf{density of state} - the number of state \cul[red]{per unit volume} in the $v_x$-$v_y$-$v_z$ space.\\
 
     Calculating the exact number of state requires quantum mechanics.
     Because at the smallest scale, 
     quantum mechanics tells us that internal energy of particles can only take quantized values.
-    Then we can actually count the number of allowed states.
+    Then we can exactly count the number of states.
 \end{notation}
 
 
 %%%%%%%%%%%%%%
 \subsection{Normalization: Gaussian Integral}
 
-Now we can write down the Boltzmann distribution of ideal gas:
+We now have the expression of the Boltzmann distribution of ideal gas:
 \aleq{
     P(U)\sim f(U)\dd{U} = \frac{e^{-\frac{U}{kT}}\cdot W_p(U)}{Z} 
     = \frac{\ccancelto[red]{\text{constant}}{4\pi\sqrt{\frac{2}{m^3}}}\cdot  e^{-\frac{U}{kT}}\sqrt{U}\dd{U}}{\ccancelto[red]{}{Z}}
     = \frac{e^{-\frac{U}{kT}}\sqrt{U}\dd{U}}{Z}
 }
 
-The remaining is to calculate the normalization constant $Z$. 
+The last task is to calculate the normalization constant $Z$. 
 Let $x^2 = \frac{U}{kT}$ and $2x\dd{x} = \inv{kT}\dd{U}$,
 \aleq{
     \tkn{half_range}{\cul[red]{\int_0^\infty}} f(U) \dd{U} 
@@ -649,7 +768,6 @@ Let $x^2 = \frac{U}{kT}$ and $2x\dd{x} = \inv{kT}\dd{U}$,
 \addBentArrow[red]{half_range}{(-4ex,-2ex)}
 {\scriptsize $U$ of ideal gas = K.E.\\[-1ex]\scriptsize can only take positive values}{(0,-3ex)}{(-8ex,0)}
 
-This integral is extremely tricky to compute.
 First we do integration by-part,
 \aleq{
     \int_0^\infty e^{-x^2}x^2\dd{x} 
@@ -662,7 +780,8 @@ First we do integration by-part,
     &= \half \int_0^\infty e^{-x^2} \dd{x}
 }
 
-The integral on $e^{-x^2}$ is called the \bf{Gaussian integral},
+This integral cannot be solved by high school calculus. 
+It is called the \bf{Gaussian integral},
 which can be analytically computed only if the bounds are $\pm \infty$.
 \aleq{
     \Aboxed{
@@ -671,7 +790,7 @@ which can be analytically computed only if the bounds are $\pm \infty$.
 }
 
 But the range in our integral is only $[0,\infty]$, not $[-\infty, \infty]$,
-we only take half of it (because $e^{-x^2}$ is an even function, $f(x)=f(-x)$).
+we only take $\half$ of it (note that $e^{-x^2}$ is an even function $\Leftrightarrow$ $f(x)=f(-x)$).
 So the normalization constant $Z$ is 
 \aleq{
     Z &= 2(kT)^{\frac{3}{2}}\int_0^\infty e^{-x^2}x^2\dd{x}\\[1ex]
@@ -685,7 +804,6 @@ The complete expression of Boltzmann distribution for ideal gas is therefore
         f(U)\dd{U} = \frac{2}{\sqrt{\pi k^3T^3}}e^{-\frac{U}{kT}}\sqrt{U}\dd{U}
     }
 }
-
 
 \begin{notation}[Side note:]
     The standard method of computing Gaussian integral is as follow:
@@ -703,7 +821,7 @@ The complete expression of Boltzmann distribution for ideal gas is therefore
                 e^{-\half a(x^2+y^2)} \dd{y} \dd{x} 
         }
 
-        \item The we can do a change of coordinate from $x$-$y$ to polar $r$-$\theta$: 
+        \item Then make a change of coordinate system from $x$-$y$ to polar $r$-$\theta$: 
         \aleq{
             \iint f(x,y)\dd{x}\dd{y} \quad\Leftrightarrow\quad \iint f(r,\theta)\, r\dd{r}\dd{\theta}
         }
@@ -713,7 +831,6 @@ The complete expression of Boltzmann distribution for ideal gas is therefore
                 e^{-\half a(x^2+y^2)} \quad\Leftrightarrow e^{-\half ar^2}
             }
             
-
             \item The integration range is always the whole 2D plane:
             \aleq{
                 (x,y) \in \{-\infty,\infty\}\times \{-\infty,\infty\} 
@@ -724,11 +841,11 @@ The complete expression of Boltzmann distribution for ideal gas is therefore
 
         \item So the integral becomes 
         \aleq{
-            I^2 &= \int_{r=0}^{r=\infty} \int_{\theta=0}^{\theta=2\pi} e^{-\half ar^2}r\dd{\theta}\dd{r}\\
+            I^2 &= \int_{r=0}^{r=\infty} \int_{\theta=0}^{\theta=2\pi} e^{-\half ar^2}r\dd{\theta}\dd{r}\\[1ex]
             %
-            &= 2\pi \cdot \int_{r=0}^{r=\infty} e^{-\half ar^2} \dd{\qty(\frac{r^2}{2})}\\
+            &= 2\pi \cdot \int_{r=0}^{r=\infty} e^{-\half ar^2} \dd{\qty(\frac{r^2}{2})}\\[1ex]
             %
-            &= \frac{2\pi}{a}\\
+            &= \frac{2\pi}{a}\\[1ex]
             %
             I &= \sqrt{\frac{2\pi}{a}}
         }
@@ -736,9 +853,9 @@ The complete expression of Boltzmann distribution for ideal gas is therefore
     \end{enumerate}
 \end{notation}
 
-
+\newpage
 %%%%%%%%%%%%%%
-\subsection{Speed Distribution \& Average Speed}
+\subsection{Speed Distribution \& Average Speeds}
 
 The final derivation is the famous Maxwell-Boltzmann distribution,
 which plots the probability of finding ideal gas particles at different speed $v$.
@@ -754,9 +871,16 @@ by substituting $U = \half mv^2$ and $\dd{U}=mv\dd{v}$ into the Boltzmann distri
     }
 }
 
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{MB1}
+    \end{minipage}
+\end{center}
 
-In physics textbooks you can find 2 different formulas related to the average speed of ideal gas. 
-these are derived as the expected values over the Maxwell-Boltzmann distribution.
+
+In physics textbooks you can usually find 3 different formulas related to the average speed of ideal gas. 
+these are derived from the Maxwell-Boltzmann distribution.
 
 \begin{enumerate}
     \item \bf{\ul{Average Speed}} = Expected value to $v$, i.e. $\E{v}$.
@@ -804,17 +928,41 @@ these are derived as the expected values over the Maxwell-Boltzmann distribution
     \addBentArrow[red]{int2}{(5ex,-2ex)}
     {\scriptsize This requires computing\\[-1ex] \scriptsize Gaussian integral}{(0,-3ex)}{(8ex,0)}
 
+    \item \bf{\ul{Most Probable Speed}} = Maximum of $f(v)$, i.e. the $v$ when $\dvv{f(v)}{v} = 0$.
+    \aleq{
+        \dvv{f(v)}{v} &= \dvv{v} \qty[\sqrt{\frac{2m^3}{\pi k^3T^3}} v^2e^{-\frac{mv^2}{2kT}}]\\[1ex]
+        %
+        &= \sqrt{\frac{2m^3}{\pi k^3T^3}} \qty[2ve^{-\frac{mv^2}{2kT}} - v^2\cdot \frac{2mv}{2kT} e^{-\frac{mv^2}{2kT}} ]\\[1ex]
+        %
+        0 &= \sqrt{\frac{2m^3}{\pi k^3T^3}}ve^{-\frac{mv^2}{2kT}} \qty[2 - \frac{mv^2}{kT}]\\[1ex]
+        %
+        \Aboxed{
+            v_\text{mp} \ &\defeq\ \sqrt{\frac{2kT}{m}}
+        }
+    }
+    
 \end{enumerate}
 
-Because the average KE (which is something we can measure) is calculated as 
+\begin{center}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{MB2}
+    \end{minipage}
+\end{center}
+
+\newpage
+When the ideal gas has no P.E.,
+its internal energy is purely kinetic.
+Then we can compute the average KE per particle as 
 \aleq{
-    \text{Avg. KE} &= \E{\qty(\half m\abs{v}^2)} \\
-    &= \half m \E{\abs{v}^2}\\
+    U_\text{avg} &= (\text{Avg. KE}) \\
+    &= \E{\qty(\half mv^2)} \\
+    &= \half m \E{v^2}\\
     &= \half m v_\text{rms}^2 
     = \frac{3}{2}kT
 }
 
-The root mean square speed is used much more commonly than the average speed.
+Therefore root mean square speed is the most common in applications.
 
 %%%
 \theend

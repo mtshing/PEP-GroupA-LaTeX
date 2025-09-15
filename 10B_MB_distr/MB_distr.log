@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  14 SEP 2025 03:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  16 SEP 2025 00:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1032,214 +1032,333 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--201
 
 
 [3]
-
-[4]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+<img/ball1.png, id=78, 488.42474pt x 261.97874pt>
+File: img/ball1.png Graphic file (type png)
+<use img/ball1.png>
+Package pdftex.def Info: img/ball1.png  used on input line 219.
+(pdftex.def)             Requested size: 146.78195pt x 78.73013pt.
+<img/ball2.png, id=79, 484.81125pt x 253.54726pt>
+File: img/ball2.png Graphic file (type png)
+<use img/ball2.png>
+Package pdftex.def Info: img/ball2.png  used on input line 224.
+(pdftex.def)             Requested size: 146.78195pt x 76.765pt.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+[4 <./img/ball1.png> <./img/ball2.png>]
+<img/gauss1.png, id=85, 686.565pt x 240.6591pt>
+File: img/gauss1.png Graphic file (type png)
+<use img/gauss1.png>
+Package pdftex.def Info: img/gauss1.png  used on input line 284.
+(pdftex.def)             Requested size: 440.3384pt x 154.34811pt.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+[5 <./img/gauss1.png>]
+<img/eqm.png, id=93, 472.164pt x 332.442pt>
+File: img/eqm.png Graphic file (type png)
+<use img/eqm.png>
+Package pdftex.def Info: img/eqm.png  used on input line 327.
+(pdftex.def)             Requested size: 122.31705pt x 86.11836pt.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 337.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 365.
 
 
 
-[5]
+[6 <./img/eqm.png>]
+<img/gauss2.png, id=98, 686.565pt x 240.6591pt>
+File: img/gauss2.png Graphic file (type png)
+<use img/gauss2.png>
+Package pdftex.def Info: img/gauss2.png  used on input line 400.
+(pdftex.def)             Requested size: 391.41605pt x 137.19914pt.
 
-[6]
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 513--516
+[7 <./img/gauss2.png>]
+<img/violent.png, id=107, 991.3035pt x 215.6055pt>
+File: img/violent.png Graphic file (type png)
+<use img/violent.png>
+Package pdftex.def Info: img/violent.png  used on input line 452.
+(pdftex.def)             Requested size: 342.48624pt x 74.48924pt.
+<img/bath.png, id=108, 455.90324pt x 333.04425pt>
+File: img/bath.png Graphic file (type png)
+<use img/bath.png>
+Package pdftex.def Info: img/bath.png  used on input line 483.
+(pdftex.def)             Requested size: 146.78195pt x 107.2268pt.
+
+
+[8 <./img/violent.png> <./img/bath.png>]
+<img/2box_bath.png, id=113, 977.45175pt x 407.121pt>
+File: img/2box_bath.png Graphic file (type png)
+<use img/2box_bath.png>
+Package pdftex.def Info: img/2box_bath.png  used on input line 582.
+(pdftex.def)             Requested size: 293.5639pt x 122.27391pt.
+
+
+[9 <./img/2box_bath.png>]
+<img/2box_E1.png, id=119, 398.08725pt x 215.6055pt>
+File: img/2box_E1.png Graphic file (type png)
+<use img/2box_E1.png>
+Package pdftex.def Info: img/2box_E1.png  used on input line 599.
+(pdftex.def)             Requested size: 122.31705pt x 66.24483pt.
+<img/2box_E2.png, id=120, 399.894pt x 210.18526pt>
+File: img/2box_E2.png Graphic file (type png)
+<use img/2box_E2.png>
+Package pdftex.def Info: img/2box_E2.png  used on input line 602.
+(pdftex.def)             Requested size: 122.31705pt x 64.28761pt.
+<img/2box_E3.png, id=121, 396.88275pt x 204.16275pt>
+File: img/2box_E3.png Graphic file (type png)
+<use img/2box_E3.png>
+Package pdftex.def Info: img/2box_E3.png  used on input line 605.
+(pdftex.def)             Requested size: 122.31705pt x 62.9222pt.
+<img/2box_E4.png, id=122, 395.076pt x 207.174pt>
+File: img/2box_E4.png Graphic file (type png)
+<use img/2box_E4.png>
+Package pdftex.def Info: img/2box_E4.png  used on input line 608.
+(pdftex.def)             Requested size: 122.31705pt x 64.14107pt.
+<img/2box_E5.png, id=123, 394.47375pt x 201.75375pt>
+File: img/2box_E5.png Graphic file (type png)
+<use img/2box_E5.png>
+Package pdftex.def Info: img/2box_E5.png  used on input line 611.
+(pdftex.def)             Requested size: 122.31705pt x 62.5584pt.
+
+
+[10 <./img/2box_E1.png> <./img/2box_E2.png> <./img/2box_E3.png> <./img/2box_E4.png> <./img/2box_E5.png>]
+Overfull \hbox (5.23097pt too wide) in paragraph at lines 654--656
+[]$\OML/cmm/m/it/12 v[]; v[]; v[]$ \OT1/cmr/m/n/12 = Equal prob-a-bil-ity to be any real num-ber as long as $[] \OML/cmm/m/it/12 < c[]$ 
+ []
+
+<img/state.png, id=128, 1288.815pt x 507.0945pt>
+File: img/state.png Graphic file (type png)
+<use img/state.png>
+Package pdftex.def Info: img/state.png  used on input line 664.
+(pdftex.def)             Requested size: 391.41605pt x 154.00201pt.
+<img/state_x.png, id=129, 480.5955pt x 484.209pt>
+File: img/state_x.png Graphic file (type png)
+<use img/state_x.png>
+Package pdftex.def Info: img/state_x.png  used on input line 682.
+(pdftex.def)             Requested size: 128.28119pt x 129.24866pt.
+<img/state_v.png, id=130, 475.7775pt x 464.33475pt>
+File: img/state_v.png Graphic file (type png)
+<use img/state_v.png>
+Package pdftex.def Info: img/state_v.png  used on input line 691.
+(pdftex.def)             Requested size: 132.43272pt x 129.24866pt.
+
+
+[11 <./img/state.png> <./img/state_x.png> <./img/state_v.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 735--738
 
  []
 
 
-
-[8]
-Overfull \hbox (17.8503pt too wide) in paragraph at lines 555--556
-[]$\OML/cmm/m/it/12 v[]; v[]; v[]$ \OT1/cmr/m/n/12 = Equal prob-a-bil-ity to be any real num-ber as long as $[] \OML/cmm/m/it/12 < \OT1/cmr/m/n/12 ([])$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--580
-
- []
-
-
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 616--619
-
- []
-
-
-
-[10]
-
-[11]
 
 [12]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 778.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 802.
-
-
-
 [13]
 
-[14] (./MB_distr.aux)
+[14]
+<img/MB1.png, id=154, 686.565pt x 281.1303pt>
+File: img/MB1.png Graphic file (type png)
+<use img/MB1.png>
+Package pdftex.def Info: img/MB1.png  used on input line 877.
+(pdftex.def)             Requested size: 391.41605pt x 160.27167pt.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 902.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 926.
+
+
+
+[15 <./img/MB1.png>]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 942.
+
+<img/MB2.png, id=162, 686.565pt x 198.0198pt>
+File: img/MB2.png Graphic file (type png)
+<use img/MB2.png>
+Package pdftex.def Info: img/MB2.png  used on input line 949.
+(pdftex.def)             Requested size: 391.41605pt x 112.89058pt.
+
+
+[16 <./img/MB2.png>]
+
+[17] (./MB_distr.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `MB_distr.out' has not changed.
-(rerunfilecheck)             Checksum: 5E9FFDABED395FA9EA55264021B4C49B;2318.
+(rerunfilecheck)             Checksum: 957613AFEF29FA1E56586C93B9C469C3;2323.
  ) 
 Here is how much of TeX's memory you used:
- 29718 strings out of 469747
- 560670 string characters out of 5481688
- 954474 words of memory out of 5000000
- 57516 multiletter control sequences out of 15000+600000
+ 29905 strings out of 469747
+ 564149 string characters out of 5481688
+ 951473 words of memory out of 5000000
+ 57695 multiletter control sequences out of 15000+600000
  638817 words of font info for 82 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,26n,159p,594b,942s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on MB_distr.pdf (14 pages, 267922 bytes).
+Output written on MB_distr.pdf (17 pages, 772615 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 
