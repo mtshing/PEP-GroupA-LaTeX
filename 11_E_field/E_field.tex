@@ -1,0 +1,1110 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../.common/common}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{T11 (Electromagnetism)}
+\title{Electrostatics}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+
+\begin{overview}
+    \begin{itemize}
+        \item Basic problems: Find $\vvec{E}$ and $V$ by Coulomb's law with integration
+        \item Gauss law, electric flux, divergence \& divergence theorem
+        \item Electrical potential \& Poisson equation
+        \item Image charge method
+    \end{itemize}
+
+
+\end{overview}
+
+\vskip 1em
+In electromagnetism, 
+theoretically every problem can be solved through a set of PDEs
+called the \bf{Maxwell Equations}.\\[-2em]
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \tkn{maxwell_gauss}{\div} \vvec{E} &= \frac{\rho}{\epsilon_0}\\
+            \curl \vvec{E} &= -\pdvv{\vvec{B}}{t}
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \div \vvec{B} &= 0\\
+            \curl \vvec{B} &= \mu_0 \vvec{J} + \mu_0\epsilon_0\pdvv{\vvec{E}}{t}
+        }
+    \end{minipage}
+\end{center}
+\addArrow[blue]{maxwell_gauss}{(-5ex,0)}{}{(-3ex,1ex)}
+
+However, a \it{system of PDEs} is just too complicate to be solved.
+So we need to learn different "tricks" to avoid them,
+which are enough for some simple scenarios.\\
+
+Electrostatics only concerns the \nth{1} equation of the set - \cul[blue]{Gauss's law}. 
+
+
+
+
+\linesep
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic Skill: Coulomb's Law with Integration}
+
+Promoting Coulomb's law from point charge to a distribution of charge
+is straightforward by
+\aleq{
+    \ \ \qty(\mstack{\text{Point}\\\text{Charge}}) \ =\ Q 
+    \quad\ \xRightarrow{\phantom{000}}\quad\ \ 
+    \rho \dd{\tau} \ =\ \qty(\mstack{\text{Charge}\\\text{Density}})\qty(\mstack{\text{Unit}\\\text{Volume}})
+}
+
+It is then a sum of all E-field contribution from every infinitestimal volumes:
+\aleq{
+    \vvec{E} = \inv{4\pi\epsilon_0} \frac{Q}{r^2} \hhat{r}
+    \quad\xRightarrow{\phantom{000}}\quad
+    \int \dd{\vvec{E}} 
+    = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\rho\dd{\tau}}{r^2}\hhat{r}
+}
+
+And electrical potential follows:
+\aleq{
+    V = \inv{4\pi\epsilon_0} \frac{Q}{r}
+    \quad\xRightarrow{\phantom{000}}\quad
+    \int \dd{V} 
+    = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\rho\dd{\tau}}{r}
+}
+
+\newpage
+\begin{example}
+    Suppose there is a rod lying on the x-axis, 
+    with its ends at $x=a$ and $x=b$.
+    Let the total charge it carries be $Q$.
+    What is the E-field / electric potential on an arbituary point on the z axis?\\
+
+    \insertFig{rod}
+
+    We can analyze by dividing the rod into infinitestimal pieces:
+    \begin{itemize}
+        \item Each segment has a length $\dd{x}$
+        \item Charge on each segment is thus $\frac{Q}{L}\dd{x}$, where $L=b-a$.
+        \item For the segment at position $x$, 
+        its distance from the targeted point is $\sqrt{z^2+x^2}$.
+    \end{itemize}
+
+    \insertFig{infinte element}
+
+    Thus we can calculate $\vvec{E}$ and $V$:
+    \begin{enumerate}
+        \item Electrical potential does not concern directions.
+        So we can directly write
+        \aleq{
+            V = \int_a^b \inv{4\pi\epsilon_0} \frac{\frac{Q}{L}\dd{x}}{\sqrt{z^2+x^2}}
+        }
+
+        \item Electric field concerns directions.
+        So we need to resolve the direction's component from the segment to the target point. 
+        By the triangle:
+        
+        \insertFig{component}
+
+        So the E-field's vertical component ($z$) should be calculated as 
+        \aleq{
+            E_z = \int_a^b \inv{4\pi\epsilon_0} \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \cdot \frac{z}{\sqrt{z^2+x^2}}
+        }
+
+        Similarly for the horizontal component ($x$):
+        \aleq{
+            E_x = \int_a^b \inv{4\pi\epsilon_0} \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \cdot \frac{x}{\sqrt{z^2+x^2}}
+        }
+
+    \end{enumerate}
+
+\end{example}
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauss's Law}
+
+Gauss's Law has two different expressions:
+\aleq{
+    \oiint \vvec{E}\cdot \dd{\vvec{s}} &= \frac{Q}{\epsilon_0} &(\text{Integral form})\\[1ex]
+    %
+    \div \vvec{E} &= \frac{\rho}{\epsilon_0} &(\text{Differential form})
+}
+
+It is easier to study the physical meaning and visualize by the integral form.
+After that we can generalize to the differential form by introducing an operator called \bf{divergence}.
+
+%%%%%%%%%%%%%%
+\subsection{Flux}
+
+The literal description in Gauss's law integral form is
+\aleq{
+    \qty(\mstack{\text{Flux of}\\\text{electric field}\\\text{on a surface}})
+    \ =\ \oiint \vvec{E}\cdot \dd{\vvec{s}}
+    \ =\ \frac{Q}{\epsilon_0}
+    \ =\ \frac{(\text{Charge enclosed})}{(\text{Some constant})}
+}
+We first need to understand what \bf{flux} is, 
+and what that weird integral sign even means.
+
+%%%%%%%%%%%%%%
+\subsubsection{An Analogy: A Water Pipe}
+
+To begin with, we can make an analogy using a water pipe.
+Along a normal pipe, we expect that the amount of water flowing in
+should equal to the amount of water flowing out.
+
+\insertFig{normal pipe}
+
+\begin{itemize}
+    \item If we somehow find that the amount of water flowing in $>$ amount flowing out,
+    we know there is something absorbing water in the pipe! \red{(A sink)}
+
+    \insertFig{sink}
+
+    \item If we somehow find that the amount of water flowing in $<$ amount flowing out,
+    we know there is something producing water in the pipe! \red{(A source)}
+
+    \insertFig{source}
+
+\end{itemize}
+
+How can we quantitatively tell if there is a source / sink in the pipe?
+We can measure by the volume flowing in / out within a short time interval $\Delta t$:
+\begin{itemize}
+    \item Volume flowing in = $v_\text{in}\cdot \Delta t \cdot A_\text{in} 
+    = \qty(\mstack{\text{Velocity at}\\\text{entrance}})\cdot \Delta t \cdot \qty(\mstack{\text{Area of}\\\text{entrance opening}})$
+
+    \item Volume flowing out = $v_\text{out}\cdot \Delta t \cdot A_\text{out}
+     = \qty(\mstack{\text{Velocity at}\\\text{exit}})\cdot \Delta t \cdot \qty(\mstack{\text{Area of}\\\text{exit opening}})$
+\end{itemize}
+
+Then we can define a measure $\Phi = (v_\text{out}A_\text{out} - v_\text{in}A_\text{in})$
+such that
+\aleq{
+    \begin{cases}
+        \text{if }\Phi > 0 & \Rightarrow \text{ There is a source}\\
+        \text{if }\Phi < 0 & \Rightarrow \text{ There is a sink}\\
+    \end{cases}
+}
+
+%%%%%%%%%%%%%%
+\subsubsection{Generalizing to Field}
+
+Now use your imagination to expand the 
+
+\begin{enumerate}
+    \item The flow of water should be continuous - 
+    We can describe the flow of water by a continuous vector field $\vvec{F}(\vvec{r})$.
+    
+    \insertFig{flow to field}
+
+    \item Our water pipe may be of any irregular shape - 
+    We can "twist" the pipe into an arbituary closed surface.
+
+    \insertFig{peanut pipe}
+
+    A "closed" surface must have well-distinguishment between its
+    "inner surface" and "outer surface".
+
+\end{enumerate}
+
+Under these circumstances,
+in/out-flow are not restricted just flowing through the entrance / exit opening,
+but can appear on anywhere on the surface -
+each of the small grid on the surface can have a different field vector poking through it.
+\begin{itemize}
+    \item Poking from inner to outer surface = Out-flow
+    \item Poking from outer to inner surface = In-flow
+\end{itemize}
+
+\insertFig{messy flow}
+
+How can we describe the flow direction mathematically?
+We can first define a normal vector $\vvec{s}$ on the surface.
+By convention, this $\vvec{s}$ 
+\begin{itemize}
+    \item has a magnitude equal to the surface's area.
+    \item points outward of the surface (from inner to outer).
+\end{itemize}
+
+Then we can take the dot product between the field vector $\vvec{F}$ and the surface normal vector $\vvec{s}$:
+\begin{itemize}
+    \item If $\vvec{F}\cdot\vvec{s}>0$, 
+    they are more or less in the same direction $\Rightarrow \vvec{F}$ is pointing outward!
+
+    \item If $\vvec{F}\cdot\vvec{s}<0$,
+    they are more or less in opposite direction $\Rightarrow \vvec{F}$ is pointing inward!
+\end{itemize}
+
+Finally, we construct the definition of "flux" $\Phi$:
+\aleq{
+    \Aboxed{
+        \Phi = \sum_{\substack{\text{all small grids }i\\\text{in the surface}}} \vvec{F}_i \cdot \vvec{s}_i
+        \quad\xrightarrow{\phantom{000}}\quad
+        \tkn{oiint}{\cul[blue]{\oiint}} \vvec{F}(\vvec{r})\cdot \dd{\vvec{s}}
+    }
+}
+\addArrow[blue]{oiint}{(0,-4ex)}
+{\scriptsize A circle on double integral\\[-1ex]\scriptsize = The surface integral is over a closed surface}
+{(0,-3ex)}{(0,-1ex)}
+
+\vskip 2em
+\insertFig{sum of flux}
+
+We can use the sign of $\Phi$ to tell if there are more in-flow / out-flow of field lines through the surface,
+thus telling if there are sources / sinks enclosed by the surface.
+
+\insertFig{phi > 0 < 0}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Calculation Example}
+
+Recall that in line integral,
+we have to parametrize the line before we can actually do the integral.
+In calculation of flux, it is even more painful - 
+it is an area integral and we have to parametrize a surface,
+which is generally an impossible task without very advanced calculus.\\
+
+Because this is just a physics course, 
+here only introduces some surfaces with simple parametrization.
+\bf{And in most cases we do not to calculate them when using Gauss's law.}
+
+\begin{example}
+    (Flux over a spherical surface)\\
+    An easy parametrization is making use of the spherical coordinate.
+    Positions on the surface can be located by the 2 anglular variables $(\theta,\phi)$:
+    \aleq{
+        \bmat{x\\y\\z} 
+        = \bmat{x_0\\y_0\\z_0} 
+        + \bmat{r\sin\theta\cos\phi\\r\sin\theta\sin\phi\\r\cos\theta} 
+    }
+    where $(x_0,y_0,z_0)$ indicates the center of the sphere and $r$ is the radius of the sphere.
+    
+    \insertFig{sphere + surface unit}
+    
+    The infinitestimal area is then $(r\dd{\theta})\times(r\sin\theta\dd{\phi})$
+    and normal in $\hhat{r}$ direction.
+    \aleq{
+        \dd{\vvec{s}} = \hhat{r} r^2\sin\theta\dd{\theta}\dd{\phi}
+    }
+
+    So the flux is simply a double integral over the whole sphere surface.
+    \aleq{
+        \Phi = \oiint \vvec{F} \cdot \dd{\vvec{s}} 
+        = \int_{\theta=0}^{\theta=\pi} \int_{\phi=0}^{\phi=2\pi} \vvec{F}(x,y,z) 
+            \cdot \hhat{r} r^2\sin\theta\dd{\theta}\dd{\phi}
+    }
+
+\end{example}
+
+
+\begin{example}
+    (Flux over a plane)\\
+    We are free to choose any two perpendicular unit vectors $\hhat{u}$,$\hhat{v}$ 
+    to form a 2D coordinate system on the plane, 
+    expressing a position using 2 length quantities $(u,v)$:
+    \aleq{
+        \bmat{x\\y\\z} 
+        = \bmat{x_0\\y_0\\z_0} 
+        + u\cus[blue]{\bmat{u_x\\u_y\\u_z}}{\hhat{u}} + v\cus[blue]{\bmat{v_x\\v_y\\v_z}}{\hhat{v}} 
+    }
+
+    \insertFig{uv coordinate}
+
+    The infinitestimal area is then $(\dd{u})\times(\dd{v})$
+    and normal must be in $(\hhat{u}\cross\hhat{v})$ direction.
+    \aleq{
+        \dd{\vvec{s}} = (\hhat{u}\cross\hhat{v}) \dd{u}\dd{v}
+    }
+    So the flux is simply a double integral over a region on the plane.
+    \aleq{
+        \Phi = \oiint \vvec{F} \cdot \dd{\vvec{s}} 
+        = \int_{v=c}^{v=d} \int_{u=a}^{u=b} \vvec{F}(x,y,z) 
+            \cdot (\hhat{u}\cross\hhat{v})\dd{u}\dd{v}
+    }
+
+
+\end{example}
+
+
+%%%%%%%%%%%%%%
+\subsection{Divergence}
+
+However there is a problem in using flux - 
+if we choose the surface too arbituarily, 
+the calculated flux is not enough to tell where the sink/source are.
+
+\insertFig{arbituary surface}
+E.g. If we choose a very big surface and calculate the flux $\approx 0$, 
+where are the sinks and sources?\\
+
+To tackle this problem,
+we need to introduce the \bf{divergence} operator:
+\aleq{
+    \tkn{div}{\cul[red]{\div}}\ (\cdot) 
+    \ \defeq\  \pdvv{x}(\cdot) + \pdvv{y}(\cdot) + \pdvv{z} (\cdot)
+    \ \defeq\ \tkn{div2}{\cul[blue]{\text{div}}}\ (\cdot)
+}
+\addArrow[red]{div}{(0,-3ex)}
+{\scriptsize Like gradient operator\\[-1ex]\scriptsize but with a dot}
+{(0,-1ex)}{(0,-1ex)}
+\addArrow[blue]{div2}{(0,-3ex)}
+{\scriptsize Sometimes we\\[-1ex]\scriptsize just write "div"}
+{(0,-1ex)}{(0,-1ex)}
+
+
+\vskip 1em
+The divergence operator can be applied on a vector function,
+and will return a scalar (number).
+\aleq{
+    \div \vvec{F} 
+    &= \bmat{\pdvv{x} & \pdvv{y} & \pdvv{z}}\bmat{F_x\\F_y\\F_z}\\
+    &= \pdvv{F_x}{x} + \pdvv{F_y}{y} + \pdvv{F_z}{z}\\
+    &= (\text{A number})
+}
+
+Computing divergence of a vector field is equivalent to 
+\bf{calculating the flux over an infinitestimal small but closed surface.}
+
+%%%%%%%%%%%%%%
+\subsubsection{Geometrical Interpretation}
+
+To visualize, we can draw in infinitestimal cube around a point $(x,y,z)$.
+Although a cube has 6 faces, 
+because of symmetry in all 3 directions,
+it is enough to just analyze by the 2 faces that are parallel to the $x$-$y$ plane.
+
+\insertFig{infinitestmal cube + 2 face}
+
+\begin{itemize}
+    \item Normal direction of these 2 faces = $\hhat{z}$ \ $\Rightarrow$\ 
+    The surface normal vector $=\blue{\hhat{z} \dd{x}\dd{y}}$.
+
+    \item Center point of top surface = $\qty(x,y,z+\frac{\dd{z}}{2})$ 
+    \ $\Rightarrow$\ The field pokes through it $=\red{\vvec{F}\qty(x,y,z+\frac{\dd{z}}{2})}$.
+
+    \item Center point of bottom surface = $\qty(x,y,z-\frac{\dd{z}}{2})$ 
+    \ $\Rightarrow$\ The field pokes through it $=\red{\vvec{F}\qty(x,y,z-\frac{\dd{z}}{2})}$.
+
+\end{itemize}
+
+Therefore the total flux through the 2 planes is
+\aleq{
+    \qty(\mstack{\text{Total Out-flux through}\\[0.5ex]\text{surfaces}\parallel\text{x-y plane}}) 
+    &= \qty(\mstack{\text{Out-flux through}\\[0.5ex]\text{top face}}) - 
+        \qty(\mstack{\text{In-flux through}\\[0.5ex]\text{bottom face}})\\[1em]
+    %
+    \dd{\Phi_{xy}} &= 
+    \textstyle (\vvec{F}\qty(x,y,z+\frac{\dd{z}}{2}) \cdot \hhat{z} \dd{x}\dd{y}) - 
+        (\vvec{F}\qty(x,y,z-\frac{\dd{z}}{2}) \cdot \hhat{z} \dd{x}\dd{y})\\[1em]
+    %
+    &= \qty(\frac{\vvec{F}\qty(x,y,z+\frac{\dd{z}}{2}) - \vvec{F}\qty(x,y,z-\frac{\dd{z}}{2})}{\blue{\dd{z}}}) 
+        \cdot \hhat{z} \dd{x}\dd{y}\blue{\dd{z}}\\[1ex]
+    %
+    &= \cut[red]{\cbox[red]{\qty(\frac{\vvec{F}\qty(x,y,\cbox[red]{\textstyle z+\frac{\dd{z}}{2}}) 
+        - \vvec{F}\qty(x,y,\cbox[red]{\textstyle z-\frac{\dd{z}}{2}})}{\cbox[red]{\dd{z}}})}}{\text{This is exactly partial z}}
+        \cdot \hhat{z} \dd{x}\dd{y}\dd{z}\\[1ex]
+    %
+    &= \pdvv{z}\cul[green]{\vvec{F}(x,y,z)\cdot \hhat{z}} \dd{x}\dd{y}\dd{z}\\[1em]
+    %
+    &= \pdvv{z}\tkn{div_dot}{\cul[green]{F_z}}(x,y,z)\ (\dd{x}\dd{y}\dd{z})\\[1em]
+    %
+    &= \qty(\mstack{\text{Divergence's }\\[0.5ex] z\text{ term}})\ \qty(\mstack{\text{Unit}\\[0.5ex]\text{volume}})
+}
+\addArrow[green]{div_dot}{(3ex,6ex)}{\scriptsize Dot product to $\hhat{z}$ = Only take $z$ component}{(0,2ex)}{(15ex,-3.5ex)}
+
+We can expect the similar results in the other 2 directions.
+Putting them together:
+\aleq{
+    \qty(\mstack{\text{Total flux through}\\[0.5ex]\text{the volume}})
+    %
+    &=\qty(\mstack{\text{Total flux through}\\[0.5ex]\text{surfaces}\sparallel\text{y-z plane}})
+    + \qty(\mstack{\text{Total flux through}\\[0.5ex]\text{surfaces}\sparallel\text{x-z plane}}) 
+    + \qty(\mstack{\text{Total flux through}\\[0.5ex]\text{surfaces}\sparallel\text{x-y plane}})\\[1ex]
+    %
+    &= \qty[\qty(\mstack{\text{Divergence's }\\[0.5ex] x\text{ term}})
+    + \qty(\mstack{\text{Divergence's }\\[0.5ex] y\text{ term}})
+    + \qty(\mstack{\text{Divergence's }\\[0.5ex] z\text{ term}})]
+    \ \qty(\mstack{\text{Unit}\\[0.5ex]\text{volume}})\\[1ex]
+    %
+    \dd{\Phi} &= \qty[\pdvv{F_x}{x} + \pdvv{F_y}{y} + \pdvv{F_z}{z}](\dd{x}\dd{y}\dd{z})\\[1ex]
+    %
+    &= \qty(\div \vvec{F})(\dd{x}\dd{y}\dd{z})
+}
+
+\vskip 1ex
+Therefore we can geometrically interpret divergence as
+\aleq{
+    \Aboxed{
+        \qty(\text{\bf{Divergence}}) 
+        = \div \vvec{F} 
+        \sim \frac{\dd{\Phi}}{\dd{x}\dd{y}\dd{z}} 
+        = \frac{(\text{Flux through a closed surface})}{(\text{Volume enclosed by the surface})}
+        \sim (\text{\bf{Flux \tkn{flux_density}{\cul[blue]{density}}}})
+    }
+}
+\addArrow[blue]{flux_density}{(0,-4ex)}{\scriptsize This density\\[-1ex]\scriptsize is by volume}{(0,-1ex)}{(0,-1ex)}
+
+\vskip 1em
+%%%%%%%%%%%%%%
+\subsubsection{Divergence Theorem}
+
+With the geometrical interpretation,
+we can directly state (without proof) a convenient formula related to divergence - 
+the \bf{divergence theorem}:
+\aleq{
+    \Aboxed{
+        \oiint \vvec{F}\cdot \dd{\vvec{s}} &= \iiint (\div \vvec{F}) \dd{\tau}
+    }
+}
+
+which is basically 
+\aleq{
+    \qty(\mstack{\text{Total }\\[0.5ex]\text{Flux}})
+    \quad \sim \sum_{\text{All volumes}} \frac{(\text{Flux})}{(\text{Volume})}\times \qty(\text{Volume})
+}
+
+
+%%%%%%%%%%%%%%
+\subsection{Gauss's Law - Explanation}
+
+
+Gauss's law is purely an \cul[red]{observation} about the relation between E-field and charges:
+\aleq{
+    \Aboxed{
+        \mstack{\text{Total flux of E-field on }\\[0.5ex]\text{a closed surface}\neq 0}
+        \qquad\Leftrightarrow\qquad
+        \mstack{\text{There are charges}\\[0.5ex]\text{inside the surface}}
+    }
+}
+
+The two forms of Gauss's law are describing this same observation:
+\begin{itemize}
+    \item \ul{Integral form}:
+    \aleq{
+        (\vvec{E}\text{'s flux})\ \sim\ \oiint \vvec{E}\cdot\dd{\vvec{s}} 
+        \ =\ \frac{Q}{\epsilon_0} \ \sim\ (\text{Charge})
+    }
+
+    \item \ul{Differential form}:
+    \aleq{
+        \qty(\mstack{\vvec{E} \text{'s flux}\\[0.5ex]\text{density}})\ \sim\ \div \vvec{E}
+        \ =\ \frac{\rho}{\epsilon_0} \ \sim\ \qty(\mstack{\text{Charge}\\[0.5ex]\text{density}})
+    }
+\end{itemize}
+
+And the two form can be inter-converted by divergence theorem.
+\aleq{
+    \oiint \vvec{E}\cdot\dd{\vvec{s}} \quad &=\quad \frac{Q}{\epsilon_0}\\[2em]
+    \tkn{divE}{\iiint (\div \vvec{E}) \dd{\tau}}\ &=\ \inv{\epsilon_0}\tkn{divQ}{\iiint \rho \dd{\tau}}
+}
+\addArrow[red]{divE}{(0,9ex)}{Divergence Theorem}{(1ex,3ex)}{(-12ex,-6ex)}
+\addBentArrow[blue]{divQ}{(-4ex,13ex)}{Charge to charge density}{(1ex,3ex)}{(18ex,-8ex)}
+
+
+%%%%%%%%%%%%%%
+\subsection{Applying Gauss's Law Integral Form}
+
+In beginner electromagnetism, 
+there is only one type of Gauss's law related problems: 
+\quoting{
+    Given the charge distribution, 
+    find the E-field everywhere by Gauss's law integral form\\
+    in some \cul[red]{very symmetrical} scenarios.
+}
+which is basically asking you to \it{revert} the flux calculation:
+\aleq{
+    \oiint \vvec{E}\cdot\dd{\vvec{s}} = \frac{Q}{\epsilon_0}
+    \qquad\Rightarrow\qquad
+    \vvec{E} = \text{ ??? } \text{in terms of }Q
+}
+
+If $Q$ has a very ugly distribution, 
+there is nothing we can do except solving some partial differential equations.
+But \red{if $Q$ distributes very symmetrically, 
+$\vvec{E}$ should also be symmetrical}, 
+such that the flux integral can be broken into multiplications.\\
+
+In these cases, we can choose a "Gaussian" surface to to be integrated where
+\begin{enumerate}
+    \item $\vvec{E}$ has constant magnitude everywhere on the surface.
+    \item $\vvec{E}$ forms the same angle with the surface normal vector everywhere on the surface
+\end{enumerate}
+
+\vskip 1ex
+Only then, the flux integral can be broken down as
+\aleq{
+    \oiint \vvec{E}\cdot \dd{\vvec{s}} 
+    &= \oiint \tkn{gauss_dot}{\cul[green]{\norm{\vvec{E}}\norm{\dd{\vvec{s}}}\cos\theta}}\\[1ex]
+    &= \tkn{gauss_E}{\cul[red]{\norm{\vvec{E}}}}\ \tkn{gauss_theta}{\cul[blue]{\cos\theta}}\ \oiint \norm{\dd{\vvec{s}}}\\[2.5em]
+    &= \norm{\vvec{E}}\ \cos\theta\ (\text{Total surface area})
+}
+\addArrow[green]{gauss_dot}{(5ex,0)}
+{\scriptsize Just dot product\\[-1ex]\scriptsize $\vvec{a}\cdot\vvec{b}=\norm{\vvec{a}}\norm{\vvec{b}}\cos\theta$}
+{(8ex,0)}{(6ex,0)}
+\addBentArrow[red]{gauss_E}{(-8ex,-3.5ex)}
+{Same magnitude everywhere\\[-0.5ex]Can move out of integral!}
+{(0,-1.5ex)}{(-12.5ex,1ex)}
+\addBentArrow[blue]{gauss_theta}{(8ex,-3.5ex)}
+{Form same angle everywhere\\[-0.5ex]Can move out of integral!}
+{(0,-1.5ex)}{(12.5ex,1ex)}
+
+such that we can find the magnitude of $\vvec{E}$ with simple division
+\aleq{
+    \Aboxed{
+        \norm{\vvec{E}} 
+        = \frac{(\text{Total flux})}{(\text{Total surface area})\cos\theta}
+        = \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}
+    }
+}
+
+In fact, there are not many of these "very symmetrical" cases.
+These examples below, with their respective Gaussian surface,
+are basically all the variations you can find in textbooks.
+
+\insertFig{different gaussian surface}
+
+
+\begin{example}
+    Given a solid sphere with uniform charge density $\rho$ and radius $R$.
+    By rotational symmetry, the E-field must satisfy:
+    \begin{itemize}
+        \item Only point in radial direction.
+        \item Magnitude does not depend on angular directions $\theta,\phi$.
+    \end{itemize}
+
+    \insertFig{spherical symm}
+
+    Therefore we can choose the Gaussian surface to be a sphere of radius $r$ 
+    to find the magnitude of E-field at distance $r$ from the sphere center.
+    \aleq{
+        \norm{\vvec{E}} 
+        &= \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}\\
+        &= \frac{Q}{\epsilon_0} \cdot \inv{(4\pi r^2)} \cdot \inv{\cos \tkn{gauss_sphth}{\cul[green]{0^\circ}}}\\
+        &= \frac{Q}{4\pi\epsilon_0 r^2}\\[1ex]
+        \Rightarrow\quad \vvec{E} &= \frac{Q}{4\pi\epsilon_0 r^2} \tkn{gauss_sphr}{\cul[blue]{\hhat{r}}}
+    }
+    \addArrow[green]{gauss_sphth}{(7ex,0)}
+    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Normal to surface}{(2ex,0.5ex)}{(5.5ex,1ex)}
+    \addArrow[blue]{gauss_sphr}{(3ex,0)}
+    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
+
+    \vskip 1em
+    \begin{enumerate}
+        \item For radial distance $r < R$,
+        the total charge enclosed in the gaussian surface is only the core of the sphere,
+        up to radius $r$. So we should take $Q=\frac{4}{3}\pi r^3\rho$.
+        \aleq{
+            \vvec{E} 
+            &= \frac{\frac{4}{3}\pi r^3 \rho}{4\pi\epsilon_0 r^2}\hhat{r} 
+            = \frac{\rho r}{3\epsilon_0} \hhat{r}
+        }
+        
+        \insertFig{inside}
+
+        \item For radial distance $r > R$
+        the total charge enclosed in the gaussian surface is the whole sphere,
+        So we should take $Q=\frac{4}{3}\pi R^3\rho$.
+        \aleq{
+            \vvec{E}
+            &= \frac{\frac{4}{3}\pi R^3 \rho}{4\pi\epsilon_0 r^2}\hhat{r} 
+            = \frac{\rho R^3}{3\epsilon_0 r^2} \hhat{r}
+        }
+
+        \insertFig{outside}
+    \end{enumerate}
+    
+    
+\end{example}
+
+
+
+\begin{example}
+    Given an infinitely long hollow cylinder with inner radius $=a$ and outer radius $=b$,
+    and its charge density is proportional to distance from center $r$, i.e. $\rho(\vvec{r}) =kr$
+    
+    For cylinder, we can claim by rotational symmetry around the axis and translation symmetry along the axis,
+    that the E-field must satisfy:
+    \begin{itemize}
+        \item Only point in $r$ direction.
+        \item Magnitude does not depend on $\theta$ or $z$.
+    \end{itemize}
+
+    \insertFig{cylinder symm}
+
+    Therefore we can choose the Gaussian surface to be a cylindrical sheet radius $r$ 
+    and an arbituary length $L$ (which will be cancelled later)
+    to find the magnitude of E-field at distance $r$ from the rotation axis.
+    \aleq{
+        \norm{\vvec{E}} 
+        &= \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}\\
+        &= \frac{Q}{\epsilon_0} \cdot \tkn{gauss_cylcurve}{\cul[red]{\inv{(2\pi r L)}}} \cdot \inv{\cos \tkn{gauss_cylth}{\cul[green]{0^\circ}}}\\[1em]
+        &= \frac{Q}{2\pi\epsilon_0 r L}\\[1ex]
+        \Rightarrow\quad \vvec{E} &= \frac{Q}{2\pi\epsilon_0 r L} \tkn{gauss_cylr}{\cul[blue]{\hhat{r}}}
+    }
+    \addBentArrow[red]{gauss_cylcurve}{(7ex,-4ex)}
+    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Only go through the curved surface \\[-1ex]\scriptsize Top/bottom surface has no flux}
+    {(0,-3ex)}{(12ex,1ex)}
+    \addArrow[green]{gauss_cylth}{(7ex,0)}
+    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Normal to curved surface}{(2ex,0.5ex)}{(8.5ex,1ex)}
+    \addArrow[blue]{gauss_cylr}{(3ex,0)}
+    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
+
+    \insertFig{not side surface cuz flux = 0}
+
+    This time the charge density depends on position,
+    so the total charge enclosed by the surface needs to be computed by integration.
+
+    \begin{enumerate}
+        \item For radial distance $r<a$, there is no charge enclosed because the cylinder is hollow.
+        So $Q=0$ implying $\vvec{E}=0$.
+
+        \insertFig{inner}
+
+        \item For radial distance $a<r<b$, 
+        total enclosed charge are distributed from radius $=a$ to radius $=r$,
+        which calculates as
+        \aleq{
+            Q = \int^r_a \rho \cdot 2\pi rL\dd{r} 
+            =  2\pi kL \int^r_a r^2 \dd{r} 
+            =  \frac{2\pi kL}{3} (r^3-a^3)
+        }
+        So the E-field is
+        \aleq{
+            \vvec{E} = \frac{Q}{2\pi\epsilon_0 r L}\hhat{r} 
+            = \frac{k}{3\epsilon_0}\qty(r^2 - \frac{a^3}{r}) \hhat{r}
+        }
+        
+        \insertFig{middle}
+
+        \item For radial distance $r>b$,
+        total enclosed charge are distributed from radius $=a$ to radius $=b$,
+        which calculates as
+        \aleq{
+            Q = \int^b_a \rho \cdot 2\pi rL\dd{r} 
+            =  2\pi kL \int^r_a r^2 \dd{r} 
+            =  \frac{2\pi kL}{3} (b^3-a^3)
+        }
+        So the E-field is
+        \aleq{
+            \vvec{E} = \frac{Q}{2\pi\epsilon_0 r L}\hhat{r} 
+            = \frac{k}{3\epsilon_0r}\qty(b^3 - a^3) \hhat{r}
+        }
+
+        \insertFig{outer}
+
+    \end{enumerate}
+
+\end{example}
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Electric Potential}
+
+%%%%%%%%%%%%%%
+\subsection{Mathematical Origin}
+
+The reason to create a electrical potential function $V(\vvec{r})$ is rather mathematical:
+\begin{itemize}
+    \item \ul{Observation}: 
+    E-field by static charge never forms loops.
+    $\Rightarrow$ Static E-field is conservative.
+
+    \item \ul{Mathematical fact}: 
+    Any conservative field can be expressed as the gradient of some scalar function (i.e. potential).
+\end{itemize}
+
+Therefore we can define a scalar function $V(\vvec{r})$ such that 
+\aleq{
+    \Aboxed{
+        \vvec{E}(\vvec{r}) = - \grad V(\vvec{r})
+    }
+}
+
+And the reverse can be calculated by 
+\aleq{
+    \Aboxed{
+        V(\vvec{r_0}) 
+        = -\int_{\substack{\text{any path}\\\text{from }\infty\text{ to }\vvec{r_0}}} \vvec{E}(\vvec{r}) \cdot \dd{\vvec{r}}
+        = -\int_\infty^{\vvec{r_0}} \vvec{E}(\vvec{r})\dd{\vvec{r}}
+    }
+}
+
+%%%%%%%%%%%%%%
+\subsection{Poisson Equation}
+
+If we substitute $\vvec{E} = -\grad V$ into the Gauss's law,
+we arrive at a new equation: 
+\addBelowArrow[blue]{laplacian1}{laplacian2}{\scriptsize This is called\\[-1ex]\scriptsize \bf{Laplacian Operator}}{-1ex}{(0,-2ex)}
+\aleq{
+    \frac{\rho}{\epsilon_0} &= \div \vvec{E}\\
+    &= \div (-\grad V)\\
+    &= - \div \qty(\pdvv{V}{x}\hhat{x} + \pdvv{V}{y}\hhat{y} + \pdvv{V}{z}\hhat{z})\\
+    &= - \qty(\tkn{laplacian1}{\cul[blue]{\pdvv[2]{V}{x} + \pdvv[2]{V}{y} + \pdvv[2]{V}{z}}}) 
+    \defeq \ -\tkn{laplacian2}{\cul[blue]{\laplacian}} V\\[1ex]
+    \Aboxed{
+        \laplacian V(\vvec{r}) &= -\frac{\rho(\vvec{r})}{\epsilon_0}
+    }
+}
+
+This equation belongs to a class of PDE called \bf{Poisson equation}, 
+which is one of the earliest studied PDEs in history.
+It is \cul[red]{the general method to relate potential between charge distribution}.
+that works for any configurations of potential or charge distribution.
+
+\insertFig{find one and other, add Q = lap V and V = ??? Q with arrow }
+
+However, being general does not mean it is always easy to solve: 
+\begin{itemize}
+    \item \ul{$V(\vvec{r})$ to $\rho(\vvec{r})$} : 
+    The Laplacian operator is just a sum of \nth{2} order derivatives. Easy!
+
+    \item \ul{$\rho(\vvec{r})$ to $V(\vvec{r})$} : 
+    Need to solve the Laplacian equation,
+    which is a \nth{2} order non-homogeneous
+    \\ \phantom{\ul{$\rho(\vvec{r})$ to $V(\vvec{r})$} :} linear PDE. Awful!
+\end{itemize} 
+
+Unfortunately in realistic problems,
+it is more frequent to ask for $V(\vvec{r})$ from $\rho(\vvec{r})$,
+because we can usually confine the charge distribution in a small region by using a very small test object;
+but for potential, it is always everywhere. 
+
+\insertFig{charge in small object -> can treat like point charge. but V spread everywhere}
+
+We are not going to discuss its general solution here - 
+it can take several book chapters to derive and analyze the solution forms at different boundary conditions.\\
+
+In 1D wave equation, 
+the boundary conditions are just about the 2 end points. Either fixed or free.
+
+\insertFig{wave eq vs possion bc}
+
+In Poisson equation, 
+the boundary conditions are about the line/face boundary of the region of interest.
+Too many variations.
+
+\insertFig{wave eq vs possion bc}
+
+Although the general case is terribly complicated, 
+we have already learnt the solution in one very special case - 
+When the \cul[red]{region of interest is infinitely large} + \cul[red]{potential vanishes at the boundary}, 
+i.e. $V(\vvec{r}=\infty)=0$, 
+the solution is exactly the Coulomb's law.
+\aleq{
+    \Aboxed{
+        V(\red{\vvec{r}}) 
+        &= \inv{4\pi\epsilon_0}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+            \frac{\rho(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}\dd[3]{\blue{\vvec{r}'}}
+    }\\[1ex]
+    %
+    &\sim \inv{4\pi\epsilon_0} \sum_\text{everywhere} \frac{(\text{charge})}{(\text{distance})}\\[1em]
+    %
+    &\equiv\ \mstack{\text{Coulomb's law for electric potential}\\\scriptsize \text{(But written in a fancier vector form)}}
+}
+
+\insertFig{infinitely large region + potential element plot}
+
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Finding $\vvec{E}$ from $Q$}
+
+On the other hand, Poisson equation provides an alternative to calculate E-field distribution from charge distribution.
+If we compare the Gauss's law and Poisson equation:
+\begin{itemize}
+    \item \ul{Poisson equation} $\scriptstyle \qty(\laplacian V = -\frac{\rho}{\epsilon_0})$ : 
+    $V(\vvec{r})$ is a scalar function. 
+    Only 1 function $V(\vvec{r})$ to be solved.
+
+    \item \ul{Gauss's law} $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ : 
+    $\vvec{E}(\vvec{r})$ is a vector function with 3 components $E_x(\vvec{r})$, $E_y(\vvec{r})$, $E_z(\vvec{r})$,\\
+    \phantom{Gauss's law $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ :} 
+    which are \cul[red]{3 inter-depending} functions to be solved.
+\end{itemize}
+
+Obviously, there is no reason to try to solve the more difficult PDE of $\vvec{E}$
+if alternatively we can solve the easier PDE of $V$,
+and then take gradient to get $\vvec{E}$ (i.e. via $\vvec{E} = -\grad V$). 
+
+\insertFig{triangle}
+
+Similar to potential, if the given boundary condition is $V(\vvec{r}=\infty)=0$,
+the solution for the Gauss's law as a PDE should also be the Coulomb's law.
+\aleq{
+    \Aboxed{
+        \vvec{E}(\red{\vvec{r}}) = - \grad V(\red{\vvec{r}}) 
+        &= \inv{4\pi\epsilon_0}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+            \frac{\rho(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}^2}
+            \qty[\frac{\red{\vvec{r}}-\blue{\vvec{r}'}}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}]\dd[3]{\blue{\vvec{r}'}}
+    }\\[1ex]
+    %
+    &\sim \inv{4\pi\epsilon_0} \sum_\text{everywhere} \frac{(\text{charge})}{(\text{distance})^2} \qty(\substack{\text{unit}\\\text{vector}})\\[1em]
+    %
+    &\equiv\ \mstack{\text{Coulomb's law for electric field}\\\scriptsize \text{(But written in a fancier vector form)}}
+}
+
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Image Charge Method}
+
+%%%%%%%%%%%%%%
+\subsection{Induced Charge \& Equipotential on Conductors}
+
+Suppose we want to solve an electrostatics problem with conductors present.
+Because charges can freely flow in conductors,
+the presence of external charge sources can \it{induce} new charge in the conductors.
+\begin{itemize}
+    \item The induced charge's distribution completely depends on the positions of external charge,
+    and also the shape of the conductor.
+
+    \item \bf{Measuring the induced charge distribution is impossible}, 
+    because any charge probe will disturb it.
+\end{itemize}
+
+\insertFig{conductor charge run away}
+
+In previous sections, 
+we are solving for $\vvec{E}$ and $V$ where the charge distribution $\rho$ is known \cul[red]{everywhere}.
+But this time we do not know the exact distribution of induced charge!
+Luckily, if the induced charges are distributed on conductors,
+there is one property that the induced charges need to satisfy:
+
+\begin{center}
+    \red{Charges on conductor must distribute s.t. the whole conductor is of equi-potential.}
+\end{center}
+
+This is intuitive - because charges are allowed to move freely,
+they will spontaneously distribute themselves until net electric force on them is $0$,
+i.e. the electric potential will be the same everywhere on the conductor.
+
+\insertFig{conductor rod}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Image charges}
+
+In the viewpoint of solving PDE, 
+requiring "conductor = equipotential" only means an additional boundary condition of $V$ over the conductor's surface.
+
+\insertFig{just BC}
+
+From mathematical studies of Poisson equation,
+there is the \bf{uniqueness theorem of Poisson equation} 
+(proof on \href{https://en.wikipedia.org/wiki/Uniqueness_theorem_for_Poisson%27s_equation}{wiki}) 
+that if the boundary conditions is already given, 
+\begin{itemize}
+    \item Any solutions you can obtain will only be different by a constant. 
+    \item So the E-field, gradient of potential, must be unique.
+    \aleq{
+        \qty(\substack{\text{Find a}\\\text{Solution}}) = V(\vvec{r}) + C
+        \quad\xRightarrow{\phantom{00000}}\quad 
+        \vvec{E} = -\grad V = -\grad V(\vvec{r}) + 0 = \qty(\substack{\text{Same for}\\\text{any }C})
+    }
+\end{itemize}
+
+This theorem allows us to skip calculating where the induced charge are - 
+\red{we may find another charge configurations that creates the same potential boundary condition
+but easier to calculate.}
+By the uniquessness theorem, 
+the E-field by these two configurations must be the same.\\
+
+This approach is called the \bf{image charge method},
+and the charges that we used to create the alternative configuration are called
+\bf{image charge}.
+They are called so because the alternative configurations usually look like
+a "reflection" of the external charge sources through the conductor surface.
+
+
+\vskip 2em
+\begin{example}
+    ("Reflection" by plane)\\
+
+    Consider a point charge \red{$q$} at distance $d$ from an infinitely large metal surface
+    which is maintained at $V = 0$.
+    We expect an induced charge distribution forming on the surface
+    and contribute to the potential/E-field on top of the surface.
+
+    \insertFig{plate + induced charge}
+
+    But we already know another similar configuration that 
+    creates a flat equipotential surface of $V=0$ and satisfy $V(\infty=0)$ -
+    when there is an additional charge of \blue{$-q$} at distance $d$ under the metal surface.
+
+    \insertFig{plate + image charge}
+
+    The principle of image charge method tells us that 
+    the potential and E-field (on top of the metal surface) in both cases must be identical because 
+    they satisfy the same boundary condition of $V$.
+    Therefore the potential is 
+    \aleq{
+        V_{\qty(\substack{\text{top}\\\text{half}})}(x,y,z)
+        &= \qty(\mstack{\text{Contribution by}\\\text{original charge }\red{q}}) 
+            + \qty(\mstack{\text{Contribution by}\\\text{image charge }\blue{-q}})\\[1ex]
+        &= \frac{q}{4\pi\epsilon_0}\inv{\sqrt{x^2+y^2+(z-d)^2}}
+            - \frac{q}{4\pi\epsilon_0}\inv{\sqrt{x^2+y^2+(z+d)^2}}
+    }
+
+    and the E-field is
+    \aleq{
+        \vvec{E}_{\qty(\substack{\text{top}\\\text{half}})}(x,y,z) 
+            &= -\grad V_{\qty(\substack{\text{top}\\\text{half}})}(x,y,z) \\[1ex]
+        &= -\grad \qty(\frac{q}{4\pi\epsilon_0}\qty[\inv{\sqrt{x^2+y^2+(z-d)^2}}
+            - \inv{\sqrt{x^2+y^2+(z+d)^2}}])\\[1ex]
+        &= \frac{q}{4\pi\epsilon_0} \qty(\frac{x\hhat{x} + y\hhat{y} + (z-d)\hhat{z}}{(x^2+y^2+(z-d)^2)^{\frac{3}{2}}}
+            - \frac{x\hhat{x} + y\hhat{y} + (z+d)\hhat{z}}{(x^2+y^2+(z+d)^2)^{\frac{3}{2}}})
+    }
+
+    While the $V$ and $\vvec{E}$ on the bottom half must be $0$ because it is in the metal.\\
+
+    After getting $\vvec{E}$, 
+    we can also find the induced charge distribution using Gauss's law.
+    By drawing a Gaussian box with area $A$ on the surface at position $(x,y,0)$,
+    \aleq{
+        \qty(\mstack{\text{Total}\\\text{flux}}) 
+        &= \qty(\mstack{\text{Flux through}\\\text{top surface}})\\[1ex]
+        &= \vvec{E}_{\qty(\substack{\text{top}\\\text{half}})}(x,y,0) \cdot A\hhat{z}\\[1ex]
+        &= \frac{qA}{4\pi\epsilon_0}\frac{-2d}{(x^2+y^2+d^2)^{\frac{3}{2}}}\\[1ex]
+        &\equiv \frac{Q_\text{induced}}{\epsilon}
+    }
+
+    \insertFig{induced charge box}
+
+    \aleq{
+        \Rightarrow\ \qty(\mstack{\text{Induced charge}\\\text{surface density}})
+            = \sigma_{\text{induced}} \equiv \frac{Q_\text{induced}}{A}
+        &= -\frac{q}{2\pi}\frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+    }
+
+\end{example}
+
+
+\vskip 2em
+\begin{example}
+    ("Reflection" by Sphere)\\
+
+    Consider a point charge \red{$q$} at distance \red{$a$} from the center of a metal sphere of radius $R$
+    which is maintained at $V = 0$.
+    We expect an induced charge distribution forming on the surface
+    and contribute to the potential/E-field on top of the surface.
+
+    \insertFig{sphere + induced charge}
+
+    In the spherical case,
+    we can substitute the induced charge by a single point charge \blue{$-q'$} 
+    at distance \blue{$b$} from the sphere's center,
+    which can be calculated by 
+    \aleq{
+        \Aboxed{
+            \bcase{
+                \blue{b} &= \frac{R^2}{\red{a}}\\
+                \blue{q'} &= -\frac{R}{\red{a}}q
+            }
+        }
+    }
+
+    \insertFig{show q', b, coordinate theta}
+
+    \begin{proof}
+        Choose the origin to be the center of the sphere and 
+        direction to \red{$q$} to be $\theta=0$.
+        Since it requires the potential on the sphere to be $V(r=R)=0$,
+        we can write the total $V$ as 
+        \aleq{
+            V(R, \theta, \phi) = 0 
+            &= \qty(\mstack{\text{Contribution by}\\\text{original charge }\red{q}}) 
+                + \qty(\mstack{\text{Contribution by}\\\text{image charge }\blue{-q'}})\\[1ex]
+            &= \frac{\red{q}}{4\pi\epsilon_0}\inv{\sqrt{R^2 + \red{a}^2-2R\red{a}\cos\theta}}
+                - \frac{\blue{q'}}{4\pi\epsilon_0}\inv{\sqrt{R^2 + \blue{b}^2-2R\blue{b}\cos\theta}}\\[2ex]
+            \Rightarrow\quad \qty(\frac{-q'}{q}) &= 
+                \frac{R^2+b^2-2Rb\cos\theta}{R^2+a^2-2Ra\cos\theta}\\[1ex]
+            0 &= \cub[yellow]{\qty[1-\qty(\frac{q'}{q})^2]R^2 
+                + \qty[b^2 - \qty(\frac{q'}{q})^2a^2]}{\text{This part is independent of }\theta}
+                - \cub[green]{2R \qty[b - \qty(\frac{q'}{q})^2a]}{\text{Coefficient of }\cos\theta}\cos\theta
+        }
+
+        This relation should hold for any $\theta$.
+        \begin{enumerate}
+            \item Therefore the coefficient of $\cos\theta$ must be $0$.
+            \aleq{
+                0 &= 2R \qty[b - \qty(\frac{q'}{q})^2a]\\
+                \Rightarrow\quad \frac{b}{a} &= \qty(\frac{q'}{q})^2 
+            }
+
+            \item Then the remaining term must also become $0$. 
+            \aleq{
+                0 &= \qty[1-\qty(\frac{q'}{q})^2]R^2 + \qty[b^2 - \qty(\frac{q'}{q})^2a^2]\\
+                &= \qty(1-\frac{b}{a})R^2 + \qty(b^2 - a^2\cdot\frac{b}{a})\\
+                &= \qty(1-\frac{b}{a})R^2 + ab\qty(\frac{b}{a} - 1)\\
+                &= \qty(1-\frac{b}{a})\qty(R^2-ab)\\
+                \Rightarrow\quad \text{Either}&\quad b=a_\text{\scriptsize \ (reject)} 
+                \quad\text{or}\quad \cul[red]{b=\frac{R^2}{a}}
+            }
+        \end{enumerate}
+        
+        Finally substitute back into $\frac{b}{a} = \qty(\frac{q'}{q})^2$ to get 
+        \aleq{
+            q' = \pm \sqrt{\frac{b}{a}}q = \tkn{image_minus}{\red{-}}\frac{R}{a}q
+        }
+        \addArrow[red]{image_minus}{(0,-4.5ex)}
+        {\scriptsize The image charge must be\\[-1ex]\scriptsize negative to be physical}
+        {(0,-0.5ex)}{(0,-1ex)}
+
+
+    \end{proof}
+\end{example}
+
+
+
+
+\begin{exercise}
+    How do you add image charges in these situations,
+    such that the potential on the metal surface satisfy $V=0$?
+
+    \insertFig{4 different variations}
+
+\end{exercise}
+
+
+\linesep
+%%%%%%%%%%%%%%
+Here we shall summarize the methods of solving electrostatics problems:
+\begin{enumerate}
+    \item Very symmetric configurations 
+    $\Rightarrow$ Gauss's law integral form. No calculus required.
+
+    \item Not so symmetric but satisfies $V(\vvec{r}=\infty)=0$ 
+    $\Rightarrow$ Multiple integral with Coulomb's law.
+
+    \item $V(\vvec{r})=0$ on some nice surfaces with induced charge
+    $\Rightarrow$ Try image charge method.
+
+    \item All the above do not apply 
+    $\Rightarrow$ Solve Poisson equation explicitly. PDE hell %\emoji{skull}.
+\end{enumerate}
+
+%%%
+\theend
+\end{document}
