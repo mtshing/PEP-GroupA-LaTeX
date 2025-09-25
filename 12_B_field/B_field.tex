@@ -727,53 +727,52 @@ are basically all the variations you can find in textbooks.
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Magnetic Potential}
+\section{Magnetic Vector Potential}
 
 %%%%%%%%%%%%%%
 \subsection{Mathematical Origin}
 
-The reason to create a electrical potential function $V(\vvec{r})$ is rather mathematical:
+Magnetic field also has a corresponding potential function $\vvec{A}(\vvec{r})$.
+But unlike electric potential,
+the magnetic potential is a vector function. 
+The reason to create it is purely mathematical:
 \begin{itemize}
     \item \ul{Observation}: 
-    E-field by static charge never forms loops.
-    $\Rightarrow$ Static E-field is conservative.
+    B-field always form loops because we have never observed any magnetic point source.
+    $\Rightarrow$ B-field is divergent-less.
 
     \item \ul{Mathematical fact}: 
-    Any conservative field can be expressed as the gradient of some scalar function (i.e. potential).
+    Any divergent-less field can be expressed as the curl of some vector function (i.e. vector potential).
 \end{itemize}
 
-Therefore we can define a scalar function $V(\vvec{r})$ such that 
+Therefore we can define a vector function $\vvec{A}(\vvec{r})$ such that 
 \aleq{
     \Aboxed{
-        \vvec{E}(\vvec{r}) = - \grad V(\vvec{r})
+        \vvec{B}(\vvec{r}) = \curl \vvec{A}(\vvec{r})
     }
 }
 
-And the reverse can be calculated by 
-\aleq{
-    \Aboxed{
-        V(\vvec{r_0}) 
-        = -\int_{\substack{\text{any path}\\\text{from }\infty\text{ to }\vvec{r_0}}} \vvec{E}(\vvec{r}) \cdot \dd{\vvec{r}}
-        = -\int_\infty^{\vvec{r_0}} \vvec{E}(\vvec{r})\dd{\vvec{r}}
-    }
-}
+(Procedures for computing the reverse exists, however basically no one would use it.)
 
 %%%%%%%%%%%%%%
 \subsection{Poisson Equation}
 
-If we substitute $\vvec{E} = -\grad V$ into the Gauss's law,
+If we substitute $\vvec{B} = \curl \vvec{A}$ into the Ampere's law differential form,
 we arrive at a new equation: 
-\addBelowArrow[blue]{laplacian1}{laplacian2}{\scriptsize This is called\\[-1ex]\scriptsize \bf{Laplacian Operator}}{-1ex}{(0,-2ex)}
+%\addBelowArrow[blue]{laplacian1}{laplacian2}{\scriptsize This is called\\[-1ex]\scriptsize \bf{Laplacian Operator}}{-1ex}{(0,-2ex)}
 \aleq{
-    \frac{\rho}{\epsilon_0} &= \div \vvec{E}\\
-    &= \div (-\grad V)\\
-    &= - \div \qty(\pdvv{V}{x}\hhat{x} + \pdvv{V}{y}\hhat{y} + \pdvv{V}{z}\hhat{z})\\
-    &= - \qty(\tkn{laplacian1}{\cul[blue]{\pdvv[2]{V}{x} + \pdvv[2]{V}{y} + \pdvv[2]{V}{z}}}) 
-    \defeq \ -\tkn{laplacian2}{\cul[blue]{\laplacian}} V\\[1ex]
+    \mu_0 \vvec{J} &= \curl \vvec{B}\\
+    &= \curl (\curl \vvec{A})\\
+    &= \grad(\div \vvec{A}) - \laplacian \vvec{A}\\
+    &= -\laplacian \vvec{A}\\
     \Aboxed{
-        \laplacian V(\vvec{r}) &= -\frac{\rho(\vvec{r})}{\epsilon_0}
+        \laplacian \vvec{A}(\vvec{r}) &= -\mu_0\vvec{J}(\vvec{r})
     }
 }
+
+This is the same 
+
+
 
 This equation belongs to a class of PDE called \bf{Poisson equation}, 
 which is one of the earliest studied PDEs in history.
