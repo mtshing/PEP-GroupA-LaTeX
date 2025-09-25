@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1758712776.64268 "d:/mings/Documents/PhyO/latex_notes/11_E_field/E_field.tex" "E_field.pdf" "E_field" 1758712782.70572 0
+["lualatex"] 1758749178.81573 "d:/mings/Documents/PhyO/latex_notes/11_E_field/E_field.tex" "E_field.pdf" "E_field" 1758749185.65773 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1758706466 12455 bd80573f3ddb40928ceb1963e099924c ""
@@ -15,10 +15,10 @@
   "C:/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-bold.luc" 1758396527 128290 0791a04d31376aaaf05e8c117e5a08b3 ""
   "C:/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1758396526 128138 96cb1843ff111f5c5d33ea606959797b ""
   "C:/texlive/2024/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1740215970 64786 3c929676425365059054f8e781916551 ""
-  "E_field.aux" 1758712782 6971 c88e1a60e46dc0bd915f0785550d778b "lualatex"
-  "E_field.out" 1758712782 3045 b6aa1b5fcc486ce6887645e03de6c6b9 "lualatex"
-  "E_field.sta" 1758712782 45 5977ee01d6365feae7164ffda30d2c8b "lualatex"
-  "E_field.tex" 1758712775 42548 107a107a1d1485e6a675ff7679b90cc8 ""
+  "E_field.aux" 1758749184 6971 5d0113e37602db265d508e39555f8c93 "lualatex"
+  "E_field.out" 1758749184 3045 b6aa1b5fcc486ce6887645e03de6c6b9 "lualatex"
+  "E_field.sta" 1758749184 45 5977ee01d6365feae7164ffda30d2c8b "lualatex"
+  "E_field.tex" 1758749177 43694 7091c3ae8ec6c3521df8c75c9a26f632 ""
   "c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk" 1757962771 13844 585768c540b6fc11d97b522f36dda6c9 ""
   "c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf" 1738919724 118828 5d91d27a335c65bda4818de63abc25ce ""
   "c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" 1738919724 110496 3798ed6a50bb549a3371df87f46555f4 ""
@@ -329,7 +329,7 @@
   "c:/texlive/2024/texmf-dist/tex/luatex/luaotfload/luaotfload.lua" 1752685391 13566 16df94dd2de231b2bca0aaa0190941fe ""
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/luahbtex/lualatex.fmt" 1753178721 6515356 2ed61dbeaa280ff83fc10388e729219d ""
-  "d:/mings/Documents/PhyO/latex_notes/11_E_field/E_field.tex" 1758712775 42548 107a107a1d1485e6a675ff7679b90cc8 ""
+  "d:/mings/Documents/PhyO/latex_notes/11_E_field/E_field.tex" 1758749177 43694 7091c3ae8ec6c3521df8c75c9a26f632 ""
   (generated)
   "E_field.aux"
   "E_field.log"

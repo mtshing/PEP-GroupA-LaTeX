@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.22)  24 SEP 2025 19:19
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.22)  25 SEP 2025 05:26
  restricted system commands enabled.
  file:line:error style messages enabled.
 **d:/mings/Documents/PhyO/latex_notes/11_E_field/E_field.tex
@@ -880,7 +880,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--54
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 91--95
+Underfull \hbox (badness 10000) in paragraph at lines 107--111
 
  []
 
@@ -889,83 +889,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--95
 [2]
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
+Underfull \hbox (badness 10000) in paragraph at lines 297--302
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
 
  []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 362.
-
-
 
 [5]
-Overfull \hbox (19.44333pt too wide) in paragraph at lines 401--403
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 383.
+
+
+Overfull \hbox (3.20847pt too wide) in paragraph at lines 419--421
+[]\TU/lmr/m/n/12 Cen-ter point of top sur-face = $[]$  $\OMS/cmsy/m/n/12 )$ \TU/lmr/m/n/12 The field pokes through it $\OT1/cmr/m/n/12 = [][]$\TU/lmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (24.16562pt too wide) in paragraph at lines 422--424
 []\TU/lmr/m/n/12 Cen-ter point of bot-tom sur-face = $[]$  $\OMS/cmsy/m/n/12 )$ \TU/lmr/m/n/12 The field pokes through it $\OT1/cmr/m/n/12 = [][]$\TU/lmr/m/n/12 . 
  []
 
 
 
 [6]
-Overfull \hbox (8.53673pt too wide) detected at line 448
+Overfull \hbox (8.53673pt too wide) detected at line 469
 []
  []
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 537--542
+Underfull \hbox (badness 10000) in paragraph at lines 558--563
 
  []
 
@@ -977,102 +983,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--542
 
 [10]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 765.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
 
 
 
 [11]
-Overfull \hbox (5.57745pt too wide) in paragraph at lines 767--771
+Overfull \hbox (5.57745pt too wide) in paragraph at lines 788--792
 \TU/lmr/m/n/12 stud-ied PDEs in his-tory. It is []$[]$[].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--794
+Underfull \hbox (badness 10000) in paragraph at lines 813--815
 
  []
 
 
-Overfull \hbox (3.3121pt too wide) in paragraph at lines 806--821
+Overfull \hbox (3.3121pt too wide) in paragraph at lines 827--842
 \TU/lmr/m/n/12 spe-cial case - When the []$[]$[] + []$[]$[],
  []
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 821.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 842.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 821.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 842.
 
 
 
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 829.
+(hyperref)                removing `math shift' on input line 850.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\va' on input line 829.
+(hyperref)                removing `\va' on input line 850.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 829.
+(hyperref)                removing `math shift' on input line 850.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 829.
+(hyperref)                removing `math shift' on input line 850.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 829.
+(hyperref)                removing `math shift' on input line 850.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 863.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 884.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 863.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 884.
 
 
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 928--933
+Underfull \hbox (badness 10000) in paragraph at lines 949--954
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 943--944
+Underfull \hbox (badness 10000) in paragraph at lines 964--965
 
  []
 
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 980--981
+Underfull \hbox (badness 10000) in paragraph at lines 1001--1002
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
 
  []
 
@@ -1094,16 +1100,16 @@ Package rerunfilecheck Info: File `E_field.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 30860 strings out of 470133
+ 30864 strings out of 470133
  125129,1144653 words of node,token memory allocated
  896 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 44 sub_mlist, 1 glyph, 58 attribute, 64 glue_spec, 58 attribute_list, 2 write nodes
-   avail lists: 1:2,2:1794,3:620,4:118,5:610,6:69,7:5752,8:112,9:1761,10:20,11:406
- 58315 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:1808,3:620,4:118,5:627,6:75,7:5752,8:112,9:1728,10:20,11:406
+ 58319 multiletter control sequences out of 65536+600000
  119 fonts using 7903023 bytes
- 125i,28n,154p,590b,1022s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,27n,154p,590b,1022s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman8-bold.otf><c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf><<c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk>><c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on E_field.pdf (18 pages, 262364 bytes).
+Output written on E_field.pdf (18 pages, 264175 bytes).
 
 PDF statistics: 322 PDF objects out of 1000 (max. 8388607)
  256 compressed objects within 3 object streams

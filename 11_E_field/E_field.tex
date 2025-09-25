@@ -62,31 +62,47 @@ Electrostatics only concerns the \nth{1} equation of the set - \cul[blue]{Gauss'
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Basic Skill: Coulomb's Law with Integration}
 
-Promoting Coulomb's law from point charge to a distribution of charge
+Promoting point charge to a distribution of charge
 is straightforward by
 \aleq{
-    \ \ \qty(\mstack{\text{Point}\\\text{Charge}}) \ =\ Q 
-    \quad\ \xRightarrow{\phantom{000}}\quad\ \ 
-    \rho \dd{\tau} \ =\ \qty(\mstack{\text{Charge}\\\text{Density}})\qty(\mstack{\text{Unit}\\\text{Volume}})
+    \quad\qquad\qquad \ \qty(\mstack{\text{Point}\\\text{charge}}) \ =\ Q 
+    \quad\ \xRightarrow{\phantom{000}}\quad
+    \int_{\substack{\text{whole}\\\text{space}}} \dd{Q} \quad \sim\ 
+    \sum_\text{everywhere} \qty(\mstack{\text{Infinitestimal}\\\text{charge units}})
 }
 
-It is then a sum of all E-field contribution from every infinitestimal volumes:
+Coulomb's law is then a sum of all E-field contribution from every infinitestimal charge:
 \aleq{
     \vvec{E} = \inv{4\pi\epsilon_0} \frac{Q}{r^2} \hhat{r}
     \quad\xRightarrow{\phantom{000}}\quad
     \int \dd{\vvec{E}} 
-    = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\rho\dd{\tau}}{r^2}\hhat{r}
+    = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\dd{Q}}{r^2}\hhat{r}
 }
 
-And electrical potential follows:
+And the formula for electrical potential follows:
 \aleq{
     V = \inv{4\pi\epsilon_0} \frac{Q}{r}
     \quad\xRightarrow{\phantom{000}}\quad
     \int \dd{V} 
-    = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\rho\dd{\tau}}{r}
+    = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\dd{Q}}{r}
 }
 
-\newpage
+\begin{notation}
+    We often use these symbols to represent charge density at different dimension:
+    \begin{itemize}
+        \item Charge per volume = $\rho$ \quad$\Rightarrow$\quad 
+            $\dd{Q} = \rho\dd{\tau} = \qty(\substack{\text{Charge}\\\text{per volume}})\qty(\substack{\text{Unit}\\\text{volume}})$
+            
+        \item Charge per area = $\sigma$ \qquad\,$\Rightarrow$\quad 
+            $\dd{Q} = \sigma\dd{s} = \qty(\substack{\text{Charge}\\\text{per area}})\qty(\substack{\text{Unit}\\\text{area}})$
+
+        \item Charge per length = $\lambda$ \quad\ $\Rightarrow$\quad 
+            $\dd{Q} = \lambda\dd{l} = \qty(\substack{\text{Charge}\\\text{per length}})\qty(\substack{\text{Unit}\\\text{length}})$
+    \end{itemize}
+
+\end{notation}
+
+\vskip 1em
 \begin{example}
     Suppose there is a rod lying on the x-axis, 
     with its ends at $x=a$ and $x=b$.
@@ -98,19 +114,19 @@ And electrical potential follows:
     We can analyze by dividing the rod into infinitestimal pieces:
     \begin{itemize}
         \item Each segment has a length $\dd{x}$
-        \item Charge on each segment is thus $\frac{Q}{L}\dd{x}$, where $L=b-a$.
+        \item Charge on each segment is thus $\lambda\dd{x} = \frac{Q}{L}\dd{x}$, where $L=b-a$.
         \item For the segment at position $x$, 
         its distance from the targeted point is $\sqrt{z^2+x^2}$.
     \end{itemize}
 
     \insertFig{infinte element}
 
-    Thus we can calculate $\vvec{E}$ and $V$:
+    Thus we can calculate $V$ and $\vvec{E}$:
     \begin{enumerate}
         \item Electrical potential does not concern directions.
         So we can directly write
         \aleq{
-            V = \int_a^b \inv{4\pi\epsilon_0} \frac{\frac{Q}{L}\dd{x}}{\sqrt{z^2+x^2}}
+            V = \inv{4\pi\epsilon_0}  \int_a^b \frac{\frac{Q}{L}\dd{x}}{\sqrt{z^2+x^2}}
         }
 
         \item Electric field concerns directions.
@@ -119,14 +135,16 @@ And electrical potential follows:
         
         \insertFig{component}
 
-        So the E-field's vertical component ($z$) should be calculated as 
+        So the E-field's vertical component ($z$) should be integrated by 
         \aleq{
-            E_z = \int_a^b \inv{4\pi\epsilon_0} \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \cdot \frac{z}{\sqrt{z^2+x^2}}
+            E_z = \inv{4\pi\epsilon_0} \int_a^b \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \sin\theta 
+            = \inv{4\pi\epsilon_0}  \int_a^b \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \frac{z}{\sqrt{z^2+x^2}}
         }
 
         Similarly for the horizontal component ($x$):
         \aleq{
-            E_x = \int_a^b \inv{4\pi\epsilon_0} \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \cdot \frac{x}{\sqrt{z^2+x^2}}
+            E_x = \inv{4\pi\epsilon_0} \int_a^b \frac{\frac{Q}{L}\dd{x}}{z^2+x^2}\cos\theta 
+            = \inv{4\pi\epsilon_0}  \int_a^b \frac{\frac{Q}{L}\dd{x}}{z^2+x^2} \frac{x}{\sqrt{z^2+x^2}}
         }
 
     \end{enumerate}
@@ -137,7 +155,7 @@ And electrical potential follows:
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Gauss's Law}
 
-Gauss's Law has two different expressions:
+The Gauss's Law has two different expressions:
 \aleq{
     \oiint \vvec{E}\cdot \dd{\vvec{s}} &= \frac{Q}{\epsilon_0} &(\text{Integral form})\\[1ex]
     %
@@ -152,10 +170,10 @@ After that we can generalize to the differential form by introducing an operator
 
 The literal description in Gauss's law integral form is
 \aleq{
-    \qty(\mstack{\text{Flux of}\\\text{electric field}\\\text{on a surface}})
+    \qty(\mstack{\text{Flux of electric field}\\\text{on a closed surface}})
     \ =\ \oiint \vvec{E}\cdot \dd{\vvec{s}}
     \ =\ \frac{Q}{\epsilon_0}
-    \ =\ \frac{(\text{Charge enclosed})}{(\text{Some constant})}
+    \ =\ \frac{(\text{Charge enclosed})}{(\text{Constant})}
 }
 We first need to understand what \bf{flux} is, 
 and what that weird integral sign even means.
@@ -217,7 +235,7 @@ Now use your imagination to expand the
 
     \insertFig{peanut pipe}
 
-    A "closed" surface must have well-distinguishment between its
+    A "closed" surface needs to be well-distinguished between its
     "inner surface" and "outer surface".
 
 \end{enumerate}
@@ -234,26 +252,26 @@ each of the small grid on the surface can have a different field vector poking t
 \insertFig{messy flow}
 
 How can we describe the flow direction mathematically?
-We can first define a normal vector $\vvec{s}$ on the surface.
+We can first define a normal vector $\vvec{s}$ for each grid.
 By convention, this $\vvec{s}$ 
 \begin{itemize}
-    \item has a magnitude equal to the surface's area.
+    \item has a magnitude equal to the surface's area of the grid.
     \item points outward of the surface (from inner to outer).
 \end{itemize}
 
 Then we can take the dot product between the field vector $\vvec{F}$ and the surface normal vector $\vvec{s}$:
 \begin{itemize}
     \item If $\vvec{F}\cdot\vvec{s}>0$, 
-    they are more or less in the same direction $\Rightarrow \vvec{F}$ is pointing outward!
+    they are more or less in similar direction $\Rightarrow \vvec{F}$ is pointing outward!
 
     \item If $\vvec{F}\cdot\vvec{s}<0$,
     they are more or less in opposite direction $\Rightarrow \vvec{F}$ is pointing inward!
 \end{itemize}
 
-Finally, we construct the definition of "flux" $\Phi$:
+Finally, we define "flux" $\Phi$ over the closed surface:
 \aleq{
     \Aboxed{
-        \Phi = \sum_{\substack{\text{all small grids }i\\\text{in the surface}}} \vvec{F}_i \cdot \vvec{s}_i
+        \Phi\qquad = \sum_{\substack{\text{All small grids }i\\\text{on the closed surface}}} \vvec{F}_i \cdot \vvec{s}_i
         \quad\xrightarrow{\phantom{000}}\quad
         \tkn{oiint}{\cul[blue]{\oiint}} \vvec{F}(\vvec{r})\cdot \dd{\vvec{s}}
     }
@@ -268,7 +286,9 @@ Finally, we construct the definition of "flux" $\Phi$:
 We can use the sign of $\Phi$ to tell if there are more in-flow / out-flow of field lines through the surface,
 thus telling if there are sources / sinks enclosed by the surface.
 
-\insertFig{phi > 0 < 0}
+
+% 3 graphs please
+\insertFig{phi > 0 < 0 = 0 } 
 
 
 %%%%%%%%%%%%%%
@@ -347,18 +367,19 @@ here only introduces some surfaces with simple parametrization.
 
 However there is a problem in using flux - 
 if we choose the surface too arbituarily, 
-the calculated flux is not enough to tell where the sink/source are.
+the calculated flux is to ambiguous to tell where the sink/source are.
 
 \insertFig{arbituary surface}
+
 E.g. If we choose a very big surface and calculate the flux $\approx 0$, 
 where are the sinks and sources?\\
 
 To tackle this problem,
 we need to introduce the \bf{divergence} operator:
 \aleq{
-    \tkn{div}{\cul[red]{\div}}\ (\cdot) 
-    \ \defeq\  \pdvv{x}(\cdot) + \pdvv{y}(\cdot) + \pdvv{z} (\cdot)
-    \ \defeq\ \tkn{div2}{\cul[blue]{\text{div}}}\ (\cdot)
+    \tkn{div}{\cul[red]{\div}}\ \bullet
+    \ \defeq\ \divRec{\bullet}
+    \ \defeq\ \tkn{div2}{\cul[blue]{\text{div}}}\ \bullet
 }
 \addArrow[red]{div}{(0,-3ex)}
 {\scriptsize Like gradient operator\\[-1ex]\scriptsize but with a dot}
@@ -370,66 +391,66 @@ we need to introduce the \bf{divergence} operator:
 
 \vskip 1em
 The divergence operator can be applied on a vector function,
-and will return a scalar (number).
+and will return a scalar (number) function.
 \aleq{
     \div \vvec{F} 
-    &= \bmat{\pdvv{x} & \pdvv{y} & \pdvv{z}}\bmat{F_x\\F_y\\F_z}\\
-    &= \pdvv{F_x}{x} + \pdvv{F_y}{y} + \pdvv{F_z}{z}\\
+    &= \bmat{\pdvv{x} & \pdvv{y} & \pdvv{z}}\bmat{F_x\\F_y\\F_z}\\[1ex]
+    &= \pdvv{F_x}{x} + \pdvv{F_y}{y} + \pdvv{F_z}{z}\\[1ex]
     &= (\text{A number})
 }
 
-Computing divergence of a vector field is equivalent to 
-\bf{calculating the flux over an infinitestimal small but closed surface.}
+The divergence of a vector field is related to its
+\bf{total flux through an infinitestimally small but closed surface.}
 
 %%%%%%%%%%%%%%
 \subsubsection{Geometrical Interpretation}
 
-To visualize, we can draw in infinitestimal cube around a point $(x,y,z)$.
+To visualize, we can draw an infinitestimal small cube around a point $(x,y,z)$.
 Although a cube has 6 faces, 
 because of symmetry in all 3 directions,
-it is enough to just analyze by the 2 faces that are parallel to the $x$-$y$ plane.
+it suffices to just analyze by the 2 faces that are parallel to the $x$-$y$ plane.
 
 \insertFig{infinitestmal cube + 2 face}
 
 \begin{itemize}
     \item Normal direction of these 2 faces = $\hhat{z}$ \ $\Rightarrow$\ 
-    The surface normal vector $=\blue{\hhat{z} \dd{x}\dd{y}}$.
+    The surface normal vector $=\blue{(\Delta x \Delta y) \hhat{z}}$.
 
-    \item Center point of top surface = $\qty(x,y,z+\frac{\dd{z}}{2})$ 
-    \ $\Rightarrow$\ The field pokes through it $=\red{\vvec{F}\qty(x,y,z+\frac{\dd{z}}{2})}$.
+    \item Center point of top surface = $\qty(x,y,z+\frac{\Delta z}{2})$ 
+    \ $\Rightarrow$\ The field pokes through it $=\red{\vvec{F}\qty(x,y,z+\frac{\Delta z}{2})}$.
 
-    \item Center point of bottom surface = $\qty(x,y,z-\frac{\dd{z}}{2})$ 
-    \ $\Rightarrow$\ The field pokes through it $=\red{\vvec{F}\qty(x,y,z-\frac{\dd{z}}{2})}$.
+    \item Center point of bottom surface = $\qty(x,y,z-\frac{\Delta z}{2})$ 
+    \ $\Rightarrow$\ The field pokes through it $=\red{\vvec{F}\qty(x,y,z-\frac{\Delta z}{2})}$.
 
 \end{itemize}
 
 Therefore the total flux through the 2 planes is
 \aleq{
-    \qty(\mstack{\text{Total Out-flux through}\\[0.5ex]\text{surfaces}\parallel\text{x-y plane}}) 
+    \qty(\mstack{\text{Total Out-flux through}\\[0.5ex]\text{surfaces}\sparallel\text{x-y plane}}) 
     &= \qty(\mstack{\text{Out-flux through}\\[0.5ex]\text{top face}}) - 
         \qty(\mstack{\text{In-flux through}\\[0.5ex]\text{bottom face}})\\[1em]
     %
     \dd{\Phi_{xy}} &= 
-    \textstyle (\vvec{F}\qty(x,y,z+\frac{\dd{z}}{2}) \cdot \hhat{z} \dd{x}\dd{y}) - 
-        (\vvec{F}\qty(x,y,z-\frac{\dd{z}}{2}) \cdot \hhat{z} \dd{x}\dd{y})\\[1em]
+    \textstyle \vvec{F}\qty(x,y,z+\frac{\Delta z}{2}) \cdot \hhat{z} (\Delta x \Delta y) - 
+        \vvec{F}\qty(x,y,z-\frac{\Delta z}{2}) \cdot \hhat{z} (\Delta x \Delta y)\\[1em]
     %
-    &= \qty(\frac{\vvec{F}\qty(x,y,z+\frac{\dd{z}}{2}) - \vvec{F}\qty(x,y,z-\frac{\dd{z}}{2})}{\blue{\dd{z}}}) 
-        \cdot \hhat{z} \dd{x}\dd{y}\blue{\dd{z}}\\[1ex]
+    &= \qty(\frac{\vvec{F}\qty(x,y,z+\frac{\Delta z}{2}) - \vvec{F}\qty(x,y,z-\frac{\Delta z}{2})}{\blue{\Delta z}}) 
+        \cdot \hhat{z} (\Delta x \Delta y\blue{\Delta z})\\[1ex]
     %
-    &= \cut[red]{\cbox[red]{\qty(\frac{\vvec{F}\qty(x,y,\cbox[red]{\textstyle z+\frac{\dd{z}}{2}}) 
-        - \vvec{F}\qty(x,y,\cbox[red]{\textstyle z-\frac{\dd{z}}{2}})}{\cbox[red]{\dd{z}}})}}{\text{This is exactly partial z}}
-        \cdot \hhat{z} \dd{x}\dd{y}\dd{z}\\[1ex]
+    &= \cut[red]{\cbox[red]{\qty(\frac{\vvec{F}\qty(x,y,\cbox[red]{\textstyle z+\frac{\Delta z}{2}}) 
+        - \vvec{F}\qty(x,y,\cbox[red]{\textstyle z-\frac{\Delta z}{2}})}{\cbox[red]{\Delta z}})}}{\text{This is exactly partial z}}
+        \cdot \hhat{z} (\Delta x \Delta y \Delta z)\\[1ex]
     %
-    &= \pdvv{z}\cul[green]{\vvec{F}(x,y,z)\cdot \hhat{z}} \dd{x}\dd{y}\dd{z}\\[1em]
+    &= \pdvv{z}\cul[green]{\vvec{F}(x,y,z)\cdot \hhat{z}} (\Delta x \Delta y\Delta z)\\[1em]
     %
-    &= \pdvv{z}\tkn{div_dot}{\cul[green]{F_z}}(x,y,z)\ (\dd{x}\dd{y}\dd{z})\\[1em]
+    &= \pdvv{z}\tkn{div_dot}{\cul[green]{F_z}}(x,y,z)\ (\Delta x \Delta y\Delta z)\\[1em]
     %
     &= \qty(\mstack{\text{Divergence's }\\[0.5ex] z\text{ term}})\ \qty(\mstack{\text{Unit}\\[0.5ex]\text{volume}})
 }
 \addArrow[green]{div_dot}{(3ex,6ex)}{\scriptsize Dot product to $\hhat{z}$ = Only take $z$ component}{(0,2ex)}{(15ex,-3.5ex)}
 
 We can expect the similar results in the other 2 directions.
-Putting them together:
+Gather them together:
 \aleq{
     \qty(\mstack{\text{Total flux through}\\[0.5ex]\text{the volume}})
     %
@@ -476,7 +497,7 @@ the \bf{divergence theorem}:
 which is basically 
 \aleq{
     \qty(\mstack{\text{Total }\\[0.5ex]\text{Flux}})
-    \quad \sim \sum_{\text{All volumes}} \frac{(\text{Flux})}{(\text{Volume})}\times \qty(\text{Volume})
+    \quad \sim \sum_{\text{All volumes}} \qty(\mstack{\text{Flux}\\[0.5ex]\text{per volume}})\times \qty(\text{Volume})
 }
 
 
@@ -484,7 +505,7 @@ which is basically
 \subsection{Gauss's Law - Explanation}
 
 
-Gauss's law is purely an \cul[red]{observation} about the relation between E-field and charges:
+The Gauss's law is purely an \cul[red]{observation} about the relation between E-field and charges:
 \aleq{
     \Aboxed{
         \mstack{\text{Total flux of E-field on }\\[0.5ex]\text{a closed surface}\neq 0}
@@ -1102,7 +1123,7 @@ Here we shall summarize the methods of solving electrostatics problems:
     $\Rightarrow$ Try image charge method.
 
     \item All the above do not apply 
-    $\Rightarrow$ Solve Poisson equation explicitly. PDE hell %\emoji{skull}.
+    $\Rightarrow$ Solve Poisson equation explicitly. PDE hell. %\emoji{skull}
 \end{enumerate}
 
 %%%
