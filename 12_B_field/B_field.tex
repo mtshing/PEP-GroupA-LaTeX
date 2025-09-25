@@ -1,0 +1,874 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../.common/common}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{T12 (Electromagnetism)}
+\title{Magnetostatics}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+
+\begin{overview}
+    \begin{itemize}
+        \item Basic problems: Find $\vvec{B}$ by Biot-Savat law with integration
+        \item Divergent-less of B-field
+        \item Ampere's law, line integral, curl \& Stokes' theorem
+        \item Magnetic vector potential \& Poisson equation
+    \end{itemize}
+
+
+\end{overview}
+
+\vskip 1em
+In electromagnetism, 
+theoretically every problem can be solved through a set of PDEs
+called the \bf{Maxwell Equations}.\\[-2em]
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            {\div} \vvec{E} &= \frac{\rho}{\epsilon_0}\\
+            \curl \vvec{E} &= -\pdvv{\vvec{B}}{t}
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \tkn{maxwell_div}{\div} \vvec{B} &= 0\\
+            \tkn{maxwell_ampere}{\curl} \vvec{B} &= \mu_0 \vvec{J} + \mu_0\epsilon_0\pdvv{\vvec{E}}{t}
+        }
+    \end{minipage}
+\end{center}
+\addArrow[blue]{maxwell_div}{(-5ex,0)}{}{(-3ex,1ex)}
+\addArrow[red]{maxwell_ampere}{(-5ex,0)}{}{(-3ex,1ex)}
+
+However, a \it{system of PDEs} is just too complicate to be solved.
+So we need to learn different "tricks" to avoid them,
+which are enough for some simple scenarios.\\
+
+Magnetostatics only concerns the \nth{2} and \nth{4} equation of the set 
+- \cul[blue]{Gauss's law on B-field} and \cul[red]{Ampere's law}. 
+
+
+
+
+\linesep
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic Skill: Biot-Savat Law with Integration}
+
+Physically, currents are just moving charges. 
+There is no such thing called "point current".
+However we can imagine a line of current being divided into many infinitestimally small segments
+such that each current segment "looks like" a vector point source.
+\aleq{
+    \ \ \qty(\mstack{\text{Current}\\\text{line}}) \ =\ I\vvec{L} 
+    \quad\ \xRightarrow{\phantom{000}}\quad\ \ 
+    \int I \dd{\vvec{l}} \ \sim\ \sum \qty(\mstack{\text{Current}})\qty(\mstack{\text{Unit}\\\text{length}})
+}
+
+\insertFig{current segment source}
+
+This is why you will never find Biot-Savat law in your high school textbook.
+\aleq{
+    \cus[red]{\vvec{B} = \inv{4\pi\epsilon_0} \frac{I\vvec{L}}{r^2}\cross \hhat{r}}
+        {\substack{\text{Always remember that}\\\text{You should not write this}}}
+    \qquad\xRightarrow{\phantom{000}}\quad
+    \cus[blue]{\int \dd{\vvec{B}} 
+    = \int_{\substack{\text{whole}\\\text{line}}} \frac{\mu_0}{4\pi} \frac{I\dd{\vvec{l}}}{r^2}\cross\hhat{r}}
+        {\substack{\text{Biot-Savat law can only be}\\\text{written as an integral}}}
+}
+
+Furthermore, because we are living in a 3D world,
+current does not always travel along a line segment, 
+but may flow on a surface or through an object such that the current is position dependent. 
+In these cases, we should describe current as a distribution of flow (i.e. vector field).
+
+\insertFig{current volume density + surface density}
+
+When current is travelling on a surface 
+(so that each wire is like a ribbon strip),
+we can describe current as \bf{surface current density} $\vvec{K}$. 
+\aleq{
+    I\dd{\vvec{l}} 
+    \qquad\xRightarrow{\phantom{000}}\quad 
+    \vvec{K}\dd{s}
+}
+
+When current is travelling in an object 
+(so that each wire is like a continuous volume),
+we can describe current as \bf{volume current density} $\vvec{J}$.
+\aleq{
+    I\dd{\vvec{l}} 
+    \qquad\xRightarrow{\phantom{000}}\quad 
+    \vvec{J}\dd{\tau}
+}
+
+
+\begin{notation}[Caution:]
+    In magnetostatics problem, we require the current to be a constant flow.
+    Although you may have learnt that a moving point charge $q$ traveling at velocity $v$ acts like a point current source $qv$,
+    this current is only temporary.
+
+    \insertFig{point charge not equal continuous flow}
+
+    The true formula of B-field by point charge needs to consider the travelling time of B-field.
+    This is completely out of our scope.
+
+\end{notation}
+
+\vskip 1em
+\begin{example}
+    Suppose there is a wire lying on the x-axis, 
+    with its ends at $x=a$ and $x=b$.
+    Let there be uniform current $I$ flowing along it.
+    What is the B-field on an arbituary point on the z axis?\\
+
+    \insertFig{rod}
+
+    We can analyze by dividing the rod into infinitestimal pieces:
+    \begin{itemize}
+        \item Each segment has a length $\dd{x}$
+        \item Each unit of current segment is thus $I\dd{\vvec{x}} = I\dd{x}\hhat{x}$.
+        \item For the segment at position $x$, 
+        its distance from the targeted point is $\sqrt{z^2+x^2}$.
+    \end{itemize}
+
+    \insertFig{infinte element}
+
+    Thus we can calculate $\vvec{B}$ by Biot-Savat law.
+    \aleq{
+        \vvec{B} = \frac{\mu_0}{4\pi}\int_a^b \frac{I\dd{x}\hhat{x}}{z^2+x^2}\cross \qty(\substack{\text{directon to}\\\text{target point}})
+    }
+    To do the cross product, 
+    we need to resolve the direction's component from the segment to the target point. 
+    By the triangle:
+
+    \insertFig{component}
+
+    \aleq{
+        \hhat{r} &= \frac{x}{\sqrt{z^2+x^2}}\hhat{x} + \frac{z}{\sqrt{z^2+x^2}}\hhat{z}\\
+        \Rightarrow\quad \hhat{x}\cross\hhat{r} &= \frac{z}{\sqrt{z^2+x^2}}(-\hhat{y})
+    }
+
+    In this situation, $-\hhat{y}$ is the out of paper direction. 
+
+    \insertFig{directions notation}
+
+    The B-field should be integrated by
+    \aleq{
+        B_y = - \frac{\mu_0}{4\pi}\int_a^b \frac{I\dd{x}}{z^2+x^2}\frac{z}{\sqrt{z^2+x^2}}
+    }
+
+
+\end{example}
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Divergent-less of B-field}
+
+Similar to E-field, there is the \bf{Gauss's law for B-field},
+which has two different expressions: 
+\aleq{
+    \oiint \vvec{B}\cdot \dd{\vvec{s}} &= 0 &(\text{Integral form})\\[1ex]
+    %
+    \div \vvec{B} &= 0 &(\text{Differential form})
+}
+
+This law is purely an observation to B-field, claiming that 
+\aleq{
+    \Aboxed{
+        \mstack{\text{Magnetic point source}\\[0.5ex]\text{does not exist}}
+        \qquad\Leftrightarrow\qquad
+        \mstack{\text{Total flux of B-field}\\[0.5ex]\text{on a closed surface always}= 0}
+    }
+}
+
+Because so far no one has found any magnetic monopoles,
+we determine that B-field lines must exist as closed loops,
+and can never form diverging/converging patterns like E-field does.\\
+
+This law is not as important as the other 3 in the Maxwell equation because 
+it does not involve any source terms.
+It is only sometimes useful when we need to make symmetry claims or simplify derivations.
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ampere's Law}
+
+The Ampere's Law (in magnetostatics) has two different expressions:
+\aleq{
+    \oint \vvec{B}\cdot \dd{\vvec{l}} &= \mu_0 I &(\text{Integral form})\\[1ex]
+    %
+    \curl \vvec{B} &= \mu_0 \vvec{J} &(\text{Differential form})
+}
+
+It is easier to study the physical meaning and visualize by the integral form.
+After that we can generalize to the differential form by introducing an operator called \bf{curl}.
+
+%%%%%%%%%%%%%%
+\subsection{Revisit: Dot Product Line Integral}
+
+The literal description in Ampere's law integral form is
+\aleq{
+    \qty(\mstack{\text{Dot product line integral}\\\text{of magnetic field along a loop}})
+    \ =\ \oint \vvec{B}\cdot \dd{\vvec{l}}
+    \ =\ \mu_0 I
+    \ =\ (\text{Constant})(\text{Current enclosed})
+}
+
+Recall that we can use the sign of a dot product between 2 vectors to 
+determine if the vectors are in similar / opposite directions. 
+
+\insertFig{dot product sign}
+
+Now consider that we are travelling in a vector field along some path.
+At each step, 
+we can take note of field vector there and our travelling direction,
+then compute their dot product.\\
+
+If the sum of all the dot products $>0$, 
+we are travelling more or less the same direction relative to the field's flow.\\
+
+If the sum of all the dot products $<0$, 
+we are travelling more or less the opposite direction relative to the field's flow.\\
+
+\insertFig{flow along + flow opposite}
+
+If we divide our path into infinitestimal small segments,
+then the sum become line integral.
+\aleq{
+    \int_\text{path} \vvec{F}\cdot \dd{l}
+    \quad
+    \begin{cases}
+        > 0 &\Rightarrow\quad \sim \text{Our path is along the flow}\\
+        < 0 &\Rightarrow\quad \sim \text{Our path is opposite to the flow}
+    \end{cases}
+}
+
+
+%%%%%%%%%%%%%%
+\subsection{Detection of Rotating Flow}
+
+The situation becomes interesting if we choose our path to be a closed loop - 
+this loop integral becomes an indicator whether there are rotation trends around the loop.\\
+
+By convention, we \cul[red]{always use an anti-clockwise loop} (Just like right hand rule). 
+\begin{itemize}
+    \item If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} > 0$,
+    our loop may have enclosed some rotation centers of anti-clockwise flow.
+
+    \insertFig{High degree of anti clock flow}
+
+    \insertFig{loop overlay -> +ve}
+
+    \item If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} < 0$,
+    our loop may have enclosed some rotation centers of clockwise flow.
+
+    \insertFig{High degree of clock flow}
+
+    \insertFig{loop overlay -> -ve}
+
+    \item If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} \approx 0$,
+    our loop probably does not enclose any rotation centers.
+
+    \insertFig{No rotation flow}
+
+    \insertFig{loop overlay -> 0}
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Curl}
+
+However there is a problem in using loop integral of dot product - 
+if we choose the loop too arbituarily, 
+the calculated dot product is ambiguous to tell where the rotation centers are.
+
+\insertFig{arbituary surface}
+
+E.g. If we choose an irregular loop, it may not catch the rotation centers.\\
+
+To tackle this problem,
+we need to introduce the \bf{curl} operator:
+\aleq{
+    \tkn{curl}{\cul[red]{\curl}}\ \bullet 
+    \ \defeq\ \curlRec{\bullet_x}[\bullet_y][\bullet_z]
+    \ \defeq\ \tkn{curl2}{\cul[blue]{\text{curl}}}\ \bullet
+}
+\addArrow[red]{curl}{(0,-3ex)}
+{\scriptsize Like gradient operator\\[-1ex]\scriptsize but with a cross}
+{(0,-1ex)}{(0,-1ex)}
+\addArrow[blue]{curl2}{(0,-3ex)}
+{\scriptsize Sometimes we\\[-1ex]\scriptsize just write "curl"}
+{(0,-1ex)}{(0,-1ex)}
+
+
+\vskip 1em
+The curl operator can be applied on a vector function,
+and will return another vector function.
+\aleq{
+    \curl{F} 
+    &= \bmat{\pdvv{x} & \pdvv{y} & \pdvv{z}}\cross \bmat{F_x & F_y & F_z}\\[1ex]
+    &= \curlRecDet{F_x}[F_y][F_z]\\[1ex]
+    &= \curlRec{F_x}[F_y][F_z]\\[1ex]
+    &= (\text{A vector})
+}
+
+Each component of the curl of a vector field is related to its
+\bf{loop integral along an infinitestimal small loop in each direction.}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Geometrical Interpretation}
+
+To visualize, we can draw 3 infinitestimal small loop around a point $(x,y,z)$.
+Because of symmetry in all 3 directions,
+it suffices to just analyze the loop that is parallel to the $x$-$y$ plane.
+
+\insertFig{infinitestmal loops + floating loop}
+
+The dot product on each side of the loop are calculated as follow:
+
+\insertFig{magnify loop}
+
+\begin{itemize}
+    \item Edge 1 :
+    \begin{itemize}
+        \item Vector field on the edge center = \red{$\vvec{F}\qty(x,y+\frac{\Delta y}{2},z)$}
+        \item Edge length = \green{$\Delta x$}, in $-x$ direction
+    \end{itemize}
+    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x,y+\frac{\Delta y}{2},z)\cdot (\Delta x)(-\hhat{x})
+    = -F_{\cul[blue]{\cul[blue]{x}}}\qty(x,y+\frac{\Delta y}{2},z)\Delta x$
+
+    \insertFig{edge 1}
+
+    \item Edge 2 :
+    \begin{itemize}
+        \item Vector field on the edge center = \red{$\vvec{F}\qty(x-\frac{\Delta x}{2},y,z)$}
+        \item Edge length = \green{$\Delta y$}, in $-y$ direction
+    \end{itemize}
+    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x-\frac{\Delta x}{2},y,z)\cdot (\Delta y)(-\hhat{y})
+    = -F_{\cul[blue]{\cul[blue]{y}}}\qty(x-\frac{\Delta x}{2},y,z)\Delta y$
+
+    \insertFig{edge 2}
+
+    \item Edge 3 :
+    \begin{itemize}
+        \item Vector field on the edge center = \red{$\vvec{F}\qty(x,y-\frac{\Delta y}{2},z)$}
+        \item Edge length = \green{$\Delta x$}, in $+x$ direction
+    \end{itemize}
+    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x,y-\frac{\Delta}{2},z)\cdot (\Delta x)(+\hhat{x})
+    = F_{\cul[blue]{\cul[blue]{x}}}\qty(x,y-\frac{\Delta y}{2},z)\Delta x$
+
+    \insertFig{edge 3}
+
+    \item Edge 4 :
+    \begin{itemize}
+        \item Vector field on the edge center = \red{$\vvec{F}\qty(x+\frac{\Delta x}{2},y,z)$}
+        \item Edge length = \green{$\Delta y$}, in $+y$ direction
+    \end{itemize}
+    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x+\frac{\Delta x}{2},y,z)\cdot (\Delta y)(+\hhat{y})
+    = F_{\cul[blue]{\cul[blue]{y}}}\qty(x+\frac{\Delta x}{2},y,z)\Delta y$
+
+    \insertFig{edge 4}
+
+\end{itemize}
+
+Therefore the total dot product along the loop is
+\aleq{
+    &\textstyle \cus[gray]{F_y\qty(x+\frac{\Delta x}{2},y,z)\Delta y}{\text{Edge 4}} 
+        - \cus[gray]{F_y\qty(x-\frac{\Delta x}{2},y,z)\Delta y}{\text{Edge 2}}
+        + \cus[gray]{-F_x\qty(x,y+\frac{\Delta y}{2},z)\Delta x}{\text{Edge 1}} 
+        + \cus[gray]{F_x\qty(x,y-\frac{\Delta y}{2},z)\Delta x}{\text{Edge 3}} \\[1em]
+    %
+    = &\qty(\frac{F_x\qty(x+\frac{\Delta x}{2},y,z) - F_x\qty(x-\frac{\Delta x}{2},y,z)}{\blue{\Delta x}}
+        - \frac{F_x\qty(x,y+\frac{\Delta y}{2},z) - F_x\qty(x,y-\frac{\Delta y}{2},z)}{\blue{\Delta y}}) (\Delta x\Delta y)\\[1em]
+    %
+    = &\qty(\cut[red]{\cbox[red]{\frac{F_x\qty(\cbox[red]{\textstyle x+\frac{\Delta x}{2}},y,z) 
+            - F_x\qty(\cbox[red]{\textstyle x-\frac{\Delta x}{2}},y,z)}{\cbox[red]{\Delta x}}}}{\text{This is exactly partial x}}
+        -\cut[green]{\cbox[green]{\frac{F_x\qty(x,\cbox[green]{\textstyle y+\frac{\Delta y}{2}},z) 
+            - F_x\qty(x,\cbox[green]{\textstyle y-\frac{\Delta y}{2}},z)}{\cbox[green]{\Delta y}}}}{\text{This is exactly partial y}}) (\Delta x\Delta y)\\[1em] 
+    %
+    = &\qty(\pdvv{F_y}{x} - \pdvv{F_x}{y})(\Delta x\Delta y)\\[1em]
+    %
+    =& \qty(\mstack{\text{Curl's }\\[0.5ex] z\text{ component}})
+        \qty(\mstack{\text{Unit area}\\[0.5ex]\text{parallel to xy plane}})\\[1em]
+    %
+    =& \qty(\mstack{\text{Curl's }\\[0.5ex] z\text{ component}})
+        \qty(\mstack{\text{Unit area}\\[0.5ex]\text{\blue{normal to z direction}}})
+}
+
+We can expect the similar results in the other 2 directions.
+Gather them together:
+\aleq{
+    \bcase{
+        \qty(\mstack{\text{Loop integral}\\\text{normal to}\\[0.2ex]x \text{ direction}})
+        = \qty(\pdvv{F_z}{y} - \pdvv{F_y}{z})(\dd{y}\dd{z})
+        = (\curl \vvec{F})_x (\dd{y}\dd{z})
+        = \qty(\mstack{\text{Curl's }\\[0.5ex] x\text{ component}})
+            \qty(\mstack{\text{Unit area}\\[0.2ex]\text{normal to}\\[0.2ex]x \text{ direction}})\\[1em]
+        %
+        \qty(\mstack{\text{Loop integral}\\\text{normal to}\\[0.2ex]y \text{ direction}})
+        = \qty(\pdvv{F_z}{x} - \pdvv{F_x}{z})(\dd{z}\dd{x})
+        = (\curl \vvec{F})_y (\dd{z}\dd{x})
+        = \qty(\mstack{\text{Curl's }\\[0.5ex] y\text{ component}})
+            \qty(\mstack{\text{Unit area}\\[0.2ex]\text{normal to}\\[0.2ex]y \text{ direction}})\\[1em]
+        %
+        \qty(\mstack{\text{Loop integral}\\\\\text{normal to}\\[0.2ex]z \text{ direction}})
+        = \qty(\pdvv{F_y}{x} - \pdvv{F_x}{y})(\dd{x}\dd{y})
+        = (\curl \vvec{F})_z (\dd{x}\dd{y})
+        = \qty(\mstack{\text{Curl's }\\[0.5ex] z\text{ component}})
+            \qty(\mstack{\text{Unit area}\\[0.2ex]\text{normal to}\\[0.2ex]z \text{ direction}})\\[1em]
+    }
+}
+
+\vskip 1ex
+Therefore we can geometrically interpret curl as
+\aleq{
+    \Aboxed{
+        \qty(\mstack{\text{\bf{Curl's}}\\\text{\bf{i\Nth\ component}}}) 
+        = (\curl \vvec{F})_i 
+        = \frac{(\text{Loop integral normal to i\Nth\ direction})}{(\text{Area enclosed by the loop})}
+        \sim \qty(\mstack{\text{\bf{loop integral}}\\\tkn{curl_density}{\text{\bf{\cul[blue]{density}}}}})
+    }
+}
+\addArrow[blue]{curl_density}{(0,-4ex)}{\scriptsize This density\\[-1ex]\scriptsize is by area}{(0,-1ex)}{(0,-1ex)}
+
+
+\vskip 1em
+%%%%%%%%%%%%%%
+\subsubsection{Stokes' Theorem}
+
+With the geometrical interpretation,
+we can directly state (without proof) a convenient formula related to divergence - 
+the \bf{Stokes' theorem}:
+\aleq{
+    \Aboxed{
+        \oint \vvec{F}\cdot \dd{\vvec{l}} &= \iint (\curl \vvec{F}) \cdot \dd{\vvec{s}}
+    }
+}
+
+which is basically 
+\aleq{
+    \qty(\mstack{\text{Total }\\[0.5ex]\text{Loop integral}})
+    \quad \sim \sum_{\text{All area}} \qty(\mstack{\text{Loop integral}\\[0.5ex]\text{per area}})\times \qty(\text{Area})
+}
+
+
+%%%%%%%%%%%%%%
+\subsection{Ampere's Law - Explanation}
+
+
+The Ampere's law is purely an \cul[red]{observation} about the relation between B-field and currents:
+\aleq{
+    \Aboxed{
+        \mstack{\text{Total line integral of B-field}\\[0.5ex]\text{along a closed loop}\neq 0}
+        \qquad\Leftrightarrow\qquad
+        \mstack{\text{There are currents}\\[0.5ex]\text{circled by the loop}}
+    }
+}
+
+The two forms of Ampere's law are describing this same observation:
+\begin{itemize}
+    \item \ul{Integral form}:
+    \aleq{
+        (\vvec{E}\text{'s flux})\ \sim\ \oiint \vvec{E}\cdot\dd{\vvec{s}} 
+        \ =\ \frac{Q}{\epsilon_0} \ \sim\ (\text{Charge})
+    }
+
+    \item \ul{Differential form}:
+    \aleq{
+        \qty(\mstack{\vvec{E} \text{'s flux}\\[0.5ex]\text{density}})\ \sim\ \div \vvec{E}
+        \ =\ \frac{\rho}{\epsilon_0} \ \sim\ \qty(\mstack{\text{Charge}\\[0.5ex]\text{density}})
+    }
+\end{itemize}
+
+And the two form can be inter-converted by divergence theorem.
+\aleq{
+    \oiint \vvec{E}\cdot\dd{\vvec{s}} \quad &=\quad \frac{Q}{\epsilon_0}\\[2em]
+    \tkn{divE}{\iiint (\div \vvec{E}) \dd{\tau}}\ &=\ \inv{\epsilon_0}\tkn{divQ}{\iiint \rho \dd{\tau}}
+}
+\addArrow[red]{divE}{(0,9ex)}{Divergence Theorem}{(1ex,3ex)}{(-12ex,-6ex)}
+\addBentArrow[blue]{divQ}{(-4ex,13ex)}{Charge to charge density}{(1ex,3ex)}{(18ex,-8ex)}
+
+
+%%%%%%%%%%%%%%
+\subsection{Applying Gauss's Law Integral Form}
+
+In beginner electromagnetism, 
+there is only one type of Gauss's law related problems: 
+\quoting{
+    Given the charge distribution, 
+    find the E-field everywhere by Gauss's law integral form\\
+    in some \cul[red]{very symmetrical} scenarios.
+}
+which is basically asking you to \it{revert} the flux calculation:
+\aleq{
+    \oiint \vvec{E}\cdot\dd{\vvec{s}} = \frac{Q}{\epsilon_0}
+    \qquad\Rightarrow\qquad
+    \vvec{E} = \text{ ??? } \text{in terms of }Q
+}
+
+If $Q$ has a very ugly distribution, 
+there is nothing we can do except solving some partial differential equations.
+But \red{if $Q$ distributes very symmetrically, 
+$\vvec{E}$ should also be symmetrical}, 
+such that the flux integral can be broken into multiplications.\\
+
+In these cases, we can choose a "Gaussian" surface to to be integrated where
+\begin{enumerate}
+    \item $\vvec{E}$ has constant magnitude everywhere on the surface.
+    \item $\vvec{E}$ forms the same angle with the surface normal vector everywhere on the surface
+\end{enumerate}
+
+\vskip 1ex
+Only then, the flux integral can be broken down as
+\aleq{
+    \oiint \vvec{E}\cdot \dd{\vvec{s}} 
+    &= \oiint \tkn{gauss_dot}{\cul[green]{\norm{\vvec{E}}\norm{\dd{\vvec{s}}}\cos\theta}}\\[1ex]
+    &= \tkn{gauss_E}{\cul[red]{\norm{\vvec{E}}}}\ \tkn{gauss_theta}{\cul[blue]{\cos\theta}}\ \oiint \norm{\dd{\vvec{s}}}\\[2.5em]
+    &= \norm{\vvec{E}}\ \cos\theta\ (\text{Total surface area})
+}
+\addArrow[green]{gauss_dot}{(5ex,0)}
+{\scriptsize Just dot product\\[-1ex]\scriptsize $\vvec{a}\cdot\vvec{b}=\norm{\vvec{a}}\norm{\vvec{b}}\cos\theta$}
+{(8ex,0)}{(6ex,0)}
+\addBentArrow[red]{gauss_E}{(-8ex,-3.5ex)}
+{Same magnitude everywhere\\[-0.5ex]Can move out of integral!}
+{(0,-1.5ex)}{(-12.5ex,1ex)}
+\addBentArrow[blue]{gauss_theta}{(8ex,-3.5ex)}
+{Form same angle everywhere\\[-0.5ex]Can move out of integral!}
+{(0,-1.5ex)}{(12.5ex,1ex)}
+
+such that we can find the magnitude of $\vvec{E}$ with simple division
+\aleq{
+    \Aboxed{
+        \norm{\vvec{E}} 
+        = \frac{(\text{Total flux})}{(\text{Total surface area})\cos\theta}
+        = \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}
+    }
+}
+
+In fact, there are not many of these "very symmetrical" cases.
+These examples below, with their respective Gaussian surface,
+are basically all the variations you can find in textbooks.
+
+\insertFig{different gaussian surface}
+
+
+\begin{example}
+    Given a solid sphere with uniform charge density $\rho$ and radius $R$.
+    By rotational symmetry, the E-field must satisfy:
+    \begin{itemize}
+        \item Only point in radial direction.
+        \item Magnitude does not depend on angular directions $\theta,\phi$.
+    \end{itemize}
+
+    \insertFig{spherical symm}
+
+    Therefore we can choose the Gaussian surface to be a sphere of radius $r$ 
+    to find the magnitude of E-field at distance $r$ from the sphere center.
+    \aleq{
+        \norm{\vvec{E}} 
+        &= \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}\\
+        &= \frac{Q}{\epsilon_0} \cdot \inv{(4\pi r^2)} \cdot \inv{\cos \tkn{gauss_sphth}{\cul[green]{0^\circ}}}\\
+        &= \frac{Q}{4\pi\epsilon_0 r^2}\\[1ex]
+        \Rightarrow\quad \vvec{E} &= \frac{Q}{4\pi\epsilon_0 r^2} \tkn{gauss_sphr}{\cul[blue]{\hhat{r}}}
+    }
+    \addArrow[green]{gauss_sphth}{(7ex,0)}
+    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Normal to surface}{(2ex,0.5ex)}{(5.5ex,1ex)}
+    \addArrow[blue]{gauss_sphr}{(3ex,0)}
+    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
+
+    \vskip 1em
+    \begin{enumerate}
+        \item For radial distance $r < R$,
+        the total charge enclosed in the gaussian surface is only the core of the sphere,
+        up to radius $r$. So we should take $Q=\frac{4}{3}\pi r^3\rho$.
+        \aleq{
+            \vvec{E} 
+            &= \frac{\frac{4}{3}\pi r^3 \rho}{4\pi\epsilon_0 r^2}\hhat{r} 
+            = \frac{\rho r}{3\epsilon_0} \hhat{r}
+        }
+        
+        \insertFig{inside}
+
+        \item For radial distance $r > R$
+        the total charge enclosed in the gaussian surface is the whole sphere,
+        So we should take $Q=\frac{4}{3}\pi R^3\rho$.
+        \aleq{
+            \vvec{E}
+            &= \frac{\frac{4}{3}\pi R^3 \rho}{4\pi\epsilon_0 r^2}\hhat{r} 
+            = \frac{\rho R^3}{3\epsilon_0 r^2} \hhat{r}
+        }
+
+        \insertFig{outside}
+    \end{enumerate}
+    
+    
+\end{example}
+
+
+
+\begin{example}
+    Given an infinitely long hollow cylinder with inner radius $=a$ and outer radius $=b$,
+    and its charge density is proportional to distance from center $r$, i.e. $\rho(\vvec{r}) =kr$
+    
+    For cylinder, we can claim by rotational symmetry around the axis and translation symmetry along the axis,
+    that the E-field must satisfy:
+    \begin{itemize}
+        \item Only point in $r$ direction.
+        \item Magnitude does not depend on $\theta$ or $z$.
+    \end{itemize}
+
+    \insertFig{cylinder symm}
+
+    Therefore we can choose the Gaussian surface to be a cylindrical sheet radius $r$ 
+    and an arbituary length $L$ (which will be cancelled later)
+    to find the magnitude of E-field at distance $r$ from the rotation axis.
+    \aleq{
+        \norm{\vvec{E}} 
+        &= \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}\\
+        &= \frac{Q}{\epsilon_0} \cdot \tkn{gauss_cylcurve}{\cul[red]{\inv{(2\pi r L)}}} \cdot \inv{\cos \tkn{gauss_cylth}{\cul[green]{0^\circ}}}\\[1em]
+        &= \frac{Q}{2\pi\epsilon_0 r L}\\[1ex]
+        \Rightarrow\quad \vvec{E} &= \frac{Q}{2\pi\epsilon_0 r L} \tkn{gauss_cylr}{\cul[blue]{\hhat{r}}}
+    }
+    \addBentArrow[red]{gauss_cylcurve}{(7ex,-4ex)}
+    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Only go through the curved surface \\[-1ex]\scriptsize Top/bottom surface has no flux}
+    {(0,-3ex)}{(12ex,1ex)}
+    \addArrow[green]{gauss_cylth}{(7ex,0)}
+    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Normal to curved surface}{(2ex,0.5ex)}{(8.5ex,1ex)}
+    \addArrow[blue]{gauss_cylr}{(3ex,0)}
+    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
+
+    \insertFig{not side surface cuz flux = 0}
+
+    This time the charge density depends on position,
+    so the total charge enclosed by the surface needs to be computed by integration.
+
+    \begin{enumerate}
+        \item For radial distance $r<a$, there is no charge enclosed because the cylinder is hollow.
+        So $Q=0$ implying $\vvec{E}=0$.
+
+        \insertFig{inner}
+
+        \item For radial distance $a<r<b$, 
+        total enclosed charge are distributed from radius $=a$ to radius $=r$,
+        which calculates as
+        \aleq{
+            Q = \int^r_a \rho \cdot 2\pi rL\dd{r} 
+            =  2\pi kL \int^r_a r^2 \dd{r} 
+            =  \frac{2\pi kL}{3} (r^3-a^3)
+        }
+        So the E-field is
+        \aleq{
+            \vvec{E} = \frac{Q}{2\pi\epsilon_0 r L}\hhat{r} 
+            = \frac{k}{3\epsilon_0}\qty(r^2 - \frac{a^3}{r}) \hhat{r}
+        }
+        
+        \insertFig{middle}
+
+        \item For radial distance $r>b$,
+        total enclosed charge are distributed from radius $=a$ to radius $=b$,
+        which calculates as
+        \aleq{
+            Q = \int^b_a \rho \cdot 2\pi rL\dd{r} 
+            =  2\pi kL \int^r_a r^2 \dd{r} 
+            =  \frac{2\pi kL}{3} (b^3-a^3)
+        }
+        So the E-field is
+        \aleq{
+            \vvec{E} = \frac{Q}{2\pi\epsilon_0 r L}\hhat{r} 
+            = \frac{k}{3\epsilon_0r}\qty(b^3 - a^3) \hhat{r}
+        }
+
+        \insertFig{outer}
+
+    \end{enumerate}
+
+\end{example}
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Magnetic Potential}
+
+%%%%%%%%%%%%%%
+\subsection{Mathematical Origin}
+
+The reason to create a electrical potential function $V(\vvec{r})$ is rather mathematical:
+\begin{itemize}
+    \item \ul{Observation}: 
+    E-field by static charge never forms loops.
+    $\Rightarrow$ Static E-field is conservative.
+
+    \item \ul{Mathematical fact}: 
+    Any conservative field can be expressed as the gradient of some scalar function (i.e. potential).
+\end{itemize}
+
+Therefore we can define a scalar function $V(\vvec{r})$ such that 
+\aleq{
+    \Aboxed{
+        \vvec{E}(\vvec{r}) = - \grad V(\vvec{r})
+    }
+}
+
+And the reverse can be calculated by 
+\aleq{
+    \Aboxed{
+        V(\vvec{r_0}) 
+        = -\int_{\substack{\text{any path}\\\text{from }\infty\text{ to }\vvec{r_0}}} \vvec{E}(\vvec{r}) \cdot \dd{\vvec{r}}
+        = -\int_\infty^{\vvec{r_0}} \vvec{E}(\vvec{r})\dd{\vvec{r}}
+    }
+}
+
+%%%%%%%%%%%%%%
+\subsection{Poisson Equation}
+
+If we substitute $\vvec{E} = -\grad V$ into the Gauss's law,
+we arrive at a new equation: 
+\addBelowArrow[blue]{laplacian1}{laplacian2}{\scriptsize This is called\\[-1ex]\scriptsize \bf{Laplacian Operator}}{-1ex}{(0,-2ex)}
+\aleq{
+    \frac{\rho}{\epsilon_0} &= \div \vvec{E}\\
+    &= \div (-\grad V)\\
+    &= - \div \qty(\pdvv{V}{x}\hhat{x} + \pdvv{V}{y}\hhat{y} + \pdvv{V}{z}\hhat{z})\\
+    &= - \qty(\tkn{laplacian1}{\cul[blue]{\pdvv[2]{V}{x} + \pdvv[2]{V}{y} + \pdvv[2]{V}{z}}}) 
+    \defeq \ -\tkn{laplacian2}{\cul[blue]{\laplacian}} V\\[1ex]
+    \Aboxed{
+        \laplacian V(\vvec{r}) &= -\frac{\rho(\vvec{r})}{\epsilon_0}
+    }
+}
+
+This equation belongs to a class of PDE called \bf{Poisson equation}, 
+which is one of the earliest studied PDEs in history.
+It is \cul[red]{the general method to relate potential between charge distribution}.
+that works for any configurations of potential or charge distribution.
+
+\insertFig{find one and other, add Q = lap V and V = ??? Q with arrow }
+
+However, being general does not mean it is always easy to solve: 
+\begin{itemize}
+    \item \ul{$V(\vvec{r})$ to $\rho(\vvec{r})$} : 
+    The Laplacian operator is just a sum of \nth{2} order derivatives. Easy!
+
+    \item \ul{$\rho(\vvec{r})$ to $V(\vvec{r})$} : 
+    Need to solve the Laplacian equation,
+    which is a \nth{2} order non-homogeneous
+    \\ \phantom{\ul{$\rho(\vvec{r})$ to $V(\vvec{r})$} :} linear PDE. Awful!
+\end{itemize} 
+
+Unfortunately in realistic problems,
+it is more frequent to ask for $V(\vvec{r})$ from $\rho(\vvec{r})$,
+because we can usually confine the charge distribution in a small region by using a very small test object;
+but for potential, it is always everywhere. 
+
+\insertFig{charge in small object -> can treat like point charge. but V spread everywhere}
+
+We are not going to discuss its general solution here - 
+it can take several book chapters to derive and analyze the solution forms at different boundary conditions.\\
+
+In 1D wave equation, 
+the boundary conditions are just about the 2 end points. Either fixed or free.
+
+\insertFig{wave eq vs possion bc}
+
+In Poisson equation, 
+the boundary conditions are about the line/face boundary of the region of interest.
+Too many variations.
+
+\insertFig{wave eq vs possion bc}
+
+Although the general case is terribly complicated, 
+we have already learnt the solution in one very special case - 
+When the \cul[red]{region of interest is infinitely large} + \cul[red]{potential vanishes at the boundary}, 
+i.e. $V(\vvec{r}=\infty)=0$, 
+the solution is exactly the Coulomb's law.
+\aleq{
+    \Aboxed{
+        V(\red{\vvec{r}}) 
+        &= \inv{4\pi\epsilon_0}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+            \frac{\rho(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}\dd[3]{\blue{\vvec{r}'}}
+    }\\[1ex]
+    %
+    &\sim \inv{4\pi\epsilon_0} \sum_\text{everywhere} \frac{(\text{charge})}{(\text{distance})}\\[1em]
+    %
+    &\equiv\ \mstack{\text{Coulomb's law for electric potential}\\\scriptsize \text{(But written in a fancier vector form)}}
+}
+
+\insertFig{infinitely large region + potential element plot}
+
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Finding $\vvec{E}$ from $Q$}
+
+On the other hand, Poisson equation provides an alternative to calculate E-field distribution from charge distribution.
+If we compare the Gauss's law and Poisson equation:
+\begin{itemize}
+    \item \ul{Poisson equation} $\scriptstyle \qty(\laplacian V = -\frac{\rho}{\epsilon_0})$ : 
+    $V(\vvec{r})$ is a scalar function. 
+    Only 1 function $V(\vvec{r})$ to be solved.
+
+    \item \ul{Gauss's law} $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ : 
+    $\vvec{E}(\vvec{r})$ is a vector function with 3 components $E_x(\vvec{r})$, $E_y(\vvec{r})$, $E_z(\vvec{r})$,\\
+    \phantom{Gauss's law $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ :} 
+    which are \cul[red]{3 inter-depending} functions to be solved.
+\end{itemize}
+
+Obviously, there is no reason to try to solve the more difficult PDE of $\vvec{E}$
+if alternatively we can solve the easier PDE of $V$,
+and then take gradient to get $\vvec{E}$ (i.e. via $\vvec{E} = -\grad V$). 
+
+\insertFig{triangle}
+
+Similar to potential, if the given boundary condition is $V(\vvec{r}=\infty)=0$,
+the solution for the Gauss's law as a PDE should also be the Coulomb's law.
+\aleq{
+    \Aboxed{
+        \vvec{E}(\red{\vvec{r}}) = - \grad V(\red{\vvec{r}}) 
+        &= \inv{4\pi\epsilon_0}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+            \frac{\rho(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}^2}
+            \qty[\frac{\red{\vvec{r}}-\blue{\vvec{r}'}}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}]\dd[3]{\blue{\vvec{r}'}}
+    }\\[1ex]
+    %
+    &\sim \inv{4\pi\epsilon_0} \sum_\text{everywhere} \frac{(\text{charge})}{(\text{distance})^2} \qty(\substack{\text{unit}\\\text{vector}})\\[1em]
+    %
+    &\equiv\ \mstack{\text{Coulomb's law for electric field}\\\scriptsize \text{(But written in a fancier vector form)}}
+}
+
+
+
+
+
+
+
+\linesep
+%%%%%%%%%%%%%%
+Here we shall summarize the methods of solving magnetostatics problems:
+\begin{enumerate}
+    \item Very symmetric configurations 
+    $\Rightarrow$ Ampere's law integral form. No calculus required.
+
+    \item Not so symmetric but satisfies $\vvec{A}(\vvec{r}=\infty)=0$ 
+    $\Rightarrow$ Multiple integral with Biot-Savat law.
+
+    \item All the above do not apply 
+    $\Rightarrow$ Solve Poisson equation explicitly. PDE hell %\emoji{skull}.
+\end{enumerate}
+
+%%%
+\theend
+\end{document}
