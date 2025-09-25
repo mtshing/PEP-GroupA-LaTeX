@@ -390,7 +390,7 @@ Therefore the total dot product along the loop is
 \aleq{
     &\textstyle \cus[gray]{F_y\qty(x+\frac{\Delta x}{2},y,z)\Delta y}{\text{Edge 4}} 
         - \cus[gray]{F_y\qty(x-\frac{\Delta x}{2},y,z)\Delta y}{\text{Edge 2}}
-        + \cus[gray]{-F_x\qty(x,y+\frac{\Delta y}{2},z)\Delta x}{\text{Edge 1}} 
+        - \cus[gray]{F_x\qty(x,y+\frac{\Delta y}{2},z)\Delta x}{\text{Edge 1}} 
         + \cus[gray]{F_x\qty(x,y-\frac{\Delta y}{2},z)\Delta x}{\text{Edge 3}} \\[1em]
     %
     = &\qty(\frac{F_x\qty(x+\frac{\Delta x}{2},y,z) - F_x\qty(x-\frac{\Delta x}{2},y,z)}{\blue{\Delta x}}
@@ -484,141 +484,165 @@ The two forms of Ampere's law are describing this same observation:
 \begin{itemize}
     \item \ul{Integral form}:
     \aleq{
-        (\vvec{E}\text{'s flux})\ \sim\ \oiint \vvec{E}\cdot\dd{\vvec{s}} 
-        \ =\ \frac{Q}{\epsilon_0} \ \sim\ (\text{Charge})
+        (\vvec{B}\text{'s loop integral})\ \sim\ \oint \vvec{B}\cdot\dd{\vvec{l}} 
+        \ =\ \mu_0 I \ \sim\ (\text{Current})
     }
 
     \item \ul{Differential form}:
     \aleq{
-        \qty(\mstack{\vvec{E} \text{'s flux}\\[0.5ex]\text{density}})\ \sim\ \div \vvec{E}
-        \ =\ \frac{\rho}{\epsilon_0} \ \sim\ \qty(\mstack{\text{Charge}\\[0.5ex]\text{density}})
+        \qty(\mstack{\vvec{B} \text{'s loop integral}\\[0.5ex]\text{density}})\ \sim\ \curl \vvec{B}
+        \ =\ \mu_0 \vvec{J}\ \sim\ \qty(\mstack{\text{Current}\\[0.5ex]\text{density}})
     }
 \end{itemize}
 
-And the two form can be inter-converted by divergence theorem.
+And the two form can be inter-converted by Stokes' theorem.
 \aleq{
-    \oiint \vvec{E}\cdot\dd{\vvec{s}} \quad &=\quad \frac{Q}{\epsilon_0}\\[2em]
-    \tkn{divE}{\iiint (\div \vvec{E}) \dd{\tau}}\ &=\ \inv{\epsilon_0}\tkn{divQ}{\iiint \rho \dd{\tau}}
+    \oint \vvec{B}\cdot\dd{\vvec{l}} \quad &=\quad \mu_0 I\\[2em]
+    \tkn{curlB}{\iiint (\curl \vvec{B}) \cdot \dd{\vvec{s}}}\ &=\ \mu_0\tkn{curlI}{\iint \vvec{J} \cdot \dd{\vvec{s}}}
 }
-\addArrow[red]{divE}{(0,9ex)}{Divergence Theorem}{(1ex,3ex)}{(-12ex,-6ex)}
-\addBentArrow[blue]{divQ}{(-4ex,13ex)}{Charge to charge density}{(1ex,3ex)}{(18ex,-8ex)}
+\addArrow[red]{curlB}{(0,9ex)}{Stokes' Theorem}{(1ex,3ex)}{(-12ex,-6ex)}
+\addBentArrow[blue]{curlI}{(-4ex,13ex)}{Current to current density}{(1ex,3ex)}{(18ex,-8ex)}
 
 
 %%%%%%%%%%%%%%
-\subsection{Applying Gauss's Law Integral Form}
+\subsection{Applying Ampere's Law Integral Form}
 
 In beginner electromagnetism, 
-there is only one type of Gauss's law related problems: 
+there is only one type of Ampere's law related problems: 
 \quoting{
-    Given the charge distribution, 
-    find the E-field everywhere by Gauss's law integral form\\
+    Given the current distribution, 
+    find the B-field everywhere by Ampere's law integral form\\
     in some \cul[red]{very symmetrical} scenarios.
 }
-which is basically asking you to \it{revert} the flux calculation:
+which is basically asking you to \it{revert} the loop integral calculation:
 \aleq{
-    \oiint \vvec{E}\cdot\dd{\vvec{s}} = \frac{Q}{\epsilon_0}
+    \oint \vvec{B}\cdot\dd{\vvec{l}} = \mu_0 I
     \qquad\Rightarrow\qquad
-    \vvec{E} = \text{ ??? } \text{in terms of }Q
+    \vvec{B} = \text{ ??? } \text{in terms of }I
 }
 
-If $Q$ has a very ugly distribution, 
+If $I$ has a very ugly distribution, 
 there is nothing we can do except solving some partial differential equations.
-But \red{if $Q$ distributes very symmetrically, 
-$\vvec{E}$ should also be symmetrical}, 
-such that the flux integral can be broken into multiplications.\\
+But \red{if $I$ distributes very symmetrically, 
+$\vvec{B}$ should also be symmetrical}, 
+such that the loop integral can be broken into multiplications.\\
 
-In these cases, we can choose a "Gaussian" surface to to be integrated where
+In these cases, we can choose an "Ampere" loop to to be integrated where
 \begin{enumerate}
-    \item $\vvec{E}$ has constant magnitude everywhere on the surface.
-    \item $\vvec{E}$ forms the same angle with the surface normal vector everywhere on the surface
+    \item $\vvec{B}$ has constant magnitude everywhere along the loop.
+    \item $\vvec{B}$ forms the same angle with the tangent vector everywhere along the loop.
 \end{enumerate}
 
 \vskip 1ex
-Only then, the flux integral can be broken down as
+Only then, the loop integral can be broken down as
 \aleq{
-    \oiint \vvec{E}\cdot \dd{\vvec{s}} 
-    &= \oiint \tkn{gauss_dot}{\cul[green]{\norm{\vvec{E}}\norm{\dd{\vvec{s}}}\cos\theta}}\\[1ex]
-    &= \tkn{gauss_E}{\cul[red]{\norm{\vvec{E}}}}\ \tkn{gauss_theta}{\cul[blue]{\cos\theta}}\ \oiint \norm{\dd{\vvec{s}}}\\[2.5em]
-    &= \norm{\vvec{E}}\ \cos\theta\ (\text{Total surface area})
+    \oint \vvec{B}\cdot \dd{\vvec{l}} 
+    &= \oint \tkn{ampere_dot}{\cul[green]{\norm{\vvec{B}}\norm{\dd{\vvec{l}}}\cos\theta}}\\[1ex]
+    &= \tkn{ampere_B}{\cul[red]{\norm{\vvec{B}}}}\ \tkn{ampere_theta}{\cul[blue]{\cos\theta}}\ \oiint \norm{\dd{\vvec{l}}}\\[2.5em]
+    &= \norm{\vvec{B}}\ \cos\theta\ (\text{Perimeter of loop})
 }
-\addArrow[green]{gauss_dot}{(5ex,0)}
+\addArrow[green]{ampere_dot}{(5ex,0)}
 {\scriptsize Just dot product\\[-1ex]\scriptsize $\vvec{a}\cdot\vvec{b}=\norm{\vvec{a}}\norm{\vvec{b}}\cos\theta$}
 {(8ex,0)}{(6ex,0)}
-\addBentArrow[red]{gauss_E}{(-8ex,-3.5ex)}
+\addBentArrow[red]{ampere_B}{(-8ex,-3.5ex)}
 {Same magnitude everywhere\\[-0.5ex]Can move out of integral!}
 {(0,-1.5ex)}{(-12.5ex,1ex)}
-\addBentArrow[blue]{gauss_theta}{(8ex,-3.5ex)}
+\addBentArrow[blue]{ampere_theta}{(8ex,-3.5ex)}
 {Form same angle everywhere\\[-0.5ex]Can move out of integral!}
 {(0,-1.5ex)}{(12.5ex,1ex)}
 
-such that we can find the magnitude of $\vvec{E}$ with simple division
+such that we can find the magnitude of $\vvec{B}$ with simple division
 \aleq{
     \Aboxed{
-        \norm{\vvec{E}} 
-        = \frac{(\text{Total flux})}{(\text{Total surface area})\cos\theta}
-        = \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}
+        \norm{\vvec{B}} 
+        = \frac{(\text{Total loop integral})}{(\text{Perimeter of loop})\cos\theta}
+        = \frac{\mu_0 I}{(\text{Perimeter of loop})\cos\theta}
     }
 }
 
 In fact, there are not many of these "very symmetrical" cases.
-These examples below, with their respective Gaussian surface,
+These examples below, with their respective Ampere loop,
 are basically all the variations you can find in textbooks.
 
-\insertFig{different gaussian surface}
+\insertFig{different ampere loop}
+
+\begin{example}
+    Given an infinitely long wire with current $I$ flowing along.
+    By cylindrical symmetry, the B-field must satisfy:
+    \begin{itemize}
+        \item Unchange when translate along the wire (z-axis).
+        \item Unchange when rotate about the wire (z-axis).
+    \end{itemize}
+    
+    Note that cylindrical symmetry does not restrict the B-field to be circle loops.
+    For example, all of these configurations satisfy cylindrical symmetry:
+
+    \insertFig{loop (purely theta) vs spiral up (has z) vs spiral out (has r)}
+
+    We need to rule out the 2 latter cases before we can use Ampere's law to find $\vvec{B}$:
+
+    \begin{enumerate}
+        \item \ul{$\vvec{B}$ is divergent-less} : \\
+        If the B-field has radial component,
+        we can draw a cylindrical Gaussian surface around the wire.
+        Then we would get the flux of $\vvec{B} \neq 0$.
+
+        \insertFig{cyl gauss surface}
+
+        Therefore the B-field must not have $r$ component.
+
+        \item \ul{Another Ampere's loop} : \\
+        If the B-field has z component, 
+        we can draw an Ampere loop that is parallel to the wire.
+        By Ampere's law, there is no current enclosed by this loop,
+        so the loop integral should be $0$.
+
+        \insertFig{alternative ampere loop}
+
+        \begin{itemize}
+            \item By translational symmetry, 
+            the dot product at the top (edge 1) and bottom (edge 3) should cancel each other. 
+
+            \item We can choose a loop which stretches to infinity far away.
+            Because there should be no B-field at infinity, dot product is $0$.
+            So the dot product on the wire (edge 4) should also be $0$.
+
+            \item Then if we choose a loop that is not infinitly far,
+            we can conclude that the dot product on edge 3 should be $0$.
+            This implies $\vvec{B}$ has no $z$ component.
+        \end{itemize}
+    \end{enumerate}
+
+    After all these symmetry arguments,
+    we can finally conclude that B-field around a wire must be circular loops. 
+    We can choose a circular Ampere loop of radius $r$ to find the magnitude of B-field
+    at distance $r$ from the wire.
+    \aleq{
+        \norm{\vvec{B}} 
+        &= \frac{\mu_0 I}{(\text{Perimeter of loop})\cos\theta}\\
+        &= \mu_0 I \cdot \inv{(2\pi r)} \cdot \inv{\cos \tkn{ampere_cylth}{\cul[green]{0^\circ}}}\\
+        &= \frac{\mu_0 I}{2\pi r}\\[1ex]
+        \Rightarrow\quad \vvec{B} &= \frac{\mu_0 I}{2\pi r} \tkn{ampere_cylph}{\cul[blue]{\hhat{\phi}}}
+    }
+    \addArrow[green]{ampere_cylth}{(7ex,0)}
+    {\scriptsize B-field = angular \\[-1ex]\scriptsize $\therefore$ Tangent to loop}{(2ex,0.5ex)}{(5.5ex,1ex)}
+    \addArrow[blue]{ampere_cylph}{(3ex,0)}
+    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
+
+
+\end{example}
 
 
 \begin{example}
-    Given a solid sphere with uniform charge density $\rho$ and radius $R$.
-    By rotational symmetry, the E-field must satisfy:
-    \begin{itemize}
-        \item Only point in radial direction.
-        \item Magnitude does not depend on angular directions $\theta,\phi$.
-    \end{itemize}
-
-    \insertFig{spherical symm}
-
-    Therefore we can choose the Gaussian surface to be a sphere of radius $r$ 
-    to find the magnitude of E-field at distance $r$ from the sphere center.
-    \aleq{
-        \norm{\vvec{E}} 
-        &= \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}\\
-        &= \frac{Q}{\epsilon_0} \cdot \inv{(4\pi r^2)} \cdot \inv{\cos \tkn{gauss_sphth}{\cul[green]{0^\circ}}}\\
-        &= \frac{Q}{4\pi\epsilon_0 r^2}\\[1ex]
-        \Rightarrow\quad \vvec{E} &= \frac{Q}{4\pi\epsilon_0 r^2} \tkn{gauss_sphr}{\cul[blue]{\hhat{r}}}
-    }
-    \addArrow[green]{gauss_sphth}{(7ex,0)}
-    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Normal to surface}{(2ex,0.5ex)}{(5.5ex,1ex)}
-    \addArrow[blue]{gauss_sphr}{(3ex,0)}
-    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
-
-    \vskip 1em
-    \begin{enumerate}
-        \item For radial distance $r < R$,
-        the total charge enclosed in the gaussian surface is only the core of the sphere,
-        up to radius $r$. So we should take $Q=\frac{4}{3}\pi r^3\rho$.
-        \aleq{
-            \vvec{E} 
-            &= \frac{\frac{4}{3}\pi r^3 \rho}{4\pi\epsilon_0 r^2}\hhat{r} 
-            = \frac{\rho r}{3\epsilon_0} \hhat{r}
-        }
-        
-        \insertFig{inside}
-
-        \item For radial distance $r > R$
-        the total charge enclosed in the gaussian surface is the whole sphere,
-        So we should take $Q=\frac{4}{3}\pi R^3\rho$.
-        \aleq{
-            \vvec{E}
-            &= \frac{\frac{4}{3}\pi R^3 \rho}{4\pi\epsilon_0 r^2}\hhat{r} 
-            = \frac{\rho R^3}{3\epsilon_0 r^2} \hhat{r}
-        }
-
-        \insertFig{outside}
-    \end{enumerate}
+    Givne an infinitely long solenoid made of a uniform density of coils $\frac{N}{L}$,
+    with a current $I$ passiing through.
+    This is another cylindrical symmetry case 
+    so we can reuse similar arguments from the previous example.
     
     
+    
+
 \end{example}
-
 
 
 \begin{example}
