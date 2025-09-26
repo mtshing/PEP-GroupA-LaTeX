@@ -826,7 +826,8 @@ Too many variations.
 
 Although the general case is terribly complicated, 
 we have already learnt the solution in one very special case - 
-When the \cul[red]{region of interest is infinitely large} + \cul[red]{potential vanishes at the boundary}, 
+When the \cul[red]{region of interest is infinitely large} 
++ \cul[red]{$V$ is CHOSEN to become $0$ at infinity far}, 
 i.e. $V(\vvec{r}=\infty)=0$, 
 the solution is exactly the Coulomb's law.
 \aleq{
@@ -855,11 +856,17 @@ If we compare the Gauss's law and Poisson equation:
     \item \ul{Poisson equation} $\scriptstyle \qty(\laplacian V = -\frac{\rho}{\epsilon_0})$ : 
     $V(\vvec{r})$ is a scalar function. 
     Only 1 function $V(\vvec{r})$ to be solved.
+    \aleq{
+        \laplRec{V} = -\frac{\rho}{\epsilon_0}
+    }
 
     \item \ul{Gauss's law} $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ : 
     $\vvec{E}(\vvec{r})$ is a vector function with 3 components $E_x(\vvec{r})$, $E_y(\vvec{r})$, $E_z(\vvec{r})$,\\
     \phantom{Gauss's law $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ :} 
     which are \cul[red]{3 inter-depending} functions to be solved.
+    \aleq{
+        \divRec{E_x}[E_y][E_z] = \frac{\rho}{\epsilon_0}
+    }
 \end{itemize}
 
 Obviously, there is no reason to try to solve the more difficult PDE of $\vvec{E}$
@@ -868,8 +875,8 @@ and then take gradient to get $\vvec{E}$ (i.e. via $\vvec{E} = -\grad V$).
 
 \insertFig{triangle}
 
-Similar to potential, if the given boundary condition is $V(\vvec{r}=\infty)=0$,
-the solution for the Gauss's law as a PDE should also be the Coulomb's law.
+In this way, we can tell the solution of Gauss's law as a PDE,
+which is as expected, the Coulomb's law for $\vvec{E}$.
 \aleq{
     \Aboxed{
         \vvec{E}(\red{\vvec{r}}) = - \grad V(\red{\vvec{r}}) 

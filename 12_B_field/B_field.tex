@@ -584,7 +584,7 @@ are basically all the variations you can find in textbooks.
     \begin{enumerate}
         \item \ul{$\vvec{B}$ is divergent-less} : \\
         If the B-field has radial component,
-        we can draw a cylindrical Gaussian surface around the wire.
+        we can draw a cylindrical Gaussian box around the wire.
         Then we would get the flux of $\vvec{B} \neq 0$.
 
         \insertFig{cyl gauss surface}
@@ -622,7 +622,7 @@ are basically all the variations you can find in textbooks.
         &= \frac{\mu_0 I}{(\text{Perimeter of loop})\cos\theta}\\
         &= \mu_0 I \cdot \inv{(2\pi r)} \cdot \inv{\cos \tkn{ampere_cylth}{\cul[green]{0^\circ}}}\\
         &= \frac{\mu_0 I}{2\pi r}\\[1ex]
-        \Rightarrow\quad \vvec{B} &= \frac{\mu_0 I}{2\pi r} \tkn{ampere_cylph}{\cul[blue]{\hhat{\phi}}}
+        \Rightarrow\quad \vvec{B} &= \frac{\mu_0 I}{2\pi r} \tkn{ampere_cylph}{\cul[blue]{\hhat{\theta}}}
     }
     \addArrow[green]{ampere_cylth}{(7ex,0)}
     {\scriptsize B-field = angular \\[-1ex]\scriptsize $\therefore$ Tangent to loop}{(2ex,0.5ex)}{(5.5ex,1ex)}
@@ -636,10 +636,30 @@ are basically all the variations you can find in textbooks.
 \begin{example}
     Givne an infinitely long solenoid made of a uniform density of coils $\frac{N}{L}$,
     with a current $I$ passiing through.
-    This is another cylindrical symmetry case 
-    so we can reuse similar arguments from the previous example.
+    This is another cylindrical symmetry case.
+    \begin{itemize}
+        \item Unchange when translate along the wire (z-axis).
+        \item Unchange when rotate about the wire (z-axis).
+    \end{itemize}
     
-    
+    Again, cylindrical symmetry does not restrict the B-field to be purely along z direction. 
+    We need to first argue that the B-field does not have radial or angular components 
+    before we can apply Ampere's law.
+
+    \begin{enumerate}
+        \item \ul{$\vvec{B}$ is divergent-less} : \\
+        If the B-field has radial component,
+        we can draw a cylindrical Gaussian box around the solenoid.
+        Then we would get the flux of $\vvec{B}\neq 0$.
+
+        \insertFig{cylinder around solenoid}
+
+        Therefore the B-field must not have $\hhat{r}$ component.
+
+        \item \ul{Alternative Ampere loop} : \\
+
+
+    \end{enumerate}
     
 
 \end{example}
@@ -745,7 +765,8 @@ The reason to create it is purely mathematical:
     Any divergent-less field can be expressed as the curl of some vector function (i.e. vector potential).
 \end{itemize}
 
-Therefore we can define a vector function $\vvec{A}(\vvec{r})$ such that 
+Therefore we can define a vector function $\vvec{A}(\vvec{r})$,
+called \bf{magnetic vector potential}, such that 
 \aleq{
     \Aboxed{
         \vvec{B}(\vvec{r}) = \curl \vvec{A}(\vvec{r})
@@ -769,65 +790,65 @@ we arrive at a new equation:
         \laplacian \vvec{A}(\vvec{r}) &= -\mu_0\vvec{J}(\vvec{r})
     }
 }
+% $\curl \curl \vvec{A} \equiv \grad(\div \vvec{A}) - \laplacian \vvec{A}$ This is an identity relating these operators
+% In magnetostatics, we can CHOOSE $\div \vvec{A}=0$. The mathematical reason is called "gauge fixing".
+This is again the \bf{Poisson equation}, 
+the same PDE that we have encountered in electric potential 
+($\laplacian V(\vvec{r}) = - \frac{\rho(\vvec{r})}{\epsilon_0}$).
+But for magnetic potential,
+because it is a vector function, 
+it is actually 3 equations, one for each direction:
+\aleq{
+    &\laplacian \bmat{A_x \\ A_y \\ A_z} = -\mu_0 \bmat{J_x\\J_y\\J_z}\\ 
+    \Rightarrow 
+    &\bcase{
+        \laplacian A_\red{x}(\vvec{r}) &= -\mu_0 J_\red{x}(\vvec{r})\\
+        \laplacian A_\red{y}(\vvec{r}) &= -\mu_0 J_\red{y}(\vvec{r})\\
+        \laplacian A_\red{z}(\vvec{r}) &= -\mu_0 J_\red{z}(\vvec{r})
+    }
+} 
 
-This is the same 
+The Poisson equation of $\vvec{A}$ is 
+\cul[red]{the general method to relate magnetic vector potential with current distribution}.
+that works for any configurations of potential or current.
 
-
-
-This equation belongs to a class of PDE called \bf{Poisson equation}, 
-which is one of the earliest studied PDEs in history.
-It is \cul[red]{the general method to relate potential between charge distribution}.
-that works for any configurations of potential or charge distribution.
-
-\insertFig{find one and other, add Q = lap V and V = ??? Q with arrow }
+\insertFig{find one and other, add I = lap A and A = ??? I with arrow }
 
 However, being general does not mean it is always easy to solve: 
 \begin{itemize}
-    \item \ul{$V(\vvec{r})$ to $\rho(\vvec{r})$} : 
-    The Laplacian operator is just a sum of \nth{2} order derivatives. Easy!
+    \item \ul{$\vvec{A}(\vvec{r})$ to $\vvec{J}(\vvec{r})$} : 
+    The Laplacian operator is just a sum of \nth{2} order derivatives. 
+    (And we just need to do it 3 times). Relatively easy.
 
-    \item \ul{$\rho(\vvec{r})$ to $V(\vvec{r})$} : 
-    Need to solve the Laplacian equation,
-    which is a \nth{2} order non-homogeneous
-    \\ \phantom{\ul{$\rho(\vvec{r})$ to $V(\vvec{r})$} :} linear PDE. Awful!
+    \item \ul{$\vvec{J}(\vvec{r})$ to $\vvec{A}(\vvec{r})$} : 
+    Need to solve the Poisson equation (for 3 times),
+    which are \nth{2} order non-homogeneous
+    \\ \phantom{\ul{$\vvec{J}(\vvec{r})$ to $\vvec{A}(\vvec{r})$} :} linear PDEs. Awful!
 \end{itemize} 
 
 Unfortunately in realistic problems,
-it is more frequent to ask for $V(\vvec{r})$ from $\rho(\vvec{r})$,
-because we can usually confine the charge distribution in a small region by using a very small test object;
+it is more frequent to ask for $\vvec{A}(\vvec{r})$ from $\vvec{J}(\vvec{r})$,
+because we can usually confine the current distribution in a small region 
+by using a very small test object;
 but for potential, it is always everywhere. 
 
 \insertFig{charge in small object -> can treat like point charge. but V spread everywhere}
 
-We are not going to discuss its general solution here - 
-it can take several book chapters to derive and analyze the solution forms at different boundary conditions.\\
-
-In 1D wave equation, 
-the boundary conditions are just about the 2 end points. Either fixed or free.
-
-\insertFig{wave eq vs possion bc}
-
-In Poisson equation, 
-the boundary conditions are about the line/face boundary of the region of interest.
-Too many variations.
-
-\insertFig{wave eq vs possion bc}
-
-Although the general case is terribly complicated, 
-we have already learnt the solution in one very special case - 
-When the \cul[red]{region of interest is infinitely large} + \cul[red]{potential vanishes at the boundary}, 
-i.e. $V(\vvec{r}=\infty)=0$, 
-the solution is exactly the Coulomb's law.
+Again we are not going to discuss its general solution here. 
+Here I only provide you the solution in one very special case - 
+When the \cul[red]{region of interest is infinitely large} + \cul[red]{$\vvec{A}$ is chosen to be divergent-less}, 
+i.e. $\vvec{A}(\vvec{r}=\infty)=0$, 
+the solution is the Biot-Savat law for magnetic vector potential.
 \aleq{
     \Aboxed{
-        V(\red{\vvec{r}}) 
-        &= \inv{4\pi\epsilon_0}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
-            \frac{\rho(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}\dd[3]{\blue{\vvec{r}'}}
+        \vvec{A}(\red{\vvec{r}}) 
+        &= \frac{\mu_0}{4\pi}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+            \frac{\vvec{J}(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}\dd[3]{\blue{\vvec{r}'}}
     }\\[1ex]
     %
-    &\sim \inv{4\pi\epsilon_0} \sum_\text{everywhere} \frac{(\text{charge})}{(\text{distance})}\\[1em]
+    &\sim \frac{\mu_0}{4\pi} \sum_\text{everywhere} \frac{(\text{current})}{(\text{distance})}\\[1em]
     %
-    &\equiv\ \mstack{\text{Coulomb's law for electric potential}\\\scriptsize \text{(But written in a fancier vector form)}}
+    &\equiv\ \mstack{\text{Biot-Savat law for magnetic vector potential}\\\scriptsize \text{(written in a fancy vector form)}}
 }
 
 \insertFig{infinitely large region + potential element plot}
@@ -836,40 +857,65 @@ the solution is exactly the Coulomb's law.
 
 
 %%%%%%%%%%%%%%
-\subsection{Finding $\vvec{E}$ from $Q$}
+\subsection{Finding $\vvec{B}$ from $\vvec{J}$}
 
-On the other hand, Poisson equation provides an alternative to calculate E-field distribution from charge distribution.
-If we compare the Gauss's law and Poisson equation:
+On the other hand, Poisson equation provides an alternative to calculate B-field distribution from current distribution.
+If we compare the Ampere's law and Poisson equation of $\vvec{A}$:
 \begin{itemize}
-    \item \ul{Poisson equation} $\scriptstyle \qty(\laplacian V = -\frac{\rho}{\epsilon_0})$ : 
-    $V(\vvec{r})$ is a scalar function. 
-    Only 1 function $V(\vvec{r})$ to be solved.
+    \item \ul{Poisson equation} $\scriptstyle \qty(\laplacian \vvec{A} = -{\mu_0 \vvec{J}})$ : 
+    Although $\vvec{A}(\vvec{r})$ is a vector function,
+    the Poisson equations for each compoenent $B_x(\vvec{r})$, $B_y(\vvec{r})$, $B_z(\vvec{r})$ 
+    are \cul[red]{independent}.
+    \aleq{
+        \laplacian \vvec{A} = -\mu_0 \vvec{J}
+        \quad\Rightarrow\quad
+        \bcase{
+            \lapRec{A_\red{x}} &= -\mu_0 J_\red{x}\\[1ex]
+            \lapRec{A_\red{y}} &= -\mu_0 J_\red{y}\\[1ex]
+            \lapRec{A_\red{z}} &= -\mu_0 J_\red{z}
+        }
+    }
+    % only involve x components
+    % only involve y components
+    % only involve z components
 
-    \item \ul{Gauss's law} $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ : 
-    $\vvec{E}(\vvec{r})$ is a vector function with 3 components $E_x(\vvec{r})$, $E_y(\vvec{r})$, $E_z(\vvec{r})$,\\
-    \phantom{Gauss's law $\scriptstyle \qty(\div \vvec{E} = \frac{\rho}{\epsilon_0})$ :} 
-    which are \cul[red]{3 inter-depending} functions to be solved.
+    \item \ul{Ampere's law} $\scriptstyle \qty(\curl \vvec{B} = \mu_0 \vvec{J})$ : 
+    $\vvec{B}(\vvec{r})$ is a vector function with 3 components $B_x(\vvec{r})$, $B_y(\vvec{r})$, $B_z(\vvec{r})$,\\
+    \phantom{Ampere's law $\scriptstyle \qty(\curl \vvec{B} = \mu_0 \vvec{J})$ :} 
+    Because of the curl operation, 
+    the PDE for each component of $\vvec{B}$ all mix together.
+    \aleq{
+        \curl \vvec{B} = \mu_0 \vvec{J}
+        \quad\Rightarrow\quad
+        \bcase{
+            \curlPla[y][z]{B_z}[B_y] &= J_x\\[1ex]
+            \curlPla[z][x]{B_x}[B_z] &= J_y\\[1ex]
+            \curlPla[x][y]{B_y}[B_z] &= J_z\\[1ex]
+        }
+    }
+
 \end{itemize}
 
-Obviously, there is no reason to try to solve the more difficult PDE of $\vvec{E}$
-if alternatively we can solve the easier PDE of $V$,
-and then take gradient to get $\vvec{E}$ (i.e. via $\vvec{E} = -\grad V$). 
+In practice, there is no reason to try to solve the more difficult PDE of $\vvec{B}$,
+if alternatively we can solve the easier PDE of $\vvec{J}$,
+and then take curl to get $\vvec{B}$ (i.e. via $\vvec{B} = -\curl \vvec{A}$). 
 
 \insertFig{triangle}
 
-Similar to potential, if the given boundary condition is $V(\vvec{r}=\infty)=0$,
-the solution for the Gauss's law as a PDE should also be the Coulomb's law.
+In this way, we can tell the solution of Ampere's law as a PDE, 
+which is as expected, the Biot-Savat law for $\vvec{B}$.
+
 \aleq{
     \Aboxed{
-        \vvec{E}(\red{\vvec{r}}) = - \grad V(\red{\vvec{r}}) 
-        &= \inv{4\pi\epsilon_0}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
-            \frac{\rho(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}^2}
-            \qty[\frac{\red{\vvec{r}}-\blue{\vvec{r}'}}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}]\dd[3]{\blue{\vvec{r}'}}
+        \vvec{B}(\red{\vvec{r}}) = \curl \vvec{A}(\red{\vvec{r}}) 
+        &= \frac{\mu_0}{4\pi}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+            \frac{\vvec{J}(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}^2}
+            \cross\qty[\frac{\red{\vvec{r}}-\blue{\vvec{r}'}}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}]\dd[3]{\blue{\vvec{r}'}}
     }\\[1ex]
     %
-    &\sim \inv{4\pi\epsilon_0} \sum_\text{everywhere} \frac{(\text{charge})}{(\text{distance})^2} \qty(\substack{\text{unit}\\\text{vector}})\\[1em]
+    &\sim \frac{\mu_0}{4\pi} \sum_\text{everywhere} \frac{(\text{curent})}{(\text{distance})^2} \cross \qty(\substack{\text{unit}\\\text{vector}})\\[1em]
     %
-    &\equiv\ \mstack{\text{Coulomb's law for electric field}\\\scriptsize \text{(But written in a fancier vector form)}}
+    &\equiv\ \mstack{\text{Biot-Savat law for magnetic field}\\\scriptsize \text{(But written in a fancier vector form)}}
 }
 
 
