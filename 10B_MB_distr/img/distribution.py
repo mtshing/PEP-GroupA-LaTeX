@@ -15,7 +15,7 @@ sigma = 1
 
 x = np.linspace(mu-4*sigma,mu+4*sigma,num=200)
 
-fig, ax = plt.subplots(1, 1, figsize=(12, 4.5)) 
+fig, ax = plt.subplots(1, 1, figsize=(12, 4)) 
 
 ax.plot(x,f(x), lw=3)
 
@@ -36,28 +36,28 @@ ax.text(mu-3*sigma, -f(mu)*0.1, r"$\mu-3\sigma$", ha="center", color="k")
 ax.text(mu+3*sigma, -f(mu)*0.1, r"$\mu+3\sigma$", ha="center", color="k")
 
 ax.text(mu, f(mu)*1.05, r"50%", ha="center", color="k")
-ax.text(mu-sigma*1.3, f(mu-sigma)*1.05, r"15.9%", ha="center", color="k")
-ax.text(mu+sigma*1.3, f(mu+sigma)*1.05, r"84.1%", ha="center", color="k")
-ax.text(mu-2.15*sigma, f(mu-2*sigma)*1.4, r"2.3%", ha="center", color="k")
-ax.text(mu+2.15*sigma, f(mu+2*sigma)*1.4, r"97.7%", ha="center", color="k")
-ax.text(mu-3*sigma, f(mu-3*sigma)*3, r"2.2%", ha="center", color="k")
-ax.text(mu+3*sigma, f(mu+3*sigma)*3, r"99.8%", ha="center", color="k")
+ax.text(mu-sigma*1.4, f(mu-sigma)*1.05, r"15.9%", ha="center", color="k")
+ax.text(mu+sigma*1.4, f(mu+sigma)*1.05, r"84.1%", ha="center", color="k")
+ax.text(mu-2.2*sigma, f(mu-2*sigma)*1.4, r"2.3%", ha="center", color="k")
+ax.text(mu+2.2*sigma, f(mu+2*sigma)*1.4, r"97.7%", ha="center", color="k")
+ax.text(mu-3.1*sigma, f(mu-3*sigma)*3, r"0.2%", ha="center", color="k")
+ax.text(mu+3.1*sigma, f(mu+3*sigma)*3, r"99.8%", ha="center", color="k")
 
 # plot axis
 ax.annotate("", xytext=(mu-5.5*sigma, 0), xy=(mu+5.5*sigma, 0), zorder=-5,
             arrowprops=dict(arrowstyle="->, head_length=0.6, head_width=0.3", ec="k", shrinkA=0, shrinkB=0))
-ax.annotate("", xytext=(0, -f(mu)*0.1), xy=(0, f(mu)*1.2), zorder=-5,
+ax.annotate("", xytext=(0, -f(mu)*0.1), xy=(0, f(mu)*1.1), zorder=-5,
             arrowprops=dict(arrowstyle="->, head_length=0.6, head_width=0.3", ec="k", shrinkA=0, shrinkB=0))
 
 ax.text(mu+5.7*sigma, 0, r"$x$", ha="center", color="k")
-ax.text(0, f(mu)*1.25, r"$P(x)$", ha="center", color="k")
+ax.text(0, f(mu)*1.15, r"$P(x)$", ha="center", color="k")
 
 
 ax.axis('off')
 ax.set_xlim([mu-6*sigma,mu+6*sigma])
 ax.set_ylim([-f(mu)*0.1,f(mu)*1.2])
 #ax.set_aspect('equal')
-plt.show()
+#plt.show()
 plt.savefig("gauss1.png",bbox_inches='tight', transparent=True)
 
 #%%
@@ -67,7 +67,7 @@ sigma = 1
 
 x = np.linspace(mu-4*sigma,mu+4*sigma,num=200)
 
-fig, ax = plt.subplots(1, 1, figsize=(12, 4.5)) 
+fig, ax = plt.subplots(1, 1, figsize=(12, 4)) 
 
 ax.plot(x,f(x), lw=3)
 
@@ -93,12 +93,12 @@ ax.annotate("", xytext=(mu+sigma, f(mu)*0.08), xy=(mu+2*sigma, f(mu)*0.08), zord
             arrowprops=dict(arrowstyle="<->, head_length=0.6, head_width=0.3", ec="r", shrinkA=0, shrinkB=0))
 
 ax.text(mu, f(mu)*1.05, r"50%", ha="center", color="k")
-ax.text(mu-sigma*1.3, f(mu-sigma)*1.05, r"15.9%", ha="center", color="k")
-ax.text(mu+sigma*1.3, f(mu+sigma)*1.05, r"84.1%", ha="center", color="k")
-ax.text(mu-2.15*sigma, f(mu-2*sigma)*1.4, r"2.3%", ha="center", color="k")
-ax.text(mu+2.15*sigma, f(mu+2*sigma)*1.4, r"97.7%", ha="center", color="k")
-ax.text(mu-3*sigma, f(mu-3*sigma)*3, r"2.2%", ha="center", color="k")
-ax.text(mu+3*sigma, f(mu+3*sigma)*3, r"99.8%", ha="center", color="k")
+ax.text(mu-sigma*1.4, f(mu-sigma)*1.05, r"15.9%", ha="center", color="k")
+ax.text(mu+sigma*1.4, f(mu+sigma)*1.05, r"84.1%", ha="center", color="k")
+ax.text(mu-2.2*sigma, f(mu-2*sigma)*1.4, r"2.3%", ha="center", color="k")
+ax.text(mu+2.2*sigma, f(mu+2*sigma)*1.4, r"97.7%", ha="center", color="k")
+ax.text(mu-3.1*sigma, f(mu-3*sigma)*3, r"0.2%", ha="center", color="k")
+ax.text(mu+3.1*sigma, f(mu+3*sigma)*3, r"99.8%", ha="center", color="k")
 
 
 
@@ -110,11 +110,11 @@ ax.text(mu-1.5*sigma, f(mu)*0.1, r"$T\sqrt{kC_V}$", ha="center", color="r")
 # plot axis
 ax.annotate("", xytext=(mu-5.5*sigma, 0), xy=(mu+5.5*sigma, 0), zorder=-5,
             arrowprops=dict(arrowstyle="->, head_length=0.6, head_width=0.3", ec="k", shrinkA=0, shrinkB=0))
-ax.annotate("", xytext=(0, -f(mu)*0.1), xy=(0, f(mu)*1.2), zorder=-5,
+ax.annotate("", xytext=(0, -f(mu)*0.1), xy=(0, f(mu)*1.1), zorder=-5,
             arrowprops=dict(arrowstyle="->, head_length=0.6, head_width=0.3", ec="k", shrinkA=0, shrinkB=0))
 
 ax.text(mu+5.7*sigma, 0, r"$x$", ha="center", color="k")
-ax.text(0, f(mu)*1.25, r"$P(x)$", ha="center", color="k")
+ax.text(0, f(mu)*1.15, r"$P(x)$", ha="center", color="k")
 
 
 ax.axis('off')
