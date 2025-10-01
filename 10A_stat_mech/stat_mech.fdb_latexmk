@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1758375017.14307 "d:/mings/Documents/PhyO/latex_notes/10A_stat_mech/stat_mech.tex" "stat_mech.pdf" "stat_mech" 1758375026.47281 0
+["pdflatex"] 1759341203.08604 "d:/mings/Documents/PhyO/latex_notes/10A_stat_mech/stat_mech.tex" "stat_mech.pdf" "stat_mech" 1759341210.6991 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
-  "../.common/math.sty" 1756235949 12369 609d8642c64698220069e692719c9cbe ""
-  "../.common/packages.sty" 1757962768 5704 954a29902bc4539d16a9c3f34be21705 ""
+  "../.common/math.sty" 1759263806 12455 163dcc4ca9a8770b9a2cc48aa811f87b ""
+  "../.common/packages.sty" 1758706403 5780 9471e821fd581a82f2a49d646d43a060 ""
   "c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk" 1757962771 13844 585768c540b6fc11d97b522f36dda6c9 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1752685028 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb0600.tfm" 1738919338 1536 5e9084c3fe3d395ce8031dce35abc4c7 ""
@@ -267,9 +267,9 @@
   "img/rubber_unfold2.png" 1757009931 1523 27afc24c56bd061e7a4692c90aa80b5c ""
   "img/temp_scale.png" 1757009516 72326 0ba7da1c620a7dfd54018d1ea2b92671 ""
   "img/trajectory.png" 1757012144 24641 c7661a3e5f94484889019a6b857fea37 ""
-  "stat_mech.aux" 1758375025 3758 c07fe1ca266be064f121ddab18289279 "pdflatex"
-  "stat_mech.out" 1758375025 2504 2f36dac1e61ecdbd89a9e401ad55b6f9 "pdflatex"
-  "stat_mech.sta" 1758375025 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "stat_mech.aux" 1759341210 3758 c07fe1ca266be064f121ddab18289279 "pdflatex"
+  "stat_mech.out" 1759341210 2504 2f36dac1e61ecdbd89a9e401ad55b6f9 "pdflatex"
+  "stat_mech.sta" 1759341209 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
   "stat_mech.tex" 1758375016 30452 9833d5a16054f6d0c009fca9ddb171f9 ""
   (generated)
   "stat_mech.aux"

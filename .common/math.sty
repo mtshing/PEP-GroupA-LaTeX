@@ -250,9 +250,9 @@
 
 % grad
 \NewDocumentCommand{\gradPla}{O{x} O{y} m O{#3}}{%
-  \pdv{#3}{#1}\vu*{#1} + \pdv{#4}{#2}\vu*{#2}}
+  \vu*{#1}\pdv{#3}{#1} + \vu*{#2}\pdv{#4}{#2}}
 \NewDocumentCommand{\gradRec}{O{x} O{y} O{z} m O{#4} O{#4}}{%
-  \gradPla[#1][#2]{#4}[#5] + \pdv{#6}{#3}\vu*{#3}}
+  \gradPla[#1][#2]{#4}[#5] + \vu*{#3}\pdv{#6}{#3}}
 
 % divergence
 \NewDocumentCommand{\divRec}{O{x} O{y} O{z} m O{#4} O{#4}}{%
