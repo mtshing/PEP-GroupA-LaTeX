@@ -20,8 +20,8 @@
     \begin{itemize}
         \item Basic problems: Find $\vvec{B}$ by Biot-Savat law with integration
         \item Divergent-less of B-field
-        \item Ampere's law, line integral, curl \& Stokes' theorem
-        \item Magnetic vector potential \& Poisson equation
+        \item Ampere's law, dot product line integral, curl \& Stokes' theorem
+        \item \it{(Optional reading)} Magnetic vector potential \& Poisson equation
     \end{itemize}
 
 
@@ -49,7 +49,7 @@ called the \bf{Maxwell Equations}.\\[-2em]
 \addArrow[blue]{maxwell_div}{(-5ex,0)}{}{(-3ex,1ex)}
 \addArrow[red]{maxwell_ampere}{(-5ex,0)}{}{(-3ex,1ex)}
 
-However, a \it{system of PDEs} is just too complicate to be solved.
+However, a \it{system of PDEs} is too complicated to be solved.
 So we need to learn different "tricks" to avoid them,
 which are enough for some simple scenarios.\\
 
@@ -74,11 +74,24 @@ such that each current segment "looks like" a vector point source.
     \int I \dd{\vvec{l}} \ \sim\ \sum \qty(\mstack{\text{Current}})\qty(\mstack{\text{Unit}\\\text{length}})
 }
 
-\insertFig{current segment source}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=10em]{current_line1}
+    \end{minipage}
+    {\Large \qquad$\Rightarrow$\qquad}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=10em]{current_line2}
+    \end{minipage}
+\end{center}
 
-This is why you will never find Biot-Savat law in your high school textbook.
+In reality, current sources must form a continuous line and 
+cannot suddenly appear / disappear at nowhere.
+This is why Biot-Savat law must be written as an integral and so
+never be found in your high school textbooks.
 \aleq{
-    \cus[red]{\vvec{B} = \inv{4\pi\epsilon_0} \frac{I\vvec{L}}{r^2}\cross \hhat{r}}
+    \cus[red]{\vvec{B} = \frac{\mu_0}{4\pi} \frac{I\vvec{L}}{r^2}\cross \hhat{r}}
         {\substack{\text{Always remember that}\\\text{You should not write this}}}
     \qquad\xRightarrow{\phantom{000}}\quad
     \cus[blue]{\int \dd{\vvec{B}} 
@@ -91,47 +104,78 @@ current does not always travel along a line segment,
 but may flow on a surface or through an object such that the current is position dependent. 
 In these cases, we should describe current as a distribution of flow (i.e. vector field).
 
-\insertFig{current volume density + surface density}
 
-When current is travelling on a surface 
-(so that each wire is like a ribbon strip),
-we can describe current as \bf{surface current density} $\vvec{K}$. 
-\aleq{
-    I\dd{\vvec{l}} 
-    \qquad\xRightarrow{\phantom{000}}\quad 
-    \vvec{K}\dd{s}
-}
+\begin{center}
+    \vskip 1em
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        When current is travelling on a surface, 
+        the current flow is described as a 2D vector field called \bf{surface current density} $\vvec{K}$. 
+        \aleq{
+            I\dd{\vvec{l}} 
+            \qquad\xRightarrow{\phantom{0}}\quad 
+            \vvec{K}\dd{s}
+        }
+        \includegraphics[height=8em]{current_sur}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \vline
+    \hspace{0.02\textwidth}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        When current is travelling in a volume, 
+        the current flow is described as a 3D vector field called \bf{volume current density} $\vvec{J}$.
+        \aleq{
+            I\dd{\vvec{l}} 
+            \qquad\xRightarrow{\phantom{00}}\quad 
+            \vvec{J}\dd{\tau}
+        }
+        \includegraphics[height=8em]{current_vol}
+    \end{minipage}
+\end{center}
 
-When current is travelling in an object 
-(so that each wire is like a continuous volume),
-we can describe current as \bf{volume current density} $\vvec{J}$.
-\aleq{
-    I\dd{\vvec{l}} 
-    \qquad\xRightarrow{\phantom{000}}\quad 
-    \vvec{J}\dd{\tau}
-}
-
-
+\vskip 1em
 \begin{notation}[Caution:]
-    In magnetostatics problem, we require the current to be a constant flow.
+    In magneto\cul[red]{statics} problem, we require the current flow to be \cul[red]{independent of time}.
     Although you may have learnt that a moving point charge $q$ traveling at velocity $v$ acts like a point current source $qv$,
-    this current is only temporary.
+    we do not consider this as a static case because \cul[red]{this current is time-varying}.
 
-    \insertFig{point charge not equal continuous flow}
+    \begin{center}
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{current_charge}
+        \end{minipage}
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            The B-field here is created\\
+            \bf{only for a short duration}.\\
+            This B-field is NOT static.\\
+            And neither is the current created by point charge.
+        \end{minipage}
+    \end{center}
 
-    The true formula of B-field by point charge needs to consider the travelling time of B-field.
-    This is completely out of our scope.
+    Moreover, the true formula of B-field by point charge needs to consider the travelling time of B-field (light speed).
+    But this is completely out of our scope.
 
 \end{notation}
 
-\vskip 1em
+\newpage
 \begin{example}
     Suppose there is a wire lying on the x-axis, 
     with its ends at $x=a$ and $x=b$.
     Let there be uniform current $I$ flowing along it.
-    What is the B-field on an arbituary point on the z axis?\\
-
-    \insertFig{rod}
+    What is the B-field on an arbituary point on the z axis?
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rod1}
+        \end{minipage}
+        \hspace{0.1\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rod2}
+        \end{minipage}
+    \end{center}
 
     We can analyze by dividing the rod into infinitestimal pieces:
     \begin{itemize}
@@ -141,28 +185,47 @@ we can describe current as \bf{volume current density} $\vvec{J}$.
         its distance from the targeted point is $\sqrt{z^2+x^2}$.
     \end{itemize}
 
-    \insertFig{infinte element}
-
     Thus we can calculate $\vvec{B}$ by Biot-Savat law.
     \aleq{
         \vvec{B} = \frac{\mu_0}{4\pi}\int_a^b \frac{I\dd{x}\hhat{x}}{z^2+x^2}\cross \qty(\substack{\text{directon to}\\\text{target point}})
     }
     To do the cross product, 
     we need to resolve the direction's component from the segment to the target point. 
-    By the triangle:
 
-    \insertFig{component}
+    \begin{minipage}{0.5\linewidth}
+        \aleq{
+            \hhat{r} &= \frac{x}{\sqrt{z^2+x^2}}\hhat{x} + \frac{z}{\sqrt{z^2+x^2}}\hhat{z}\\
+            \Rightarrow\quad \hhat{x}\cross\hhat{r} &= \frac{z}{\sqrt{z^2+x^2}}(-\hhat{y})
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{rod3}
+    \end{minipage}
 
-    \aleq{
-        \hhat{r} &= \frac{x}{\sqrt{z^2+x^2}}\hhat{x} + \frac{z}{\sqrt{z^2+x^2}}\hhat{z}\\
-        \Rightarrow\quad \hhat{x}\cross\hhat{r} &= \frac{z}{\sqrt{z^2+x^2}}(-\hhat{y})
-    }
-
+    \vskip 1em
     In this situation, $-\hhat{y}$ is the out of paper direction. 
 
-    \insertFig{directions notation}
+    \begin{center}
+        \begin{minipage}{0.18\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rod4}
+        \end{minipage}
+        \hspace{0.1\textwidth}
+        \begin{minipage}{0.18\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{rod5}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.45\linewidth}
+            \centering
+            You can also deduce by cross product $\vvec{B} \sim I\dd{\vvec{x}} \cross \hhat{r}$ -
+            line elements on both sides of the rod create a B-field in out-of-paper ($-\hhat{y}$)direction.  
+        \end{minipage}
+    \end{center}
 
-    The B-field should be integrated by
+    So the result B-field should be integrated as
     \aleq{
         B_y = - \frac{\mu_0}{4\pi}\int_a^b \frac{I\dd{x}}{z^2+x^2}\frac{z}{\sqrt{z^2+x^2}}
     }
@@ -230,21 +293,54 @@ The literal description in Ampere's law integral form is
 Recall that we can use the sign of a dot product between 2 vectors to 
 determine if the vectors are in similar / opposite directions. 
 
-\insertFig{dot product sign}
+\begin{center}
+    \begin{minipage}{0.27\linewidth}
+        \centering
+        \includegraphics[width=0.25\textwidth]{dot1}\\[2ex]
+        If $\vvec{a}\cdot\vvec{b}>0$,\\
+        $\vvec{a}$ and $\vvec{b}$ are 
+        more or less in similar directions.
+    \end{minipage}
+    \quad\vline\quad
+    \begin{minipage}{0.28\linewidth}
+        \centering
+        \includegraphics[width=0.2\textwidth]{dot2}\\
+        If $\vvec{a}\cdot\vvec{b}<0$,\\
+        $\vvec{a}$ and $\vvec{b}$ are 
+        more or less in opposite directions.
+    \end{minipage}
+    \quad\vline\quad
+    \begin{minipage}{0.30\linewidth}
+        \centering
+        \includegraphics[width=0.25\textwidth]{dot3}\\[1.5ex]
+        If $\vvec{a}\cdot\vvec{b}=0$,\\
+        $\vvec{a}$ and $\vvec{b}$ are 
+        perpendicular to each other.
+    \end{minipage}
+\end{center}
 
 Now consider that we are travelling in a vector field along some path.
 At each step, 
 we can take note of field vector there and our travelling direction,
-then compute their dot product.\\
+then compute their dot product.
 
-If the sum of all the dot products $>0$, 
-we are travelling more or less the same direction relative to the field's flow.\\
+\begin{center}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{dot4}\\
+        If the total of all the dot products $>0$,\\ 
+        we are travelling around the same direction as the field's flow.
+    \end{minipage}
+    \quad\vline\quad
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{dot5}\\
+        If the total of all the dot products $<0$,\\
+        we are travelling around the opposite direction as the field's flow.
+    \end{minipage}
+\end{center}
 
-If the sum of all the dot products $<0$, 
-we are travelling more or less the opposite direction relative to the field's flow.\\
-
-\insertFig{flow along + flow opposite}
-
+\vskip 1em
 If we divide our path into infinitestimal small segments,
 then the sum become line integral.
 \aleq{
@@ -263,29 +359,45 @@ then the sum become line integral.
 The situation becomes interesting if we choose our path to be a closed loop - 
 this loop integral becomes an indicator whether there are rotation trends around the loop.\\
 
-By convention, we \cul[red]{always use an anti-clockwise loop} (Just like right hand rule). 
-\begin{itemize}
-    \item If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} > 0$,
-    our loop may have enclosed some rotation centers of anti-clockwise flow.
+By convention, we \red{always use an anti-clockwise loop} (Just like right hand rule). 
 
-    \insertFig{High degree of anti clock flow}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} > 0$,
+        the loop may have enclosed some rotation centers of anti-clockwise flow.
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[height=8em]{dot_loop1}
+    \end{minipage}
+\end{center}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} < 0$,
+        the loop may have enclosed some rotation centers of clockwise flow.
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[height=8em]{dot_loop2}
+    \end{minipage}
+\end{center}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} \approx 0$,
+        the loop probably does not enclose any rotation centers.
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[height=8em]{dot_loop3}
+    \end{minipage}
+\end{center}
 
-    \insertFig{loop overlay -> +ve}
-
-    \item If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} < 0$,
-    our loop may have enclosed some rotation centers of clockwise flow.
-
-    \insertFig{High degree of clock flow}
-
-    \insertFig{loop overlay -> -ve}
-
-    \item If $\displaystyle \oint_{\substack{\text{our}\\\text{loop}}} \vvec{F}\cdot \dd{l} \approx 0$,
-    our loop probably does not enclose any rotation centers.
-
-    \insertFig{No rotation flow}
-
-    \insertFig{loop overlay -> 0}
-\end{itemize}
 
 
 
@@ -295,10 +407,19 @@ By convention, we \cul[red]{always use an anti-clockwise loop} (Just like right 
 However there is a problem in using loop integral of dot product - 
 if we choose the loop too arbituarily, 
 the calculated dot product is ambiguous to tell where the rotation centers are.
+\begin{center}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{dot_loop4}
+    \end{minipage}
+    \hspace{0.1\textwidth}
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{dot_loop5}
+    \end{minipage}
+\end{center}
 
-\insertFig{arbituary surface}
-
-E.g. If we choose an irregular loop, it may not catch the rotation centers.\\
+E.g. If we choose an irregular loop, it may not catch the positions of rotation centers.\\
 
 To tackle this problem,
 we need to introduce the \bf{curl} operator:
@@ -317,7 +438,7 @@ we need to introduce the \bf{curl} operator:
 
 \vskip 1em
 The curl operator can be applied on a vector function,
-and will return another vector function.
+and it returns another vector function.
 \aleq{
     \curl{F} 
     &= \bmat{\pdvv{x} & \pdvv{y} & \pdvv{z}}\cross \bmat{F_x & F_y & F_z}\\[1ex]
@@ -337,52 +458,98 @@ To visualize, we can draw 3 infinitestimal small loop around a point $(x,y,z)$.
 Because of symmetry in all 3 directions,
 it suffices to just analyze the loop that is parallel to the $x$-$y$ plane.
 
-\insertFig{infinitestmal loops + floating loop}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{loop1}
+    \end{minipage}
+    {\large \quad$\Rightarrow$\qquad}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{loop2}
+    \end{minipage}
+\end{center}
 
 The dot product on each side of the loop are calculated as follow:
 
-\insertFig{magnify loop}
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{loop3}
+    \end{minipage}
+\end{center}
 
+
+\vskip 1em
 \begin{itemize}
-    \item Edge 1 :
-    \begin{itemize}
-        \item Vector field on the edge center = \red{$\vvec{F}\qty(x,y+\frac{\Delta y}{2},z)$}
-        \item Edge length = \green{$\Delta x$}, in $-x$ direction
-    \end{itemize}
-    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x,y+\frac{\Delta y}{2},z)\cdot (\Delta x)(-\hhat{x})
-    = -F_{\cul[blue]{\cul[blue]{x}}}\qty(x,y+\frac{\Delta y}{2},z)\Delta x$
+    \item \ul{Edge 1} :\\[1ex]
+    \begin{minipage}{0.8\linewidth}
+        \begin{itemize}
+            \item Vector field on the edge center = \red{$\vvec{F}\qty(x,y+\frac{\Delta y}{2},z)$}
+            \item Edge length = \blue{$\Delta x$}, in $-x$ direction
+        \end{itemize}
+        $\Rightarrow\ \qty(\text{Dot product}) = \vvec{F}\qty(x,y+\frac{\Delta y}{2},z)\cdot (\Delta x)(-\hhat{x})
+        = -F_{\cul[blue]{\cul[blue]{x}}}\qty(x,y+\frac{\Delta y}{2},z)\Delta x$
 
-    \insertFig{edge 1}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}{0.18\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{loop_e1}
+    \end{minipage}
 
-    \item Edge 2 :
-    \begin{itemize}
-        \item Vector field on the edge center = \red{$\vvec{F}\qty(x-\frac{\Delta x}{2},y,z)$}
-        \item Edge length = \green{$\Delta y$}, in $-y$ direction
-    \end{itemize}
-    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x-\frac{\Delta x}{2},y,z)\cdot (\Delta y)(-\hhat{y})
-    = -F_{\cul[blue]{\cul[blue]{y}}}\qty(x-\frac{\Delta x}{2},y,z)\Delta y$
+    
+    \vskip 1em
+    \item \ul{Edge 2} :\\[1ex]
+    \begin{minipage}{0.8\linewidth}
+        \begin{itemize}
+            \item Vector field on the edge center = \red{$\vvec{F}\qty(x-\frac{\Delta x}{2},y,z)$}
+            \item Edge length = \blue{$\Delta y$}, in $-y$ direction
+        \end{itemize}
+        $\Rightarrow\ \qty(\text{Dot product}) = \vvec{F}\qty(x-\frac{\Delta x}{2},y,z)\cdot (\Delta y)(-\hhat{y})
+        = -F_{\cul[blue]{\cul[blue]{y}}}\qty(x-\frac{\Delta x}{2},y,z)\Delta y$
 
-    \insertFig{edge 2}
+    \end{minipage}
+    \hspace{0.01\textwidth}
+    \begin{minipage}{0.18\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{loop_e2}
+    \end{minipage}
+    
 
-    \item Edge 3 :
-    \begin{itemize}
-        \item Vector field on the edge center = \red{$\vvec{F}\qty(x,y-\frac{\Delta y}{2},z)$}
-        \item Edge length = \green{$\Delta x$}, in $+x$ direction
-    \end{itemize}
-    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x,y-\frac{\Delta}{2},z)\cdot (\Delta x)(+\hhat{x})
-    = F_{\cul[blue]{\cul[blue]{x}}}\qty(x,y-\frac{\Delta y}{2},z)\Delta x$
+    \vskip 1em
+    \item \ul{Edge 3} :\\[1ex]
+    \begin{minipage}{0.8\linewidth}
+        \begin{itemize}
+            \item Vector field on the edge center = \red{$\vvec{F}\qty(x,y-\frac{\Delta y}{2},z)$}
+            \item Edge length = \blue{$\Delta x$}, in $+x$ direction
+        \end{itemize}
+        $\Rightarrow\ \qty(\text{Dot product}) = \vvec{F}\qty(x,y-\frac{\Delta}{2},z)\cdot (\Delta x)(+\hhat{x})
+        = F_{\cul[blue]{\cul[blue]{x}}}\qty(x,y-\frac{\Delta y}{2},z)\Delta x$
 
-    \insertFig{edge 3}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}{0.18\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{loop_e3}
+    \end{minipage}
 
-    \item Edge 4 :
-    \begin{itemize}
-        \item Vector field on the edge center = \red{$\vvec{F}\qty(x+\frac{\Delta x}{2},y,z)$}
-        \item Edge length = \green{$\Delta y$}, in $+y$ direction
-    \end{itemize}
-    $\Rightarrow \text{ Dot product } = \vvec{F}\qty(x+\frac{\Delta x}{2},y,z)\cdot (\Delta y)(+\hhat{y})
-    = F_{\cul[blue]{\cul[blue]{y}}}\qty(x+\frac{\Delta x}{2},y,z)\Delta y$
+    \vskip 1em
+    \item \ul{Edge 4} :\\[1ex]
+    \begin{minipage}{0.8\linewidth}
+        \begin{itemize}
+            \item Vector field on the edge center = \red{$\vvec{F}\qty(x+\frac{\Delta x}{2},y,z)$}
+            \item Edge length = \blue{$\Delta y$}, in $+y$ direction
+        \end{itemize}
+        $\Rightarrow\ \qty(\text{Dot product}) = \vvec{F}\qty(x+\frac{\Delta x}{2},y,z)\cdot (\Delta y)(+\hhat{y})
+        = F_{\cul[blue]{\cul[blue]{y}}}\qty(x+\frac{\Delta x}{2},y,z)\Delta y$
 
-    \insertFig{edge 4}
+    \end{minipage}
+    \hspace{0.01\textwidth}
+    \begin{minipage}{0.18\linewidth}
+        \centering
+        \includegraphics[width=1.05\textwidth]{loop_e4}
+    \end{minipage}
 
 \end{itemize}
 
@@ -410,6 +577,7 @@ Therefore the total dot product along the loop is
         \qty(\mstack{\text{Unit area}\\[0.5ex]\text{\blue{normal to z direction}}})
 }
 
+\vskip 1em
 We can expect the similar results in the other 2 directions.
 Gather them together:
 \aleq{
@@ -441,18 +609,18 @@ Therefore we can geometrically interpret curl as
         \qty(\mstack{\text{\bf{Curl's}}\\\text{\bf{i\Nth\ component}}}) 
         = (\curl \vvec{F})_i 
         = \frac{(\text{Loop integral normal to i\Nth\ direction})}{(\text{Area enclosed by the loop})}
-        \sim \qty(\mstack{\text{\bf{loop integral}}\\\tkn{curl_density}{\text{\bf{\cul[blue]{density}}}}})
+        \sim \qty(\mstack{\text{\bf{loop integral}}\\\tkn{curl_density}{\text{\bf{\cul[blue]{density}}}}})_\bf{\tkn{curl_dir}{\cul[red]{i}}}
     }
 }
 \addArrow[blue]{curl_density}{(0,-4ex)}{\scriptsize This density\\[-1ex]\scriptsize is by area}{(0,-1ex)}{(0,-1ex)}
-
+\addArrow[red]{curl_dir}{(0,-3ex)}{\scriptsize In i\Nth\\[-1ex]\scriptsize direction}{(0,-0.5ex)}{(0,-1ex)}
 
 \vskip 1em
 %%%%%%%%%%%%%%
 \subsubsection{Stokes' Theorem}
 
 With the geometrical interpretation,
-we can directly state (without proof) a convenient formula related to divergence - 
+we can directly state (without proof) a convenient formula related to curl - 
 the \bf{Stokes' theorem}:
 \aleq{
     \Aboxed{
@@ -483,12 +651,14 @@ The Ampere's law is purely an \cul[red]{observation} about the relation between 
 The two forms of Ampere's law are describing this same observation:
 \begin{itemize}
     \item \ul{Integral form}:
+    \vskip -5ex
     \aleq{
         (\vvec{B}\text{'s loop integral})\ \sim\ \oint \vvec{B}\cdot\dd{\vvec{l}} 
         \ =\ \mu_0 I \ \sim\ (\text{Current})
     }
 
     \item \ul{Differential form}:
+    \vskip -5ex
     \aleq{
         \qty(\mstack{\vvec{B} \text{'s loop integral}\\[0.5ex]\text{density}})\ \sim\ \curl \vvec{B}
         \ =\ \mu_0 \vvec{J}\ \sim\ \qty(\mstack{\text{Current}\\[0.5ex]\text{density}})
@@ -496,19 +666,19 @@ The two forms of Ampere's law are describing this same observation:
 \end{itemize}
 
 And the two form can be inter-converted by Stokes' theorem.
+\addArrow[red]{curlB}{(0,9ex)}{Stokes' Theorem}{(1ex,3ex)}{(-10ex,-6ex)}
+\addBentArrow[blue]{curlI}{(-3.5ex,11.5ex)}{Current to Current density}{(1ex,3ex)}{(18ex,-6ex)}
 \aleq{
     \oint \vvec{B}\cdot\dd{\vvec{l}} \quad &=\quad \mu_0 I\\[2em]
-    \tkn{curlB}{\iiint (\curl \vvec{B}) \cdot \dd{\vvec{s}}}\ &=\ \mu_0\tkn{curlI}{\iint \vvec{J} \cdot \dd{\vvec{s}}}
+    \iiint (\tkn{curlB}{\curl \vvec{B}}) \cdot \dd{\vvec{s}}\ &=\ \mu_0\iint \tkn{curlI}{\vvec{J}} \cdot \dd{\vvec{s}}
 }
-\addArrow[red]{curlB}{(0,9ex)}{Stokes' Theorem}{(1ex,3ex)}{(-12ex,-6ex)}
-\addBentArrow[blue]{curlI}{(-4ex,13ex)}{Current to current density}{(1ex,3ex)}{(18ex,-8ex)}
 
 
 %%%%%%%%%%%%%%
 \subsection{Applying Ampere's Law Integral Form}
 
 In beginner electromagnetism, 
-there is only one type of Ampere's law related problems: 
+there is only one type of problems related to Ampere's law: 
 \quoting{
     Given the current distribution, 
     find the B-field everywhere by Ampere's law integral form\\
@@ -518,16 +688,16 @@ which is basically asking you to \it{revert} the loop integral calculation:
 \aleq{
     \oint \vvec{B}\cdot\dd{\vvec{l}} = \mu_0 I
     \qquad\Rightarrow\qquad
-    \vvec{B} = \text{ ??? } \text{in terms of }I
+    \vvec{B} = \text{Some function of }I
 }
 
 If $I$ has a very ugly distribution, 
-there is nothing we can do except solving some partial differential equations.
+there is nothing we can do other than solving some PDEs.
 But \red{if $I$ distributes very symmetrically, 
 $\vvec{B}$ should also be symmetrical}, 
 such that the loop integral can be broken into multiplications.\\
 
-In these cases, we can choose an "Ampere" loop to to be integrated where
+In these cases, we can choose an "Amperian" loop to to be integrated where
 \begin{enumerate}
     \item $\vvec{B}$ has constant magnitude everywhere along the loop.
     \item $\vvec{B}$ forms the same angle with the tangent vector everywhere along the loop.
@@ -561,61 +731,139 @@ such that we can find the magnitude of $\vvec{B}$ with simple division
 }
 
 In fact, there are not many of these "very symmetrical" cases.
-These examples below, with their respective Ampere loop,
+These examples below, with their respective Amperian loops,
 are basically all the variations you can find in textbooks.
 
-\insertFig{different ampere loop}
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.3\linewidth}
+        >{\centering\arraybackslash}m{0.3\linewidth}
+        >{\centering\arraybackslash}m{0.3\linewidth}}
+        \makecell{Current configuration\\(Assuming uniform density)} 
+        & & Good Amperian loop 
+        \\[1ex]
+        \hline
+        Infinitely long wire
+        &
+        \vskip 1ex
+        \includegraphics[width=0.25\linewidth]{wire}
+        &
+        \blue{Circle}
+        \\[2ex]
+        %
+        Infinitely long solenoid
+        &
+        \includegraphics[width=0.3\linewidth]{solen}
+        &
+        \blue{Rectangle at cross-section}
+        \\[1ex]
+        %
+        Infinitely large plane
+        &
+        \includegraphics[width=0.6\linewidth]{plane}
+        &
+        \blue{Infinitely large rectangle wrapping it around}
+        \\[3em]
+        %
+        Toroidal solenoid
+        &
+        \includegraphics[width=0.6\linewidth]{torus}
+        &
+        \blue{Circle through center of the core}
+    \end{tabular}
+\end{center}
 
 \begin{example}
     Given an infinitely long wire with current $I$ flowing along.
     By cylindrical symmetry, the B-field must satisfy:
-    \begin{itemize}
-        \item Unchange when translate along the wire (z-axis).
-        \item Unchange when rotate about the wire (z-axis).
-    \end{itemize}
+
+    \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+            \item Unchange when translate along the wire (z-axis).
+            \item Unchange when rotate about the wire (z-axis).
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[height=6em]{wire2}
+    \end{minipage}
+
     
     Note that cylindrical symmetry does not restrict the B-field to be circle loops.
     For example, all of these configurations satisfy cylindrical symmetry:
 
-    \insertFig{loop (purely theta) vs spiral up (has z) vs spiral out (has r)}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=8em]{wire_loop}\\
+            If $\vvec{B}$ only has $\hhat{\theta}$ component\\
+            $\Rightarrow$ Circular loops
+        \end{minipage}
+        \hspace{0.01\textwidth}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[height=8em]{wire_r}\\
+            If $\vvec{B}$ has $\hhat{r}$ component\\
+            $\Rightarrow$ Can spiral out
+        \end{minipage}
+        \hspace{0.01\textwidth}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[height=8em]{wire_z}\\
+            If $\vvec{B}$ has $\hhat{z}$ component\\
+            $\Rightarrow$ Can spiral up
+        \end{minipage}
+    \end{center}
 
-    We need to rule out the 2 latter cases before we can use Ampere's law to find $\vvec{B}$:
+    We need to rule out the 2 latter cases before we can use Ampere's law to find $\vvec{B}$:\\
 
+    \begin{minipage}{0.8\linewidth}
+        \begin{enumerate}
+            \item \ul{$\vvec{B}$ is divergent-less} : \\[1ex]
+            We can draw a cylindrical Gaussian box around the wire.\\
+            If the B-field has $\hhat{r}$ component,
+            we would get the flux of $\vvec{B} \neq 0$.\\
+            Then it contradicts to $\vvec{B}$ being divergent-less.
+            
+        \end{enumerate}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.1\linewidth}
+        \centering
+        \includegraphics[height=9em]{wire_div}
+    \end{minipage}
+    
     \begin{enumerate}
-        \item \ul{$\vvec{B}$ is divergent-less} : \\
-        If the B-field has radial component,
-        we can draw a cylindrical Gaussian box around the wire.
-        Then we would get the flux of $\vvec{B} \neq 0$.
-
-        \insertFig{cyl gauss surface}
-
-        Therefore the B-field must not have $r$ component.
-
-        \item \ul{Another Ampere's loop} : \\
-        If the B-field has z component, 
-        we can draw an Ampere loop that is parallel to the wire.
+        \item[2.] \ul{Another Amperian loop} : \\[1ex]
+        We can draw an Amperian loop that is parallel to the wire.
         By Ampere's law, there is no current enclosed by this loop,
         so the loop integral should be $0$.
 
-        \insertFig{alternative ampere loop}
+        \begin{center}
+            \begin{minipage}{0.5\linewidth}
+                \centering
+                \includegraphics[width=\textwidth]{wire_inf}
+            \end{minipage}
+        \end{center}
 
         \begin{itemize}
             \item By translational symmetry, 
-            the dot product at the top (edge 1) and bottom (edge 3) should cancel each other. 
+            the dot product at the top (edge 2) and bottom (edge 4) should cancel each other. 
+            
+            \vskip 1ex
+            \item First choose the loop which stretches to infinitly far.
+            Because there should be no B-field at infinity,
+            dot product on edge 3 should be $0$.
 
-            \item We can choose a loop which stretches to infinity far away.
-            Because there should be no B-field at infinity, dot product is $0$.
-            So the dot product on the wire (edge 4) should also be $0$.
-
-            \item Then if we choose a loop that is not infinitly far,
-            we can conclude that the dot product on edge 3 should be $0$.
-            This implies $\vvec{B}$ has no $z$ component.
+            \vskip 1ex
+            \item Then if we choose a loop which does not stretch to infinitly far,
+            we can conclude that the dot product on edge 1 is $0$.
+            So this $\vvec{B}$ must not have $\hhat{z}$ component.
         \end{itemize}
     \end{enumerate}
 
     After all these symmetry arguments,
     we can finally conclude that B-field around a wire must be circular loops. 
-    We can choose a circular Ampere loop of radius $r$ to find the magnitude of B-field
+    We can choose a circular Amperian loop of radius $r$ to find the magnitude of B-field
     at distance $r$ from the wire.
     \aleq{
         \norm{\vvec{B}} 
@@ -634,114 +882,98 @@ are basically all the variations you can find in textbooks.
 
 
 \begin{example}
-    Givne an infinitely long solenoid made of a uniform density of coils $\frac{N}{L}$,
+    Given an infinitely long solenoid made of a uniform density of coils $\frac{N}{L}$,
     with a current $I$ passiing through.
-    This is another cylindrical symmetry case.
+    This is another cylindrical symmetry case.\\
+
+    \begin{minipage}{0.65\linewidth}
+        \begin{itemize}
+            \item Unchange when translate along the wire (z-axis).
+            \item Unchange when rotate about the wire (z-axis).
+        \end{itemize}
+
+        Again, cylindrical symmetry does not restrict the B-field to be purely along z direction. 
+        We need to first argue that the B-field does not have radial or angular components 
+        before we can apply Ampere's law.
+
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{solen_cross}
+    \end{minipage}
+    
+    \vskip 1em
+    \begin{minipage}{0.72\linewidth}
+        \begin{enumerate}
+            \item \ul{$\vvec{B}$ is divergent-less} : \\[1ex]
+            We can draw a cylindrical Gaussian box around the solenoid.\\
+            If the B-field has $\hhat{r}$ component,
+            we would get the flux of $\vvec{B}\neq 0$.\\
+            Then it contradicts to $\vvec{B}$ being divergent-less.
+                
+        \end{enumerate}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.1\linewidth}
+        \centering
+        \includegraphics[height=9em]{solen_div}
+    \end{minipage}
+
+    \vskip 2em
+    \begin{minipage}{0.72\linewidth}
+        \begin{enumerate}
+            \item[2.] \ul{Another Amperian loop} : \\[1ex]
+            We can draw a loop that circulates around the solenoid.\\
+            Because there is no current enclosed by this loop,\\
+            dot product integral around this loop must be $0$.\\
+            By Ampere's law, this B-field must not have $\hhat{\theta}$ component.
+        \end{enumerate}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.1\linewidth}
+        \centering
+        \includegraphics[height=9em]{solen_loop}
+    \end{minipage}
+
+    \vskip 2em
+    Now we can conclude that B-field created by a solenoid must be in z direction only. 
+    We can choose a circular Amperian loop over the cross-section of the solenoid,
+    with one edge in the center of solenoid and another edge at infinitely far. 
+
+    \begin{center}
+        \begin{minipage}{0.6\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{solen_inf}
+        \end{minipage}
+    \end{center}
+
     \begin{itemize}
-        \item Unchange when translate along the wire (z-axis).
-        \item Unchange when rotate about the wire (z-axis).
-    \end{itemize}
-    
-    Again, cylindrical symmetry does not restrict the B-field to be purely along z direction. 
-    We need to first argue that the B-field does not have radial or angular components 
-    before we can apply Ampere's law.
+        \item We have already argued that this B-field has no radial component.
+        Dot product on edge 2 and 4 must be $0$.
 
-    \begin{enumerate}
-        \item \ul{$\vvec{B}$ is divergent-less} : \\
-        If the B-field has radial component,
-        we can draw a cylindrical Gaussian box around the solenoid.
-        Then we would get the flux of $\vvec{B}\neq 0$.
-
-        \insertFig{cylinder around solenoid}
-
-        Therefore the B-field must not have $\hhat{r}$ component.
-
-        \item \ul{Alternative Ampere loop} : \\
-
-
-    \end{enumerate}
-    
-
-\end{example}
-
-
-\begin{example}
-    Given an infinitely long hollow cylinder with inner radius $=a$ and outer radius $=b$,
-    and its charge density is proportional to distance from center $r$, i.e. $\rho(\vvec{r}) =kr$
-    
-    For cylinder, we can claim by rotational symmetry around the axis and translation symmetry along the axis,
-    that the E-field must satisfy:
-    \begin{itemize}
-        \item Only point in $r$ direction.
-        \item Magnitude does not depend on $\theta$ or $z$.
+        \item At infinitely far, there should be no B-field at infinity,
+        dot product on edge 3 should be $0$.
     \end{itemize}
 
-    \insertFig{cylinder symm}
-
-    Therefore we can choose the Gaussian surface to be a cylindrical sheet radius $r$ 
-    and an arbituary length $L$ (which will be cancelled later)
-    to find the magnitude of E-field at distance $r$ from the rotation axis.
+    So only edge 1 can have a non-zero dot product. 
+    We can now apply Ampere's law:
     \aleq{
-        \norm{\vvec{E}} 
-        &= \frac{Q/\epsilon_0}{(\text{Total surface area})\cos\theta}\\
-        &= \frac{Q}{\epsilon_0} \cdot \tkn{gauss_cylcurve}{\cul[red]{\inv{(2\pi r L)}}} \cdot \inv{\cos \tkn{gauss_cylth}{\cul[green]{0^\circ}}}\\[1em]
-        &= \frac{Q}{2\pi\epsilon_0 r L}\\[1ex]
-        \Rightarrow\quad \vvec{E} &= \frac{Q}{2\pi\epsilon_0 r L} \tkn{gauss_cylr}{\cul[blue]{\hhat{r}}}
+        \cub[gray]{\norm{\vvec{B}}L\cos{0^\circ}}{\text{Edge 1}}
+        + \cub[gray]{0 + 0 + 0}{\text{Edge 2 \& 3 \& 4}}% + \cub[gray]{0}{\text{Edge 3}} + \cub[gray]{0}{\text{Edge 4}}
+        &= \mu_0 (NI)\\
+        %
+        \norm{\vvec{B}} &= \frac{\mu_0 NI}{L}\\
+        \vvec{B} &= \frac{\mu_0 NI}{L}\tkn{ampere_sol}{\cul[blue]{\hhat{z}}}
     }
-    \addBentArrow[red]{gauss_cylcurve}{(7ex,-4ex)}
-    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Only go through the curved surface \\[-1ex]\scriptsize Top/bottom surface has no flux}
-    {(0,-3ex)}{(12ex,1ex)}
-    \addArrow[green]{gauss_cylth}{(7ex,0)}
-    {\scriptsize E-field = radial \\[-1ex]\scriptsize $\therefore$ Normal to curved surface}{(2ex,0.5ex)}{(8.5ex,1ex)}
-    \addArrow[blue]{gauss_cylr}{(3ex,0)}
-    {\scriptsize You have to manually add the unit vector}{(2ex,0.5ex)}{(15ex,0)}
-
-    \insertFig{not side surface cuz flux = 0}
-
-    This time the charge density depends on position,
-    so the total charge enclosed by the surface needs to be computed by integration.
-
-    \begin{enumerate}
-        \item For radial distance $r<a$, there is no charge enclosed because the cylinder is hollow.
-        So $Q=0$ implying $\vvec{E}=0$.
-
-        \insertFig{inner}
-
-        \item For radial distance $a<r<b$, 
-        total enclosed charge are distributed from radius $=a$ to radius $=r$,
-        which calculates as
-        \aleq{
-            Q = \int^r_a \rho \cdot 2\pi rL\dd{r} 
-            =  2\pi kL \int^r_a r^2 \dd{r} 
-            =  \frac{2\pi kL}{3} (r^3-a^3)
-        }
-        So the E-field is
-        \aleq{
-            \vvec{E} = \frac{Q}{2\pi\epsilon_0 r L}\hhat{r} 
-            = \frac{k}{3\epsilon_0}\qty(r^2 - \frac{a^3}{r}) \hhat{r}
-        }
-        
-        \insertFig{middle}
-
-        \item For radial distance $r>b$,
-        total enclosed charge are distributed from radius $=a$ to radius $=b$,
-        which calculates as
-        \aleq{
-            Q = \int^b_a \rho \cdot 2\pi rL\dd{r} 
-            =  2\pi kL \int^r_a r^2 \dd{r} 
-            =  \frac{2\pi kL}{3} (b^3-a^3)
-        }
-        So the E-field is
-        \aleq{
-            \vvec{E} = \frac{Q}{2\pi\epsilon_0 r L}\hhat{r} 
-            = \frac{k}{3\epsilon_0r}\qty(b^3 - a^3) \hhat{r}
-        }
-
-        \insertFig{outer}
-
-    \end{enumerate}
+    \addArrow[blue]{ampere_sol}{(3ex,0)}
+    {\scriptsize You have to manually\\[-1ex]\scriptsize add the unit vector}
+    {(2ex,0.5ex)}{(8ex,0)}
 
 \end{example}
+
+
+
 
 
 
@@ -773,138 +1005,173 @@ called \bf{magnetic vector potential}, such that
     }
 }
 
-(Procedures for computing the reverse exists, however basically no one would use it.)
+Unlike electric potential,
+there is no reverse formula for reversely computing $\vvec{A}$ from $\vvec{B}$.
 
 %%%%%%%%%%%%%%
 \subsection{Poisson Equation}
 
 If we substitute $\vvec{B} = \curl \vvec{A}$ into the Ampere's law differential form,
 we arrive at a new equation: 
-%\addBelowArrow[blue]{laplacian1}{laplacian2}{\scriptsize This is called\\[-1ex]\scriptsize \bf{Laplacian Operator}}{-1ex}{(0,-2ex)}
+\addBentArrow[red]{curlcurl}{(-1ex,5ex)}
+{\scriptsize $\curl(\curl \vvec{F}) \equiv \grad(\div \vvec{F}) - \laplacian \vvec{F}$\\[-0.5ex]\scriptsize is a vector calculus identity\\[-1ex]\scriptsize commonly used in derivations.}
+{(0,3ex)}{(14ex,0)}
+\addArrow[blue]{divA}{(10ex,-3ex)}
+{\scriptsize We can CHOOSE $\div \vvec{A}=0$.\\[-1ex]\scriptsize This freedom is similar to electric potential\\[-1ex]
+    \scriptsize where we can CHOOSE to add any constant to $V$.\\[-1ex]\scriptsize The formal reason is called "gauge freedom".}
+{(0,-2.5ex)}{(14ex,0)}
 \aleq{
     \mu_0 \vvec{J} &= \curl \vvec{B}\\
-    &= \curl (\curl \vvec{A})\\
-    &= \grad(\div \vvec{A}) - \laplacian \vvec{A}\\
-    &= -\laplacian \vvec{A}\\
+    &= \curl (\curl \vvec{A})\\[0.5ex]
+    &= \grad\cub[blue]{(\tkn{divA}{\div \vvec{A}})}{} - \laplacian \tkn{curlcurl}{\vvec{A}}\\[0.5ex]
+    &= -\laplacian \vvec{A}\\[1ex]
     \Aboxed{
         \laplacian \vvec{A}(\vvec{r}) &= -\mu_0\vvec{J}(\vvec{r})
     }
 }
-% $\curl \curl \vvec{A} \equiv \grad(\div \vvec{A}) - \laplacian \vvec{A}$ This is an identity relating these operators
-% In magnetostatics, we can CHOOSE $\div \vvec{A}=0$. The mathematical reason is called "gauge fixing".
+
+\vskip 1ex
 This is again the \bf{Poisson equation}, 
 the same PDE that we have encountered in electric potential 
 ($\laplacian V(\vvec{r}) = - \frac{\rho(\vvec{r})}{\epsilon_0}$).
 But for magnetic potential,
 because it is a vector function, 
-it is actually 3 equations, one for each direction:
+this is actually 3 equations, one for each direction:
 \aleq{
-    &\laplacian \bmat{A_x \\ A_y \\ A_z} = -\mu_0 \bmat{J_x\\J_y\\J_z}\\ 
-    \Rightarrow 
-    &\bcase{
-        \laplacian A_\red{x}(\vvec{r}) &= -\mu_0 J_\red{x}(\vvec{r})\\
-        \laplacian A_\red{y}(\vvec{r}) &= -\mu_0 J_\red{y}(\vvec{r})\\
-        \laplacian A_\red{z}(\vvec{r}) &= -\mu_0 J_\red{z}(\vvec{r})
-    }
+    &\laplacian \bmat{A_x \\ A_y \\ A_z} = -\mu_0 \bmat{J_x\\J_y\\J_z}
 } 
 
-The Poisson equation of $\vvec{A}$ is 
-\cul[red]{the general method to relate magnetic vector potential with current distribution}.
-that works for any configurations of potential or current.
+\vskip 1ex
+\cul[red]{It is the most fundamental relation between magnetic vector potential and current}.
+Given any configurations of current or vector potential,
+idealy we can find the other using this PDE.
 
-\insertFig{find one and other, add I = lap A and A = ??? I with arrow }
-
-However, being general does not mean it is always easy to solve: 
 \begin{itemize}
     \item \ul{$\vvec{A}(\vvec{r})$ to $\vvec{J}(\vvec{r})$} : 
     The Laplacian operator is just a sum of \nth{2} order derivatives. 
-    (And we just need to do it 3 times). Relatively easy.
+    (And we 
+    \\ \phantom{\ul{$\vvec{J}(\vvec{r})$ to $\vvec{A}(\vvec{r})$} :}
+    just need to do it 3 times). Relatively easy.
 
     \item \ul{$\vvec{J}(\vvec{r})$ to $\vvec{A}(\vvec{r})$} : 
     Need to solve the Poisson equation (for 3 times),
-    which are \nth{2} order non-homogeneous
-    \\ \phantom{\ul{$\vvec{J}(\vvec{r})$ to $\vvec{A}(\vvec{r})$} :} linear PDEs. Awful!
+    which are \nth{2} order non-
+    \\ \phantom{\ul{$\vvec{J}(\vvec{r})$ to $\vvec{A}(\vvec{r})$} :} homogeneous linear PDEs. Awful!
 \end{itemize} 
 
 Unfortunately in realistic problems,
 it is more frequent to ask for $\vvec{A}(\vvec{r})$ from $\vvec{J}(\vvec{r})$,
 because we can usually confine the current distribution in a small region 
-by using a very small test object;
-but for potential, it is always everywhere. 
+by using very small test objects;
+but for vector potential, it is always everywhere. 
 
-\insertFig{charge in small object -> can treat like point charge. but V spread everywhere}
+\begin{center}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        {\small It is easy to make $\vvec{J}=0$\\ in most places}
+    \end{minipage}
+    \begin{minipage}{0.27\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{poisson_J}
+    \end{minipage}
+    {\Large \quad$\Leftrightarrow$\quad}
+    \begin{minipage}{0.27\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{poisson_A}
+    \end{minipage}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        {\small It is difficult\\ to know $\vvec{A}$ everywhere}
+    \end{minipage}
+\end{center}
 
-Again we are not going to discuss its general solution here. 
+\newpage
+Again we are not going to discuss how to solve it. 
 Here I only provide you the solution in one very special case - 
 When the \cul[red]{region of interest is infinitely large} + \cul[red]{$\vvec{A}$ is chosen to be divergent-less}, 
-i.e. $\vvec{A}(\vvec{r}=\infty)=0$, 
+i.e. $\div \vvec{A}=0$, 
 the solution is the Biot-Savat law for magnetic vector potential.
-\aleq{
-    \Aboxed{
-        \vvec{A}(\red{\vvec{r}}) 
-        &= \frac{\mu_0}{4\pi}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
-            \frac{\vvec{J}(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}\dd[3]{\blue{\vvec{r}'}}
-    }\\[1ex]
-    %
-    &\sim \frac{\mu_0}{4\pi} \sum_\text{everywhere} \frac{(\text{current})}{(\text{distance})}\\[1em]
-    %
-    &\equiv\ \mstack{\text{Biot-Savat law for magnetic vector potential}\\\scriptsize \text{(written in a fancy vector form)}}
-}
 
-\insertFig{infinitely large region + potential element plot}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \aleq{
+            \Aboxed{
+                \vvec{A}(\red{\vvec{r}}) 
+                &= \frac{\mu_0}{4\pi}\underset{\substack{\text{infinitely large}\\\text{space}}}{\iiint}\ 
+                    \frac{\vvec{J}(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}\dd[3]{\blue{\vvec{r}'}}
+            }\\[1ex]
+            %
+            &\sim \frac{\mu_0}{4\pi} \sum_\text{everywhere} \frac{(\text{current})}{(\text{distance})}\\[1em]
+            %
+            &\equiv\ \mstack{\text{Biot-Savat law for magnetic vector potential}\\\scriptsize \text{(written in a fancy vector form)}}
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{coulomb_elem}
+    \end{minipage}
+\end{center}
 
 
 
 
+
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsection{Finding $\vvec{B}$ from $\vvec{J}$}
 
 On the other hand, Poisson equation provides an alternative to calculate B-field distribution from current distribution.
 If we compare the Ampere's law and Poisson equation of $\vvec{A}$:
 \begin{itemize}
-    \item \ul{Poisson equation} $\scriptstyle \qty(\laplacian \vvec{A} = -{\mu_0 \vvec{J}})$ : 
+    \item \ul{Poisson equation} : \\[1ex]
     Although $\vvec{A}(\vvec{r})$ is a vector function,
-    the Poisson equations for each compoenent $B_x(\vvec{r})$, $B_y(\vvec{r})$, $B_z(\vvec{r})$ 
+    the Poisson equations for each compoenent $A_x(\vvec{r})$, $A_y(\vvec{r})$, $A_z(\vvec{r})$ 
     are \cul[red]{independent}.
+    \addArrow[red]{Jx}{(3ex,0)}{\scriptsize Only involve\\[-1ex]\scriptsize x components}{(2.5ex,0.5ex)}{(5ex,0)}
+    \addArrow[red]{Jy}{(3ex,0)}{\scriptsize Only involve\\[-1ex]\scriptsize y components}{(2.5ex,0.5ex)}{(5ex,0)}
+    \addArrow[red]{Jz}{(3ex,0)}{\scriptsize Only involve\\[-1ex]\scriptsize z components}{(2.5ex,0.5ex)}{(5ex,0)}
     \aleq{
         \laplacian \vvec{A} = -\mu_0 \vvec{J}
-        \quad\Rightarrow\quad
+        \qquad\Leftrightarrow\qquad
         \bcase{
-            \lapRec{A_\red{x}} &= -\mu_0 J_\red{x}\\[1ex]
-            \lapRec{A_\red{y}} &= -\mu_0 J_\red{y}\\[1ex]
-            \lapRec{A_\red{z}} &= -\mu_0 J_\red{z}
+            \qty(\lapRec{})A_{\cul[red]{x}} &= -\mu_0 \tkn{Jx}{J_{\cul[red]{x}}}\\[1ex]
+            \qty(\lapRec{})A_{\cul[red]{y}} &= -\mu_0 \tkn{Jy}{J_{\cul[red]{y}}}\\[1ex]
+            \qty(\lapRec{})A_{\cul[red]{z}} &= -\mu_0 \tkn{Jz}{J_{\cul[red]{z}}}
         }
+        \qquad
     }
-    % only involve x components
-    % only involve y components
-    % only involve z components
+    
 
-    \item \ul{Ampere's law} $\scriptstyle \qty(\curl \vvec{B} = \mu_0 \vvec{J})$ : 
-    $\vvec{B}(\vvec{r})$ is a vector function with 3 components $B_x(\vvec{r})$, $B_y(\vvec{r})$, $B_z(\vvec{r})$,\\
-    \phantom{Ampere's law $\scriptstyle \qty(\curl \vvec{B} = \mu_0 \vvec{J})$ :} 
+    \item \ul{Ampere's law} :\\[1ex]
+    $\vvec{B}(\vvec{r})$ is a vector function with 3 components $B_x(\vvec{r})$, $B_y(\vvec{r})$, $B_z(\vvec{r})$,
     Because of the curl operation, 
-    the PDE for each component of $\vvec{B}$ all mix together.
+    the PDE for each component of $\vvec{B}$ and $\vvec{J}$ all mix together.
     \aleq{
         \curl \vvec{B} = \mu_0 \vvec{J}
-        \quad\Rightarrow\quad
+        \qquad\Leftrightarrow\qquad
         \bcase{
-            \curlPla[y][z]{B_z}[B_y] &= J_x\\[1ex]
-            \curlPla[z][x]{B_x}[B_z] &= J_y\\[1ex]
-            \curlPla[x][y]{B_y}[B_z] &= J_z\\[1ex]
+            \curlPla[y][z]{B_z}[B_y] &= \mu_0 J_x\\[1ex]
+            \curlPla[z][x]{B_x}[B_z] &= \mu_0 J_y\\[1ex]
+            \curlPla[x][y]{B_y}[B_z] &= \mu_0 J_z\\[1ex]
         }
     }
 
 \end{itemize}
 
-In practice, there is no reason to try to solve the more difficult PDE of $\vvec{B}$,
-if alternatively we can solve the easier PDE of $\vvec{J}$,
+In practice, there is no reason to try to directly solve the more difficult PDEs of $\vvec{B}$,
+if we can alternatively solve the easier PDEs of $\vvec{A}$,
 and then take curl to get $\vvec{B}$ (i.e. via $\vvec{B} = -\curl \vvec{A}$). 
 
-\insertFig{triangle}
+\begin{center}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{triangleB}
+    \end{minipage}
+\end{center}
 
 In this way, we can tell the solution of Ampere's law as a PDE, 
 which is as expected, the Biot-Savat law for $\vvec{B}$.
-
 \aleq{
     \Aboxed{
         \vvec{B}(\red{\vvec{r}}) = \curl \vvec{A}(\red{\vvec{r}}) 
@@ -913,16 +1180,112 @@ which is as expected, the Biot-Savat law for $\vvec{B}$.
             \cross\qty[\frac{\red{\vvec{r}}-\blue{\vvec{r}'}}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}}]\dd[3]{\blue{\vvec{r}'}}
     }\\[1ex]
     %
-    &\sim \frac{\mu_0}{4\pi} \sum_\text{everywhere} \frac{(\text{curent})}{(\text{distance})^2} \cross \qty(\substack{\text{unit}\\\text{vector}})\\[1em]
+    &\sim \frac{\mu_0}{4\pi} \sum_\text{everywhere} \frac{(\text{current})}{(\text{distance})^2} \cross \qty(\substack{\text{unit}\\\text{vector}})\\[1em]
     %
     &\equiv\ \mstack{\text{Biot-Savat law for magnetic field}\\\scriptsize \text{(But written in a fancier vector form)}}
 }
 
+\vskip 1em
+\begin{notation}[Side note:]
 
+    We have learnt 3 differential operator related to $\grad$. 
+    \begin{itemize}
+        \item \ul{Gradient} $\grad f$ \ -\ \  Scalar function $\xRightarrow{\grad}$ Vector function\\[-1.5em]
+        \item \ul{Divergence} $\div \vvec{F}$ \ -\ \  Vector function $\xRightarrow{\div}$ Scalar function\\[-1.5em]
+        \item \ul{Curl} $\curl \vvec{F}$ \ -\ \  Vector function $\xRightarrow{\curl}$ Vector function
+    \end{itemize}
+    We can derive several \nth{2} derivatives relations of $\grad$ (by brute force):
+    \begin{itemize}
+        \item \ul{Wrapped by gradient}: \\[-3ex]
+        \aleq{
+            \grad (\div \vvec{F}) &= %\qty(\gradRec{})\qty(\divRec{F_x}[F_y][F_z]) \\[0.5ex]
+            \pdv{x}\qty(\pdv{F_x}{x} + \pdv{F_y}{y} + \pdv{F_z}{z})\hhat{x} 
+                + \pdv{y}\qty(\pdv{F_x}{x} + \pdv{F_y}{y} + \pdv{F_z}{z})\hhat{y}\\[0.5ex]
+                &\qquad + \pdv{z}\qty(\pdv{F_x}{x} + \pdv{F_y}{y} + \pdv{F_z}{z} )\hhat{z}
+        }
+        Cannot simplify further than this form.
+    \end{itemize}
+\end{notation}
+\begin{notation}[]
+    \begin{itemize}
+        \item \ul{Wrapped by divergence}:
+        \aleq{
+            \div (\grad f) &\ \defeq\ \laplacian f \ =\  \lapRec{f} \qquad {\scriptsize \text{(Laplacian operator)}}\\[1ex]
+            %
+            \div (\curl \vvec{F}) &\ \equiv\ 0 \qquad \red{\scriptsize \text{(Divergence of curl is always 0)}}
+        }
 
+        \item \ul{Wrapped by curl}:
+        \aleq{
+            \curl (\grad f) &\ \equiv\ 0 \qquad \red{\scriptsize \text{(Curl of gradient is always 0)}}\\[1ex]
+            %
+            \curl (\curl \vvec{F}) &\ \equiv\ \ \grad (\div \vvec{F}) - \laplacian \vvec{F} \qquad {\scriptsize \text{(A useful identity)}}
+        }
+    \end{itemize} 
 
+    \vskip 1ex
+    The two "$\equiv 0$" relations are the reasons why we can have potential functions.
+    \begin{enumerate}
+        \item In electrostatics, $\vvec{E}$ is conservative $\Rightarrow$ Loop integral $=0$.
+        Then by Stoke's law,
+        \aleq{
+            \oint_{\substack{\text{ANY}\\\text{loop}}} \vvec{E} \cdot \dd{\vvec{l}} 
+            = \iint_{\substack{\text{ANY}\\\text{surface}}} (\curl \vvec{E})\cdot\dd{\vvec{s}} = 0 
+            \quad\Rightarrow\quad 
+            \curl \vvec{E} = 0
+        }
+        Because \red{curl of gradient is always 0}, 
+        we can always replace $\vvec{E}$ with the gradient of some scalar function.
+        \aleq{
+            \curl \vvec{E} = 0 \quad\Rightarrow\quad \curl (\grad V) = 0
+        }
 
+        \item Divergence of $\vvec{B}$ is always 0,
+        meanwhile \red{divergence of curl is always 0}. 
+        So we can always replace $\vvec{B}$ with the curl of some vector function.
+        \aleq{
+            \div \vvec{B} = 0 \quad\Rightarrow\quad \div (\curl \vvec{A}) = 0
+        }
+    \end{enumerate}
+\end{notation}
 
+\iffalse
+\begin{notation}[Side note 1:]
+    We can verify the identity 
+    $\curl (\curl \vvec{F}) \equiv \grad (\div \vvec{F}) - \laplacian \vvec{F}$ by brute force.
+    \aleq{
+        \grad (\div \vvec{F}) &= \qty(\gradRec{})\qty(\divRec{F_x}[F_y][F_z]) \\[1ex]
+        %
+        &= \qty(\pdv[2]{F_x}{x} + \pdv{F_y}{x}{y} + \pdv{F_z}{x}{z})\hhat{x}
+        + \qty(\pdv{F_x}{y}{x} + \pdv[2]{F_y}{y} + \pdv{F_z}{y}{z})\hhat{y}
+        + \qty(\pdv{F_x}{z}{x} + \pdv{F_y}{z}{y} + \pdv[2]{F_z}{z} )\hhat{z}\\[2ex]
+        %
+        \laplacian \vvec{F} &= \qty(\lapRec{F_x})\hhat{x} 
+            + \qty(\lapRec{F_y})\hhat{y} 
+            + \qty(\lapRec{F_z})\hhat{z} 
+    }
+
+    Combining together, 
+    \aleq{
+        \grad (\div \vvec{F}) - \laplacian \vvec{F} 
+        &= 
+        \biggl[
+            \pdv{y}\cub[blue]{\qty(\pdv{F_y}{x} -\pdv{F_x}{y})}{\text{z component of }\curl \vvec{F}} 
+            - \pdv{z}\cub[blue]{\qty(\pdv{F_x}{z} -\pdv{F_z}{x})}{\text{y component of }\curl \vvec{F}}
+        \biggr]\hhat{x}\\[1ex] %
+        &\quad\ + \biggl[
+            \pdv{x}\cub[blue]{\qty(\pdv{F_y}{x} -\pdv{F_x}{y})}{\text{z component of }\curl \vvec{F}} 
+            + \pdv{z}\cub[blue]{\qty(\pdv{F_z}{y} -\pdv{F_y}{z})}{\text{x component of }\curl \vvec{F}}
+        \biggr]\hhat{y}\\[1ex] %
+        &\quad\ + \biggl[
+            \pdv{x}\cub[blue]{\qty(\pdv{F_x}{z} -\pdv{F_z}{x})}{\text{y component of }\curl \vvec{F}} 
+            + \pdv{y}\cub[blue]{\qty(\pdv{F_z}{y} -\pdv{F_y}{z})}{\text{x component of }\curl \vvec{F}}
+        \biggr]\hhat{z}\\[1ex]
+        %
+        &= \curl (\curl \vvec{F})
+    }
+\end{notation}
+\fi
 
 \linesep
 %%%%%%%%%%%%%%
@@ -931,13 +1294,13 @@ Here we shall summarize the methods of solving magnetostatics problems:
     \item Very symmetric configurations 
     $\Rightarrow$ Ampere's law integral form. No calculus required.
 
-    \item Not so symmetric but satisfies $\vvec{A}(\vvec{r}=\infty)=0$ 
+    \item Not so symmetric but satisfies $\div \vvec{A}=0$ 
     $\Rightarrow$ Multiple integral with Biot-Savat law.
 
     \item All the above do not apply 
-    $\Rightarrow$ Solve Poisson equation explicitly. PDE hell %\emoji{skull}.
+    $\Rightarrow$ Solve Poisson equation explicitly. PDE hell. %\emoji{skull}.
 \end{enumerate}
-
+\linesep
 %%%
 \theend
 \end{document}
