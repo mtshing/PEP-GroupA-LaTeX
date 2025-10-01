@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  2 OCT 2025 01:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 SEP 2025 23:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,529 +840,206 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--55
 
  []
 
-<img/current_line1.png, id=63, 139.11975pt x 227.6505pt>
-File: img/current_line1.png Graphic file (type png)
-<use img/current_line1.png>
-Package pdftex.def Info: img/current_line1.png  used on input line 80.
-(pdftex.def)             Requested size: 71.80348pt x 117.49878pt.
-<img/current_line2.png, id=64, 152.9715pt x 235.47975pt>
-File: img/current_line2.png Graphic file (type png)
-<use img/current_line2.png>
-Package pdftex.def Info: img/current_line2.png  used on input line 85.
-(pdftex.def)             Requested size: 76.32915pt x 117.49878pt.
 
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/current_line1.png> <./img/current_line2.png>]
-<img/current_sur.png, id=80, 319.79475pt x 202.356pt>
-File: img/current_sur.png Graphic file (type png)
-<use img/current_sur.png>
-Package pdftex.def Info: img/current_sur.png  used on input line 119.
-(pdftex.def)             Requested size: 148.55174pt x 93.99902pt.
-<img/current_vol.png, id=81, 349.305pt x 249.93375pt>
-File: img/current_vol.png Graphic file (type png)
-<use img/current_vol.png>
-Package pdftex.def Info: img/current_vol.png  used on input line 133.
-(pdftex.def)             Requested size: 131.3728pt x 93.99902pt.
-<img/current_charge.png, id=82, 643.80525pt x 291.489pt>
-File: img/current_charge.png Graphic file (type png)
-<use img/current_charge.png>
-Package pdftex.def Info: img/current_charge.png  used on input line 146.
-(pdftex.def)             Requested size: 207.03456pt x 93.7365pt.
-
-
-[2 <./img/current_sur.png> <./img/current_vol.png> <./img/current_charge.png>]
-<img/rod1.png, id=87, 400.49625pt x 310.15875pt>
-File: img/rod1.png Graphic file (type png)
-<use img/rod1.png>
-Package pdftex.def Info: img/rod1.png  used on input line 171.
-(pdftex.def)             Requested size: 146.78195pt x 113.67316pt.
-<img/rod2.png, id=88, 340.8735pt x 280.04625pt>
-File: img/rod2.png Graphic file (type png)
-<use img/rod2.png>
-Package pdftex.def Info: img/rod2.png  used on input line 176.
-(pdftex.def)             Requested size: 146.78195pt x 120.59273pt.
-<img/rod3.png, id=89, 230.0595pt x 222.23026pt>
-File: img/rod3.png Graphic file (type png)
-<use img/rod3.png>
-Package pdftex.def Info: img/rod3.png  used on input line 204.
-(pdftex.def)             Requested size: 73.38724pt x 70.88792pt.
-<img/rod4.png, id=90, 199.947pt x 160.1985pt>
-File: img/rod4.png Graphic file (type png)
-<use img/rod4.png>
-Package pdftex.def Info: img/rod4.png  used on input line 213.
-(pdftex.def)             Requested size: 88.06468pt x 70.556pt.
-<img/rod5.png, id=91, 221.628pt x 178.266pt>
-File: img/rod5.png Graphic file (type png)
-<use img/rod5.png>
-Package pdftex.def Info: img/rod5.png  used on input line 218.
-(pdftex.def)             Requested size: 88.06468pt x 70.83455pt.
-
-
-[3 <./img/rod1.png> <./img/rod2.png> <./img/rod3.png> <./img/rod4.png> <./img/rod5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 258--261
-
- []
-
-<img/dot1.png, id=98, 118.041pt x 163.20975pt>
-File: img/dot1.png Graphic file (type png)
-<use img/dot1.png>
-Package pdftex.def Info: img/dot1.png  used on input line 299.
-(pdftex.def)             Requested size: 33.02612pt x 45.66354pt.
-<img/dot2.png, id=99, 94.55325pt x 201.75375pt>
-File: img/dot2.png Graphic file (type png)
-<use img/dot2.png>
-Package pdftex.def Info: img/dot2.png  used on input line 307.
-(pdftex.def)             Requested size: 27.39847pt x 58.4609pt.
-<img/dot3.png, id=100, 110.21175pt x 139.722pt>
-File: img/dot3.png Graphic file (type png)
-<use img/dot3.png>
-Package pdftex.def Info: img/dot3.png  used on input line 315.
-(pdftex.def)             Requested size: 36.69548pt x 46.51987pt.
-<img/dot4.png, id=101, 291.489pt x 274.02374pt>
-File: img/dot4.png Graphic file (type png)
-<use img/dot4.png>
-Package pdftex.def Info: img/dot4.png  used on input line 330.
-(pdftex.def)             Requested size: 132.10284pt x 124.1876pt.
-<img/dot5.png, id=102, 297.5115pt x 292.6935pt>
-File: img/dot5.png Graphic file (type png)
-<use img/dot5.png>
-Package pdftex.def Info: img/dot5.png  used on input line 337.
-(pdftex.def)             Requested size: 132.10284pt x 129.96458pt.
-
-
-[4 <./img/dot1.png> <./img/dot2.png> <./img/dot3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 359--361
-
- []
-
-<img/dot_loop1.png, id=107, 318.59026pt x 283.65974pt>
-File: img/dot_loop1.png Graphic file (type png)
-<use img/dot_loop1.png>
-Package pdftex.def Info: img/dot_loop1.png  used on input line 373.
-(pdftex.def)             Requested size: 105.57262pt x 93.99902pt.
-<img/dot_loop2.png, id=108, 328.8285pt x 266.79675pt>
-File: img/dot_loop2.png Graphic file (type png)
-<use img/dot_loop2.png>
-Package pdftex.def Info: img/dot_loop2.png  used on input line 385.
-(pdftex.def)             Requested size: 115.85435pt x 93.99902pt.
-<img/dot_loop3.png, id=109, 263.7855pt x 248.127pt>
-File: img/dot_loop3.png Graphic file (type png)
-<use img/dot_loop3.png>
-Package pdftex.def Info: img/dot_loop3.png  used on input line 397.
-(pdftex.def)             Requested size: 99.9296pt x 93.99902pt.
-
-
-[5 <./img/dot4.png> <./img/dot5.png> <./img/dot_loop1.png> <./img/dot_loop2.png> <./img/dot_loop3.png>]
-<img/dot_loop4.png, id=114, 243.91125pt x 227.6505pt>
-File: img/dot_loop4.png Graphic file (type png)
-<use img/dot_loop4.png>
-Package pdftex.def Info: img/dot_loop4.png  used on input line 413.
-(pdftex.def)             Requested size: 97.85214pt x 91.32953pt.
-<img/dot_loop5.png, id=115, 381.8265pt x 201.1515pt>
-File: img/dot_loop5.png Graphic file (type png)
-<use img/dot_loop5.png>
-Package pdftex.def Info: img/dot_loop5.png  used on input line 418.
-(pdftex.def)             Requested size: 171.24686pt x 90.21654pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
 
  []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 195--198
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 430.
-
-<img/loop1.png, id=116, 575.751pt x 273.4215pt>
-File: img/loop1.png Graphic file (type png)
-<use img/loop1.png>
-Package pdftex.def Info: img/loop1.png  used on input line 464.
-(pdftex.def)             Requested size: 195.70428pt x 92.94121pt.
-<img/loop2.png, id=117, 293.898pt x 329.43076pt>
-File: img/loop2.png Graphic file (type png)
-<use img/loop2.png>
-Package pdftex.def Info: img/loop2.png  used on input line 469.
-(pdftex.def)             Requested size: 73.38724pt x 82.25694pt.
-<img/loop3.png, id=118, 673.91776pt x 423.38174pt>
-File: img/loop3.png Graphic file (type png)
-<use img/loop3.png>
-Package pdftex.def Info: img/loop3.png  used on input line 478.
-(pdftex.def)             Requested size: 293.5639pt x 184.42798pt.
-
-
-[6 <./img/dot_loop4.png> <./img/dot_loop5.png> <./img/loop1.png> <./img/loop2.png>]
-<img/loop_e1.png, id=124, 213.1965pt x 166.221pt>
-File: img/loop_e1.png Graphic file (type png)
-<use img/loop_e1.png>
-Package pdftex.def Info: img/loop_e1.png  used on input line 498.
-(pdftex.def)             Requested size: 82.77745pt x 64.53677pt.
-
-Overfull \hbox (5.80975pt too wide) in paragraph at lines 485--500
-[]$   $[]$ 
- []
-
-<img/loop_e2.png, id=125, 224.037pt x 222.23026pt>
-File: img/loop_e2.png Graphic file (type png)
-<use img/loop_e2.png>
-Package pdftex.def Info: img/loop_e2.png  used on input line 516.
-(pdftex.def)             Requested size: 82.77745pt x 82.10861pt.
-
-Overfull \hbox (0.9123pt too wide) in paragraph at lines 503--518
-[]$   $[]$ 
- []
-
-<img/loop_e3.png, id=126, 201.1515pt x 142.131pt>
-File: img/loop_e3.png Graphic file (type png)
-<use img/loop_e3.png>
-Package pdftex.def Info: img/loop_e3.png  used on input line 534.
-(pdftex.def)             Requested size: 82.77745pt x 58.48877pt.
-
-Overfull \hbox (5.80975pt too wide) in paragraph at lines 521--536
-[]$   $[]$ 
- []
-
-<img/loop_e4.png, id=127, 221.628pt x 166.82326pt>
-File: img/loop_e4.png Graphic file (type png)
-<use img/loop_e4.png>
-Package pdftex.def Info: img/loop_e4.png  used on input line 551.
-(pdftex.def)             Requested size: 86.91656pt x 65.42226pt.
-
-Overfull \hbox (4.13911pt too wide) in paragraph at lines 551--552
- [][] 
  []
 
 
-Overfull \hbox (0.9123pt too wide) in paragraph at lines 538--553
-[]$   $[]$ 
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 235--239
+
  []
 
 
-Overfull \hbox (13.11327pt too wide) detected at line 578
+Underfull \hbox (badness 10000) in paragraph at lines 240--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+
+ []
+
+
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 309.
+
+
+
+[5]
+Overfull \hbox (13.11327pt too wide) detected at line 411
+[]
+ []
+
+
+Overfull \hbox (16.70412pt too wide) detected at line 435
 []
  []
 
 
 
-[7 <./img/loop3.png> <./img/loop_e1.png> <./img/loop_e2.png> <./img/loop_e3.png> <./img/loop_e4.png>]
-Overfull \hbox (16.70412pt too wide) detected at line 603
+[6]
+Overfull \hbox (3.66354pt too wide) detected at line 446
 []
  []
 
 
-Overfull \hbox (6.88577pt too wide) detected at line 614
-[]
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 524--529
+
  []
 
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 694--699
-
- []
-
-
 
 [9]
-<img/wire.png, id=145, 117.43875pt x 220.4235pt>
-File: img/wire.png Graphic file (type png)
-<use img/wire.png>
-Package pdftex.def Info: img/wire.png  used on input line 748.
-(pdftex.def)             Requested size: 36.69548pt x 68.87207pt.
-<img/solen.png, id=146, 146.949pt x 406.51875pt>
-File: img/solen.png Graphic file (type png)
-<use img/solen.png>
-Package pdftex.def Info: img/solen.png  used on input line 755.
-(pdftex.def)             Requested size: 44.03502pt x 121.8201pt.
-<img/plane.png, id=147, 242.1045pt x 219.219pt>
-File: img/plane.png Graphic file (type png)
-<use img/plane.png>
-Package pdftex.def Info: img/plane.png  used on input line 762.
-(pdftex.def)             Requested size: 88.07005pt x 79.74498pt.
-<img/torus.png, id=148, 253.54726pt x 252.34274pt>
-File: img/torus.png Graphic file (type png)
-<use img/torus.png>
-Package pdftex.def Info: img/torus.png  used on input line 769.
-(pdftex.def)             Requested size: 88.07005pt x 87.65129pt.
-<img/wire2.png, id=149, 69.861pt x 231.86626pt>
-File: img/wire2.png Graphic file (type png)
-<use img/wire2.png>
-Package pdftex.def Info: img/wire2.png  used on input line 787.
-(pdftex.def)             Requested size: 21.24094pt x 70.49927pt.
+
+[10]
+Overfull \hbox (5.57622pt too wide) in paragraph at lines 777--781
+\OT1/cmr/m/n/12 stud-ied PDEs in his-tory. It is []$[]$[].
+ []
 
 
-[10 <./img/wire.png> <./img/solen.png> <./img/plane.png> <./img/torus.png>]
-<img/wire_loop.png, id=156, 374.5995pt x 383.031pt>
-File: img/wire_loop.png Graphic file (type png)
-<use img/wire_loop.png>
-Package pdftex.def Info: img/wire_loop.png  used on input line 797.
-(pdftex.def)             Requested size: 91.92915pt x 93.99902pt.
-<img/wire_r.png, id=157, 359.54324pt x 366.77025pt>
-File: img/wire_r.png Graphic file (type png)
-<use img/wire_r.png>
-Package pdftex.def Info: img/wire_r.png  used on input line 804.
-(pdftex.def)             Requested size: 92.14589pt x 93.99902pt.
-<img/wire_z.png, id=158, 141.52875pt x 337.26pt>
-File: img/wire_z.png Graphic file (type png)
-<use img/wire_z.png>
-Package pdftex.def Info: img/wire_z.png  used on input line 811.
-(pdftex.def)             Requested size: 39.44421pt x 93.99902pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--818
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 802--804
 
  []
 
-<img/wire_div.png, id=159, 122.25674pt x 384.2355pt>
-File: img/wire_div.png Graphic file (type png)
-<use img/wire_div.png>
-Package pdftex.def Info: img/wire_div.png  used on input line 832.
-(pdftex.def)             Requested size: 33.64589pt x 105.7489pt.
-<img/wire_inf.png, id=160, 778.70924pt x 312.56775pt>
-File: img/wire_inf.png Graphic file (type png)
-<use img/wire_inf.png>
-Package pdftex.def Info: img/wire_inf.png  used on input line 844.
-(pdftex.def)             Requested size: 229.94675pt x 92.2973pt.
 
-
-[11 <./img/wire2.png> <./img/wire_loop.png> <./img/wire_r.png> <./img/wire_z.png> <./img/wire_div.png> <./img/wire_inf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 885--888
-
+Overfull \hbox (3.30862pt too wide) in paragraph at lines 816--831
+\OT1/cmr/m/n/12 spe-cial case - When the []$[]$[] + []$[]$[],
  []
 
-<img/solen_cross.png, id=167, 337.26pt x 308.352pt>
-File: img/solen_cross.png Graphic file (type png)
-<use img/solen_cross.png>
-Package pdftex.def Info: img/solen_cross.png  used on input line 903.
-(pdftex.def)             Requested size: 122.31705pt x 111.83002pt.
-<img/solen_div.png, id=168, 210.7875pt x 405.9165pt>
-File: img/solen_div.png Graphic file (type png)
-<use img/solen_div.png>
-Package pdftex.def Info: img/solen_div.png  used on input line 920.
-(pdftex.def)             Requested size: 54.91281pt x 105.7489pt.
 
-Overfull \hbox (5.98302pt too wide) in paragraph at lines 920--921
- [][] 
- []
-
-<img/solen_loop.png, id=169, 154.77824pt x 309.5565pt>
-File: img/solen_loop.png Graphic file (type png)
-<use img/solen_loop.png>
-Package pdftex.def Info: img/solen_loop.png  used on input line 936.
-(pdftex.def)             Requested size: 52.87424pt x 105.7489pt.
-
-Overfull \hbox (3.94444pt too wide) in paragraph at lines 936--937
- [][] 
- []
-
-<img/solen_inf.png, id=170, 834.7185pt x 321.6015pt>
-File: img/solen_inf.png Graphic file (type png)
-<use img/solen_inf.png>
-Package pdftex.def Info: img/solen_inf.png  used on input line 947.
-(pdftex.def)             Requested size: 293.5639pt x 113.1069pt.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 831.
 
 
-[12 <./img/solen_cross.png> <./img/solen_div.png> <./img/solen_loop.png>]
-
-[13 <./img/solen_inf.png>]
-<img/poisson_J.png, id=183, 449.2785pt x 408.3255pt>
-File: img/poisson_J.png Graphic file (type png)
-<use img/poisson_J.png>
-Package pdftex.def Info: img/poisson_J.png  used on input line 1075.
-(pdftex.def)             Requested size: 132.10449pt x 120.06244pt.
-<img/poisson_A.png, id=184, 454.0965pt x 403.5075pt>
-File: img/poisson_A.png Graphic file (type png)
-<use img/poisson_A.png>
-Package pdftex.def Info: img/poisson_A.png  used on input line 1080.
-(pdftex.def)             Requested size: 132.10449pt x 117.38359pt.
-
-
-[14 <./img/poisson_J.png> <./img/poisson_A.png>]
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1107.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1107.
-
-
-Overfull \hbox (82.21667pt too wide) detected at line 1107
-[]
- []
-
-<img/coulomb_elem.png, id=193, 314.97675pt x 281.853pt>
-File: img/coulomb_elem.png Graphic file (type png)
-<use img/coulomb_elem.png>
-Package pdftex.def Info: img/coulomb_elem.png  used on input line 1112.
-(pdftex.def)             Requested size: 122.31705pt x 109.45345pt.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1122.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\va' on input line 1122.
+(hyperref)                removing `math shift' on input line 839.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1122.
+(hyperref)                removing `\va' on input line 839.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1122.
+(hyperref)                removing `math shift' on input line 839.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\va' on input line 1122.
+(hyperref)                removing `math shift' on input line 839.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1122.
-
-<img/triangleB.png, id=194, 1826.825pt x 1570.86874pt>
-File: img/triangleB.png Graphic file (type png)
-<use img/triangleB.png>
-Package pdftex.def Info: img/triangleB.png  used on input line 1169.
-(pdftex.def)             Requested size: 244.6341pt x 210.3563pt.
-
-
-[15 <./img/coulomb_elem.png>]
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1186.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1186.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1193--1194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1194--1195
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1199--1205
-
- []
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1216.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1223.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1223.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1223.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1223.
+(hyperref)                removing `math shift' on input line 839.
 
 
 
-[16 <./img/triangleB.png>]
+[12]
 
-[17] (./B_field.aux)
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 873.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 873.
+
+
+
+[13] (./B_field.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `B_field.out' has not changed.
-(rerunfilecheck)             Checksum: 320D9160B4249C9BCBEA1518181BB564;2485.
+(rerunfilecheck)             Checksum: 2B51F5BE953AB5C11D1BE1CEBD52D578;2480.
  ) 
 Here is how much of TeX's memory you used:
- 30784 strings out of 469747
- 585389 string characters out of 5481688
- 966198 words of memory out of 5000000
- 58544 multiletter control sequences out of 15000+600000
- 652562 words of font info for 137 fonts, out of 8000000 for 9000
+ 30064 strings out of 469747
+ 571527 string characters out of 5481688
+ 958584 words of memory out of 5000000
+ 57828 multiletter control sequences out of 15000+600000
+ 649642 words of font info for 126 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,27n,159p,591b,940s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on B_field.pdf (17 pages, 1035759 bytes).
+ 125i,27n,159p,591b,936s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on B_field.pdf (13 pages, 258896 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 350 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
