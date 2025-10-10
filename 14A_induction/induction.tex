@@ -1,0 +1,296 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../.common/common}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{T12 (Electromagnetism)}
+\title{Magnetic Induction}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+
+\begin{overview}
+    \begin{itemize}
+        \item Lorentz force
+        \item Faraday's law, motional/transformer EMF \& Lenz's law 
+    \end{itemize}
+\end{overview}
+
+\vskip 1em
+In electromagnetism, 
+theoretically every problem can be solved through a set of PDEs
+called the \bf{Maxwell Equations}.\\[-2em]
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \div \vvec{E} &= \frac{\rho}{\epsilon_0}\\
+            \tkn{maxwell_faraday}{\curl} \vvec{E} &= -\pdvv{\vvec{B}}{t}
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \div \vvec{B} &= 0\\
+            \curl \vvec{B} &= \mu_0 \vvec{J} + \mu_0\epsilon_0\pdvv{\vvec{E}}{t}
+        }
+    \end{minipage}
+\end{center}
+\addArrow[blue]{maxwell_faraday}{(-5ex,0)}{}{(-3ex,1ex)}
+
+However, a \it{system of PDEs} is too complicated to be solved.
+So we need to learn different "tricks" to avoid them,
+which are enough for some simple scenarios.\\
+
+Electrostatics only concerns the \nth{3} equation of the set - \cul[blue]{Faraday's law}. 
+
+
+
+\linesep
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{-1}
+\section{A Brief History of Electromagnetism}
+
+Electromagnetic induction is likely the most confusing topic in beginner E\&M.
+In my opinion, knowing a bit of the history is helpful to unify the concepts you have learnt.
+
+\begin{center}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{0.06\textwidth} >{\centering\arraybackslash}m{0.2\textwidth} p{0.66\textwidth}}
+        Year & Who & \makecell[c]{Advancement} \\ 
+        \hline
+        $<$1500s
+        &
+        & Different electrostatics phenomena were known.
+        But they were not unified or explained at all. \\
+        %
+        1600 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/William_Gilbert_(physicist)}{\ul{William Gilbert}}} 
+        & The first person to use the word "electrical" to describe electrostatics phenomena. 
+        Also the first to propose that electrical effect is due to flows of particles.\\[1.5em]
+        %
+        1750 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Benjamin_Franklin}{\ul{Benjamin Franklin}}}
+        & Developed a one "fluid" theory of electricity, 
+        and called this fluid "charge".\\[1.5em]
+        %
+        1784 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb}{\ul{Charles-Augustin}}\\
+            \href{https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb}{\ul{de Coulomb}}}
+        & \makecell[tl]{
+            Experimentally showed that force between charged objects $\propto \inv{r^2}$.\\
+            \gray{(Coulomb's law $F = \inv{4\pi\epsilon_0}\frac{Qq}{r^2}$)}
+        }\\[1.5em]
+        %
+        1800 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Alessandro_Volta}{\ul{Alessandro Volta}}}
+        & \makecell[tl]{
+            Made the first battery from electro-chemistry.\\
+            \gray{(First time to have steady current.)}
+        }\\[1.5em]
+        %
+    \end{tabularx}
+\end{center}
+
+
+\begin{center}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{0.06\textwidth} >{\centering\arraybackslash}m{0.2\textwidth} p{0.66\textwidth}}
+        
+        1820 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Hans_Christian_\%C3\%98rsted}{\ul{Hans Christian}}\\
+            \href{https://en.wikipedia.org/wiki/Hans_Christian_\%C3\%98rsted}{\ul{Ørsted}}}
+        & \makecell[tl]{
+            Discovered that current wire can deflect compress.\\
+            \gray{(First time to relate electric and magnetic phenomena.)}
+        }\\[2em]
+        %
+        1820 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Andr\%C3\%A9-Marie_Amp\%C3\%A8re}{\ul{André-Marie}} \\
+            \href{https://en.wikipedia.org/wiki/Andr\%C3\%A9-Marie_Amp\%C3\%A8re}{\ul{Ampère}}}
+        & \makecell[tl]{
+            Formulated and verified the force between current wires.\\
+            \gray{$(F = I\vvec{l}_1\cross \frac{\mu_0 I}{2\pi r}\vvec{l}_2)$}
+        }\\[2em]
+        %
+        1831 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Michael_Faraday}{\ul{Michael Faraday}}}
+        & \makecell[tl]{
+            Discovered and experimented on magnetic induction, include\\
+            - Across iron core: Reading appears at the instant when switch is on/off.\\
+            - Moving frame: Reading appears when wireframe moves, changes shape \\
+            or when magnetic field change.\\
+            \red{insertFig}
+        }\\[1.5em]
+        %
+        1834 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Emil_Lenz}{\ul{Emil Lenz}}}
+        & \makecell[tl]{
+            Explained direction of induced current by energy conservation.\\
+            \gray{(Lenz's Law)}
+        }\\[1.5em]
+        %
+        1860 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/James_Clerk_Maxwell}{\ul{James Clerk}}\\
+            \href{https://en.wikipedia.org/wiki/James_Clerk_Maxwell}{\ul{Maxwell}}}
+        & \makecell[tl]{
+            - Unified past discoveries into 20 equations.\\
+            - Introduced field description.\\[1ex]
+            \red{This is the first time we write $\vb{E}$ and $\vb{B}$.}\\
+            \red{Before Maxwell, everything was described in terms of force.}\\ 
+        }\\[4.5em]
+        %
+        1893 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{\ul{Oliver Heaviside}}}
+        & \makecell[tl]{
+            Unified the 20 equations from Maxwell to 4, by vector calculus.\\
+            \gray{(This is the version of Maxwell's equation we now know.)}
+        }\\[1em]
+        %
+        1895 &
+        \makecell[t]{\href{https://en.wikipedia.org/wiki/Hendrik_Lorentz}{\ul{Hendrik Lorentz}}}
+        & \makecell[tl]{
+            Derive the correct force on charges under both $\vvec{E}$ and $\vvec{B}$.\\
+            \gray{(Lorentz force law)}
+        }\\[1em]
+
+    \end{tabularx}
+\end{center}
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motion under Lorentz Force}
+
+Nowadays we know that Lorentz force is the fundamental explanation to magnetic induction.
+But interestingly, it was formulated correctly only in the very late history of classical E\&M.
+\aleq{
+    \Aboxed{
+        m\vvec{a} = \vvec{F} = q\vvec{E} + q\vvec{v}\cross\vvec{B}
+    }
+}
+
+In general, $\vvec{E}$ and $\vvec{B}$ may be function of time and position. 
+Below we will only discuss the special case when the fields are constant.
+By symmetry, we can assume that $\vvec{B}$ is only in $\hhat{z}$ direction, 
+i.e. $\vvec{B} = B_z\hhat{z}$.
+The Newton's \nth{2} law then writes as
+\aleq{
+    m\dvv{t}\bmat{v_x\\v_y\\v_z} = q\bmat{E_x\\E_y\\E_z} 
+        + q\bdet{\hhat{x} & \hhat{y} & \hhat{z}\\ v_x & v_y & v_z \\ 0 & 0 & B_z}
+}
+
+which turns into a system of 3 \nth{1} order linear ODEs.
+\aleq{
+    \bcase{
+        m\dvv{v_x}{t} &= qE_x + qv_yB_z\\
+        m\dvv{v_y}{t} &= qE_y - qv_xB_z\\
+        m\dvv{v_z}{t} &= qE_z
+    }
+}
+
+This system is simple enough that we do not need to use the matrix method.
+\begin{itemize}
+    \item \bf{\ul{z component}}
+    \item \bf{\ul{x/y components}}
+\end{itemize}
+
+\bf{\ul{Interpretation}}\\
+We can see that the resultant motion is a combination of circular motion + drifting.
+% repeat eq specific circular and drift
+\insertFig{lorentz drift}
+\begin{enumerate}
+    \item Note that the drifting direction is not intuitive: 
+    \begin{itemize}
+        \item With $E_x$ only, drifting direction = $-\hhat{y}$
+        \item With $E_y$ only, drifting direction = $\hhat{x}$
+    \end{itemize}
+    In general, the drifting direction is along $\vvec{E}\cross\vvec{B}$ with a speed $\frac{\norm{\vvec{E}\cross\vvec{B}}}{\norm{\vvec{B}}^2}$
+\end{enumerate}
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Magnetic Induction}
+
+
+%%%%%%%%%%%%%%
+\subsection{EMF - Force or Voltage?}
+
+The term \bf{electromotive force} (EMF) was invented by Alessandro Volta in 1801,
+for explaining observations in electrochemistry.\\
+
+Metal electrodes in electrolyte 
+\begin{itemize}
+    \item[$\Rightarrow$] Current generates spontaneously.
+    \item[$\Rightarrow$] There must be some kind of "force" pushing the current! 
+\end{itemize}
+
+\insertFig{electrolyte}
+
+In early 1800s, scientists tended to describe things like mechanical system,
+i.e. any motions of objects must be driven by some kind of "force".
+So when there is a steady current, 
+there must be a "force" that keep pushing the charges forward.
+namely the "electromotive force". 
+
+\begin{itemize}
+    \item However, EMF took the unit of volt because 
+    voltage measurement was the only way to quantify the magnitude of EMF.
+    \item Later when Michael Faraday discovered the phenomena of magnetic induction,
+    he used the same word to refer to the source of the induced current.
+\end{itemize}
+
+
+Today we still keep the name as a "force", 
+even though we already know much better how current is generated in different sources.
+Maybe because people are already used to refer the same word \red{"EMF" 
+as the general name for ANY kind of current source}, 
+rather than discriminating them by their origin of energy.
+
+\insertFig{i dun care}
+
+Here we only focus on the two kinds of EMF that relate to magnetic induction phenomena.
+\begin{itemize}
+    \item \bf{\ul{Motional EMF}} : Source of energy = Motion of the charges' "container".
+    Can be explained via Lorentz force.
+
+    \item \bf{\ul{Transformer EMF}} : Source of energy = Change in magnetic field.
+    Explanation requires relativity.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%
+\subsection{Motional EMF}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{A Moving Battery}
+
+%%%%%%%%%%%%%%
+\subsubsection{Generalization to Flux}
+
+%%%%%%%%%%%%%%
+\subsection{Transformer EMF}
+
+%%%%%%%%%%%%%%
+\subsection{Maxwell-Faraday Equation}
+
+%%%%%%%%%%%%%%
+\subsection{Lenz's Law}
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic Problems in Magnetic Induction}
+
+
+%%%
+\theend
+\end{document}
