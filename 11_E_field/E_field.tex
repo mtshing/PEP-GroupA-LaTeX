@@ -60,21 +60,127 @@ Electrostatics only concerns the \nth{1} equation of the set - \cul[blue]{Gauss'
 \linesep
 % content begins here
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Basic Skill: Coulomb's Law with Integration}
+\section{Coulomb's Law with Integration}
 
-Promoting point charge to a distribution of charge
-is straightforward by
+%%%%%%%%%%%%%%
+\subsection{From Points to Distributions}
+
+In high school Physics, 
+problems related to electrostatics only concern point charges.
+For example, given the magnitudes and positions of several point charges,
+the question may ask you the E-field at one position. 
+
+\begin{center}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{coulomb1}\\
+        Given charges $Q$ (A number)
+    \end{minipage}
+    \qquad$\Rightarrow$\qquad
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{coulomb2}\\
+        Ask for E-field $\vvec{E}$ (A vector)
+    \end{minipage}
+\end{center}
+
+\vskip 1ex
+But in university physics, we promote point charges to a charge distribution (function) in a space,
+and our task becomes solving for the E-field distribution (function) in the space.
+
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{coulomb3}\\
+        Given charges \bf{distribution}\\ $Q(x,y,z)$\\ (A scalar \cul[red]{function} of position)
+    \end{minipage}
+    \qquad$\Rightarrow$\qquad
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \vskip 0.8em
+        \includegraphics[width=\textwidth]{coulomb4}\\
+        Ask for E-field \bf{distribution}\\ $\vvec{E}(x,y,z)$\\ (A vector \cul[red]{function} of position)
+    \end{minipage}
+\end{center}
+
+\vskip 1ex
+This ultimate task is to \cul[red]{find a function from another function}! 
+This is why E\&M is generally a hard topic - 
+these problems were supposed to be solved by PDEs!
+
+
+%%%%%%%%%%%%%%
+\subsection{Charge Densities}
+
+Yet we may avoid solving PDE when the problem is simple enough.
+For example, if we are only interested in the E-field at one specific point - 
+we only need to carry out one or two integrations after writing down the Coulomb's law towards that point.\\
+
+Firstly, we shall promote point charges to charge distributions.
 \aleq{
     \quad\qquad\qquad \ \qty(\mstack{\text{Point}\\\text{charge}}) \ =\ Q 
-    \quad\ \xRightarrow{\phantom{000}}\quad
+    \qquad\ \xRightarrow{\phantom{000}}\qquad
     \int_{\substack{\text{whole}\\\text{space}}} \dd{Q} \quad \sim\ 
     \sum_\text{everywhere} \qty(\mstack{\text{Infinitestimal}\\\text{charge units}})
 }
 
+Because we are living in a 3D world, 
+charges may be contained in objects of different dimensions. 
+A charge distribution is often represented by a \bf{charge density function}.
+
+\vskip 1em
+\begin{minipage}{0.6\linewidth}
+    \begin{itemize}
+        \item \bf{\ul{Line Charge Density}} : $\lambda = \lambda(x)$
+        \aleq{
+            \quad\Rightarrow\quad \dd{Q} = \lambda\dd{l} 
+            = \qty(\substack{\text{Charge}\\\text{per length}})\qty(\substack{\text{Unit}\\\text{length}})
+        }
+    \end{itemize}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.18\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{charge_line}
+\end{minipage}
+
+\vskip 1em
+\begin{minipage}{0.58\linewidth}
+    \begin{itemize}
+        \item \bf{\ul{Surface Charge Density}} : $\sigma = \sigma(x,y)$
+        \aleq{
+            \ \ \Rightarrow\quad \dd{Q} = \sigma\dd{s} 
+            = \qty(\substack{\text{Charge}\\\text{per area}})\qty(\substack{\text{Unit}\\\text{area}})
+        }
+    \end{itemize}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.25\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{charge_sur}
+\end{minipage}
+
+\vskip 1em
+\begin{minipage}{0.6\linewidth}
+    \begin{itemize}
+        \item \bf{\ul{Volume Charge Density}} : $\rho = \rho(x,y,z)$
+        \aleq{
+            \qquad\Rightarrow\quad \dd{Q} = \rho\dd{\tau} 
+            = \qty(\substack{\text{Charge}\\\text{per volume}})\qty(\substack{\text{Unit}\\\text{volume}})
+        }
+    \end{itemize}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.25\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{charge_vol}
+\end{minipage}
+
+
 Coulomb's law is then a sum of all E-field contribution from every infinitestimal charge:
 \aleq{
     \vvec{E} = \inv{4\pi\epsilon_0} \frac{Q}{r^2} \hhat{r}
-    \quad\xRightarrow{\phantom{000}}\quad
+    \qquad\xRightarrow{\phantom{000}}\qquad
     \int \dd{\vvec{E}} 
     = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\dd{Q}}{r^2}\hhat{r}
 }
@@ -82,25 +188,10 @@ Coulomb's law is then a sum of all E-field contribution from every infinitestima
 And the formula for electrical potential follows:
 \aleq{
     V = \inv{4\pi\epsilon_0} \frac{Q}{r}
-    \quad\xRightarrow{\phantom{000}}\quad
+    \qquad\xRightarrow{\phantom{000}}\qquad
     \int \dd{V} 
     = \int_{\substack{\text{whole}\\\text{space}}} \inv{4\pi\epsilon_0}  \frac{\dd{Q}}{r}
 }
-
-\begin{notation}
-    We often use these symbols to represent charge density at different dimension:
-    \begin{itemize}
-        \item Charge per volume = $\rho$ \quad$\Rightarrow$\quad 
-            $\dd{Q} = \rho\dd{\tau} = \qty(\substack{\text{Charge}\\\text{per volume}})\qty(\substack{\text{Unit}\\\text{volume}})$
-            
-        \item Charge per area = $\sigma$ \qquad\,$\Rightarrow$\quad 
-            $\dd{Q} = \sigma\dd{s} = \qty(\substack{\text{Charge}\\\text{per area}})\qty(\substack{\text{Unit}\\\text{area}})$
-
-        \item Charge per length = $\lambda$ \quad\ $\Rightarrow$\quad 
-            $\dd{Q} = \lambda\dd{l} = \qty(\substack{\text{Charge}\\\text{per length}})\qty(\substack{\text{Unit}\\\text{length}})$
-    \end{itemize}
-
-\end{notation}
 
 \vskip 1em
 \begin{example}
@@ -469,11 +560,15 @@ here only introduces some surfaces with simple parametrization.
         \dd{\vvec{s}} = (\hhat{u}\cross\hhat{v}) \dd{u}\dd{v}
     }
     So the flux is simply a double integral over a region on the plane.
+    \addBentArrow[blue]{not_close}{(-5ex,-2ex)}
+    {\scriptsize A plane is not a closed surface \\[-1ex]\scriptsize $\therefore$ no circle}
+    {(0,-2.5ex)}{(-10ex,0)}
     \aleq{
-        \Phi = \oiint \vvec{F} \cdot \dd{\vvec{s}} 
+        \Phi = \tkn{not_close}{\cul[blue]{\iint}} \vvec{F} \cdot \dd{\vvec{s}} 
         = \int_{v=c}^{v=d} \int_{u=a}^{u=b} \vvec{F}(x,y,z) 
             \cdot (\hhat{u}\cross\hhat{v})\dd{u}\dd{v}
     }
+    \vskip 1em
     \begin{center}
         \begin{minipage}{0.25\linewidth}
             \centering
@@ -509,7 +604,7 @@ the calculated flux is no longer meaningful.
     \begin{minipage}{0.45\linewidth}
         \centering
         E.g. If we choose a very big surface and calculate the flux $\approx 0$, 
-        Does it tells us where the diverging/convering points are?
+        Does it tells us where the diverging/converging points are?
     \end{minipage}
 \end{center}
 

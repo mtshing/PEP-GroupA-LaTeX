@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  2 OCT 2025 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  11 OCT 2025 02:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -320,6 +320,7 @@ File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
+Package hyperref Info: Option `breaklinks' set `true' on input line 4066.
 Package hyperref Info: Hyper figures OFF on input line 4195.
 Package hyperref Info: Link nesting OFF on input line 4200.
 Package hyperref Info: Hyper index ON on input line 4203.
@@ -840,542 +841,584 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--54
 
  []
 
+<img/coulomb1.png, id=87, 222.8325pt x 190.91325pt>
+File: img/coulomb1.png Graphic file (type png)
+<use img/coulomb1.png>
+Package pdftex.def Info: img/coulomb1.png  used on input line 76.
+(pdftex.def)             Requested size: 97.85214pt x 83.83603pt.
+<img/coulomb2.png, id=88, 215.00325pt x 183.68625pt>
+File: img/coulomb2.png Graphic file (type png)
+<use img/coulomb2.png>
+Package pdftex.def Info: img/coulomb2.png  used on input line 82.
+(pdftex.def)             Requested size: 97.85214pt x 83.59978pt.
+<img/coulomb3.png, id=89, 406.51875pt x 228.855pt>
+File: img/coulomb3.png Graphic file (type png)
+<use img/coulomb3.png>
+Package pdftex.def Info: img/coulomb3.png  used on input line 94.
+(pdftex.def)             Requested size: 195.70428pt x 110.1739pt.
+<img/coulomb4.png, id=90, 359.54324pt x 208.3785pt>
+File: img/coulomb4.png Graphic file (type png)
+<use img/coulomb4.png>
+Package pdftex.def Info: img/coulomb4.png  used on input line 101.
+(pdftex.def)             Requested size: 171.24686pt x 99.25107pt.
 
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<img/rod1.png, id=94, 351.714pt x 284.262pt>
-File: img/rod1.png Graphic file (type png)
-<use img/rod1.png>
-Package pdftex.def Info: img/rod1.png  used on input line 114.
-(pdftex.def)             Requested size: 146.78195pt x 118.63449pt.
-<img/rod2.png, id=95, 340.8735pt x 280.04625pt>
-File: img/rod2.png Graphic file (type png)
-<use img/rod2.png>
-Package pdftex.def Info: img/rod2.png  used on input line 119.
-(pdftex.def)             Requested size: 146.78195pt x 120.59273pt.
-<img/rod3.png, id=96, 230.0595pt x 222.23026pt>
-File: img/rod3.png Graphic file (type png)
-<use img/rod3.png>
-Package pdftex.def Info: img/rod3.png  used on input line 164.
-(pdftex.def)             Requested size: 73.38724pt x 70.88792pt.
-
-
-[2 <./img/rod1.png> <./img/rod2.png> <./img/rod3.png>]
-<img/pipe.png, id=105, 411.33675pt x 130.086pt>
-File: img/pipe.png Graphic file (type png)
-<use img/pipe.png>
-Package pdftex.def Info: img/pipe.png  used on input line 204.
-(pdftex.def)             Requested size: 132.10449pt x 41.77722pt.
-<img/pipe_sink.png, id=106, 446.26724pt x 146.949pt>
-File: img/pipe_sink.png Graphic file (type png)
-<use img/pipe_sink.png>
-Package pdftex.def Info: img/pipe_sink.png  used on input line 214.
-(pdftex.def)             Requested size: 137.96945pt x 42.23576pt.
-<img/pipe_source.png, id=107, 420.3705pt x 127.677pt>
-File: img/pipe_source.png Graphic file (type png)
-<use img/pipe_source.png>
-Package pdftex.def Info: img/pipe_source.png  used on input line 227.
-(pdftex.def)             Requested size: 137.96945pt x 41.9056pt.
-
-
-[3 <./img/pipe.png> <./img/pipe_sink.png> <./img/pipe_source.png>]
-File: img/pipe.png Graphic file (type png)
-<use img/pipe.png>
-Package pdftex.def Info: img/pipe.png  used on input line 267.
-(pdftex.def)             Requested size: 137.96945pt x 43.63316pt.
-<img/pipe_flow.png, id=112, 416.15475pt x 140.9265pt>
-File: img/pipe_flow.png Graphic file (type png)
-<use img/pipe_flow.png>
-Package pdftex.def Info: img/pipe_flow.png  used on input line 272.
-(pdftex.def)             Requested size: 137.96945pt x 46.72307pt.
-<img/pipe_field.png, id=113, 257.763pt x 134.30174pt>
-File: img/pipe_field.png Graphic file (type png)
-<use img/pipe_field.png>
-Package pdftex.def Info: img/pipe_field.png  used on input line 277.
-(pdftex.def)             Requested size: 91.9773pt x 47.92233pt.
-<img/pipe_sur1.png, id=114, 219.82124pt x 112.62074pt>
-File: img/pipe_sur1.png Graphic file (type png)
-<use img/pipe_sur1.png>
-Package pdftex.def Info: img/pipe_sur1.png  used on input line 286.
-(pdftex.def)             Requested size: 73.58464pt x 37.69939pt.
-<img/pipe_sur2.png, id=115, 227.04825pt x 105.996pt>
-File: img/pipe_sur2.png Graphic file (type png)
-<use img/pipe_sur2.png>
-Package pdftex.def Info: img/pipe_sur2.png  used on input line 291.
-(pdftex.def)             Requested size: 73.58464pt x 34.35124pt.
-<img/pipe_sur3.png, id=116, 205.9695pt x 104.18925pt>
-File: img/pipe_sur3.png Graphic file (type png)
-<use img/pipe_sur3.png>
-Package pdftex.def Info: img/pipe_sur3.png  used on input line 296.
-(pdftex.def)             Requested size: 73.58464pt x 37.22192pt.
-<img/flux_int.png, id=117, 901.56825pt x 174.6525pt>
-File: img/flux_int.png Graphic file (type png)
-<use img/flux_int.png>
-Package pdftex.def Info: img/flux_int.png  used on input line 347.
-(pdftex.def)             Requested size: 440.3384pt x 85.30064pt.
-<img/flux_div.png, id=118, 255.354pt x 210.18526pt>
-File: img/flux_div.png Graphic file (type png)
-<use img/flux_div.png>
-Package pdftex.def Info: img/flux_div.png  used on input line 356.
-(pdftex.def)             Requested size: 154.11775pt x 126.85939pt.
-<img/flux_conv.png, id=119, 255.354pt x 212.59425pt>
-File: img/flux_conv.png Graphic file (type png)
-<use img/flux_conv.png>
-Package pdftex.def Info: img/flux_conv.png  used on input line 367.
-(pdftex.def)             Requested size: 154.11775pt x 128.31335pt.
-
-
-[4 <./img/pipe_flow.png> <./img/pipe_field.png> <./img/pipe_sur1.png> <./img/pipe_sur2.png> <./img/pipe_sur3.png> <./img/flux_int.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 380--385
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/coulomb1.png> <./img/coulomb2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
 
  []
 
-<img/flux_sph1.png, id=126, 260.172pt x 275.8305pt>
+<img/charge_line.png, id=104, 276.43275pt x 239.09325pt>
+File: img/charge_line.png Graphic file (type png)
+<use img/charge_line.png>
+Package pdftex.def Info: img/charge_line.png  used on input line 144.
+(pdftex.def)             Requested size: 88.06468pt x 76.16846pt.
+<img/charge_sur.png, id=105, 360.74776pt x 198.14024pt>
+File: img/charge_sur.png Graphic file (type png)
+<use img/charge_sur.png>
+Package pdftex.def Info: img/charge_sur.png  used on input line 160.
+(pdftex.def)             Requested size: 122.31705pt x 67.18236pt.
+<img/charge_vol.png, id=106, 332.442pt x 196.3335pt>
+File: img/charge_vol.png Graphic file (type png)
+<use img/charge_vol.png>
+Package pdftex.def Info: img/charge_vol.png  used on input line 176.
+(pdftex.def)             Requested size: 122.31705pt x 72.23781pt.
+
+
+[2 <./img/coulomb3.png> <./img/coulomb4.png> <./img/charge_line.png> <./img/charge_sur.png> <./img/charge_vol.png>]
+<img/rod1.png, id=113, 351.714pt x 284.262pt>
+File: img/rod1.png Graphic file (type png)
+<use img/rod1.png>
+Package pdftex.def Info: img/rod1.png  used on input line 207.
+(pdftex.def)             Requested size: 146.78195pt x 118.63449pt.
+<img/rod2.png, id=114, 340.8735pt x 280.04625pt>
+File: img/rod2.png Graphic file (type png)
+<use img/rod2.png>
+Package pdftex.def Info: img/rod2.png  used on input line 212.
+(pdftex.def)             Requested size: 146.78195pt x 120.59273pt.
+<img/rod3.png, id=115, 230.0595pt x 222.23026pt>
+File: img/rod3.png Graphic file (type png)
+<use img/rod3.png>
+Package pdftex.def Info: img/rod3.png  used on input line 257.
+(pdftex.def)             Requested size: 73.38724pt x 70.88792pt.
+
+
+[3 <./img/rod1.png> <./img/rod2.png> <./img/rod3.png>]
+<img/pipe.png, id=124, 411.33675pt x 130.086pt>
+File: img/pipe.png Graphic file (type png)
+<use img/pipe.png>
+Package pdftex.def Info: img/pipe.png  used on input line 297.
+(pdftex.def)             Requested size: 132.10449pt x 41.77722pt.
+<img/pipe_sink.png, id=125, 446.26724pt x 146.949pt>
+File: img/pipe_sink.png Graphic file (type png)
+<use img/pipe_sink.png>
+Package pdftex.def Info: img/pipe_sink.png  used on input line 307.
+(pdftex.def)             Requested size: 137.96945pt x 42.23576pt.
+<img/pipe_source.png, id=126, 420.3705pt x 127.677pt>
+File: img/pipe_source.png Graphic file (type png)
+<use img/pipe_source.png>
+Package pdftex.def Info: img/pipe_source.png  used on input line 320.
+(pdftex.def)             Requested size: 137.96945pt x 41.9056pt.
+
+
+[4 <./img/pipe.png> <./img/pipe_sink.png> <./img/pipe_source.png>]
+File: img/pipe.png Graphic file (type png)
+<use img/pipe.png>
+Package pdftex.def Info: img/pipe.png  used on input line 360.
+(pdftex.def)             Requested size: 137.96945pt x 43.63316pt.
+<img/pipe_flow.png, id=131, 416.15475pt x 140.9265pt>
+File: img/pipe_flow.png Graphic file (type png)
+<use img/pipe_flow.png>
+Package pdftex.def Info: img/pipe_flow.png  used on input line 365.
+(pdftex.def)             Requested size: 137.96945pt x 46.72307pt.
+<img/pipe_field.png, id=132, 257.763pt x 134.30174pt>
+File: img/pipe_field.png Graphic file (type png)
+<use img/pipe_field.png>
+Package pdftex.def Info: img/pipe_field.png  used on input line 370.
+(pdftex.def)             Requested size: 91.9773pt x 47.92233pt.
+<img/pipe_sur1.png, id=133, 219.82124pt x 112.62074pt>
+File: img/pipe_sur1.png Graphic file (type png)
+<use img/pipe_sur1.png>
+Package pdftex.def Info: img/pipe_sur1.png  used on input line 379.
+(pdftex.def)             Requested size: 73.58464pt x 37.69939pt.
+<img/pipe_sur2.png, id=134, 227.04825pt x 105.996pt>
+File: img/pipe_sur2.png Graphic file (type png)
+<use img/pipe_sur2.png>
+Package pdftex.def Info: img/pipe_sur2.png  used on input line 384.
+(pdftex.def)             Requested size: 73.58464pt x 34.35124pt.
+<img/pipe_sur3.png, id=135, 205.9695pt x 104.18925pt>
+File: img/pipe_sur3.png Graphic file (type png)
+<use img/pipe_sur3.png>
+Package pdftex.def Info: img/pipe_sur3.png  used on input line 389.
+(pdftex.def)             Requested size: 73.58464pt x 37.22192pt.
+<img/flux_int.png, id=136, 901.56825pt x 174.6525pt>
+File: img/flux_int.png Graphic file (type png)
+<use img/flux_int.png>
+Package pdftex.def Info: img/flux_int.png  used on input line 440.
+(pdftex.def)             Requested size: 440.3384pt x 85.30064pt.
+<img/flux_div.png, id=137, 255.354pt x 210.18526pt>
+File: img/flux_div.png Graphic file (type png)
+<use img/flux_div.png>
+Package pdftex.def Info: img/flux_div.png  used on input line 449.
+(pdftex.def)             Requested size: 154.11775pt x 126.85939pt.
+<img/flux_conv.png, id=138, 255.354pt x 212.59425pt>
+File: img/flux_conv.png Graphic file (type png)
+<use img/flux_conv.png>
+Package pdftex.def Info: img/flux_conv.png  used on input line 460.
+(pdftex.def)             Requested size: 154.11775pt x 128.31335pt.
+
+
+[5 <./img/pipe_flow.png> <./img/pipe_field.png> <./img/pipe_sur1.png> <./img/pipe_sur2.png> <./img/pipe_sur3.png> <./img/flux_int.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 473--478
+
+ []
+
+<img/flux_sph1.png, id=145, 260.172pt x 275.8305pt>
 File: img/flux_sph1.png Graphic file (type png)
 <use img/flux_sph1.png>
-Package pdftex.def Info: img/flux_sph1.png  used on input line 404.
+Package pdftex.def Info: img/flux_sph1.png  used on input line 497.
 (pdftex.def)             Requested size: 97.85214pt x 103.74342pt.
-<img/flux_sph2.png, id=127, 317.38576pt x 291.489pt>
+<img/flux_sph2.png, id=146, 317.38576pt x 291.489pt>
 File: img/flux_sph2.png Graphic file (type png)
 <use img/flux_sph2.png>
-Package pdftex.def Info: img/flux_sph2.png  used on input line 414.
+Package pdftex.def Info: img/flux_sph2.png  used on input line 507.
 (pdftex.def)             Requested size: 97.85214pt x 89.86694pt.
 
 
-[5 <./img/flux_div.png> <./img/flux_conv.png> <./img/flux_sph1.png> <./img/flux_sph2.png>]
-<img/flux_plane1.png, id=133, 263.7855pt x 263.18324pt>
+[6 <./img/flux_div.png> <./img/flux_conv.png> <./img/flux_sph1.png> <./img/flux_sph2.png>]
+<img/flux_plane1.png, id=152, 263.7855pt x 263.18324pt>
 File: img/flux_plane1.png Graphic file (type png)
 <use img/flux_plane1.png>
-Package pdftex.def Info: img/flux_plane1.png  used on input line 452.
+Package pdftex.def Info: img/flux_plane1.png  used on input line 545.
 (pdftex.def)             Requested size: 107.63959pt x 107.3918pt.
-<img/flux_plane2.png, id=134, 335.45325pt x 228.855pt>
+<img/flux_plane2.png, id=153, 335.45325pt x 228.855pt>
 File: img/flux_plane2.png Graphic file (type png)
 <use img/flux_plane2.png>
-Package pdftex.def Info: img/flux_plane2.png  used on input line 457.
+Package pdftex.def Info: img/flux_plane2.png  used on input line 550.
 (pdftex.def)             Requested size: 107.63959pt x 73.43413pt.
-<img/flux_plane3.png, id=136, 260.77425pt x 235.47975pt>
+<img/flux_plane3.png, id=155, 260.77425pt x 235.47975pt>
 File: img/flux_plane3.png Graphic file (type png)
 <use img/flux_plane3.png>
-Package pdftex.def Info: img/flux_plane3.png  used on input line 480.
+Package pdftex.def Info: img/flux_plane3.png  used on input line 577.
 (pdftex.def)             Requested size: 122.31705pt x 110.44913pt.
-<img/flux_plane4.png, id=137, 137.313pt x 125.87025pt>
+<img/flux_plane4.png, id=156, 137.313pt x 125.87025pt>
 File: img/flux_plane4.png Graphic file (type png)
 <use img/flux_plane4.png>
-Package pdftex.def Info: img/flux_plane4.png  used on input line 490.
+Package pdftex.def Info: img/flux_plane4.png  used on input line 587.
 (pdftex.def)             Requested size: 48.9298pt x 44.8523pt.
-<img/flux_mess.png, id=138, 414.348pt x 289.68225pt>
+<img/flux_mess.png, id=157, 414.348pt x 289.68225pt>
 File: img/flux_mess.png Graphic file (type png)
 <use img/flux_mess.png>
-Package pdftex.def Info: img/flux_mess.png  used on input line 506.
+Package pdftex.def Info: img/flux_mess.png  used on input line 603.
 (pdftex.def)             Requested size: 171.24686pt x 119.72083pt.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 523.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 620.
 
 
 
-[6 <./img/flux_plane1.png> <./img/flux_plane2.png> <./img/flux_plane3.png> <./img/flux_plane4.png> <./img/flux_mess.png>]
-<img/flux_elem1.png, id=147, 261.97874pt x 300.52275pt>
+[7 <./img/flux_plane1.png> <./img/flux_plane2.png> <./img/flux_plane3.png> <./img/flux_plane4.png> <./img/flux_mess.png>]
+<img/flux_elem1.png, id=168, 261.97874pt x 300.52275pt>
 File: img/flux_elem1.png Graphic file (type png)
 <use img/flux_elem1.png>
-Package pdftex.def Info: img/flux_elem1.png  used on input line 555.
+Package pdftex.def Info: img/flux_elem1.png  used on input line 652.
 (pdftex.def)             Requested size: 102.74692pt x 117.86372pt.
-<img/flux_elem2.png, id=148, 455.90324pt x 291.489pt>
+<img/flux_elem2.png, id=169, 455.90324pt x 291.489pt>
 File: img/flux_elem2.png Graphic file (type png)
 <use img/flux_elem2.png>
-Package pdftex.def Info: img/flux_elem2.png  used on input line 560.
+Package pdftex.def Info: img/flux_elem2.png  used on input line 657.
 (pdftex.def)             Requested size: 244.6341pt x 156.4143pt.
 
-Overfull \hbox (2.58469pt too wide) in paragraph at lines 569--571
+Overfull \hbox (2.58469pt too wide) in paragraph at lines 666--668
 []\OT1/cmr/m/n/12 Center point of top sur-face = $[]$  $\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 The field pokes through it $= [][]$. 
  []
 
 
-Overfull \hbox (23.5361pt too wide) in paragraph at lines 572--574
+Overfull \hbox (23.5361pt too wide) in paragraph at lines 669--671
 []\OT1/cmr/m/n/12 Center point of bot-tom sur-face = $[]$  $\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 The field pokes through it $= [][]$. 
  []
 
 
 
-[7 <./img/flux_elem1.png> <./img/flux_elem2.png>]
-Overfull \hbox (8.54283pt too wide) detected at line 619
+[8 <./img/flux_elem1.png> <./img/flux_elem2.png>]
+Overfull \hbox (8.54283pt too wide) detected at line 716
 []
- []
-
-
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 711--716
-
  []
 
 
 
 [9]
-<img/sph_out.png, id=166, 205.9695pt x 200.54926pt>
-File: img/sph_out.png Graphic file (type png)
-<use img/sph_out.png>
-Package pdftex.def Info: img/sph_out.png  used on input line 765.
-(pdftex.def)             Requested size: 80.73051pt x 78.60558pt.
-<img/cyl.png, id=167, 264.99pt x 351.11176pt>
-File: img/cyl.png Graphic file (type png)
-<use img/cyl.png>
-Package pdftex.def Info: img/cyl.png  used on input line 772.
-(pdftex.def)             Requested size: 88.07005pt x 116.69229pt.
-<img/plane.png, id=168, 350.5095pt x 203.5605pt>
-File: img/plane.png Graphic file (type png)
-<use img/plane.png>
-Package pdftex.def Info: img/plane.png  used on input line 779.
-(pdftex.def)             Requested size: 132.10286pt x 76.72014pt.
-<img/ellipse.png, id=169, 269.20575pt x 169.8345pt>
-File: img/ellipse.png Graphic file (type png)
-<use img/ellipse.png>
-Package pdftex.def Info: img/ellipse.png  used on input line 786.
-(pdftex.def)             Requested size: 102.74692pt x 64.82024pt.
+Underfull \hbox (badness 10000) in paragraph at lines 808--813
+
+ []
 
 
-[10 <./img/sph_out.png> <./img/cyl.png> <./img/plane.png> <./img/ellipse.png>]
-<img/sph_sym.png, id=175, 248.127pt x 244.5135pt>
-File: img/sph_sym.png Graphic file (type png)
-<use img/sph_sym.png>
-Package pdftex.def Info: img/sph_sym.png  used on input line 811.
-(pdftex.def)             Requested size: 73.38724pt x 72.3174pt.
-<img/sph_in.png, id=176, 208.3785pt x 116.23425pt>
-File: img/sph_in.png Graphic file (type png)
-<use img/sph_in.png>
-Package pdftex.def Info: img/sph_in.png  used on input line 844.
-(pdftex.def)             Requested size: 68.98122pt x 38.47801pt.
+
+[10]
+<img/sph_out.png, id=186, 205.9695pt x 200.54926pt>
 File: img/sph_out.png Graphic file (type png)
 <use img/sph_out.png>
 Package pdftex.def Info: img/sph_out.png  used on input line 862.
+(pdftex.def)             Requested size: 80.73051pt x 78.60558pt.
+<img/cyl.png, id=187, 264.99pt x 351.11176pt>
+File: img/cyl.png Graphic file (type png)
+<use img/cyl.png>
+Package pdftex.def Info: img/cyl.png  used on input line 869.
+(pdftex.def)             Requested size: 88.07005pt x 116.69229pt.
+<img/plane.png, id=188, 350.5095pt x 203.5605pt>
+File: img/plane.png Graphic file (type png)
+<use img/plane.png>
+Package pdftex.def Info: img/plane.png  used on input line 876.
+(pdftex.def)             Requested size: 132.10286pt x 76.72014pt.
+<img/ellipse.png, id=189, 269.20575pt x 169.8345pt>
+File: img/ellipse.png Graphic file (type png)
+<use img/ellipse.png>
+Package pdftex.def Info: img/ellipse.png  used on input line 883.
+(pdftex.def)             Requested size: 102.74692pt x 64.82024pt.
+
+
+[11 <./img/sph_out.png> <./img/cyl.png> <./img/plane.png> <./img/ellipse.png>]
+<img/sph_sym.png, id=195, 248.127pt x 244.5135pt>
+File: img/sph_sym.png Graphic file (type png)
+<use img/sph_sym.png>
+Package pdftex.def Info: img/sph_sym.png  used on input line 908.
+(pdftex.def)             Requested size: 73.38724pt x 72.3174pt.
+<img/sph_in.png, id=196, 208.3785pt x 116.23425pt>
+File: img/sph_in.png Graphic file (type png)
+<use img/sph_in.png>
+Package pdftex.def Info: img/sph_in.png  used on input line 941.
+(pdftex.def)             Requested size: 68.98122pt x 38.47801pt.
+File: img/sph_out.png Graphic file (type png)
+<use img/sph_out.png>
+Package pdftex.def Info: img/sph_out.png  used on input line 959.
 (pdftex.def)             Requested size: 68.98122pt x 67.16376pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 872--874
+Underfull \hbox (badness 10000) in paragraph at lines 969--971
 
  []
 
-<img/cyl_sym.png, id=177, 179.4705pt x 338.4645pt>
+<img/cyl_sym.png, id=197, 179.4705pt x 338.4645pt>
 File: img/cyl_sym.png Graphic file (type png)
 <use img/cyl_sym.png>
-Package pdftex.def Info: img/cyl_sym.png  used on input line 886.
+Package pdftex.def Info: img/cyl_sym.png  used on input line 983.
 (pdftex.def)             Requested size: 48.9298pt x 92.27493pt.
 
 
-[11 <./img/sph_sym.png> <./img/sph_in.png> <./img/cyl_sym.png>]
-<img/cyl_in.png, id=188, 185.493pt x 382.42876pt>
+[12 <./img/sph_sym.png> <./img/sph_in.png> <./img/cyl_sym.png>]
+<img/cyl_in.png, id=208, 185.493pt x 382.42876pt>
 File: img/cyl_in.png Graphic file (type png)
 <use img/cyl_in.png>
-Package pdftex.def Info: img/cyl_in.png  used on input line 919.
+Package pdftex.def Info: img/cyl_in.png  used on input line 1016.
 (pdftex.def)             Requested size: 56.98993pt x 117.49878pt.
-<img/cyl_mid.png, id=189, 192.72pt x 386.6445pt>
+<img/cyl_mid.png, id=209, 192.72pt x 386.6445pt>
 File: img/cyl_mid.png Graphic file (type png)
 <use img/cyl_mid.png>
-Package pdftex.def Info: img/cyl_mid.png  used on input line 943.
+Package pdftex.def Info: img/cyl_mid.png  used on input line 1040.
 (pdftex.def)             Requested size: 58.5663pt x 117.49878pt.
-<img/cyl_out.png, id=190, 260.77425pt x 381.8265pt>
+<img/cyl_out.png, id=210, 260.77425pt x 381.8265pt>
 File: img/cyl_out.png Graphic file (type png)
 <use img/cyl_out.png>
-Package pdftex.def Info: img/cyl_out.png  used on input line 967.
+Package pdftex.def Info: img/cyl_out.png  used on input line 1064.
 (pdftex.def)             Requested size: 80.24629pt x 117.49878pt.
 
 
-[12 <./img/cyl_in.png> <./img/cyl_mid.png> <./img/cyl_out.png>]
+[13 <./img/cyl_in.png> <./img/cyl_mid.png> <./img/cyl_out.png>]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1022.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
 
-<img/poisson_Q.png, id=196, 330.033pt x 311.9655pt>
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1119.
+
+<img/poisson_Q.png, id=217, 330.033pt x 311.9655pt>
 File: img/poisson_Q.png Graphic file (type png)
 <use img/poisson_Q.png>
-Package pdftex.def Info: img/poisson_Q.png  used on input line 1051.
+Package pdftex.def Info: img/poisson_Q.png  used on input line 1148.
 (pdftex.def)             Requested size: 132.10449pt x 124.86966pt.
-<img/poisson_V.png, id=197, 318.59026pt x 313.77225pt>
+<img/poisson_V.png, id=218, 318.59026pt x 313.77225pt>
 File: img/poisson_V.png Graphic file (type png)
 <use img/poisson_V.png>
-Package pdftex.def Info: img/poisson_V.png  used on input line 1056.
+Package pdftex.def Info: img/poisson_V.png  used on input line 1153.
 (pdftex.def)             Requested size: 132.10449pt x 130.10771pt.
 
 
-[13]
-<img/wave1.png, id=205, 402.303pt x 78.89474pt>
+[14]
+<img/wave1.png, id=224, 402.303pt x 78.89474pt>
 File: img/wave1.png Graphic file (type png)
 <use img/wave1.png>
-Package pdftex.def Info: img/wave1.png  used on input line 1076.
+Package pdftex.def Info: img/wave1.png  used on input line 1173.
 (pdftex.def)             Requested size: 176.13602pt x 34.54163pt.
-<img/wave2.png, id=206, 307.1475pt x 129.48375pt>
+<img/wave2.png, id=225, 307.1475pt x 129.48375pt>
 File: img/wave2.png Graphic file (type png)
 <use img/wave2.png>
-Package pdftex.def Info: img/wave2.png  used on input line 1078.
+Package pdftex.def Info: img/wave2.png  used on input line 1175.
 (pdftex.def)             Requested size: 132.10284pt x 55.69073pt.
-<img/sus.png, id=207, 144.54pt x 219.219pt>
+<img/sus.png, id=226, 144.54pt x 219.219pt>
 File: img/sus.png Graphic file (type png)
 <use img/sus.png>
-Package pdftex.def Info: img/sus.png  used on input line 1089.
+Package pdftex.def Info: img/sus.png  used on input line 1186.
 (pdftex.def)             Requested size: 77.06055pt x 116.87457pt.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1118.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1215.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1118.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1215.
 
 
-Overfull \hbox (36.10738pt too wide) detected at line 1118
+Overfull \hbox (36.10738pt too wide) detected at line 1215
 []
  []
 
-<img/coulomb_elem.png, id=208, 314.97675pt x 281.853pt>
+<img/coulomb_elem.png, id=227, 314.97675pt x 281.853pt>
 File: img/coulomb_elem.png Graphic file (type png)
 <use img/coulomb_elem.png>
-Package pdftex.def Info: img/coulomb_elem.png  used on input line 1123.
+Package pdftex.def Info: img/coulomb_elem.png  used on input line 1220.
 (pdftex.def)             Requested size: 122.31705pt x 109.45345pt.
 
 
-[14 <./img/poisson_Q.png> <./img/poisson_V.png> <./img/wave1.png> <./img/wave2.png> <./img/sus.png> <./img/coulomb_elem.png>]
+[15 <./img/poisson_Q.png> <./img/poisson_V.png> <./img/wave1.png> <./img/wave2.png> <./img/sus.png> <./img/coulomb_elem.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1130.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\va' on input line 1130.
+(hyperref)                removing `math shift' on input line 1227.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1130.
+(hyperref)                removing `\va' on input line 1227.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1130.
+(hyperref)                removing `math shift' on input line 1227.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1130.
+(hyperref)                removing `math shift' on input line 1227.
 
 
-Overfull \hbox (11.78023pt too wide) in paragraph at lines 1144--1153
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1227.
+
+
+Overfull \hbox (11.78023pt too wide) in paragraph at lines 1241--1250
 []\OT1/cmr/m/n/12 ([])$ is a vec-tor func-tion with 3 com-po-nents $\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ([])$, $\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ([])$, $\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ([])$, which are []$[]$[]
  []
 
-<img/triangleE.png, id=215, 2002.48125pt x 1595.9625pt>
+<img/triangleE.png, id=234, 2002.48125pt x 1595.9625pt>
 File: img/triangleE.png Graphic file (type png)
 <use img/triangleE.png>
-Package pdftex.def Info: img/triangleE.png  used on input line 1163.
+Package pdftex.def Info: img/triangleE.png  used on input line 1260.
 (pdftex.def)             Requested size: 244.6341pt x 194.96527pt.
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1180.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1277.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1180.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1277.
 
 
 
-[15 <./img/triangleE.png>]
-<img/img_conduct2.png, id=221, 275.8305pt x 346.896pt>
+[16 <./img/triangleE.png>]
+<img/img_conduct2.png, id=240, 275.8305pt x 346.896pt>
 File: img/img_conduct2.png Graphic file (type png)
 <use img/img_conduct2.png>
-Package pdftex.def Info: img/img_conduct2.png  used on input line 1206.
+Package pdftex.def Info: img/img_conduct2.png  used on input line 1303.
 (pdftex.def)             Requested size: 78.2847pt x 98.4535pt.
-<img/img_conduct1.png, id=222, 453.49425pt x 334.24875pt>
+<img/img_conduct1.png, id=241, 453.49425pt x 334.24875pt>
 File: img/img_conduct1.png Graphic file (type png)
 <use img/img_conduct1.png>
-Package pdftex.def Info: img/img_conduct1.png  used on input line 1211.
+Package pdftex.def Info: img/img_conduct1.png  used on input line 1308.
 (pdftex.def)             Requested size: 88.06468pt x 64.90538pt.
-<img/img_conduct3.png, id=223, 360.74776pt x 360.74776pt>
+<img/img_conduct3.png, id=242, 360.74776pt x 360.74776pt>
 File: img/img_conduct3.png Graphic file (type png)
 <use img/img_conduct3.png>
-Package pdftex.def Info: img/img_conduct3.png  used on input line 1216.
+Package pdftex.def Info: img/img_conduct3.png  used on input line 1313.
 (pdftex.def)             Requested size: 107.63959pt x 107.63617pt.
-<img/img_rod1.png, id=224, 276.43275pt x 92.14426pt>
+<img/img_rod1.png, id=243, 276.43275pt x 92.14426pt>
 File: img/img_rod1.png Graphic file (type png)
 <use img/img_rod1.png>
-Package pdftex.def Info: img/img_rod1.png  used on input line 1246.
+Package pdftex.def Info: img/img_rod1.png  used on input line 1343.
 (pdftex.def)             Requested size: 97.85214pt x 32.61652pt.
-<img/img_rod2.png, id=225, 248.72925pt x 83.1105pt>
+<img/img_rod2.png, id=244, 248.72925pt x 83.1105pt>
 File: img/img_rod2.png Graphic file (type png)
 <use img/img_rod2.png>
-Package pdftex.def Info: img/img_rod2.png  used on input line 1253.
+Package pdftex.def Info: img/img_rod2.png  used on input line 1350.
 (pdftex.def)             Requested size: 92.96214pt x 31.06236pt.
-<img/img_bc1.png, id=226, 327.624pt x 312.56775pt>
+<img/img_bc1.png, id=245, 327.624pt x 312.56775pt>
 File: img/img_bc1.png Graphic file (type png)
 <use img/img_bc1.png>
-Package pdftex.def Info: img/img_bc1.png  used on input line 1272.
+Package pdftex.def Info: img/img_bc1.png  used on input line 1369.
 (pdftex.def)             Requested size: 132.10449pt x 126.03598pt.
-<img/img_bc2.png, id=227, 321.6015pt x 310.761pt>
+<img/img_bc2.png, id=246, 321.6015pt x 310.761pt>
 File: img/img_bc2.png Graphic file (type png)
 <use img/img_bc2.png>
-Package pdftex.def Info: img/img_bc2.png  used on input line 1277.
+Package pdftex.def Info: img/img_bc2.png  used on input line 1374.
 (pdftex.def)             Requested size: 132.10449pt x 127.64992pt.
 
 
-[16 <./img/img_conduct2.png> <./img/img_conduct1.png> <./img/img_conduct3.png> <./img/img_rod1.png> <./img/img_rod2.png> <./img/img_bc1.png> <./img/img_bc2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1305
+[17 <./img/img_conduct2.png> <./img/img_conduct1.png> <./img/img_conduct3.png> <./img/img_rod1.png> <./img/img_rod2.png> <./img/img_bc1.png> <./img/img_bc2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1397--1402
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1315--1316
+Underfull \hbox (badness 10000) in paragraph at lines 1412--1413
 
  []
 
-<img/img_plane1.png, id=234, 604.659pt x 285.4665pt>
+<img/img_plane1.png, id=253, 604.659pt x 285.4665pt>
 File: img/img_plane1.png Graphic file (type png)
 <use img/img_plane1.png>
-Package pdftex.def Info: img/img_plane1.png  used on input line 1325.
+Package pdftex.def Info: img/img_plane1.png  used on input line 1422.
 (pdftex.def)             Requested size: 244.6341pt x 115.49132pt.
-<img/img_plane2.png, id=235, 586.5915pt x 384.2355pt>
+<img/img_plane2.png, id=254, 586.5915pt x 384.2355pt>
 File: img/img_plane2.png Graphic file (type png)
 <use img/img_plane2.png>
-Package pdftex.def Info: img/img_plane2.png  used on input line 1336.
+Package pdftex.def Info: img/img_plane2.png  used on input line 1433.
 (pdftex.def)             Requested size: 244.6341pt x 160.24039pt.
 
 
-[17 <./img/img_plane1.png> <./img/img_plane2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1362--1363
+[18 <./img/img_plane1.png> <./img/img_plane2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1459--1460
 
  []
 
-<img/img_plane3.png, id=241, 477.58424pt x 236.68425pt>
+<img/img_plane3.png, id=260, 477.58424pt x 236.68425pt>
 File: img/img_plane3.png Graphic file (type png)
 <use img/img_plane3.png>
-Package pdftex.def Info: img/img_plane3.png  used on input line 1380.
+Package pdftex.def Info: img/img_plane3.png  used on input line 1477.
 (pdftex.def)             Requested size: 195.70428pt x 96.98698pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
+Underfull \hbox (badness 10000) in paragraph at lines 1491--1492
 
  []
 
-<img/img_sph1.png, id=242, 295.1025pt x 239.09325pt>
+<img/img_sph1.png, id=261, 295.1025pt x 239.09325pt>
 File: img/img_sph1.png Graphic file (type png)
 <use img/img_sph1.png>
-Package pdftex.def Info: img/img_sph1.png  used on input line 1404.
+Package pdftex.def Info: img/img_sph1.png  used on input line 1501.
 (pdftex.def)             Requested size: 122.31705pt x 99.10144pt.
-<img/img_sph2.png, id=243, 292.6935pt x 236.082pt>
+<img/img_sph2.png, id=262, 292.6935pt x 236.082pt>
 File: img/img_sph2.png Graphic file (type png)
 <use img/img_sph2.png>
-Package pdftex.def Info: img/img_sph2.png  used on input line 1409.
+Package pdftex.def Info: img/img_sph2.png  used on input line 1506.
 (pdftex.def)             Requested size: 122.31705pt x 98.66023pt.
 
 
-[18 <./img/img_plane3.png> <./img/img_sph1.png> <./img/img_sph2.png>]
-<img/img_sph3.png, id=249, 473.3685pt x 326.4195pt>
+[19 <./img/img_plane3.png> <./img/img_sph1.png> <./img/img_sph2.png>]
+<img/img_sph3.png, id=269, 473.3685pt x 326.4195pt>
 File: img/img_sph3.png Graphic file (type png)
 <use img/img_sph3.png>
-Package pdftex.def Info: img/img_sph3.png  used on input line 1433.
+Package pdftex.def Info: img/img_sph3.png  used on input line 1530.
 (pdftex.def)             Requested size: 122.31705pt x 84.34409pt.
 
 
-[19 <./img/img_sph3.png>]
-<img/img_ex1.png, id=257, 269.20575pt x 236.68425pt>
+[20 <./img/img_sph3.png>]
+<img/img_ex1.png, id=276, 269.20575pt x 236.68425pt>
 File: img/img_ex1.png Graphic file (type png)
 <use img/img_ex1.png>
-Package pdftex.def Info: img/img_ex1.png  used on input line 1507.
+Package pdftex.def Info: img/img_ex1.png  used on input line 1604.
 (pdftex.def)             Requested size: 88.07005pt x 77.43068pt.
-<img/img_ex2.png, id=258, 405.9165pt x 214.401pt>
+<img/img_ex2.png, id=277, 405.9165pt x 214.401pt>
 File: img/img_ex2.png Graphic file (type png)
 <use img/img_ex2.png>
-Package pdftex.def Info: img/img_ex2.png  used on input line 1512.
+Package pdftex.def Info: img/img_ex2.png  used on input line 1609.
 (pdftex.def)             Requested size: 146.78195pt x 77.5278pt.
-<img/img_ex1s.png, id=259, 354.72525pt x 358.33875pt>
+<img/img_ex1s.png, id=278, 354.72525pt x 358.33875pt>
 File: img/img_ex1s.png Graphic file (type png)
 <use img/img_ex1s.png>
-Package pdftex.def Info: img/img_ex1s.png  used on input line 1522.
+Package pdftex.def Info: img/img_ex1s.png  used on input line 1619.
 (pdftex.def)             Requested size: 117.426pt x 118.62396pt.
-<img/img_ex2s.png, id=260, 413.1435pt x 304.13625pt>
+<img/img_ex2s.png, id=279, 413.1435pt x 304.13625pt>
 File: img/img_ex2s.png Graphic file (type png)
 <use img/img_ex2s.png>
-Package pdftex.def Info: img/img_ex2s.png  used on input line 1527.
+Package pdftex.def Info: img/img_ex2s.png  used on input line 1624.
 (pdftex.def)             Requested size: 146.78195pt x 108.05032pt.
 
 
-[20 <./img/img_ex1.png> <./img/img_ex2.png> <./img/img_ex1s.png> <./img/img_ex2s.png>] (./E_field.aux)
+[21 <./img/img_ex1.png> <./img/img_ex2.png> <./img/img_ex1s.png> <./img/img_ex2s.png>] (./E_field.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `E_field.out' has not changed.
-(rerunfilecheck)             Checksum: B6AA1B5FCC486CE6887645E03DE6C6B9;3045.
+(rerunfilecheck)             Checksum: D9D219FBD36B3D5B9367F40D696B35C6;3322.
  ) 
 Here is how much of TeX's memory you used:
- 30940 strings out of 469747
- 589825 string characters out of 5481688
- 954583 words of memory out of 5000000
- 58681 multiletter control sequences out of 15000+600000
+ 31082 strings out of 469747
+ 593129 string characters out of 5481688
+ 954597 words of memory out of 5000000
+ 58820 multiletter control sequences out of 15000+600000
  655204 words of font info for 149 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,26n,159p,591b,940s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on E_field.pdf (20 pages, 1167464 bytes).
+Output written on E_field.pdf (21 pages, 1254028 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 401 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -62,12 +62,12 @@ Magnetostatics only concerns the \nth{2} and \nth{4} equation of the set
 \linesep
 % content begins here
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Basic Skill: Biot-Savat Law with Integration}
+\section{Biot-Savat Law with Integration}
 
 Physically, currents are just moving charges. 
 There is no such thing called "point current".
 However we can imagine a line of current being divided into many infinitestimally small segments
-such that each current segment "looks like" a vector point source.
+such that each current segment looks like a "vector point source".
 \aleq{
     \ \ \qty(\mstack{\text{Current}\\\text{line}}) \ =\ I\vvec{L} 
     \quad\ \xRightarrow{\phantom{000}}\quad\ \ 
@@ -101,16 +101,16 @@ never be found in your high school textbooks.
 
 Furthermore, because we are living in a 3D world,
 current does not always travel along a line segment, 
-but may flow on a surface or through an object such that the current is position dependent. 
-In these cases, we should describe current as a distribution of flow (i.e. vector field).
-
-
+but can flow on a surface or through an object.
+In these cases, the current flow varies at different position
+and should be described as a distribution of flow (i.e. a vector field).
 \begin{center}
     \vskip 1em
     \begin{minipage}{0.45\linewidth}
         \centering
         When current is travelling on a surface, 
-        the current flow is described as a 2D vector field called \bf{surface current density} $\vvec{K}$. 
+        the current flow is a 2D vector field, 
+        called \bf{surface current density} $\vvec{K} = \vvec{K}(x,y)$. 
         \aleq{
             I\dd{\vvec{l}} 
             \qquad\xRightarrow{\phantom{0}}\quad 
@@ -124,7 +124,8 @@ In these cases, we should describe current as a distribution of flow (i.e. vecto
     \begin{minipage}{0.45\linewidth}
         \centering
         When current is travelling in a volume, 
-        the current flow is described as a 3D vector field called \bf{volume current density} $\vvec{J}$.
+        the current flow is a 3D vector field, 
+        called \bf{volume current density} $\vvec{J} = \vvec{J}(x,y,z)$.
         \aleq{
             I\dd{\vvec{l}} 
             \qquad\xRightarrow{\phantom{00}}\quad 
@@ -133,6 +134,11 @@ In these cases, we should describe current as a distribution of flow (i.e. vecto
         \includegraphics[height=8em]{current_vol}
     \end{minipage}
 \end{center}
+
+\vskip 1ex
+\ul{Note:} By charge conservation,
+current along a line wire must be constant (flow in = flow out).
+\phantom{\ul{Note:}} Therefore it is rare to refer $I$ as the \ul{line current density}. {\scriptsize (Just call it current.)}
 
 \vskip 1em
 \begin{notation}[Caution:]
@@ -220,8 +226,8 @@ In these cases, we should describe current as a distribution of flow (i.e. vecto
         \hspace{0.05\textwidth}
         \begin{minipage}{0.45\linewidth}
             \centering
-            You can also deduce by cross product $\vvec{B} \sim I\dd{\vvec{x}} \cross \hhat{r}$ -
-            line elements on both sides of the rod create a B-field in out-of-paper ($-\hhat{y}$)direction.  
+            You can also deduce by cross product\\ $\vvec{B} \sim I\dd{\vvec{x}} \cross \hhat{r}$\\
+            line elements on both sides of the rod create a B-field in out-of-paper ($-\hhat{y}$) direction.  
         \end{minipage}
     \end{center}
 
