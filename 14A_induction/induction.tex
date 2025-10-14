@@ -59,38 +59,44 @@ Electrostatics only concerns the \nth{3} equation of the set - \cul[blue]{Farada
 \section{A Brief History of Electromagnetism}
 
 Electromagnetic induction is likely the most confusing topic in beginner E\&M.
-In my opinion, knowing a bit of the history is helpful to unify the concepts you have learnt.
+In my opinion, taking reference of the history is helpful to unify the concepts you have learnt.
 
 \begin{center}
-    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{0.06\textwidth} >{\centering\arraybackslash}m{0.2\textwidth} p{0.66\textwidth}}
-        Year & Who & \makecell[c]{Advancement} \\ 
+    \begin{tabularx}{\textwidth}{
+        >{\centering\arraybackslash}m{0.15\textwidth} 
+        p{0.8\textwidth}
+        }
+
+        Year & \makecell[c]{Advancement} \\ 
         \hline
-        $<$1500s
-        &
-        & Different electrostatics phenomena were known.
+        Before 1500s & 
+        Different electrostatics phenomena were known.
         But they were not unified or explained at all. \\
         %
         1600 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/William_Gilbert_(physicist)}{\ul{William Gilbert}}} 
-        & The first person to use the word "electrical" to describe electrostatics phenomena. 
-        Also the first to propose that electrical effect is due to flows of particles.\\[1.5em]
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/William_Gilbert_(physicist)}{William Gilbert}
+            was the first person to use the word "electrical" to describe\\ electrostatics phenomena. 
+            Also the first to propose that electrical effect is\\ due to flows of particles.
+        }\\[1.5em]
         %
         1750 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Benjamin_Franklin}{\ul{Benjamin Franklin}}}
-        & Developed a one "fluid" theory of electricity, 
-        and called this fluid "charge".\\[1.5em]
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Benjamin_Franklin}{Benjamin Franklin} 
+            developed a one "fluid" theory of electricity, 
+            and called\\ this fluid "charge".
+        }\\[1.5em]
         %
         1784 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb}{\ul{Charles-Augustin}}\\
-            \href{https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb}{\ul{de Coulomb}}}
-        & \makecell[tl]{
-            Experimentally showed that force between charged objects $\propto \inv{r^2}$.\\
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb}{Charles-Augustin de Coulomb}
+            experimentally showed that force between\\ charged objects $\propto \inv{r^2}$.
             \gray{(Coulomb's law $F = \inv{4\pi\epsilon_0}\frac{Qq}{r^2}$)}
         }\\[1.5em]
         %
         1800 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Alessandro_Volta}{\ul{Alessandro Volta}}}
-        & \makecell[tl]{
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Alessandro_Volta}{Alessandro Volta}
             Made the first battery from electro-chemistry.\\
             \gray{(First time to have steady current.)}
         }\\[1.5em]
@@ -100,28 +106,29 @@ In my opinion, knowing a bit of the history is helpful to unify the concepts you
 
 
 \begin{center}
-    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{0.06\textwidth} >{\centering\arraybackslash}m{0.2\textwidth} p{0.66\textwidth}}
+    \begin{tabularx}{\textwidth}{
+        >{\centering\arraybackslash}m{0.15\textwidth} 
+        p{0.8\textwidth}
+        }
         
         1820 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Hans_Christian_\%C3\%98rsted}{\ul{Hans Christian}}\\
-            \href{https://en.wikipedia.org/wiki/Hans_Christian_\%C3\%98rsted}{\ul{Ørsted}}}
-        & \makecell[tl]{
-            Discovered that current wire can deflect compress.\\
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Hans_Christian_\%C3\%98rsted}{Hans Christian Ørsted}
+            discovered that current wire can deflect compress.\\
             \gray{(First time to relate electric and magnetic phenomena.)}
         }\\[2em]
         %
         1820 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Andr\%C3\%A9-Marie_Amp\%C3\%A8re}{\ul{André-Marie}} \\
-            \href{https://en.wikipedia.org/wiki/Andr\%C3\%A9-Marie_Amp\%C3\%A8re}{\ul{Ampère}}}
-        & \makecell[tl]{
-            Formulated and verified the force between current wires.\\
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Andr\%C3\%A9-Marie_Amp\%C3\%A8re}{André-Marie Ampère}
+            formulated and verified the force between current wires.\\
             \gray{$(F = I\vvec{l}_1\cross \frac{\mu_0 I}{2\pi r}\vvec{l}_2)$}
         }\\[2em]
         %
         1831 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Michael_Faraday}{\ul{Michael Faraday}}}
-        & \makecell[tl]{
-            Discovered and experimented on magnetic induction, include\\
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Michael_Faraday}{Michael Faraday}
+            discovered magnetic induction. Experiments include:\\
             - Across iron core: Reading appears at the instant when switch is on/off.\\
             - Moving frame: Reading appears when wireframe moves, changes shape \\
             or when magnetic field change.\\
@@ -129,34 +136,33 @@ In my opinion, knowing a bit of the history is helpful to unify the concepts you
         }\\[1.5em]
         %
         1834 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Emil_Lenz}{\ul{Emil Lenz}}}
-        & \makecell[tl]{
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Emil_Lenz}{Emil Lenz}
             Explained direction of induced current by energy conservation.\\
             \gray{(Lenz's Law)}
         }\\[1.5em]
         %
         1860 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/James_Clerk_Maxwell}{\ul{James Clerk}}\\
-            \href{https://en.wikipedia.org/wiki/James_Clerk_Maxwell}{\ul{Maxwell}}}
-        & \makecell[tl]{
-            - Unified past discoveries into 20 equations.\\
-            - Introduced field description.\\[1ex]
-            \red{This is the first time we write $\vb{E}$ and $\vb{B}$.}\\
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/James_Clerk_Maxwell}{James Clerk Maxwell}
+            unified past discoveries into 20 equations, 
+            and used\\ field description for the first time.\\
+            \red{This was the first time $\vb{E}$ and $\vb{B}$ appeared in Physics.}\\
             \red{Before Maxwell, everything was described in terms of force.}\\ 
-        }\\[4.5em]
+        }\\[4em]
         %
         1893 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{\ul{Oliver Heaviside}}}
-        & \makecell[tl]{
-            Unified the 20 equations from Maxwell to 4, by vector calculus.\\
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{Oliver Heaviside}
+            combined Maxwell's 20 equations into 4, by vector calculus.\\
             \gray{(This is the version of Maxwell's equation we now know.)}
         }\\[1em]
         %
         1895 &
-        \makecell[t]{\href{https://en.wikipedia.org/wiki/Hendrik_Lorentz}{\ul{Hendrik Lorentz}}}
-        & \makecell[tl]{
-            Derive the correct force on charges under both $\vvec{E}$ and $\vvec{B}$.\\
-            \gray{(Lorentz force law)}
+        \makecell[tl]{
+            \href{https://en.wikipedia.org/wiki/Hendrik_Lorentz}{Hendrik Lorentz}
+            derive the correct force on charges under both $\vvec{E}$ and $\vvec{B}$.\\
+            \gray{(Lorentz force formula)}
         }\\[1em]
 
     \end{tabularx}
@@ -175,11 +181,11 @@ But interestingly, it was formulated correctly only in the very late history of 
     }
 }
 
-In general, $\vvec{E}$ and $\vvec{B}$ may be function of time and position. 
-Below we will only discuss the special case when the fields are constant.
+In general, $\vvec{E}$ and $\vvec{B}$ may be functions of time and position. 
+For simplicity, we will only discuss \cul[red]{the special case when the fields are constant}.
 By symmetry, we can assume that $\vvec{B}$ is only in $\hhat{z}$ direction, 
 i.e. $\vvec{B} = B_z\hhat{z}$.
-The Newton's \nth{2} law then writes as
+Then the Newton's \nth{2} law then writes as
 \aleq{
     m\dvv{t}\bmat{v_x\\v_y\\v_z} = q\bmat{E_x\\E_y\\E_z} 
         + q\bdet{\hhat{x} & \hhat{y} & \hhat{z}\\ v_x & v_y & v_z \\ 0 & 0 & B_z}
@@ -194,24 +200,95 @@ which turns into a system of 3 \nth{1} order linear ODEs.
     }
 }
 
-This system is simple enough that we do not need to use the matrix method.
+This system is simple enough that we do not need to use any matrix methods.
 \begin{itemize}
-    \item \bf{\ul{z component}}
-    \item \bf{\ul{x/y components}}
+    \item \bf{\ul{z component}}\\
+    Motion in $z$ direction is independent of $x$/$y$.
+    Can be solved alone.
+    \aleq{
+        m\dvv{v_z}{t} = qE_z 
+        \qquad\Rightarrow\qquad
+        &v_z(t) = \frac{qE_z}{m}t + v_{z0}\\[1ex]
+        &z(t) = \half\frac{qE_z}{m}t^2 
+            + \tkn{init_vz}{\cul[blue]{v_{z0}}}t + \tkn{init_z}{\cul[blue]{z_0}}
+    }
+    \addArrow[blue]{init_vz}{(0,-4ex)}{\scriptsize Initial\\[-1ex]\scriptsize z velocity}{(0,-1ex)}{(-3ex,0.5ex)}
+    \addArrow[blue]{init_z}{(0,-4ex)}{\scriptsize Initial\\[-1ex]\scriptsize z coordinate}{(0,-1ex)}{(3ex,0.5ex)}
+    
+    which is just a constant acceleration motion.
+
+    \item \bf{\ul{x/y components}}\\
+    They can be solved by differentiating one of them,
+    then substitute into the other.
+    \aleq{
+        \dvv[2]{v_x}{t} &= \frac{qB_z}{m}\dvv{v_y}{t} \\[1ex]
+        &= \frac{qB_z}{m}\qty(\frac{qE_y}{m}-\frac{qB_z}{m}v_x)\\[1ex]
+        &= - \frac{q^2B_z^2}{m}\qty(v_x - \frac{E_y}{B_z})
+    }
+
+    which is once again the familiar ODE of SHM.
+    \aleq{
+        v_x(t) &= -C' \sin\qty(\frac{qB_z}{m}t + \phi) + \frac{E_y}{B_z}\\[1ex]
+        \Rightarrow\quad x(t) &= \cus[red]{C'\qty(\frac{m}{qB_z})}{\text{constant}}\cos \qty(\frac{qB_z}{m}t + \phi) 
+            + \frac{E_y}{B_z}t + x_0\\[1ex]
+        &= \tkn{init_r}{\cul[blue]{C}} \cos \qty(\frac{qB_z}{m}t + \tkn{phase}{\cul[blue]{\phi}}) 
+            + \frac{E_y}{B_z}t + \tkn{init_x}{\cul[blue]{x_0}}
+    }
+    \addArrow[red]{init_r}{(5ex,4ex)}{}{(1ex,2ex)}
+    \addArrow[blue]{init_r}{(0,-4ex)}{\scriptsize Radius}{(0,-1ex)}
+    \addArrow[blue]{phase}{(0,-4ex)}{\scriptsize Phase}{(0,-1ex)}
+    \addArrow[blue]{init_x}{(0,-3ex)}{\scriptsize Initial\\[-1ex]\scriptsize x coordinate}{(0,-1ex)}{(0,-1ex)}
+
+    \vskip 1em
+    And subsitute back to equation of $v_y$ gives
+    \aleq{
+        v_y(t) &= \frac{m}{qB_z}\dvv{v_x}{t} - \frac{E_x}{B_z} \\[1ex]
+        &= -C' \cos\qty(\frac{qB_z}{m}t + \phi) - \frac{E_x}{B_z}\\[1ex]
+        \Rightarrow\quad y(t) &= -\cus[red]{C' \qty(\frac{m}{qB_z})}{\text{constant}} \sin \qty(\frac{qB_z}{m}t + \phi) 
+            - \frac{E_x}{B_z}t + y_0 \\[1ex]
+        &= -\tkn{init_r2}{\cul[blue]{C}} \sin \qty(\frac{qB_z}{m}t + \tkn{phase2}{\cul[blue]{\phi}}) 
+            - \frac{E_y}{B_z}t + \tkn{init_y}{\cul[blue]{x_0}}
+    }
+    \addArrow[red]{init_r2}{(5ex,4ex)}{}{(1ex,2ex)}
+    \addArrow[blue]{init_r2}{(0,-4ex)}{\scriptsize Radius}{(0,-1ex)}
+    \addArrow[blue]{phase2}{(0,-4ex)}{\scriptsize Phase}{(0,-1ex)}
+    \addArrow[blue]{init_y}{(0,-3ex)}{\scriptsize Initial\\[-1ex]\scriptsize y coordinate}{(0,-1ex)}{(0,-1ex)}
+
+    \vskip 1em
+    The result $x$-$y$ motion is a combination of circular motion + drifting.
+
+    \insertFig{lorentz drift}
+
+    \aleq{
+        \bmat{x(t)\\y(t)} 
+        = 
+        \cus[red]{C\bmat{\cos \qty(\frac{qB_z}{m}t+\phi) \\ -\sin \qty(\frac{qB_z}{m}t+\phi)}}{\text{Circular motion}}
+        \ +\ \cus[blue]{\inv{B_z}\bmat{E_y\\-E_x}t}{\text{Drifting}} \ +\ \bmat{x_0\\y_0}
+    }
+
+    \begin{enumerate}
+        \item Note that the drifting direction is not intuitive: 
+        \begin{itemize}
+            \item With $E_x$ only, drifting direction = $-\hhat{y}$
+            \item With $E_y$ only, drifting direction = $\hhat{x}$
+        \end{itemize}
+        In general, the drifting direction is along direction of $\vvec{E}\cross\vvec{B}$ 
+        with a speed $\dfrac{\norm{\vvec{E}}}{\norm{\vvec{B}}}$
+    
+        \vskip 1em
+        \item The rotation radius and speed maintain a constant ratio:
+        \aleq{
+            \text{Radius}=R \qquad\Rightarrow\qquad \text{Speed}=\frac{qB_z}{m}R
+        }
+        i.e. Angular velocity is fixed at $\omega = \dfrac{qB_z}{m}$,
+        independent of the charge's initial velocity.\\ 
+        \gray{(One can also derive the same result by $\dfrac{mv^2}{r} = qvB$)}\\
+
+    \end{enumerate}
 \end{itemize}
 
-\bf{\ul{Interpretation}}\\
-We can see that the resultant motion is a combination of circular motion + drifting.
-% repeat eq specific circular and drift
-\insertFig{lorentz drift}
-\begin{enumerate}
-    \item Note that the drifting direction is not intuitive: 
-    \begin{itemize}
-        \item With $E_x$ only, drifting direction = $-\hhat{y}$
-        \item With $E_y$ only, drifting direction = $\hhat{x}$
-    \end{itemize}
-    In general, the drifting direction is along $\vvec{E}\cross\vvec{B}$ with a speed $\frac{\norm{\vvec{E}\cross\vvec{B}}}{\norm{\vvec{B}}^2}$
-\end{enumerate}
+
+
 
 
 
@@ -250,13 +327,13 @@ namely the "electromotive force".
 
 Today we still keep the name as a "force", 
 even though we already know much better how current is generated in different sources.
-Maybe because people are already used to refer the same word \red{"EMF" 
+Maybe because people are already used to refer the same term \red{"EMF" 
 as the general name for ANY kind of current source}, 
 rather than discriminating them by their origin of energy.
 
 \insertFig{i dun care}
 
-Here we only focus on the two kinds of EMF that relate to magnetic induction phenomena.
+Below we only focus on the two kinds of EMF that relate to magnetic induction phenomena.
 \begin{itemize}
     \item \bf{\ul{Motional EMF}} : Source of energy = Motion of the charges' "container".
     Can be explained via Lorentz force.
@@ -269,6 +346,26 @@ Here we only focus on the two kinds of EMF that relate to magnetic induction phe
 %%%%%%%%%%%%%%
 \subsection{Motional EMF}
 
+We have already learnt that under Lorentz force, 
+charges moves in a circle in a constant B-field.
+
+\begin{enumerate}
+    \item We can think one step forward -
+    if a charge is contained inside a \it{massless} pipe.
+    This massless pipe will be dragged along by the charge.
+    If the pipe is restricted to move horizonally,
+    it will undergo SHM!
+
+    \insertFig{pip SHM}
+
+    
+    \item However if the pipe contains both kinds of charges
+    (such that it becomes electrically neutral),
+    opposite charges repel each other.
+    
+
+
+\end{enumerate}
 
 %%%%%%%%%%%%%%
 \subsubsection{A Moving Battery}

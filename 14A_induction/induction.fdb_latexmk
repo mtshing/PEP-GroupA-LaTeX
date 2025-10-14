@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1759523546.3909 "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" "induction.pdf" "induction" 1759523549.08958 0
+["pdflatex"] 1760425712.79311 "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" "induction.pdf" "induction" 1760425731.25457 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1759344076 12455 163dcc4ca9a8770b9a2cc48aa811f87b ""
@@ -43,12 +43,14 @@
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1738919019 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1738919019 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1738919019 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1738919019 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1738919019 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb" 1738919019 36912 b448ef9ad9d7228ec3c6e71005136d55 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1738919019 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1738919019 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1738919019 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1738919019 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1738919019 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1738919019 36118 fad905eba93cff5bce1e185fe980a177 ""
   "c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1752685472 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1738919075 40635 c40361e206be584d448876bba8a64a3b ""
@@ -230,11 +232,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" 1759523544 9919 67488fc50d1378022f1d07da76941bea ""
-  "induction.aux" 1759523548 1856 174a55a1902e436c4ee39b6b2ffba9b0 "pdflatex"
-  "induction.out" 1759523548 1850 331ebcb8b256eff3012ab2e3565c18d5 "pdflatex"
-  "induction.sta" 1759523548 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "induction.tex" 1759523544 9919 67488fc50d1378022f1d07da76941bea ""
+  "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" 1760425702 14122 cc061b6b122d0fda509332a595af6888 ""
+  "induction.aux" 1760425730 3836 8115f76038d25525509df63357968f3e "pdflatex"
+  "induction.out" 1760425730 1850 331ebcb8b256eff3012ab2e3565c18d5 "pdflatex"
+  "induction.sta" 1760425730 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "induction.tex" 1760425702 14122 cc061b6b122d0fda509332a595af6888 ""
   (generated)
   "induction.aux"
   "induction.log"
