@@ -346,29 +346,88 @@ Below we only focus on the two kinds of EMF that relate to magnetic induction ph
 %%%%%%%%%%%%%%
 \subsection{Motional EMF}
 
-We have already learnt that under Lorentz force, 
-charges moves in a circle in a constant B-field.
-
-\begin{enumerate}
-    \item We can think one step forward -
-    if a charge is contained inside a \it{massless} pipe.
-    This massless pipe will be dragged along by the charge.
-    If the pipe is restricted to move horizonally,
-    it will undergo SHM!
-
-    \insertFig{pip SHM}
-
-    
-    \item However if the pipe contains both kinds of charges
-    (such that it becomes electrically neutral),
-    opposite charges repel each other.
-    
-
-
-\end{enumerate}
-
 %%%%%%%%%%%%%%
 \subsubsection{A Moving Battery}
+
+Under Lorentz force, 
+free charges move in circles in a constant B-field.
+But if the charges' movements are restricted, 
+charge distribution becomes uneven and builds up potential difference.  
+
+\begin{enumerate}
+    \item If a charge is at the center of a \it{massless} pipe, 
+    there is no restriction on the charge's movement.
+    This massless pipe will be dragged along by the charge.
+    (Even if the pipe is restricted to move horizonally,
+    the pipe simply undergoes SHM.)
+
+    \insertFig{pipe SHM}
+
+    
+    \item On the other hand, for charges that locate at the ends of the pipe,
+    they will be pushed against the end walls, cannot move in circles, 
+    but accumulate at the end walls. 
+
+    \insertFig{pipe potential}
+
+    Such charge accumulation build up a potential difference, 
+    storing energy that \red{can be released once the pipe stop moving.}
+    
+    \begin{center}
+        The pipe can be used to drive current when it is kept moving - It is a moving battery! 
+    \end{center}
+
+    \item We can calculate the amount of energy that is stored in the pipe 
+    by looking into the energy conservation process.
+    Suppose the B-field is in $\hhat{z}$ direction, i.e. $\vvec{B}=B_z\hhat{z}$
+    While the work done on a charge by Lorentz force of B-field is $0$ 
+    (because $\vvec{F}_B$ always $\perp \dd{\vvec{r}}$ ),
+    we can split it into the work done in two directions:
+    \aleq{
+        \text{W.D.} &= \vvec{F}_B \cdot \dd{\vvec{r}} = 0 \\
+        &= q(\vvec{v}\cross\vvec{B})\cdot\dd{\vvec{r}} \\
+        &= q\qty[(\vvec{v}_x+\vvec{v}_y)\cross B_z\hhat{z}]\cdot \qty(\dd{\vvec{x}}+\dd{\vvec{y}})\\
+        %&= q\qty(-v_xB_z\hhat{y} + v_yB_z\hhat{x})\cdot \qty(\dd{\vvec{x}}+\dd{\vvec{y}})\\
+        &= \cancelto[red]{0}{q(\vvec{v_x}\cross\vvec{B})\cdot\dd{\vvec{x}}} 
+            + q(\vvec{v_x}\cross\vvec{B})\cdot\dd{\vvec{y}} 
+            + q(\vvec{v_y}cross\vvec{B})\cdot\dd{\vvec{x}}
+            + \cancelto[red]{0}{q(\vvec{v_y}cross\vvec{B})\cdot\dd{\vvec{y}}}\\
+        &= q(\vvec{v_x}\cross\vvec{B})\cdot\dd{\vvec{y}}
+            + q(\vvec{v_y}\cross\vvec{B})\cdot\dd{\vvec{x}} 
+    }
+
+    \insertFig{WD by B = 0}
+
+    On the other hand, when reaching the equilibrium state,
+    the motion along the rod by Lorentz force of B-field will be countered by the 
+    built-up potential (or E-field) from the charge accumulation. 
+    The forces must satisfy:
+    \aleq{
+        q\vvec{E} &= q\vvec{v}\cross\vvec{B}\\
+        qE_y\hhat{y} &= q\vvec{v}_x\cross B_z\hhat{z}\\        
+    } 
+
+    \insertFig{free body diag}
+
+    Thus in terms of work done,
+    \aleq{
+        q\vvec{E}\cdot\dd{\vvec{y}} &= q(\vvec{v}\cross\vvec{B})\cdot \dd{\vvec{y}}\\
+        q \dd{\epsilon} &= q(\vvec{v}_x\cross\vvec{B})\cdot \dd{\vvec{y}}
+    }
+
+    That is, the potential built up is due to the W.D. of Lorentz force by magnetic field
+    along the rod,
+    which in turn, is maintained by the W.D. due to the motion 
+
+
+    \aleq{
+        q\dd{\epsilon} &= \vvec{F}_\text{Lorentz}\cdot \dd{\vvec{y}}\\
+        &= q(\vvec{v}\cross\vvec{B})\cdot\dd{\vvec{y}}\\
+        &= q(\dd{\vvec{y}}\cross\vvec{v})\cdot \vvec{B}\\
+        &= -q(\vvec{v}\cdot\dd{\vvec{y}})\cdot \vvec{B}
+    }
+\end{enumerate}
+
 
 %%%%%%%%%%%%%%
 \subsubsection{Generalization to Flux}
