@@ -42,19 +42,22 @@ called the \bf{Maxwell Equations}.\\[-2em]
     \begin{minipage}{0.3\textwidth}
         \aleq{
             \tkn{maxwell_div}{\div} \vvec{B} &= 0\\
-            \tkn{maxwell_ampere}{\curl} \vvec{B} &= \mu_0 \vvec{J} + \mu_0\epsilon_0\pdvv{\vvec{E}}{t}
+            \tkn{maxwell_ampere}{\curl} \vvec{B} &= \mu_0 \vvec{J} \tkn{disp_curr}{\gray{\, +\, \mu_0\epsilon_0\pdvv{\vvec{E}}{t}}}
         }
     \end{minipage}
 \end{center}
 \addArrow[blue]{maxwell_div}{(-5ex,0)}{}{(-3ex,1ex)}
 \addArrow[red]{maxwell_ampere}{(-5ex,0)}{}{(-3ex,1ex)}
+\addArrow[gray]{disp_curr}{(6ex,0)}
+{\scriptsize The second term \\[-1ex]\scriptsize is unrelated \\[-1ex]\scriptsize in "statics" case}
+{(6.5ex,0.5ex)}{(4.5ex,0)}
 
 However, a \it{system of PDEs} is too complicated to be solved.
 So we need to learn different "tricks" to avoid them,
 which are enough for some simple scenarios.\\
 
 Magnetostatics only concerns the \nth{2} and \nth{4} equation of the set 
-- \cul[blue]{Gauss's law on B-field} and \cul[red]{Ampere's law}. 
+- \cul[blue]{Gauss's law on B-field} and \cul[red]{Ampere's law} (not including the second term). 
 
 
 
@@ -566,11 +569,11 @@ Therefore the total dot product along the loop is
         - \cus[gray]{F_x\qty(x,y+\frac{\Delta y}{2},z)\Delta x}{\text{Edge 1}} 
         + \cus[gray]{F_x\qty(x,y-\frac{\Delta y}{2},z)\Delta x}{\text{Edge 3}} \\[1em]
     %
-    = &\qty(\frac{F_x\qty(x+\frac{\Delta x}{2},y,z) - F_x\qty(x-\frac{\Delta x}{2},y,z)}{\blue{\Delta x}}
+    = &\qty(\frac{F_y\qty(x+\frac{\Delta x}{2},y,z) - F_y\qty(x-\frac{\Delta x}{2},y,z)}{\blue{\Delta x}}
         - \frac{F_x\qty(x,y+\frac{\Delta y}{2},z) - F_x\qty(x,y-\frac{\Delta y}{2},z)}{\blue{\Delta y}}) (\Delta x\Delta y)\\[1em]
     %
-    = &\qty(\cut[red]{\cbox[red]{\frac{F_x\qty(\cbox[red]{\textstyle x+\frac{\Delta x}{2}},y,z) 
-            - F_x\qty(\cbox[red]{\textstyle x-\frac{\Delta x}{2}},y,z)}{\cbox[red]{\Delta x}}}}{\text{This is exactly partial x}}
+    = &\qty(\cut[red]{\cbox[red]{\frac{F_y\qty(\cbox[red]{\textstyle x+\frac{\Delta x}{2}},y,z) 
+            - F_y\qty(\cbox[red]{\textstyle x-\frac{\Delta x}{2}},y,z)}{\cbox[red]{\Delta x}}}}{\text{This is exactly partial x}}
         -\cut[green]{\cbox[green]{\frac{F_x\qty(x,\cbox[green]{\textstyle y+\frac{\Delta y}{2}},z) 
             - F_x\qty(x,\cbox[green]{\textstyle y-\frac{\Delta y}{2}},z)}{\cbox[green]{\Delta y}}}}{\text{This is exactly partial y}}) (\Delta x\Delta y)\\[1em] 
     %
@@ -615,7 +618,7 @@ Therefore we can geometrically interpret curl as
         \qty(\mstack{\text{\bf{Curl's}}\\\text{\bf{i\Nth\ component}}}) 
         = (\curl \vvec{F})_i 
         = \frac{(\text{Loop integral normal to i\Nth\ direction})}{(\text{Area enclosed by the loop})}
-        \sim \qty(\mstack{\text{\bf{loop integral}}\\\tkn{curl_density}{\text{\bf{\cul[blue]{density}}}}})_\bf{\tkn{curl_dir}{\cul[red]{i}}}
+        \sim \qty(\mstack{\text{\bf{Loop integral}}\\\tkn{curl_density}{\text{\bf{\cul[blue]{density}}}}})_\bf{\tkn{curl_dir}{\cul[red]{i}}}
     }
 }
 \addArrow[blue]{curl_density}{(0,-4ex)}{\scriptsize This density\\[-1ex]\scriptsize is by area}{(0,-1ex)}{(0,-1ex)}
@@ -676,7 +679,7 @@ And the two form can be inter-converted by Stokes' theorem.
 \addBentArrow[blue]{curlI}{(-3.5ex,11.5ex)}{Current to Current density}{(1ex,3ex)}{(18ex,-6ex)}
 \aleq{
     \oint \vvec{B}\cdot\dd{\vvec{l}} \quad &=\quad \mu_0 I\\[2em]
-    \iiint (\tkn{curlB}{\curl \vvec{B}}) \cdot \dd{\vvec{s}}\ &=\ \mu_0\iint \tkn{curlI}{\vvec{J}} \cdot \dd{\vvec{s}}
+    \iint (\tkn{curlB}{\curl \vvec{B}}) \cdot \dd{\vvec{s}}\ &=\ \mu_0\iint \tkn{curlI}{\vvec{J}} \cdot \dd{\vvec{s}}
 }
 
 
@@ -714,7 +717,7 @@ Only then, the loop integral can be broken down as
 \aleq{
     \oint \vvec{B}\cdot \dd{\vvec{l}} 
     &= \oint \tkn{ampere_dot}{\cul[green]{\norm{\vvec{B}}\norm{\dd{\vvec{l}}}\cos\theta}}\\[1ex]
-    &= \tkn{ampere_B}{\cul[red]{\norm{\vvec{B}}}}\ \tkn{ampere_theta}{\cul[blue]{\cos\theta}}\ \oiint \norm{\dd{\vvec{l}}}\\[2.5em]
+    &= \tkn{ampere_B}{\cul[red]{\norm{\vvec{B}}}}\ \tkn{ampere_theta}{\cul[blue]{\cos\theta}}\ \oint \norm{\dd{\vvec{l}}}\\[2.5em]
     &= \norm{\vvec{B}}\ \cos\theta\ (\text{Perimeter of loop})
 }
 \addArrow[green]{ampere_dot}{(5ex,0)}
@@ -1167,7 +1170,7 @@ If we compare the Ampere's law and Poisson equation of $\vvec{A}$:
 
 In practice, there is no reason to try to directly solve the more difficult PDEs of $\vvec{B}$,
 if we can alternatively solve the easier PDEs of $\vvec{A}$,
-and then take curl to get $\vvec{B}$ (i.e. via $\vvec{B} = -\curl \vvec{A}$). 
+and then take curl to get $\vvec{B}$ (i.e. via $\vvec{B} = \curl \vvec{A}$). 
 
 \begin{center}
     \begin{minipage}{0.5\linewidth}
@@ -1200,9 +1203,9 @@ which is as expected, the Biot-Savat law for $\vvec{B}$.
         \item \ul{Divergence} $\div \vvec{F}$ \ -\ \  Vector function $\xRightarrow{\div}$ Scalar function\\[-1.5em]
         \item \ul{Curl} $\curl \vvec{F}$ \ -\ \  Vector function $\xRightarrow{\curl}$ Vector function
     \end{itemize}
-    We can derive several \nth{2} derivatives relations of $\grad$ (by brute force):
+    Here are the \nth{2} derivatives relations of $\grad$ (can be proved by brute force):
     \begin{itemize}
-        \item \ul{Wrapped by gradient}: \\[-3ex]
+        \item \ul{Finish off by gradient}: \\[-3ex]
         \aleq{
             \grad (\div \vvec{F}) &= %\qty(\gradRec{})\qty(\divRec{F_x}[F_y][F_z]) \\[0.5ex]
             \pdv{x}\qty(\pdv{F_x}{x} + \pdv{F_y}{y} + \pdv{F_z}{z})\hhat{x} 
@@ -1214,18 +1217,18 @@ which is as expected, the Biot-Savat law for $\vvec{B}$.
 \end{notation}
 \begin{notation}[]
     \begin{itemize}
-        \item \ul{Wrapped by divergence}:
+        \item \ul{Finish off by divergence}:
         \aleq{
             \div (\grad f) &\ \defeq\ \laplacian f \ =\  \lapRec{f} \qquad {\scriptsize \text{(Laplacian operator)}}\\[1ex]
             %
             \div (\curl \vvec{F}) &\ \equiv\ 0 \qquad \red{\scriptsize \text{(Divergence of curl is always 0)}}
         }
 
-        \item \ul{Wrapped by curl}:
+        \item \ul{Finish off by curl}:
         \aleq{
             \curl (\grad f) &\ \equiv\ 0 \qquad \red{\scriptsize \text{(Curl of gradient is always 0)}}\\[1ex]
             %
-            \curl (\curl \vvec{F}) &\ \equiv\ \ \grad (\div \vvec{F}) - \laplacian \vvec{F} \qquad {\scriptsize \text{(A useful identity)}}
+            \curl (\curl \vvec{F}) &\ \equiv\ \ \grad (\div \vvec{F}) - \laplacian \vvec{F} \qquad {\scriptsize \text{(This is a useful identity)}}
         }
     \end{itemize} 
 
