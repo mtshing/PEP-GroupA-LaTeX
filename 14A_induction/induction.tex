@@ -6,7 +6,7 @@
 \author{Tony Shing}
 %\pretitle{Supplementary}
 
-\topic{T12 (Electromagnetism)}
+\topic{T14A (Electromagnetism)}
 \title{Magnetic Induction}
 
 \version{2025} % leave blank for omitting
@@ -18,8 +18,10 @@
 
 \begin{overview}
     \begin{itemize}
-        \item Lorentz force
-        \item Faraday's law, motional/transformer EMF \& Lenz's law 
+        \item Motion under Lorentz force
+        \item Faraday's law: Motional \& transformer EMF
+        \item Lenz's law: Direction of induced EMF
+        \item Appendix: A brief history of electromagnetism
     \end{itemize}
 \end{overview}
 
@@ -48,15 +50,672 @@ However, a \it{system of PDEs} is too complicated to be solved.
 So we need to learn different "tricks" to avoid them,
 which are enough for some simple scenarios.\\
 
-Electrostatics only concerns the \nth{3} equation of the set - \cul[blue]{Faraday's law}. 
+Magnetic induction concerns the \nth{3} equation of the set - \cul[blue]{Faraday's law}. 
+
+
 
 
 
 \linesep
 % content begins here
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{section}{-1}
-\section{A Brief History of Electromagnetism}
+\section{Motion under Lorentz Force}
+
+Nowadays we know that Lorentz force is the fundamental explanation to magnetic induction.
+But interestingly, it was formulated correctly only in the very late history of classical E\&M.
+\aleq{
+    \vvec{F} &= \vvec{F}_E + \vvec{F}_B \\
+    \Aboxed{
+        &= q\vvec{E} + q\vvec{v}\cross\vvec{B}
+    }
+}
+
+In general, $\vvec{E}$ and $\vvec{B}$ can be functions of time and position,
+but here we will only discuss \cul[red]{the special case when the fields are constant}.\\
+
+By symmetry, we can assume that $\vvec{B}$ is only in $\hhat{z}$ direction, 
+i.e. $\vvec{B} = B_z\hhat{z}$.
+Then the Newton's \nth{2} law can be expanded as
+\aleq{
+    m\vvec{a} = m\dvv{t}\bmat{v_x\\v_y\\v_z} = q\bmat{E_x\\E_y\\E_z} 
+        + q\bdet{\hhat{x} & \hhat{y} & \hhat{z}\\ v_x & v_y & v_z \\ 0 & 0 & B_z}
+}
+
+which is a system of 3 first order linear ODEs.
+\aleq{
+    \bcase{
+        m\dvv{v_x}{t} &= qE_x + qv_yB_z\\
+        m\dvv{v_y}{t} &= qE_y - qv_xB_z\\
+        m\dvv{v_z}{t} &= qE_z
+    }
+}
+
+This system is simple enough that we do not need to use any matrix methods.
+\begin{itemize}
+    \item \bf{\ul{Equation for z component}}\\[0.5ex]
+    Motion in $z$ direction is independent of $x$/$y$.
+    It can be solved alone.
+    \aleq{
+        m\dvv{v_z}{t} = qE_z 
+        \qquad\Rightarrow\qquad
+        v_z(t) &= \frac{qE_z}{m}t + v_{z0}\\[1em]
+        \qquad\Rightarrow\qquad
+        z(t) &= \half\frac{qE_z}{m}t^2 
+            + \tkn{init_vz}{\cul[blue]{v_{z0}}}t + \tkn{init_z}{\cul[blue]{z_0}}
+    }
+    \addArrow[blue]{init_vz}{(-1ex,-2ex)}{\scriptsize Initial\\[-1ex]\scriptsize z velocity}{(0,-1ex)}{(-2ex,-1ex)}
+    \addArrow[blue]{init_z}{(1ex,-2ex)}{\scriptsize Initial\\[-1ex]\scriptsize z coordinate}{(0,-1ex)}{(2ex,-1ex)}
+    
+    \vskip 1ex
+    which is just a constant acceleration motion with an acceleration $\dfrac{qE_z}{m}$.
+
+    \item \bf{\ul{Equation for x/y components}}\\[0.5ex]
+    They can be solved by first differentiating one of them,
+    then substitute into the other.
+    \aleq{
+        \dvv[2]{v_x}{t} &= \frac{qB_z}{m}\dvv{v_y}{t} \\[1ex]
+        &= \frac{qB_z}{m}\qty(\frac{qE_y}{m}-\frac{qB_z}{m}v_x)\\[1ex]
+        &= - \frac{q^2B_z^2}{m}\qty(v_x - \frac{E_y}{B_z})
+    }
+
+    which is the familiar ODE of SHM.
+    \aleq{
+        v_x(t) &= -C \sin\qty(\frac{qB_z}{m}t + \phi) + \frac{E_y}{B_z}\\[1ex]
+        \Rightarrow\quad x(t) &= \cub[red]{C\qty(\frac{m}{qB_z})}{\text{A constant}}\cos \qty(\frac{qB_z}{m}t + \phi) 
+            + \frac{E_y}{B_z}t + x_0\\[1ex]
+        &= \tkn{init_r}{\cul[blue]{R}} \cos \qty(\frac{qB_z}{m}t + \tkn{phase}{\cul[blue]{\phi}}) 
+            + \frac{E_y}{B_z}t + \tkn{init_x}{\cul[blue]{x_0}}
+    }
+    \addArrow[red]{init_r}{(5ex,4ex)}{}{(1ex,2ex)}
+    \addArrow[blue]{init_r}{(0,-4ex)}{\scriptsize Radius}{(0,-1ex)}
+    \addArrow[blue]{phase}{(0,-4ex)}{\scriptsize Phase}{(0,-1ex)}
+    \addArrow[blue]{init_x}{(0,-3ex)}{\scriptsize Initial\\[-1ex]\scriptsize x coordinate}{(0,-1ex)}{(0,-1ex)}
+
+    \vskip 1em
+    And subsitute back to equation of $v_y$ gives
+    \aleq{
+        v_y(t) &= \frac{m}{qB_z}\dvv{v_x}{t} - \frac{E_x}{B_z}
+        = -C \cos\qty(\frac{qB_z}{m}t + \phi) - \frac{E_x}{B_z}\\[1ex]
+        \Rightarrow\quad y(t) &= -\cub[red]{C \qty(\frac{m}{qB_z})}{\text{A constant}} \sin \qty(\frac{qB_z}{m}t + \phi) 
+            - \frac{E_x}{B_z}t + y_0 \\[1ex]
+        &= -\tkn{init_r2}{\cul[blue]{R}} \sin \qty(\frac{qB_z}{m}t + \tkn{phase2}{\cul[blue]{\phi}}) 
+            - \frac{E_y}{B_z}t + \tkn{init_y}{\cul[blue]{x_0}}
+    }
+    \addArrow[red]{init_r2}{(5ex,4ex)}{}{(1ex,2ex)}
+    \addArrow[blue]{init_r2}{(0,-4ex)}{\scriptsize Radius}{(0,-1ex)}
+    \addArrow[blue]{phase2}{(0,-4ex)}{\scriptsize Phase}{(0,-1ex)}
+    \addArrow[blue]{init_y}{(0,-3ex)}{\scriptsize Initial\\[-1ex]\scriptsize y coordinate}{(0,-1ex)}{(0,-1ex)}
+
+    \vskip 1em
+    The result $x$/$y$ motion is a combination of circular motion + drifting.
+
+    \insertFig{lorentz drift}
+
+    \aleq{
+        \bmat{x(t)\\y(t)} 
+        = 
+        \cus[red]{R\bmat{\cos \qty(\frac{qB_z}{m}t+\phi) \\ -\sin \qty(\frac{qB_z}{m}t+\phi)}}{\text{Circular motion}}
+        \ +\ \cus[blue]{\inv{B_z}\bmat{E_y\\-E_x}t}{\text{Drifting}} \ +\ \bmat{x_0\\y_0}
+    }
+
+    \begin{enumerate}
+        \item Be careful that the drifting direction is not intuitive: 
+        \begin{itemize}
+            \item With $E_x$ only, drifting direction = $-\hhat{y}$
+            \item With $E_y$ only, drifting direction = $\hhat{x}$
+        \end{itemize}
+        In general, the drifting is along the direction of $\vvec{E}\cross\vvec{B}$ 
+        with a speed $\dfrac{\norm{\vvec{E}}}{\norm{\vvec{B}}}$.
+    
+        \vskip 1em
+        \item The rotation radius and speed maintain a constant ratio:
+        \aleq{
+            \text{Radius}=R \qquad\Rightarrow\qquad \text{Speed}=\frac{qB_z}{m}R
+        }
+        i.e. Angular velocity is always $\omega = \dfrac{qB_z}{m}$,
+        independent of the charge's initial velocity.
+        You can also arrive at the same result from equation of circular motion:
+        \aleq{
+            \frac{mv^2}{R} &= qvB \\
+            v &= \frac{qB}{m}R
+        }
+        (But how do you argue that it is a circular motion without solving ODEs?)
+
+    \end{enumerate}
+\end{itemize}
+
+
+
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Magnetic Induction}
+
+
+%%%%%%%%%%%%%%
+\subsection{EMF - Force or Voltage?}
+
+The term \bf{electromotive force} (EMF) was invented by 
+\href{https://en.wikipedia.org/wiki/Alessandro_Volta}{Alessandro Volta} in 1801,
+for explaining observations in electrochemistry.\\
+
+Metal electrodes in electrolyte 
+\begin{itemize}
+    \item[$\Rightarrow$] Current generates spontaneously.
+    \item[$\Rightarrow$] There must be some kind of "force" pushing the current! 
+\end{itemize}
+
+\insertFig{electrolyte}
+
+In early 1800s, scientists tended to describe things like a mechanical system,
+i.e. any motions of objects must be driven by some kind of "force" - 
+When there is a flow current, 
+there must be some "force" that keeps pushing the charges forward,
+namely the "electromotive force". 
+
+\begin{itemize}
+    \item However, EMF took the unit of volt because 
+    voltage measurement was the only way to quantify the magnitude of EMF.
+
+    \item Later when \href{https://en.wikipedia.org/wiki/Michael_Faraday}{Michael Faraday}
+    discovered the phenomena of magnetic induction,
+    he used the same word to refer to the source of the induced current.
+\end{itemize}
+
+
+Today we still keep its name as a "force", 
+even though we already know much better how current is generated in different sources.
+Maybe because people are already used to refer the same term \red{"EMF" 
+as the general name for ANY kind of current source}, 
+rather than differentiating them by the origin of energy.
+
+\insertFig{i dun care}
+
+In discussions of magnetic induction, 
+there are two kinds of EMF relate to this phenomenon.
+\begin{itemize}
+    \item \bf{\ul{Motional EMF}} : Source of energy = Motion of the charges' "container".
+    Can be explained by Lorentz force.
+
+    \item \bf{\ul{Transformer EMF}} : Source of energy = Change in magnetic field.
+    Explanation requires relativity.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%
+\subsection{Motional EMF}
+
+Under Lorentz force, 
+free charges move in circles in a constant B-field.
+But if the charges' movements are restricted, 
+charge distribution becomes uneven by building up potential difference. 
+
+%%%%%%%%%%%%%%
+\subsubsection{A Moving Battery}
+
+Suppose there is only ONE charge in the middle of a conducting rod.
+When the charge is given some initial velocity perpendicular to the rod
+(e.g. we give the rod a push),
+the charge will start to move in a circlar trajectory, 
+and the rod will be dragged along by the charge. \\
+
+(If the rod is restricted to move horizonally, it becomes SHM.)
+
+\insertFig{pipe SHM}
+
+But for charges that are at the ends of the rod,
+they will be pushed against the end walls and cannot move.
+Very soon, charge will accumulate at the end of the rod, 
+build up a E-field (i.e. potential difference) between the ends of the rod. 
+The central charges stop moving once the force from the built-up E-field balance the magnetic force, 
+i.e. when $q\vvec{E} = q\vvec{v}\cross \vvec{B}$.
+
+\insertFig{pipe potential}
+
+Note that if the rod suddenly stop moving,  
+the built-up potential difference,
+and thus the stored energy will be released and lost.
+\begin{center}
+    \red{The rod can be used to drive current. \\
+    It is a battery - but only when it keeps moving!}
+\end{center}
+
+
+We can analyze how the EMF arise from its energy conservation process.
+Let the B-field be constant and in $\hhat{z}$ direction, i.e. $\vvec{B}=B_z\hhat{z}$.
+\begin{enumerate}
+
+    \item Note that the work done on a charge by magnetic force is always $0$, 
+    because $\vvec{F}_B$ always perpendicular to the travelling direction $\dd{\vvec{r}}$,
+    (i.e. the same direction as $\vvec{v} =\dv{\vvec{r}}{t}$).
+    \aleq{
+        \text{W.D.} &= \vvec{F}_B \cdot \dd{\vvec{r}} = q(\vvec{v}\cross\vvec{B})\cdot\dd{\vvec{r}} = 0
+    }
+    
+    \item Meanwhile we can separate the W.D. into contributions along $x$ and $y$ direction:
+    \aleq{
+        \text{W.D.} &= q\qty[(\vvec{v}_x+\vvec{v}_y)\cross \vvec{B}]\cdot \qty(\dd{\vvec{x}}+\dd{\vvec{y}})\\
+        %
+        &= \cus[blue]{\ccancelto[blue]{0}{q(\vvec{v}_x\cross\vvec{B})\cdot\dd{\vvec{x}}}}
+            {\substack{\vvec{v}_x\cross \vvec{B}= v_xB_z(\hhat{x}\cross \hhat{z})
+                \\\phantom{\vvec{v}_{xi} \vvec{B}}=v_xB_z(-\hhat{y})\\[0.5ex]
+                \text{Dotting with }\hhat{x}\text{ gives }0}}
+            %
+            + q(\vvec{v}_x\cross\vvec{B})\cdot\dd{\vvec{y}} 
+            + q(\vvec{v}_y\cross\vvec{B})\cdot\dd{\vvec{x}}
+            %
+            + \cus[blue]{\ccancelto[blue]{0}{q(\vvec{v}_y\cross\vvec{B})\cdot\dd{\vvec{y}}}}
+            {\substack{\vvec{v}_y\cross \vvec{B}= v_yB_z(\hhat{y}\cross \hhat{z})
+                \\\phantom{\vvec{v}_{xi} \vvec{B}}=v_yB_z(\hhat{x})\\[0.5ex]
+                \text{Dotting with }\hhat{y}\text{ gives }0}}\\[1ex]
+        %
+        &= (-qv_xB_z\hhat{y})\cdot \dd{\vvec{y}} + (qv_yB_z\hhat{x}) \cdot \dd{\vvec{x}}\\[1ex]
+        %
+        &= \cus[red]{(-qv_xB_z)\dd{y}}
+                {\substack{\text{W.D. in }\hhat{y}\text{ direction}\\[0.5ex]\sim F_y \dd{y}}}
+            +\cus[red]{(qv_yB_z)\dd{x}}
+                {\substack{\text{W.D. in }\hhat{x}\text{ direction}\\[0.5ex]\sim F_x \dd{x}}}\\[1ex]
+        %
+        &\equiv 0 \quad\text{\scriptsize (Required by magnetic force)}
+    }
+
+    To always hold true, these two terms must always have equal magnitude but opposite sign.
+
+    \item When charges accumulate at the ends of the rod,
+    equilibrium happens when $q\vvec{E} = q\vvec{v}\cross\vvec{B}$.
+    So when a charge climbs up the E-field for a small distance $\dd{\vvec{y}}$,
+    it will gain a PE of:
+    \addArrow[blue]{d_emf}{(0,-2ex)}{\scriptsize The potential gain\\[-1ex]\scriptsize i.e. EMF}{(0,-1ex)}{(2ex,-0.5ex)}
+    \aleq{
+        q\dd{\tkn{d_emf}{\cul[blue]{\epsilon}}} 
+            \ \equiv\ (q\vvec{E})\cdot\dd{\hhat{y}}
+            = q(\vvec{v}\cross\vvec{B})\cdot\dd{\hhat{y}}
+            = -(qv_xB_z)\dd{y}
+    }
+    
+    \vskip 1em
+    This implies an energy conservation between:
+    \begin{itemize}
+        \item W.D. in $x$ direction = Any energy that cause the charge moving horizontally.
+        Must be indirectly applied on the charge through the movement of the rod. 
+        
+        \item W.D. in $y$ direction = Any energy that cause the charge moving vertically.
+        Can be independent of the rod's movement because charge can flow freely along the rod.
+        
+    \end{itemize} 
+    And this conversion is possible all because of the "weird" direction of magnetic force (always perpendicular to $v$).
+
+    \insertFig{WD by B = 0}
+
+    $F_\text{Lorentz}$ is in the same direction as $\dd{y}$, opposite 
+
+
+    
+    
+\end{enumerate}
+
+To summarize, motional EMF is the result of energy conservation between
+\aleq{
+    \cus[red]{(qv_yB_z)\dd{x}}
+    {\substack{\text{W.D. along }\hhat{x}\text{ direction}\\[0.5ex]\sim F_x \dd{x}}} 
+}
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Generalization to Arbituary Wire}
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Magnetic Flux - A Geometrical Relation}
+
+Consider a wire with a changing shape in under a static B-field. 
+Each segment $i$ of the wire has a length + orientation $\dd{l_i}$ and 
+is moving in velocity $v_i$.
+With some algebra, the EMF generated in each segment can be re-written as 
+\aleq{
+        \dd{\epsilon} &= (\vvec{v}_i\cross\vvec{B})\cdot\dd{\vvec{l}_i}\\
+        &= (\dd{\vvec{l}_i}\cross\vvec{v}_i)\cdot \vvec{B}\\
+        &= -(\vvec{v}_i\cdot\dd{\vvec{l}_i})\cdot \vvec{B}
+    }
+
+Meanwhile, within a short duration $\dd{t}$,
+the displacement of the segment is $\vvec{v}_i\dd{t}$.
+Thus we can approximate the swept area by the segment as a parallelogram:
+\aleq{
+    \qty(\mstack{\text{Swept}\\\text{Area}})
+    &= \qty(\mstack{\text{Area of parallelogram}\\\text{made by } v_i\dd{t} \text{ \& }\dd{l}_i})\\
+    &\approx \norm{\vvec{v}_i}\norm{\dd{\vvec{l}_i}}\sin \qty(\mstack{\text{Angle between}\\\vvec{v}_i\dd{t} \text{ \& }\dd{l}_i})\\
+    &= (\vvec{v}_i \dd{t})\cross(\dd{\vvec{l}_i})
+    %
+    \dvv{t} v_i\dd{t} \text{ \& }\dd{l}_i &= \vvec{v}_i\cross \dd{l}_i
+} 
+
+\insertFig{swept area}
+
+We can now relate EMF generated in the whole wire with swept area by the wire as:
+\aleq{
+    \sum \epsilon = -\sum_{\substack{\text{All}\\\text{segments}}}
+        \qty[(\vvec{v}_i\cross\dd{\vvec{l}_i})\cdot \vvec{B}]
+    &= -\sum_{\substack{\text{All}\\\text{segments}}} 
+        \qty[\dvv{t}\qty(\mstack{\text{Swept}\\\text{area}})_i\cdot \vvec{B}]\\
+    &= -\dvv{t}\sum_{\substack{\text{All}\\\text{segments}}}
+        \qty[\qty(\mstack{\text{Swept}\\\text{area}})\cdot \vvec{B}]
+} 
+
+When the segments are infinitestimally short, the sum becomes integral.
+\aleq{
+    \epsilon = -\int (\vvec{v}\cross\dd{\vvec{l}_i})\cdot\vvec{B}
+    &= -\dvv{t}\qty[\iint_{\substack{\text{Swept}\\\text{area}}}\vvec{B}\cdot\dd{\vvec{s}}]\\
+    &= -\dvv{t}\qty(\mstack{\text{Magnetic flux through}\\\text{the swept area}})
+}
+
+Pay attention to the depedendence to $t$ on the RHS:
+\begin{itemize}
+    \item The B-field $\vvec{B}$ is static. It is not a function of $t$.
+    
+    \item $\dd{\vvec{s}}$ is just a notation saying that this is a flux integral. 
+
+    \item The only thing that depends on $t$ is the \cul[red]{integration range}.
+\end{itemize}
+
+So to be more accurate, the equation of motional EMF may be written as 
+\aleq{
+    \epsilon = - \int_{\substack{\text{along a wire}\\\text{of shape of }l(t)}} (\vvec{v}\cross\dd{\vvec{l}})\cdot \vvec{B}
+    = -\dvv{t} \iint_{\substack{\text{Area }S(t)\\\text{swept by wire}}} \vvec{B}\cdot\dd{\vvec{s}}
+}
+
+to emphasize that it is the wire's shape / swept area varying with time.
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Transformer EMF}
+
+The modern explanation to transformer EMF is by relativity - 
+motional EMF and transformer EMF are the same phenomenon being observed in different reference frame. 
+
+\insertFig{different ref frame}
+
+EMF generated due to motion of the ring
+EMF generated due to changing magnetic field strength
+
+Consider a reference frame where the charge is static to the observer. 
+Because the charge is not moving, 
+Lorentz force by magnetic field $q\vvec{v}\cross\vvec{B}$ must be $0$.
+But if a time-varying B-field is applied, 
+experiments show that a transformer EMF will create, 
+i.e. some mysterious forces appear on the charges, 
+forcing them to form a potential difference.
+
+How to explain this mysterious force? 
+Add an induced E-field, and claim it to be generated by time-varying B-field.
+
+\insertFig{fix newton 2nd law}
+
+
+
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Maxwell-Faraday Equation}
+
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Lenz's Law}
+
+The formula of Faraday's law, in particular the integral form,
+can only be used to tell the magnitude of the induced EMF, 
+but not its direction.
+\aleq{
+    \epsilon = -\dvv{t}\iint \vvec{B}\cdot\dd{\vvec{s}} 
+}
+
+This minus sign is not useful for determining the direction of EMF at all.
+
+To determine the EMF's direction, we can apply \bf{Lenz's law},
+which is in principle,
+\begin{center}
+    Induced EMF always want to "oppose" change in magnetic flux
+\end{center}
+
+And right hand grip rule is the only thing you need.
+We can look at a few example to get familiar with it.
+
+\begin{example}
+    Consider a ring inside a magnetic field whose
+    magnitude is increasing in the out-of-paper direction.
+    \begin{enumerate}
+        \item Magnetic flux is getting "more out-of-paper" due to 
+        increase in B-field's magnitude.
+        \item Induced EMF want to "oppose" this magnetic flux change.
+        \item To oppose an increasing out-of-paper flux, one needs to decrease it,
+        i.e. create an into-paper flux to compensate the increase.
+        \item By right hand rule, into-paper flux can be created
+        if a current flow clockwise in the ring. 
+        So the induced EMF must be clockwise. 
+
+    \end{enumerate}
+
+    \insertFig{B field direction}
+    \insertFig{induce flux direction}
+    \insertFig{bar chart}
+\end{example}
+
+
+
+\begin{example}
+    Consider a ring inside a constant into-paper B-field.
+    The ring is shrinking in radius.
+    \begin{enumerate}
+        \item Magnetic flux is getting "less into-paper" due to
+        decrease in area.
+        \item Induced EMF want to "oppose" this magnetic flux change.
+        \item To oppose a decreasing into-paper flux, one needs to increase it,
+        i.e. create an into-paper flux to compensate the decrease.
+        \item By right hand rule, into-paper flux can be created
+        if a current flow clockwise in the ring.
+        So the induced EMF must be clockwise.
+        
+    \end{enumerate}
+
+
+\end{example}
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solving Problems in Magnetic Induction}
+
+Generally speaking, there are only two levels of questions related to magnetic induction.
+\begin{itemize}
+    \item Find EMF from the change in magnetic flux.
+    \item Find induced E-field from the change in magnetic flux. 
+\end{itemize}
+
+The difference is in the difficulties - 
+EMF is just a single number, the same everywhere in the coil.
+But the E-field, when involving magnetic induction, 
+is a vector function which depends on position AND time.
+
+%%%%%%%%%%%%
+\subsection{Finding EMF}
+
+This is a straightforward calculation to the surface integral of Faraday's law.
+
+\begin{itemize}
+    \item \bf{\ul{For high school level}} - 
+    B-field is usually given as a constant of position,
+    so that the surface integral reduces to a multiplication.
+    \aleq{
+        \epsilon = -\dvv{t}\iint \vvec{B}\cdot \dd{\vvec{s}}
+        \ \sim\ -\dvv{t}\qty(\vvec{B}(t)\cdot \qty(\text{Area})(t))
+    }
+
+    And because you are not expected to have studied differentiation chain rule,
+    you will never see a situation where both $\vvec{B}(t)$ and Area$(t)$ are changing.
+    It is always given the rate of change of one of them and the other is fixed.
+    \aleq{
+        \cus[red]{\epsilon = -\vvec{B} \cdot \dvv{t}(\text{Area}(t))}
+            {\substack{\text{When the question is about}\\\text{motional EMF}}}
+        \qquad\text{or}\qquad
+        \cus[red]{\epsilon = -\dvv{\vvec{B}(t)}{t} \cdot (\text{Area})}
+            {\substack{\text{When the question is about}\\\text{transformer EMF}}}
+    }
+
+    \vskip 1ex
+    \item \bf{\ul{For university level}} - You are assumed to have already learnt Ampere's law,
+    so more likely you are given the current and need to find B-field before EMF. 
+    \aleq{
+        \text{First}\quad
+        \cus[blue]{\oint \vvec{B}(t)\cdot\dd{\vvec{l}} = \mu_0 I(t)}{\text{Ampere's law for }\vvec{B}}
+        \ ,\quad \text{then}\quad 
+        \cus[blue]{\epsilon = -\dvv{t}\iint_{\text{Area}(t)} \vvec{B}(t)\cdot \dd{\vvec{s}}}{\text{Faraday's law for }\epsilon}
+    }
+\end{itemize}
+
+Asking for the EMF's direction is pretty common,
+because applying Lenz's law does not involve any maths.
+All you need is your right hand.
+
+%%%%%%%%%%%%
+\subsection{Finding induced E-field}
+
+This is in fact the task of solving the PDE of Maxwell-Faraday equation.
+\aleq{
+    \curl \vvec{E} = -\pdvv{\vvec{B}}{t}
+    \qquad\Rightarrow\qquad
+    \vvec{E}(t) = \text{Some function of }\vvec{B}(t)
+}
+
+Similar to how we deal with Gauss's law or Ampere's law,
+we can avoid solving PDE in some very symmetrical cases.
+If these conditions are satisfied:
+\begin{enumerate}
+    \item E-field is of the same magnitude everywhere on the loop.
+    \item E-field make the same angle with each line segment of the loop.
+\end{enumerate}
+
+Then we can reduce the integral form of Maxwell-Faraday equation in to multiplication.
+\aleq{
+    -\dvv{t}\iint\vvec{B}\cdot\dd{\vec{s}} &= \oint \vvec{E}\cdot\dd{\vvec{l}}\\
+    &= \oint \tkn{ampere_dot}{\cul[green]{\norm{\vvec{E}}\norm{\dd{\vvec{l}}}\cos\theta}}\\[1ex]
+    &= \tkn{ampere_B}{\cul[red]{\norm{\vvec{E}}}}\ \tkn{ampere_theta}{\cul[blue]{\cos\theta}}\ \oint \norm{\dd{\vvec{l}}}\\[2.5em]
+    &= \norm{\vvec{E}}\ \cos\theta\ (\text{Perimeter of loop})\\[1em]
+    \Aboxed{
+        \norm{\vvec{E}} &= \frac{\qty(\text{Flux of }\vvec{B})}{(\text{Perimeter of loop})\cos\theta}
+    }
+}
+\addArrow[green]{ampere_dot}{(5ex,0)}
+{\scriptsize Just dot product\\[-1ex]\scriptsize $\vvec{a}\cdot\vvec{b}=\norm{\vvec{a}}\norm{\vvec{b}}\cos\theta$}
+{(8ex,0)}{(6ex,0)}
+\addBentArrow[red]{ampere_B}{(-8ex,-3.5ex)}
+{Same magnitude everywhere\\[-0.5ex]Can move out of integral!}
+{(0,-1.5ex)}{(-12.5ex,1ex)}
+\addBentArrow[blue]{ampere_theta}{(8ex,-3.5ex)}
+{Form same angle everywhere\\[-0.5ex]Can move out of integral!}
+{(0,-1.5ex)}{(12.5ex,1ex)}
+
+\begin{example}
+    Consider a static rectangular loop next to an infinitely long wire, 
+    which carries a time-varying current $I(t)$, same magnitude everywhere along the wire. 
+
+    \insertFig{loop next to wire}
+
+    \begin{enumerate}
+        \item Always start with finding the magnetic flux through the loop.
+        By Ampere's law, the B-field by an infinitely long wire is 
+        \aleq{
+            \vvec{B}(r,t) = \frac{\mu_0}{2\pi}\frac{I(t)}{r}
+        }
+        
+        The magnetic flux through the loop can be calculated by 
+        first dividing the loop's area into strips,
+        then integrate the flux of all strips.
+        \aleq{
+            \Phi_B &= \iint \vvec{B}\cdot\dd{\vvec{s}}\\
+            &= \int_{r_1}^{r_2} \frac{\mu_0 I(t)}{2\pi r} (L\dd{r})\\
+            &= \frac{\mu_0 I(t) L}{2\pi}\qty[\ln(r_2)-\ln(r_1)]
+        }
+
+        \insertFig{split into strips}
+
+        \item The total EMF generated in the loop is just the differentiation of the above. i.e.
+        \aleq{
+            \epsilon = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})[\ln(r_2) - \ln(r_1)]
+        }
+        Direction of the EMF depends on how the current varies.
+        For example, if $\dv{I(t)}{t}>0$, i.e. magnetic flux increasing in the into-paper direction.
+        To oppose the change, EMF must be in anti-clockwise direction
+        to produce an out-of-paper direction flux.
+
+        \item On the other hand, to compute the E-field distribution, all we know is 
+        \aleq{
+            \abs{\epsilon} = \oint \vvec{E}\cdot \dd{\vvec{l}} 
+            = E^{\parallel}_1 L + E^{\parallel}_2 (r_2-r_1) + E^{\parallel}_3 L + E^{\parallel}_4 (r_2-r_1)
+        }
+
+        \insertFig{show label of edge only parallel}
+        
+        After taking dot product, only the component parallel to the edge is left.\\
+
+        To find the $E$ on each edge, we need symmetry arguments.
+        \begin{itemize}
+            \item By rotation symmetry, 
+            the E-field is only a function of radial distance from the wire. 
+            We can claim that $E^\parallel_1$ and $E^\parallel_3$ must have the same function form $\vvec{E}(r)$,
+            
+            \insertFig{rotation sym}
+            
+            \item By translational symmetry, 
+            $E_2^\parallel$ and $E_4^\parallel$ must be the same. 
+            Their contributions of dot product along the loop are cancelled.
+        \end{itemize}
+        
+        So the E-field relation to EMF is reduced to
+        \aleq{
+            \abs{\epsilon} &= E^{\parallel}_3 L - E^{\parallel}_1 L \\
+            &= E^{\parallel}(r_2) L - E^{\parallel}(r_1) L\\
+            &\equiv \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t}) \qty[\ln(r_2)-\ln(r_1)]
+        }
+        
+        We can claim that the $\vvec{E}$ \cul[red]{'s component parallel to the wire} is
+        \aleq{
+            E^{\parallel}(r) = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})\ln(r)
+        }
+
+        \item Note that in the above analysis,
+        we cannot determine if the E-field has components perpendicular to the wire.
+
+        \insertFig{parallel + perpendicular}
+
+        If there is only parallel component\\
+        If there is also perpendicular component. Is it physical?
+
+        
+        Recall from Gauss's law, 
+        E-field can be perpendicular to the wire if the wire carries a \cul[red]{static} line charge density.
+        So when the wire carries BOTH net charge and time-varying current,
+        the total E-field will be in diagonal directions.
+
+        \insertFig{sum of horizontal + vertical contribution = diagonal}
+
+    \end{enumerate}
+
+    
+\end{example}
+
+
+\linesep
+
+\appendix
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setcounter{section}{-1}
+\section*{Appendix: A Brief History of Electromagnetism}
 
 Electromagnetic induction is likely the most confusing topic in beginner E\&M.
 In my opinion, taking reference of the history is helpful to unify the concepts you have learnt.
@@ -169,574 +828,6 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
 \end{center}
 
 
-\linesep
-% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Motion under Lorentz Force}
-
-Nowadays we know that Lorentz force is the fundamental explanation to magnetic induction.
-But interestingly, it was formulated correctly only in the very late history of classical E\&M.
-\aleq{
-    \Aboxed{
-        m\vvec{a} = \vvec{F}_E + \vvec{F}_B = q\vvec{E} + q\vvec{v}\cross\vvec{B}
-    }
-}
-
-In general, $\vvec{E}$ and $\vvec{B}$ may be functions of time and position. 
-For simplicity, we will only discuss \cul[red]{the special case when the fields are constant}.
-By symmetry, we can assume that $\vvec{B}$ is only in $\hhat{z}$ direction, 
-i.e. $\vvec{B} = B_z\hhat{z}$.
-Then the Newton's \nth{2} law then writes as
-\aleq{
-    m\dvv{t}\bmat{v_x\\v_y\\v_z} = q\bmat{E_x\\E_y\\E_z} 
-        + q\bdet{\hhat{x} & \hhat{y} & \hhat{z}\\ v_x & v_y & v_z \\ 0 & 0 & B_z}
-}
-
-which turns into a system of 3 \nth{1} order linear ODEs.
-\aleq{
-    \bcase{
-        m\dvv{v_x}{t} &= qE_x + qv_yB_z\\
-        m\dvv{v_y}{t} &= qE_y - qv_xB_z\\
-        m\dvv{v_z}{t} &= qE_z
-    }
-}
-
-This system is simple enough that we do not need to use any matrix methods.
-\begin{itemize}
-    \item \bf{\ul{z component}}\\
-    Motion in $z$ direction is independent of $x$/$y$.
-    Can be solved alone.
-    \aleq{
-        m\dvv{v_z}{t} = qE_z 
-        \qquad\Rightarrow\qquad
-        &v_z(t) = \frac{qE_z}{m}t + v_{z0}\\[1ex]
-        &z(t) = \half\frac{qE_z}{m}t^2 
-            + \tkn{init_vz}{\cul[blue]{v_{z0}}}t + \tkn{init_z}{\cul[blue]{z_0}}
-    }
-    \addArrow[blue]{init_vz}{(0,-4ex)}{\scriptsize Initial\\[-1ex]\scriptsize z velocity}{(0,-1ex)}{(-3ex,0.5ex)}
-    \addArrow[blue]{init_z}{(0,-4ex)}{\scriptsize Initial\\[-1ex]\scriptsize z coordinate}{(0,-1ex)}{(3ex,0.5ex)}
-    
-    which is just a constant acceleration motion.
-
-    \item \bf{\ul{x/y components}}\\
-    They can be solved by differentiating one of them,
-    then substitute into the other.
-    \aleq{
-        \dvv[2]{v_x}{t} &= \frac{qB_z}{m}\dvv{v_y}{t} \\[1ex]
-        &= \frac{qB_z}{m}\qty(\frac{qE_y}{m}-\frac{qB_z}{m}v_x)\\[1ex]
-        &= - \frac{q^2B_z^2}{m}\qty(v_x - \frac{E_y}{B_z})
-    }
-
-    which is once again the familiar ODE of SHM.
-    \aleq{
-        v_x(t) &= -C' \sin\qty(\frac{qB_z}{m}t + \phi) + \frac{E_y}{B_z}\\[1ex]
-        \Rightarrow\quad x(t) &= \cus[red]{C'\qty(\frac{m}{qB_z})}{\text{constant}}\cos \qty(\frac{qB_z}{m}t + \phi) 
-            + \frac{E_y}{B_z}t + x_0\\[1ex]
-        &= \tkn{init_r}{\cul[blue]{C}} \cos \qty(\frac{qB_z}{m}t + \tkn{phase}{\cul[blue]{\phi}}) 
-            + \frac{E_y}{B_z}t + \tkn{init_x}{\cul[blue]{x_0}}
-    }
-    \addArrow[red]{init_r}{(5ex,4ex)}{}{(1ex,2ex)}
-    \addArrow[blue]{init_r}{(0,-4ex)}{\scriptsize Radius}{(0,-1ex)}
-    \addArrow[blue]{phase}{(0,-4ex)}{\scriptsize Phase}{(0,-1ex)}
-    \addArrow[blue]{init_x}{(0,-3ex)}{\scriptsize Initial\\[-1ex]\scriptsize x coordinate}{(0,-1ex)}{(0,-1ex)}
-
-    \vskip 1em
-    And subsitute back to equation of $v_y$ gives
-    \aleq{
-        v_y(t) &= \frac{m}{qB_z}\dvv{v_x}{t} - \frac{E_x}{B_z} \\[1ex]
-        &= -C' \cos\qty(\frac{qB_z}{m}t + \phi) - \frac{E_x}{B_z}\\[1ex]
-        \Rightarrow\quad y(t) &= -\cus[red]{C' \qty(\frac{m}{qB_z})}{\text{constant}} \sin \qty(\frac{qB_z}{m}t + \phi) 
-            - \frac{E_x}{B_z}t + y_0 \\[1ex]
-        &= -\tkn{init_r2}{\cul[blue]{C}} \sin \qty(\frac{qB_z}{m}t + \tkn{phase2}{\cul[blue]{\phi}}) 
-            - \frac{E_y}{B_z}t + \tkn{init_y}{\cul[blue]{x_0}}
-    }
-    \addArrow[red]{init_r2}{(5ex,4ex)}{}{(1ex,2ex)}
-    \addArrow[blue]{init_r2}{(0,-4ex)}{\scriptsize Radius}{(0,-1ex)}
-    \addArrow[blue]{phase2}{(0,-4ex)}{\scriptsize Phase}{(0,-1ex)}
-    \addArrow[blue]{init_y}{(0,-3ex)}{\scriptsize Initial\\[-1ex]\scriptsize y coordinate}{(0,-1ex)}{(0,-1ex)}
-
-    \vskip 1em
-    The result $x$-$y$ motion is a combination of circular motion + drifting.
-
-    \insertFig{lorentz drift}
-
-    \aleq{
-        \bmat{x(t)\\y(t)} 
-        = 
-        \cus[red]{C\bmat{\cos \qty(\frac{qB_z}{m}t+\phi) \\ -\sin \qty(\frac{qB_z}{m}t+\phi)}}{\text{Circular motion}}
-        \ +\ \cus[blue]{\inv{B_z}\bmat{E_y\\-E_x}t}{\text{Drifting}} \ +\ \bmat{x_0\\y_0}
-    }
-
-    \begin{enumerate}
-        \item Note that the drifting direction is not intuitive: 
-        \begin{itemize}
-            \item With $E_x$ only, drifting direction = $-\hhat{y}$
-            \item With $E_y$ only, drifting direction = $\hhat{x}$
-        \end{itemize}
-        In general, the drifting direction is along direction of $\vvec{E}\cross\vvec{B}$ 
-        with a speed $\dfrac{\norm{\vvec{E}}}{\norm{\vvec{B}}}$
-    
-        \vskip 1em
-        \item The rotation radius and speed maintain a constant ratio:
-        \aleq{
-            \text{Radius}=R \qquad\Rightarrow\qquad \text{Speed}=\frac{qB_z}{m}R
-        }
-        i.e. Angular velocity is fixed at $\omega = \dfrac{qB_z}{m}$,
-        independent of the charge's initial velocity.\\ 
-        \gray{(One can also derive the same result by $\dfrac{mv^2}{r} = qvB$)}\\
-
-    \end{enumerate}
-\end{itemize}
-
-
-
-
-
-
-\linesep
-% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Magnetic Induction}
-
-
-%%%%%%%%%%%%%%
-\subsection{EMF - Force or Voltage?}
-
-The term \bf{electromotive force} (EMF) was invented by Alessandro Volta in 1801,
-for explaining observations in electrochemistry.\\
-
-Metal electrodes in electrolyte 
-\begin{itemize}
-    \item[$\Rightarrow$] Current generates spontaneously.
-    \item[$\Rightarrow$] There must be some kind of "force" pushing the current! 
-\end{itemize}
-
-\insertFig{electrolyte}
-
-In early 1800s, scientists tended to describe things like mechanical system,
-i.e. any motions of objects must be driven by some kind of "force".
-So when there is a steady current, 
-there must be a "force" that keep pushing the charges forward.
-namely the "electromotive force". 
-
-\begin{itemize}
-    \item However, EMF took the unit of volt because 
-    voltage measurement was the only way to quantify the magnitude of EMF.
-    \item Later when Michael Faraday discovered the phenomena of magnetic induction,
-    he used the same word to refer to the source of the induced current.
-\end{itemize}
-
-
-Today we still keep the name as a "force", 
-even though we already know much better how current is generated in different sources.
-Maybe because people are already used to refer the same term \red{"EMF" 
-as the general name for ANY kind of current source}, 
-rather than discriminating them by their origin of energy.
-
-\insertFig{i dun care}
-
-Below we only focus on the two kinds of EMF that relate to magnetic induction phenomena.
-\begin{itemize}
-    \item \bf{\ul{Motional EMF}} : Source of energy = Motion of the charges' "container".
-    Can be explained via Lorentz force.
-
-    \item \bf{\ul{Transformer EMF}} : Source of energy = Change in magnetic field.
-    Explanation requires relativity.
-\end{itemize}
-
-
-%%%%%%%%%%%%%%
-\subsection{Motional EMF}
-
-Under Lorentz force, 
-free charges move in circles in a constant B-field.
-But if the charges' movements are restricted, 
-charge distribution becomes uneven by building up potential difference. 
-
-%%%%%%%%%%%%%%
-\subsubsection{A Moving Battery}
-
-If there is only one charge in the middle of a rod, 
-the charge is free to move in a circlar trajectory.
-(And the rod will be dragged along by the charge. 
-Even if the rod is restricted to move horizonally,
-it simply undergoes SHM.)
-
-\insertFig{pipe SHM}
-
-On the other hand, for charges that are at the ends of the rod,
-they will be pushed against at the end walls and can no longer move.
-
-\insertFig{pipe potential}
-
-This results in a charge accumulation at the end of the rod, 
-building up a potential difference, 
-and storing energy that \cul[red]{can be released once the rod stop moving.}
-
-\begin{center}
-    \red{The pipe can be used to drive current when it is kept moving - It is a moving battery!}
-\end{center}
-
-
-We can calculate the the potential built up in the rod
-by looking into the energy conservation process.
-\begin{enumerate}
-
-    \item Suppose the B-field is constant and is in $\hhat{z}$ direction, i.e. $\vvec{B}=B_z\hhat{z}$.
-    While the work done on a charge by Lorentz force of B-field is $0$ 
-    (because $\vvec{F}_B$ always perpendicular to $\vvec{v} =\dv{\vvec{r}}{t} \sim \dd{\vvec{r}}$),
-    we can split it into the work done in two directions:
-    \aleq{
-        \text{W.D.} &= \vvec{F}_B \cdot \dd{\vvec{r}} = 0 \\[1ex]
-        &= q(\vvec{v}\cross\vvec{B})\cdot\dd{\vvec{r}} \\[1ex]
-        &= q\qty[(\vvec{v}_x+\vvec{v}_y)\cross \vvec{B}]\cdot \qty(\dd{\vvec{x}}+\dd{\vvec{y}})\\
-        %
-        %&= q\qty(-v_xB_z\hhat{y} + v_yB_z\hhat{x})\cdot \qty(\dd{\vvec{x}}+\dd{\vvec{y}})\\
-        &= \cus[blue]{\ccancelto[blue]{0}{q(\vvec{v}_x\cross\vvec{B})\cdot\dd{\vvec{x}}}}
-            {\substack{\vvec{v}_x\cross \vvec{B}= v_xB_z(\hhat{x}\cross \hhat{z})
-                \\\phantom{\vvec{v}_{xi} \vvec{B}}=v_xB_z(-\hhat{y})\\[0.5ex]
-                \text{Dotting with }\hhat{x}\text{ gives }0}}
-            %
-            + q(\vvec{v}_x\cross\vvec{B})\cdot\dd{\vvec{y}} 
-            + q(\vvec{v}_y\cross\vvec{B})\cdot\dd{\vvec{x}}
-            %
-            + \cus[blue]{\ccancelto[blue]{0}{q(\vvec{v}_y\cross\vvec{B})\cdot\dd{\vvec{y}}}}
-            {\substack{\vvec{v}_y\cross \vvec{B}= v_yB_z(\hhat{y}\cross \hhat{z})
-                \\\phantom{\vvec{v}_{xi} \vvec{B}}=v_yB_z(\hhat{x})\\[0.5ex]
-                \text{Dotting with }\hhat{y}\text{ gives }0}}\\[1ex]
-        %
-        &= \cus[red]{q(\vvec{v}_x\cross\vvec{B})\cdot\dd{\vvec{y}}}
-                {\substack{\text{W.D. along }\hhat{y}\text{ direction}\\[0.5ex]\sim F_y \dd{y}}}
-            +\cus[red]{q(\vvec{v}_y\cross\vvec{B})\cdot\dd{\vvec{x}}}
-                {\substack{\text{W.D. along }\hhat{x}\text{ direction}\\[0.5ex]\sim F_x \dd{x}}}
-    }
-
-    Note that the W.D. along the two directions will always carry opposite sign.
-    i.e. This is an energy conservation between the rod's KE in its travelling direction ($\hhat{x}$)
-    and KE of charges along the rod ($\hhat{y}$).
-
-    \insertFig{WD by B = 0}
-
-    \item On the other hand, as charge accumulates at the ends of the rod,
-    the charges will reach the equilibrium state when 
-    Lorentz force of B-field is balanced by built-up potential from the charge accumulation. 
-    The net forces, and thus W.D. to travel against the potential is:
-    \addArrow[blue]{d_emf}{(0,-2ex)}{$\epsilon$ = EMF}{(0,-1ex)}{(2ex,-0.5ex)}
-    \aleq{
-        q\vvec{E} &= q\vvec{v}\cross\vvec{B}\\
-        \Rightarrow\quad q\dd{\tkn{d_emf}{\cul[blue]{\epsilon}}} 
-            \ \equiv\ q(\vvec{E}\cdot\dd{\hhat{y}})&= q(\vvec{v}\cross\vvec{B})\cdot\dd{\hhat{y}}   
-    }
-    
-
-    i.e. The KE of charges along the rod ($\hhat{y}$) turns into energy stored in the built-up potential.
-
-    \insertFig{free body diag}    
-    
-\end{enumerate}
-
-That is, the phenomenon of motional EMF is no more than an energy conservation process from
-the KE of a rod of charges to the potential built-up by its charges.
-
-
-
-
-
-%%%%%%%%%%%%%%
-\subsubsection{Geometrical Relation with Flux}
-
-Consider a wire with a changing shape in under a static B-field. 
-Each segment $i$ of the wire is rod of length and orientation $\dd{l_i}$ and 
-is moving in velocity $v_i$.
-After some algebra, the emf generated in each segment can be re-written as 
-\aleq{
-        \dd{\epsilon} &= (\vvec{v}_i\cross\vvec{B})\cdot\dd{\vvec{l}_i}\\
-        &= (\dd{\vvec{l}_i}\cross\vvec{v}_i)\cdot \vvec{B}\\
-        &= -(\vvec{v}_i\cdot\dd{\vvec{l}_i})\cdot \vvec{B}
-    }
-
-Meanwhile, within a short duration $\dd{t}$,
-the displacement of the segment is $\vvec{v}_i\dd{t}$.
-Thus we can approximate the swept area by the segment as a parallelogram:
-\aleq{
-    \qty(\mstack{\text{Swept}\\\text{Area}})
-    &= \qty(\mstack{\text{Area of parallelogram}\\\text{made by } v_i\dd{t} \text{ \& }\dd{l}_i})\\
-    &\approx \norm{\vvec{v}_i}\norm{\dd{\vvec{l}_i}}\sin \qty(\mstack{\text{Angle between}\\\vvec{v}_i\dd{t} \text{ \& }\dd{l}_i})\\
-    &= (\vvec{v}_i \dd{t})\cross(\dd{\vvec{l}_i})
-    %
-    \dvv{t} v_i\dd{t} \text{ \& }\dd{l}_i &= \vvec{v}_i\cross \dd{l}_i
-} 
-
-\insertFig{swept area}
-
-We can now relate EMF generated in the whole wire with swept area by the wire as:
-\aleq{
-    \sum \epsilon = -\sum_{\substack{\text{All}\\\text{segments}}}
-        \qty[(\vvec{v}_i\cross\dd{\vvec{l}_i})\cdot \vvec{B}]
-    &= -\sum_{\substack{\text{All}\\\text{segments}}} 
-        \qty[\dvv{t}\qty(\mstack{\text{Swept}\\\text{area}})_i\cdot \vvec{B}]\\
-    &= -\dvv{t}\sum_{\substack{\text{All}\\\text{segments}}}
-        \qty[\qty(\mstack{\text{Swept}\\\text{area}})\cdot \vvec{B}]
-} 
-
-When the segments are infinitestimally short, the sum becomes integral.
-\aleq{
-    \epsilon = -\int (\vvec{v}\cross\dd{\vvec{l}_i})\cdot\vvec{B}
-    &= -\dvv{t}\qty[\iint_{\substack{\text{Swept}\\\text{area}}}\vvec{B}\cdot\dd{\vvec{s}}]\\
-    &= -\dvv{t}\qty(\mstack{\text{Magnetic flux through}\\\text{the swept area}})
-}
-
-Pay attention to the depedendence to $t$ on the RHS:
-\begin{itemize}
-    \item The B-field $\vvec{B}$ is static. It is not a function of $t$.
-    
-    \item $\dd{\vvec{s}}$ is just a notation saying that this is a flux integral. 
-
-    \item The only thing that depends on $t$ is the \cul[red]{integration range}.
-\end{itemize}
-
-So to be more accurate, the equation of motional EMF may be written as 
-\aleq{
-    \epsilon = - \int_{\substack{\text{along a wire}\\\text{of shape of }l(t)}} (\vvec{v}\cross\dd{\vvec{l}})\cdot \vvec{B}
-    = -\dvv{t} \iint_{\substack{\text{Area }S(t)\\\text{swept by wire}}} \vvec{B}\cdot\dd{\vvec{s}}
-}
-
-to emphasize that it is the wire's shape / swept area varying with time.
-
-
-
-%%%%%%%%%%%%%%
-\subsection{Transformer EMF}
-
-The modern explanation to transformer EMF is by relativity - 
-motional EMF and transformer EMF are the same phenomenon being observed in different reference frame. 
-
-\insertFig{different ref frame}
-
-EMF generated due to motion of the ring
-EMF generated due to changing magnetic field strength
-
-Consider a reference frame where the charge is static to the observer. 
-Because the charge is not moving, 
-Lorentz force by magnetic field $q\vvec{v}\cross\vvec{B}$ must be $0$.
-But if a time-varying B-field is applied, 
-experiments show that a transformer EMF will create, 
-i.e. some mysterious forces appear on the charges, 
-forcing them to form a potential difference.
-
-How to explain this mysterious force? 
-Add an induced E-field, and claim it to be generated by time-varying B-field.
-
-\insertFig{fix newton 2nd law}
-
-
-
-
-
-
-%%%%%%%%%%%%%%
-\subsection{Maxwell-Faraday Equation}
-
-%%%%%%%%%%%%%%
-\subsection{Lenz's Law}
-
-The formula of Faraday's law, in particular the integral form,
-can only be used to tell the magnitude of the induced EMF, 
-but not its direction.
-\aleq{
-    \epsilon = -\dvv{t}\iint \vvec{B}\cdot\dd{\vvec{s}} 
-}
-
-This minus sign is not useful for determining the direction of EMF at all.
-
-To determine the EMF's direction, we can apply \bf{Lenz's law},
-which is in principle,
-\begin{center}
-    Induced EMF always want to "oppose" change in magnetic flux
-\end{center}
-
-And right hand grip rule is the only thing you need.
-We can look at a few example to get familiar with it.
-
-\begin{example}
-    Consider a ring inside a magnetic field whose
-    magnitude is increasing in the out-of-paper direction.
-    \begin{enumerate}
-        \item Magnetic flux is getting "more out-of-paper" due to 
-        increase in B-field's magnitude.
-        \item Induced EMF want to "oppose" this magnetic flux change.
-        \item To oppose an increasing out-of-paper flux, one needs to decrease it,
-        i.e. create an into-paper flux to compensate the increase.
-        \item By right hand rule, into-paper flux can be created
-        if a current flow clockwise in the ring. 
-        So the induced EMF must be clockwise. 
-
-    \end{enumerate}
-
-    \insertFig{B field direction}
-    \insertFig{induce flux direction}
-    \insergFig{bar chart}
-\end{example}
-
-
-
-\begin{example}
-    Consider a ring inside a constant into-paper B-field.
-    The ring is shrinking in radius.
-    \begin{enumerate}
-        \item Magnetic flux is getting "less into-paper" due to
-        decrease in area.
-        \item Induced EMF want to "oppose" this magnetic flux change.
-        \item To oppose a decreasing into-paper flux, one needs to increase it,
-        i.e. create an into-paper flux to compensate the decrease.
-        \item By right hand rule, into-paper flux can be created
-        if a current flow clockwise in the ring.
-        So the induced EMF must be clockwise.
-        
-    \end{enumerate}
-
-
-\end{example}
-\linesep
-% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Basic Problems in Magnetic Induction}
-
-Generally speaking, there are only two level of questions related to magnetic induction.
-\begin{enumerate}
-    \item Find EMF from change in area or change in B-field magnitude.
-    This is a straightforward calculation to the surface integral of Faraday's law.
-    \aleq{
-        \epsilon = -\dvv{t}\iint \vvec{B}\cdot \dd{\vvec{s}} 
-        \sim -\dvv{\vvec{B}(t)\cdot \qty(\text{Area})(t)}
-    }
-    Direction should be determined by Lenz's law, not this minus sign
-    If B-field is given to be uniform, it reduces to a multiplication.
-
-    Even at university level questions, 
-    it is rare to give a situation where both area and B-field are changing. 
-    Usually one of them is fixed and the rate of change of the other will be given.
-    \aleq{
-        \epsilon = -\vvec{B} \cdot \dvv{t}(\text{Area}) 
-        \qquad\text{or}\qquad
-        \epsilon = -\dvv{t}\vvec{B} \cdot (\text{Area})
-    }
-
-    \item Find the induced E-field from the change in B-field. 
-    This is in fact the task of solving the PDE of Maxwell-Faraday equation.
-    \aleq{
-        \curl \vvec{E} = -\pdvv{\vvec{B}}{t}
-    }
-
-
-
-\end{enumerate}
-
-%%%%%%%%%%%%
-\subsection{Finding EMF}
-
-%%%%%%%%%%%%
-\subsection{Finding induced E-field}
-
-Similar to how we deal with Gauss's law or Ampere's law,
-we can avoid solving PDF in some very symmetrical cases.
-If these conditions are satisfied:
-\begin{enumerate}
-    \item E-field is of the same magnitude everywhere on the loop.
-    \item E-field make the same angle with each line segment of the loop.
-\end{enumerate}
-
-We can reduce the integral form of Maxwell-Faraday equation in to multiplication.
-\aleq{
-    -\dvv{t}\iint\vvec{B}\cdot\dd{\vec{s}} &= \oint \vvec{E}\cdot\dd{\vvec{l}}
-    &\sim \norm{\vvec{E}}\cos\theta \qty(\text{loop's perimeter})\\
-    \norm{\vvec{E}} &= \frac{\qty(\text{Flux of }\vvec{B})}{\cos\theta (\text{loop's perimeter})}
-}
-
-\begin{example}
-    Consider a static rectangular loop next to an infinitely long wire, 
-    which carries a time-varying current $I(t)$. 
-
-    \insertFig{loop next to wire}
-
-    \begin{enumerate}
-        \item Find the magnetic flux through the loop.
-        By Ampere's law, the B-field due to an infinitely long wire is 
-        \aleq{
-            \vvec{B}(t) = \frac{\mu_0}{2\pi}\frac{I(t)}{r}
-        }
-        
-        The magnetic flux through the loop can be calculated by 
-        first dividing the loop's area into strips,
-        then integrate the flux of all strips.
-        \aleq{
-            \Phi_B &= \iint \vvec{B}\cdot\dd{\vvec{s}}\\
-            &= \int_{r_1}^{r_2} \frac{\mu_0 I(t)}{2\pi r} (L\dd{r})\\
-            &= \frac{\mu_0 I(t) L}{2\pi}\qty[\ln(r_2)-\ln(r_1)]
-        }
-
-        \insertFig{split into strips}
-
-        \item The total EMF generated in the loop can be computed just be differentiating the above. i.e.
-        \aleq{
-            \epsilon = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})[\ln(r_2) - \ln(r_1)]
-        }
-
-        Depends on how the current varies, 
-        we can use Lenz's law to determine the direction of the EMF.
-        For example, if $I(t)$ is increasing, magnetic flux wil be increasing in the upward direction.
-        So to oppose the change, EMF must be in clockwise direction (when look from above) 
-        to produce a downward direction flux.
-
-        \item But for the E-field, all we know is 
-        \aleq{
-            \abs{\epsilon} = \oint \vvec{E}\cdot \dd{\vvec{l}} 
-            = E^\sparallel_1L + E^\sparallel_2(r_2-r_1) + E^\sparallel_3 L + E^\sparallel_4 (r_2-r_1)
-        }
-
-        \insertFig{show label of edge only parallel}
-        
-        After taking dot product, only the component parallel to the edge is left.\\
-
-        To find each $E$, we need to apply symmetry arguments.
-        \begin{itemize}
-            \item By rotation symmetry, 
-            the E-field is only a function of radial distance from the wire. 
-            We can claim that $E^\sparallel_1$ and $E^\sparallel_3$ must have the same function form $\vvec{E}(r)$,
-            
-            \insertFig{rotation sym}
-            
-            \item By translational symmetry, 
-            $E_2$ and $E_4$ must be the same. 
-            Their contributions of dot product along the loop are cancelled.
-        \end{itemize}
-        
-        So the E-field relation to EMF is reduced to
-        \aleq{
-            \abs{epsilon} = E^\sparallel_3 L - E^\sparallel_1 L
-            = E^\sparallel(r_2) L - E^\sparallel(r_1) L = 
-            = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t}) \qty[\ln(r_2)-\ln(r_1)]
-        }
-        
-        and we can claim that the component of $\vvec{E}$ \cul[red]{parallel to the wire} is
-        \aleq{
-            E^\sparallel(r) = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})\ln(r)
-        }
-
-        \item Note that in the above analysis
-        we cannot determine if the E-field has components perpendicular to the wire.
-
-        \insertFig{parallel + perpendicular}
-
-        It is totally possible for the E-field to carry a non-zero component perpendicular to the wire -
-        by Gauss's law, 
-        E-field is perpendicular to the wire if the wire carries a \cul[red]{static} line charge density.
-        So if the wire carries BOTH net charge and time-varying current,
-        the total E-field will be in diagonal directions.
-
-        \insertFig{sum of horizontal + vertical contribution = diagonal}
-
-    \end{enumerate}
-
-    
-\end{example}
 %%%
 \theend
 \end{document}

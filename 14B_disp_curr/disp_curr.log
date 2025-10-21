@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  19 OCT 2025 05:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  21 OCT 2025 15:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex
-(d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex
+**d:/mings/Documents/PhyO/latex_notes/14B_disp_curr/disp_curr.tex
+(d:/mings/Documents/PhyO/latex_notes/14B_disp_curr/disp_curr.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
@@ -63,7 +63,7 @@ Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
 \c@currfiledepth=\count286
 )
 \sa@out=\write3
- (./induction.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+ (./disp_curr.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
 Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
 )
 Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
@@ -725,8 +725,8 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \c@lecnum=\count364
 \c@example=\count365
 \c@exercise=\count366
-)) (./induction.aux)
-\openout1 = `induction.aux'.
+)) (./disp_curr.aux)
+\openout1 = `disp_curr.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -746,8 +746,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
- (./induction.sta)
-\openout3 = `induction.sta'.
+ (./disp_curr.sta)
+\openout3 = `disp_curr.sta'.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -779,9 +779,9 @@ LaTeX Info: Redefining \ohm on input line 14.
 Package gensymb Info: Using \textohm for \ohm on input line 14.
 Package gensymb Info: Using \textmu for \micro on input line 14.
 Package hyperref Info: Link coloring ON on input line 14.
- (./induction.out) (./induction.out)
+ (./disp_curr.out) (./disp_curr.out)
 \@outlinefile=\write5
-\openout5 = `induction.out'.
+\openout5 = `disp_curr.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -832,17 +832,12 @@ LaTeX Font Info:    Trying to load font information for U+esint on input line 16
  (c:/texlive/2024/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 29--32
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
 
  []
 
@@ -853,81 +848,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--75
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
 
- []
-
-
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
-
- []
-
-
-
-[4]
-
-[5]
-
-[6]
-
-[7]
-
-[8]
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
-
- []
-
-
-
-[10]
-Underfull \hbox (badness 10000) in alignment at lines 761--761
-[][] 
- []
-
-
-
-[11]
-Overfull \hbox (9.43814pt too wide) in paragraph at lines 825--825
-|[][]
- []
-
-
-Overfull \hbox (4.08958pt too wide) in paragraph at lines 825--825
-|[][]
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 825--825
-[][] 
- []
-
-
-
-[12] (./induction.aux)
+[3] (./disp_curr.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
-Package rerunfilecheck Info: File `induction.out' has not changed.
-(rerunfilecheck)             Checksum: A981B9167FACD4B62145C82DE7584252;2250.
+Package rerunfilecheck Info: File `disp_curr.out' has not changed.
+(rerunfilecheck)             Checksum: B583FAB4E3F22432684055F4F6E7347F;988.
  ) 
 Here is how much of TeX's memory you used:
- 29877 strings out of 469747
- 565561 string characters out of 5481688
- 954624 words of memory out of 5000000
- 57646 multiletter control sequences out of 15000+600000
+ 29151 strings out of 469747
+ 548298 string characters out of 5481688
+ 949629 words of memory out of 5000000
+ 56956 multiletter control sequences out of 15000+600000
  640342 words of font info for 90 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,24n,159p,596b,944s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on induction.pdf (12 pages, 225378 bytes).
+ 125i,21n,159p,596b,905s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on disp_curr.pdf (3 pages, 168692 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

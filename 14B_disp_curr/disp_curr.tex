@@ -1,0 +1,182 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../.common/common}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{T14B (Electromagnetism)}
+\title{Displacement Current}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+
+\begin{overview}
+    \begin{itemize}
+        \item Definition of current, conservation of charge
+        \item Fixing Ampere's law - displacement current
+    \end{itemize}
+\end{overview}
+
+\vskip 1em
+In electromagnetism, 
+theoretically every problem can be solved through a set of PDEs
+called the \bf{Maxwell Equations}.\\[-2em]
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \div \vvec{E} &= \frac{\rho}{\epsilon_0}\\
+            \curl \vvec{E} &= -\pdvv{\vvec{B}}{t}
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.3\textwidth}
+        \aleq{
+            \div \vvec{B} &= 0\\
+            \tkn{maxwell_ampere}{\curl} \vvec{B} &= \gray{\mu_0 \vvec{J} +} \cul[red]{\mu_0\epsilon_0\pdvv{\vvec{E}}{t}}
+        }
+    \end{minipage}
+\end{center}
+\addArrow[red]{maxwell_ampere}{(-5ex,0)}{}{(-3ex,1ex)}
+
+However, a \it{system of PDEs} is too complicated to be solved.
+So we need to learn different "tricks" to avoid them,
+which are enough for some simple scenarios.\\
+
+In this note, we will discuss why it is necessary to add the \cul[red]{second term} in Ampere's law.
+
+
+
+\linesep
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Charge Conservation}
+
+In magnetostatics, we describe everything by using current as the source. 
+But in the dynamics part of E\&M, charge is the only real source, 
+while current has to be treated as moving charge.
+
+\insertFig{pool of charge + current <-> pool of static charge + moving charge}
+
+
+%%%%%%%%%%%%%%
+\subsection{Definition of Current}
+
+To inter-convert the two pespectives, 
+we need to apply the definition of current.
+Its literal definition is simply:
+\begin{center}
+    \fbox{
+        Current = Rate of charge's flow into/out of a volume
+    }
+\end{center}
+
+Across textbooks, its definition can appear as many different formula.
+\begin{enumerate}
+    \item \bf{\ul{"Wire" description}} - 
+    Consider the volume to flow through to be a line. 
+    Current can be defined by counting the total amount of charge $Q$ through the wire. 
+    \aleq{
+        \Aboxed{
+            I = \dvv{Q}{t}
+            \qquad\text{or}\qquad 
+            I = \frac{Q}{t}
+            \quad \qty(\substack{\text{for people}\\\text{who can't do}\\\text{calculus}})
+        }
+    }
+    \insertFig{line def}
+
+    \item \bf{\ul{"Cylinder" description}} - 
+    Magnify the wire to become a straight cylinder.
+    Current can be defined by counting the total amount of charge 
+    flowing into/out of the cylinder. 
+    \aleq{
+        \Aboxed{
+            I = \dvv{t}\qty[\qty(\substack{\text{Charge}\\\text{per particle}})
+                \qty(\substack{\text{\# of particle}\\\text{per volume}})
+                \qty(\substack{\text{Volume of}\\\text{cylinder}})]
+            =\dvv{t}(qnAL)
+        }
+    }
+
+    By taking velocity of charge $v\sim\dvv{L}{t}$, it becomes the more common form in textbooks:
+    \aleq{
+        \Aboxed{
+            I = nAqv
+        }
+    } 
+
+    \insertFig{cyl def}
+
+    \item \bf{\ul{Microscopic definition}} - The whole wire can be abstractly treated as a surface.
+    Just like the water pipe we have learnt in Gauss's law. 
+
+    \insertFig{water pipe, label in flux of I and out flux of I}
+
+    This turns the flow in / out of condition becomes a flux integral.
+    \aleq{
+        I &= \iint \cul[blue]{nq}\vvec{v}\cdot\dd{\vvec{s}} \\[1em]
+        &= \iint \tkn{rho}{\cul[blue]{\rho}} \vvec{v} \cdot \dd{\vvec{s}}\\[1em]
+        &= \iint \tkn{I_rho}{\cul[red]{\rho(\vvec{r})}}\, \tkn{I_v}{\cul[red]{\vvec{v}(\vvec{r})}} \cdot \dd{\vvec{s}}\\[1em]
+        &= \iint \vvec{J}\cdot\dd{\vvec{s}}
+    }
+    \addArrow[blue]{rho}{(0.5ex,3em)}
+    {\scriptsize $nq =\qty(\substack{\text{\# of particle}\\\text{per volume}})\qty(\substack{\text{charge per}\\\text{particle}})\sim $ Charge density}
+    {(0.3ex,2ex)}{(19ex,-1.7em)}
+    \addArrow[red]{I_rho}{(-2ex,3em)}{}{(0,2ex)}
+    \addArrow[red]{I_v}{(-6ex,3em)}
+    {\scriptsize $\rho$ and $\vvec{v}$ can be different at different position\\[-1ex]\scriptsize $\therefore$ should be taken as functions of position}
+    {(0,2ex)}{(22ex,-1.7em)}
+
+    At the end, 
+    we return to the microscopic definition of volume current density 
+    $\vvec{J}(\vvec{r}) = \rho(\vvec{r})\vvec{v}(\vvec{r})$. 
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%
+\subsection{Continuity Equation}
+
+The simplest form of charge conservation is simply
+\aleq{
+    \qty(\mstack{\text{Current flow}\\\text{into the region}}) 
+    \ =\  I_\text{in} = \dvv{t}Q_\text{enc}
+    \ =\ \dvv{t}\qty(\mstack{\text{Charge enclosed}\\\text{in the region}})
+}
+\insertFig{flow into region}
+
+We can also express this relation by the fancier density distributions:
+\begin{itemize}
+    \item Charge $\rightarrow$ Volume charge density
+    \aleq{
+        Q(t) = \iiint_\text{region} \rho(\vvec{r}, t) \dd{\tau}
+    }
+    \item Current $\rightarrow$ Volume current density
+    \aleq{
+        I(t) = \iint_\text{surface} \vvec{J}(\vvec{r},t)\cdot \dd{\vvec{s}}
+    }
+\end{itemize}
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Displacement Current}
+
+%%%%%%%%%%%%%%
+\subsection{Derivation}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Complication of Electromagnetic Induction}
+
+
+
+
+%%%
+\theend
+\end{document}
