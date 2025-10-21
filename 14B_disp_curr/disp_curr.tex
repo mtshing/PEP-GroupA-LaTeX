@@ -138,41 +138,183 @@ Across textbooks, its definition can appear as many different formula.
     $\vvec{J}(\vvec{r}) = \rho(\vvec{r})\vvec{v}(\vvec{r})$. 
 \end{enumerate}
 
+\insertFig{magnify the wire}
+
 
 %%%%%%%%%%%%%%
 \subsection{Continuity Equation}
 
-The simplest form of charge conservation is simply
+The simplest expression of charge conservation is simply
 \aleq{
     \qty(\mstack{\text{Current flow}\\\text{into the region}}) 
-    \ =\  I_\text{in} = \dvv{t}Q_\text{enc}
+    - \qty{\mstack{\text{Current flow}\\\text{out of the region}}}
+    \ =\  I_\text{in}(t) I_\text{out}(t)= \dvv{t}Q_\text{enc}(t)
     \ =\ \dvv{t}\qty(\mstack{\text{Charge enclosed}\\\text{in the region}})
 }
-\insertFig{flow into region}
+\insertFig{flow into/out of region}
 
-We can also express this relation by the fancier density distributions:
+This relation should hold for any time $t$. 
+Furthermore, we can describe this relation using the fancier density distributions:
 \begin{itemize}
     \item Charge $\rightarrow$ Volume charge density
     \aleq{
-        Q(t) = \iiint_\text{region} \rho(\vvec{r}, t) \dd{\tau}
+        Q_\text{enc}(t) \rightarrow \iiint_\text{region} \rho(\vvec{r}, t) \dd{\tau}
     }
     \item Current $\rightarrow$ Volume current density
     \aleq{
-        I(t) = \iint_\text{surface} \vvec{J}(\vvec{r},t)\cdot \dd{\vvec{s}}
+        I_text{in/out}(t) \rightarrow \iint_\substack{\text{surface with}\\\text{in/out-flux}} \vvec{J}(\vvec{r},t)\cdot \dd{\vvec{s}}
     }
 \end{itemize}
+
+To visualize, we can think of some current flowing through a region in the wire.
+The surface that wraps the region can be separated into 2 pieces - 
+one that contains all the in-flux of $\vvec{J}$ 
+and the other contains all the out-flux of $\vvec{J}$.
+
+\insertFig{J through sphere}
+
+By flux integral, we can combine the flux on two surfaces into one term:
+\aleq{
+    \qty(\mstack{\text{In-flux of}\\\text{current}}) - \qty(\mstack{\text{Out-flux of}\\\text{current}})
+    = \qty(\mstack{\red{\text{Net Out-flux}}\\\text{of current}}) 
+    &= \dvv{t}\qty(\mstack{\text{Charge enclosed}\\\text{in the region}})\\[1em]
+    %
+    \iint_{\substack{\text{surface with}\\\text{in-flux}}}\vvec{J}\cdot\dd{\vvec{s}}
+    - \iint_{\substack{\text{surface with}\\\text{out-flux}}}\vvec{J}\cdot\dd{\vvec{s}}
+    = -\oiint_{\substack{\text{surface around}\\\text{the region}}}\vvec{J}\cdot\dd{\vvec{s}}
+    &= \dvv{t}\iiint_{\substack{\text{the}\\\text{region}}} \rho\dd{\tau}
+}
+(arrow: By convention, we take out flux as +)
+
+And finally, we can write this into its differential form by divergent theorem.
+The result is a PDE known as the \bf{continuity equation of charge}.
+\aleq{
+    -\oiint_{\substack{\text{surface around}\\\text{the region}}}\vvec{J}\cdot\dd{\vvec{s}}
+    = -\iiint_{\substack{\text{the}\\\text{region}}}(\div \vvec{J})\dd{\tau}
+    =& \iiint_{\substack{\text{the}\\\text{region}}} \pdvv{t}\rho\dd{tau}\\
+    %
+    \Aboxed{
+        -\div \vvec{J} = \pdvv{\rho}{t}
+    }
+}
+(arrow: divergent theorem)
+(arrow: move dt into integral, become pdv t)
+
+In practice, this PDE is more often seen in theoretical derivations
+rather than to be used to convert charge/current distribution at different time.
+
+\insertFig{framed box of moving particles to arrows? }
+
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Displacement Current}
 
 %%%%%%%%%%%%%%
-\subsection{Derivation}
+\subsection{Problem with Ampere's Law}
+
+So far we have never rigorously define what means by "enclosed by a loop".
+Intuitively, we may think of 
+\begin{itemize}
+    \item Cover the Ampere loop with a surface.
+    \item A line is "enclosed by the loop" if the line pokes through the surface.
+\end{itemize}
+
+If we re-visit the statement of Ampere's law in magnetostatics,
+\aleq{
+    \qty(\mstacke{\text{Dot product integral}\\\text{of }\vvec{B}\text{along loop}})
+        = \int \vvec{B}\cdot\dd{\vvec{l}} = \mu_0 I_\text{enclosed}
+        \propto \qty(\mstack{\text{Current}\\\text{enclosed}})
+}
+
+It does not involve any specification about what surface we must choose - 
+which means as an universal statement, 
+it should work for ALL choices of surface.\\
+
+In magnetostatics, the choice of surface does not matter
+because it requires steady current flow (independent of time) - 
+which can happen only when the current is running in 1. closed loops, 
+or 2. an infinitely long wire.
+
+\insertFig{close loop or infintely long wire}
+
+But when it comes to dynamics, 
+current can discontinue in a broken wire and accumulate as charge.
+Depends on which surface is chosen, 
+it is arguable whether the wire is enclosed by the loop.
+
+\insertFig{red/blue surface}
+
+Here is a simple analogy with a basketball through the ring.
 
 
 
 %%%%%%%%%%%%%%
-\subsection{Complication of Electromagnetic Induction}
+\subsection{Solution: Add A New Current}
+
+To resolve this ambiguity, 
+we can make use of charge conservation:
+
+\bf{termination of current always results in accumulation of charge,
+and charge creates E-field}. 
+
+We can construct a new type of current $I_d$,
+called \bf{displacement current},
+which depends on the flux of E-field produced by the charge accumulation.
+In such way Ampere's law will always satisfy, indepedent on the choice of the surface.
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Complication of Electro-magnetic Induction}
+
+Combining the results of Faraday's law and Ampere's law,
+we can see that time-varying E-field and B-field can induce each other.
+\begin{itemize}
+    \item Faraday - $\curl \vvec{E} = -\pdvv{\vvec{B}}{t}$ - 
+    Time varying B-field induces (time-varying) E-field.
+
+    \item Ampere - $\curl \vvec{B} = \gray{\mu_0\vvec{J}} + \mu_0\epsilon_0\pdvv{\vvec{E}}{t}$ -
+    Time varying E-field induces (time-varying) B-field.
+\end{itemize}
+
+This means in the dynamics case, 
+ideally $\vvec{E}$ and $\vvec{B}$ should always be solved together - as a system of PDE! 
+Otherwise if we only look at Faraday's law or Ampere's law one at a time, 
+we would end up like this mess:
+\aleq{
+    \text{Begin with some time-varying }\vvec{B}_0(t) \qquad
+    \text{Solve an induced }\vvec{E}_1(t)\\
+    %
+    \mstack{\text{Solve an induced } \vvec{B}_1(t)\\\text{Total B-field becomes} \vvec{B}_0(t)+\vvec{B}_1(t)} \qquad
+    \text{Solve an induced } \vvec{E}_2(t)\\
+    %
+    \mstack{\text{Solve an induced } \vvec{B}_2(t)}
+    \qquad \cdots
+} 
+
+Solving system of PDE is just too complicated.
+Basically in all practice problems you can find, 
+we just compromise by \bf{assuming induced E-field do not create induced B-field}.
+This is OK for small scale system because the magnitude of displacement current 
+is usually small enough to ignore:
+\aleq{
+    \mu_0\epsilon_0 = \inv{c^2} = \inv{(3\times 10^8)^2}
+    \qquad\Rightarrow\qquad
+    \curl \vvec{B}_1 \sim \mu_0\epsilon_0\pdvv{\vvec{E}_1}{t} 
+    \sim (10^{-16})\frac{\Delta \vvec{E}_1}{\Delta t} 
+}
+
+However, please keep in mind that 
+there does exist systems where you cannot take this approximation.
+For example,
+\begin{itemize}
+    \item Plamsa Physics (Plamsa = A mixture of high energy charges)
+    \item Astronomy, e.g. structure of neutron star, surroundings around black holes
+\end{itemize}
+
+Solving PDEs is unavoidable in these cases. 
+But fortunately you will never see them unless you are doing researches in the future. 
 
 
 
