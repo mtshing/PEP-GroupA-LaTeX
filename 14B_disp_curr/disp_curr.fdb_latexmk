@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1761032080.13389 "d:/mings/Documents/PhyO/latex_notes/14B_disp_curr/disp_curr.tex" "disp_curr.pdf" "disp_curr" 1761032082.51764 0
+["pdflatex"] 1761146776.60529 "d:/mings/Documents/PhyO/latex_notes/14B_disp_curr/disp_curr.tex" "disp_curr.pdf" "disp_curr" 1761146779.98109 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1760786650 12457 db319448722ca9a3dbea4669df11783f ""
-  "../.common/packages.sty" 1759351560 5797 bdb4ee0a1a39e9a9b5c660a11c06acbb ""
+  "../.common/packages.sty" 1761145041 5810 23c5f1e07f16292358b14e919297fa4d ""
   "c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk" 1757962771 13844 585768c540b6fc11d97b522f36dda6c9 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1752685028 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrb0500.tfm" 1738919338 1536 b98adede9dcc202ab8d9da465c99405c ""
@@ -103,6 +103,7 @@
   "c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1738920032 11518 738408f795261b70ce8dd47459171309 ""
   "c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1738920032 186782 af500404a9edec4d362912fe762ded92 ""
   "c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex" 1738920033 7474 f05a7223b140f230922562ac6a9fede5 ""
+  "c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex" 1738920033 58801 1e750fb0692eb99aaac45698bbec96b1 ""
   "c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1738920033 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
   "c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex" 1738920033 3063 8c415c68a0f3394e45cfeca0b65f6ee6 ""
   "c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex" 1738920033 949 cea70942e7b7eddabfb3186befada2e6 ""
@@ -242,11 +243,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/14B_disp_curr/disp_curr.tex" 1761032077 5764 23437b3d27af6d5be8e19950c7fa74bf ""
-  "disp_curr.aux" 1761032082 1875 34e5b029cb76561321609ba8982bb279 "pdflatex"
-  "disp_curr.out" 1761032082 988 b583fab4e3f22432684055f4f6e7347f "pdflatex"
-  "disp_curr.sta" 1761032082 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "disp_curr.tex" 1761032077 5764 23437b3d27af6d5be8e19950c7fa74bf ""
+  "d:/mings/Documents/PhyO/latex_notes/14B_disp_curr/disp_curr.tex" 1761146775 17798 45ff2f66f719c63851eb6bcd7a4d2ca0 ""
+  "disp_curr.aux" 1761146779 3307 08d72d5882cb65fcb99b5eaf17cb6a95 "pdflatex"
+  "disp_curr.out" 1761146779 1424 0572036090a3271b264f3c1524fd120d "pdflatex"
+  "disp_curr.sta" 1761146779 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "disp_curr.tex" 1761146775 17798 45ff2f66f719c63851eb6bcd7a4d2ca0 ""
   (generated)
   "disp_curr.aux"
   "disp_curr.log"
