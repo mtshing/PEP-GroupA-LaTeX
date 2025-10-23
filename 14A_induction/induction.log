@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  19 OCT 2025 05:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  24 OCT 2025 03:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -657,44 +657,50 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen330
+\pgfarrowlength=\dimen331
+\pgfarrowwidth=\dimen332
+\pgfarrowlinewidth=\dimen333
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen330
-\pgfdecoratedremainingdistance=\dimen331
-\pgfdecoratedinputsegmentcompleteddistance=\dimen332
-\pgfdecoratedinputsegmentremainingdistance=\dimen333
-\pgf@decorate@distancetomove=\dimen334
+\pgfdecoratedcompleteddistance=\dimen334
+\pgfdecoratedremainingdistance=\dimen335
+\pgfdecoratedinputsegmentcompleteddistance=\dimen336
+\pgfdecoratedinputsegmentremainingdistance=\dimen337
+\pgf@decorate@distancetomove=\dimen338
 \pgf@decorate@repeatstate=\count351
-\pgfdecorationsegmentamplitude=\dimen335
-\pgfdecorationsegmentlength=\dimen336
+\pgfdecorationsegmentamplitude=\dimen339
+\pgfdecorationsegmentlength=\dimen340
 )
 \tikz@lib@dec@box=\box75
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (c:/texlive/2024/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.code.tex (c:/texlive/2024/texmf-dist/tex/latex/spath3/spath3.sty
 Package: spath3 2024/05/31 v2.8 Functions for manipulating PGF soft paths
 \g__spath_output_int=\count352
-\l__spath_tmpa_dim=\dimen337
-\l__spath_tmpb_dim=\dimen338
+\l__spath_tmpa_dim=\dimen341
+\l__spath_tmpb_dim=\dimen342
 \l__spath_tmpa_int=\count353
 \l__spath_tmpb_int=\count354
-\l__spath_move_x_dim=\dimen339
-\l__spath_move_y_dim=\dimen340
-\l__spath_rectx_dim=\dimen341
-\l__spath_recty_dim=\dimen342
+\l__spath_move_x_dim=\dimen343
+\l__spath_move_y_dim=\dimen344
+\l__spath_rectx_dim=\dimen345
+\l__spath_recty_dim=\dimen346
 \g__spath_anon_int=\count355
 )
 \l__cal_tmpa_int=\count356
 \l__cal_tmpb_int=\count357
 \g__cal_path_component_int=\count358
 \g__cal_label_int=\count359
-\l__cal_tmpa_dim=\dimen343
-\l__cal_tmpb_dim=\dimen344
-\l__cal_tmpc_dim=\dimen345
-\l__cal_tmpd_dim=\dimen346
-\l__cal_tmpe_dim=\dimen347
-\l__cal_tmpf_dim=\dimen348
-\l__cal_tmpg_dim=\dimen349
-\l__cal_tmph_dim=\dimen350
-\l__cal_taper_width_dim=\dimen351
-\l__cal_line_width_dim=\dimen352
+\l__cal_tmpa_dim=\dimen347
+\l__cal_tmpb_dim=\dimen348
+\l__cal_tmpc_dim=\dimen349
+\l__cal_tmpd_dim=\dimen350
+\l__cal_tmpe_dim=\dimen351
+\l__cal_tmpf_dim=\dimen352
+\l__cal_tmpg_dim=\dimen353
+\l__cal_tmph_dim=\dimen354
+\l__cal_taper_width_dim=\dimen355
+\l__cal_line_width_dim=\dimen356
 )) (../.common/math.sty) (../.common/format.sty (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -703,14 +709,14 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@cnth=\count360
 \Gm@cntv=\count361
 \c@Gm@tempcnt=\count362
-\Gm@bindingoffset=\dimen353
-\Gm@wd@mp=\dimen354
-\Gm@odd@mp=\dimen355
-\Gm@even@mp=\dimen356
-\Gm@layoutwidth=\dimen357
-\Gm@layoutheight=\dimen358
-\Gm@layouthoffset=\dimen359
-\Gm@layoutvoffset=\dimen360
+\Gm@bindingoffset=\dimen357
+\Gm@wd@mp=\dimen358
+\Gm@odd@mp=\dimen359
+\Gm@even@mp=\dimen360
+\Gm@layoutwidth=\dimen361
+\Gm@layoutheight=\dimen362
+\Gm@layouthoffset=\dimen363
+\Gm@layoutvoffset=\dimen364
 \Gm@dimlist=\toks48
 ) (c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
@@ -752,13 +758,13 @@ LaTeX Font Info:    ... okay on input line 14.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count367
-\scratchdimen=\dimen361
+\scratchdimen=\dimen365
 \scratchbox=\box76
 \nofMPsegments=\count368
 \nofMParguments=\count369
 \everyMPshowfont=\toks51
 \MPscratchCnt=\count370
-\MPscratchDim=\dimen362
+\MPscratchDim=\dimen366
 \MPnumerator=\count371
 \makeMPintoPDFobject=\count372
 \everyMPtoPDFconversion=\toks52
@@ -853,81 +859,114 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--75
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
+<img/lorentz.png, id=86, 1143.0705pt x 183.68625pt>
+File: img/lorentz.png Graphic file (type png)
+<use img/lorentz.png>
+Package pdftex.def Info: img/lorentz.png  used on input line 155.
+(pdftex.def)             Requested size: 229.94675pt x 36.9496pt.
+<img/electrolyte.png, id=88, 433.01775pt x 396.88275pt>
+File: img/electrolyte.png Graphic file (type png)
+<use img/electrolyte.png>
+Package pdftex.def Info: img/electrolyte.png  used on input line 213.
+(pdftex.def)             Requested size: 97.85214pt x 89.68234pt.
+
+
+[3 <./img/lorentz.png>]
+<img/dun_care.png, id=97, 864.22874pt x 225.2415pt>
+File: img/dun_care.png Graphic file (type png)
+<use img/dun_care.png>
+Package pdftex.def Info: img/dun_care.png  used on input line 249.
+(pdftex.def)             Requested size: 293.5639pt x 76.50891pt.
+
+
+[4 <./img/electrolyte.png> <./img/dun_care.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
 
-
-[4]
 
 [5]
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+
 
 [6]
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 563--565
+
+ []
+
+
 
 [8]
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
-
- []
-
-
 
 [10]
-Underfull \hbox (badness 10000) in alignment at lines 761--761
-[][] 
- []
-
-
 
 [11]
-Overfull \hbox (9.43814pt too wide) in paragraph at lines 825--825
-|[][]
+
+[12]
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 951--952
+
  []
 
 
-Overfull \hbox (4.08958pt too wide) in paragraph at lines 825--825
-|[][]
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 825--825
+Underfull \hbox (badness 10000) in alignment at lines 1050--1050
 [][] 
  []
 
 
 
-[12] (./induction.aux)
+[14]
+Overfull \hbox (9.43814pt too wide) in paragraph at lines 1114--1114
+|[][]
+ []
+
+
+Overfull \hbox (4.08958pt too wide) in paragraph at lines 1114--1114
+|[][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1114--1114
+[][] 
+ []
+
+
+
+[15] (./induction.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `induction.out' has not changed.
-(rerunfilecheck)             Checksum: A981B9167FACD4B62145C82DE7584252;2250.
+(rerunfilecheck)             Checksum: DFEF16645370792AE3735386801CE222;2773.
  ) 
 Here is how much of TeX's memory you used:
- 29877 strings out of 469747
- 565561 string characters out of 5481688
- 954624 words of memory out of 5000000
- 57646 multiletter control sequences out of 15000+600000
+ 30957 strings out of 469747
+ 590590 string characters out of 5481688
+ 965891 words of memory out of 5000000
+ 58713 multiletter control sequences out of 15000+600000
  640342 words of font info for 90 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,24n,159p,596b,944s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,26n,159p,596b,944s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on induction.pdf (12 pages, 225378 bytes).
+Output written on induction.pdf (15 pages, 300186 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
