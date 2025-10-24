@@ -58,10 +58,8 @@ In this note, we will discuss why it is necessary to add the \cul[red]{second te
 \section{Charge Conservation}
 
 In magnetostatics, we describe everything by using current as the source. 
-But in the dynamics part of E\&M, charge is the only real source, 
-while current has to be treated as moving charge.
-
-\insertFig{pool of charge + current <-> pool of static charge + moving charge}
+But when we come to the dynamics part of E\&M, we should treat charge as the only real source, 
+while current is a distribution of velocity of the charges.
 
 
 %%%%%%%%%%%%%%
@@ -102,9 +100,10 @@ Across textbooks, this definition can appear as different formula.
         =\dvv{t}[qn(AL)]
     }
 
-    Let the \cul[red]{average} velocity of charges be $\bar{v}\sim\dvv{L}{t}$,
+    If we assume that all the charges are moving at the same velocity - 
+    their \cul[red]{average} velocity $\bar{v}\sim\dvv{L}{t}$,
     while the number density / cross-section of the wire being constant of time. 
-    Then it becomes the familiar formula in textbooks:
+    Then it is simplified to the familiar formula in textbooks:
     \aleq{
         \Aboxed{
             I = nAq\bar{v}
@@ -113,15 +112,17 @@ Across textbooks, this definition can appear as different formula.
 
     \insertFig{cyl def}
 
-    \item \bf{\ul{"Microscopic" description}} - The whole wire can be abstractly treated as a surface,
+    \item \bf{\ul{"Microscopic" description}} - 
+    If we want the exact current distribution at each position instead of taking average,
+    we may first abstractly treated the wire as a surface,
     just like the water pipe we have learnt in Gauss's law. 
 
     \insertFig{water pipe, label in flux of I and out flux of I}
 
-    Similarly, we can use integration over in-flux / out-flux to describe the flow of current.
+    Then the current can be described with integration over in-flux / out-flux on the surface.
     \aleq{
         I = nqvA \ \Rightarrow\ 
-        I_\text{total} &= \iint \cul[blue]{nq}\vvec{v}\cdot\dd{\vvec{s}}\qquad \\[1em]
+        I_\text{total} &= \iint \cul[blue]{nq}\vvec{v}\cdot\dd{\vvec{s}}\qquad & \\[1em]
         &= \iint \tkn{rho}{\cul[blue]{\rho}} \vvec{v} \cdot \dd{\vvec{s}}\\[1em]
         &= \iint \tkn{I_rho}{\cul[red]{\rho(\vvec{r})}}\, \tkn{I_v}{\cul[red]{\vvec{v}(\vvec{r})}} \cdot \dd{\vvec{s}}
     }
@@ -235,10 +236,6 @@ This is a PDE known as the \bf{continuity equation of charge}.
 For example, we can use it to predict the distribution of current given that we know the initial charge distribution.
 But in practice, it is more often used in theoretical derivations.
 
-\insertFig{relate charge distri to current dist}
-
-
-
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -260,10 +257,8 @@ Recall the Stoke's theorem,,
 Therefore, we can borrow the idea of surface integral:
 \begin{itemize}
     \item Cover the Ampere loop with a surface.
-    \item A line is "enclosed by the loop" if the line pokes through the surface.
+    \item A line is "enclosed by the loop" if it pokes through the surface (for an odd number of times).
 \end{itemize}
-
-\insertFig{poke through vs not poke through}
 
 In this definition, there is no specification about the surface -
 which means as an universal definition, 
@@ -290,6 +285,8 @@ current must be running in 1. a closed loop,
 or 2. an infinitely long wire.
 
 \insertFig{close loop or infintely long wire}
+
+You cannot separate the gray ring without breaking the current wire.\\
 
 But when current is allowed to change with time, 
 we can have current discontinues at the end of a broken wire and accumulate as charges.
@@ -359,10 +356,10 @@ For example,
 
 \insertFig{ red surf, blue surf}
 
-The red surface is poked through by the real current wire.
+The blue surface is poked through by the real current wire.
 $I_\text{enc} \neq 0$.
 
-The blue surface is not poked through by the current wire,
+The red surface is not poked through by the current wire,
 but it is passed through by flux of E-field.
 $I_\text{enc} = 0$ but $I_d \neq 0$.
 
