@@ -276,31 +276,72 @@ they were unified mathematically as a complete theory of magnetic induction.
 %%%%%%%%%%%%%%
 \subsection{Motional EMF}
 
-Motional EMF was discovered the first time by Faraday, with the following set up:
+Motional EMF was discovered the first time by Faraday, 
+with the device which is today known as 
+\href{https://en.wikipedia.org/wiki/Homopolar_generator}{Faraday disc} or Faraday wheel.
 
-\insertFig{faraday motional}
+\begin{center}
+    \begin{minipage}{0.28\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{Faraday_disk_generator}\\
+        (Image from \href{https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction#/media/File:Faraday_disk_generator.jpg}{Wiki})
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+            \item D = A metal disc
+            \item A = A Magnet creating B-field through the disc
+            \item Current can conduct through B $\rightarrow$ Disc $\rightarrow$ m $\rightarrow$ B'
+        \end{itemize}
 
-a bar magnet was rapidly moved into or out of a coil of wire create current\\
+        When the disc turns, EMF is observed between B and B'.
+    \end{minipage}
+\end{center}
 
+\vskip 2ex
 To understand how motional EMF is created,
-first think of what happens if charges are subject to a second kind of force
+we can first think of what happens if charges are subject to a second kind of force
 in addition to the electric forces between each other.
 \begin{itemize}
     \item If there is only electric force,
     charges freely distribute themselves until net electric force is $0$.
     i.e. Electric potential is the same everywhere.
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{extraF1}\\
+            Only Electric force present
+        \end{minipage}
+        {\huge \quad$\Rightarrow$\quad}
+        \begin{minipage}{0.35\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{extraF2}
+        \end{minipage}
+    \end{center}
 
-    \item With a second kind of force on the field, 
+    \item With a second kind of force in the space, 
     charges distribute themselves to new equilibrium positions -  
-    in the new distribution, electric potential is no longer constant of position.
+    making electric potential no longer a constant of position.
     i.e. Creating electric potential difference.
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{extraF3}\\
+            E.g. Adding static friction in the space
+        \end{minipage}
+        {\huge \quad$\Rightarrow$\quad}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{extraF4}
+        \end{minipage}
+    \end{center}
+
 \end{itemize}
 
-\insertFig{free charge repel to infinitey vs charge subject to friction}
 
-The situation becomes weird when the second force is the Lorentz magnetic force,
-whose magnitude depends on the charges' velocities.
-The potential difference can be maintained only if the charges are moving.
+The situation becomes weird \bf{if the second force is the Lorentz magnetic force},
+whose magnitude is proportional to the charges' velocities.
+\bf{The potential difference can be maintained only if the charges are moving}.
 
 
 
@@ -320,7 +361,7 @@ and the rod will be dragged along by the charge. \\
 
 \fi
 
-{\scriptsize (This is the most common model for studying motional EMF the first time.)}\\
+{\scriptsize (This is probably the most common model for studying motional EMF for the first time.)}\\
 
 Consider a finite long conducting rod that contains some charges. 
 We give the rod a small horizontal push initially.
@@ -340,22 +381,69 @@ We give the rod a small horizontal push initially.
     i.e. when $q\norm{E} = q\norm{v}\norm{B}$.
 \end{enumerate}
 
-\insertFig{pipe potential}
+\begin{center}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \blue{Cannot go}\\\blue{beyond the wall}\\
+        \includegraphics[width=0.93\textwidth]{rod1}\\[-1ex]
+        \red{Cannot go}\\\red{beyond the wall}\\
+    \end{minipage}
+    {\huge \quad$\Rightarrow$\quad}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \blue{Accumulating -ve charges}\\
+        \includegraphics[width=\textwidth]{rod2}\\
+        \red{Accumulating +ve charges}
+    \end{minipage}
+    {\huge \quad$\Rightarrow$\quad}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \green{Creating}\\\green{potential difference}\\
+        \includegraphics[width=\textwidth]{rod3}\\
+        \phantom{AAA}\\\phantom{AAA}
+    \end{minipage}
+\end{center}
 
+\vskip 1em
 Note that such "equilibrium" is only along the vertical direction. 
 The rod and charges must maintain some horizontal motion to keep the magnetic force "alive".
 If the rod suddenly stop moving,  
 the built-up potential difference, and thus the stored energy, will be released.
 \begin{center}
-    \red{The rod can be used to drive current. \\
+    \bf{The rod can be used to drive current. \\
     It is a EMF source - but only when it is moving!}
+\end{center}
+
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        If the EMF source comes from electrochemistry,\\
+        it is called a \cul[red]{battery}.
+    \end{minipage}\quad
+    \begin{minipage}{0.1\linewidth}
+        \centering
+        \includegraphics[height=7em]{emf_battery}
+    \end{minipage}
+    \qquad\vline\qquad
+    \begin{minipage}{0.1\linewidth}
+        \centering
+        \includegraphics[height=7em]{emf_generator}
+    \end{minipage}
+    \quad
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        If the EMF source comes from moving conductor,\\
+        it is called a \cul[red]{generator}.
+    \end{minipage}
 \end{center}
 
 
 %%%%%%%%%%%%%%
 \subsubsection{Energy Conservation in Moving Wire}
 
-The creation of motional EMF satisfies energy conservation. 
+An alternative explanation of motional EMF is that,
+it is a result of energy conservation given that the only W.D. comes from Lorentz magnetic force.\\
+
 Let the B-field be constant and in $\hhat{z}$ direction, i.e. $\vvec{B}=B_z\hhat{z}$.
 When the charge on its mid-way to its new equilibrium position, 
 \begin{itemize}
@@ -368,8 +456,23 @@ When the charge on its mid-way to its new equilibrium position,
     
 \end{itemize} 
 
-\insertFig{horizontal to diagonal movement}
-(Note the x-y direction is roatated by 90 degree)\\
+\begin{center}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[height=3em]{energy0}\\[1em]
+        $\qty(\substack{\text{x-y direction here}\\\text{is roatated by}\\\text{90 degree}})$
+    \end{minipage}
+    \ 
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=12em]{energy1}
+    \end{minipage}
+    {\huge\ $\Rightarrow$\ }
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=12em]{energy2}
+    \end{minipage}
+\end{center}
 
 \bf{Although Lorentz force is accelerating the charge's $x$ motion,
 at the same time it is decelerating the charge's $y$ motion.}
@@ -461,22 +564,41 @@ which implies an energy conservation process:
     
 \end{itemize} 
 
-
+\vskip 1ex
 %%%%%%%%%%%%%%
 \subsubsection{Magnetic Flux - A Geometrical Relation}
 
 The idea of magnetic flux comes from generalizing motional EMF by vector calculus.
 To begin with, transform the rod into a wire with arbituary shape which moves in an arbituary fashion.
 
-\insertFig{moving rod to twisting wire}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=7em]{seg1}
+    \end{minipage}
+    {\huge \ $\Rightarrow$\ }
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=7em]{seg2}
+    \end{minipage}
+\end{center}
 
-We can analyze the EMF generated by dividing the wire into infinitestimal segments - 
-Each segment $i$ of the wire has a (length) + (orientation) labeled by $\dd{\vvec{l}_i}$ and 
-is moving in velocity $\vvec{v}_i$.
+The total EMF generated can be regarded as the sum of contribution by many infinitestimal segments - 
+For the $i$\Nth segment,
 
-\insertFig{infinite seg -> sum up}
+\begin{minipage}{0.6\linewidth}
+    \begin{itemize}
+        \item has a (length) + (orientation) labeled by $\dd{\vvec{l}_i}$.
+        \item is moving in velocity $\vvec{v}_i$.
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    \centering
+    \includegraphics[height=7em]{seg3}
+\end{minipage}
 
-With some algebra, the EMF generated in each segment can be written as 
+\vskip 1.5em
+Then with some algebra, the EMF generated in each segment can be written as 
 \addArrow[blue]{identity1}{(8ex,0)}
 {\scriptsize Vector identity: \\[-1ex]
     \scriptsize $(\vvec{a}\cross\vvec{b})\cdot\vvec{c} = (\vvec{c}\cross\vvec{a})\cdot\vvec{b} = (\vvec{b}\cross\vvec{c})\cdot\vvec{a}$\\[-1ex]
@@ -485,8 +607,8 @@ With some algebra, the EMF generated in each segment can be written as
 \addArrow[red]{identity2}{(6ex,0)}{\scriptsize $\vvec{a}\cross \vvec{b} = -\vvec{b}\cross\vvec{a}$}
 {(1ex,1ex)}{(5ex,0.3ex)}
 \aleq{
-    \dd{\epsilon_i} &= (\vvec{v}_i\cross\vvec{B})\cdot\dd{\vvec{l}_i}\\
-    &= (\dd{\vvec{l}_i}\cross\vvec{v}_i)\cdot \vvec{B}\tkm{identity1}\\
+    \dd{\epsilon_i} &= (\vvec{v}_i\cross\vvec{B})\cdot\dd{\vvec{l}_i}\\[1ex]
+    &= (\dd{\vvec{l}_i}\cross\vvec{v}_i)\cdot \vvec{B}\tkm{identity1}\\[1ex]
     &= -(\vvec{v}_i\cross\dd{\vvec{l}_i})\cdot \vvec{B}\tkm{identity2}
 }
 
@@ -503,7 +625,22 @@ So we can approximate the swept area by the segment as a parallelogram:
     \dvv{t} \qty(\mstack{\text{Swept}\\\text{Area}}) &= \vvec{v}_i\cross \dd{\vvec{l}}_i
 } 
 
-\insertFig{swept area}
+\begin{center}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{swept1}
+    \end{minipage}
+    {\huge \quad $\Rightarrow$\quad }
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{swept2}
+    \end{minipage}
+    {\huge \quad $\Rightarrow$\quad }
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{swept3}
+    \end{minipage}
+\end{center}
 
 We can now relate EMF generated in the whole wire with swept area by the wire as:
 \aleq{
@@ -549,20 +686,43 @@ to emphasize that it is the wire's shape / swept area varying with time.
 %%%%%%%%%%%%%%
 \subsection{Transformer EMF}
 
-Transformer EMF was discovered the first time also by Faraday, 
-with the following set up:
+Transformer EMF was also discovered by Faraday,
+with a primitive toroidal transformer.
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{Faraday_ring_transformer}\\
+        (Image from \href{https://commons.wikimedia.org/wiki/File:Faraday_ring_transformer.jpg}{wiki})
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        When the current on one side is switch on / switch off,
+        EMF is observed on the other side of the transformer.\\[1em]
+        \includegraphics[width=0.6\textwidth]{Faraday_emf_experiment}
+    \end{minipage}
+\end{center}
 
-\insertFig{switch on off -> current in toroidal transformer}
-
+\vskip 1em
 In modern explanation, 
 transformer EMF can only be explained by relativity - 
 motional EMF and transformer EMF are the same phenomenon being observed in different reference frame. 
 
-\insertFig{different ref frame}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{transformer1}\\
+        EMF generated due to\\ motion of the ring
+    \end{minipage}
+    {\huge \quad $\Leftrightarrow$\quad }
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{transformer2}\\
+        EMF generated due to changing magnetic field strength
+    \end{minipage}
+\end{center}
 
-EMF generated due to motion of the ring\\
-EMF generated due to changing magnetic field strength\\
-
+\vskip 1ex
 %%%%%%%%%%%%%%
 \subsubsection{Induced E-field}
 
@@ -571,29 +731,66 @@ i.e. the charge is stationary while B-field is the only thing changing with time
 \begin{itemize}
     \item The direct interaction between the charge and B-field 
     - Lorentz magnetic force must be $0$.
-    \item But we somehow observe the charge moving and build up potential difference.
+    \item But we somehow observe the charge moving (due to some potential difference).
 \end{itemize}
 
-This implies a second way how B-field can interact with charges.
+This implies there is a second way how B-field can interact with charges.
 To complete the theory, an induced E-field is proposed.
 
-\insertFig{add induced E}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.85\textwidth]{induce1}\\
+        Observation:\\ Charge moves without force
+    \end{minipage}
+    {\huge \quad $\Rightarrow$\quad }
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{induce2}\\
+        Add induced E-field\\ to fix Newton's \nth{2} law
+    \end{minipage}
+\end{center}
 
-The addition of induced E-field is very similar to adding frictious force to accelerating frame.
+\newpage
+As an analogy, 
+the addition of induced E-field is very similar to the reason of 
+adding frictious force to accelerating frame.
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{newton1}\\
+        Observation:\\ Ball rises up without force
+    \end{minipage}
+    {\huge \ \ $\Rightarrow$\ \ }
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{newton2}\\
+        Add ficticious force\\ to fix Newton's \nth{2} law
+    \end{minipage}
+\end{center}
 
-\insertFig{add frictious force}
-
-The remaining task is to determine the distribution of this E-field.
+\vskip 1em
+It is experimentally possible to determine the distribution of this E-field.
 For example, we can sample the induced EMF using different conductor loops:
+\begin{center}
+    \begin{minipage}{0.37\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{sample1}
+    \end{minipage}
+    {\qquad $\xRightarrow{\text{Sampling many loops}}$\ }
+    \begin{minipage}{0.37\linewidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{sample2}
+    \end{minipage}
+\end{center}
 
-\insertFig{sample with different loops}
-
-With direct measurement, it is found that
+\vskip 1ex
+With direct measurements, it was found that
 \begin{itemize}
-    \item The induced E-field must form loops, 
-    i.e. be non-conservative.
+    \item The induced E-field must be in form of loops, 
+    i.e. non-conservative.
     Otherwise charges will not run indefinitely in the conductor loops,
-    and so the loop cannot be used to drive current.
+    and so cannot be used to drive current.
 
     \item The induced EMF is proportional to the rate of change of B-field 
     and area of the loop. i.e. 
@@ -611,7 +808,7 @@ These observations suggest a mathematical relation in vector calculus:
     }
 }
 
-The sign in front of the surface integral is for matching the sign in motional EMF.
+The minus sign in front of the surface integral is added to match the sign in motional EMF.
 
 
 
@@ -661,9 +858,7 @@ it can be converted into its differential form:\\
 }
 
 
-
-
-
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsection{Summary: Magnetic Flux \& Faraday's Law}
 
@@ -689,14 +884,29 @@ After such lengthy discussion, here again lists the formula of the two EMF:
     {(0,-1ex)}{(5ex,-1ex)}
 \end{itemize}
 
-\vskip 1ex
+\vskip 3ex
 We can see a similiarity - 
 both of the EMF can be expressed as a combination of time derivative and flux integral of B-field.
-If we close the wire in motional EMF to form a loop, i.e. 
+If we close the wire in motional EMF to form a loop, let it sweep some area, 
+and at the same time vary the B-field, 
+we will observe the EMF contributed from both effects.
 
-\insertFig{close loop, int dl become oint dl}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{loop1}\\
+        When the loop changes its shape and B-field changes happen together\\
+        \phantom{A}
+    \end{minipage}
+    {\huge \ \ $\Rightarrow$\ \ }
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{loop2}\\
+        The effective EMF is the rate of change of the magnetic flux\\ in the red area
+    \end{minipage}
+\end{center}
 
-Then the two EMF can be merged like product rule of differentiation.
+While mathematically, the two EMF can be merged like product rule of differentiation.
 \addBelowArrow[red]{d11}{d12}{\scriptsize $\dv{t}$ only to\\[-0.8ex] \scriptsize integration range}{-3ex}{(0,-1ex)}
 \addArrow[green]{b1}{(0,-4ex)}{\scriptsize B-field\\[-1ex] \scriptsize keep constant}{(0,-1ex)}{(1ex,-1ex)}
 \addBelowArrow[red]{d21}{d22}{\scriptsize $\dv{t}$ only to\\[-0.8ex] \scriptsize B-field}{-2ex}{(0,-1ex)}
@@ -720,7 +930,8 @@ Then the two EMF can be merged like product rule of differentiation.
     %\epsilon_\text{total} &= \dvv{t}\qty(\mstack{\text{Magnetic}\\\text{flux}})
 }
 
-which is the exact description of \bf{Faraday's law of induction}:
+\vskip 1ex
+This is exactly the description of \bf{Faraday's law of induction}:
 \aleq{
     \Aboxed{
         \mstack{\text{Any induced EMF}\\[0.5ex]\text{appear}} 
@@ -743,12 +954,13 @@ In addition, the line integral part shows the origin of the EMF's energy:
     q\epsilon_\text{total}\ &=\ \oint (q\vvec{E} + q\vvec{v}\cross\vvec{B})\cdot\dd{\vvec{l}}
 }
 
-which is exactly built up by the work done of Lorentz force.
+which is the result of the work done by Lorentz force.
 
 
 
 
 \linesep
+\newpage
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lenz's Law}
 
@@ -764,17 +976,35 @@ but not its direction.
 \vskip 2em
 To determine the EMF's direction, we can apply \bf{Lenz's law},
 which is in principle,
+\vskip 1ex
 \begin{center}
-    \red{Induced EMF always want to "oppose" change in magnetic flux}
+    \fbox{
+        \bf{Induced EMF always want to "oppose" change in magnetic flux}
+    }
 \end{center}
 
+\vskip 1ex
 Here are a few examples for you to get familiar with it.
 \cul[red]{Right hand grip rule is all you need.}
-(As a practice, you may also try to discuss how energy is conserved in these examples.)
+(As a practice, you may also try to explain how energy is conserved in these examples.)
 
+\vskip 2em
 \begin{example}
     Consider a ring inside a magnetic field whose
     magnitude is increasing in the out-of-paper direction.
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=6em]{lenz_eg1_1}
+            \phantom{A}
+        \end{minipage}
+        {\huge \ $\Rightarrow$\ }
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=6em]{lenz_eg1_2}
+        \end{minipage}
+    \end{center}
+
     \begin{enumerate}
         \item Magnetic flux is getting "more out-of-paper" due to 
         increase in B-field's magnitude.
@@ -787,16 +1017,31 @@ Here are a few examples for you to get familiar with it.
 
     \end{enumerate}
 
-    \insertFig{B field direction}
-    \insertFig{induce flux direction}
-    \insertFig{bar chart}
+    \begin{center}
+        \begin{minipage}{0.75\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{lenz_eg1_3}
+        \end{minipage}
+    \end{center}
+
 \end{example}
 
-
-
 \begin{example}
-    Consider a ring inside a constant into-paper B-field.
-    The ring is shrinking in radius.
+    Consider a ring inside a constant into-paper B-field
+    but is shrinking in radius.
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=6em]{lenz_eg2_1}
+            \phantom{A}
+        \end{minipage}
+        {\huge \ $\Rightarrow$\ }
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=6em]{lenz_eg2_2}
+        \end{minipage}
+    \end{center}
+
     \begin{enumerate}
         \item Magnetic flux is getting "less into-paper" due to
         decrease in area.
@@ -806,9 +1051,18 @@ Here are a few examples for you to get familiar with it.
         \item By right hand rule, into-paper flux can be created
         if a current flow clockwise in the ring.
         So the induced EMF must be clockwise.
+        \item You can also notice that the forces on induced current 
+        due to induced B field are pointing outward, 
+        i.e. trying to stop the loop from contracting.
         
     \end{enumerate}
 
+    \begin{center}
+        \begin{minipage}{0.65\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{lenz_eg2_3}
+        \end{minipage}
+    \end{center}
 
 \end{example}
 
@@ -911,7 +1165,12 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
     Consider a static rectangular loop next to an infinitely long wire, 
     which carries a time-varying current $I(t)$, same magnitude everywhere along the wire. 
 
-    \insertFig{loop next to wire}
+    \begin{center}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{frame1}
+        \end{minipage}
+    \end{center}
 
     \begin{enumerate}
         \item Always start with finding the magnetic flux through the loop.
@@ -923,14 +1182,21 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
         The magnetic flux through the loop can be calculated by 
         first dividing the loop's area into strips,
         then integrate the flux of all strips.
-        \aleq{
-            \Phi_B &= \iint \vvec{B}\cdot\dd{\vvec{s}}\\
-            &= \int_{r_1}^{r_2} \frac{\mu_0 I(t)}{2\pi r} (L\dd{r})\\
-            &= \frac{\mu_0 I(t) L}{2\pi}\qty[\ln(r_2)-\ln(r_1)]
-        }
 
-        \insertFig{split into strips}
-
+        \begin{minipage}{0.6\linewidth}
+            \aleq{
+                \Phi_B &= \iint \vvec{B}\cdot\dd{\vvec{s}}\\
+                &= \int_{r_1}^{r_2} \frac{\mu_0 I(t)}{2\pi r} (L\dd{r})\\
+                &= \frac{\mu_0 I(t) L}{2\pi}\qty[\ln(r_2)-\ln(r_1)]
+            }
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{frame2}
+        \end{minipage}
+        
+        \vskip 1em
         \item The total EMF generated in the loop is just the differentiation of the above. i.e.
         \aleq{
             \epsilon = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})[\ln(r_2) - \ln(r_1)]
@@ -940,56 +1206,93 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
         To oppose the change, EMF must be in anti-clockwise direction
         to produce an out-of-paper direction flux.
 
-        \item On the other hand, to compute the E-field distribution, all we know is 
-        \aleq{
-            \abs{\epsilon} = \oint \vvec{E}\cdot \dd{\vvec{l}} 
-            = E^{\parallel}_1 L + E^{\parallel}_2 (r_2-r_1) + E^{\parallel}_3 L + E^{\parallel}_4 (r_2-r_1)
-        }
-
-        \insertFig{show label of edge only parallel}
+        \vskip 1em
+        \item On the other hand, to compute the E-field distribution, all we only know is 
         
-        After taking dot product, only the component parallel to the edge is left.\\
+        \begin{minipage}{0.6\linewidth}
+            \aleq{
+                \abs{\epsilon} &= \oint \vvec{E}\cdot \dd{\vvec{l}} \\
+                &= E^{\parallel}_1 L + E^{\parallel}_2 (r_2-r_1) + E^{\parallel}_3 L + E^{\parallel}_4 (r_2-r_1)
+            }
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{frame3}
+        \end{minipage}
+
+        Note that after taking dot product, only the component parallel to the edge is left.\\
 
         To find the $E$ on each edge, we need symmetry arguments.
         \begin{itemize}
-            \item By rotation symmetry, 
-            the E-field is only a function of radial distance from the wire. 
-            We can claim that $E^\parallel_1$ and $E^\parallel_3$ must have the same function form $\vvec{E}(r)$,
-            
-            \insertFig{rotation sym}
-            
-            \item By translational symmetry, 
+            \item By translational symmetry along the wire, 
             $E_2^\parallel$ and $E_4^\parallel$ must be the same. 
             Their contributions of dot product along the loop are cancelled.
+
+            \item By rotation symmetry about the wire, 
+            the E-field is only a function of radial distance from the wire. 
+            We can claim that $E^\parallel_1$ and $E^\parallel_3$ must have the same function form $E^\parallel(r)$,
+            
+            \begin{center}
+                \begin{minipage}{0.4\linewidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{frame4}
+                \end{minipage}
+            \end{center}
+            
         \end{itemize}
         
         So the E-field relation to EMF is reduced to
         \aleq{
-            \abs{\epsilon} &= E^{\parallel}_3 L - E^{\parallel}_1 L \\
-            &= E^{\parallel}(r_2) L - E^{\parallel}(r_1) L\\
+            \abs{\epsilon} &= E^{\parallel}_3 L - E^{\parallel}_1 L \\[1ex]
+            &= E^{\parallel}(r_2) L - E^{\parallel}(r_1) L\\[1ex]
             &\equiv \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t}) \qty[\ln(r_2)-\ln(r_1)]
         }
         
-        We can claim that the $\vvec{E}$ \cul[red]{'s component parallel to the wire} is
+        Therefore we can claim that \cul[red]{$\vvec{E}$ 's component parallel to the wire} is
         \aleq{
             E^{\parallel}(r) = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})\ln(r)
         }
 
+        \newpage
         \item Note that in the above analysis,
         we cannot determine if the E-field has components perpendicular to the wire.
 
-        \insertFig{parallel + perpendicular}
-
-        If there is only parallel component\\
-        If there is also perpendicular component. Is it physical?
-
+        \begin{center}
+            \begin{minipage}{0.3\linewidth}
+                \centering
+                \includegraphics[height=10em]{field1}\\
+                If the field only has component parallel\\ to the wire
+            \end{minipage}
+            \hspace{0.05\textwidth}
+            \begin{minipage}{0.3\linewidth}
+                \centering
+                \includegraphics[height=10em]{field2}\\
+                If the field has both components parallel and normal to the wire
+            \end{minipage}
+        \end{center}
         
         Recall from Gauss's law, 
         E-field can be perpendicular to the wire if the wire carries a \cul[red]{static} line charge density.
         So when the wire carries BOTH net charge and time-varying current,
         the total E-field will be in diagonal directions.
 
-        \insertFig{sum of horizontal + vertical contribution = diagonal}
+        \begin{center}
+            \begin{minipage}{0.2\linewidth}
+                \centering
+                \includegraphics[height=10em]{field1}
+            \end{minipage}
+            {\huge \quad$+$\quad}
+            \begin{minipage}{0.2\linewidth}
+                \centering
+                \includegraphics[height=10em]{field3}
+            \end{minipage}
+            {\huge \quad$=$\quad}
+            \begin{minipage}{0.2\linewidth}
+                \centering
+                \includegraphics[height=10em]{field4}
+            \end{minipage}
+        \end{center}
 
     \end{enumerate}
 
@@ -997,8 +1300,9 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
 \end{example}
 
 
-\linesep
+\theend
 
+\newpage
 \appendix
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\setcounter{section}{-1}
@@ -1047,16 +1351,6 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
             \gray{(First time to have steady current.)}
         }\\[1.5em]
         %
-    \end{tabularx}
-\end{center}
-
-
-\begin{center}
-    \begin{tabularx}{\textwidth}{
-        >{\centering\arraybackslash}m{0.15\textwidth} 
-        p{0.8\textwidth}
-        }
-        
         1820 &
         \makecell[tl]{
             \href{https://en.wikipedia.org/wiki/Hans_Christian_\%C3\%98rsted}{Hans Christian Ørsted}
@@ -1074,11 +1368,7 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
         1831 &
         \makecell[tl]{
             \href{https://en.wikipedia.org/wiki/Michael_Faraday}{Michael Faraday}
-            discovered magnetic induction. Experiments include:\\
-            - Across iron core: Reading appears at the instant when switch is on/off.\\
-            - Moving frame: Reading appears when wireframe moves, changes shape \\
-            or when magnetic field change.\\
-            \red{insertFig}
+            discovered magnetic induction - Both motional and transformer EMF.
         }\\[1.5em]
         %
         1834 &
@@ -1110,11 +1400,14 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
             derive the correct force on charges under both $\vvec{E}$ and $\vvec{B}$.\\
             \gray{(Lorentz force formula)}
         }\\[1em]
+        %
+        After 1900s &
+        Entering the quantum era. Not classical anymore. \\
 
     \end{tabularx}
 \end{center}
 
 
 %%%
-\theend
+
 \end{document}

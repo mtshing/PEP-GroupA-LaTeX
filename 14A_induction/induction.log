@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  24 OCT 2025 03:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 OCT 2025 05:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -859,19 +859,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--75
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 [2]
-<img/lorentz.png, id=86, 1143.0705pt x 183.68625pt>
+<img/lorentz.png, id=86, 1094.8905pt x 181.27725pt>
 File: img/lorentz.png Graphic file (type png)
 <use img/lorentz.png>
 Package pdftex.def Info: img/lorentz.png  used on input line 155.
-(pdftex.def)             Requested size: 229.94675pt x 36.9496pt.
-<img/electrolyte.png, id=88, 433.01775pt x 396.88275pt>
+(pdftex.def)             Requested size: 229.94675pt x 38.06934pt.
+
+
+[3 <./img/lorentz.png>]
+<img/electrolyte.png, id=95, 433.01775pt x 396.88275pt>
 File: img/electrolyte.png Graphic file (type png)
 <use img/electrolyte.png>
 Package pdftex.def Info: img/electrolyte.png  used on input line 213.
 (pdftex.def)             Requested size: 97.85214pt x 89.68234pt.
-
-
-[3 <./img/lorentz.png>]
 <img/dun_care.png, id=97, 864.22874pt x 225.2415pt>
 File: img/dun_care.png Graphic file (type png)
 <use img/dun_care.png>
@@ -880,73 +880,320 @@ Package pdftex.def Info: img/dun_care.png  used on input line 249.
 
 
 [4 <./img/electrolyte.png> <./img/dun_care.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+<img/Faraday_disk_generator.png, id=103, 1927.2pt x 1505.625pt>
+File: img/Faraday_disk_generator.png Graphic file (type png)
+<use img/Faraday_disk_generator.png>
+Package pdftex.def Info: img/Faraday_disk_generator.png  used on input line 286.
+(pdftex.def)             Requested size: 136.99449pt x 107.0127pt.
+<img/extraF1.png, id=105, 301.125pt x 59.0205pt>
+File: img/extraF1.png Graphic file (type png)
+<use img/extraF1.png>
+Package pdftex.def Info: img/extraF1.png  used on input line 312.
+(pdftex.def)             Requested size: 110.37598pt x 21.6337pt.
+<img/extraF2.png, id=106, 604.659pt x 420.3705pt>
+File: img/extraF2.png Graphic file (type png)
+<use img/extraF2.png>
+Package pdftex.def Info: img/extraF2.png  used on input line 318.
+(pdftex.def)             Requested size: 160.96553pt x 111.90437pt.
+<img/extraF3.png, id=107, 304.13625pt x 55.407pt>
+File: img/extraF3.png Graphic file (type png)
+<use img/extraF3.png>
+Package pdftex.def Info: img/extraF3.png  used on input line 329.
+(pdftex.def)             Requested size: 110.37598pt x 20.10797pt.
+<img/extraF4.png, id=108, 473.3685pt x 401.70074pt>
+File: img/extraF4.png Graphic file (type png)
+<use img/extraF4.png>
+Package pdftex.def Info: img/extraF4.png  used on input line 335.
+(pdftex.def)             Requested size: 137.96945pt x 117.07864pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+
+[5 <./img/Faraday_disk_generator.png> <./img/extraF1.png> <./img/extraF2.png> <./img/extraF3.png> <./img/extraF4.png>]
+<img/rod1.png, id=113, 426.99525pt x 876.876pt>
+File: img/rod1.png Graphic file (type png)
+<use img/rod1.png>
+Package pdftex.def Info: img/rod1.png  used on input line 388.
+(pdftex.def)             Requested size: 91.00177pt x 186.87892pt.
+<img/rod2.png, id=114, 455.90324pt x 777.50475pt>
+File: img/rod2.png Graphic file (type png)
+<use img/rod2.png>
+Package pdftex.def Info: img/rod2.png  used on input line 395.
+(pdftex.def)             Requested size: 97.85214pt x 166.87553pt.
+<img/rod3.png, id=115, 445.06274pt x 763.05075pt>
+File: img/rod3.png Graphic file (type png)
+<use img/rod3.png>
+Package pdftex.def Info: img/rod3.png  used on input line 402.
+(pdftex.def)             Requested size: 97.85214pt x 167.76689pt.
+<img/emf_battery.png, id=116, 167.4255pt x 229.45724pt>
+File: img/emf_battery.png Graphic file (type png)
+<use img/emf_battery.png>
+Package pdftex.def Info: img/emf_battery.png  used on input line 425.
+(pdftex.def)             Requested size: 60.01254pt x 82.24915pt.
+
+Overfull \hbox (11.08275pt too wide) in paragraph at lines 425--426
+ [][] 
+ []
+
+<img/emf_generator.png, id=117, 115.02975pt x 214.401pt>
+File: img/emf_generator.png Graphic file (type png)
+<use img/emf_generator.png>
+Package pdftex.def Info: img/emf_generator.png  used on input line 430.
+(pdftex.def)             Requested size: 44.12773pt x 82.24915pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--446
 
  []
 
 
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+[6 <./img/rod1.png> <./img/rod2.png> <./img/rod3.png> <./img/emf_battery.png> <./img/emf_generator.png>]
+<img/energy0.png, id=126, 150.5625pt x 148.1535pt>
+File: img/energy0.png Graphic file (type png)
+<use img/energy0.png>
+Package pdftex.def Info: img/energy0.png  used on input line 462.
+(pdftex.def)             Requested size: 35.82098pt x 35.24963pt.
+<img/energy1.png, id=127, 305.34074pt x 396.88275pt>
+File: img/energy1.png Graphic file (type png)
+<use img/energy1.png>
+Package pdftex.def Info: img/energy1.png  used on input line 468.
+(pdftex.def)             Requested size: 108.47826pt x 140.99854pt.
+<img/energy2.png, id=129, 372.79276pt x 434.8245pt>
+File: img/energy2.png Graphic file (type png)
+<use img/energy2.png>
+Package pdftex.def Info: img/energy2.png  used on input line 473.
+(pdftex.def)             Requested size: 120.88316pt x 140.99854pt.
 
- []
+
+[7 <./img/energy0.png> <./img/energy1.png> <./img/energy2.png>]
+<img/seg1.png, id=143, 180.07275pt x 314.97675pt>
+File: img/seg1.png Graphic file (type png)
+<use img/seg1.png>
+Package pdftex.def Info: img/seg1.png  used on input line 577.
+(pdftex.def)             Requested size: 47.02113pt x 82.24915pt.
+<img/seg2.png, id=144, 219.82124pt x 302.3295pt>
+File: img/seg2.png Graphic file (type png)
+<use img/seg2.png>
+Package pdftex.def Info: img/seg2.png  used on input line 582.
+(pdftex.def)             Requested size: 59.80199pt x 82.24915pt.
+<img/seg3.png, id=145, 293.29575pt x 234.8775pt>
+File: img/seg3.png Graphic file (type png)
+<use img/seg3.png>
+Package pdftex.def Info: img/seg3.png  used on input line 597.
+(pdftex.def)             Requested size: 102.70427pt x 82.24915pt.
 
 
+[8 <./img/seg1.png> <./img/seg2.png> <./img/seg3.png>]
+<img/swept1.png, id=151, 294.50024pt x 191.5155pt>
+File: img/swept1.png Graphic file (type png)
+<use img/swept1.png>
+Package pdftex.def Info: img/swept1.png  used on input line 631.
+(pdftex.def)             Requested size: 73.38724pt x 47.72386pt.
+<img/swept2.png, id=152, 280.04625pt x 257.16075pt>
+File: img/swept2.png Graphic file (type png)
+<use img/swept2.png>
+Package pdftex.def Info: img/swept2.png  used on input line 636.
+(pdftex.def)             Requested size: 73.38724pt x 67.38994pt.
+<img/swept3.png, id=153, 234.8775pt x 265.59225pt>
+File: img/swept3.png Graphic file (type png)
+<use img/swept3.png>
+Package pdftex.def Info: img/swept3.png  used on input line 641.
+(pdftex.def)             Requested size: 73.38724pt x 82.98116pt.
+<img/Faraday_ring_transformer.png, id=154, 555.07375pt x 538.01pt>
+File: img/Faraday_ring_transformer.png Graphic file (type png)
+<use img/Faraday_ring_transformer.png>
+Package pdftex.def Info: img/Faraday_ring_transformer.png  used on input line 694.
+(pdftex.def)             Requested size: 122.31705pt x 118.55138pt.
+<img/Faraday_emf_experiment.png, id=156, 1204.5pt x 424.58624pt>
+File: img/Faraday_emf_experiment.png Graphic file (type png)
+<use img/Faraday_emf_experiment.png>
+Package pdftex.def Info: img/Faraday_emf_experiment.png  used on input line 702.
+(pdftex.def)             Requested size: 176.14012pt x 62.08496pt.
 
-[6]
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 563--565
+[9 <./img/swept1.png> <./img/swept2.png> <./img/swept3.png>]
+<img/transformer1.png, id=162, 436.029pt x 250.536pt>
+File: img/transformer1.png Graphic file (type png)
+<use img/transformer1.png>
+Package pdftex.def Info: img/transformer1.png  used on input line 714.
+(pdftex.def)             Requested size: 136.9924pt x 78.71281pt.
+<img/transformer2.png, id=163, 474.573pt x 236.082pt>
+File: img/transformer2.png Graphic file (type png)
+<use img/transformer2.png>
+Package pdftex.def Info: img/transformer2.png  used on input line 720.
+(pdftex.def)             Requested size: 146.77821pt x 73.01535pt.
+<img/induce1.png, id=164, 505.89pt x 263.18324pt>
+File: img/induce1.png Graphic file (type png)
+<use img/induce1.png>
+Package pdftex.def Info: img/induce1.png  used on input line 743.
+(pdftex.def)             Requested size: 166.34982pt x 86.54152pt.
+<img/induce2.png, id=165, 570.933pt x 279.444pt>
+File: img/induce2.png Graphic file (type png)
+<use img/induce2.png>
+Package pdftex.def Info: img/induce2.png  used on input line 749.
+(pdftex.def)             Requested size: 176.13266pt x 86.20886pt.
 
- []
+
+[10 <./img/Faraday_ring_transformer.png> <./img/Faraday_emf_experiment.png> <./img/transformer1.png> <./img/transformer2.png> <./img/induce1.png> <./img/induce2.png>]
+<img/newton1.png, id=171, 385.44pt x 257.16075pt>
+File: img/newton1.png Graphic file (type png)
+<use img/newton1.png>
+Package pdftex.def Info: img/newton1.png  used on input line 761.
+(pdftex.def)             Requested size: 117.42375pt x 78.34169pt.
+<img/newton2.png, id=172, 389.65575pt x 254.1495pt>
+File: img/newton2.png Graphic file (type png)
+<use img/newton2.png>
+Package pdftex.def Info: img/newton2.png  used on input line 767.
+(pdftex.def)             Requested size: 117.42375pt x 76.5867pt.
+<img/sample1.png, id=173, 609.477pt x 422.7795pt>
+File: img/sample1.png Graphic file (type png)
+<use img/sample1.png>
+Package pdftex.def Info: img/sample1.png  used on input line 778.
+(pdftex.def)             Requested size: 181.02684pt x 125.5704pt.
+<img/sample2.png, id=174, 402.90524pt x 264.99pt>
+File: img/sample2.png Graphic file (type png)
+<use img/sample2.png>
+Package pdftex.def Info: img/sample2.png  used on input line 783.
+(pdftex.def)             Requested size: 135.77013pt x 89.2948pt.
 
 
+[11 <./img/newton1.png> <./img/newton2.png> <./img/sample1.png> <./img/sample2.png>]
+<img/loop1.png, id=179, 481.8pt x 292.09125pt>
+File: img/loop1.png Graphic file (type png)
+<use img/loop1.png>
+Package pdftex.def Info: img/loop1.png  used on input line 897.
+(pdftex.def)             Requested size: 136.9924pt x 83.05075pt.
+<img/loop2.png, id=180, 430.0065pt x 293.898pt>
+File: img/loop2.png Graphic file (type png)
+<use img/loop2.png>
+Package pdftex.def Info: img/loop2.png  used on input line 904.
+(pdftex.def)             Requested size: 117.42375pt x 80.2549pt.
 
-[8]
-
-[9]
-
-[10]
-
-[11]
 
 [12]
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 951--952
+[13 <./img/loop1.png> <./img/loop2.png>]
+<img/lenz_eg1_1.png, id=191, 348.1005pt x 225.84375pt>
+File: img/lenz_eg1_1.png Graphic file (type png)
+<use img/lenz_eg1_1.png>
+Package pdftex.def Info: img/lenz_eg1_1.png  used on input line 998.
+(pdftex.def)             Requested size: 108.66428pt x 70.49927pt.
+<img/lenz_eg1_2.png, id=192, 309.5565pt x 375.804pt>
+File: img/lenz_eg1_2.png Graphic file (type png)
+<use img/lenz_eg1_2.png>
+Package pdftex.def Info: img/lenz_eg1_2.png  used on input line 1004.
+(pdftex.def)             Requested size: 58.07004pt x 70.49927pt.
+<img/lenz_eg1_3.png, id=193, 1221.363pt x 669.09975pt>
+File: img/lenz_eg1_3.png Graphic file (type png)
+<use img/lenz_eg1_3.png>
+Package pdftex.def Info: img/lenz_eg1_3.png  used on input line 1023.
+(pdftex.def)             Requested size: 366.95114pt x 201.02754pt.
+<img/lenz_eg2_1.png, id=194, 453.49425pt x 336.0555pt>
+File: img/lenz_eg2_1.png Graphic file (type png)
+<use img/lenz_eg2_1.png>
+Package pdftex.def Info: img/lenz_eg2_1.png  used on input line 1035.
+(pdftex.def)             Requested size: 95.1328pt x 70.49927pt.
+<img/lenz_eg2_2.png, id=195, 260.172pt x 157.7895pt>
+File: img/lenz_eg2_2.png Graphic file (type png)
+<use img/lenz_eg2_2.png>
+Package pdftex.def Info: img/lenz_eg2_2.png  used on input line 1041.
+(pdftex.def)             Requested size: 116.24263pt x 70.49927pt.
+
+
+[14 <./img/lenz_eg1_1.png> <./img/lenz_eg1_2.png> <./img/lenz_eg1_3.png>]
+<img/lenz_eg2_3.png, id=208, 1066.58475pt x 664.884pt>
+File: img/lenz_eg2_3.png Graphic file (type png)
+<use img/lenz_eg2_3.png>
+Package pdftex.def Info: img/lenz_eg2_3.png  used on input line 1063.
+(pdftex.def)             Requested size: 318.02133pt x 198.2493pt.
+
+
+[15 <./img/lenz_eg2_1.png> <./img/lenz_eg2_2.png> <./img/lenz_eg2_3.png>]
+
+[16]
+<img/frame1.png, id=227, 514.3215pt x 352.31625pt>
+File: img/frame1.png Graphic file (type png)
+<use img/frame1.png>
+Package pdftex.def Info: img/frame1.png  used on input line 1171.
+(pdftex.def)             Requested size: 146.78195pt x 100.54556pt.
+<img/frame2.png, id=228, 489.62926pt x 349.305pt>
+File: img/frame2.png Graphic file (type png)
+<use img/frame2.png>
+Package pdftex.def Info: img/frame2.png  used on input line 1196.
+(pdftex.def)             Requested size: 137.96945pt x 98.42833pt.
+
+
+[17 <./img/frame1.png> <./img/frame2.png>]
+<img/frame3.png, id=236, 523.9575pt x 360.74776pt>
+File: img/frame3.png Graphic file (type png)
+<use img/frame3.png>
+Package pdftex.def Info: img/frame3.png  used on input line 1221.
+(pdftex.def)             Requested size: 137.96945pt x 94.99219pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
 
  []
 
+<img/frame4.png, id=237, 729.927pt x 356.532pt>
+File: img/frame4.png Graphic file (type png)
+<use img/frame4.png>
+Package pdftex.def Info: img/frame4.png  used on input line 1239.
+(pdftex.def)             Requested size: 173.61487pt x 84.80234pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 1050--1050
+
+[18 <./img/frame3.png> <./img/frame4.png>]
+<img/field1.png, id=243, 339.669pt x 478.78876pt>
+File: img/field1.png Graphic file (type png)
+<use img/field1.png>
+Package pdftex.def Info: img/field1.png  used on input line 1264.
+(pdftex.def)             Requested size: 83.35698pt x 117.49878pt.
+<img/field2.png, id=244, 295.70474pt x 472.164pt>
+File: img/field2.png Graphic file (type png)
+<use img/field2.png>
+Package pdftex.def Info: img/field2.png  used on input line 1270.
+(pdftex.def)             Requested size: 73.58759pt x 117.49878pt.
+File: img/field1.png Graphic file (type png)
+<use img/field1.png>
+Package pdftex.def Info: img/field1.png  used on input line 1283.
+(pdftex.def)             Requested size: 83.35698pt x 117.49878pt.
+<img/field3.png, id=245, 314.97675pt x 481.19775pt>
+File: img/field3.png Graphic file (type png)
+<use img/field3.png>
+Package pdftex.def Info: img/field3.png  used on input line 1288.
+(pdftex.def)             Requested size: 76.90804pt x 117.49878pt.
+<img/field4.png, id=246, 361.35pt x 470.9595pt>
+File: img/field4.png Graphic file (type png)
+<use img/field4.png>
+Package pdftex.def Info: img/field4.png  used on input line 1293.
+(pdftex.def)             Requested size: 90.14981pt x 117.49878pt.
+
+
+[19 <./img/field1.png> <./img/field2.png> <./img/field3.png> <./img/field4.png>]
+Overfull \hbox (9.43814pt too wide) in paragraph at lines 1407--1407
+|[][]
+ []
+
+
+Overfull \hbox (58.7835pt too wide) in paragraph at lines 1407--1407
+|[][]
+ []
+
+
+Overfull \hbox (4.08958pt too wide) in paragraph at lines 1407--1407
+|[][]
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1407--1407
 [][] 
  []
 
 
 
-[14]
-Overfull \hbox (9.43814pt too wide) in paragraph at lines 1114--1114
-|[][]
- []
-
-
-Overfull \hbox (4.08958pt too wide) in paragraph at lines 1114--1114
-|[][]
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 1114--1114
-[][] 
- []
-
-
-
-[15] (./induction.aux)
+[20] (./induction.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
@@ -955,18 +1202,18 @@ Package rerunfilecheck Info: File `induction.out' has not changed.
 (rerunfilecheck)             Checksum: DFEF16645370792AE3735386801CE222;2773.
  ) 
 Here is how much of TeX's memory you used:
- 30957 strings out of 469747
- 590590 string characters out of 5481688
- 965891 words of memory out of 5000000
- 58713 multiletter control sequences out of 15000+600000
- 640342 words of font info for 90 fonts, out of 8000000 for 9000
+ 31439 strings out of 469747
+ 600664 string characters out of 5481688
+ 964891 words of memory out of 5000000
+ 59186 multiletter control sequences out of 15000+600000
+ 645904 words of font info for 113 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,26n,159p,596b,944s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on induction.pdf (15 pages, 300186 bytes).
+ <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on induction.pdf (20 pages, 2167402 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 379 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 373 words of extra memory for PDF output out of 10000 (max. 10000000)
 
