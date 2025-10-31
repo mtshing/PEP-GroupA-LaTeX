@@ -619,7 +619,7 @@ So we can approximate the swept area by the segment as a parallelogram:
 \aleq{
     \qty(\mstack{\text{Swept}\\\text{Area}})
     &= \qty(\mstack{\text{Area of parallelogram}\\\text{made by } \vvec{v}_i\dd{t} \text{ \& }\dd{\vvec{l}}_i})\\
-    &\approx \norm{\vvec{v}_i}\norm{\dd{\vvec{l}_i}}\sin \qty(\mstack{\text{Angle between}\\\vvec{v}_i\dd{t} \text{ \& }\dd{\vvec{l}}_i})\\
+    &\approx \norm{\vvec{v}_i \dd{t}}\norm{\dd{\vvec{l}_i}}\sin \qty(\mstack{\text{Angle between}\\\vvec{v}_i\dd{t} \text{ \& }\dd{\vvec{l}}_i})\\
     &= (\vvec{v}_i \dd{t})\cross(\dd{\vvec{l}_i})\\
     %
     \dvv{t} \qty(\mstack{\text{Swept}\\\text{Area}}) &= \vvec{v}_i\cross \dd{\vvec{l}}_i
@@ -986,7 +986,7 @@ which is in principle,
 \vskip 1ex
 Here are a few examples for you to get familiar with it.
 \cul[red]{Right hand grip rule is all you need.}
-(As a practice, you may also try to explain how energy is conserved in these examples.)
+%(As a practice, you may also try to explain how energy is conserved in these examples.)
 
 \vskip 2em
 \begin{example}
@@ -1026,6 +1026,7 @@ Here are a few examples for you to get familiar with it.
 
 \end{example}
 
+\vskip 1ex
 \begin{example}
     Consider a ring inside a constant into-paper B-field
     but is shrinking in radius.
@@ -1066,6 +1067,15 @@ Here are a few examples for you to get familiar with it.
 
 \end{example}
 
+\begin{notation}[Side note:]
+
+    It may be tricky to see why induced EMF always wants to oppose the magnetic flux change,
+    but it is quite easy to why the opposite cannot happen.\\
+
+    Imagine if the EMF produces a magnetic flux that is in the same direction of the change 
+
+
+\end{notation}
 
 
 \linesep
@@ -1148,7 +1158,7 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
     &= \tkn{ampere_B}{\cul[red]{\norm{\vvec{E}}}}\ \tkn{ampere_theta}{\cul[blue]{\cos\theta}}\ \oint \norm{\dd{\vvec{l}}}\\[2.5em]
     &= \norm{\vvec{E}}\ \cos\theta\ (\text{Perimeter of loop})\\[1em]
     \Aboxed{
-        \norm{\vvec{E}} &= \frac{\qty(\text{Flux of }\vvec{B})}{(\text{Perimeter of loop})\cos\theta}
+        \norm{\vvec{E}} &= \frac{\dvv{t}\qty(\text{Flux of }\vvec{B})}{(\text{Perimeter of loop})\cos\theta}
     }
 }
 \addArrow[green]{ampere_dot}{(5ex,0)}
@@ -1251,7 +1261,7 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
         
         Therefore we can claim that \cul[red]{$\vvec{E}$ 's component parallel to the wire} is
         \aleq{
-            E^{\parallel}(r) = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})\ln(r)
+            E^{\parallel}(r) = \frac{\mu_0}{2\pi}\qty(\dvv{I(t)}{t})\ln(r)
         }
 
         \newpage
@@ -1308,8 +1318,15 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
 %\setcounter{section}{-1}
 \section*{Appendix: A Brief History of Electromagnetism}
 
-Electromagnetic induction is likely the most confusing topic in beginner E\&M.
-In my opinion, taking reference of the history is helpful to unify the concepts you have learnt.
+Contents under magnetic induction may seem unorganized because of its developments:
+\begin{itemize}
+    \item The phenomena was discovered very early in 1830s.
+    \item The first time it was formulated rigorously in maths, was 30 years later.
+    \item The modern explanation we used - Lorentz force, was formulated 60 years later.
+\end{itemize}
+
+For your reference, 
+here lists the most important advancements in the history of E\&M.
 
 \begin{center}
     \begin{tabularx}{\textwidth}{
@@ -1368,7 +1385,8 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
         1831 &
         \makecell[tl]{
             \href{https://en.wikipedia.org/wiki/Michael_Faraday}{Michael Faraday}
-            discovered magnetic induction - Both motional and transformer EMF.
+            discovered phenomena of magnetic induction - induced EMF\\
+            can be generated in two ways: Motional EMF and transformer EMF.
         }\\[1.5em]
         %
         1834 &
@@ -1382,9 +1400,9 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
         \makecell[tl]{
             \href{https://en.wikipedia.org/wiki/James_Clerk_Maxwell}{James Clerk Maxwell}
             unified past discoveries into 20 equations, 
-            and used\\ field description for the first time.\\
-            \red{This was the first time $\vb{E}$ and $\vb{B}$ appeared in Physics.}\\
-            \red{Before Maxwell, everything was described in terms of force.}\\ 
+            and used\\ field description for the first time.\\[0.5ex]
+            \bf{\ul{$\ast\ast\ast$ This was the first time $\vvec{E}$ and $\vvec{B}$ appeared as field. $\ast\ast\ast$}}\\
+            \bf{Before Maxwell, everything was described in terms of force.}
         }\\[4em]
         %
         1893 &
@@ -1402,7 +1420,7 @@ In my opinion, taking reference of the history is helpful to unify the concepts 
         }\\[1em]
         %
         After 1900s &
-        Entering the quantum era. Not classical anymore. \\
+        Entering the relativistic and quantum era. Not classical E\&M anymore. \\
 
     \end{tabularx}
 \end{center}

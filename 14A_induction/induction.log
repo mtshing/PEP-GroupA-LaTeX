@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 OCT 2025 05:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  25 OCT 2025 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,12 +1094,12 @@ Package pdftex.def Info: img/lenz_eg1_3.png  used on input line 1023.
 <img/lenz_eg2_1.png, id=194, 453.49425pt x 336.0555pt>
 File: img/lenz_eg2_1.png Graphic file (type png)
 <use img/lenz_eg2_1.png>
-Package pdftex.def Info: img/lenz_eg2_1.png  used on input line 1035.
+Package pdftex.def Info: img/lenz_eg2_1.png  used on input line 1036.
 (pdftex.def)             Requested size: 95.1328pt x 70.49927pt.
 <img/lenz_eg2_2.png, id=195, 260.172pt x 157.7895pt>
 File: img/lenz_eg2_2.png Graphic file (type png)
 <use img/lenz_eg2_2.png>
-Package pdftex.def Info: img/lenz_eg2_2.png  used on input line 1041.
+Package pdftex.def Info: img/lenz_eg2_2.png  used on input line 1042.
 (pdftex.def)             Requested size: 116.24263pt x 70.49927pt.
 
 
@@ -1107,8 +1107,13 @@ Package pdftex.def Info: img/lenz_eg2_2.png  used on input line 1041.
 <img/lenz_eg2_3.png, id=208, 1066.58475pt x 664.884pt>
 File: img/lenz_eg2_3.png Graphic file (type png)
 <use img/lenz_eg2_3.png>
-Package pdftex.def Info: img/lenz_eg2_3.png  used on input line 1063.
+Package pdftex.def Info: img/lenz_eg2_3.png  used on input line 1064.
 (pdftex.def)             Requested size: 318.02133pt x 198.2493pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1074
+
+ []
+
 
 
 [15 <./img/lenz_eg2_1.png> <./img/lenz_eg2_2.png> <./img/lenz_eg2_3.png>]
@@ -1117,12 +1122,12 @@ Package pdftex.def Info: img/lenz_eg2_3.png  used on input line 1063.
 <img/frame1.png, id=227, 514.3215pt x 352.31625pt>
 File: img/frame1.png Graphic file (type png)
 <use img/frame1.png>
-Package pdftex.def Info: img/frame1.png  used on input line 1171.
+Package pdftex.def Info: img/frame1.png  used on input line 1181.
 (pdftex.def)             Requested size: 146.78195pt x 100.54556pt.
 <img/frame2.png, id=228, 489.62926pt x 349.305pt>
 File: img/frame2.png Graphic file (type png)
 <use img/frame2.png>
-Package pdftex.def Info: img/frame2.png  used on input line 1196.
+Package pdftex.def Info: img/frame2.png  used on input line 1206.
 (pdftex.def)             Requested size: 137.96945pt x 98.42833pt.
 
 
@@ -1130,17 +1135,17 @@ Package pdftex.def Info: img/frame2.png  used on input line 1196.
 <img/frame3.png, id=236, 523.9575pt x 360.74776pt>
 File: img/frame3.png Graphic file (type png)
 <use img/frame3.png>
-Package pdftex.def Info: img/frame3.png  used on input line 1221.
+Package pdftex.def Info: img/frame3.png  used on input line 1231.
 (pdftex.def)             Requested size: 137.96945pt x 94.99219pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
 
  []
 
 <img/frame4.png, id=237, 729.927pt x 356.532pt>
 File: img/frame4.png Graphic file (type png)
 <use img/frame4.png>
-Package pdftex.def Info: img/frame4.png  used on input line 1239.
+Package pdftex.def Info: img/frame4.png  used on input line 1249.
 (pdftex.def)             Requested size: 173.61487pt x 84.80234pt.
 
 
@@ -1148,46 +1153,46 @@ Package pdftex.def Info: img/frame4.png  used on input line 1239.
 <img/field1.png, id=243, 339.669pt x 478.78876pt>
 File: img/field1.png Graphic file (type png)
 <use img/field1.png>
-Package pdftex.def Info: img/field1.png  used on input line 1264.
+Package pdftex.def Info: img/field1.png  used on input line 1274.
 (pdftex.def)             Requested size: 83.35698pt x 117.49878pt.
 <img/field2.png, id=244, 295.70474pt x 472.164pt>
 File: img/field2.png Graphic file (type png)
 <use img/field2.png>
-Package pdftex.def Info: img/field2.png  used on input line 1270.
+Package pdftex.def Info: img/field2.png  used on input line 1280.
 (pdftex.def)             Requested size: 73.58759pt x 117.49878pt.
 File: img/field1.png Graphic file (type png)
 <use img/field1.png>
-Package pdftex.def Info: img/field1.png  used on input line 1283.
+Package pdftex.def Info: img/field1.png  used on input line 1293.
 (pdftex.def)             Requested size: 83.35698pt x 117.49878pt.
 <img/field3.png, id=245, 314.97675pt x 481.19775pt>
 File: img/field3.png Graphic file (type png)
 <use img/field3.png>
-Package pdftex.def Info: img/field3.png  used on input line 1288.
+Package pdftex.def Info: img/field3.png  used on input line 1298.
 (pdftex.def)             Requested size: 76.90804pt x 117.49878pt.
 <img/field4.png, id=246, 361.35pt x 470.9595pt>
 File: img/field4.png Graphic file (type png)
 <use img/field4.png>
-Package pdftex.def Info: img/field4.png  used on input line 1293.
+Package pdftex.def Info: img/field4.png  used on input line 1303.
 (pdftex.def)             Requested size: 90.14981pt x 117.49878pt.
 
 
 [19 <./img/field1.png> <./img/field2.png> <./img/field3.png> <./img/field4.png>]
-Overfull \hbox (9.43814pt too wide) in paragraph at lines 1407--1407
+Overfull \hbox (9.43814pt too wide) in paragraph at lines 1425--1425
 |[][]
  []
 
 
-Overfull \hbox (58.7835pt too wide) in paragraph at lines 1407--1407
+Overfull \hbox (9.92566pt too wide) in paragraph at lines 1425--1425
 |[][]
  []
 
 
-Overfull \hbox (4.08958pt too wide) in paragraph at lines 1407--1407
+Overfull \hbox (4.08958pt too wide) in paragraph at lines 1425--1425
 |[][]
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1407--1407
+Underfull \hbox (badness 10000) in alignment at lines 1425--1425
 [][] 
  []
 
@@ -1202,15 +1207,15 @@ Package rerunfilecheck Info: File `induction.out' has not changed.
 (rerunfilecheck)             Checksum: DFEF16645370792AE3735386801CE222;2773.
  ) 
 Here is how much of TeX's memory you used:
- 31439 strings out of 469747
- 600664 string characters out of 5481688
- 964891 words of memory out of 5000000
- 59186 multiletter control sequences out of 15000+600000
+ 31443 strings out of 469747
+ 600782 string characters out of 5481688
+ 964892 words of memory out of 5000000
+ 59190 multiletter control sequences out of 15000+600000
  645904 words of font info for 113 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,26n,159p,596b,944s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on induction.pdf (20 pages, 2167402 bytes).
+Output written on induction.pdf (20 pages, 2168608 bytes).
 PDF statistics:
  379 PDF objects out of 1000 (max. 8388607)
  250 compressed objects within 3 object streams
