@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1761401777.71596 "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" "induction.pdf" "induction" 1761401785.4964 0
+["pdflatex"] 1762544403.88772 "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" "induction.pdf" "induction" 1762544412.99872 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1755156790 14693 bd2cad120f3f46661047c5cd543a73ea ""
   "../.common/math.sty" 1760786650 12457 db319448722ca9a3dbea4669df11783f ""
@@ -249,7 +249,7 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" 1761401776 54461 40bb74d23a4bd1792560fa5f4efe39d4 ""
+  "d:/mings/Documents/PhyO/latex_notes/14A_induction/induction.tex" 1762544403 55719 3d10f2956d5a00c66bb37262782d938c ""
   "img/Faraday_disk_generator.png" 1761322407 908352 7ee66c5cd9d846731e3c20e73bde5944 ""
   "img/Faraday_emf_experiment.png" 1761338321 49313 f6135e248ecd6300efc8416c3ff7c63b ""
   "img/Faraday_ring_transformer.png" 1761324265 127513 2dce0a850e9db1dd8686e54299ae9933 ""
@@ -274,6 +274,8 @@
   "img/frame4.png" 1761334743 22237 224a63e782a674d0a5a576319929cb00 ""
   "img/induce1.png" 1761334074 24755 b10ec4eef0134fd4ec199a568297187d ""
   "img/induce2.png" 1761334092 31755 2df8da51ce49491f4f3325b8c50b6b7c ""
+  "img/inductance1.png" 1762543421 9109 cd8a0690c9eba2cb603c5dc56c64f060 ""
+  "img/inductance2.png" 1762543440 9874 9d90da9bc71dfec7ef3121c63da3c48c ""
   "img/lenz_eg1_1.png" 1761340661 15162 1e111ca0de850d36ecb8be0530a7bd64 ""
   "img/lenz_eg1_2.png" 1761340491 28580 245941656fe7c0c5143d021884e45f7c ""
   "img/lenz_eg1_3.png" 1761149346 65188 ae5d15dc52e31a61a3b859c924f575dc ""
@@ -298,10 +300,10 @@
   "img/swept3.png" 1761334007 11595 e8f4780b8136b564f5d74933c8461ed6 ""
   "img/transformer1.png" 1761149237 17069 858a7cb1b98da8ec082d647413632856 ""
   "img/transformer2.png" 1761149250 17258 de2ba14ba81bfb4b3f75ef55a85892f5 ""
-  "induction.aux" 1761401784 7889 9acbfed0fc1ba126939f9ec75bb50671 "pdflatex"
-  "induction.out" 1761401784 2773 dfef16645370792ae3735386801ce222 "pdflatex"
-  "induction.sta" 1761401784 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "induction.tex" 1761401776 54461 40bb74d23a4bd1792560fa5f4efe39d4 ""
+  "induction.aux" 1762544412 7889 79a3012b63c78df8ec81c2a87fc75ae1 "pdflatex"
+  "induction.out" 1762544412 2773 dfef16645370792ae3735386801ce222 "pdflatex"
+  "induction.sta" 1762544412 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "induction.tex" 1762544403 55719 3d10f2956d5a00c66bb37262782d938c ""
   (generated)
   "induction.aux"
   "induction.log"

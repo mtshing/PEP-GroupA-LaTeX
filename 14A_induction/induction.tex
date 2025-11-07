@@ -1037,7 +1037,7 @@ Here are a few examples for you to get familiar with it.
             \phantom{A}
         \end{minipage}
         {\huge \ $\Rightarrow$\ }
-        \begin{minipage}{0.3\linewidth}
+        \begin{minipage}{0.25\linewidth}
             \centering
             \includegraphics[height=6em]{lenz_eg2_2}
         \end{minipage}
@@ -1059,7 +1059,7 @@ Here are a few examples for you to get familiar with it.
     \end{enumerate}
 
     \begin{center}
-        \begin{minipage}{0.65\linewidth}
+        \begin{minipage}{0.6\linewidth}
             \centering
             \includegraphics[width=\textwidth]{lenz_eg2_3}
         \end{minipage}
@@ -1067,13 +1067,40 @@ Here are a few examples for you to get familiar with it.
 
 \end{example}
 
-\begin{notation}[Side note:]
+\begin{notation}[Note:]
 
-    It may be tricky to see why induced EMF always wants to oppose the magnetic flux change,
-    but it is quite easy to why the opposite cannot happen.\\
+    %It may be tricky to see why induced EMF always wants to oppose the magnetic flux change,
+    %but it is quite easy to why the opposite cannot happen.\\
 
-    Imagine if the EMF produces a magnetic flux that is in the same direction of the change 
+    %Imagine if the EMF produces a magnetic flux that is in the \cul[red]{same direction} of the change.
 
+
+    %That means the charges inside the ring will be accelerated to infinite speed. 
+    %Completely violating energy conservation.
+
+    Beware that induced EMF only SLOW DOWN the change in the magnetic flux.
+    It does not affect the final value of the flux. 
+    \begin{center}
+        \begin{minipage}{0.45\linewidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{inductance1}\\
+            Without induced EMF,\\
+            flux changes arruptly.
+        \end{minipage}
+        \quad\vline\quad
+        \begin{minipage}{0.45\linewidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{inductance2}\\
+            With induced EMF,
+            flux reaches the same final value,
+            but more gently.
+        \end{minipage}
+    \end{center}
+
+    Also, because induced EMF slows down the change in flux by introducing an opposite flux,
+    which will again create another EMF. 
+    This is the effect of \bf{self-induction}. 
+    The EMF as a function of time has to be determined by solving ODEs.
 
 \end{notation}
 
@@ -1211,10 +1238,15 @@ Then we can reduce the integral form of Maxwell-Faraday equation in to multiplic
         \aleq{
             \epsilon = \frac{\mu_0 L}{2\pi}\qty(\dvv{I(t)}{t})[\ln(r_2) - \ln(r_1)]
         }
-        Direction of the EMF depends on how the current varies.
-        For example, if $\dv{I(t)}{t}>0$, i.e. magnetic flux increasing in the into-paper direction.
-        To oppose the change, EMF must be in anti-clockwise direction
-        to produce an out-of-paper direction flux.
+
+        \item Direction of the EMF shall be determined by Lenz's law. 
+        It depends on how the current varies.
+        For example, if $\dv{I(t)}{t}>0$,
+        \begin{itemize}
+            \item Magnetic flux increasing in the into-paper direction.
+            \item To oppose the change, it requires an out-of-paper direction flux. 
+            \item To produce such flux, EMF must be in anti-clockwise direction.
+        \end{itemize}
 
         \vskip 1em
         \item On the other hand, to compute the E-field distribution, all we only know is 
