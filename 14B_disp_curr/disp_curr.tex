@@ -77,16 +77,25 @@ Across textbooks, this definition can appear as different formula.
 \begin{enumerate}
     \item \bf{\ul{"Wire" description}} - 
     Consider the volume to flow through to be a line. 
-    Current can then be defined by counting the total amount of charge $Q$ through the wire within a duration $t$. 
-    \aleq{
-        \Aboxed{
-            I \ \defeq\ \dvv{Q}{t}
-            \qquad\text{or}\qquad 
-            I \ \defeq\ \frac{Q}{t}
-            \quad \qty(\substack{\text{for people}\\\text{who can't do}\\\text{calculus}})
-        }
-    }
-    \insertFig{line def}
+    Current can then be defined by counting the total amount of charge $Q$ through the wire within a duration $t$.
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \aleq{
+                \Aboxed{
+                    I \ \defeq\ \dvv{Q}{t}
+                    \qquad\text{or simply}\qquad 
+                    I \ \defeq\ \frac{Q}{t}
+                    \quad \qty(\substack{\text{For people}\\\text{who can't do}\\\text{calculus}})
+                }
+            }
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.15\linewidth}
+            \centering
+            \includegraphics[width=\textwidth, trim=0 0 0 -3em]{I_wire}
+        \end{minipage} 
+    \end{center}    
+
 
     \item \bf{\ul{"Cylinder" description}} - 
     Magnify the wire to become a straight cylinder.
@@ -104,24 +113,48 @@ Across textbooks, this definition can appear as different formula.
     their \cul[red]{average} velocity $\bar{v}\sim\dvv{L}{t}$,
     while the number density / cross-section of the wire being constant of time. 
     Then it is simplified to the familiar formula in textbooks:
-    \aleq{
-        \Aboxed{
-            I = nAq\bar{v}
-        }
-    } 
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \aleq{
+                \Aboxed{
+                    I \ \defeq\ nAq\bar{v}
+                }
+            }
+            \phantom{a} 
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.15\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{I_cylinder}
+        \end{minipage} 
+    \end{center} 
 
-    \insertFig{cyl def}
 
     \item \bf{\ul{"Microscopic" description}} - 
     If we want the exact current distribution at each position instead of taking average,
     we may first abstractly treated the wire as a surface,
     just like the water pipe we have learnt in Gauss's law. 
 
-    \insertFig{water pipe, label in flux of I and out flux of I}
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{I_sur1}
+        \end{minipage}
+        \quad$\Rightarrow$\quad
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{I_sur2}
+        \end{minipage}
+        \quad$\Rightarrow$\quad
+        \begin{minipage}{0.2\linewidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{I_sur3}
+        \end{minipage}
+    \end{center}
 
     Then the current can be described with integration over in-flux / out-flux on the surface.
     \aleq{
-        I = nqvA \ \Rightarrow\ 
+        I = nq\bar{v}A \ \Rightarrow\ 
         I_\text{total} &= \iint \cul[blue]{nq}\vvec{v}\cdot\dd{\vvec{s}}\qquad & \\[1em]
         &= \iint \tkn{rho}{\cul[blue]{\rho}} \vvec{v} \cdot \dd{\vvec{s}}\\[1em]
         &= \iint \tkn{I_rho}{\cul[red]{\rho(\vvec{r})}}\, \tkn{I_v}{\cul[red]{\vvec{v}(\vvec{r})}} \cdot \dd{\vvec{s}}
@@ -135,21 +168,29 @@ Across textbooks, this definition can appear as different formula.
     {(0,2ex)}{(22ex,-1.7em)}
 
     Also, recall the conversion between line current element and volume current element,
-    \aleq{
-        I \cdot \qty(\mstack{\text{Unit}\\\text{length}}) \ \sim\  I\dd{\vvec{l}} 
-        \ &=\  \vvec{J}\dd{\tau} \ \sim\  \vvec{J} \cdot \qty(\mstack{\text{Unit}\\\text{volume}})\\[1em]
-        %
-        \Rightarrow\quad I \ &=\  \vvec{J}\cdot\dd{\vvec{s}} \ \sim\  \vvec{J} \cdot \qty(\mstack{\text{Unit}\\\text{area}})\\[1em]
-        %
-        \Rightarrow\quad I_\text{total} \ &=\ \iint\vvec{J}\cdot\dd{\vvec{s}} 
-    }
-    
-    \insertFig{magnify wire}
+
+    \begin{center}
+        \begin{minipage}{0.6\linewidth}
+            \aleq{
+                I \cdot \qty(\mstack{\text{Unit}\\\text{length}}) \ \sim\  I\dd{\vvec{l}} 
+                \ &=\  \vvec{J}\dd{\tau} \ \sim\  \vvec{J} \cdot \qty(\mstack{\text{Unit}\\\text{volume}})\\[1em]
+                %
+                \Rightarrow\quad I \ &=\  \vvec{J}\cdot\dd{\vvec{s}} \ \sim\  \vvec{J} \cdot \qty(\mstack{\text{Unit}\\\text{area}})\\[1em]
+                %
+                \Rightarrow\quad I_\text{total} \ &=\ \iint\vvec{J}\cdot\dd{\vvec{s}} 
+            }
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{I_J}
+        \end{minipage}
+    \end{center}
 
     Comparing the results, we now have a new relation between current density and the flow distribution of charges.
     \aleq{
         \Aboxed{
-            \vvec{J}(\vvec{r}) = \rho(\vvec{r})\vvec{v}(\vvec{r}) 
+            \vvec{J}(\vvec{r}) \ \defeq\ \rho(\vvec{r})\vvec{v}(\vvec{r}) 
         }
     }
 
@@ -169,7 +210,13 @@ We can write the simplest description of charge conservation as
     \text{i.e.}\qquad\qquad
     I_\text{in}(t) - I_\text{out}(t) \ &=\ \dvv{t}Q_\text{enc}(t)
 }
-\insertFig{flow into/out of region}
+
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{conserve1}
+    \end{minipage}
+\end{center}
 
 This relation should hold for any time $t$. 
 Furthermore, we can write this relation using the fancier density distributions:
@@ -186,13 +233,27 @@ Furthermore, we can write this relation using the fancier density distributions:
 
 To visualize in the microscopic view, 
 we can think of some current flowing through a region in the wire.
-The surface that wraps the region can be separated into 2 pieces - 
-one that contains all the in-flux of $\vvec{J}$ 
-and the other contains all the out-flux of $\vvec{J}$.
+The surface that wraps the region can be separated into 2 pieces:
+\begin{itemize}
+    \item \red{One} that contains all the in-flux of $\vvec{J}$.
+    \item \blue{The other} contains all the out-flux of $\vvec{J}$.
+\end{itemize}
 
-\insertFig{J through sphere}
+\begin{center}
+    \begin{minipage}{0.12\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{conserve2}
+    \end{minipage}
+    {\huge\qquad$\Rightarrow$\qquad}
+    \begin{minipage}{0.12\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{conserve3}
+    \end{minipage}
+\end{center}
 
 By writting as integrals, we can combine the flux on the two surfaces as one integral through a closed surface:
+\addArrow[red]{flux_sign}{(0,-3ex)}{\scriptsize By convention,\\[-1ex]\scriptsize out-flux = +ve}{(0,-1ex)}{(0,-1ex)}
+\addArrow[red]{flux_sign2}{(0,4ex)}{}{(0,2ex)}
 \aleq{
     \qty(\mstack{\text{In-flux of}\\\text{current}}) - \qty(\mstack{\text{Out-flux of}\\\text{current}})
     &= \tkn{flux_sign}{\red{-}} \qty(\mstack{\red{\text{Net Out-flux}}\\\text{of current}})\\[3em]
@@ -202,8 +263,7 @@ By writting as integrals, we can combine the flux on the two surfaces as one int
     - \iint_{\substack{\text{surface}\\\text{with}\\\text{out-flux}}}\vvec{J}\cdot\dd{\vvec{s}}
     &= \tkn{flux_sign2}{\red{-}}\oiint_{\substack{\text{surface}\\\text{around}\\\text{the region}}}\vvec{J}\cdot\dd{\vvec{s}}
 }
-\addArrow[red]{flux_sign}{(0,-3ex)}{\scriptsize By convention,\\[-1ex]\scriptsize out-flux = +ve}{(0,-1ex)}{(0,-1ex)}
-\addArrow[red]{flux_sign2}{(0,4ex)}{}{(0,2ex)}
+
 
 So that the conservation relation becomes:
 \aleq{
@@ -244,7 +304,7 @@ But in practice, it is more often used in theoretical derivations.
 %%%%%%%%%%%%%%
 \subsection{Enclosed by A Loop?}
 
-To understand the followings,
+To understand the following section,
 we first need to rigorously define what it means by "enclosed by a loop".
 Recall the Stoke's theorem,, 
 \aleq{
@@ -254,17 +314,50 @@ Recall the Stoke's theorem,,
     \ \sim\ \qty(\mstack{\text{Flux integral of curl}\\\text{over the surface}\\\text{surrounded by the loop}}) 
 }
 
-Therefore, we can borrow the idea of surface integral:
-\begin{itemize}
-    \item Cover the Ampere loop with a surface.
-    \item A line is "enclosed by the loop" if it pokes through the surface (for an odd number of times).
-\end{itemize}
+\vskip 1ex
+\begin{minipage}{0.7\linewidth}
+    Therefore, we can borrow the idea of surface integral:
+    \begin{itemize}
+        \item Cover the Ampere loop with a surface.
+        \item A line is "enclosed by the loop" if it goes through the surface (for an odd number of times).
+    \end{itemize}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.1\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{poke1}
+\end{minipage}
 
+\vskip 1em
 In this definition, there is no specification about the surface -
 which means as an universal definition, 
 it should work for ALL choices of surface.
 
-\insertFig{work for all choice of surface}
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \bf{Enclosed by the loop}:\\
+        If you can find a surface that is poked through by any odd number of times (\blue{blue}),
+        you will always find a surface that is poked through only once (\red{red}).
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{poke2}
+    \end{minipage}
+\end{center}
+
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \bf{NOT enclosed by the loop}:\\
+        If you can find a surface that is poked through by any even number of times (\blue{blue}),
+        you will always find a surface that is not being poked through (\red{red}).
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.15\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{poke3}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%
@@ -284,20 +377,51 @@ This is because in order to have steady current flow -
 current must be running in 1. a closed loop, 
 or 2. an infinitely long wire.
 
-\insertFig{close loop or infintely long wire}
+\begin{center}
+    \begin{minipage}{0.16\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{wire_close}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        In these two cases, 
+        you cannot separate the gray ring without breaking the current wire.
+    \end{minipage}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{wire_inf}
+    \end{minipage}
+\end{center}
 
-You cannot separate the gray ring without breaking the current wire.\\
 
 But when current is allowed to change with time, 
 we can have current discontinues at the end of a broken wire and accumulate as charges.
 Depends on which surface is chosen, 
 it becomes undefined whether the current wire is enclosed by the loop.
 
-\insertFig{red/blue surface}
+\begin{center}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{wire_broken}
+    \end{minipage}
+\end{center}
 
-Just like in basketball, the choice of surface does matter.
+As an analogy to the problem, 
+we can think of how scoring works in basketball - the choice of surface does matter.
 
-\insertFig{basketball}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=9em]{basket1}\\
+        You get a score if the winning condition is the ball poking through the blue surface
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=9em]{basket2}\\
+        You don't get a score if the winning condition is the ball poking through the red surface
+    \end{minipage}
+\end{center}
 
 
 
@@ -354,14 +478,27 @@ Ampere's law is always satisfied,
 indepedent of the choice of the surface.
 For example,
 
-\insertFig{ red surf, blue surf}
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{disp_curr}
+    \end{minipage}
+\end{center}
 
-The blue surface is poked through by the real current wire.
-$I_\text{enc} \neq 0$.
-
-The red surface is not poked through by the current wire,
-but it is passed through by flux of E-field.
-$I_\text{enc} = 0$ but $I_d \neq 0$.
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \blue{The blue surface is poked through by the real current wire.\\[1ex]
+        \fbox{$I_\text{enc} \neq 0$}}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \red{The red surface is not poked through by the current wire,
+        but it captures the flux of E-field.\\[1ex]
+        \fbox{$I_\text{enc} = 0$ \ \ but\ \ $I_d \neq 0$}}
+    \end{minipage}
+\end{center}
 
 
 \begin{notation}[Derivation:]
@@ -406,7 +543,7 @@ $I_\text{enc} = 0$ but $I_d \neq 0$.
 \end{notation}
 
 
-
+\vskip 3em
 %%%%%%%%%%%%%%
 \subsection{Complication of Electro-Magnetic Induction}
 
@@ -420,18 +557,20 @@ we can see that time-varying E-field and B-field can induce each other.
     Time varying E-field induces (time-varying) B-field.
 \end{itemize}
 
-Ideally $\vvec{E}$ and $\vvec{B}$ must be solved together - as a system of PDE! 
-Because if we only look at Faraday's law or Ampere's law one at a time, 
-we end up like this mess:
+\cul[red]{Ideally $\vvec{E}$ and $\vvec{B}$ must be solved together} - as a system of PDE!\\ 
+
+Theoretically, if we only look at Faraday's law or Ampere's law one at a time, 
+we will end up like this mess:
+
 \aleq{
     \tkmat{
         \qty{\text{Begin with a time-varying }\vvec{B}_0(t)} 
         \& \qquad\qquad \&
-        \qty{\vvec{B}_0(t) \text{ creates an induced }\vvec{E}_1(t)}\\[1ex]
+        \qty{\vvec{B}_0(t) \text{ creates an induced }\vvec{E}_1(t)}\\[1em]
         %
         \qty{\mstack{\vvec{E}_1(t)\text{ creates an induced } \vvec{B}_1(t)\\[0.5ex]\text{Total B-field }\Rightarrow \vvec{B}_0(t)+\vvec{B}_1(t)}} 
         \& \qquad\qquad \&
-        \qty{\mstack{\vvec{B}_1(t)\text{ creates an induced } \vvec{E}_2(t)\\[0.5ex]\text{Total E-field }\Rightarrow \vvec{E}_1(t)+\vvec{E}_2(t)}} \\[1ex]
+        \qty{\mstack{\vvec{B}_1(t)\text{ creates an induced } \vvec{E}_2(t)\\[0.5ex]\text{Total E-field }\Rightarrow \vvec{E}_1(t)+\vvec{E}_2(t)}} \\[1em]
         %
         \qty{\mstack{\vvec{E}_2(t)\text{ creates an induced } \vvec{B}_2(t)\\[0.5ex]\text{Total B-field }\Rightarrow \vvec{B}_0(t)+\vvec{B}_1(t)+\vvec{B}_2(t)}}
         \& \qquad\qquad \&
@@ -445,9 +584,13 @@ we end up like this mess:
     }
 } 
 
-But solving system of PDE is too complicated.
-So in most practice problems, 
-there is a hidden compromise - \bf{we assume induced E-field do not create induced B-field}.
+However solving system of PDEs is too complicated for anyone.
+So to make practical problems for studying, 
+there is usually a hidden compromise:
+\begin{center}
+    \bf{We just assume induced E-field do not create induced B-field}.
+\end{center}
+
 This is OK for small scale system when the magnitude of displacement current 
 is small enough to be ignored:
 \aleq{
@@ -457,15 +600,15 @@ is small enough to be ignored:
     \ \sim\ (10^{-16})\frac{\Delta \vvec{E}_1}{\Delta t} 
 }
 
-There do exist systems where you cannot take this approximation. 
-Solving PDEs is unavoidable. 
+But there do exist systems where you cannot take this approximation. 
+In those cases, solving PDEs is unavoidable. 
 For example,
 \begin{itemize}
-    \item Plamsa Physics (Plamsa = A mixture of high energy charges)
-    \item Astronomy, e.g. structure of neutron star, surroundings around black holes
+    \item Plamsa Physics (Plamsa = A mixture of high energy charges).
+    \item Astronomy, e.g. structure of neutron star, surroundings around black holes.
 \end{itemize}
 
-Fortunately, you will almost never see them unless you are doing researches in the future. 
+Fortunately, you will almost never see them unless you are doing related researches in the future. 
 
 
 
