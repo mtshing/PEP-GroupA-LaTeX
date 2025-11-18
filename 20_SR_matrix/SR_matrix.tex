@@ -37,20 +37,374 @@
 %%%%%%%%%%%%%%
 \subsection{Matrix as Linear Transformation}
 
-To begin with, first you need to be aware of that matrix can be used to describe transformation of coordinates:
+First we shall re-visit matrix as a tool of coordinate transformation - 
+By applying a matrix onto a position vector, 
+we can change the \cul[red]{expression of a position} in one coordinate system 
+into the expression in another coordinate system.
+Here are some very common transformations that you need to remember:
 
+\begin{itemize}
+    \item \bf{\ul{Rotation matrix}} 
+    \aleq{
+        \bmat{x'\\ y'}
+        =
+        \bmat{
+            \cos{\theta} & \sin{\theta} \\
+            -\sin{\theta} & \cos{\theta}
+        }
+        \bmat{x\\y}
+    }
+
+    \insertFig{rotation coor}
+    
+    \item \bf{\ul{Reflection matrix}}
+    \aleq{
+        \bmat{x'\\y'}
+        =
+        \bmat{ 
+            -1 & 0 \\
+            0 & 1 
+        }
+        \bmat{x\\y}
+    }
+
+    \insertFig{reflect coor}
+\end{itemize}
+
+The very important concept about coordinate transformation:
+\begin{center}
+    \bf{The description to the point's position can change 
+    only because we are free to choose the coordinate. 
+    The point is always the same.}
+\end{center}
+
+\begin{notation}{Side Note:}
+    In fact, the coordinate transformation by a matrix $\mmat{A}$ will map the coordinate expression onto 
+    the coordinate system spanned by the vectors $\qty\{\inv{\lambda_1}\vvec{v}_1, \inv{\lambda_1}\vvec{v}_1, \dots, \inv{\lambda_n}\vvec{v}_n\}$,
+    where $\lambda{i}$ are the eigenvalues of $\mmat{A}$ and $\vvec{v}_i$ are the corresponding eigenvectors.
+
+    \insertFig{random transform}
+
+    example?
+\end{notation}
 
 %%%%%%%%%%%%%%
 \subsection{Lorentz Transformation Matrix}
 
+To study special relativity, we first need to learn some new terminologies:
+
+\begin{itemize}
+    \item An event happens at time $t$, position $(x,y,z)$  has a spacetime coordinate $(ct,x,y,z)$
+    \item For different observers, they could define their own coordinate system. E.g. for the same event, A sees it happens at $(ct,x,y,z)$, B sees it happens at $(ct',x',y',z' )$.
+    \item Lorentz transformation matrix ($\Lambda$) switches the coordinate system between observers of different velocity, i.e. 
+    \aleq{
+        \bmat{ct'\\x'\\y'\\z'}
+        =
+        \Lambda 
+        \bmat{ct\\x\\y\\z}
+    }
+
+\end{itemize}
+
+\bf{Special relativity only deals with events that happens in inertial frame}, 
+i.e. objects are always moving with constant velocity along straight lines 
+(otherwise there must be acceleration). 
+For simplicity, we can assume all motions happen on the x-axis and omit the $y$/$z$ coordinates.
+
+
+
+
 %%%%%%%%%%%%%%
 \subsubsection{2 Einstein's Posulates}
 
-%%%%%%%%%%%%%%
-\subsubsection{Spacetime Coordinate}
+Special relativity is proposed based on only two principles.
+They are required to derive the expression of Lorentz transformation.
+
+\begin{enumerate}
+    \item \bf{\ul{Principle of Relativity}}\\
+    
+    All physics must be the same to any inertial observers. 
+    For example, observers cannot tell if an object is moving relative to him or 
+    himself is moving relative to the object, when there is no acceleration. 
+    
+    \item \bf{\ul{Principle of invariant light speed}}\\
+
+    Speed of light is always the same for any inertial system.
+
+\end{enumerate}
+
+
 
 %%%%%%%%%%%%%%
 \subsubsection{The Derivation}
+
+Let the two observers A, B differ in relative velocity $\vvec{v}$. 
+A sees B moving with velocity $\vvec{v}$, B sees A moving with velocity $-\vvec{v}$
+
+
+\begin{enumerate}
+    \setcounter{enumi}{-1} % counter begin with 0
+    
+    \item % step 0
+    Suppose $\Lambda$ transform from A’s coordinate ("static") to B’s coordinate ("moving" with $\vec{v}$) by
+    \aleq{
+        \bmat{ct'\\x'}
+        =
+        \Lambda(v)
+        \bmat{ct\\x}
+    }
+    Let the matrix elements be 
+    \aleq{
+        \Lambda(v) =
+        \bmat{
+            \mu_v & \lambda_v \\
+            \sigma_v & \gamma_v
+        }
+    }
+    Where $\gamma_v, \sigma_v, \mu_v, \lambda_v$ means they are functions of $v$. Written in such form for my convenience. 
+    
+    \item %%%%% step 1
+    The inverse of $\Lambda$ must exist, which is the transformation matrix from B's coordinate (moving with $\vec{v}$) to A’s coordinate (static) from A's viewpoint. But what the inverse does is also equivalent to transforming from B’s coordinate (static) to A’s coordinate (moving with $-\vec{v}$ ) from B's viewpoint. This implies
+    \aleq{
+        \bmat{ct\\x} 
+        = 
+        \Lambda^{-1}(v) 
+        \bmat{ct'\\x'}
+        =
+        \Lambda(-v)
+        \bmat{ct'\\x'}
+    }
+    \aleq{
+        \Lambda^{-1}(v) = \Lambda(-v)
+    }
+    
+    \item %%%%% step 2
+    Suppose the position of A and B are the same at some time point (Let’s call it $t=t'=0$). Then after some time t, A sees himself and B’s coordinate as
+    \begin{center}
+        %\begin{tabu}{|X[c]|X[c]|X[c]|}
+        \hline
+        \quad & A look at A (himself) & A look at B \\ 
+        \hline \rule{0pt}{4ex}
+        At $t=0$ & 
+        $\bmat{0\\0}$ & 
+        $\bmat{0\\0}$ 
+        \\[0.5ex] \hline \rule{0pt}{4ex} 
+        After some time $t$ & 
+        $\bmat{ ct\\0 }$ & 
+        $\bmat{ct\\vt}$
+        \\[0.5ex] \hline
+        %\end{tabu}
+    \end{center}
+    
+    Applying Lorentz matrix to transform to B's view
+    \begin{center}
+        \begin{tabu}{|X[c]|X[c]|X[c]|}
+        \hline
+        \quad & B look at A & B look at B (himself)\\ 
+        \hline \rule{0pt}{4ex}
+        At $t=0$ & 
+        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
+        \bmat0\\0\emat$ & 
+        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
+        \bmat0\\0\emat$ 
+        \\[0.5ex] \hline \rule{0pt}{4ex} 
+        After some time $t$ & 
+        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
+        \bmat ct\\0 \emat$ & 
+        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
+        \bmat ct\\vt\emat$\\[0.5ex] 
+        \hline
+        \end{tabu}
+    \end{center}
+    
+    But when B looks at himself, he should always see himself still standing at his defined origin $(x'=0)$. i.e. 
+    \[
+    \bmat
+    \mu_v & \lambda_v \\
+    \sigma_v & \gamma_v
+    \emat
+    \bmat ct\\vt \emat 
+    =
+    \bmat \text{whatever}\\0 \emat
+    =
+    \bmat ct'\\x' \emat
+    \]
+    Getting the relation between $\sigma_v$ and $\gamma_v$
+    \[
+    \sigma_vct+\gamma_vvt = 0 
+    \]
+    \[
+    \sigma_v = -\frac{\gamma_vv}{c}
+    \]
+    
+    \item %%%%% step 3
+    From step 2, A, B exchange their roles if we interchange $x'\leftrightarrow x, t'\leftrightarrow t, v\leftrightarrow -v$. Copy and paste everything in above and exchange the symbols
+    \begin{center}
+        \begin{tabu}{|X[c]|X[c]|X[c]|}
+        \hline
+        \quad & B look at B (himself) & B look at A \\ 
+        \hline \rule{0pt}{4ex}
+        At $t'=0$ & 
+        $\bmat0\\0\emat$ & 
+        $\bmat0\\0\emat$ 
+        \\[0.5ex] \hline \rule{0pt}{4ex} 
+        After some time $t'$ & 
+        $\bmat ct'\\0 \emat$ & 
+        $\bmat ct'\\-vt'\emat$
+        \\[0.5ex] \hline
+        \end{tabu}
+    \end{center}
+    
+    Applying inverse Lorentz matrix to transform to A's view
+    \begin{center}
+        \begin{tabu}{|X[c]|X[c]|X[c]|}
+        \hline
+        \quad & A look at A (himself) & A look at B 
+        \\ \hline \rule{0pt}{4ex}
+        At $t'=0$ & 
+        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
+        \bmat0\\0\emat$ & 
+        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
+        \bmat0\\0\emat$ 
+        \\[0.5ex] \hline \rule{0pt}{4ex} 
+        After some time $t'$ & 
+        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
+        \bmat ct'\\0 \emat$ & 
+        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
+        \bmat ct'\\-vt'\emat$
+        \\[0.5ex] \hline
+        \end{tabu}
+    \end{center}
+    
+    When A looks at himself, he should see himself still standing at his defined origin $(x=0)$. i.e. 
+    \[
+    \bmat
+    \mu_{-v} & \lambda_{-v} \\
+    \sigma_{-v} & \gamma_{-v}
+    \emat
+    \bmat ct'\\vt' \emat 
+    =
+    \bmat \text{whatever}\\0 \emat
+    =
+    \bmat ct\\x \emat
+    \]
+    Getting the relation between $\sigma_{-v}$ and $\gamma_{-v}$
+    \[
+    \sigma_{-v}ct'+\gamma_{-v}vt' = 0
+    \]
+    \[
+    \sigma_{-v} = -\frac{\gamma_{-v}(-v)}{c} = \frac{\gamma_{-v}v}{c}
+    \]
+    
+    \item %%%%% step 4
+    Summarizing results from step 2 and 3
+    \[
+    \bmat ct'\\x' \emat 
+    =
+    \bmat
+    \mu_v & \lambda_v \\
+    -\frac{\gamma_vv}{c} & \gamma_v 
+    \emat
+    \bmat ct\\x \emat 
+    \Rightarrow
+    x' = \gamma_vx-\gamma_vvt
+    \]
+    \[
+    \bmat ct\\x \emat 
+    =
+    \bmat
+    \mu_{-v} & \lambda_{-v} \\
+    -\frac{\gamma_{-v}v}{c} & \gamma_{-v} 
+    \emat
+    \bmat ct'\\x' \emat 
+    \Rightarrow
+    x = \gamma_{-v}x-\gamma_{-v}vt
+    \]
+    
+    Substitute $x'$ and change of variable to $t'$, get
+    \begin{align*}
+    x &= \gamma_v \gamma_{-v} - \gamma_v\gamma_{-v}vt+\gamma_{-v}vt'\\
+    t' &= \gamma_vt+\frac{1-\gamma_v\gamma_{-v}}{\gamma_{-v}v}x \\
+    ct' &= \gamma_vct+\frac{1-\gamma_v\gamma_{-v}c}{\gamma_{-v}v}x \\
+    &= \mu_vct + \lambda_vx 
+    \end{align*}
+    
+    Getting relation between $\mu_v, \lambda_v$ and $\gamma_v$
+    \begin{align*}
+    \mu_v &= \gamma_v\\
+    \lambda_v &= \frac{1-\gamma_v\gamma_{-v}c}{\gamma_{-v}v}
+    \end{align*}
+    
+    \item %%%%% step 5
+    \textbf{Principle of constant light speed.} For both A and B, they both see light travelling at speed $=c$.
+    
+    \begin{tabu}{|X[c]|X[c]|}
+         \hline
+         Photon seen by A & Photon seen by B 
+         \\[0.5ex] \hline \rule{0pt}{4ex} 
+         $\bmat ct\\ct\emat $ & $\bmat ct'\\ct' \emat$ 
+         \\[0.5ex] \hline
+    \end{tabu}
+    
+    Transforming from A’s view to B’s view:
+    \[
+    \bmat ct'\\ct' \emat
+    =
+    \bmat
+    \gamma_v & \lambda_v \\
+    \sigma_v & \gamma_v 
+    \emat
+    \bmat ct\\ct \emat
+    \]
+    which holds only if $\lambda_v = \sigma_v$, i.e. 
+    \[
+    \lambda_v = \frac{1-\gamma_v\gamma_{-v}c}{\gamma_{-v}v} = -\frac{\gamma_vv}{c}
+    \]
+    \[
+    \gamma_v \gamma_{-v} = \frac{1}{1-\frac{v^2}{c^2}}
+    \]
+    
+    item %%%%% step 6
+    Note that there are multiple possibilities of $\gamma_v$ satisfying this condition, which can be either
+    \begin{center}
+    \begin{itemize}
+        \item $\gamma_v=\gamma_{-v}=\frac{1}{1-\frac{v^2}{c^2}}$
+        \item $\gamma_v = \frac{1}{1-\frac{v}{c}}, \gamma_{-v} = \frac{1}{1+\frac{v}{c}}$
+        \item ...
+    \end{itemize}
+    \end{center}
+    
+    By checking the inverse $\Lambda^{-1}\Lambda=I$
+    \[
+    \bmat
+    \gamma_{-v} & \sigma_{-v} \\
+    \sigma_{-v} & \gamma_{-v}
+    \emat
+    \bmat
+    \gamma_v & \sigma_v \\
+    \sigma_v & \gamma_v 
+    \emat
+    =
+    \bmat
+    1 & 0 \\
+    0 & 1 
+    \emat
+    \]
+    Only holds if $\gamma_v = \gamma_{-v}$. So 
+    \[\gamma_v=\gamma_{-v}=\frac{1}{1-\frac{v^2}{c^2}}\]
+    
+\end{enumerate}
+To summarize, the Lorentz matrix is usually written in the form 
+\[
+\bmat
+\gamma & -\gamma\beta\\
+-\gamma\beta & \gamma
+\emat
+\quad \text{with} \quad
+\gamma = \frac{1}{\sqrt{1-\beta^2}} 
+\quad \text{and} \quad
+\beta = \frac{v}{c}
+\]
 
 
 \linesep
@@ -60,11 +414,117 @@ To begin with, first you need to be aware of that matrix can be used to describe
 %%%%%%%%%%%%%%
 \subsection{Time Dilation}
 
+Suppose a ‘static’ observer sees 2 events A, B happen at the same location $x$ at different time  $t_A,t_B$. What does a ‘moving’ observer see?\\
+
+\begin{tabu}{|X[0.16,c]|X[0.2,c]|X[0.2,c]|X[0.44,c]|}
+    \hline
+    \quad & Event A & Event B & Difference 
+    \\ \hline \rule{0pt}{4ex}
+    "static" sees & $\bmat ct_A\\x\emat$ & $\bmat ct_B\\x\emat$ & $\bmat c(t_B-t_A)\\0 \emat$
+    \\[0.5ex] \hline \rule{0pt}{7ex}
+    "moving" sees & 
+    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct_A\\x\emat$ &
+    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct_B\\x\emat$ &
+    \makecell{$\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat c(t_B-t_A)\\0\emat$ \\$= \bmat \gamma c(t_B-t_A)\\ \text{something}\neq 0 \emat$} 
+    \\[0.5ex] \hline
+\end{tabu}
+
+\begin{itemize}
+    \item  ‘static’ sees two events happen with time separation $=t_B-t_A$, position separation $=0$.
+    \item ‘moving’ observer sees the two events happen with longer time separation $(\because \gamma>0)$, but with nonzero position separation. 
+\end{itemize}
+This is the effect we called time dilation. Note that if the two events do not happen at the same location, the textbook formula $\Delta t'=\gamma \Delta t$ does not hold. 
+
 %%%%%%%%%%%%%%
 \subsection{Length Contraction}
 
+Suppose ‘static’ observer mark the positions of the two ends A, B of a rod ends at position $x_A,x_B$ at the same time $t$. What does a ‘moving’ observer see?\\
+
+\begin{tabu}{|X[0.16,c]|X[0.2,c]|X[0.2,c]|X[0.44,c]|}
+    \hline
+    \quad & Event A & Event B & Difference 
+    \\ \hline \rule{0pt}{4ex}
+    "static" sees & $\bmat ct\\x_A\emat$ & $\bmat ct\\x_B\emat$ & $\bmat 0\\x_B-x_A \emat$
+    \\[0.5ex] \hline \rule{0pt}{7ex}
+    "moving" sees & 
+    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct\\x_A\emat$ &
+    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct\\x_B\emat$ &
+    \makecell{$\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat 0\\x_B-x_A\emat$ \\$= \bmat \gamma \text{something}\neq 0\\ \gamma(x_B-x_A)  \emat$} 
+    \\[0.5ex] \hline
+\end{tabu}
+
+\begin{itemize}
+    \item "Static" sees the markings are dropped at the same time, so he can get the length of the object by measuring the distance between markings.
+    \item "Moving" sees the markings being droped at different time: \nth{1} marking dropped from End A first, then \nth{2} marking dropped from End B \textbf{AFTER} the rod travelled some distance. So "moving" cannot get the length of the rod
+\end{itemize}
+The only way "moving" can measure the length of the rod is when he sees the two markings dropped at the same time. i.e. require
+\[
+\text{Events separation} = \bmat 0\\x'_B-x'_A \emat
+\]
+Apply inverse Lorentz transform to go back to ‘static’ ‘s view, which the two marking are observed being dropped at $(t_A,x_A)$ and $(t_B,x_B)$
+\[
+\bmat
+\gamma & \gamma\beta \\
+\gamma\beta & \gamma 
+\emat 
+\bmat 0\\x'_B-x'_A \emat 
+= 
+\bmat \text{something}\neq 0 \\\gamma(x'_B-x'_A) \emat
+=\bmat c(t_B-t_A)\\x_B-x_A \emat
+\]
+
+As you can see from above, the position separation between events are larger when they are observed by ‘moving’ observer. Similar as time scale dilation, which the time separation between events are larger when they are observed by ‘moving’ observer. So it is in fact better to call the effect as ‘length scale dilation’.\\ 
+
+‘Length contraction’ is the consequence of ‘length scale dilation’: A larger length scale means the marking on a ruler become larger, so when measuring the length of an object, you get a smaller numerical value.
+
+
+
 %%%%%%%%%%%%%%
 \subsection{Velocity Addition}
+
+There are 3 men A, B, C, moving at different velocities. Suppose A is moving at velocity $\vec{u}$ relative to B, B is moving at velocity $\vec{v}$ relative to C. What is A’s relative velocity to C? (Lets call it $\vec{w}$) \\
+
+Let coordinate system of C be $\bmat ct_C\\x_C\emat $. The coordinate system of B can be found by applying Lorentz transformation to C’s:
+\[
+\bmat ct_B\\x_B \emat = \Lambda(v) \bmat ct_C\\x_C \emat
+\]
+And coordinate system of A can be found by applying Lorentz transformation to B’s: 
+\[
+\bmat ct_A\\x_A \emat = \Lambda(u) \bmat ct_B\\x_B \emat
+=\Lambda(u)\Lambda(v) \bmat ct_C\\x_C \emat
+\]
+But we should also be able to directly find coordinate of A from C’s if we know $\vec{w}$:
+\[
+\bmat ct_A\\x_A \emat = \Lambda(w) \bmat ct_C\\x_C \emat
+\]
+So
+\[
+\Lambda(w) = \Lambda(u)\Lambda(v)
+\]
+\[
+\bmat
+\gamma_w & \gamma_w\beta_w \\
+\gamma_w\beta_w & \gamma_w 
+\emat 
+=
+\bmat
+\gamma_u & \gamma_u\beta_u \\
+\gamma_u\beta_u & \gamma_u 
+\emat 
+\bmat
+\gamma_v & \gamma_v\beta_v \\
+\gamma_v\beta_v & \gamma_v 
+\emat 
+\]
+
+Do the calculation for the first entry (or any other entries will do):
+\begin{align*}
+\gamma_w &= \gamma_u\gamma_v + \gamma_u\gamma_v\beta_u\beta_v \\
+\frac{1}{\sqrt(1-\frac{w^2}{c^2}} &= \frac{1}{\sqrt(1-\frac{u^2}{c^2}}\frac{1}{\sqrt(1-\frac{v^2}{c^2}}(1+\frac{uv}{c^2}) \\
+w &= \frac{u+v}{1+\frac{uv}{c^2}}
+\end{align*}
+
+\fi
 
 %%%
 \theend
