@@ -91,27 +91,55 @@ The very important concept about coordinate transformation:
 %%%%%%%%%%%%%%
 \subsection{Lorentz Transformation Matrix}
 
-To study special relativity, we first need to learn some new terminologies:
+%%%%%%%%%%%%%%
+\subsubsection{Spacetime Coordinate}
+
+The topic of relativity is to study 
+the transformation between \bf{spacetime coordinate system}:
 
 \begin{itemize}
-    \item An event happens at time $t$, position $(x,y,z)$  has a spacetime coordinate $(ct,x,y,z)$
-    \item For different observers, they could define their own coordinate system. E.g. for the same event, A sees it happens at $(ct,x,y,z)$, B sees it happens at $(ct',x',y',z' )$.
-    \item Lorentz transformation matrix ($\Lambda$) switches the coordinate system between observers of different velocity, i.e. 
+    \item Every "\bf{event}" in the spacetime can be labelled with a coordinate - 
+    An event happens at time $t$ at position $(x,y,z)$ is given the coordinate $(ct,x,y,z)$
+    
+    \item Different \bf{observers} can describe the same event using their own coordinate systems,
+    leading to different expressions of the same event. 
+    E.g. For the same event, 
+    observer A describes it as $(ct,x,y,z)$, 
+    while observer B describes it as $(ct',x',y',z')$.
+    
+    \iffalse
+    % move to bottom of this section
+    \item \bf{Lorentz transformation matrix} $\Lambda$ connects 
+    the expressions of the same event in different coordinate system of observers.
     \aleq{
-        \bmat{ct'\\x'\\y'\\z'}
-        =
-        \Lambda 
-        \bmat{ct\\x\\y\\z}
+        \qty(\mstack{\text{Event observed by}\\\text{Observer A}})
+        = \bmat{ct'\\x'\\y'\\z'}
+        = \Lambda \bmat{ct\\x\\y\\z}
+        = \qty(\mstack{\text{Lorentz}\\\text{Transform}}) 
+            \qty(\mstack{\text{Event observed by}}\\\text{Observer B})
     }
-
+    \fi
 \end{itemize}
 
-\bf{Special relativity only deals with events that happens in inertial frame}, 
-i.e. objects are always moving with constant velocity along straight lines 
-(otherwise there must be acceleration). 
-For simplicity, we can assume all motions happen on the x-axis and omit the $y$/$z$ coordinates.
+In special relativity, we only deals with observers in different \bf{inertial frames}, 
+i.e. they do not experience accelerations.  
+For simplicity, we can choose 
+\begin{itemize}
+    \item The relative velocity between observers is along the x-axis.
+    \item The origins of the observers' coordinate "coincide", 
+    i.e. $(ct, x,y,z) =(0,0,0,0)$ is the same point as $(ct', x', y',z')=(0,0,0,0)$.
+\end{itemize}
 
+Then the $y$/$z$ coordinate of an event will be the same when described by both observers. 
+We can focus on the coordinate transformation on $t$ and $x$ coordinate only, 
+and visualize the transform with a 2D coordinate called \bf{Minkwoski space}:
 
+\insertFig{minkwoski transform}
+
+The transformation matrix is 
+\aleq{
+    \bmat{ct'//x'} = \Lambda_\red{v}\bmat{ct//x}
+}
 
 
 %%%%%%%%%%%%%%
@@ -124,36 +152,51 @@ They are required to derive the expression of Lorentz transformation.
     \item \bf{\ul{Principle of Relativity}}\\
     
     All physics must be the same to any inertial observers. 
-    For example, observers cannot tell if an object is moving relative to him or 
-    himself is moving relative to the object, when there is no acceleration. 
+    i.e. All the formula still yield the correct results, 
+    although values to be substituted becomes different for different observers.
+    %For example, observers cannot tell if an object is moving relative to him or 
+    %himself is moving relative to the object, when there is no acceleration. 
     
     \item \bf{\ul{Principle of invariant light speed}}\\
 
-    Speed of light is always the same for any inertial system.
+    Speed of light is always the same for any observers. 
+    (This even includes non-inertial frame observers.)
 
 \end{enumerate}
 
 
 
 %%%%%%%%%%%%%%
-\subsubsection{The Derivation}
+\subsubsection{Deriving the Matrix}
 
 Let the two observers A, B differ in relative velocity $\vvec{v}$. 
-A sees B moving with velocity $\vvec{v}$, B sees A moving with velocity $-\vvec{v}$
+Bear in mind that when there is no acceleration, 
+observers cannot distinguish if it is the object moving relative to him 
+or him moving relative to the object.
+\begin{itemize}
+    \item A always think that B is the one moving, while A himself never moves.
+    This is the same for B. 
 
+    \item If A sees B moving with velocity $\vvec{v}$, 
+    B sees A moving with velocity $-\vvec{v}$.
+
+\end{itemize}
+
+\insertFig{relative observation}
 
 \begin{enumerate}
-    \setcounter{enumi}{-1} % counter begin with 0
+    %\setcounter{enumi}{-1} % counter begin with 0
     
     \item % step 0
-    Suppose $\Lambda$ transform from A’s coordinate ("static") to B’s coordinate ("moving" with $\vec{v}$) by
+    Suppose the matrix $\Lambda$ transforms A’s coordinate to B’s coordinate
     \aleq{
         \bmat{ct'\\x'}
         =
         \Lambda(v)
         \bmat{ct\\x}
     }
-    Let the matrix elements be 
+
+    Let the matrix's elements be 
     \aleq{
         \Lambda(v) =
         \bmat{
@@ -161,25 +204,33 @@ A sees B moving with velocity $\vvec{v}$, B sees A moving with velocity $-\vvec{
             \sigma_v & \gamma_v
         }
     }
-    Where $\gamma_v, \sigma_v, \mu_v, \lambda_v$ means they are functions of $v$. Written in such form for my convenience. 
+    The subscripts $v$ on $\gamma, \sigma, \mu, \lambda$ indicate that they are functions of $v$. 
     
     \item %%%%% step 1
-    The inverse of $\Lambda$ must exist, which is the transformation matrix from B's coordinate (moving with $\vec{v}$) to A’s coordinate (static) from A's viewpoint. But what the inverse does is also equivalent to transforming from B’s coordinate (static) to A’s coordinate (moving with $-\vec{v}$ ) from B's viewpoint. This implies
+    \bf{The inverse of $\Lambda$ must exist} -  
+    we should always be able to transfrom from B's coordinate back to A’s coordinate. 
+    And since B sees A moving at velocity $-\vvec{v}$,
+    the inverse of $\Lambda(v)$ should have the same expression as $\Lambda$ 
+    but with all $\vvec{v}$ substituted by $-\vvec{v}$
     \aleq{
         \bmat{ct\\x} 
-        = 
-        \Lambda^{-1}(v) 
-        \bmat{ct'\\x'}
-        =
-        \Lambda(-v)
-        \bmat{ct'\\x'}
-    }
-    \aleq{
+        = \Lambda^{-1}(v) \bmat{ct'\\x'}
+        &= 
+        \Lambda(-v) \bmat{ct'\\x'}\\
+        %
         \Lambda^{-1}(v) = \Lambda(-v)
     }
     
     \item %%%%% step 2
-    Suppose the position of A and B are the same at some time point (Let’s call it $t=t'=0$). Then after some time t, A sees himself and B’s coordinate as
+    We have previously chosen their coordinate systems to coincide, 
+    i.e. $(ct,x)=(0,0)$ is the same point as $(ct',x')=(0,0)$. \\
+    
+    When A's clock passed some time $T$, A will see 
+    \begin{itemize}
+        \item A himself has not move.
+        \item B's position has increased by $vT$ because B is moving with velocity $v$.
+    \end{itemize}
+
     \begin{center}
         %\begin{tabu}{|X[c]|X[c]|X[c]|}
         \hline
@@ -189,91 +240,100 @@ A sees B moving with velocity $\vvec{v}$, B sees A moving with velocity $-\vvec{
         $\bmat{0\\0}$ & 
         $\bmat{0\\0}$ 
         \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $t$ & 
-        $\bmat{ ct\\0 }$ & 
-        $\bmat{ct\\vt}$
+        At $t=T$ & 
+        $\bmat{ cT\\0 }$ & 
+        $\bmat{cT\\vT}$
         \\[0.5ex] \hline
         %\end{tabu}
     \end{center}
     
-    Applying Lorentz matrix to transform to B's view
+    Applying Lorentz matrix will transform these coordinate to what is observed by B:
     \begin{center}
-        \begin{tabu}{|X[c]|X[c]|X[c]|}
+        %\begin{tabu}{|X[c]|X[c]|X[c]|}
         \hline
         \quad & B look at A & B look at B (himself)\\ 
         \hline \rule{0pt}{4ex}
         At $t=0$ & 
-        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
-        \bmat0\\0\emat$ & 
-        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
-        \bmat0\\0\emat$ 
+        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v} 
+        \bmat{0\\0}$ & 
+        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v}\emat 
+        \bmat{0\\0}$ 
         \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $t$ & 
-        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
-        \bmat ct\\0 \emat$ & 
-        $\bmat \mu_v & \lambda_v \\ \sigma_v & \gamma_v \emat 
-        \bmat ct\\vt\emat$\\[0.5ex] 
+        After some time $T$ & 
+        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v} 
+        \bmat{cT\\0}$ & 
+        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v} 
+        \bmat{cT\\vT}$\\[0.5ex] 
         \hline
-        \end{tabu}
+        %\end{tabu}
     \end{center}
     
-    But when B looks at himself, he should always see himself still standing at his defined origin $(x'=0)$. i.e. 
-    \[
-    \bmat
-    \mu_v & \lambda_v \\
-    \sigma_v & \gamma_v
-    \emat
-    \bmat ct\\vt \emat 
-    =
-    \bmat \text{whatever}\\0 \emat
-    =
-    \bmat ct'\\x' \emat
-    \]
-    Getting the relation between $\sigma_v$ and $\gamma_v$
-    \[
-    \sigma_vct+\gamma_vvt = 0 
-    \]
-    \[
-    \sigma_v = -\frac{\gamma_vv}{c}
-    \]
+    Note that when B looks at himself, 
+    he always see himself not moving, i.e. always stay at his origin $(x'=0)$. 
+    This gives us the first relations between the Lorentz matrix's elements. 
+    \aleq{
+        \bmat{
+            \mu_v & \lambda_v \\
+            \sigma_v & \gamma_v
+        }
+        \bmat{ct\\vT} 
+        &=
+        \bmat{\text{whatever}\\0}
+        =
+        \bmat{ct'\\x'}\\
+        %
+        \bmat{\cdots \\ \sigma_vcT+ \gamma_vvT}
+        &=
+        \bmat{\cdots\\0}\\
+        %
+        \sigma_v &= -\gamma_v\frac{v}{c}
+    }
     
+
     \item %%%%% step 3
-    From step 2, A, B exchange their roles if we interchange $x'\leftrightarrow x, t'\leftrightarrow t, v\leftrightarrow -v$. Copy and paste everything in above and exchange the symbols
+    We can interchange the A, B's roles by switching
+    $x'\leftrightarrow x$, $t'\leftrightarrow t$, and $v\leftrightarrow -v$ to repeat the previous step.\\
+
+    When B's clock passed some time $T'$, B will see:
+    \begin{itemize}
+        \item B himself has not move.
+        \item A's position has changed by $-vT'$ because A is moving with velocity $-v$.
+
     \begin{center}
-        \begin{tabu}{|X[c]|X[c]|X[c]|}
+        %\begin{tabu}{|X[c]|X[c]|X[c]|}
         \hline
         \quad & B look at B (himself) & B look at A \\ 
         \hline \rule{0pt}{4ex}
         At $t'=0$ & 
-        $\bmat0\\0\emat$ & 
-        $\bmat0\\0\emat$ 
+        $\bmat{0\\0}$ & 
+        $\bmat{0\\0}$ 
         \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $t'$ & 
-        $\bmat ct'\\0 \emat$ & 
-        $\bmat ct'\\-vt'\emat$
+        After some time $T'$ & 
+        $\bmat{cT'\\0}$ & 
+        $\bmat{cT'\\-vT'}$
         \\[0.5ex] \hline
-        \end{tabu}
+        %\end{tabu}
     \end{center}
     
-    Applying inverse Lorentz matrix to transform to A's view
+    Applying inverse Lorentz matrix will transform these coordinate to what is observed by A:
     \begin{center}
-        \begin{tabu}{|X[c]|X[c]|X[c]|}
+        %\begin{tabu}{|X[c]|X[c]|X[c]|}
         \hline
         \quad & A look at A (himself) & A look at B 
         \\ \hline \rule{0pt}{4ex}
         At $t'=0$ & 
-        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
-        \bmat0\\0\emat$ & 
-        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
-        \bmat0\\0\emat$ 
+        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
+        \bmat{0\\0}$ & 
+        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
+        \bmat{0\\0}$ 
         \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $t'$ & 
-        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
-        \bmat ct'\\0 \emat$ & 
-        $\bmat \mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v} \emat 
-        \bmat ct'\\-vt'\emat$
+        After some time $T'$ & 
+        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
+        \bmat{cT'\\0}$ & 
+        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
+        \bmat{cT'\\-vT'}$
         \\[0.5ex] \hline
-        \end{tabu}
+        %\end{tabu}
     \end{center}
     
     When A looks at himself, he should see himself still standing at his defined origin $(x=0)$. i.e. 
