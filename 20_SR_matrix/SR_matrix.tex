@@ -6,7 +6,7 @@
 \author{Tony Shing}
 %\pretitle{Supplementary}
 
-\topic{T20 (Relativity)}
+\topic{T20 (Special Relativity)}
 \title{Matrix Method for Special Relativity}
 
 \version{2025} % leave blank for omitting
@@ -19,12 +19,7 @@
 \begin{overview}
     \begin{itemize}
         \item Lorentz transformation matrix
-        \item Explaining relativistic phenomena: 
-        \begin{itemize}
-            \item Time dilation
-            \item Length contraction
-            \item Velocity addition
-        \end{itemize}
+        \item Explaining relativistic phenomena with the matrix method
     \end{itemize}
 \end{overview}
 
@@ -71,11 +66,11 @@ Here are some very common transformations that you need to remember:
     \insertFig{reflect coor}
 \end{itemize}
 
-The very important concept about coordinate transformation:
+Remember the very important fact about coordinate transform:
 \begin{center}
-    \bf{The description to the point's position can change 
-    only because we are free to choose the coordinate. 
-    The point is always the same.}
+    \bf{The point should always be the same one,\\
+     but the "description" to its position can change\\ 
+    because we are free to choose the coordinate system.}
 \end{center}
 
 \begin{notation}{Side Note:}
@@ -95,29 +90,26 @@ The very important concept about coordinate transformation:
 \subsubsection{Spacetime Coordinate}
 
 The topic of relativity is to study 
-the transformation between \bf{spacetime coordinate system}:
+the transform between \bf{spacetime coordinate system}:
 
 \begin{itemize}
-    \item Every "\bf{event}" in the spacetime can be labelled with a coordinate - 
-    An event happens at time $t$ at position $(x,y,z)$ is given the coordinate $(ct,x,y,z)$
+    \item Every "\bf{event}" in the spacetime can be labelled with a coordinate:
+    \begin{itemize}
+        \item An event happens at time $t$ at position $(x,y,z)$ is given the coordinate $(ct,x,y,z)$. 
+        \item The time $t$ is multiplied by speed of light $c$ such that all 4 coordinates have the unit of positions.
+    \end{itemize}
+
     
     \item Different \bf{observers} can describe the same event using their own coordinate systems,
-    leading to different expressions of the same event. 
-    E.g. For the same event, 
-    observer A describes it as $(ct,x,y,z)$, 
-    while observer B describes it as $(ct',x',y',z')$.
+    leading to different expressions of the same event. E.g. For the same event, 
+    \begin{itemize}
+        \item Observer A may describe it as $(ct,x,y,z)$, while
+        \item Observer B describe it as $(ct',x',y',z')$.
+    \end{itemize}
     
     \iffalse
     % move to bottom of this section
-    \item \bf{Lorentz transformation matrix} $\Lambda$ connects 
-    the expressions of the same event in different coordinate system of observers.
-    \aleq{
-        \qty(\mstack{\text{Event observed by}\\\text{Observer A}})
-        = \bmat{ct'\\x'\\y'\\z'}
-        = \Lambda \bmat{ct\\x\\y\\z}
-        = \qty(\mstack{\text{Lorentz}\\\text{Transform}}) 
-            \qty(\mstack{\text{Event observed by}}\\\text{Observer B})
-    }
+    \item 
     \fi
 \end{itemize}
 
@@ -132,35 +124,37 @@ For simplicity, we can choose
 
 Then the $y$/$z$ coordinate of an event will be the same when described by both observers. 
 We can focus on the coordinate transformation on $t$ and $x$ coordinate only, 
-and visualize the transform with a 2D coordinate called \bf{Minkwoski space}:
+and visualize the transform in a 2D coordinate called \bf{Minkowski diagram}:
 
 \insertFig{minkwoski transform}
 
-The transformation matrix is 
+The Lorentz transformation matrix,
+denoted as $\mmat{\Lambda}$, relates the observed $ct$ and $x$ coordinate between observers. 
 \aleq{
-    \bmat{ct'//x'} = \Lambda_\red{v}\bmat{ct//x}
+    = \tkn{coorB}{\cul[red]{\bmat{ct'\\x'}}}
+    = \tkn{lorentz}{\text{\Huge $(\mmat{\Lambda})$}} \tkn{coorA}{\cul[blue]{\bmat{ct\\x}}}
 }
-
+\addBentArrow[red]{coorB}{(-8ex,-3ex)}{An event's coordinate\\observed by B}{(0,-5ex)}{(-8ex,1ex)}
+\addBentArrow[blue]{coorA}{(8ex,-3ex)}{An event's coordinate\\observed by A}{(0,-5ex)}{(8ex,1ex)}
+\addArrow[gray]{lorentz}{(0,-10ex)}{The Lorentz Transformation\\A 2x2 matrix}{(0,-2ex)}{(0,-1ex)}
 
 %%%%%%%%%%%%%%
 \subsubsection{2 Einstein's Posulates}
 
 Special relativity is proposed based on only two principles.
-They are required to derive the expression of Lorentz transformation.
+They are essential to derive the expression of Lorentz transformation.
 
 \begin{enumerate}
     \item \bf{\ul{Principle of Relativity}}\\
-    
     All physics must be the same to any inertial observers. 
-    i.e. All the formula still yield the correct results, 
-    although values to be substituted becomes different for different observers.
+    i.e. All the formula yield the correct results, 
+    although values to be substituted are different for different observers.
     %For example, observers cannot tell if an object is moving relative to him or 
     %himself is moving relative to the object, when there is no acceleration. 
     
     \item \bf{\ul{Principle of invariant light speed}}\\
-
-    Speed of light is always the same for any observers. 
-    (This even includes non-inertial frame observers.)
+    Speed of light is the same for all observers. 
+    (This includes non-inertial frame observers.)
 
 \end{enumerate}
 
@@ -169,378 +163,768 @@ They are required to derive the expression of Lorentz transformation.
 %%%%%%%%%%%%%%
 \subsubsection{Deriving the Matrix}
 
-Let the two observers A, B differ in relative velocity $\vvec{v}$. 
+Let the two observers A, B differ in relative velocity $v$. 
 Bear in mind that when there is no acceleration, 
 observers cannot distinguish if it is the object moving relative to him 
 or him moving relative to the object.
 \begin{itemize}
-    \item A always think that B is the one moving, while A himself never moves.
-    This is the same for B. 
+    \item A always thinks that B is the one moving, while A himself never moves.
+    
+    \item B always thinks that A is the one moving, while B himself never moves.
 
-    \item If A sees B moving with velocity $\vvec{v}$, 
-    B sees A moving with velocity $-\vvec{v}$.
+    \item If A sees B moving with velocity $v$, 
+    B sees A moving with velocity $-v$.
 
 \end{itemize}
 
 \insertFig{relative observation}
+% add "you are the one moving"
+
+We shall show that:
+\begin{framed}
+When B moves at \cul[red]{velocity $v$ relative to} A
+    \aleq{
+        \tkn{coorB2}{\cul[red]{\bmat{ct'\\x'}}}
+        = \tkn{lorentz2}{\cul[gray]{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}}}\,
+        \tkn{coorA2}{\cul[blue]{\bmat{ct\\x}}}
+    }
+    \addBentArrow[red]{coorB2}{(-8ex,-3ex)}{An event's coordinate\\observed by B}{(0,-5ex)}{(-8ex,1ex)}
+    \addBentArrow[blue]{coorA2}{(8ex,-3ex)}{An event's coordinate\\observed by A}{(0,-5ex)}{(8ex,1ex)}
+    \addArrow[gray]{lorentz2}{(0,-3ex)}{\bf{The Lorentz}\\\bf{transformation matrix $\mmat{\Lambda}$}}{(0,-4.5ex)}{(0,-1.5ex)}
+
+    \vskip 6ex
+    with $\gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}}$ and $\beta = \frac{v}{c}$.
+\end{framed}
+
+
+\vskip 0.5em
+\underline{\textit{Proof}}\par
+\hspace{0.025\textwidth}\begin{minipage}{0.95\linewidth}
+\vskip 0.5em
+
+
+\end{minipage}
+\vskip 1.5em \par
+
+In general, A and B are no different other than they move with a speed $v$ relative to each other.
+So the Lorentz transform between them should only be related to $v$.
+We can write 
+\aleq{
+    \bmat{ct'\\x'}
+    = \mmat{\Lambda}(v)\bmat{ct\\x}
+    = \bmat{
+        p_{\cul[red]{\cul[red]{v}}} & q_{\cul[red]{\cul[red]{v}}} \\
+        r_{\cul[red]{\cul[red]{v}}} & s_{\cul[red]{\cul[red]{v}}}
+    }
+    \bmat{ct\\x}
+}
+
+The subscripts on $p, q, r, s$ indicate that they are \cul[red]{functions of $v$}. 
 
 \begin{enumerate}
-    %\setcounter{enumi}{-1} % counter begin with 0
     
-    \item % step 0
-    Suppose the matrix $\Lambda$ transforms A’s coordinate to B’s coordinate
-    \aleq{
-        \bmat{ct'\\x'}
-        =
-        \Lambda(v)
-        \bmat{ct\\x}
-    }
-
-    Let the matrix's elements be 
-    \aleq{
-        \Lambda(v) =
-        \bmat{
-            \mu_v & \lambda_v \\
-            \sigma_v & \gamma_v
-        }
-    }
-    The subscripts $v$ on $\gamma, \sigma, \mu, \lambda$ indicate that they are functions of $v$. 
-    
-    \item %%%%% step 1
-    \bf{The inverse of $\Lambda$ must exist} -  
-    we should always be able to transfrom from B's coordinate back to A’s coordinate. 
-    And since B sees A moving at velocity $-\vvec{v}$,
-    the inverse of $\Lambda(v)$ should have the same expression as $\Lambda$ 
-    but with all $\vvec{v}$ substituted by $-\vvec{v}$
+    \item
+    \it{\ul{The inverse of $\mmat{\Lambda}$ must exist}}\\
+    We should always be able to transfrom from B's coordinates back to A’s coordinates. 
+    Since B sees A moving at velocity $-v$,
+    the inverse of $\mmat{\Lambda}(v)$ should have the same expression
+    but with all $v$ changed to $-v$
     \aleq{
         \bmat{ct\\x} 
-        = \Lambda^{-1}(v) \bmat{ct'\\x'}
+        = \mmat{\Lambda}\minv(v) \bmat{ct'\\x'}
         &= 
-        \Lambda(-v) \bmat{ct'\\x'}\\
+        \mmat{\Lambda}(-v) \bmat{ct'\\x'}
+        = \bmat{
+            p_{\cul[blue]{\cul[blue]{-v}}} & q_{\cul[blue]{\cul[blue]{-v}}} \\
+            r_{\cul[blue]{\cul[blue]{-v}}} & s_{\cul[blue]{\cul[blue]{-v}}}
+        }
+        \bmat{ct'\\x'}\\[1em]
         %
-        \Lambda^{-1}(v) = \Lambda(-v)
+        \Aboxed{
+            \mmat{\Lambda}\minv(v) &= \mmat{\Lambda}(-v)
+        }
     }
+
     
-    \item %%%%% step 2
+    \item \it{\ul{From A transform to B}}\\
     We have previously chosen their coordinate systems to coincide, 
-    i.e. $(ct,x)=(0,0)$ is the same point as $(ct',x')=(0,0)$. \\
-    
-    When A's clock passed some time $T$, A will see 
+    i.e. $(ct,x)=(0,0)$ is the same point as $(ct',x')=(0,0)$.    
+    When some time $T$ advanced in A's clock, A will see 
     \begin{itemize}
-        \item A himself has not move.
-        \item B's position has increased by $vT$ because B is moving with velocity $v$.
+        \item A himself has not moved.
+        \item B's position changed to $vT$ because A sees B moving with velocity $v$.
     \end{itemize}
 
     \begin{center}
-        %\begin{tabu}{|X[c]|X[c]|X[c]|}
-        \hline
-        \quad & A look at A (himself) & A look at B \\ 
-        \hline \rule{0pt}{4ex}
-        At $t=0$ & 
-        $\bmat{0\\0}$ & 
-        $\bmat{0\\0}$ 
-        \\[0.5ex] \hline \rule{0pt}{4ex} 
-        At $t=T$ & 
-        $\bmat{ cT\\0 }$ & 
-        $\bmat{cT\\vT}$
-        \\[0.5ex] \hline
-        %\end{tabu}
+        \begin{tabular}{>{\centering\arraybackslash}m{0.3\linewidth}|
+            >{\centering\arraybackslash}m{0.2\linewidth}|
+            >{\centering\arraybackslash}m{0.2\linewidth}}
+            & A seen by A & B seen by A \\ 
+            \hline \vskip 1ex 
+            When A's clock shows $t=0$ & 
+            $\bmat{0\\0}$ & 
+            $\bmat{0\\0}$ 
+            \\[4ex] \hline \vskip 1ex 
+            When A's clock shows $t=T$ & 
+            $\bmat{ cT\\0 }$ & 
+            $\bmat{cT\\vT}$
+        \end{tabular}
     \end{center}
-    
-    Applying Lorentz matrix will transform these coordinate to what is observed by B:
+
+    Multiplying Lorentz matrix to these coordinate will transform to what is seen by B:
     \begin{center}
-        %\begin{tabu}{|X[c]|X[c]|X[c]|}
-        \hline
-        \quad & B look at A & B look at B (himself)\\ 
-        \hline \rule{0pt}{4ex}
-        At $t=0$ & 
-        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v} 
-        \bmat{0\\0}$ & 
-        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v}\emat 
-        \bmat{0\\0}$ 
-        \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $T$ & 
-        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v} 
-        \bmat{cT\\0}$ & 
-        $\bmat{\mu_v & \lambda_v \\ \sigma_v & \gamma_v} 
-        \bmat{cT\\vT}$\\[0.5ex] 
-        \hline
-        %\end{tabu}
+        \begin{tabular}{>{\centering\arraybackslash}m{0.3\linewidth}|
+            >{\centering\arraybackslash}m{0.2\linewidth}|
+            >{\centering\arraybackslash}m{0.2\linewidth}}
+            & A seen by \red{B} & B seen by \red{B}\\ 
+            \hline \vskip 1ex 
+            When A's clock shows $t=0$  & 
+            $\red{\bmat{p_v & q_v \\ r_v & s_v}}\bmat{0\\0}$ & 
+            $\red{\bmat{p_v & q_v \\ r_v & s_v}}\bmat{0\\0}$ 
+            \\[4ex] \hline \vskip 1ex 
+            When A's clock shows $t=T$  & 
+            $\red{\bmat{p_v & q_v \\ r_v & s_v}}\bmat{cT\\0}$ & 
+            \cul[gray]{\cul[gray]{$\red{\bmat{p_v & q_v \\ r_v & s_v}}\bmat{cT\\vT}$}}
+        \end{tabular}
     \end{center}
     
-    Note that when B looks at himself, 
-    he always see himself not moving, i.e. always stay at his origin $(x'=0)$. 
+    Notice the bottom right entry - when B looks at himself, 
+    he should always see himself not moving, i.e. always at his origin $(x'=0)$. 
+    \aleq{
+        \bmat{
+            p_v & q_v \\
+            r_v & s_v
+        }
+        \bmat{cT\\vT} 
+        &=
+        \bmat{\text{\it{don't care}}\\\cul[red]{\cul[red]{0}}} \sim \bmat{ct'\\x'}
+    }
+
     This gives us the first relations between the Lorentz matrix's elements. 
     \aleq{
         \bmat{
-            \mu_v & \lambda_v \\
-            \sigma_v & \gamma_v
+            \cdots & \cdots \\
+            r_v & s_v
         }
-        \bmat{ct\\vT} 
-        &=
-        \bmat{\text{whatever}\\0}
+        \bmat{cT\\vT}
         =
-        \bmat{ct'\\x'}\\
-        %
-        \bmat{\cdots \\ \sigma_vcT+ \gamma_vvT}
+        \bmat{\cdots \\ r_vcT+ s_vvT}
         &=
-        \bmat{\cdots\\0}\\
+        \bmat{\cdots\\0}\\[1ex]
         %
-        \sigma_v &= -\gamma_v\frac{v}{c}
+        \Aboxed{
+            r_v &= -s_v\qty(\frac{v}{c})
+        }
     }
     
 
-    \item %%%%% step 3
+    \item \it{\ul{From B transform to A}}\\
     We can interchange the A, B's roles by switching
-    $x'\leftrightarrow x$, $t'\leftrightarrow t$, and $v\leftrightarrow -v$ to repeat the previous step.\\
-
-    When B's clock passed some time $T'$, B will see:
+    $x'\leftrightarrow x$, $t'\leftrightarrow t$, and $v\leftrightarrow -v$ to repeat the previous step.
+    When some time $T'$ advanced in B's clock, B will see 
     \begin{itemize}
-        \item B himself has not move.
-        \item A's position has changed by $-vT'$ because A is moving with velocity $-v$.
+        \item B himself has not moved.
+        \item A's position changed by $-vT'$ because B sees A moving with velocity $-v$.
+    \end{itemize}
 
     \begin{center}
-        %\begin{tabu}{|X[c]|X[c]|X[c]|}
-        \hline
-        \quad & B look at B (himself) & B look at A \\ 
-        \hline \rule{0pt}{4ex}
-        At $t'=0$ & 
-        $\bmat{0\\0}$ & 
-        $\bmat{0\\0}$ 
-        \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $T'$ & 
-        $\bmat{cT'\\0}$ & 
-        $\bmat{cT'\\-vT'}$
-        \\[0.5ex] \hline
-        %\end{tabu}
+        \begin{tabular}{>{\centering\arraybackslash}m{0.3\linewidth}|
+            >{\centering\arraybackslash}m{0.2\linewidth}|
+            >{\centering\arraybackslash}m{0.2\linewidth}}
+            & A seen by B & B seen by B \\ 
+            \hline \vskip 1ex 
+            When B's clock shows $t'=0$ & 
+            $\bmat{0\\0}$ & 
+            $\bmat{0\\0}$ 
+            \\[4ex] \hline \vskip 1ex 
+            When B's clock shows $t'=T'$ & 
+            $\bmat{ cT'\\-vT'}$ & 
+            $\bmat{cT'\\0}$
+        \end{tabular}
     \end{center}
-    
-    Applying inverse Lorentz matrix will transform these coordinate to what is observed by A:
+
+    Multiplying these coordinate with the \cul[blue]{\it{inverse}} Lorentz matrix, 
+    i.e. use $-v$ instead of $v$, will transform to what is seen by A:
     \begin{center}
-        %\begin{tabu}{|X[c]|X[c]|X[c]|}
-        \hline
-        \quad & A look at A (himself) & A look at B 
-        \\ \hline \rule{0pt}{4ex}
-        At $t'=0$ & 
-        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
-        \bmat{0\\0}$ & 
-        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
-        \bmat{0\\0}$ 
-        \\[0.5ex] \hline \rule{0pt}{4ex} 
-        After some time $T'$ & 
-        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
-        \bmat{cT'\\0}$ & 
-        $\bmat{\mu_{-v} & \lambda_{-v} \\ \sigma_{-v} & \gamma_{-v}}
-        \bmat{cT'\\-vT'}$
-        \\[0.5ex] \hline
-        %\end{tabu}
+        \begin{tabular}{>{\centering\arraybackslash}m{0.3\linewidth}|
+            >{\centering\arraybackslash}m{0.3\linewidth}|
+            >{\centering\arraybackslash}m{0.3\linewidth}}
+            & A seen by \blue{A} & B seen by \blue{A}\\ 
+            \hline \vskip 1ex 
+            When B's clock shows $t'=0$  & 
+            $\blue{\bmat{p_{-v} & q_{-v} \\ r_{-v} & s_{-v}}}\bmat{0\\0}$ & 
+            $\blue{\bmat{p_{-v} & q_{-v} \\ r_{-v} & s_{-v}}}\bmat{0\\0}$ 
+            \\[4ex] \hline \vskip 1ex 
+            When B's clock shows $t'=T'$  & 
+            \cul[gray]{\cul[gray]{$\blue{\bmat{p_{-v} & q_{-v} \\ r_{-v} & s_{-v}}}\bmat{cT'\\-vT'}$}} & 
+            $\blue{\bmat{p_{-v} & q_{-v} \\ r_{-v} & s_{-v}}}\bmat{cT'\\0}$
+        \end{tabular}
     \end{center}
+
+    Notice the bottom left entry - when A looks at himself, 
+    he should always see himself not moving, i.e. always at his origin $(x=0)$. 
+    \aleq{
+        \bmat{
+            p_{-v} & q_{-v} \\
+            r_{-v} & s_{-v}
+        }
+        \bmat{cT'\\-vT'} 
+        &=
+        \bmat{\text{\it{don't care}}\\\cul[blue]{\cul[blue]{0}}} \sim \bmat{ct\\x}
+    }
+
+    This gives us the second relations between the Lorentz matrix's elements. 
+    \aleq{
+        \bmat{
+            \cdots & \cdots \\
+            r_{-v} & s_{-v}
+        }
+        \bmat{cT'\\vT'}
+        =
+        \bmat{\cdots \\ r_{-v}cT' - s_{-v}vT'}
+        &=
+        \bmat{\cdots\\0}\\[1ex]
+        %
+        \Aboxed{
+            r_{-v} &= s_{-v}\qty(\frac{v}{c})
+        }
+    }
     
-    When A looks at himself, he should see himself still standing at his defined origin $(x=0)$. i.e. 
-    \[
-    \bmat
-    \mu_{-v} & \lambda_{-v} \\
-    \sigma_{-v} & \gamma_{-v}
-    \emat
-    \bmat ct'\\vt' \emat 
-    =
-    \bmat \text{whatever}\\0 \emat
-    =
-    \bmat ct\\x \emat
-    \]
-    Getting the relation between $\sigma_{-v}$ and $\gamma_{-v}$
-    \[
-    \sigma_{-v}ct'+\gamma_{-v}vt' = 0
-    \]
-    \[
-    \sigma_{-v} = -\frac{\gamma_{-v}(-v)}{c} = \frac{\gamma_{-v}v}{c}
-    \]
+    \item \it{\ul{(Matrix) $\times$ (Its inverse) $= \mmat{I}$}}\\
+    Substitute the results from step 2 and 3 to $\mmat{\Lambda}$ and $\mmat{\Lambda}\minv$,
+    then multiply them:
+    \aleq{
+        \mmat{\Lambda}\minv\mmat{\Lambda}
+        =
+        \bmat{
+            p_{-v} & q_{-v}\\
+            s_{-v}\qty(\frac{v}{c}) & s_{-v}
+        }
+        \bmat{
+            p_{v} & q_{v}\\
+            s_{v}\qty(-\frac{v}{c}) & s_{v}
+        }
+        \ \equiv\ 
+        \mqty(\imat{2}) = \mmat{I}
+    }
+
+    The bottom left entry gives us a relation between $p$ and $s$.
+    \aleq{
+        \bmat{\cdots &\cdots \\ s_{-v}\qty(\frac{v}{c}) & s_{-v}}
+        \bmat{p_v & \cdots \\ s_{v}\qty(-\frac{v}{c}) & \cdots}
+        &= \bmat{\cdots & \cdots \\ 0 & \cdots }\\[1ex]
+        %
+        s_{-v}\qty(\frac{v}{c})p_v + s_{-v}s_{v}\qty(-\frac{v}{c}) &= 0 \\[1ex]
+        %
+        \Aboxed{
+            p_v = s_v
+        }
+    }
+
+    \iffalse
+    Bottom right entry:
+    \aleq{
+        \bmat{\cdots &\cdots \\ s_{-v}\qty(\frac{v}{c}) & s_{-v}}
+        \bmat{\cdots & q_v \\ \cdots & s_v}
+        &= \bmat{\cdots & \cdots \\ \cdots & 1 }\\[1ex]
+        %
+        s_{-v}\qty(\frac{v}{c})q_v + s_{-v}s_{v} &= 1 \\[1ex]
+        %
+        \Aboxed{
+            q_v = \frac{1-s_vs_{-v}}{s_{-v}}\qty(\frac{v}{c})
+        }
+    }
+    \fi
     
-    \item %%%%% step 4
-    Summarizing results from step 2 and 3
-    \[
-    \bmat ct'\\x' \emat 
-    =
-    \bmat
-    \mu_v & \lambda_v \\
-    -\frac{\gamma_vv}{c} & \gamma_v 
-    \emat
-    \bmat ct\\x \emat 
-    \Rightarrow
-    x' = \gamma_vx-\gamma_vvt
-    \]
-    \[
-    \bmat ct\\x \emat 
-    =
-    \bmat
-    \mu_{-v} & \lambda_{-v} \\
-    -\frac{\gamma_{-v}v}{c} & \gamma_{-v} 
-    \emat
-    \bmat ct'\\x' \emat 
-    \Rightarrow
-    x = \gamma_{-v}x-\gamma_{-v}vt
-    \]
+    \item \it{\ul{Principle of constant light speed}}\\
+    Both A and B should see a light beam travelling at speed $=c$.
     
-    Substitute $x'$ and change of variable to $t'$, get
-    \begin{align*}
-    x &= \gamma_v \gamma_{-v} - \gamma_v\gamma_{-v}vt+\gamma_{-v}vt'\\
-    t' &= \gamma_vt+\frac{1-\gamma_v\gamma_{-v}}{\gamma_{-v}v}x \\
-    ct' &= \gamma_vct+\frac{1-\gamma_v\gamma_{-v}c}{\gamma_{-v}v}x \\
-    &= \mu_vct + \lambda_vx 
-    \end{align*}
-    
-    Getting relation between $\mu_v, \lambda_v$ and $\gamma_v$
-    \begin{align*}
-    \mu_v &= \gamma_v\\
-    \lambda_v &= \frac{1-\gamma_v\gamma_{-v}c}{\gamma_{-v}v}
-    \end{align*}
-    
-    \item %%%%% step 5
-    \textbf{Principle of constant light speed.} For both A and B, they both see light travelling at speed $=c$.
-    
-    \begin{tabu}{|X[c]|X[c]|}
-         \hline
-         Photon seen by A & Photon seen by B 
-         \\[0.5ex] \hline \rule{0pt}{4ex} 
-         $\bmat ct\\ct\emat $ & $\bmat ct'\\ct' \emat$ 
-         \\[0.5ex] \hline
-    \end{tabu}
-    
-    Transforming from A’s view to B’s view:
-    \[
-    \bmat ct'\\ct' \emat
-    =
-    \bmat
-    \gamma_v & \lambda_v \\
-    \sigma_v & \gamma_v 
-    \emat
-    \bmat ct\\ct \emat
-    \]
-    which holds only if $\lambda_v = \sigma_v$, i.e. 
-    \[
-    \lambda_v = \frac{1-\gamma_v\gamma_{-v}c}{\gamma_{-v}v} = -\frac{\gamma_vv}{c}
-    \]
-    \[
-    \gamma_v \gamma_{-v} = \frac{1}{1-\frac{v^2}{c^2}}
-    \]
-    
-    item %%%%% step 6
-    Note that there are multiple possibilities of $\gamma_v$ satisfying this condition, which can be either
     \begin{center}
+        \begin{minipage}{0.4\textwidth}
+            \begin{tabular}{>{\centering\arraybackslash}m{0.45\linewidth}|
+                >{\centering\arraybackslash}m{0.4\linewidth}}
+                & Light beam seen by A\\ 
+                \hline \vskip 1ex 
+                When A's clock shows $t=0$ & 
+                $\bmat{0\\0}$
+                \\[4ex] \hline \vskip 1ex 
+                When A's clock shows $t=T$ & 
+                $\bmat{cT\\cT}$
+            \end{tabular}
+        \end{minipage}
+        \ AND\quad 
+        \begin{minipage}{0.4\textwidth}
+            \begin{tabular}{>{\centering\arraybackslash}m{0.45\linewidth}|
+                >{\centering\arraybackslash}m{0.4\linewidth}}
+                & Light beam seen by B \\ 
+                \hline \vskip 1ex 
+                When B's clock shows $t'=0$ & 
+                $\bmat{0\\0}$
+                \\[4ex] \hline \vskip 1ex 
+                When B's clock shows $t'=T'$ & 
+                $\bmat{ cT'\\cT' }$
+            \end{tabular}
+        \end{minipage}
+    \end{center}
+
+    These tables should be true for ANY value of $T$ and $T'$. 
+    We can choose the value of $T'$ such that the light beam being observed by both A and B as the same event.
+    \begin{center}
+        \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+            >{\centering\arraybackslash}m{0.3\linewidth}|
+            >{\centering\arraybackslash}m{0.35\linewidth}}
+            & Light beam seen by A & Light beam seen by \red{B} \\ 
+            \hline \vskip 1ex 
+            When A's clock shows $t=0$ & 
+            $\bmat{0\\0}$ &
+            $\red{\bmat{p_v & q_v \\r_v & s_v}}\bmat{0\\0} = \red{\bmat{0\\0}}$
+            \\[4ex] \hline \vskip 1ex 
+            When A's clock shows $t=T$ & 
+            $\bmat{ cT\\cT }$ &
+            \cul[gray]{\cul[gray]{$\red{\bmat{p_v & q_v \\r_v & s_v}}\bmat{cT\\cT} = \red{\bmat{cT'\\cT'}}$}}
+        \end{tabular}
+    \end{center}
+
+    This gives us a relation between $q$ and $s$:
+    \aleq{
+        \bcase{
+            (p_v + q_v)cT &= cT' \\
+            (r_v + s_v)cT &= cT'
+        }
+    }
+    
+    In the previous steps, we have already found $p_v=s_v$ and $r_v = -s_v\qty(\frac{v}{c})$
+    so it remains
+    \aleq{
+        \Aboxed{
+            q_v = r_v = -s_v\qty(\frac{v}{c})
+        }
+    }
+
+    
+    \item \it{\ul{Choose $\det(\mmat{\Lambda})=1$}}\\
+    So far we have found each entry in the Lorentz transformation matrix in terms of $s_v$.
+    \aleq{
+        \mmat{\Lambda} 
+        = \bmat{p_v & q_v \\ r_v & s_v}
+        = \bmat{s_v & -s_v\qty(\frac{v}{c}) \\ -s_v\qty(\frac{v}{c}) & s_v}
+        = \bmat{1 & -\frac{v}{c} \\ -\frac{v}{c} & 1} s_v
+    }
+
+    All we are left is the form of $s_v$.
+    From its inverse property $\mmat{\Lambda}\minv(v) = \mmat{\Lambda}(-v)$ and 
+    $\mmat{\Lambda}\minv\mmat{\Lambda} = \mmat{I}$, 
+    \aleq{
+        \mmat{\Lambda}\minv\mmat{\Lambda} 
+        = \bmat{1 & \frac{v}{c} \\ \frac{v}{c} & 1} s_{-v} \cdot 
+            \bmat{1 & -\frac{v}{c} \\ -\frac{v}{c} & 1} s_v 
+        = s_vs_{-v} \bmat{1 -\frac{v^2}{c^2} & 0 \\ 0 & 1 -\frac{v^2}{c^2}}
+        = \mqty(\imat{2}) = \mmat{I}
+    }
+
+    $s_v$ can be ANY functional form as long as \ \fbox{$s_vs_{-v} = 1 -\dfrac{v^2}{c^2}$}\ . 
+    For example, 
     \begin{itemize}
-        \item $\gamma_v=\gamma_{-v}=\frac{1}{1-\frac{v^2}{c^2}}$
-        \item $\gamma_v = \frac{1}{1-\frac{v}{c}}, \gamma_{-v} = \frac{1}{1+\frac{v}{c}}$
+        \item $s_v=s_{-v}=\dfrac{1}{\sqrt{1-\frac{v^2}{c^2}}}$
+        \item $s_v = \dfrac{1}{1-\frac{v}{c}}$ and  $s_{-v} = \dfrac{1}{1+\frac{v}{c}}$
         \item ...
     \end{itemize}
-    \end{center}
     
-    By checking the inverse $\Lambda^{-1}\Lambda=I$
-    \[
-    \bmat
-    \gamma_{-v} & \sigma_{-v} \\
-    \sigma_{-v} & \gamma_{-v}
-    \emat
-    \bmat
-    \gamma_v & \sigma_v \\
-    \sigma_v & \gamma_v 
-    \emat
-    =
-    \bmat
-    1 & 0 \\
-    0 & 1 
-    \emat
-    \]
-    Only holds if $\gamma_v = \gamma_{-v}$. So 
-    \[\gamma_v=\gamma_{-v}=\frac{1}{1-\frac{v^2}{c^2}}\]
+    Out of all the choice, we are \cul[red]{choosing} the $s_v$ which makes $\det(\mmat{\Lambda})=1$:
+    \aleq{
+        \det(\mmat{\Lambda}) = s_v^2\cdot \qty(1-\frac{v^2}{c^2}) &= 1\\
+        \Aboxed{
+            s_v &= \dfrac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+        }
+    }
+
+    The true reason behind this choice is because 
+    we want to construct certain "spacetime" invariants that carry physical meaning.
+    We shall explain more when we arrive at that section. 
+
     
 \end{enumerate}
-To summarize, the Lorentz matrix is usually written in the form 
-\[
-\bmat
-\gamma & -\gamma\beta\\
--\gamma\beta & \gamma
-\emat
-\quad \text{with} \quad
-\gamma = \frac{1}{\sqrt{1-\beta^2}} 
-\quad \text{and} \quad
-\beta = \frac{v}{c}
-\]
+
+
+As a conclusion, we have derived the Lorentz transformation matrix as the form:
+\aleq{
+    \Aboxed{
+        \mmat{\Lambda}(\gray{v})
+        \ \defeq\
+        \dinv{\sqrt{1-\frac{v^2}{c^2}}}
+        \bmat{
+            1 & -\dfrac{v}{c} \\
+            -\dfrac{v}{c} & 1
+        }
+        \ \defeq\ \gamma_\gray{v} \bmat{1 & -\beta\\ -\beta & 1}_\gray{v}
+        = \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_\gray{v}
+    }
+} 
+
+\vskip 1ex
+The conventional form is denoted by these letters:
+\aleq{
+    \gamma = \inv{\sqrt{1-\beta^2}} 
+    \quad \text{and} \quad
+    \beta = \frac{v}{c}
+}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Reading Minkowski Diagram}
+
+The Minkowski diagram can be used to read the coordinate's value 
+of the same point (event) according to different observer.
+
+\insertFig{Minkwoski diagram, label axis of different observers}
+
+To read the value on one axis, 
+we can draw a line that is "normal" to that axis and tells the value by the intercept.
+Just like how we read the coordinates in rectangular and polar coordinate.
+
+\begin{itemize}
+    \item \ul{Example 1: Rectangular coordinate}
+    \insertFig{rect coor}
+
+    \item \ul{Example 2: Polar coordinate}
+    \insertFig{polar coor}
+
+\end{itemize}
+
+Similarly on the Minkowski diagram, 
+to read the values on one of the sloping axis,
+we can draw a line that is parallel to the other axis to find the intercept. 
+
+\insertFig{reading values from Minkowski}
+
+For example, if A uses the $(ct,x)$ axes, B uses the $(ct',x')$ axes, 
+and B is moving at a velocity $v$ relative to A, 
+The spacetime coordinate of B are then
+\begin{itemize}
+    \item As seen by A: $\bmat{ct\\vt}$
+    \item As seen by B: $\bmat{ct\\0}$
+\end{itemize}
+
+\insertFig{B's position labeld by both axis}
+
+We can also determine that the angle between $t,t'$ axes (or between $x,x'$ axes) to be
+\aleq{
+    \tan{\theta} &= \frac{vt}{ct} \\
+    \theta &= \tan^{-1}\qty(\frac{v}{c}) = \tan^{-1}\beta
+}
+
 
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Relativistic Phenomena}
 
+In the following section, 
+we are going to examine these 3 phenomena with the matrix method:
+\begin{itemize}
+    \item Time dilation
+    \item Length contraction
+    \item Relative velocity addition under relativity
+\end{itemize}
+
 %%%%%%%%%%%%%%
 \subsection{Time Dilation}
 
-Suppose a ‘static’ observer sees 2 events A, B happen at the same location $x$ at different time  $t_A,t_B$. What does a ‘moving’ observer see?\\
-
-\begin{tabu}{|X[0.16,c]|X[0.2,c]|X[0.2,c]|X[0.44,c]|}
-    \hline
-    \quad & Event A & Event B & Difference 
-    \\ \hline \rule{0pt}{4ex}
-    "static" sees & $\bmat ct_A\\x\emat$ & $\bmat ct_B\\x\emat$ & $\bmat c(t_B-t_A)\\0 \emat$
-    \\[0.5ex] \hline \rule{0pt}{7ex}
-    "moving" sees & 
-    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct_A\\x\emat$ &
-    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct_B\\x\emat$ &
-    \makecell{$\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat c(t_B-t_A)\\0\emat$ \\$= \bmat \gamma c(t_B-t_A)\\ \text{something}\neq 0 \emat$} 
-    \\[0.5ex] \hline
-\end{tabu}
-
+The standard setup is to have 2 events: "\circled{1}" and "\circled{2}"
+described by two observers A, B: 
 \begin{itemize}
-    \item  ‘static’ sees two events happen with time separation $=t_B-t_A$, position separation $=0$.
-    \item ‘moving’ observer sees the two events happen with longer time separation $(\because \gamma>0)$, but with nonzero position separation. 
+    \item A is the \blue{\bf{"co-moving"}} observer - 
+    he sees the \blue{two events happen at the same position $x$},
+    but different time $t=t_1$ and $t=t_2$.
+
+    \item B is the \red{\bf{"moving"}} observer - 
+    he moves at \red{velocity $v$ relative to the co-moving observer}.  
+\end{itemize} 
+
+We can tabulate the spacetime coordinate of the two events as
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.35\linewidth}}
+        & Seen by \blue{A} & Seen by \red{B}\\ 
+        \hline \vskip 3ex 
+        Event \circled{1} & 
+        $\bmat{ct_1\\x}$ & 
+        $\red{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v}\bmat{ ct_1\\x}$
+        \\[4ex] \hline \vskip 3ex 
+        Event \circled{2} & 
+        $\bmat{ct_2\\x}$  & 
+        $\red{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v}\bmat{ct_2\\x}$
+        \\[4ex] \hline \vskip 1ex 
+        Difference in coordinates & 
+        $\bmat{c(t_2-t_1)\\\cul[blue]{\cul[blue]{\blue{0}}}}$  & 
+        $\red{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v}\bmat{c(t_2-t_1)\\0}$
+    \end{tabular}
+\end{center}
+
+This explains what actually happens when we describe time dilation:
+\begin{itemize}
+    \item If the \blue{"co-moving"} observer sees two events happen with a time difference $t_2-t_1$ in between,
+    \aleq{
+        \bmat{c\cdot \Delta t \\ \Delta x}_\blue{A}
+        = \bmat{c\cdot \cul[blue]{(t_2-t_1)}\\ \blue{0}}
+    }
+
+    \item Any \red{other observer}, with a speed $v$ relative to the co-moving observer, 
+    will see a time difference $\gamma_v(t_2-t_1)$.
+    \aleq{
+        \bmat{c\cdot \Delta t \\ \Delta x}_\red{B}
+        &= \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v\bmat{c(t_2-t_1)\\0}\\[1ex]
+        &= \bmat{\gamma_v c(t_2-t_1)\\ -\gamma_v v(t_2-t_1)}\\[1ex]
+        &= \bmat{c \cdot \cul[red]{\gamma_v \cdot (\text{Time diff. seen by A})}\\ \red{\text{\it{Something }}\neq 0}}
+    }
 \end{itemize}
-This is the effect we called time dilation. Note that if the two events do not happen at the same location, the textbook formula $\Delta t'=\gamma \Delta t$ does not hold. 
+
+Because $\gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}} \geq 1$, 
+this phenomenon is described as \bf{time dilation}:
+\begin{center}
+    \bf{Time difference $\Delta t$ measured by a \cul[blue]{co-moving observer} is always the shortest,\\
+    while \cul[red]{other observer} will measure a "longer" time difference $\gamma \Delta t$.}
+\end{center}
+
+\vskip 1em
+You should remember that although the time scale is changed, 
+it comes with a side effect: 
+\begin{itemize}
+    \item The events happens at the \blue{same position} in according to the \blue{co-moving observer},
+    \item But the \red{positions are different} according to \red{other observers}.
+\end{itemize}
+
+We can visualize this effect using the Minkowski diagram:
+
+\insertFig{time dilation}
+
 
 %%%%%%%%%%%%%%
 \subsection{Length Contraction}
 
-Suppose ‘static’ observer mark the positions of the two ends A, B of a rod ends at position $x_A,x_B$ at the same time $t$. What does a ‘moving’ observer see?\\
-
-\begin{tabu}{|X[0.16,c]|X[0.2,c]|X[0.2,c]|X[0.44,c]|}
-    \hline
-    \quad & Event A & Event B & Difference 
-    \\ \hline \rule{0pt}{4ex}
-    "static" sees & $\bmat ct\\x_A\emat$ & $\bmat ct\\x_B\emat$ & $\bmat 0\\x_B-x_A \emat$
-    \\[0.5ex] \hline \rule{0pt}{7ex}
-    "moving" sees & 
-    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct\\x_A\emat$ &
-    $\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat ct\\x_B\emat$ &
-    \makecell{$\bmat \gamma & -\gamma\beta\\ -\gamma\beta & \gamma \emat \bmat 0\\x_B-x_A\emat$ \\$= \bmat \gamma \text{something}\neq 0\\ \gamma(x_B-x_A)  \emat$} 
-    \\[0.5ex] \hline
-\end{tabu}
-
+The standard setup is by observing the two endings of a rod, labeled as "\circled{1}" and "\circled{2}",
+by two observers A, B: 
 \begin{itemize}
-    \item "Static" sees the markings are dropped at the same time, so he can get the length of the object by measuring the distance between markings.
-    \item "Moving" sees the markings being droped at different time: \nth{1} marking dropped from End A first, then \nth{2} marking dropped from End B \textbf{AFTER} the rod travelled some distance. So "moving" cannot get the length of the rod
+    \item A is the \blue{\bf{"co-moving"}} observer - 
+    he \blue{moves together with the rod} - 
+    the two ends of the rod are always at the same position $x=x_1$ and $x=x_2$,
+    at any time $t$.
+
+    \item B is the \red{\bf{"moving"}} observer - 
+    he moves at \red{velocity $v$ relative to the co-moving observer}.  
+\end{itemize} 
+
+We can tabulate the spacetime coordinate of the two endings of the rod as
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.35\linewidth}}
+        & Seen by \blue{A} & Seen by \red{B}\\ 
+        \hline \vskip 3ex 
+        \makecell{\blue{A} reads position of \\ Ending \circled{1}} & 
+        $\bmat{ct\\x_1}$ & 
+        $\red{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v}\bmat{ct\\x_1}$
+        \\[4ex] \hline \vskip 3ex 
+        \makecell{\blue{A} reads position of \\ Ending \circled{2}}  & 
+        $\bmat{ct\\x_2}$  & 
+        $\red{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v}\bmat{ct\\x_2}$
+        \\[4ex] \hline \vskip 1ex 
+        Difference in coordinates & 
+        $\bmat{0\\x_2-x_1}$  & 
+        $\red{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v}\bmat{0\\x_2-x_1}$
+    \end{tabular}
+\end{center}
+
+Here analyze what are observed:
+\begin{itemize}
+    \item If the \blue{"co-moving"} observer checks the position of the two endings at the \blue{same time},
+    getting a length measurement to the rod as $x_2-x_1$:
+    \aleq{
+        \bmat{c\cdot \Delta t \\ \Delta x}_\blue{A}
+        = \bmat{\blue{0} \\ \cul[blue]{x_2-x_1} }
+    }
+
+    \item Then according to the \red{other observer}, 
+    the co-moving observers checks the positions of the two endings at different positions and \red{different time}:
+    \aleq{
+        \bmat{c\cdot \Delta t \\ \Delta x}_\red{B}
+        &= \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_v\bmat{0 \\ x_2-x_1}\\[1ex]
+        &= \bmat{-\gamma_v \beta(x_2-x_1)\\ \gamma_v (x_2-x_1)}\\[1ex]
+        &= \bmat{\red{\text{\it{Something }}\neq 0} \\ \cul[red]{\gamma_v \cdot (\text{Length measured by A})} }
+    }
 \end{itemize}
-The only way "moving" can measure the length of the rod is when he sees the two markings dropped at the same time. i.e. require
-\[
-\text{Events separation} = \bmat 0\\x'_B-x'_A \emat
-\]
-Apply inverse Lorentz transform to go back to ‘static’ ‘s view, which the two marking are observed being dropped at $(t_A,x_A)$ and $(t_B,x_B)$
-\[
-\bmat
-\gamma & \gamma\beta \\
-\gamma\beta & \gamma 
-\emat 
-\bmat 0\\x'_B-x'_A \emat 
-= 
-\bmat \text{something}\neq 0 \\\gamma(x'_B-x'_A) \emat
-=\bmat c(t_B-t_A)\\x_B-x_A \emat
-\]
 
-As you can see from above, the position separation between events are larger when they are observed by ‘moving’ observer. Similar as time scale dilation, which the time separation between events are larger when they are observed by ‘moving’ observer. So it is in fact better to call the effect as ‘length scale dilation’.\\ 
+Obviously, the moving observer should not 
+simply subtract his recorded positions to claim it as the measured length of the rod,
+because the records are taken at different time!
 
-‘Length contraction’ is the consequence of ‘length scale dilation’: A larger length scale means the marking on a ruler become larger, so when measuring the length of an object, you get a smaller numerical value.
+\insertFig{moving rod, diff position}
 
+We may see it clearer with Minkowski diagram:
+
+\insertFig{length contract minkwoski 1}
+
+For B to take correct measurement, 
+we require his measurements to be taken \red{at the same time}. 
+Then we can use the inverse Lorentz transform to tell what is observed by A:
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.35\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}}
+        & Seen by \blue{A} & Seen by \red{B}\\ 
+        \hline \vskip 3ex 
+        \makecell{\red{B} reads position of \\ Ending \circled{1}} & 
+        $\blue{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}}\bmat{ct'\\x'_1}$ &
+        $\bmat{ct'\\x'_1}$
+        \\[4ex] \hline \vskip 3ex 
+        \makecell{\red{B} reads position of \\ Ending \circled{2}}  & 
+        $\blue{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}}\bmat{ct'\\x'_2}$ &
+        $\bmat{ct'\\x'_2}$ 
+        \\[4ex] \hline \vskip 1ex 
+        Difference in coordinates & 
+        $\blue{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}}\bmat{0\\x'_2-x'_1}$ &
+        $\bmat{\cul[red]{\cul[red]{0}}\\x'_2-x'_1}$
+    \end{tabular}
+\end{center}
+
+But note that \blue{A} is the co-moving observer -
+he will always find the position of Ending \circled{1} at $x=x_1$ and Ending \circled{2} at $x=x_2$,
+at ANY time!
+So we must have
+\aleq{
+    \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}\bmat{ct'\\x'_1}
+    = \bmat{\cdots \\ \cul[blue]{\cul[blue]{x_1}}}
+    \quad\text{and}\quad
+    \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}\bmat{ct'\\x'_2}
+    = \bmat{\cdots \\ \cul[blue]{\cul[blue]{x_2}}}
+}
+
+The difference in coordinates give
+\aleq{
+    \bmat{c\cdot \Delta t\\\Delta x}_\blue{A}
+    = \bmat{\cdots \\ x_2-x_1}
+    &= \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}\bmat{0\\x'_2-x'_1}\\[1ex]
+    &= \bmat{-\gamma_{-v}\beta (x'_2 - x'_1) \\ \gamma_{-v}(x'_2-x'_1)}\\[1ex]
+    &= \bmat{\blue{\text{\it{Something }}\neq 0} \\ \cul[blue]{\gamma_{-v}\cdot (\text{Length measured by B})}}
+}
+
+i.e. If the co-moving observer measure a length $x_2-x_1$, 
+any moving observer will measure a length $\inv{\gamma_{-v}}(x_2-x_1)$. 
+Because $\gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}} \geq 1$, 
+this phenomenon is described as \bf{length contraction}:
+\begin{center}
+    \bf{Position difference $\Delta x$ measured by a \cul[blue]{co-moving observer} is always the longest,\\
+    while \cul[red]{other observer} will measure a "shorter" time difference $\inv{\gamma} \Delta x$.}
+\end{center}
+
+\vskip 1em
+You should remember that although the length scale is changed, 
+it comes with a side effect: 
+\begin{itemize}
+    \item The positions of endings are recorded at the \red{same time} in according to the \red{moving observer},
+    \item But the \blue{record time are different} according to \blue{co-moving observer}.
+\end{itemize}
+
+We can visualize this effect using the Minkowski diagram:
+
+\insertFig{length contraction inverse}
 
 
 %%%%%%%%%%%%%%
 \subsection{Velocity Addition}
+
+Given 3 observers who are moving relative to each other:
+\begin{itemize}
+    \item B is moving at velocity $v$ relative to A
+    \item C is moving at velocity $u$ relative to B
+    \item C is moving at velocity $w$ relative to A 
+\end{itemize}
+
+\insertFig{relative v}
+
+What are the relations between $v$, $u$ and $w$?
+We can express the coordinate of C in terms of B's axes (ct', x'),
+and then transform it through $\mmat{\Lambda}_{-v}$ to what is observed by A:
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.5\linewidth}}
+        & C seen by \red{B} & C seen by \blue{A} \\ 
+        \hline \vskip 1ex 
+        When B's clock shows $t'=0$ & 
+        $\bmat{0\\0}$ &
+        $\blue{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_{-v}}\bmat{0\\0}= \bmat{0\\0}$
+        \\[4ex] \hline \vskip 1ex 
+        When A's clock shows $t'=T'$ & 
+        $\bmat{ cT\\uT }$ &
+        $\blue{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_{-v}}\bmat{cT\\uT} 
+            = \bmat{\gamma_v cT+\gamma_v \frac{vu}{c}T \\ \gamma_v vT + \gamma_v uT}$
+    \end{tabular}
+\end{center}
+
+Since C is moving at velocity $w$ relative to A, 
+\aleq{
+    w &= \frac{(\text{Change in position seen by A})}{(\text{Change in time seen by A})} \\[1ex]
+    &= \frac{\gamma_v vT + \gamma_v uT}{\gamma_v + \gamma_v \frac{vu}{c^2}T}\\[1ex]
+    \Aboxed{
+        w&= \frac{v+u}{1+\frac{vu}{c^2}}
+    }
+}
+
+This is the relative velocity addition formula in relativity.
+
+\begin{notation}[Side note:]
+    Alternatively, we can show the velocity addition formula 
+    by using Lorentz matrix as a tool to switch frame of reference. 
+    
+    \begin{itemize}
+        \item For any coordinate observed by A, 
+        we can multiply $\mmat{\Lambda}_\red{v}$ to change it into what is observed by B.
+        \aleq{
+            \bmat{ct_B\\x_B} = \mmat{\Lambda}_\red{v}\bmat{ct_A \\ x_A} 
+        }
+
+        \item For any coordinate observed by B, 
+        we can multiply $\mmat{\Lambda}_\red{u}$ to change it into what is observed by C.
+        \aleq{
+            \bmat{ct_C\\x_C} = \mmat{\Lambda}_\red{u}\bmat{ct_B \\ x_B} 
+        }
+
+        \item For any coordinate observed by A, 
+        we can multiply $\mmat{\Lambda}_\red{w}$ to change it into what is observed by C.
+        \aleq{
+            \bmat{ct_C\\x_C} = \mmat{\Lambda}_\red{w}\bmat{ct_A \\ x_A} 
+        }
+    \end{itemize}
+
+    This gives a relation between different $\mmat{\Lambda}$:
+    \aleq{
+        \bmat{ct_C\\x_C} = \mmat{\Lambda}_\red{w}\bmat{ct_A \\ x_A}
+        &= \mmat{\Lambda}_\red{u}\mmat{\Lambda}_\red{v}\bmat{ct_A \\ x_A} \\[1ex]
+        \mmat{\Lambda}_\red{w} &= \mmat{\Lambda}_\red{u}\mmat{\Lambda}_\red{v}
+    }
+
+    We can use any of the entry to reach the velocity addition formula,
+    for example,
+    \aleq{
+        \bmat{\gamma_w & \cdots\\\cdots & \cdots}
+        &= \bmat{\gamma_u & -\gamma_u\beta_u\\\cdots & \cdots}
+        \bmat{\gamma_v & \cdots\\-\gamma_v\beta_v & \cdots}\\[1ex]
+        \gamma_w &= \gamma_u\gamma_v + \gamma_u\beta_u \gamma_v\beta_v \\[1ex]
+        \inv{\sqrt{1-\frac{w^2}{c^2}}} 
+        &= \inv{\sqrt{1-\frac{u^2}{c^2}}} \inv{\sqrt{1-\frac{v^2}{c^2}}}\qty(1+\frac{uv}{c^2})\\[1ex]
+        \Rightarrow\quad w &= \frac{u+v}{1+\frac{uv}{c^2}}
+    }
+\end{notation}
+
+
+
+
+
+
+
+\iffalse
 
 There are 3 men A, B, C, moving at different velocities. Suppose A is moving at velocity $\vec{u}$ relative to B, B is moving at velocity $\vec{v}$ relative to C. What is A’s relative velocity to C? (Lets call it $\vec{w}$) \\
 

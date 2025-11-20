@@ -31,6 +31,10 @@
 \end{center}    
 }
 
+% circled text - for making circled number
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % section titles should all be capitalized, even for subsections
 
