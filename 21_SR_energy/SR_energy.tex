@@ -30,15 +30,16 @@
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The 4-vector Family}
 
-4-vectors are "vector-like objects" that
+4-vectors are 4$\times$1 vectors that
 \begin{itemize}
-    \item Are constructed by physical quantities (the "observables"). 
-    \item Respect the rule of Lorentz transformation for vectors.
+    \item Are made of a combination of physical quantities.
+    \item After multiplied by Lorentz transformation matrix, 
+    its values change to what should be observed by an observer moving with speed $v$.
 \end{itemize}
 
-Plainly speaking, we can write the values of some physical quantities into a combination of 4 items, 
-such that by multiplying with Lorentz transformation matrix, 
-it yields the values of the quantities that are observed by another observer.
+Plainly speaking, 
+we want to combine certain physical quantities into 4$\times$1 vectors
+$\bmat{\lambda & \mu & \nu & \xi}$ such that they satisfy
 \aleq{
     \tkn{coorB}{\cul[red]{\bmat{\lambda'\\ \mu'\\ \nu' \\\xi'}}}
     = \tkn{lorentz}{
@@ -52,17 +53,17 @@ it yields the values of the quantities that are observed by another observer.
     \tkn{coorA}{\cul[blue]{\bmat{\lambda\\ \mu\\ \nu\\\xi}}}
 }
 \addArrow[red]{coorB}{(-8ex,0)}
-{A 4x1 vector\\ made of $\lambda, \mu, \nu, \xi$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by B}}
+{$\lambda,\mu,\nu,\xi$   \\ using the values seen by B}
 {(-3ex,0)}{(-8ex,-2ex)}
 \addArrow[blue]{coorA}{(8ex,0)}
-{A 4x1 vector \\ made of $\lambda, \mu, \nu, \xi$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by A}}
+{A vector \\ made of $\lambda, \mu, \nu, \xi$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by A}}
 {(3ex,0)}{(8ex,-2ex)}
-\addArrow[gray]{lorentz}{(0,-4ex)}{The Lorentz Transformation\\A 4x4 matrix}{(0,-9ex)}{(0,-1.5ex)}
+\addArrow[gray]{lorentz}{(0,-4ex)}{The Lorentz Transformation\\A 4$\times$4 matrix}{(0,-9ex)}{(0,-1.5ex)}
 
 \vskip 3.5em
 
 We have already seen the example of \bf{4-position vector} $\vvec{X} = \bmat{ct & x & y & z}$,
-which is constructed by the time and position coordinate of an event,
+a vector made of time coordinate $t$ and position coordinate $x,y,z$ of an event,
 and can be used to show the values of the event's coordinate according to different observers.
 \aleq{
     \tkn{coorB2}{\cul[red]{\bmat{ct'\\ x'\\ y' \\z'}}}
@@ -75,27 +76,97 @@ and can be used to show the values of the event's coordinate according to differ
     \tkn{coorA2}{\cul[blue]{\bmat{ct\\ x\\ y\\z}}}
 }
 \addArrow[red]{coorB2}{(-8ex,0)}
-{A 4x1 vector\\ made of $t, x, y, z$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by B}}
+{A 4$\times$1 vector made of \\ values of $t, x, y, z$ \\ \bf{seen by B}}
 {(-3ex,0)}{(-8ex,-2ex)}
 \addArrow[blue]{coorA2}{(8ex,0)}
-{A 4x1 vector \\ made of $t, x, y, z$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by A}}
+{A 4$\times$1 vector made of \\ values of $t, x, y, z$ \\ \bf{Seen by A}}
 {(3ex,0)}{(8ex,-2ex)}
 
 \vskip 0.5em
 Starting from 4-position vector, 
 we can construct other types of 4-vectors used in relativistics mechanics.
 
-\iffalse
+
 %%%%%%%%%%%%%%
 \subsection{4-velocity}
 
-An object is observed to be at spacetime position $\vec{X}$, it is defined as 
-\[
-\vec{U} = \dd{\tau} \vec{X} = \dd{\tau} \bmat ct\\x\\y\\z \emat
-\]
-where $\tau=$ proper time, the time scale of the observer who is relative at rest to the object. 
+This time we want to use construct a 4-vector using observed velocity $v_x$, $v_y$, $v_z$ of an object.
+\aleq{
+    \vvec{U}' = \bmat{U_0' & U_1' & U_2' & U_3'}
+    = 
+    \bmat{U_0 & U_1 & U_2 & U_3}
+    =\bmat{U}
+}
+%$U_0, U_1, U_2, U_3$ are functions to $v_x$, $v_y$ and $v_z$ 
+% U_0', U_1' ....
 
-%%%%% subsubsection 1
+In Newtonian mechanics,
+velocity of an object can be computed by differentiating its position with respect to time.
+\aleq{
+    \vvec{v} = \dvv{\vec{r}}{t} 
+    \sim \frac{\Delta \vvec{r}}{\Delta t}
+    = \frac{\text{Change in position}}{\text{Change in time}}
+}
+
+The problem about relativity is that 
+time scale $\Delta t$ is different between observers!
+If we naively "divide" a 4-position vector by the change in time of each observer, 
+the Lorentz transform property is broken.
+\aleq{
+    \qty(\mstack{\text{Coordinate Change}\\\text{Seen by B}}) \sim 
+    \bmat{c(\Delta t') \\ x'} 
+    = \bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma }
+        \bmat{c(\Delta t)\\ x}
+    \sim \qty(\mstack{\text{Lorentz}\\\text{Transform}})
+    \qty(\mstack{\text{Coordinate Change}\\\text{Seen by A}}) 
+}
+But because $\Delta t' \neq \Delta t$,
+\aleq{
+    \dvv{\vvec{X}'}{t'} \sim \inv{\Delta t'}\bmat{c(\Delta t')\\x'}
+    \red{\neq} 
+}
+
+In order to construct a "velocity-like" 4-vector,
+we must choose a unique time scale $\Delta \tau$ for differentiation such that
+\aleq{
+    \dvv{\cul[red]{\tau}}\bmat{ct'\\x'} 
+    = \bmat{\gamma & -\gamma\beta\\ -\gamma\beta &\gamma}
+    \dvv{\cul[red]{\tau}}\bmat{ct \\ x} 
+} 
+
+Which observer has the unique time scale in relativity?
+For every object,
+there is always a \blue{co-moving} observer, who
+\begin{itemize}
+    \item moves together with the object.
+    \item measures the shortest time separation for any 2 stationary events on the object. 
+\end{itemize}
+
+\insertFig{3 guys: we agree to use tau as diferentiation when describing the ball}
+
+\iffalse
+I move together with the ball and my time scale is tau
+you should all use tau to construct 4-velocity
+OK
+OK
+\fi
+
+The time scale $\Delta tau$ measured by the co-moving observer 
+is called the \bf{proper time scale}. 
+We can examine the values of the 4-vector after differentiation:
+
+% table seen by A, B only, no need C
+% Pos of event 1
+% Pos of event 2
+% Difference in coordinate 
+% 4 velocity \sim 1/Delta tau \Delta x
+
+
+
+
+
+\iffalse
+%%%%%%%%%
 \subsubsection{1D velocity 4-vector}
 Let the object moves in $\hat{x}$ direction.
 \begin{itemize}
