@@ -6,7 +6,7 @@
 \author{Tony Shing}
 %\pretitle{Supplementary}
 
-\topic{T21 (Relativity)}
+\topic{T21 (Special Relativity)}
 \title{Relativistic Energy \& Momentum}
 
 \version{2025} % leave blank for omitting
@@ -18,22 +18,74 @@
 
 \begin{overview}
     \begin{itemize}
-        \item 4-vector description: velocity, momentum, acceleration 
-        \item Common examples of 4-momentum's applications
+        \item 4-velocity and 4-momentum 
+        \item Common applications of 4-momentum
         \item Spacetime interval
+        %\item Extra topic: 4-acceleration
     \end{itemize}
 \end{overview}
-
-
 
 
 % content begins here
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The 4-vector Family}
 
-4-vectors are vector objects that follow Lorentz transformation when we change observers of different velocity. You have already seen the position 4-vector $\vec{X}=\bmat ct\\x\\y\\z \emat$, which represents the spacetime coordinate. 
-From the 4-position vector, we can also construct other kinds of 4-vectors as well.
+4-vectors are "vector-like objects" that
+\begin{itemize}
+    \item Are constructed by physical quantities (the "observables"). 
+    \item Respect the rule of Lorentz transformation for vectors.
+\end{itemize}
 
+Plainly speaking, we can write the values of some physical quantities into a combination of 4 items, 
+such that by multiplying with Lorentz transformation matrix, 
+it yields the values of the quantities that are observed by another observer.
+\aleq{
+    \tkn{coorB}{\cul[red]{\bmat{\lambda'\\ \mu'\\ \nu' \\\xi'}}}
+    = \tkn{lorentz}{
+        \cul[gray]{\bmat{
+            \gamma & -\gamma\beta & 0 & 0 \\
+            -\gamma\beta & \gamma & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        }}
+    }\, 
+    \tkn{coorA}{\cul[blue]{\bmat{\lambda\\ \mu\\ \nu\\\xi}}}
+}
+\addArrow[red]{coorB}{(-8ex,0)}
+{A 4x1 vector\\ made of $\lambda, \mu, \nu, \xi$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by B}}
+{(-3ex,0)}{(-8ex,-2ex)}
+\addArrow[blue]{coorA}{(8ex,0)}
+{A 4x1 vector \\ made of $\lambda, \mu, \nu, \xi$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by A}}
+{(3ex,0)}{(8ex,-2ex)}
+\addArrow[gray]{lorentz}{(0,-4ex)}{The Lorentz Transformation\\A 4x4 matrix}{(0,-9ex)}{(0,-1.5ex)}
+
+\vskip 3.5em
+
+We have already seen the example of \bf{4-position vector} $\vvec{X} = \bmat{ct & x & y & z}$,
+which is constructed by the time and position coordinate of an event,
+and can be used to show the values of the event's coordinate according to different observers.
+\aleq{
+    \tkn{coorB2}{\cul[red]{\bmat{ct'\\ x'\\ y' \\z'}}}
+    = \bmat{
+            \gamma & -\gamma\beta & 0 & 0 \\
+            -\gamma\beta & \gamma & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        }\, 
+    \tkn{coorA2}{\cul[blue]{\bmat{ct\\ x\\ y\\z}}}
+}
+\addArrow[red]{coorB2}{(-8ex,0)}
+{A 4x1 vector\\ made of $t, x, y, z$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by B}}
+{(-3ex,0)}{(-8ex,-2ex)}
+\addArrow[blue]{coorA2}{(8ex,0)}
+{A 4x1 vector \\ made of $t, x, y, z$ \\[1ex] \bf{Substitute the values} \\ \bf{that are observed by A}}
+{(3ex,0)}{(8ex,-2ex)}
+
+\vskip 0.5em
+Starting from 4-position vector, 
+we can construct other types of 4-vectors used in relativistics mechanics.
+
+\iffalse
 %%%%%%%%%%%%%%
 \subsection{4-velocity}
 
@@ -454,6 +506,7 @@ The length of a vector defines the same way as distance between coordinate. For 
     Which is the famoius energy-mass relation. For photon, $m=0$. So $E=pc$.
 \end{enumerate}
 
+\fi
 
 %%%
 \theend
