@@ -620,11 +620,12 @@ We can also determine that the angle between $t,t'$ axes (or between $x,x'$ axes
 \section{Relativistic Phenomena}
 
 In the following section, 
-we are going to examine these 3 phenomena with the matrix method:
+we are going to examine these 4 phenomena with the matrix method:
 \begin{itemize}
     \item Time dilation
     \item Length contraction
     \item Relative velocity addition under relativity
+    \item Relativistic Doppler effect 
 \end{itemize}
 
 %%%%%%%%%%%%%%
@@ -699,6 +700,22 @@ We can visualize this effect using the Minkowski diagram:
 
 \insertFig{time dilation}
 
+\begin{notation}[Side note:]
+    In most introductory textbooks,
+    "proper" is the word to describe what means by "co-moving" in this note.
+    \begin{itemize}
+        \item \bf{Proper observer} = The co-moving observer.
+        \item \bf{Proper time} = The time difference / time scale of the co-moving observer.
+        \item \bf{Proper length} = The position difference / length scale of the co-moving observer, i.e. "rest" length.
+    \end{itemize}
+    
+    However, I personally prefer saying "co-moving" because it is the most accurate - 
+    the observer and the object are literally "moving together".
+    \begin{itemize}
+        \item "Proper" is not a good adjective about motions (What is a "proper" motion?).
+        \item "Rest" is just wrong, because the objects are not really at rest.  
+    \end{itemize}
+\end{notation}
 
 %%%%%%%%%%%%%%
 \subsection{Length Contraction}
@@ -919,56 +936,42 @@ This is the relative velocity addition formula in relativity.
 \end{notation}
 
 
+%%%%%%%%%%
+\subsection{Relativistic Doppler Effect}
 
+Relativistic Doppler effect is only applicable to light - 
+explaining what will be observed by different observers for an object that \it{by definition}
+travels at the same speed to all observer. 
+For objects that travels slower than light, 
+you should use the classical Doppler effect formula.\\
 
+Recall the terminologies in wave:
+\begin{itemize}
+    \item Period $T$ = Time separation between each pulse emission.
+    \item Wavelength $\lambda$ = Distance travelled of the pulse within 1 period of time.
+\end{itemize}
 
+\insertFig{wave pulse}
 
+For light, its travelling speed $c$ is a constant to all observers. 
+This makes $\lambda = cT$ and $\lambda'=cT'$. 
+With a table we can see
 
-\iffalse
+% copy constant speed table
 
-There are 3 men A, B, C, moving at different velocities. Suppose A is moving at velocity $\vec{u}$ relative to B, B is moving at velocity $\vec{v}$ relative to C. What is A’s relative velocity to C? (Lets call it $\vec{w}$) \\
+Therefore the observed wavelength is 
+\aleq{
+    \lambda' &= \gamma (1-\beta)cT = \gamma (1-\beta)\lambda \\
+    &= \frac{1-\beta}{\sqrt{1-\beta^2}}\lambda \\
+    &= \sqrt{\frac{1-\beta}{1+\beta}}\lambda
+}
 
-Let coordinate system of C be $\bmat ct_C\\x_C\emat $. The coordinate system of B can be found by applying Lorentz transformation to C’s:
-\[
-\bmat ct_B\\x_B \emat = \Lambda(v) \bmat ct_C\\x_C \emat
-\]
-And coordinate system of A can be found by applying Lorentz transformation to B’s: 
-\[
-\bmat ct_A\\x_A \emat = \Lambda(u) \bmat ct_B\\x_B \emat
-=\Lambda(u)\Lambda(v) \bmat ct_C\\x_C \emat
-\]
-But we should also be able to directly find coordinate of A from C’s if we know $\vec{w}$:
-\[
-\bmat ct_A\\x_A \emat = \Lambda(w) \bmat ct_C\\x_C \emat
-\]
-So
-\[
-\Lambda(w) = \Lambda(u)\Lambda(v)
-\]
-\[
-\bmat
-\gamma_w & \gamma_w\beta_w \\
-\gamma_w\beta_w & \gamma_w 
-\emat 
-=
-\bmat
-\gamma_u & \gamma_u\beta_u \\
-\gamma_u\beta_u & \gamma_u 
-\emat 
-\bmat
-\gamma_v & \gamma_v\beta_v \\
-\gamma_v\beta_v & \gamma_v 
-\emat 
-\]
-
-Do the calculation for the first entry (or any other entries will do):
-\begin{align*}
-\gamma_w &= \gamma_u\gamma_v + \gamma_u\gamma_v\beta_u\beta_v \\
-\frac{1}{\sqrt(1-\frac{w^2}{c^2}} &= \frac{1}{\sqrt(1-\frac{u^2}{c^2}}\frac{1}{\sqrt(1-\frac{v^2}{c^2}}(1+\frac{uv}{c^2}) \\
-w &= \frac{u+v}{1+\frac{uv}{c^2}}
-\end{align*}
-
-\fi
+and period is
+\aleq{
+    T' &= \frac{\lambda'}{c}\\
+    &= \sqrt{\frac{1-\beta}{1+\beta}}\frac{lambda}{c}\\
+    &= \sqrt{\frac{1-\beta}{1+\beta}}\lambda
+}
 
 %%%
 \theend
