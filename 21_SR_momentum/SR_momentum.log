@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  21 NOV 2025 13:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  29 NOV 2025 04:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/mings/Documents/PhyO/latex_notes/21_SR_energy/SR_energy.tex
-(d:/mings/Documents/PhyO/latex_notes/21_SR_energy/SR_energy.tex
+**d:/mings/Documents/PhyO/latex_notes/21_SR_momentum/SR_momentum.tex
+(d:/mings/Documents/PhyO/latex_notes/21_SR_momentum/SR_momentum.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
@@ -63,7 +63,7 @@ Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
 \c@currfiledepth=\count286
 )
 \sa@out=\write3
- (./SR_energy.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+ (./SR_momentum.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
 Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
 )
 Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
@@ -731,8 +731,8 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \c@lecnum=\count364
 \c@example=\count365
 \c@exercise=\count366
-)) (./SR_energy.aux)
-\openout1 = `SR_energy.aux'.
+)) (./SR_momentum.aux)
+\openout1 = `SR_momentum.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -752,8 +752,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
- (./SR_energy.sta)
-\openout3 = `SR_energy.sta'.
+ (./SR_momentum.sta)
+\openout3 = `SR_momentum.sta'.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -785,9 +785,9 @@ LaTeX Info: Redefining \ohm on input line 14.
 Package gensymb Info: Using \textohm for \ohm on input line 14.
 Package gensymb Info: Using \textmu for \micro on input line 14.
 Package hyperref Info: Link coloring ON on input line 14.
- (./SR_energy.out) (./SR_energy.out)
+ (./SR_momentum.out) (./SR_momentum.out)
 \@outlinefile=\write5
-\openout5 = `SR_energy.out'.
+\openout5 = `SR_momentum.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -842,28 +842,226 @@ File: uesint.fd
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<img/comoving_t.png, id=64, 808.2195pt x 266.1945pt>
+File: img/comoving_t.png Graphic file (type png)
+<use img/comoving_t.png>
+Package pdftex.def Info: img/comoving_t.png  used on input line 171.
+(pdftex.def)             Requested size: 366.95114pt x 120.8628pt.
 
-[2] (./SR_energy.aux)
+
+[2 <./img/comoving_t.png>]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 196.
+
+
+
+[3]
+<img/U_rotate1.png, id=77, 249.3315pt x 211.38976pt>
+File: img/U_rotate1.png Graphic file (type png)
+<use img/U_rotate1.png>
+Package pdftex.def Info: img/U_rotate1.png  used on input line 276.
+(pdftex.def)             Requested size: 97.01442pt x 82.24915pt.
+<img/U_rotate2.png, id=78, 295.1025pt x 200.54926pt>
+File: img/U_rotate2.png Graphic file (type png)
+<use img/U_rotate2.png>
+Package pdftex.def Info: img/U_rotate2.png  used on input line 281.
+(pdftex.def)             Requested size: 121.02432pt x 82.24915pt.
+
+
+[4 <./img/U_rotate1.png> <./img/U_rotate2.png>]
+Overfull \hbox (0.78157pt too wide) in paragraph at lines 332--332
+ [] 
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 360.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 377.
+
+
+
+[5]
+<img/momentum.png, id=89, 476.37975pt x 255.354pt>
+File: img/momentum.png Graphic file (type png)
+<use img/momentum.png>
+Package pdftex.def Info: img/momentum.png  used on input line 412.
+(pdftex.def)             Requested size: 195.70428pt x 104.90233pt.
+<img/decay1.png, id=90, 223.43475pt x 174.05025pt>
+File: img/decay1.png Graphic file (type png)
+<use img/decay1.png>
+Package pdftex.def Info: img/decay1.png  used on input line 445.
+(pdftex.def)             Requested size: 90.5008pt x 70.49927pt.
+<img/decay2.png, id=91, 385.44pt x 171.039pt>
+File: img/decay2.png Graphic file (type png)
+<use img/decay2.png>
+Package pdftex.def Info: img/decay2.png  used on input line 450.
+(pdftex.def)             Requested size: 158.87833pt x 70.49927pt.
+
+Overfull \hbox (12.09637pt too wide) in paragraph at lines 450--451
+ [][] 
+ []
+
+
+
+[6 <./img/momentum.png> <./img/decay1.png> <./img/decay2.png>]
+<img/decay3.png, id=96, 289.68225pt x 236.68425pt>
+File: img/decay3.png Graphic file (type png)
+<use img/decay3.png>
+Package pdftex.def Info: img/decay3.png  used on input line 483.
+(pdftex.def)             Requested size: 100.66539pt x 82.24915pt.
+<img/decay4.png, id=97, 369.7815pt x 199.34476pt>
+File: img/decay4.png Graphic file (type png)
+<use img/decay4.png>
+Package pdftex.def Info: img/decay4.png  used on input line 488.
+(pdftex.def)             Requested size: 130.77399pt x 70.49927pt.
+
+
+[7 <./img/decay3.png> <./img/decay4.png>]
+
+[8]
+<img/doppler.png, id=111, 424.58624pt x 190.91325pt>
+File: img/doppler.png Graphic file (type png)
+<use img/doppler.png>
+Package pdftex.def Info: img/doppler.png  used on input line 625.
+(pdftex.def)             Requested size: 122.31705pt x 54.99928pt.
+
+Overfull \hbox (33.0366pt too wide) detected at line 644
+[]
+ []
+
+<img/medium.png, id=112, 286.671pt x 175.25475pt>
+File: img/medium.png Graphic file (type png)
+<use img/medium.png>
+Package pdftex.def Info: img/medium.png  used on input line 649.
+(pdftex.def)             Requested size: 122.31705pt x 74.77777pt.
+
+
+[9 <./img/doppler.png> <./img/medium.png>]
+<img/compton.png, id=117, 740.16525pt x 228.855pt>
+File: img/compton.png Graphic file (type png)
+<use img/compton.png>
+Package pdftex.def Info: img/compton.png  used on input line 695.
+(pdftex.def)             Requested size: 293.5639pt x 90.76863pt.
+
+
+[10 <./img/compton.png>]
+Overfull \hbox (16.08781pt too wide) detected at line 798
+[]
+ []
+
+
+
+[11]
+
+[12] (./SR_momentum.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
-Package rerunfilecheck Info: File `SR_energy.out' has not changed.
-(rerunfilecheck)             Checksum: 48C6E063647061991CA9AAFDA404C0CE;144.
+Package rerunfilecheck Info: File `SR_momentum.out' has not changed.
+(rerunfilecheck)             Checksum: A25F021744FEE9AFAE014F65F265893B;1945.
  ) 
 Here is how much of TeX's memory you used:
- 29505 strings out of 469747
- 558028 string characters out of 5481688
- 974992 words of memory out of 5000000
- 57322 multiletter control sequences out of 15000+600000
- 637429 words of font info for 79 fonts, out of 8000000 for 9000
+ 30939 strings out of 469747
+ 590477 string characters out of 5481688
+ 990991 words of memory out of 5000000
+ 58725 multiletter control sequences out of 15000+600000
+ 639394 words of font info for 87 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,23n,159p,595b,847s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on SR_energy.pdf (2 pages, 91567 bytes).
+ 125i,24n,159p,599b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on SR_momentum.pdf (12 pages, 342422 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

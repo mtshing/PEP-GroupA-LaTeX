@@ -1,0 +1,978 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../.common/common}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{T21 (Special Relativity)}
+\title{Relativistic Momentum}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+
+\begin{overview}
+    \begin{itemize}
+        \item Constructing 4-vectors
+        \item Common applications of 4-momentum
+        \item Spacetime interval
+        %\item Extra topic: 4-acceleration
+    \end{itemize}
+\end{overview}
+
+
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The 4-vectors framework}
+
+4-vectors are 4$\times$1 vectors which
+\begin{itemize}
+    \item its components are made of combinations of physical quantities.
+    \item after multiplied by Lorentz transformation matrix, 
+    its values change to what should be observed by a moving observer.
+\end{itemize}
+
+Plainly speaking, 
+we want to "pack" physical quantities into a 4$\times$1 vectors
+such that it satisfies
+\aleq{
+    \tkn{coorB}{\cul[red]{\bmat{P'\\ Q'\\ R' \\S'}}}
+    = \tkn{lorentz}{
+        \cul[gray]{\bmat{
+            \gamma & -\gamma\beta & 0 & 0 \\
+            -\gamma\beta & \gamma & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        }}
+    }\, 
+    \tkn{coorA}{\cul[blue]{\bmat{P\\ Q\\ R\\S}}}
+}
+\addArrow[red]{coorB}{(-8ex,0)}
+{Physical quantities \\ $P,Q,R,S$ \\ using the values seen by B}
+{(-3ex,0)}{(-8ex,-2ex)}
+\addArrow[blue]{coorA}{(8ex,0)}
+{Physical quantities \\ $P,Q,R,S$ \\ using the values seen by A}
+{(3ex,0)}{(8ex,-2ex)}
+\addArrow[gray]{lorentz}{(0,-4ex)}{The Lorentz Transformation\\A 4$\times$4 matrix}{(0,-9ex)}{(0,-1.5ex)}
+
+\vskip 3.5em
+
+We have already had the example of \bf{4-position vector} $\vvec{X} = \bmat{ct & x & y & z}$,
+a 4$\times$1 vector that packs up the time coordinate $t$ and position coordinate $x,y,z$ of an event,
+and can be used to show the values of the event's coordinate according to different observers.
+\aleq{
+    \tkn{coorB2}{\cul[red]{\bmat{ct'\\ x'\\ y' \\z'}}}
+    = \bmat{
+            \gamma & -\gamma\beta & 0 & 0 \\
+            -\gamma\beta & \gamma & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        }\, 
+    \tkn{coorA2}{\cul[blue]{\bmat{ct\\ x\\ y\\z}}}
+}
+\addArrow[red]{coorB2}{(-8ex,0)}
+{An event's coordinate \\ $t, x, y, z$ \\ \bf{seen by B}}
+{(-3ex,0)}{(-8ex,0)}
+\addArrow[blue]{coorA2}{(8ex,0)}
+{An event's coordinate \\ $t, x, y, z$ \\ \bf{seen by A}}
+{(3ex,0)}{(8ex,0)}
+
+\vskip 0.5em
+Starting from 4-position vector, 
+we can derive other types of 4-vectors used in relativistics mechanics.
+
+
+%%%%%%%%%%%%%%
+\subsection{Velocity 4-vector}
+
+The first thing we want to pack into a 4-vector are the observed velocity $v_x$, $v_y$, $v_z$ of an object.
+\aleq{
+    \vvec{U}' = \tkn{UB}{\cul[red]{\bmat{U_0' \\ U_1' \\ U_2' \\ U_3'}}}
+    = 
+    \bmat{
+        \gamma & -\gamma\beta & 0 & 0 \\
+        -\gamma\beta & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    }\, 
+    \tkn{UA}{\cul[blue]{\bmat{U_0 \\ U_1 \\ U_2 \\ U_3}}}
+    =\mmat{\Lambda}_v \vvec{U}
+}
+\addArrow[red]{UB}{(-8ex,0)}
+{$U_0',U_1',U_2',U_3'$ \\ are functions of \\ $v_x,v_y,v_z$ \bf{seen by B}}
+{(-4ex,-4ex)}{(-8ex,1ex)}
+\addArrow[blue]{UA}{(8ex,0)}
+{$U_0,U_1,U_2,U_3$ \\ are functions of \\ $v_x,v_y,v_z$ \bf{seen by A}}
+{(4ex,-4ex)}{(8ex,1ex)}
+
+
+In Newtonian mechanics,
+velocity of an object can be computed by differentiating its position with respect to time.
+\aleq{
+    \vvec{v} = \dvv{\vec{r}}{t} 
+    \sim \frac{\Delta \vvec{r}}{\Delta t}
+    = \frac{\text{Change in position}}{\text{Change in time}}
+}
+
+The problem when involving relativity is that 
+the change in time (time scale) $\Delta t$ is different between observers!
+For example, 
+if we naively "divide" a 4-position vector by the change in time of each observer, 
+the nice Lorentz transform is broken.
+\aleq{
+    \qty(\substack{\text{Coordinate}\\\text{change}\\\text{Seen by B}}) \sim 
+    \bmat{c(\Delta t') \\ \Delta x'} 
+    = \bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma }
+        \bmat{c(\Delta t)\\ \Delta x}
+    \sim \qty(\substack{\text{Lorentz}\\\text{Transform}})
+    \qty(\substack{\text{Coordinate}\\\text{change}\\\text{Seen by A}}) 
+}
+But because $\Delta t' \neq \Delta t$,
+it is wrong to have
+\aleq{
+    \dvv{\vvec{X}'}{\red{t'}} \sim \inv{\red{\Delta t'}}\bmat{c(\Delta t')\\\Delta x'}
+    \quad \neq\ \quad
+    \inv{\red{\Delta t}}\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}\bmat{c(\Delta t)\\\Delta x}
+    \sim \mmat{\Lambda}\dvv{\vvec{X}}{\red{t}}
+}
+
+In order to construct a "velocity-like" 4-vector,
+we should fix to the same time scale $\Delta \tau$ when differentiating,
+such that
+\aleq{
+    \dvv{\vvec{X}'}{\blue{\tau}}
+    = \dvv{\blue{\tau}}\bmat{c(\Delta t')\\ \Delta x'} 
+    = \bmat{\gamma & -\gamma\beta\\ -\gamma\beta &\gamma}
+    \dvv{\blue{\tau}}\bmat{c(\Delta t) \\ \Delta x}
+    = \mmat{\Lambda}\dvv{\vvec{X}}{\blue{\tau}}
+} 
+
+Although from the principle of relativity - 
+there should not be a preference to any observer - 
+the time scale of every observer are equally "similar".
+But \cul[blue]{relative to every object}, 
+there is always one observer special to it: 
+its \blue{co-moving} observer, who
+\begin{itemize}
+    \item measures the shortest time difference 
+    between stationary events relative to the object.
+    \item measures the largest position difference
+    between two points on the object. 
+\end{itemize}
+
+\begin{center}
+    \begin{minipage}{0.75\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{comoving_t}
+    \end{minipage}
+\end{center}
+
+
+The nice thing about time scale of co-moving observer is that 
+it is always proportional to time scales of other observer.
+For example, if an observer sees the object moving at velocity $v$,
+\aleq{
+    \vvec{X'} = \bmat{ct\\ \cdots} 
+    &= \bmat{\gamma_\blue{-v} & -\gamma_\blue{-v}\beta_\blue{-v} \\ -\gamma_\blue{-v}\beta_\blue{-v} & \gamma_\blue{-v}}
+    \bmat{c\tau\\0} = \mmat{\Lambda}_\blue{-v}\vvec{X}\\
+    &= \bmat{\gamma_v \cdot c\tau \\ \cdots} \\[1ex]
+    \Rightarrow\  t &= \gamma_v \tau \\[1ex]
+    \Aboxed{
+        \dvv{t}{\tau} &= \gamma_v
+    }
+}
+The relation of their time scale is "clean" that there only involves one relative velocity $v$.
+So conventionally, we define the \bf{velocity 4-vector} of an object as
+the time differentiation with respect to co-moving observer's time scale.
+\aleq{
+    \Aboxed{
+        \vvec{U} \ \defeq\ \dvv{\vvec{X}}{\tkn{comove_time}{\cul[blue]{\tau}}}
+    }
+}
+\addArrow[blue]{comove_time}{(12ex,0)}
+{Time scale of \\ co-moving observer}
+{(1ex,0.5ex)}{(7ex,1ex)}
+
+We can tabulate what the 4-velocity vector look like for different observer.
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.3\linewidth}|
+        >{\centering\arraybackslash}m{0.25\linewidth}|
+        >{\centering\arraybackslash}m{0.25\linewidth}}
+        & \makecell{Seen by\\ \blue{co-moving observer}} & \makecell{Seen by \\ \red{other observer}} \\ 
+        \hline \vskip 0.5em
+        Time scale \vskip 0.5em & 
+        $\tau$ & 
+        $t$ 
+        \\[1ex] \hline \vskip 1.5em
+        Position coordinate = $\vvec{X}$ & 
+        $\bmat{c\tau\\0}$ & 
+        $\bmat{ct\\vt}$ 
+        \\[4ex] \hline \vskip 1.5em
+        4-velocity $=\dvv{\vvec{X}}{\tkn{comove_time2}{\cul[blue]{\tau}}}$& 
+        $\cul[blue]{\cul[blue]{\bmat{ c\\0 }}}$ & 
+        $\bmat{c\\v}\cdot \dvv{t}{\tau} = \cul[red]{\cul[red]{\bmat{\gamma_v c \\ \gamma_v v}}}$
+    \end{tabular}
+    \addArrow[blue]{comove_time2}{(4ex,0)}{!!}{(1ex,0.5ex)}
+\end{center}
+
+\begin{notation}[Side Note:]
+    Note that it is true that there should not be preference in time scale in relativity - 
+    Lorentz transformation to 4-vector should stay correct no matter whose time scale is used for differentiation.
+    \aleq{
+        \dvv{\vvec{X}'}{\blue{t}}
+        = \mmat{\Lambda}\dvv{\vvec{X}}{\blue{t}}
+        \quad\xLeftrightarrow{\text{Both should work}}\quad
+        \dvv{\vvec{X}'}{\red{t'}}
+        = \mmat{\Lambda}\dvv{\vvec{X}}{\red{t'}}
+    }
+
+    But we specifically mention the time of co-moving observer because it provides a clean way to 
+    relate time derivatives from time scales of different observers.
+
+\end{notation}
+\begin{notation}[]
+    For example if,
+    \begin{itemize}
+        \item One observer sees the object moving at velocity $u$, uses time scale $\blue{t}$
+        \item The other observer sees the object moving at velocity $v$, uses time scale $\red{t'}$
+    \end{itemize}
+
+    Then 
+    \vskip -2em
+    \aleq{
+        \dvv{\red{t'}}{\blue{t}} = \dvv{\red{t'}}{\tau}\dvv{\tau}{\blue{t}} = \frac{\gamma_v}{\gamma_u}
+    }
+    \vskip -1em
+\end{notation}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+\subsection{Rotating a 4-Vector}
+
+Now we extend the dicussion to motions other than along x-axis. 
+How should we modify the velocity 4-vector if the object is moving along an arbituary direction in the 3D space?
+\aleq{
+    \vvec{v} = (\red{v}, 0, 0) 
+    \ \ \Rightarrow\ \ 
+    \vvec{U} = \bmat{\gamma_\red{v}c \\\gamma_\red{v} \red{v}\\0 \\ 0 }
+    \qquad\text{But}\qquad
+    \vvec{v} = (v_x,v_y, v_z) 
+    \ \ \Rightarrow\ \ 
+    \vvec{U} = ? 
+}
+
+The solution is again, related to transformation.
+Note that a "horizontal travelling" motion and a "diagonally travelling motion" are physically the same thing - 
+they look different because of the choice of coordinate:
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=7em]{U_rotate1}
+    \end{minipage}
+    \quad$\Leftrightarrow$\qquad
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=7em]{U_rotate2}
+    \end{minipage}
+\end{center}
+
+For example, to construct a motion of velocity $v$ along an inclined angle $\phi$ relative to $x$-axis,
+\begin{enumerate}
+    \item First let the motion be purely along an $x'$-axis
+    \item Then roate the $x'$-$y'$ axes pair by an $-\phi$ angle to become $x$-$y$ axes.
+\end{enumerate}
+
+Such rotation can be done straightforward by the rotation matrix for on $x$-$y$ plane:
+\aleq{
+    \vvec{U}
+    = \tkbmat{
+        1 \& 0 \& 0 \& 0\\
+        0 \& \cos(-\phi) \& \sin(-\phi) \& 0 \\
+        0 \& -\sin(-\phi) \& \cos(\phi) \& 0 \\
+        0 \& 0 \& 0 \& 1 \\
+    }
+    {
+        \draw[draw=blue] (m-2-2.north west) -| (m-3-3.south east);
+        \draw[draw=blue] (m-2-2.north west) |- (m-3-3.south east);
+    }
+    \bmat{\gamma_vc\\\gamma_vv\\ 0\\ 0}
+    =
+    \bmat{\gamma_vc\\\gamma_v v\cos\phi\\ \gamma_v v\sin\phi\\ 0}
+    =
+    \cul[red]{\bmat{\gamma_vc\\\gamma_v v_{\cul[red]{x}}\\ \gamma_v v_{\cul[red]{y}}\\ 0}}
+}
+
+i.e. To write a velocity 4-vector in 2D/3D, 
+we only need to multiply $\cos$/$\sin$ to the repsective components.
+\cul[red]{$\gamma$ always takes the magnitude of $v$} and is independent to direction.
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Momentum 4-Vector}
+
+Similar to Newtonian mechanics,
+we can get a momentum-like 4-vector by multiplying mass to a velocity 4-vector, usually called \bf{4-momentum}:
+\aleq{
+    \vvec{P} = m\vvec{U} = m\dvv{\vvec{X}}{\tau} 
+}
+Where $m$ is the \bf{rest mass} of the object, 
+i.e. the mass observed by the co-moving observer to the object.
+With Lorentz transform, we can find the expression of $\vvec{P}$ from other moving observer. 
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.45\linewidth}}
+        & \makecell{Seen by\\ \blue{co-moving observer}} & \makecell{Seen by \\ \red{other observer}} \\
+        \hline \vskip 1.5em
+        4-velocity $=\vvec{U}$ & 
+        $\bmat{c\\0}$ & 
+        $\blue{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_{-v}}\bmat{c\\0}= \bmat{\gamma_v c\\\gamma_v v}$
+        \\[4ex] \hline \vskip 1.5em
+        4-momentum $=m\vvec{U}$ & 
+        $\bmat{mc\\0}$ &
+        $\blue{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_{-v}}\bmat{mc\\0}= \bmat{\gamma_v mc\\\gamma_v mv}$
+    \end{tabular}
+\end{center}
+
+
+%%%%%%%%%%%%%%
+\subsection{Interpretation}
+
+A 4-momentum vector does not only bear the physical observation of the object's momentum, but also its energy. 
+We can analyze by Taylor expansion on the 4-momentum from a moving observer:
+
+\begin{itemize}
+    \item \bf{\ul{Time component = Relativistic energy}}
+    \aleq{
+        \frac{E}{c}\ \defeq\ 
+        \gamma_v mc &= \frac{mc}{\sqrt{1-\frac{v^2}{c^2}}} \\
+        &\approx mc\qty(1 + \half \frac{v^2}{c^2} + \cdots) \\
+        &= \inv{c}\qty(\tkn{mc2}{\cul[red]{mc^2}} 
+            + \tkn{newton_KE}{\cul[blue]{\half mv^2}} 
+            + \tkn{correct1}{\cul[green]{\cdots}} )  
+    }
+    \addArrow[red]{mc2}{(-15ex,-4ex)}{Some energy\\more fundamental than KE}{(0,-1ex)}{(-5ex,0)}
+    \addArrow[blue]{newton_KE}{(0,-4ex)}{Newtonian KE}{(0,-2.5ex)}
+    \addArrow[green]{correct1}{(5ex,-4ex)}{Relativistic\\correction}{(0,-1ex)}{(5ex,0)}
+
+    \vskip 2em
+    The energy-like term $mc^2$ appears even if the object is at rest ($v=0$) - 
+    It is like some "intrinsic" energy carried by object whenever the object has mass.
+    Therefore it is called the \bf{rest energy}.
+
+    
+    \item \bf{\ul{Position component = Relativistic momentum}}
+    \aleq{
+        p\ \defeq\ 
+        \gamma_v mv &= \frac{mv}{\sqrt{1-\frac{v^2}{c^2}}} \\
+        &\approx \tkn{newton_p}{\cul[blue]{mv}} 
+        + \tkn{correct2}{\cul[green]{mv\cdot \half \frac{v^2}{c^2} + \cdots}}
+    }
+    \addArrow[blue]{newton_p}{(-10ex,-3ex)}{Newtonian\\momentum}{(0,-1ex)}{(-3.5ex,1ex)}
+    \addArrow[green]{correct2}{(10ex,-3ex)}{Relativistic\\correction}{(0,-2.5ex)}{(3.5ex,1ex)}
+
+\end{itemize}
+
+\bf{\ul{Note 1}}: Some people (usually the experimentalists) prefer using the \it{observed mass} $m^\ast = \gamma_v m$ 
+as the of an moving object,
+and claim that mass of objects change with velocity,
+so that they can always stick to the Newtonian formula of momentum:
+\aleq{
+    (\text{momentum}) = m^\ast v
+}
+
+
+\bf{\ul{Note 2}}: Different texts may have different meanings to their "KE", because we can have
+\begin{itemize}
+    \item Newtonian KE $ = \half mv^2$ 
+    \item Relativistic KE $ = (\gamma-1)mc^2$
+\end{itemize}
+
+
+
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Application of 4-momentum}
+
+With special relativity, relative velocity no longer calculates as $\vvec{v}_{AC} = \vvec{v}_{AB} + \vvec{v}_{BC}$, 
+so Newtonian momentum fails to conserved if we switch the frame of reference.
+
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{momentum}
+    \end{minipage}
+\end{center}
+
+The real conserving quantities are the components in 4-momentum vector,
+because relations between 4-vector are guarenteed to be correct under different observers. 
+\aleq{
+    \vvec{P}_i = \bmat{\gamma mc\\\gamma m v}_i 
+    &= \bmat{\gamma mc\\\gamma m v}_f = \vvec{P}_f \\[1ex]
+    %
+    &\Updownarrow\\[1ex]
+    %
+    \mmat{\Lambda}_u\vvec{P}_i 
+        = \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_u 
+    \bmat{\gamma mc\\\gamma m v}_i
+    &= \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_u
+        \bmat{\gamma mc\\\gamma m v}_f 
+    = \mmat{\Lambda}_u\vvec{P}_f 
+ }
+
+Here we can look at different example questions related to 4-momentum conservation. 
+
+%%%%%%%%%%%%%%
+\subsubsection{Decay of Particle}
+
+Suppose particle X, with mass $m_X$,
+is initially moving at velocity $v_X$. 
+It suddenly decays into 2 particle Y (mass = $m_Y$) and Z (mass = $m_Z$),
+with unknown velocity $v_Y$ and $v_Z$.
+
+\begin{center}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[height=6em]{decay1}
+    \end{minipage}
+    \qquad$\Rightarrow$\qquad
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[height=6em]{decay2}
+    \end{minipage}
+\end{center}
+
+To the observer on ground, 
+he can write out the 4-momentum of each particles directly:
+\aleq{
+    \vvec{P}_X = \bmat{\gamma_\red{v_X}m_Xc \\ \gamma_\red{v_X}m_Xv_X}
+    \qquad
+    \vvec{P}_Y = \bmat{\gamma_\red{v_Y}m_Yc \\ \gamma_\red{v_Y}m_Yv_Y}
+    \quad
+    \vvec{P}_Z = \bmat{\gamma_\red{v_Z}m_Zc \\ \gamma_\red{v_Z}m_Zv_Z}
+}
+
+Conservation of 4-momentum is simply $\vvec{P}_X = \vvec{P}_Y + \vvec{P}_Z$, yielding a set of simultaneous equations of $v_Y$ and $v_Z$:
+\aleq{
+    \bcase{
+        \gamma_{v_X}m_X &= \gamma_{v_Y}m_Y + \gamma_{v_Z}m_Z \\
+        \gamma_{v_X}m_Xv_X &= \gamma_{v_Y}m_Yv_Y + \gamma_{v_Z}m_Zv_Z
+    }
+}
+
+Writing this out is easy, but solving for the $v$'s will be super annoying because they also hide inside the $\gamma$'s. 
+To reduce the amount of algebra, 
+it is recommended to apply these tricks:
+\begin{enumerate}
+    \item \bf{\ul{Switch to a co-moving frame}}\\[0.5ex]
+    We can always choose another observer who is blue{co-moving} to one of the particle, 
+    then the 4-momentum of this particle will contain a $0$. i.e. $\vvec{P}_X = \bmat{m_Xc \\ 0}$
+
+    \begin{center}
+        \begin{minipage}{0.25\linewidth}
+            \centering
+            \includegraphics[height=7em]{decay3}
+        \end{minipage}
+        \qquad$\Rightarrow$\qquad\quad
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[height=6em]{decay4}
+        \end{minipage}
+    \end{center}
+
+    Let the co-moving observer of X sees Y and Z moving at velocity $v_Y'$ and $v_Z'$. Now the conservation of 4-momentum writes as 
+    \aleq{
+        \bcase{
+            m_X &= \gamma_{v_Y'}m_Y + \gamma_{v_Z'}m_Z \\
+            \cul[green]{\cul[green]{0}} &= \gamma_{v_Y'}m_Yv_Y' + \gamma_{v_Z'}m_Zv_Z'
+        }
+    }
+
+    This system of equation of $v_Y'$ and $v_Z'$ is just easier to solve.
+    Then to retrieve $v_Y$ and $v_Z$, we can use velocity addition formula.
+    \aleq{
+        v_Y = \frac{v_Y'+ v_X}{1+\frac{v_Y'v_X}{c^2}} 
+        \qquad\text{and}\qquad
+        v_Z = \frac{v_Z'+ v_X}{1+\frac{v_Z'v_X}{c^2}}
+    }
+
+    \item \bf{\ul{Algebaric trick of $\gamma^2v^2 \equiv c^2(\gamma^2-1)$}}\\[0.5ex]
+    This equality directly comes from the definition of $\gamma$.
+    \aleq{
+        \gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}} 
+        \quad \Rightarrow \quad
+        \gamma^2\qty(\sqrt{1-\frac{v^2}{c^2}})^2 = 1 
+        \quad \Rightarrow \quad
+        c^2(\gamma^2-1) &= \gamma^2v^2
+    }
+
+    It is used very frequently when we solve things in relativity 
+    because it helps reduce the annoying $\gamma v$-like terms.
+    For example, on the \nth{2} equation in the above system:
+    \aleq{
+        0 &= \gamma_{v_Y'}m_Yv_Y' + \gamma_{v_Z'}m_Zv_Z'\\
+        (m_Y\cul[red]{\gamma_{v_Y'}v_Y'})^2 &= (m_Z\cul[red]{\gamma_{v_Z'}v_Z'})^2 \\
+        m_Y^2c^4\qty(\gamma_{v_Y'}^2-1) &= m_Z^2c^4\qty(\gamma_{v_Z'}^2-1)
+    } 
+
+    which leaves $\gamma_{v_Y'}$ and $\gamma_{v_Z'}$ to be the only two unknowns in the system of equations. 
+    \aleq{
+        \bcase{
+            m_X &= \gamma_{v_Y'}m_Y + \gamma_{v_Z'}m_Z \qquad \gray{(1)}\\
+            m_Y^2\qty(\gamma_{v_Y'}^2-1) &= m_Z^2\qty(\gamma_{v_Z'}^2-1)
+            \qquad\gray{(2)}
+        }
+    }
+
+    \bf{\ul{Note}}: This is exactly the same trick of using the energy-momentum relation $E^2= m^2c^4  + p^2c^2$ to reduce the problem.
+    But here I express everything in terms of $v$ to avoid using too many symbols like $E$ and $p$.
+
+
+\end{enumerate}
+
+The remainings shall be solved by brute force.
+From \gray{(2)}, 
+\aleq{
+    m_Y^2\gamma_{v_Y'}^2-mY^2 &= m_Z^2\gamma_{v_Z'}^2-m_Z^2 \\
+    m_Y^2 - m_Z^2 &= m_Y^2\gamma_{v_Y'}^2 - m_Z^2\gamma_{v_Z'}^2\\
+    &= \cul[red]{(m_Y\gamma_{v_Y'} + m_Z\gamma_{v_Z'})}(m_Y\gamma_{v_Y'} - m_Z\gamma_{v_Z'}) \\[0.5ex]
+    &= \tkn{from1}{\cul[red]{m_X}}(m_Y\gamma_{v_Y'} - m_Z\gamma_{v_Z'})\\
+    m_Y\gamma_{v_Y'} &= \frac{m_Y^2 - m_Z^2}{m_X} + m_Z\gamma_{v_Z'}
+}
+\addArrow[red]{from1}{(2ex,2ex)}{}{(0,1.5ex)}
+
+Substitute back to \gray{(1)},
+\aleq{
+    m_X &= \qty(\frac{m_Y^2 - m_Z^2}{m_X} + m_Z\gamma_{v_Z'}) + \gamma_{v_Z'}m_Z \\
+    \Aboxed{
+        \gamma_{v_Z'} &= \frac{m_X^2 + m_Z^2 - m_Y^2}{2m_Xm_Z}
+    } 
+}
+
+and so 
+\aleq{
+    m_Y\gamma_{v_Y'} &= \frac{m_Y^2 - m_Z^2}{m_X} +\frac{m_X^2 + m_Z^2 - m_Y^2}{2m_X} \\
+    \Aboxed{
+        \gamma_{v_Y'} &= \frac{m_X^2 + m_Y^2 - m_Z^2}{2m_Xm_Y}
+    }
+}
+
+The steps to retriving $v_Y$ and $v_Z$ shall be left to you as an exercise.
+
+%%%%%%%%%%%%%%
+\subsubsection{Relativistic Doppler Effect - Another Derivation}
+
+From quantum mechanics, 
+a photon’s energy $E$ and momentum $p$ are related to its frequency $f$ and wavelength $\lambda$:
+\vskip -2em
+\aleq{
+    E=hf \quad\text{and}\quad p=\frac{h}{\lambda}
+}
+where $h$ is the Planck constant $\approx 6.63\times 10^{-34}$ m$^{2}$kgs$^{-1}$. 
+Also notice that light always travels at speed $c=f\lambda$ \cul[red]{in vacuum}.
+So the 4-momentum of a photon \cul[red]{in vacuum} can be written as 
+\aleq{
+    \vvec{P} = \bmat{\frac{E}{c} \\ \pm p} 
+    = \bmat{\frac{hf}{c}\\ \pm \frac{h}{\lambda}}
+    = \bmat{\frac{hf}{c}\\ \pm \frac{hf}{c}} 
+}
+
+The $\pm$ sign is to show the traveling direction of the photon.
+We can derive the relativistic Doppler effect formula by Lorentz transform a photon's 4-momentum.
+Let \red{B} be an observer moving at velocity $v$ relative to observer \blue{A}.
+\aleq{
+    \tkn{dopplerB}{\cul[red]{\bmat{\frac{hf'}{c} \\ \pm \frac{hf'}{c}}}}
+    &= \bmat{
+        \gamma & -\gamma\beta\\
+        -\gamma\beta & \gamma
+    }_v\, 
+    \tkn{dopplerA}{\cul[blue]{\bmat{\frac{hf}{c} \\ \pm \frac{hf}{c}}}}\\[1em]
+    %
+    \Rightarrow\quad \frac{f'}{c} &= \gamma_v \frac{f}{c} \ \mp\  \gamma_v\beta_v \frac{f}{c} \\[1ex]
+    %
+    &= \frac{1\mp \beta_v}{\sqrt{1-\beta_v^2}}\, \frac{f}{c} \\[1ex]
+    \Aboxed{
+        f'&= \sqrt{\frac{1 \mp \beta_v}{1 \pm \beta_v}}\,f
+    }
+}
+\addArrow[red]{dopplerB}{(-6ex,0)}{4-vector made of \\ $f$ seen by B}
+{(-5ex,0)}{(-8ex,0)}
+\addArrow[blue]{dopplerA}{(6ex,0)}{4-vector made of \\ $f$ seen by A}
+{(5ex,0)}{(8ex,0)}
+
+For example, if \red{B} is moving at the \cul[red]{same direction} as the photon relative to \blue{A},
+then $\beta >0$ and momentum of photon should be taken as $+\frac{hf}{c}$.
+The photon observed by \red{B} is then
+\begin{center}
+    \vskip -1em
+    \begin{minipage}{0.3\linewidth}
+        \aleq{
+            f'= \sqrt{\frac{1 \red{-} \beta}{1 \red{+} \beta}}\, f < f
+        }
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{doppler}
+    \end{minipage}
+\end{center}
+
+which is smaller than the frequency observed by \blue{A}, i.e. redshift occurs. 
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Refractive Index of Moving Medium}
+
+This time considers if the photon is travelling in a medium with refractive $n$ instead of vacuum.
+Wavelength of the photon becomes $\frac{\lambda}{n}$ instead of $\lambda$. 
+So the 4-momentum of a photon is 
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \aleq{
+            \vvec{P} = \bmat{\frac{E}{c} \\ \pm p} 
+            = \bmat{\frac{hf}{c}\\ \pm \frac{\red{n}h}{\lambda}}
+            = \bmat{\frac{h}{\lambda}\\ \pm \frac{\red{n}h}{\lambda}}
+        }
+    \end{minipage}
+    \hspace{0.1\textwidth}
+    \begin{minipage}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{medium}
+    \end{minipage}
+\end{center}
+
+Suppose $n$ is the refractive index observed by the medium's \blue{co-moving observer A}. We can switch to the \red{moving observer B}'s frame who sees the medium moving at velocity $v$ by \cul[red]{inverse} Lorentz transform.
+\aleq{
+    \tkn{refractB}{\cul[red]{\bmat{\frac{h}{\lambda'} \\ \pm \frac{n'h}{\lambda'}}}}
+    = \bmat{
+        \gamma_\blue{-v} & -\gamma_\blue{-v}\beta_\blue{-v}\\
+        -\gamma_\blue{-v}\beta_\blue{-v} & \gamma_\blue{-v}
+    }
+    \tkn{refractA}{\cul[blue]{\bmat{\frac{h}{\lambda}  \\ \pm \frac{nh}{\lambda}}}}
+}
+\addArrow[red]{refractB}{(-6ex,0)}{4-vector made of \\ $n \,\&\, \lambda$ seen by B}
+{(-5ex,0)}{(-8ex,0)}
+\addArrow[blue]{refractA}{(6ex,0)}{4-vector made of \\ $n \,\&\, \lambda$ seen by A}
+{(5ex,0)}{(8ex,0)}
+
+First component gives the wavelength observed by B:
+\aleq{
+    \pm \frac{h}{\lambda'} &= \gamma_v\frac{h}{\lambda} \pm \gamma_v\beta_v\frac{nh}{\lambda} \\
+    \Aboxed{
+        \lambda'&= \pm\inv{\gamma_v(1 \pm n\beta_v)}\lambda
+    }
+}
+
+Second component gives the refractive index observed by B: 
+\aleq{
+    \frac{n'h}{\lambda'} &= \gamma_v\beta_v\frac{h}{\lambda} \pm \gamma_v\frac{nh}{\lambda} \\
+    n'&= \gamma_v(\beta_v\pm n)\frac{\lambda'}{\lambda}\\
+    &= \pm \frac{\beta_v \pm n}{1 \pm n\beta_v} \\
+    \Aboxed{
+        n' &= \frac{n \pm \beta_v}{1 \pm n\beta_v}
+    }\\[1ex]
+    &\approx n + (n^2-1)(\pm \beta) - n\beta^2 + \cdots
+}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Compton Scattering}
+
+Compton scattering was the key experiment showing that light (photon) carries momentum, such that it can collide with electons.
+
+\begin{center}
+    \begin{minipage}{0.6\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{compton}
+    \end{minipage}
+\end{center}
+
+The loss in momentum by the photon can be determined by measuring the photons' change in wavelength (since $p = \frac{h}{\lambda}$).
+It can usually be found in textbooks:
+\aleq{
+    \Aboxed{
+        \Delta \lambda 
+        = \tkn{delta_lambda}{\cul[red]{\lambda_f- \lambda_i}}
+        = \frac{h}{mc}(1-\cos\theta)
+    }
+}
+\addArrow[red]{delta_lambda}{(0,-4ex)}{\scriptsize Final $\lambda$ must be larger than initial $\lambda$\\[-1ex]\scriptsize because momentum must have lost}{(0,-1.5ex)}{(0,-0.5ex)}
+
+\vskip 1.5em
+where $m$ is the mass of electron. 
+Its derivation is just an application to the 2D 4-momentum vector. 
+Recall that we can multiply a rotation matrix to 4-velocity to make it a 2D description. 
+This applies to 4-momentum too. 
+
+\newpage
+After the collision,
+\begin{itemize}
+    \item Electron moves at velocity $v$ at angle $\phi$ \cul[red]{above} horizontal axis:
+    \aleq{
+        \vvec{P}_{e,f} = 
+        \bmat{1 & 0 & 0 \\ 0 & \cos\phi & \sin\phi \\ 0 & -\sin\phi & \cos\phi}
+        \bmat{\gamma_v mc \\ \gamma_v mv \\ 0}
+        = 
+        \bmat{\gamma_v mc \\ \gamma_v mv\cos\phi \\ \gamma_v mv\sin\phi}
+    }
+
+    \item Photon's wavelength changed to $\lambda_f$, travelling at angle $\theta$ \cul[red]{below} horizontal axis:
+    \aleq{
+        \vvec{P}_{\lambda, f} = 
+        \bmat{1 & 0 & 0 \\ 0 & \cos(-\theta) & \sin(-\theta) \\ 0 & -\sin(-\theta) & \cos(-\theta)}
+        \bmat{\frac{h}{\lambda_f} \\ \frac{h}{\lambda_f} \\ 0}
+        = 
+        \bmat{\frac{h}{\lambda_f} \\ \frac{h}{\lambda_f}\cos\theta \\ -\frac{h}{\lambda_f}\sin\theta}
+    }
+\end{itemize}
+
+The 4-momentum conservation then writes as
+\aleq{
+    \vvec{P}_{\lambda,i}\ \ + \ \ \vvec{P}_{e,i}
+    \ \ &= \qquad\ 
+    \vvec{P}_{\lambda,f}\qquad + \qquad \vvec{P}_{e,f}\\[1ex]
+    %
+    \bmat{\frac{h}{\lambda_i} \\ \frac{h}{\lambda_i} \\ 0}
+    + \bmat{mc \\ 0 \\ 0}
+    &= \bmat{\gamma_v mc \\ \gamma_v mv\cos\phi \\ \gamma_v mv\sin\phi}
+    + \bmat{\frac{h}{\lambda_f} \\ \frac{h}{\lambda_f}\cos\theta \\ -\frac{h}{\lambda_f}\sin\theta}
+}
+
+which is a system of 3 equations. 
+The remaining steps are to remove $\phi$ and $v$:
+\begin{enumerate}
+    \item Move $\vvec{P}_{e,f}$ to LHS, then take square on both sides
+    \aleq{
+        \bcase{
+            \qty(\frac{h}{\lambda_i} + mc - \frac{h}{\lambda_f})^2 &= \gamma_v^2m^2c^2 & \gray{(1)}\\
+            %
+            \qty(\frac{h}{\lambda_i} - \frac{h}{\lambda_f}\cos\theta)^2 &= \gamma_v^2m^2v^2\cos^2\phi & \gray{(2)} \\
+            %
+            \qty(\frac{h}{\lambda_f}\sin\theta)^2 &= \gamma_v^2m^2v^2\sin^2\phi & \gray{(3)}
+        }
+    }
+    
+    \item Add \gray{(2)} and \gray{(3)} to remove $\phi$:
+    \aleq{
+        \qty(\frac{h}{\lambda_i} - \frac{h}{\lambda_f}\cos\theta)^2 
+        + \qty(\frac{h}{\lambda_f}\sin\theta)^2
+        &= \gamma_v^2m^2v^2 (\cos^2\phi + \sin^2\phi) \\[1ex]
+        %
+        \qty(\frac{h}{\lambda_i})^2 - 2\qty(\frac{h}{\lambda_i})\qty(\frac{h}{\lambda_f})\cos\theta + \qty(\frac{h}{\lambda_f})^2
+        &= \gamma_v^2m^2v^2 \\[1ex]
+        &= \gamma_v^2m^2c^2 \cdot \frac{v^2}{c^2} 
+        \quad \gray{(4)}
+    }
+    
+    \item By $\qty(1-\frac{v^2}{c^2})\gamma^2 = 1 $,
+    We can remove $v$ by \gray{(1)} subtracts \gray{(4)}
+    \aleq{
+        \qty(\frac{h}{\lambda_i} + mc - \frac{h}{\lambda_f})^2 
+        -  \qty[\qty(\frac{h}{\lambda_i})^2 - 2\qty(\frac{h}{\lambda_i})\qty(\frac{h}{\lambda_f})\cos\theta + \qty(\frac{h}{\lambda_f})^2]
+        &= \gamma_v^2m^2c^2 - \gamma_v^2m^2c^2 \cdot \frac{v^2}{c^2} \\[1ex]
+        %
+        m^2c^2 + 2\qty(\frac{h}{\lambda_i})mc - 2\qty(\frac{h}{\lambda_f})mc
+        - 2\qty(\frac{h}{\lambda_i})\qty(\frac{h}{\lambda_f})
+        + 2\qty(\frac{h}{\lambda_i})\qty(\frac{h}{\lambda_f})\cos\theta
+        &= m^2c^2 \cdot \ccancelto[red]{1}{\gamma_v^2 \qty(1-\frac{v^2}{c^2})} \\[1em]
+        %
+        2hmc\qty(\inv{\lambda_i} - \inv{\lambda_f}) 
+        - 2\qty(\frac{h}{\lambda_i})\qty(\frac{h}{\lambda_f})(1-\cos\theta) 
+        &= 0 \\[1em]
+        %
+        2hmc\qty(\frac{\lambda_f - \lambda_i}{\lambda_f\lambda_i})
+        &= 2\qty(\frac{h^2}{\lambda_i\lambda_f})(1-\cos\theta) \\[1em]
+        %
+        \Aboxed{
+            \lambda_f - \lambda_i &= \frac{h}{mc}(1-\cos\theta)
+        }
+    }
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%
+%\subsection{Extra: 4-acceleration}
+
+
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spacetime Invariants}
+
+\it{(Not yet finish writing. But content will be similar to lecture note.)}
+
+\iffalse
+%%%%%%%%%%%%%%
+\subsection{"Distance" in Mathematics}
+
+The jobs of mathematicians are to work with different kinds of abstract algebraic spaces - 
+
+In mathematics, how the distance between 2 points is calculated
+is independent of the vector's definition.
+A function $\d(\vvec{x},\vvec{y})$ can be used to calculate a "distance" 
+between any two points $\vvec{x}$, $\vvec{y}$ as long as it satisfies:
+\begin{itemize}
+    \item $d(\vvec{x},\vvec{x}) = 0$ \quad (Distance 0 from itself)
+    \item $d(\vvec{x},\vvec{y})\geq 0$ \quad (Non-negativity)
+    \item $d(\vvec{x},\vvec{y}) = d(\vvec{y},\vvec{x})$ \quad (Symmetry)
+    \item $d(\vvec{x},\vvec{z}) \leq d(\vvec{x},\vvec{y}) + d(\vvec{y},\vvec{z})$ \quad (Triangle inequality)
+\end{itemize}
+
+These properties origin from our "common sense" distance fomula - the Pythagoras theorem:
+\aleq{
+    d(\vvec{x},\vvec{y}) = \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2 + (x_3-y^3)^2}
+}
+
+As 
+these properties of a metric function are guidelines how to "create" a definition of distance in the abstract spaces they are working on.
+
+The choice of "definition of distance" can be  
+
+
+%%%%%%%%%%%%%%
+\subsection{Spacetime Interval}
+
+We have been working with "events" in the spacetime - 
+which are represented as 4-vectors in the form of $\bmat{ct\\x}$.  
+Now we have to ask the mathematic's question:
+\begin{center}
+    How do we define the distance between two "events" in the spacetime?
+\end{center}
+
+
+
+
+Spacetime interval is the ‘distance’ between spacetime coordinate. The ‘distance’ we commonly know is so called the Euclidean distance, defined as 
+\[
+(\Delta s)^2 = (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2
+\]
+
+But in spacetime coordinate, the interval (or called the Minkowski distance) is defined as 
+\[
+(\Delta s)^2 = -(c\Delta t)^2 + (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2
+\]
+Notice the minus sign before $(c\Delta t)^2$
+
+It is defined in this way, because ‘distance’ between two points should be the same for whatever choice of coordinate system, i.e. should be invariant under coordinate transformation. For coordinate transform under Lorentz matrix
+\[
+\bmat 
+\gamma & -\gamma\beta \\
+-\gamma\beta & \gamma
+\emat
+\bmat c\Delta t\\\Delta x \emat
+=
+\bmat \gamma c\Delta t-\gamma\beta\Delta x \\ -\gamma\beta c\Delta t+\gamma\Delta x\emat
+=
+\bmat c\Delta t' \\\Delta x' \emat
+\]
+
+New spacetime interval is
+\begin{align*}
+    (\Delta s')^2 &= -(c\Delta t')^2+(\Delta x')^2\\
+    &= -(\gamma c\Delta t-\gamma\beta\Delta x)^2 + (-\gamma\beta c\Delta t+\gamma\Delta x)^2\\
+    &= -\gamma^2c^2\Delta t^2-\gamma^2\beta^2\Delta x^2+2\gamma^2c\beta\Delta x\Delta t + \gamma^2\beta^2c^2\Delta t^2 + \gamma^2\Delta x^2 - 2\gamma^2\beta c\Delta x\Delta t\\
+    &= -\gamma^2(1-\beta^2)c^2\Delta t^2 + \gamma^2(1-\beta^2)\Delta x^2\\
+    &= -(c\Delta t)^2+(\Delta x)^2\\
+    &= (\Delta s)^2
+\end{align*}
+Showing that it is an invariant quantity.\\
+
+We can use the interval to determine causality between events. Relations between two events A, B are classified into:
+\[
+(\Delta s)^2
+\begin{cases}
+>0 & \text{space-like}\\
+=0 & \text{light-like}\\
+<0 & \text{time-like}
+\end{cases}
+\]
+
+\begin{itemize}
+    \item \textbf{Space-like}: $(\Delta s)^2 = (x_B-x_A)^2-c^2(t_B-t_A)^2 >0$ It means when a light beam is sent out at $x_A$ right after event A happens, it cannot reach $x_B$ within the duration $(t_B-t_A)$. There cannot be any communication between the two events, thus event A cannot do any impact to event B. So no causality. Some observers may see event B happens at the same time as event A, or even earlier than A: From Lorentz transform, 
+    \[
+    c(t_B'-t_A') = c\Delta t' = \gamma c\Delta t-\gamma\beta\Delta x
+    , \quad
+    \text{with} \Delta x=x_B-x_A>c(t_B-t_A) = c\Delta t
+    \]
+    \[
+    \text{take } \beta \left\{
+    \begin{array}{l l l l}
+    > \frac{c\Delta t}{\Delta x} & \quad & c\Delta t'<0 & \text{(B before A)} \\[0.3em]
+    = \frac{c\Delta t}{\Delta x} & \Rightarrow & c\Delta t'=0 & \text{(same time)} \\[0.3em]
+    < \frac{c\Delta t}{\Delta x} & \quad & c\Delta t'>0 & \text{(A before B)} 
+    \end{array}\right.
+    \]
+    
+    \item \textbf{Light-like}: It means when a light beam sent out at $x_A$ right after event A happens just enough to reach $x_B$ within the duration $(t_B-t_A)$. Event A can have impact on event B by light speed communication.
+    
+    \item \textbf{Time-like}: Event A can have impact on event B by slower-than-light-speed communication. Some observers may see event A and B happens at the same location: From Lorentz transform,
+    \[
+    \Delta x' = -\gamma\beta c\Delta t + \gamma\Delta x
+    ' \quad
+    \text{with} \Delta x = x_B-x_A<c(t_B-t_A)=c\Delta t
+    \]
+    \[
+    \text{take } \beta \left\{
+    \begin{array}{l l l l}
+    > \frac{\Delta x}{c\Delta t} & \quad & c\Delta x'<0 & \quad \\[0.3em]
+    = \frac{\Delta x}{c\Delta t} & \Rightarrow & c\Delta x'=0 & \text{(same location)} \\[0.3em]
+    < \frac{\Delta x}{c\Delta t} & \quad & c\Delta x'>0 & \quad 
+    \end{array} \right.
+    \]
+    
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Energy-Mass Relation}
+
+The length of a vector defines the same way as distance between coordinate. For all 4-vectors, their length can be calculated as 
+\[
+|\vec{V}|^2 = -(\text{Time component})^2 + \sum (\text{position components})^2
+\]
+
+\begin{enumerate}
+    \item 4-velocity:
+    \[
+    \vec{U} = \bmat c\\0 \emat 
+    \quad \text{or} \quad
+    \vec{U} = \bmat \gamma_vc\\\gamma_vv \emat 
+    \]
+    The 'length' is always $|\vec{U}|^2 = -c^2$.
+    
+    \item 4-momentum:
+    \[
+    \vec{P} = \bmat mc\\0 \emat 
+    \quad \text{or} \quad
+    \vec{P} = \bmat \gamma_vmc\\\gamma_vmv \emat 
+    \]
+    The 'length' is always $|\vec{P}|^2 = -m^2c^2$. \\
+    But recall that 4-momentum can also be written as $\vec{P} = \bmat E/c\\p\emat$. Its length is $-E^2/c^2+p^2$. So 
+    \[
+    -\frac{E^2}{c^2}+p^2=-m^2c^2
+    \]
+    \[
+    E^2=m^2c^4+p^2c^2
+    \]
+    Which is the famoius energy-mass relation. For photon, $m=0$. So $E=pc$.
+\end{enumerate}
+
+\fi
+
+%%%
+\theend
+\end{document}
