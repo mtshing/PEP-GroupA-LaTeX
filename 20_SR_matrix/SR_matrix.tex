@@ -39,48 +39,67 @@ into the expression in another coordinate system.
 Here are some very common transformations that you need to remember:
 
 \begin{itemize}
-    \item \bf{\ul{Rotation matrix}} 
-    \aleq{
-        \bmat{x'\\ y'}
-        =
-        \bmat{
-            \cos{\theta} & \sin{\theta} \\
-            -\sin{\theta} & \cos{\theta}
-        }
-        \bmat{x\\y}
-    }
+    \item \bf{\ul{Rotation matrix}}
+    \begin{center}
+        \vskip -2em
+        \begin{minipage}{0.4\linewidth}
+            \aleq{
+                \bmat{x'\\ y'}
+                =
+                \bmat{
+                    \cos{\theta} & \sin{\theta} \\
+                    -\sin{\theta} & \cos{\theta}
+                }
+                \bmat{x\\y}
+            }
 
-    \insertFig{rotation coor}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{coor_rotate}
+        \end{minipage}
+    \end{center}
     
     \item \bf{\ul{Reflection matrix}}
-    \aleq{
-        \bmat{x'\\y'}
-        =
-        \bmat{ 
-            -1 & 0 \\
-            0 & 1 
-        }
-        \bmat{x\\y}
-    }
+    \begin{center}
+        \vskip -2em
+        \begin{minipage}{0.4\linewidth}
+            \aleq{
+                \bmat{x'\\y'}
+                =
+                \bmat{ 
+                    -1 & 0 \\
+                    0 & 1 
+                }
+                \bmat{x\\y}
+            }
 
-    \insertFig{reflect coor}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.3\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{coor_reflect}
+        \end{minipage}
+    \end{center}
+    
 \end{itemize}
 
 Remember the very important fact about coordinate transform:
 \begin{center}
-    \bf{The point should always be the same one,\\
-     but the "description" to its position can change\\ 
+    \bf{The point is always the same one, 
+    but the point's coordinate can change \\  
     because we are free to choose the coordinate system.}
 \end{center}
 
-\begin{notation}{Side Note:}
+\begin{notation}[Side Note:]
     In fact, the coordinate transformation by a matrix $\mmat{A}$ will map the coordinate expression onto 
-    the coordinate system spanned by the vectors $\qty\{\inv{\lambda_1}\vvec{v}_1, \inv{\lambda_1}\vvec{v}_1, \dots, \inv{\lambda_n}\vvec{v}_n\}$,
-    where $\lambda{i}$ are the eigenvalues of $\mmat{A}$ and $\vvec{v}_i$ are the corresponding eigenvectors.
+    the coordinate system spanned by the vectors $\qty{\inv{\lambda_1}\vvec{v}_1, \inv{\lambda_1}\vvec{v}_1, \dots, \inv{\lambda_n}\vvec{v}_n}$,
+    where $\lambda_i$ are the eigenvalues of $\mmat{A}$ and $\vvec{v}_i$ are the corresponding eigenvectors.
 
-    \insertFig{random transform}
+    %\insertFig{random transform}
 
-    example?
+    %For example, $\mmat{A} = \bmat{1 & 1 \\ 4 & 1}$ 
 \end{notation}
 
 %%%%%%%%%%%%%%
@@ -123,13 +142,10 @@ For simplicity, we can choose
 \end{itemize}
 
 Then the $y$/$z$ coordinate of an event will be the same when described by both observers. 
-We can focus on the coordinate transformation on $t$ and $x$ coordinate only, 
-and visualize the transform in a 2D coordinate called \bf{Minkowski diagram}:
+We can focus on the transformation on $t$ and $x$ coordinate only.\\
 
-\insertFig{minkwoski transform}
-
-The Lorentz transformation matrix,
-denoted as $\mmat{\Lambda}$, relates the observed $ct$ and $x$ coordinate between observers. 
+In the following section, we will derive the coordinate transform matrix -
+the Lorentz matrix, which relates the observed $ct$ and $x$ coordinate between observers. 
 \aleq{
     = \tkn{coorB}{\cul[red]{\bmat{ct'\\x'}}}
     = \tkn{lorentz}{\text{\Huge $(\mmat{\Lambda})$}} \tkn{coorA}{\cul[blue]{\bmat{ct\\x}}}
@@ -138,6 +154,17 @@ denoted as $\mmat{\Lambda}$, relates the observed $ct$ and $x$ coordinate betwee
 \addBentArrow[blue]{coorA}{(8ex,-3ex)}{An event's coordinate\\observed by A}{(0,-5ex)}{(8ex,1ex)}
 \addArrow[gray]{lorentz}{(0,-10ex)}{The Lorentz Transformation\\A 2x2 matrix}{(0,-2ex)}{(0,-1ex)}
 
+\vskip 4em
+Geometrically, this transformation can be visualized 
+as a change in the coordinate on a $t-x$ plane called \bf{Minkowski diagram}:
+\begin{center}
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{coor_minkowski}
+    \end{minipage}
+\end{center}
+
+
 %%%%%%%%%%%%%%
 \subsubsection{2 Einstein's Posulates}
 
@@ -145,44 +172,54 @@ Special relativity is proposed based on only two principles.
 They are essential to derive the expression of Lorentz transformation.
 
 \begin{enumerate}
-    \item \bf{\ul{Principle of Relativity}}\\
+    \item \bf{\ul{Principle of Relativity}}\\[0.5ex]
     All physics must be the same to any inertial observers. 
     i.e. All the formula yield the correct results, 
     although values to be substituted are different for different observers.
     %For example, observers cannot tell if an object is moving relative to him or 
     %himself is moving relative to the object, when there is no acceleration. 
     
-    \item \bf{\ul{Principle of invariant light speed}}\\
+    \item \bf{\ul{Principle of invariant light speed}}\\[0.5ex]
     Speed of light is the same for all observers. 
     (This includes non-inertial frame observers.)
 
 \end{enumerate}
 
 
-
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsubsection{Deriving the Matrix}
 
-Let the two observers A, B differ in relative velocity $v$. 
+Let the two observers \blue{A}, \red{B} differ in relative velocity $v$. 
 Bear in mind that when there is no acceleration, 
 observers cannot distinguish if it is the object moving relative to him 
 or him moving relative to the object.
 \begin{itemize}
-    \item A always thinks that B is the one moving, while A himself never moves.
+    \item \blue{A} always thinks that \red{B} is the one moving, while A himself never moves.
     
-    \item B always thinks that A is the one moving, while B himself never moves.
+    \item \red{B} always thinks that \blue{A} is the one moving, while B himself never moves.
 
-    \item If A sees B moving with velocity $v$, 
-    B sees A moving with velocity $-v$.
+    \item If \blue{A} sees \red{B} moving with velocity $v$, 
+    \red{B} sees \blue{A} moving with velocity $-v$.
 
 \end{itemize}
 
-\insertFig{relative observation}
-% add "you are the one moving"
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{observer1}
+    \end{minipage}
+    \quad \vline\quad 
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{observer2}
+    \end{minipage}
+\end{center}
 
-We shall show that:
+\vskip 1em
+We are going to show that:
 \begin{framed}
-When B moves at \cul[red]{velocity $v$ relative to} A
+When \red{B} moves at velocity $v$ relative to \blue{A}
     \aleq{
         \tkn{coorB2}{\cul[red]{\bmat{ct'\\x'}}}
         = \tkn{lorentz2}{\cul[gray]{\bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}}}\,
@@ -196,15 +233,9 @@ When B moves at \cul[red]{velocity $v$ relative to} A
     with $\gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}}$ and $\beta = \frac{v}{c}$.
 \end{framed}
 
-
-\vskip 0.5em
+\newpage
 \underline{\textit{Proof}}\par
-\hspace{0.025\textwidth}\begin{minipage}{0.95\linewidth}
 \vskip 0.5em
-
-
-\end{minipage}
-\vskip 1.5em \par
 
 In general, A and B are no different other than they move with a speed $v$ relative to each other.
 So the Lorentz transform between them should only be related to $v$.
@@ -532,7 +563,7 @@ The subscripts on $p, q, r, s$ indicate that they are \cul[red]{functions of $v$
     
     Out of all the choice, we are \cul[red]{choosing} the $s_v$ which makes $\det(\mmat{\Lambda})=1$:
     \aleq{
-        \det(\mmat{\Lambda}) = s_v^2\cdot \qty(1-\frac{v^2}{c^2}) &= 1\\
+        1 &= \det(\mmat{\Lambda}) = s_v^2\cdot \qty(1-\frac{v^2}{c^2}) \\
         \Aboxed{
             s_v &= \dfrac{1}{\sqrt{1-\frac{v^2}{c^2}}}
         }
@@ -540,7 +571,7 @@ The subscripts on $p, q, r, s$ indicate that they are \cul[red]{functions of $v$
 
     The true reason behind this choice is because 
     we want to construct certain "spacetime" invariants that carry physical meaning.
-    We shall explain more when we arrive at that section. 
+    We shall explain more in later sections. 
 
     
 \end{enumerate}
@@ -573,44 +604,100 @@ The conventional form is denoted by these letters:
 %%%%%%%%%%%%%%
 \subsubsection{Reading Minkowski Diagram}
 
+
+
 The Minkowski diagram can be used to read the coordinate's value 
 of the same point (event) according to different observer.
 
-\insertFig{Minkwoski diagram, label axis of different observers}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=10em]{read_minkowski3}\\
+        Coordinates seen by one observer uses the perpendicular axis
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=10em]{read_minkowski2}\\
+        Coordinates seen by another observer uses the sloped axis
+    \end{minipage}
+\end{center}
 
-To read the value on one axis, 
-we can draw a line that is "normal" to that axis and tells the value by the intercept.
+To read the value on the sloped axis, 
+we can draw a line that is "normal" to that axis and tells by the intercept.
 Just like how we read the coordinates in rectangular and polar coordinate.
 
-\begin{itemize}
-    \item \ul{Example 1: Rectangular coordinate}
-    \insertFig{rect coor}
+\vskip 1ex
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{read_xy}
+    \end{minipage}
+    \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+            \item \blue{Find $x$ coordinate: Draw a line normal to $x$-axis\\
+            $\Rightarrow$ The line needs to be parallel to $y$-axis}
+            
+            \item \red{Find $y$ coordinate: Draw a line normal to $y$-axis\\
+            $\Rightarrow$ The line needs to be parallel to $x$-axis}
 
-    \item \ul{Example 2: Polar coordinate}
-    \insertFig{polar coor}
+        \end{itemize}
+    \end{minipage}
+\end{center}
 
-\end{itemize}
+\vskip 1ex
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{read_polar}
+    \end{minipage}
+    \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+            \item \blue{Find $r$ coordinate: Draw a line "normal" to $r$-axis\\
+            $\Rightarrow$ The line is a circular arc, "parallel" to $\theta$-axis}
+            
+            \item \red{Find $\theta$ coordinate: Draw a line "normal" to $\theta$-axis\\
+            $\Rightarrow$ The line is a radial line, "parallel" to $r$-axis}
 
-Similarly on the Minkowski diagram, 
-to read the values on one of the sloping axis,
-we can draw a line that is parallel to the other axis to find the intercept. 
+        \end{itemize}
+    \end{minipage}
+\end{center}
 
-\insertFig{reading values from Minkowski}
+It is similar for Minkowski diagram, to read the coordinate on the sloped axis:
+\begin{center}
+    \begin{minipage}{0.3\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{read_minkowski}
+    \end{minipage}
+    \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+            \item \blue{Find $t'$ coordinate: Draw a line "normal" to $\theta$-axis\\
+            $\Rightarrow$ The line is a radial line, "parallel" to $r$-axis}
 
+            \item \red{Find $x'$ coordinate: Draw a line "normal" to $x'$-axis\\
+            $\Rightarrow$ The line has the same slope as the $t'$-axis}
+            
+        \end{itemize}
+    \end{minipage}
+\end{center}
+
+\iffalse
 For example, if A uses the $(ct,x)$ axes, B uses the $(ct',x')$ axes, 
 and B is moving at a velocity $v$ relative to A, 
 The spacetime coordinate of B are then
 \begin{itemize}
     \item As seen by A: $\bmat{ct\\vt}$
-    \item As seen by B: $\bmat{ct\\0}$
+    \item As seen by B: $\bmat{ct'\\0}$
 \end{itemize}
 
 \insertFig{B's position labeld by both axis}
+\fi
 
 We can also determine that the angle between $t,t'$ axes (or between $x,x'$ axes) to be
 \aleq{
-    \tan{\theta} &= \frac{vt}{ct} \\
-    \theta &= \tan^{-1}\qty(\frac{v}{c}) = \tan^{-1}\beta
+    \tan{\theta} = \frac{vt}{ct} 
+    \qquad\Rightarrow\qquad
+    \theta = \tan^{-1}\qty(\frac{v}{c}) = \tan^{-1}\beta
 }
 
 
@@ -621,13 +708,22 @@ We can also determine that the angle between $t,t'$ axes (or between $x,x'$ axes
 
 In the following section, 
 we are going to examine these 4 phenomena with the matrix method:
-\begin{itemize}
-    \item Time dilation
-    \item Length contraction
-    \item Relative velocity addition under relativity
-    \item Relativistic Doppler effect 
-\end{itemize}
+\vskip 1em
+\begin{minipage}{0.3\linewidth}
+    \begin{itemize}
+        \item Time dilation
+        \item Length contraction
+    \end{itemize}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.5\linewidth}
+    \begin{itemize}
+        \item Relative velocity addition under relativity
+        \item Relativistic Doppler effect 
+    \end{itemize}
+\end{minipage}
 
+\vskip 1em
 %%%%%%%%%%%%%%
 \subsection{Time Dilation}
 
@@ -671,7 +767,7 @@ This explains what actually happens when we describe time dilation:
         = \bmat{c\cdot \cul[blue]{(t_2-t_1)}\\ \blue{0}}
     }
 
-    \item Any \red{other observer}, with a speed $v$ relative to the co-moving observer, 
+    \item Any \red{other moving observer}, with a speed $v$ relative to the co-moving observer, 
     will see a time difference $\gamma_v(t_2-t_1)$.
     \aleq{
         \bmat{c\cdot \Delta t \\ \Delta x}_\red{B}
@@ -682,7 +778,8 @@ This explains what actually happens when we describe time dilation:
 \end{itemize}
 
 Because $\gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}} \geq 1$, 
-this phenomenon is described as \bf{time dilation}:
+this effect is described as \bf{time dilation}:
+
 \begin{center}
     \bf{Time difference $\Delta t$ measured by a \cul[blue]{co-moving observer} is always the shortest,\\
     while \cul[red]{other observer} will measure a "longer" time difference $\gamma \Delta t$.}
@@ -696,9 +793,31 @@ it comes with a side effect:
     \item But the \red{positions are different} according to \red{other observers}.
 \end{itemize}
 
-We can visualize this effect using the Minkowski diagram:
+\vskip 1em
+We can visualize this effect on the Minkowski diagram:
 
-\insertFig{time dilation}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{\blue{Co-moving} observer sees:}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \phantom{aaaaaaaaa}\ul{\red{Moving} observer sees:}
+    \end{minipage}
+\end{center}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=10em]{time_D1}\\
+        \green{\scriptsize Two events happen at the same location}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[height=13em]{time_D2}\\
+        \phantom{\scriptsize abc}
+    \end{minipage}
+\end{center}
 
 \begin{notation}[Side note:]
     In most introductory textbooks,
@@ -776,11 +895,60 @@ Obviously, the moving observer should not
 simply subtract his recorded positions to claim it as the measured length of the rod,
 because the records are taken at different time!
 
-\insertFig{moving rod, diff position}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{\blue{Co-moving} observer sees:}\\[1ex]
+        Left/right record at the same time
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \ul{\red{Moving} observer sees:}\\[1ex]
+        Record left $\rightarrow$ rod moves $\rightarrow$ record right
+    \end{minipage}
+\end{center}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{rod1}\\
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{rod2} 
+    \end{minipage}
+    \quad$\Rightarrow$\quad
+    \begin{minipage}{0.2\linewidth}
+        \centering
+        \includegraphics[width=0.85\textwidth]{rod3} 
+    \end{minipage}
+\end{center}
 
+\vskip 1em
 We may see it clearer with Minkowski diagram:
-
-\insertFig{length contract minkwoski 1}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{\blue{Co-moving} observer sees:}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \phantom{aaaaaaaaa}\ul{\red{Moving} observer sees:}
+    \end{minipage}
+\end{center}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=10em]{length_C1}\\
+        \green{\scriptsize Two measurements happen at the same time}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[height=13em]{length_C2}\\
+        \phantom{\scriptsize abc}
+    \end{minipage}
+\end{center}
 
 For B to take correct measurement, 
 we require his measurements to be taken \red{at the same time}. 
@@ -807,8 +975,7 @@ Then we can use the inverse Lorentz transform to tell what is observed by A:
 
 But note that \blue{A} is the co-moving observer -
 he will always find the position of Ending \circled{1} at $x=x_1$ and Ending \circled{2} at $x=x_2$,
-at ANY time!
-So we must have
+at ANY time! So we must have
 \aleq{
     \bmat{\gamma & -\gamma\beta\\ -\gamma\beta & \gamma}_{-v}\bmat{ct'\\x'_1}
     = \bmat{\cdots \\ \cul[blue]{\cul[blue]{x_1}}}
@@ -826,16 +993,18 @@ The difference in coordinates give
     &= \bmat{\blue{\text{\it{Something }}\neq 0} \\ \cul[blue]{\gamma_{-v}\cdot (\text{Length measured by B})}}
 }
 
+\vskip 1ex
 i.e. If the co-moving observer measure a length $x_2-x_1$, 
 any moving observer will measure a length $\inv{\gamma_{-v}}(x_2-x_1)$. 
-Because $\gamma = \inv{\sqrt{1-\frac{v^2}{c^2}}} \geq 1$, 
-this phenomenon is described as \bf{length contraction}:
+Because $\inv{\gamma_v} = \sqrt{1-\frac{v^2}{c^2}} \leq 1$, 
+this effect is described as \bf{length contraction}:
+
 \begin{center}
     \bf{Position difference $\Delta x$ measured by a \cul[blue]{co-moving observer} is always the longest,\\
     while \cul[red]{other observer} will measure a "shorter" time difference $\inv{\gamma} \Delta x$.}
 \end{center}
 
-\vskip 1em
+\vskip 1ex
 You should remember that although the length scale is changed, 
 it comes with a side effect: 
 \begin{itemize}
@@ -844,21 +1013,46 @@ it comes with a side effect:
 \end{itemize}
 
 We can visualize this effect using the Minkowski diagram:
-
-\insertFig{length contraction inverse}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{\blue{Co-moving} observer sees:}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \phantom{aaaaaaaaa}\ul{\red{Moving} observer sees:}
+    \end{minipage}
+\end{center}
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \includegraphics[height=10em]{length_C3}\\
+        \green{\scriptsize Positions of the 2 ends never change}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[height=13em]{length_C4}\\
+        \phantom{\scriptsize abc}
+    \end{minipage}
+\end{center}
 
 
 %%%%%%%%%%%%%%
 \subsection{Velocity Addition}
 
-Given 3 observers who are moving relative to each other:
-\begin{itemize}
-    \item B is moving at velocity $v$ relative to A
-    \item C is moving at velocity $u$ relative to B
-    \item C is moving at velocity $w$ relative to A 
-\end{itemize}
-
-\insertFig{relative v}
+Given 3 observers who are moving relative to each other:\\
+\begin{minipage}{0.5\linewidth}
+    \begin{itemize}
+        \item B is moving at velocity $v$ relative to A
+        \item C is moving at velocity $u$ relative to B
+        \item C is moving at velocity $w$ relative to A 
+    \end{itemize}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.4\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{relative_v}
+\end{minipage}
 
 What are the relations between $v$, $u$ and $w$?
 We can express the coordinate of C in terms of B's axes (ct', x'),
@@ -873,7 +1067,7 @@ and then transform it through $\mmat{\Lambda}_{-v}$ to what is observed by A:
         $\bmat{0\\0}$ &
         $\blue{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_{-v}}\bmat{0\\0}= \bmat{0\\0}$
         \\[4ex] \hline \vskip 1ex 
-        When A's clock shows $t'=T'$ & 
+        When B's clock shows $t'=T'$ & 
         $\bmat{ cT\\uT }$ &
         $\blue{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_{-v}}\bmat{cT\\uT} 
             = \bmat{\gamma_v cT+\gamma_v \frac{vu}{c}T \\ \gamma_v vT + \gamma_v uT}$
@@ -883,13 +1077,51 @@ and then transform it through $\mmat{\Lambda}_{-v}$ to what is observed by A:
 Since C is moving at velocity $w$ relative to A, 
 \aleq{
     w &= \frac{(\text{Change in position seen by A})}{(\text{Change in time seen by A})} \\[1ex]
-    &= \frac{\gamma_v vT + \gamma_v uT}{\gamma_v + \gamma_v \frac{vu}{c^2}T}\\[1ex]
+    &= \frac{\gamma_v vT + \gamma_v uT}{\gamma_vcT + \gamma_v \frac{vu}{c^2}T}\\[1ex]
     \Aboxed{
         w&= \frac{v+u}{1+\frac{vu}{c^2}}
     }
 }
 
 This is the relative velocity addition formula in relativity.
+\vskip 1em
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{Trajectory of C seen by \blue{A}}\\[1ex]
+        \includegraphics[height=10em]{v_add1}\\
+        Distance travel = $x_2-x_1$\\
+        Time spent = $t_2-t_1$
+    \end{minipage}
+     \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{Trajectory of C seen by \red{B}}\\[1ex]
+        \includegraphics[height=10em]{v_add2}\\
+        Distance travel = $x'_2-x'_1$\\
+        Time spent = $t'_2-t'_1$
+    \end{minipage}
+\end{center}
+\vskip 1em
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{Trajectory of \red{B} seen by \blue{A}}\\[1ex]
+        \includegraphics[height=10em]{v_add3}\\
+        Distance travel = $x''_2-x''_1$\\
+        Time spent = $t''_2-t''_1$
+    \end{minipage}
+    %\hspace{0.05\textwidth}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        In Minkowski diagram, \\
+        speed is calculated as $\frac{\Delta x}{\Delta t} = \frac{c}{\text{Slope}}$ of a line.\\
+        \vskip 1em
+        Geometrically, velocity addition formula\\
+        is the relation between the slopes\\ relative to different axes.  
+    \end{minipage}
+\end{center}
+
 
 \begin{notation}[Side note:]
     Alternatively, we can show the velocity addition formula 
@@ -951,8 +1183,6 @@ Recall the terminologies in wave:
     \item Wavelength $\lambda$ = Distance travelled of the pulse within 1 period of time.
 \end{itemize}
 
-\insertFig{wave pulse}
-
 For light, its travelling speed $c$ is a constant to all observers. 
 This makes $\lambda = cT$ and $\lambda'=cT'$. 
 With a table we can see
@@ -967,12 +1197,33 @@ Therefore the observed wavelength is
 }
 
 and period is
+\vskip -2em
 \aleq{
     T' &= \frac{\lambda'}{c}\\
-    &= \sqrt{\frac{1-\beta}{1+\beta}}\frac{lambda}{c}\\
-    &= \sqrt{\frac{1-\beta}{1+\beta}}\lambda
+    &= \sqrt{\frac{1-\beta}{1+\beta}}\frac{\lambda}{c}\\
+    &= \sqrt{\frac{1-\beta}{1+\beta}}T
 }
 
+\vskip 1em
+\begin{center}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{Trajectory of light seen by \blue{A}}\\[1ex]
+        \includegraphics[height=10em]{doppler1}\\
+        Distance travel = $x_2-x_1$\\
+        Time spent = $t_2-t_1$
+    \end{minipage}
+     \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\linewidth}
+        \centering
+        \ul{Trajectory of light seen by \red{B}}\\[1ex]
+        \includegraphics[height=10em]{doppler2}\\
+        Distance travel = $x'_2-x'_1$\\
+        Time spent = $t'_2-t'_1$
+    \end{minipage}
+\end{center}
+
+\vskip 1em
 %%%
 \theend
 \end{document}
