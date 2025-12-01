@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  28 NOV 2025 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  2 DEC 2025 01:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1117,12 +1117,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1174--1179
 <img/doppler1.png, id=164, 448.074pt x 351.11176pt>
 File: img/doppler1.png Graphic file (type png)
 <use img/doppler1.png>
-Package pdftex.def Info: img/doppler1.png  used on input line 1212.
+Package pdftex.def Info: img/doppler1.png  used on input line 1222.
 (pdftex.def)             Requested size: 149.94333pt x 117.49878pt.
 <img/doppler2.png, id=165, 437.2335pt x 402.303pt>
 File: img/doppler2.png Graphic file (type png)
 <use img/doppler2.png>
-Package pdftex.def Info: img/doppler2.png  used on input line 1220.
+Package pdftex.def Info: img/doppler2.png  used on input line 1230.
 (pdftex.def)             Requested size: 127.7018pt x 117.49878pt.
 
 
@@ -1137,13 +1137,13 @@ Package rerunfilecheck Info: File `SR_matrix.out' has not changed.
 Here is how much of TeX's memory you used:
  29930 strings out of 469747
  566965 string characters out of 5481688
- 970004 words of memory out of 5000000
+ 970003 words of memory out of 5000000
  57709 multiletter control sequences out of 15000+600000
  644911 words of font info for 108 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  125i,26n,159p,595b,889s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on SR_matrix.pdf (16 pages, 551223 bytes).
+Output written on SR_matrix.pdf (16 pages, 551713 bytes).
 PDF statistics:
  246 PDF objects out of 1000 (max. 8388607)
  171 compressed objects within 2 object streams

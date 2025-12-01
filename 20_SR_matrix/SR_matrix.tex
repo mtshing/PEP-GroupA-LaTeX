@@ -1001,7 +1001,7 @@ this effect is described as \bf{length contraction}:
 
 \begin{center}
     \bf{Position difference $\Delta x$ measured by a \cul[blue]{co-moving observer} is always the longest,\\
-    while \cul[red]{other observer} will measure a "shorter" time difference $\inv{\gamma} \Delta x$.}
+    while \cul[red]{other observer} will measure a "smaller" length difference $\inv{\gamma} \Delta x$.}
 \end{center}
 
 \vskip 1ex
@@ -1077,7 +1077,7 @@ and then transform it through $\mmat{\Lambda}_{-v}$ to what is observed by A:
 Since C is moving at velocity $w$ relative to A, 
 \aleq{
     w &= \frac{(\text{Change in position seen by A})}{(\text{Change in time seen by A})} \\[1ex]
-    &= \frac{\gamma_v vT + \gamma_v uT}{\gamma_vcT + \gamma_v \frac{vu}{c^2}T}\\[1ex]
+    &= \frac{\gamma_v vT + \gamma_v uT}{\gamma_vT + \gamma_v \frac{vu}{c^2}T}\\[1ex]
     \Aboxed{
         w&= \frac{v+u}{1+\frac{vu}{c^2}}
     }
@@ -1179,29 +1179,39 @@ you should use the classical Doppler effect formula.\\
 
 Recall the terminologies in wave:
 \begin{itemize}
-    \item Period $T$ = Time separation between each pulse emission.
-    \item Wavelength $\lambda$ = Distance travelled of the pulse within 1 period of time.
+    \item Period $T$ = Time separation ($\sim \Delta t$) between each pulse emission.
+    \item Wavelength $\lambda$ = Distance travelled ($\sim \Delta x$) of the pulse within 1 period of time.
 \end{itemize}
 
 For light, its travelling speed $c$ is a constant to all observers. 
 This makes $\lambda = cT$ and $\lambda'=cT'$. 
-With a table we can see
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.2\linewidth}|
+        >{\centering\arraybackslash}m{0.5\linewidth}}
+        & Light seen by \blue{A} & Light seen by \red{B}  \\ 
+        \hline \vskip 1ex 
+        When A's clock shows $t=0$ & 
+        $\bmat{0\\0}$ &
+        $\red{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_v}\bmat{0\\0}= \bmat{0\\0}$
+        \\[4ex] \hline \vskip 1ex 
+        When A's clock shows $t= T$ & 
+        $\bmat{ cT\\cT }$ &
+        $\red{\bmat{\gamma & -\gamma\beta \\ -\gamma\beta & \gamma}_v}\bmat{cT\\cT} 
+            = \cul[gray]{\cul[gray]{\bmat{cT' \\ cT'}}}$
+    \end{tabular}
+\end{center}
 
-% copy constant speed table
-
-Therefore the observed wavelength is 
+Therefore the observed period by B is 
 \aleq{
-    \lambda' &= \gamma (1-\beta)cT = \gamma (1-\beta)\lambda \\
-    &= \frac{1-\beta}{\sqrt{1-\beta^2}}\lambda \\
-    &= \sqrt{\frac{1-\beta}{1+\beta}}\lambda
+    cT' &= \gamma (1-\beta)cT \\
+    T' &= \frac{1-\beta}{\sqrt{1-\beta^2}}T \\
+    &= \sqrt{\frac{1-\beta}{1+\beta}}T
 }
 
-and period is
-\vskip -2em
+and so the observed wavelength is
 \aleq{
-    T' &= \frac{\lambda'}{c}\\
-    &= \sqrt{\frac{1-\beta}{1+\beta}}\frac{\lambda}{c}\\
-    &= \sqrt{\frac{1-\beta}{1+\beta}}T
+    \lambda' = cT' &= \sqrt{\frac{1-\beta}{1+\beta}}cT = \sqrt{\frac{1-\beta}{1+\beta}}\lambda
 }
 
 \vskip 1em
