@@ -493,7 +493,7 @@ it is recommended to apply these tricks:
     \aleq{
         \bcase{
             m_X &= \gamma_{v_Y'}m_Y + \gamma_{v_Z'}m_Z \\
-            \cul[green]{\cul[green]{0}} &= \gamma_{v_Y'}m_Yv_Y' + \gamma_{v_Z'}m_Zv_Z'
+            \cul[green]{\cul[green]{0}} &= -\gamma_{v_Y'}m_Yv_Y' + \gamma_{v_Z'}m_Zv_Z'
         }
     }
 
@@ -542,7 +542,7 @@ it is recommended to apply these tricks:
 The remainings shall be solved by brute force.
 From \gray{(2)}, 
 \aleq{
-    m_Y^2\gamma_{v_Y'}^2-mY^2 &= m_Z^2\gamma_{v_Z'}^2-m_Z^2 \\
+    m_Y^2\gamma_{v_Y'}^2-m_Y^2 &= m_Z^2\gamma_{v_Z'}^2-m_Z^2 \\
     m_Y^2 - m_Z^2 &= m_Y^2\gamma_{v_Y'}^2 - m_Z^2\gamma_{v_Z'}^2\\
     &= \cul[red]{(m_Y\gamma_{v_Y'} + m_Z\gamma_{v_Z'})}(m_Y\gamma_{v_Y'} - m_Z\gamma_{v_Z'}) \\[0.5ex]
     &= \tkn{from1}{\cul[red]{m_X}}(m_Y\gamma_{v_Y'} - m_Z\gamma_{v_Z'})\\
@@ -738,13 +738,13 @@ After the collision,
 The 4-momentum conservation then writes as
 \aleq{
     \vvec{P}_{\lambda,i}\ \ + \ \ \vvec{P}_{e,i}
-    \ \ &= \qquad\ 
-    \vvec{P}_{\lambda,f}\qquad + \qquad \vvec{P}_{e,f}\\[1ex]
+    \ \ &= \qquad
+    \vvec{P}_{\lambda,f}\quad\ \ + \ \qquad \vvec{P}_{e,f}\\[1ex]
     %
     \bmat{\frac{h}{\lambda_i} \\ \frac{h}{\lambda_i} \\ 0}
     + \bmat{mc \\ 0 \\ 0}
-    &= \bmat{\gamma_v mc \\ \gamma_v mv\cos\phi \\ \gamma_v mv\sin\phi}
-    + \bmat{\frac{h}{\lambda_f} \\ \frac{h}{\lambda_f}\cos\theta \\ -\frac{h}{\lambda_f}\sin\theta}
+    &= \bmat{\frac{h}{\lambda_f} \\ \frac{h}{\lambda_f}\cos\theta \\ -\frac{h}{\lambda_f}\sin\theta}
+    + \bmat{\gamma_v mc \\ \gamma_v mv\cos\phi \\ \gamma_v mv\sin\phi}
 }
 
 which is a system of 3 equations. 
