@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  19 JAN 2026 22:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  19 JAN 2026 22:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/mings/Documents/PhyO/latex_notes/13A_dielectric/dielectric.tex
-(d:/mings/Documents/PhyO/latex_notes/13A_dielectric/dielectric.tex
+**d:/mings/Documents/PhyO/latex_notes/13B_magnetic_mat/magnetic_mat.tex
+(d:/mings/Documents/PhyO/latex_notes/13B_magnetic_mat/magnetic_mat.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
@@ -63,7 +63,7 @@ Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
 \c@currfiledepth=\count286
 )
 \sa@out=\write3
- (./dielectric.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+ (./magnetic_mat.sta) (c:/texlive/2024/texmf-dist/tex/latex/gincltex/gincltex.sty (c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
 Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
 )
 Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
@@ -731,8 +731,8 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \c@lecnum=\count364
 \c@example=\count365
 \c@exercise=\count366
-)) (./dielectric.aux)
-\openout1 = `dielectric.aux'.
+)) (./magnetic_mat.aux)
+\openout1 = `magnetic_mat.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -752,8 +752,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
- (./dielectric.sta)
-\openout3 = `dielectric.sta'.
+ (./magnetic_mat.sta)
+\openout3 = `magnetic_mat.sta'.
 
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -785,9 +785,9 @@ LaTeX Info: Redefining \ohm on input line 14.
 Package gensymb Info: Using \textohm for \ohm on input line 14.
 Package gensymb Info: Using \textmu for \micro on input line 14.
 Package hyperref Info: Link coloring ON on input line 14.
- (./dielectric.out) (./dielectric.out)
+ (./magnetic_mat.out) (./magnetic_mat.out)
 \@outlinefile=\write5
-\openout5 = `dielectric.out'.
+\openout5 = `magnetic_mat.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -845,405 +845,364 @@ File: uesint.fd
 
 [2]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 145.
-
-
-
 [3]
 
 [4]
 
-[5]
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
-[6]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
-
-
-Overfull \hbox (5.97325pt too wide) in paragraph at lines 378--384
-[]$[]$[] \OT1/cmr/m/n/12 ap-pears as some charge den-sity dis-tributed []$[]$[]
- []
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 384.
-
-
-
-[7]
-Overfull \hbox (1.32819pt too wide) detected at line 420
+Overfull \hbox (43.4585pt too wide) detected at line 375
 []
  []
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 432.
+
+[5]
+
+[6]
+Overfull \vbox (0.80618pt too high) has occurred while \output is active []
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 432.
 
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 432.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 432.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 432.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 432.
-
-
+[7]
 
 [8]
 
 [9]
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 530.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 548.
+
+
+Overfull \hbox (1.32819pt too wide) detected at line 583
+[]
+ []
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 596.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 596.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 596.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 596.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 596.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 596.
+
+
+
 [10]
 
 [11]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 635.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\va' on input line 635.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 635.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 653.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 665.
-
-
 
 [12]
 
 [13]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 810.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\va' on input line 810.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 810.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 828.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 840.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 840--843
+
+ []
 
 
 
@@ -1253,27 +1212,76 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 773.
 
 [16]
 
-[17] (./dielectric.aux)
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+
+
+
+[17] (./magnetic_mat.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
-Package rerunfilecheck Info: File `dielectric.out' has not changed.
-(rerunfilecheck)             Checksum: 4082878ABFC7EE5F81D79BB5EA43BD6F;2920.
+Package rerunfilecheck Info: File `magnetic_mat.out' has not changed.
+(rerunfilecheck)             Checksum: 8406CD91E1CC709749A0150AAA37115E;3426.
  ) 
 Here is how much of TeX's memory you used:
- 30164 strings out of 469747
- 573756 string characters out of 5481688
- 980989 words of memory out of 5000000
- 57916 multiletter control sequences out of 15000+600000
+ 30435 strings out of 469747
+ 580513 string characters out of 5481688
+ 985021 words of memory out of 5000000
+ 58195 multiletter control sequences out of 15000+600000
  641043 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 125i,29n,159p,598b,1144s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on dielectric.pdf (17 pages, 269909 bytes).
+ 125i,27n,159p,602b,1108s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.480pk> <c:/Users/mings/.texlive2025/texmf-var/fonts/pk/ljfour/public/esint/esint10.720pk><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on magnetic_mat.pdf (17 pages, 278877 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

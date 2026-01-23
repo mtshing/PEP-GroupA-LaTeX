@@ -1,0 +1,987 @@
+\documentclass[class=article, crop=false, 12pt]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{../.common/common}
+
+
+\author{Tony Shing}
+%\pretitle{Supplementary}
+
+\topic{T13B (Electromagnetism)}
+\title{Magnetic Material \& Magnetization}
+
+\version{2025} % leave blank for omitting
+
+\begin{document}
+
+\maketitle
+
+
+\begin{overview}
+    \begin{itemize}
+        \item Model of magnetic dipole
+        \item How to describe dipole arrangement: Magnetization field, bound currents
+        \item Material under external $\vvec{B}$ field: 
+        \begin{itemize}
+            \item A special case of material model: \cul[red]{Linear magnetic material} 
+            \item Describe external field: Free currents, auxiliary field $\vvec{H}$
+        \end{itemize}
+    \end{itemize}
+    \begin{center}
+        \red{\bf{\ul{If linear magnetic material is all you need, you can skip most of the maths.}}}
+    \end{center}
+\end{overview}
+
+
+
+% content begins here
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Magnetic Dipole}
+
+%%%%%%%%%%%%%%
+\subsection{Magnetic Response in Materials}
+
+In modern theory, magnetic response in atoms is purely a quantum mechanical effect.
+But before quantum mechanics being turned into a complete mathematics theory,
+scientists had been explaining magnetic response with a few semi-classical theories.
+
+%%%%%%%%%%%%%%
+\subsubsection{Electron as Magnetic Source}
+
+In an atom, the majority of magnetic response comes from the electrons.
+An electron behaves as a magnetic dipole in 2 ways:
+\begin{itemize}
+    \item \bf{\ul{Orbital motion}} - Electron orbiting around the nucleus, 
+    equivalent to a tiny current loop.
+
+    \item \bf{\ul{Spin}} - Electron carries a fundamental quantum property called \bf{spin},
+    which determines how it interacts with B-field.     
+    It cannot be described fully by any classical picture.
+\end{itemize}
+
+\insertFig{orbital motion + spin}
+
+%Textbooks usually depict spin as a rotating charged sphere, although electron is a point particle.
+
+Magnetic response of an atom is the combined effect from both orbital motion and spin. 
+Depends on which effect dominates, 
+magnetic reponses can be classified into 2 types:
+\begin{itemize}
+    \item \bf{\ul{Diamagnetism}} - When orbital motion dominates. Exists on most non-metals.
+    \item \bf{\ul{Paramagnetism}} - When spin dominates. Exists on many metals, 
+    and some non-metals that contain chemical bonds with unpaired electrons.
+\end{itemize}
+
+In general, effects from spin is much stronger than that from orbital motion.
+However since chemical bonds are usually made of pairs of electrons with opposite spins (Pauli exclusion principle),
+such that the effect from spin cancels out, 
+making orbital motion the dominant effect.
+
+\insertFig{normal bond -> dia mat; unusual bond with unpair electron -> para mat}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Diamagnetism}
+
+In a diamagnetic material, 
+its chemical bonds do not contain any unpaired electrons 
+such that all effects from spin cancel. 
+
+(Pauli exclusion principle)
+
+ and the magnetic response is only due to orbital motion of electrons.
+
+
+although the effect from spin being much stronger.
+However when atoms form chemical bonds, 
+effects of spin can be cancelled due to paring of electrons .
+
+
+When an external B-field is applied, 
+\red{electron orbital motion reacts by weakening the external B-field}.
+This is equivalent to creating magnetic dipoles in the material that point opposite to the external B-field.
+
+\insertFig{original -> weaken = create opposite dipole}
+
+In the semi-classical theory of diamagnetism, 
+the orbital motion of electron is characterized by:
+\begin{itemize}
+    \item Electron (charge $-q$) orbits around a nucleus with charge $+Zq$ 
+    ($Z$ = atomic number).
+
+    \item Orbit of electron is a circle of \cul[red]{fixed} radius $r$. 
+    (Bohr model of atom)
+
+\end{itemize}
+
+Diamagnetism is due to the \cul[red]{decrease in orbital speed under external B-field}.
+
+\begin{enumerate}
+    \item By Coulomb's law, first calculate the electon's original orbital speed $v$:
+    \aleq{
+        \frac{m v^2}{r} = \inv{4\pi\epsilon_0}\frac{Zq^2}{r^2}
+        \qquad\Rightarrow\qquad
+        v = \sqrt{\frac{Zq^2}{4\pi\epsilon_0 m r}}
+    }
+
+    \item When an external B-field $\vvec{B}$ is applied perpendicular to the orbital plane, 
+    the moving electron experiences a magnetic force $\vvec{F} = (-q)\vvec{v}\cross\vvec{B}$.
+
+    \insertFig{magnetic force on orbiting electron}
+
+    So the electron's orbital speed is changed to a new value $v'$.
+    Newton's law writes:
+    \aleq{
+        \frac{m v'^2}{r} &= \inv{4\pi\epsilon_0}\frac{Zq^2}{r^2} - qv'B \\
+        \Rightarrow\quad
+        v' &= \frac{-qB \ \tkn{orbit1}{\cul[red]{+}}\ \sqrt{(qB)^2+4\qty(\frac{m}{r})\qty(\frac{Zq^2}{4\pi\epsilon_0 r^2})}}{2\qty(\frac{m}{r})}\\
+        &=\, \sqrt{\frac{Zq^2}{4\pi\epsilon_0 r^2} +\qty(\frac{qBr}{2m})^2} \tkm{orbit2}- \frac{qB r}{2m} \\
+        & <\, \sqrt{\frac{Zq^2}{4\pi\epsilon_0 m r}}
+    }
+    
+\end{enumerate}
+
+
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Paramagnetism}
+
+
+
+
+
+\begin{notation}[Side Note:]
+
+    Textbooks usually describe \bf{ferromagnetism} as the \nth{3} kind of magnetic response.
+    However its origin is very different from dia-/paramagnetism:
+    \begin{itemize}
+        \item Dia-/paramagnetism comes from individual atoms' response to B-field.
+        They can exist even if there is only one atom.
+
+        \item Ferromagnetism is due to the collective behavior of many atoms. 
+        It is actually a big topic in statistical mechanics.
+    \end{itemize}
+
+    On a ferromagnetic material, 
+    
+\end{notation}
+
+
+%%%%%%%%%%%%%%
+\subsection{Potential from Magnetic Dipole}
+
+This is the classical model of magnetic dipole.
+Same calculations can be found in many textbooks.
+
+\begin{itemize}
+    \item A circular loop of radius $R$, carrying current $I$.
+    \item We are only interested in the potential/field far away from the dipole, 
+    i.e. $\norm{\vvec{r}} \gg R$.
+    The position vector $\vvec{r}$ is referenced from the center of the dipole.
+\end{itemize}
+
+\insertFig{magnetic dipole model}
+
+The derivation of magnetic potential from a dipole is straightforward by Biot-Savart law,
+while applying Taylor approximation in the middle step. 
+
+\begin{enumerate}
+    \item The total potential contributions towards position $\vvec{r}$ by two current elements at opposite position on the loop is
+    \aleq{
+        \dd{\vvec{A}}(\vvec{r}) 
+        &= \frac{\mu_0}{4\pi} \qty( \frac{I\dd{\vvec{l}}_+}{\norm{\vvec{r}_+}} 
+            + \frac{I\dd{\vvec{l}}_-}{\norm{\vvec{r}_-}})\\[2ex]
+        &= \frac{\mu_0 I}{4\pi} \qty(\frac{\tkn{currSeg1}{R\dd{\theta}}}{\norm{\vvec{r}_+}}\tkn{currSeg3}{(\hhat{\theta})} 
+            + \frac{\tkn{currSeg2}{R\dd{\theta}} }{\norm{\vvec{r}_-}}\tkn{currSeg4}{(-\hhat{\theta})})\\[2ex]
+        &= \frac{\mu_0 IR\dd{\theta}}{4\pi} 
+            \qty(\frac{1}{\tkn{cosLaw1}{\cul[blue]{\sqrt{\norm{\vvec{r}}^2 + R^2 - 2\norm{\vvec{r}}R\cos\phi}}}}
+            - \frac{1}{\tkn{cosLaw2}{\cul[blue]{\sqrt{\norm{\vvec{r}}^2 + R^2 + 2\norm{\vvec{r}}R\cos\phi}}}}) \hhat{\theta}\\[2ex]
+            %
+        &= \frac{\mu_0 IR\dd{\theta}}{4\pi \norm{\vvec{r}}} 
+            \qty(\inv{\sqrt{1 + \frac{R^2}{\norm{\vvec{r}}^2} - \frac{2R}{\norm{\vvec{r}}}\cos\phi}}
+            - \inv{\sqrt{1 + \frac{R^2}{\norm{\vvec{r}}^2} + \frac{2R}{\norm{\vvec{r}}}\cos\phi}}) \hhat{\theta}
+    }
+    \addBentArrow[red]{currSeg1}{(20ex,2ex)}{}{(0,2ex)}
+    \addBentArrow[red]{currSeg2}{(5ex,2ex)}{\scriptsize By geometry, $\norm{\dd{\vvec{l}}} = R\dd{\theta}$}{(0,2ex)}{(8ex,-0.5ex)}
+    \addBentArrow[green]{currSeg3}{(20ex,-3ex)}{}{(0,-1ex)}
+    \addBentArrow[green]{currSeg4}{(5ex,-3ex)}{\scriptsize And they point in opposite direction}{(0,-1ex)}{(12ex,1ex)}
+    \addBentArrow[blue]{cosLaw1}{(7ex,-2ex)}{\scriptsize These are just cosine law}{(0,-1.5ex)}{(7.1ex,0.5ex)}
+    \addBentArrow[blue]{cosLaw2}{(-7ex,-2ex)}{}{(0,-1.5ex)}
+
+    \insertFig{show geometry, opposite current elements and position vectors}
+
+    \item Taylor expansion ``\cul[red]{$(1+x)^n \approx 1+nx$ for $x\ll 1$}" is always applied at this step. 
+    Because we are only interested in the potential far from the dipole, $\frac{R}{\norm{\vvec{r}}} \ll 1$, 
+    \begin{itemize}
+        \item $\frac{R^2}{\norm{\vvec{r}}^2}\ \approx 0$
+        \item $\inv{\sqrt{1 - \frac{R}{\norm{\vvec{r}}}\cos\phi}} 
+            = \qty(1 - 2\frac{R}{\norm{\vvec{r}}}\cos\phi)^{-\half}
+            \approx 1 + \frac{R}{\norm{\vvec{r}}}\cos\phi$ 
+    \end{itemize}
+
+    So the potential becomes
+    \aleq{
+        \dd{\vvec{A}}(\vvec{r}) &= \frac{\mu_0 IR\dd{\theta}}{4\pi \norm{\vvec{r}}}
+            \qty[\qty(1 + \frac{R}{\norm{\vvec{r}}}\cos\phi)
+            - \qty(1 - \frac{R}{\norm{\vvec{r}}}\cos\phi)] \hhat{\theta}\\[1ex]
+        &= \frac{\mu_0 IR\dd{\theta}}{4\pi \norm{\vvec{r}}}
+            \cdot 2\frac{R}{\norm{\vvec{r}}}\cos\phi \cdot \hhat{\theta}
+    }
+    
+    \item Before doing any integration, we first need to express every non-constant in terms of $\theta$: 
+    \begin{itemize}
+        \item Recall what we learnt about polar coordinate,
+        the angular unit vector $\hhat{\theta}_{\{r,\theta\}}$ is a function of angle $\theta$.
+        \aleq{
+            \hhat{\theta} = -(\sin\theta) \hhat{x} + (\cos\theta) \hhat{y}
+        }
+
+        \item $\phi$ is the angle between the target's position $\vvec{r}$ and position vector of $I\dd{\vvec{l}_+}$. 
+        Expressing them in x-y-z coordinate:
+        \begin{itemize}
+            \item Target's position: $\vvec{r} = x\hhat{x}+y\hhat{y}+z\hhat{z}$
+            \item Position vector of $I\dd{\vvec{l}_+}$: $\vvec{R} = (R\cos\theta) \hhat{x} + (R\sin\theta)\hhat{y}$ 
+        \end{itemize}
+        So that $\cos\phi$ can be calculated as their dot product:
+        \aleq{
+            \cos\phi = \frac{\vvec{r}\cdot\vvec{R}}{\norm{\vvec{r}}\norm{\vvec{R}}}
+            = \frac{x\cos\theta + y\sin\theta}{\norm{\vvec{r}}}
+        }
+    \end{itemize}
+    
+    \item Finally integrate over $\theta$ from $0$ to $\pi$ to find the total contribution of the loop.
+    \aleq{
+        \int \dd{\vvec{A}}(\vvec{r}) 
+        &= \int_0^{\pi} \frac{\mu_0 IR\dd{\theta}}{4\pi \norm{\vvec{r}}}
+            \cdot 2\frac{R}{\norm{\vvec{r}}}\cos\phi \cdot \hhat{\theta}\\[1ex]
+        &= \frac{\mu_0 IR^2}{2\pi \norm{\vvec{r}}^2} 
+            \int_0^{\pi} \qty(\frac{x\cos\theta + y\sin\theta}{\norm{\vvec{r}}})
+            \qty(-(\sin\theta) \hhat{x} + (\cos\theta) \hhat{y}) \dd{\theta}\\[1ex]
+        &= \frac{\mu_0 IR^2}{2\pi \norm{\vvec{r}}^3} 
+            \int_0^{\pi} (-x\hhat{x}+y\hhat{y})\cus[red]{\sin\theta\cos\theta}{\substack{\int_0^{\pi} \sin\theta\cos\theta\, \dd{\theta}\\ =\ 0}}
+            + (x\hhat{y})\cus[red]{\cos^2\theta}{\substack{\int_0^{\pi} \cos^2\theta\, \dd{\theta}\\ =\ \frac{\pi}{2}}} 
+            - (y\hhat{x})\cus[red]{\sin^2\theta}{\substack{\int_0^{\pi} \sin^2\theta\, \dd{\theta}\\ =\ \frac{\pi}{2}}}  \dd{\theta}\\
+        &= \frac{\mu_0 IR^2}{2\pi \norm{\vvec{r}}^3} \cdot\frac{\pi}{2}
+           \cdot \qty(x\hhat{y} - y\hhat{x})
+    }
+
+    It happens that the term in the bracket is the cross product of $\hhat{z}$ and $\vvec{r}$, since
+    \aleq{
+        \hhat{z}\cross\vvec{r}
+        =\bdet{
+            \hhat{x} & \hhat{y} & \hhat{z}\\0 & 0 & 1 \\ x & y & z
+        }
+        = -y\hhat{x} + x\hhat{y}
+    }
+
+    So that the potential becomes
+    \aleq{
+        \vvec{A}(\vvec{r}) 
+        &= \frac{\mu_0 IR^2}{4\norm{\vvec{r}}^2} \qty(\frac{x\hhat{y} - y\hhat{x}}{\norm{\vvec{r}}})\\[1ex]
+        &= \frac{\mu_0 IR^2}{4\norm{\vvec{r}}^2} \frac{\hhat{z}\cross\vvec{r}}{\norm{\vvec{r}}}\\[1ex]
+        &= \frac{\mu_0}{4\pi}\,\frac{I\pi R^2}{\norm{\vvec{r}}^2}\, (\hhat{z}\cross\vvec{r})
+    }
+
+    \item To emphasize that we now treat a magnetic dipole as ``one unit of source", 
+    We define the \bf{magnetic dipole moment} $\vvec{m}$,
+    \aleq{
+        \Aboxed{
+            \vvec{m}\ \defeq\ I\cdot\qty(\substack{\text{Loop's}\\\text{Area}})\cdot\qty(\substack{\text{Unit vector}\\\text{normal to loop}})
+        }
+    }
+
+    In our case of a loop in x-y plane, $\vvec{m} = I(\pi R^2) \hhat{z}$.
+    Finally we reach the standard formula of magnetic potential from a magnetic dipole:
+    \aleq{
+        \Aboxed{
+            \vvec{A}(\vvec{r}) = \frac{\mu_0}{4\pi}\,\frac{\vvec{m}\cross\hhat{r}}{\norm{\vvec{r}}^2}
+        }
+    }
+\end{enumerate}
+
+As a comparison with Biot-Savart law formula from current element,
+
+\aleq{
+    \dd{\vvec{A}}(\vvec{r}) = \frac{\mu_0}{4\pi}\frac{I\dd{\vvec{l}}}{\norm{\vvec{r}}}
+}
+
+\insertFig{V from point charge source}
+
+\begin{itemize}
+    \item $\vvec{A}$ is always along the same direction as the current element.
+    \item Dependance on distance is $\inv{r}$.
+\end{itemize}
+
+\aleq{
+    \vvec{A}(\vvec{r}) = \frac{\mu_0}{4\pi}\frac{\vvec{m}\cross\hhat{r}}{\norm{\vvec{r}}^2}
+}
+
+\insertFig{V from dipole source}
+
+\begin{itemize}
+    \item Magnitude of potential depends on the current's magnitude AND the angle (cross product) between $\vvec{m}$ and $\hhat{r}$.
+    \item Dependance on distance is $\inv{r^2}$.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{B-field from Magnetic Dipole}
+
+The standard derivation of B-field from dipole is through the relation $\vvec{B} = \curl \vvec{A}$.
+It is nothing more than some boring vector calculus.  
+Here I quote the final result:
+\aleq{
+    \Aboxed{
+        \vvec{B}(\vvec{r}) = \frac{\mu_0}{4\pi}\frac{3(\vvec{m}\cdot\hhat{r})\hhat{r}-\vvec{m}}{\norm{\vvec{r}}^3}
+    }
+}
+
+And this formula is rarely used because vector calculation is annoying. 
+
+\begin{notation}[The boring derivation:]
+    \begin{enumerate}
+        \item Derivation is possible with high school calculus if we turn all vectors into x-y-z form: 
+        $\vvec{r}= x\hhat{x} + y\hhat{y} + z\hhat{z}$, $\norm{\vvec{r}} = \sqrt{x^2 + y^2 + z^2}$
+        and $\vvec{m} = m_x \hhat{x} + m_y \hhat{y} + m_z \hhat{z}$:
+        \aleq{
+            \frac{\vvec{m}\cross\hhat{r}}{\norm{\vvec{r}}^2}
+            \, &=\, \frac{\vvec{m}}{\norm{\vvec{r}}^2}\cross\frac{\vvec{r}}{\norm{\vvec{r}}}
+            \, =\, \frac{1}{\norm{\vvec{r}}^3}(\vvec{m} \cross \vvec{r})
+            \, =\, \frac{1}{\norm{\vvec{r}}^3}\bdet{\hhat{x} & \hhat{y} & \hhat{z}\\m_x&m_y&m_z\\x&y&z} \\
+            \, &= \, \frac{1}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}[(m_yz-m_zy)\hhat{x} + (m_zx-m_xz)\hhat{y} + (m_xy - m_yx)\hhat{z}]
+        }
+
+        \item First the $x$ term in curl, $\qty(\pdvv{\bullet_z}{y}-\pdvv{\bullet_y}{z})\hhat{x}$, can be calculated by:
+        \addArrow[blue]{dipoleB1}{(-2ex,5.5ex)}{}{(0,2.2ex)}
+        \addArrow[blue]{dipoleB1}{(10ex,5.5ex)}{}{(1ex,2.2ex)}
+        \addArrow[blue]{dipoleB2}{(5.5ex,5.5ex)}{}{(2.5ex,2.2ex)}
+        \aleq{
+            \pdvv{\bullet_z}{y} &= \pdvv{y}\qty[\frac{(m_xy - m_yx)}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}] \\[1ex]
+            &= \frac{m_x (x^2 + y^2 + z^2)^{\frac{3}{2}} - (m_xy - m_yx)\cdot 3y (x^2 + y^2 + z^2)^{\half}}{(x^2 + y^2 + z^2)^3}\\[1ex]
+            &= \frac{m_x\norm{\vvec{r}}^2 - 3(m_xy - m_yx)y}{\norm{\vvec{r}}^{5}}\\[1ex]
+            %
+            \pdvv{\bullet_y}{z} &= \pdvv{z}\qty[\frac{(m_zx-m_xz)}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}] \\[1ex]
+            &= \frac{-m_x (x^2 + y^2 + z^2)^{\frac{3}{2}} - (m_zx - m_xz)\cdot 3z (x^2 + y^2 + z^2)^{\half}}{(x^2 + y^2 + z^2)^3}\\[1ex]
+            &= \frac{-m_x\norm{\vvec{r}}^2 - 3(m_zx - m_xz)z}{\norm{\vvec{r}}^{5}}\\[1ex]
+            %
+            \Rightarrow\ \qty(\pdvv{\bullet_z}{y}-\pdvv{\bullet_y}{z})\hhat{x}
+            &= \frac{2m_x\norm{\vvec{r}}^2 - 3(m_xy - m_yx)y + 3(m_zx - m_xz)z}{\norm{\vvec{r}}^{5}} \hhat{x}\\[1ex]
+            &= \frac{2m_x\norm{\vvec{r}}^2 - 3m_xy^2 + 3m_yxy + 3m_zxz - 3m_xz^2 \red{+3m_xx^2 -3m_xx^2}}{\norm{\vvec{r}}^{5}} \hhat{x}\\[1ex]
+            &= \frac{\cul[blue]{2m_x\norm{\vvec{r}}^2} - \cul[blue]{3m_x(x^2+y^2+z^2)} + 3m_xx^2 + 3m_yxy + 3m_zxz}{\norm{\vvec{r}}^{5}} \hhat{x}\\[1ex]
+            &= \frac{\tkn{dipoleB1}{-m_x\norm{\vvec{r}}^2} + 3\cul[blue]{(m_x x + m_y y + m_z z)}x}{\norm{\vvec{r}}^{5}} \hhat{x}\\[1ex]
+            &= \frac{-m_x\norm{\vvec{r}}^2 + 3\tkn{dipoleB2}{\cul[blue]{(\vvec{m}\cdot\vvec{r})}}x}{\norm{\vvec{r}}^{5}} \hhat{x}
+        }
+        
+    \end{enumerate}
+\end{notation}
+
+\begin{notation}[]
+    \begin{enumerate}
+
+        \item[3.] Similar for $y$ and $z$ terms:
+        \aleq{
+            \qty(\pdvv{\bullet_x}{z}-\pdvv{A_z}{x})\hhat{y} 
+            &= \frac{-m_y\norm{\vvec{r}}^2 + 3(\vvec{m}\cdot\vvec{r})y}{\norm{\vvec{r}}^{5}} \hhat{y}\\
+            %
+            \qty(\pdvv{\bullet_y}{x}-\pdvv{A_x}{y})\hhat{z} 
+            &= \frac{-m_z\norm{\vvec{r}}^2 + 3(\vvec{m}\cdot\vvec{r})z}{\norm{\vvec{r}}^{5}} \hhat{z}
+        }
+
+        \item[4.] Summing all 3 components gives:
+        \addArrow[blue]{dipoleB3}{(5ex,5.5ex)}{}{(0.7ex,2ex)}
+        \addArrow[blue]{dipoleB4}{(30ex,6ex)}{}{(1ex,1.5ex)}
+        \addBentArrow[red]{dipoleB5}{(7ex,1.5ex)}{\scriptsize Take out magnitude to become unit vector}{(0,2ex)}{(14ex,-0.4ex)}
+        \aleq{
+            \curl \vvec{A}(\vvec{r}) &= \curlRec{A_x}[A_y][A_z] \\[1ex]
+            &= \frac{\mu_0}{4\pi}\,\frac{3(\vvec{m}\cdot\vvec{r})\cul[blue]{(x\hhat{x} + y\hhat{y} + z\hhat{z})}
+                -\cul[blue]{(m_x\hhat{x} + m_y\hhat{y} + m_z\hhat{z})}\norm{\vvec{r}}^2}{\norm{\vvec{r}}^{5}} \\[1ex]
+            &= \frac{\mu_0}{4\pi}\,\frac{3(\vvec{m}\cdot\vvec{r})\tkn{dipoleB3}{\cul[blue]{\vvec{r}}} 
+                - \tkn{dipoleB4}{\cul[blue]{\vvec{m}}}\norm{\vvec{r}}^2}{\norm{\vvec{r}}^5}\\[1.2ex]
+            &= \frac{\mu_0}{4\pi} \frac{3(\vvec{m}\cdot\red{\hhat{r}})\tkm{dipoleB5}\red{\hhat{r}} \, \red{\norm{\vvec{r}}^2} - \vvec{m}\norm{\vvec{r}}^2}{\norm{\vvec{r}}^5}\\
+            \Aboxed{
+                \vvec{B}(\vvec{r}) &= \frac{\mu_0}{4\pi}\frac{3(\vvec{m}\cdot\hhat{r})\hhat{r}-\vvec{m}}{\norm{\vvec{r}}^3}
+            }
+        }
+    \end{enumerate}
+        
+\end{notation}
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Describing Dipole Arrangement}
+
+In general, all materials are made of many tiny magnetic dipoles.
+To analyze the material's magnetic properties, 
+we can begin with the property of a single dipole,
+then sum the contributions of all dipoles according to the dipole arrangement in the material.
+\aleq{
+    \cub[blue]{\vvec{A}(\vvec{r}) = \frac{\mu_0}{4\pi} \frac{\vvec{m}_i }{\norm{\vvec{r}}^2} \cross \qty(\frac{\vvec{r}}{\norm{\vvec{r}}})}
+        {\text{By a single dipole from origin}}
+    \qquad\Rightarrow\qquad
+    \cub[red]{\vvec{A}(\vvec{r}) = \frac{\mu_0}{4\pi} \sum_{\substack{\text{All dipoles } i}} 
+        \frac{\vvec{m}_i }{\norm{\vvec{r}-\vvec{r}_i}^2} \cross \qty(\frac{\vvec{r}-\vvec{r}_i}{\norm{\vvec{r}-\vvec{r}_i}})}
+        {\text{By many dipoles at different positions }\vvec{r}_i}
+}
+
+
+\insertFig{single dipole point to r vs many dipoles at different ri to r}
+
+Here we introduce two quantities that describe magnetic dipole arrangements in materials.
+\begin{itemize}
+    \item \bf{Magnetization field} - $\vvec{M}(\vvec{r})$
+    \item \bf{Bound current distributions} - $\vvec{J}_b(\vvec{r})$ and $\vvec{K}_b(\vvec{r})$
+\end{itemize} 
+
+
+%%%%%%%%%%%%%%
+\subsection{Magnetization Field}
+
+When the dipoles in the material are so dense such that we can treat them as a continuous distribution,
+we can replace 
+\begin{itemize}
+    \item Summmation of all dipoles \ $\xRightarrow{\text{become}}$\  Volume integral over the whole object.
+    \item Discrete dipoles source \ $\xRightarrow{\text{become}}$\ A vector distribution called \bf{magnetization field} $\vvec{M}(\vvec{r})$.
+\end{itemize}
+\aleq{
+    \Aboxed{
+        \vvec{A}(\vvec{r}) = \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+        \frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}^2} \cross \qty(\frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}}) \dd[3]{\vvec{r}'}
+    }
+}
+
+\insertFig{dispole arrangement is similar to some vector field in the object}
+
+The magnetization field $\vvec{M}(\vvec{r})$ can also be interpreted as \bf{magnetic dipole density} 
+because its usage is similar to charge density $\vvec{J}(\vvec{r})$. 
+Comparing with the Biot-Savart law for magnetic potential:
+\begin{itemize}
+    \item When the source is made of current elements:
+    \aleq{
+        \vvec{A}(\red{\vvec{r}}) = \frac{\mu_0}{4\pi}{\iiint}
+            \frac{\vvec{J}(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}} \dd[3]{\blue{\vvec{r}'}}
+        %
+        \quad\sim\quad \frac{\mu_0}{4\pi} \sum \frac{(\text{current density})}{(\text{distance})}
+    }
+
+    \item When the source is made of dipoles:
+    \aleq{
+        \vvec{A}(\red{\vvec{r}}) = \frac{\mu_0}{4\pi}{\iiint}
+            \frac{\vvec{M}(\blue{\vvec{r}'})}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}^2} \cross \qty(\frac{\red{\vvec{r}}-\blue{\vvec{r}'}}{\norm{\red{\vvec{r}}-\blue{\vvec{r}'}}})\dd[3]{\blue{\vvec{r}'}}
+        %
+        \quad\sim\quad \frac{\mu_0}{4\pi} \sum \frac{(\text{dipole density})}{(\text{distance})^2}\cross \qty(\substack{\text{unit}\\\text{vector}})
+    }
+\end{itemize}
+
+\insertFig{charge density vs dipole density in the same material}
+
+
+%%%%%%%%%%%%%%
+\subsection{Bound Current Distribution}
+
+Ultimately, magnetic dipoles are just loops of currents.
+If the dipoles are aligned non-uniformly in a material,
+some regions may appear to have a higher flow of current in one direction than the other way.
+
+\insertFig{dipole loops non uniform}
+
+These regions with extra current flow are described as \bf{bound current} distribution in the material -
+they are always ``bounded" to regions where the current flow is not cancelled.
+So bound current distribution can be used to describe magnetic dipole arrangement in the material.
+
+%%%%%%%%%%%%%%
+\subsubsection{Mathematical Origin}
+
+With vector calculus, 
+the potential formula can be rewritten into a ``current densities form".
+\aleq{
+    \vvec{A}(\vvec{r}) &= \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+        \frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}^2} \cross \qty(\frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}}) \dd[3]{\vvec{r}'}\\[1ex]
+    %
+    &= (\cdots \text{ \it{After more boring vector calculus} } \cdots)\\[1ex]
+    %
+    &= \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+        \frac{\curl \vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}
+        + \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Surface}\\\text{of material}}}}{\oiint}
+        \frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \cross \dd[2]{\vvec{r}'}
+}
+
+By comparing with the Biot-Savart law for electric potential 
+$\vvec{A}\sim \frac{\mu_0}{4\pi} \sum \frac{(\text{current density})}{(\text{distance})}$,
+we identify the 2 source terms as the \bf{bound current densities}:
+\begin{itemize}
+    \item \bf{\ul{The \nth{1} term:}} \quad
+    \aleq{
+        \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+            \frac{\curl \vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}
+        \quad\sim\quad
+        \frac{\mu_0}{4\pi} \sum_{\substack{\text{Inside}\\\text{material}}} \frac{(\curl \vvec{M})}{(\text{distance})}
+    }
+
+    \cul[red]{$\curl \vvec{M}$} appears as some current density distributed \cul[red]{inside} the material.
+    Therefore it is defined as the \bf{volume bound current density} $\vvec{J}_b$.
+    \aleq{
+        \Aboxed{
+            \vvec{J}_b(\vvec{r}) \ \defeq\ \curl \vvec{M}(\vvec{r})
+        }
+    }
+
+    \vskip 1ex
+    \item \bf{\ul{The \nth{2} term:}} \quad
+    \aleq{    
+        \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Surface}\\\text{of material}}}}{\oiint}
+        \frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \cross \dd[2]{\vvec{r}'}
+        \quad\sim\quad
+        \frac{\mu_0}{4\pi} \sum_{\substack{\text{On material}\\\text{surface}}} \frac{(\text{Surface cross product of }\vvec{M})}{(\text{distance})}
+    }
+
+    The \cul[red]{surface cross product of $\vvec{M}$} means that we are taking cross product between $\vvec{M}$ and normal vector of the surface.
+    It appears as some current density distributed \cul[red]{on the surface} of the material. 
+    So it is defined as the \bf{surface bound current density} $\vvec{K}_b$.
+    \aleq{
+        \Aboxed{
+            \vvec{K}_b(\vvec{r}) \ \defeq\ \vvec{M}(\vvec{r})\cross \hhat{n}
+        }
+    }
+    where $\hhat{n}$ is the (outward) unit normal vector on the material surface.
+
+\end{itemize}
+
+
+Finally, the expression of the ``current densities" form is nothing more than saying that
+the magnetic potential from a material is the result of the two kinds of current distributions.
+\aleq{
+    \vvec{A}(\vvec{r})
+    &= \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+        \frac{\red{\vvec{J}_b(\vvec{r}')}}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}
+        \ +\ \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Surface}\\\text{of material}}}}{\oiint}
+        \frac{\red{\vvec{K}_b(\vvec{r}')}}{\norm{\vvec{r}-\vvec{r}'}} \dd[2]{\vvec{r}'}\\[1ex]
+        %
+    &= \ \ \,\qty(\mstack{\text{Contribution}\\\text{by currents inside}\\\text{the material}})
+        \ \ +\ \  \qty(\mstack{\text{Contribution}\\\text{by currents on}\\\text{material's surface}})
+}
+
+\begin{notation}[The boring derivation:]
+    \begin{enumerate}
+        \item Deriving the ``current densities form" begins with a vector calculus identity:
+        \addArrow[blue]{potential1}{(-20ex,-4ex)}{\scriptsize Note: Differentiation\\[-1ex]\scriptsize is w.r.t. $x',y',z'$}
+        {(0,-1ex)}{(3ex,-1ex)}
+        \addBentArrow[blue]{potential2}{(5ex,2ex)}{\scriptsize This part is just a unit vector}
+        {(0,4ex)}{(9.5ex,-0.7ex)}
+        \vskip -3em
+        \aleq{
+            \grad \qty(\inv{\norm{\vvec{r}-\vvec{r}'}}) 
+            &= \qty(\hhat{x}\pdvv{\tkm{potential1}\cul[blue]{x'}}+\hhat{y}\pdvv{\cul[blue]{y'}}+\hhat{z}\pdvv{\cul[blue]{z'}}) 
+                \qty(\inv{\sqrt{(x - x')^2 + (y - y')^2 + (z - z')^2}})\\[0.5ex]
+            &= \frac{\hhat{x}(x-x')+\hhat{y}(y-y')+\hhat{z}(z-z')}{\qty[(x - x')^2 + (y - y')^2 + (z - z')^2]^{\frac{3}{2}}}\\[0.5ex]
+            &= \frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}^3}\\
+            &= \inv{\norm{\vvec{r}-\vvec{r}'}^2}\,\tkn{potential2}{\cul[blue]{\qty(\frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}})}}
+            \qquad\quad \red{\qty(\substack{\text{This is basically }\dv{r'}\qty(\inv{r-r'}) = \inv{(r-r')^2}\\ \text{ but in vector version}})}
+        }
+
+        \item So the potential formula can be rewritten as:
+        \aleq{
+            \vvec{A}(\vvec{r})
+            &= \frac{\mu_0}{4\pi} {\iiint}
+            \frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}^2} \cross \qty(\frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}}) \dd[3]{\vvec{r}'} \\[1ex]
+            &= \frac{\mu_0}{4\pi} {\iiint}
+                \cus[blue]{\vvec{M}(\vvec{r}') \cross \grad \qty(\inv{\norm{\vvec{r}-\vvec{r}'}})}
+                {\scriptsize \vvec{G}\,\cross\,\grad f \ \ (\text{Note the order of }f\text{ and }\vvec{G})} \dd[3]{\vvec{r}'}\\[0.5ex]
+            &= \frac{\mu_0}{4\pi} {\iiint}
+                \cus[blue]{-\curl \qty(\frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}})}{\scriptsize -\curl(f\vvec{G})} 
+                + \cus[blue]{\frac{\curl \vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}}}{\scriptsize f\curl \vvec{G}} \dd[3]{\vvec{r}'}
+        }
+        \vskip -1em
+        Here we used the product rule of curl \fbox{$\curl{(f\vvec{G})} = f\curl\vvec{G} + (\grad f)\cross\vvec{G}$}, 
+        where $f$ is a scalar function (like $\inv{\norm{\vvec{r}-\vvec{r}'}}$) and $\vvec{G}$ is a vector function (like $\vvec{M}$).
+
+        \item Finally use the ``divergence theorem for curl" to convert the \nth{1} term's volume integral into a surface integral over the volume's surface:
+        \addArrow[blue]{potential3}{(1ex,5.5ex)}{\scriptsize Divergence theorem for curl}
+        {(0,2.5ex)}{(-11ex,-2.5ex)}
+        \aleq{
+            \vvec{A}(\vvec{r})
+            &= \frac{\mu_0}{4\pi} \cul[blue]{{\iiint}
+                \curl \qty(\frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}}) \dd[3]{\vvec{r}'}}
+                \ +\  \frac{\mu_0}{4\pi} {\iiint}\frac{\curl \vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}\\[2.5ex]
+            &= \frac{\mu_0}{4\pi} \cul[blue]{{\oiint}\,
+                \frac{\vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \tkn{potential3}{\cross} \dd[2]{\vvec{r}'}}
+                \ +\  \frac{\mu_0}{4\pi} {\iiint}\frac{\curl \vvec{M}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}\\[1.5ex]
+            &=\ \qty(\mstack{\text{Contribution}\\\text{from material's}\\\text{surface}})
+                \ \ +\ \  \qty(\mstack{\text{Contribution}\\\text{from inside}\\\text{the material}})
+        }
+
+    \end{enumerate}
+    Remind that we are integrating regions where dipoles exist. 
+    So this volume integral corresponds to the whole material and surface integral corresponds to only the surface of the material.
+
+    
+    
+\end{notation}
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Visualization}
+
+The bound current densities are related to $\vvec{M}$ pretty much like normal current density are related to $\vvec{B}$ in Ampere's law.
+
+\begin{itemize}
+    \item \bf{\ul{Volume bound current}}: 
+    By drawing an Ampere's loop and check how many dipoles are pointing in the same direction as we travel along the loop,
+    \aleq{
+        \Aboxed{
+            \mstack{\text{More dipole}\\\text{align with the circle} }
+            \qquad\Leftrightarrow\qquad 
+            \mstack{\text{Stronger current}\\\text{at the center}}
+        }
+    }
+    
+    \insertFig{dipole 's current in toroid shape}
+
+    Recall that we can use sign of dot product line integral to identify positions with vector field in rotation pattern,
+    and curl operator $\curl$ is equivalent to finding dot product line integral per area. 
+    \aleq{
+        \qty(\mstack{\text{Bound current}\\\text{volume density}}) 
+        \ \sim\ \vvec{J}_b = \curl \vvec{M} \ \sim\  
+        \qty(\mstack{\text{\# of dipoles per area}\\\text{around a rotation center}} )
+    }
+
+    \vskip 2ex
+    \item \bf{\ul{Surface bound current}}:
+    On the material surface, we can see that
+    \aleq{
+        \Aboxed{
+            \mstack{\text{More dipole}\\\text{align in the same direction} }
+            \qquad\Leftrightarrow\qquad 
+            \mstack{\text{More current flow}\\\text{on the material surface}}
+        }
+    }
+    \insertFig{surface out of paper dipole form current to left}
+
+    As we have defined the normal vector $\hhat{n}$ of the material surface to be pointing outward, 
+    the direction of current is exacly along $\vvec{M}\cross\hhat{n}$.
+    \aleq{
+        \qty(\mstack{\text{Bound current}\\\text{surface density}}) 
+        \ \sim\ \vvec{K}_b = \vvec{M}\cross \hhat{n} \ \sim\  
+        \qty(\mstack{\text{Same direction dipole}\\\text{per surface area}} )
+    }
+
+\end{itemize}
+
+\begin{notation}[Side note:]
+    For \cul[red]{paramagnetic and diamagnetic materials},  
+    we almost never observe their $\vvec{M}$ field or bound current because 
+    \begin{itemize}
+        \item Magnitude of a dipole is too small.
+        Typical magnetic dipole moment are of order $10^{-24}$ A$\cdot$m$^2$.
+
+        \item The dipoles are usually randomly arranged, 
+        or in patterns such that their effects cancel out.
+        Especially when the material is large.
+    \end{itemize}
+
+    Their \red{magnetization effect is neligible unless it is placed under an external B-field},
+    which forces its dipoles to align and change their dipole moment's magnitude.
+
+    \insertFig{para, dia vs ferro}
+
+    But we see magnetization in ferromagnetic material because their dipoles are uniformly aligned at room temperature,
+    making the material behaves like a giant dipole.
+\end{notation}
+
+
+
+\linesep
+% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Material under External B-field}
+
+Now we study what will happen when a material is magnetized by an external B-field:
+\begin{enumerate}
+    \item External B-field acts on material, 
+    aligns the dipoles and changes their dipole moments.
+    
+    \item New dipoles alignment create a new B-field, which also affects surrounding dipoles.
+    
+    \item Alignment continues, until it reaches an equilibrium between external field and interactions between dipoles.
+    
+\end{enumerate}
+
+Theoretically, how the dipoles reponse to the external B-field is a complicated process 
+when all the bondings and interactions are involved - it highly depends on the material's structure.
+So the final dipole alignment might not always align with the external B-field! 
+
+\insertFig{random spherical dipole + regular external B-field = irregular align ellipse dipole}
+
+In a general theory about material's B-field response, 
+one may treat the magnetization field $\vvec{M}$ (i.e. new dipole alignment) as some function to the total B-field $\vec{B}_\text{total}$,
+\aleq{
+    \vvec{M} \ =\ f(\vvec{B}_\text{total}) 
+    \ \sim\  \cub[blue]{\vvec{a}^{(1)}_iB_i + \vvec{a}^{(2)}_{ij}B_iB_j + \vvec{a}^{(3)}_{ijk}B_iB_jB_k + \cdots}{\text{\scriptsize Like a Taylor expansion}}
+}
+
+This $f$ function \cul[red]{denotes a theoretical model that we have choosen} to investigate the material.
+And the \cul[red]{model parameters $\vvec{a}^{(1)}, \vvec{a}^{(2)}, \vvec{a}^{(3)}$... shall be determined from experiment}.
+
+%%%%%%%%%%%%%%
+\subsection{Special Case: Linear Magnetic Material}
+
+Linear magnetic material is the simplest model of B-field response - where the dipoles are completely free to rotate,
+such that new dipole alignment is directly proportional to the external B-field's magnitude and direction.
+\cul[red]{This assumption is applicable to most daily life materials}.
+
+\insertFig{dipoles uniform under external B-field}
+
+The linear model only has 1 parameter to be determined from experiments -  
+the proportionality constant between $\vvec{M}$ and $\vvec{B}_\text{total}$.
+\aleq{
+    \vvec{M} = \qty(\substack{\text{Some}\\\text{constant}}) \cdot \vvec{B}_\text{total}
+}
+
+Unlike using $\vvec{P}$ v.s. $\vvec{E}$ in linear dielectric model, 
+linear magnetization model is almost always written by $\vvec{M}$ v.s. a new kind of field $\vvec{H}$.
+We shall explain what $\vvec{H}$ right after.
+\aleq{
+    \Aboxed{
+        \vvec{M} = \chi_m \vvec{H}
+    }
+}
+
+Here the $\chi_m$ is called \bf{magnetic susceptibility},
+a pure number (no unit) whose value depends on the type of material.
+\begin{itemize}
+    \item $\chi_m = 0$ for vacuum (by defintion), because there are no dipoles in a vacuum.
+    \item $\chi_m<0$ for diamagnetism, 
+    since their dipoles are opposite to the B-field's direction.
+    \item $\chi_m>0$ for paramagnetism, 
+    since their dipoles follow the B-field's direction.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Describing External Field}
+
+The total B-field is a result of the external B-field plus the field induced by dipole alignment.
+After we have chosen the model about dipole alignment,
+now we look at the external B-field.
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Free Current Distribution}
+
+In order to create an external B-field around the material, 
+we need a ``setup" to build an external source of currents. 
+For example, apply current through a long solenoid:
+
+\insertFig{free charge vs bound charge in dielectric setup}
+
+The currents that flow in the setup are given the name \bf{free charges},
+to distinguish from the bound currents (dipole alignment) in the material. 
+The are "free" because we can always control them by varying the setup,
+making them known quantities in calculation.
+
+\insertFig{adjust solenoid current -> adjust free current amount}
+
+\aleq{
+    \mu_0 n I_\text{free} = \norm{\vvec{B}}
+}
+
+For calculation, free current densities are denoted like bound currents:
+
+\begin{itemize}
+    \item \bf{\ul{Volume free current density}} $\vvec{J}_f(\vvec{r})$ - 
+    Current distribution \cul[red]{inside} the setup.
+
+    \item \bf{\ul{Surface free charge density}} $\vvec{K}_f(\vvec{r})$ - 
+    Current \cul[red]{on any surfaces} of the setup.
+\end{itemize}
+
+\vskip 1ex
+In real practices, solenoid or a large U-shape electromagnet are the most common setup to create external B-field.
+The B-field can be directly control by controlling current.
+So line or surface free current are mostly all you need. No reason to make things complicated.
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Auxiliary Field $\vvec{H}$}
+
+Previously, we have relate bound currents to a vector field quantity - the magnetization field $\vvec{M}$.
+Similarly, free current can be related with another vector field.
+From Ampere's law, 
+\aleq{
+    \inv{\mu_0}\curl \vvec{B}_\text{total}\ 
+    &=\ \ \ \,\vvec{J}_\text{total}\ \ = \ \qty(\mstack{\text{All}\\\text{currents}})\\[0.5ex]
+    &=\ \vvec{J}_f + \vvec{J}_b \ = \ \qty(\mstack{\text{Free currents}\\\text{on setup}}) + \qty(\mstack{\text{Bound currents}\\\text{on material}})\\[0.5ex]
+    &=\ \vvec{J}_f + \curl \vvec{M}\\[0.5ex]
+    \curl \qty(\inv{\mu_0}\vvec{B} - \vvec{M})\ &=\ \vvec{J}_f
+}
+
+Here we define the \bf{Auxiliary field} $\vvec{H}$:
+\aleq{
+    \Acboxed[red]{
+        \vvec{H} \ \defeq\ \frac{1}{\mu_0} \vvec{B} - \vvec{M}\tkm{H_field}
+    }
+}
+\addArrow[red]{H_field}{(5ex,0)}{\scriptsize This relation connects\\[-1ex]\scriptsize all 3 field quantities}{(2ex,0.7ex)}{(7ex,0)}
+
+\vskip -1em
+Such that it is related to the free charge density by:
+\aleq{
+    \Aboxed{
+        \bcase{
+            \vvec{J}_f(\vvec{r}) \ &\defeq\ \curl \vvec{H}(\vvec{r}) \\[0.5ex]
+            \vvec{K}_f(\vvec{r}) \ &\defeq\ \vvec{H}(\vvec{r})\cross \hhat{n}
+        }
+    }
+}
+where $\hhat{n}$ is the (outward) unit normal vector on the equipment surface.
+Cross product with it shows the direction of the surface current relative to the $\vvec{H}$ field.\\
+
+Notice the relations of $\vvec{H}$ with free currents are almost identical to $\vvec{B}$ with total currents in Ampere's law.
+\red{In the special case of linear magnetic material}, 
+we can solve for $\vvec{H}$ from the given free currents like the Ampere's law integral form or with Biot-Savart law.
+\aleq{
+    I_f &= \oint \vvec{H}(\vvec{r})\cdot \dd{\vvec{l}}\\[1ex]
+    &= \oint \tkn{ampere_dot}{\cul[green]{\norm{\vvec{H}}\norm{\dd{\vvec{l}}}\cos\theta}}\\[1ex]
+    &= \tkn{ampere_B}{\cul[red]{\norm{\vvec{H}}}}\ \tkn{ampere_theta}{\cul[blue]{\cos\theta}}\ \oint \norm{\dd{\vvec{l}}}\\[2em]
+    &= \norm{\vvec{H}}\ \cos\theta\ (\text{Perimeter of loop})\\[2ex]
+    \Aboxed{
+        \norm{\vvec{H}} &= \frac{I_f}{(\text{Perimeter of loop})\cos\theta}
+    }
+}
+\addArrow[green]{ampere_dot}{(5ex,0)}
+{\scriptsize Just dot product\\[-1ex]\scriptsize $\vvec{a}\cdot\vvec{b}=\norm{\vvec{a}}\norm{\vvec{b}}\cos\theta$}
+{(8ex,0)}{(6ex,0)}
+\addBentArrow[red]{ampere_B}{(-8ex,-3.5ex)}
+{\scriptsize Same magnitude everywhere\\[-1ex]\scriptsize Can move out of integral}
+{(0,-1.5ex)}{(-8.5ex,1ex)}
+\addBentArrow[blue]{ampere_theta}{(8ex,-3.5ex)}
+{\scriptsize Form same angle everywhere\\[-1ex]\scriptsize Can move out of integral}
+{(0,-1.5ex)}{(8.5ex,1ex)}
+
+But note that \red{this can be wrong for other models of magnetic material}.
+
+
+\begin{notation}[Side Note:]
+    Although $\vvec{H}$ forms a PDE relationship to free current just like $\vvec{B}_\text{total}$ with total current,
+    we cannot solve for $\vvec{H}$ exactly by free current if we don't know the material's model. 
+    This is because:
+    \begin{itemize}
+        \item $\vvec{B}_\text{total}$ is guarenteed to be ``divergent-less",
+        such that we can define a vector potential function $\vvec{A}$ and solve for $\vvec{B}_\text{total}$ uniquely.
+
+        \item $\vvec{M}$ may not be ``divergent-less" since the dipole arrangement can be arbituary, 
+        e.g. if they arrange into some vortex-like pattern.
+        Then by $\vvec{H} = \frac{1}{\mu_0}\vvec{B}_\text{total} - \vvec{M}$,
+        there is no guarenteed that $\vvec{H}$ is ``divergent-less" either.
+    \end{itemize} 
+
+    \insertFig{vortex dipole arrangement -> M field not curl 0}
+  
+    But in the \cul[red]{special case of linear magnetic material},
+    \aleq{
+        \cbox{\mstack{\vvec{M} \text{ aligns}\\[0.2ex]\text{with }\vvec{B}_\text{total}}}
+        \quad\Rightarrow\quad
+        \cbox{\mstack{\vvec{M} \text{ is}\\[1ex]\text{``divergent-less"}}}
+        \quad\Rightarrow\quad
+        \cbox{\mstack{\vvec{H} = \frac{1}{\mu_0}\vvec{B}_\text{total} - \vvec{M}\\[0.5ex]\text{is also ``divergent-less"}}}
+    }
+
+    So it is fine to solve for $\vvec{H}$ like normal Ampere's law problems for linear magnetic material.
+
+    
+\end{notation}
+
+
+%%%%%%%%%%%%%%
+\subsection{Measurement in Practice}
+
+In problems that involve magnetic material, 
+\begin{itemize}
+    \item The material's magnetization (dipole alignment) is the cause of all troubles.
+    But usually we are only told which material model we need to apply. 
+    \it{(E.g. Given a linear magnetic material ...)}
+
+    \item Actual calculation requires measurements from equipment setup. 
+    In magnetostatic experiments, usually the control/measure-able parameters are
+    \begin{itemize}
+        \item \ul{Applied current} - Directly connect with a power source. All you need is an ammeter.
+        \item \ul{Total B-field} - Can be measured through magnetic force.
+    \end{itemize}
+\end{itemize}
+
+\insertFig{control set up with voltage or free charge procedure}
+
+
+Then once we have chosen a model of the material, we can connect the two measurables by:
+\aleq{
+    \vvec{H} = \inv{\mu_0}\vvec{B}_\text{total} - f(\vvec{B}_\text{total})
+}
+
+Then the model parameters in $f(\cdots)$ can be determined by experiments. 
+But in the special case of linear magnetic material, 
+since there is only 1 constant parameter $\chi_m$ for each material, 
+\aleq{
+    \vvec{H} &= \inv{\mu_0}\vvec{B}_\text{total} - \chi_m\vvec{H}\\
+    (1+\chi_m)\vec{H} &= \inv{\mu_0}  \vvec{B}_\text{total}\\
+    \vvec{H} &= \inv{\mu_0(1+\chi_m)}  \vvec{B}_\text{total}\\
+    &= \inv{(\text{A constant})}\cdot \vvec{B}_\text{total}
+}
+
+We usually use this new constant to represent the material's response to B-field,
+by defining
+\aleq{
+    \boxed{
+        \mu \ \defeq\ \mu_0(1+\chi_m)   \ \defeq\ \mu_0\mu_r 
+    }
+    \qquad\text{such that}\qquad
+    \vvec{H} = \inv{\mu}\vvec{B}_\text{total}
+}
+where
+\begin{itemize}
+    \item $\mu$ = \bf{Absolute permeability}, or \bf{magnetic permeability}. Has the same unit as $\mu_0$.
+
+    \item $\mu_r$ = \bf{Relative permeability}. A pure number. $<1$ for diamagetism and $>1$ for paramagnetism. 
+
+\end{itemize}
+
+Note that \red{$\vvec{H}$ only depends on applied current, i.e. can be easily controlled in experiments.}
+\begin{itemize}
+    \item For convenience, experimentalists always prefer using $\vvec{H}$ to describe material's magnetic response.
+    This is why the linear model is written as $\vvec{M} \propto \vvec{H}$ 
+    instead of $\vvec{M} \propto \vvec{B}_\text{total}$.
+
+    \item $\chi_m$ is more oftenly tabulated in material handbooks and used in theories.
+    This is because most material has very small $\chi_m$ (e.g. $10^{-5}$ for aluminum).
+    Tabulating $\mu_r = 1+\chi_m$ only makes the values harder to read.
+\end{itemize}
+
+
+
+\insertFig{do you prefer reading table of chi m or mu r?}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Calculation Example}
+
+Here are some examples of questions you may see in the chapter of linear magnetic material.
+In principle, one of the information about $\vvec{H}$ (free current) or $\vvec{B}_\text{total}$ (force) will be given,
+then you are asked to find the other, and so as $\vvec{M}$ and bound currents.
+
+
+
+
+
+
+
+
+
+
+%%%
+\theend
+\end{document}

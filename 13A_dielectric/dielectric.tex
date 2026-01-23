@@ -23,7 +23,7 @@
         \item Material under external $\vvec{E}$ field: 
         \begin{itemize}
             \item A special case of material model: \cul[red]{Linear dielectric} 
-            \item Describe external field: Free charges, electric displacement field
+            \item Describe external field: Free charges, electric displacement field $\vvec{D}$
         \end{itemize}
     \end{itemize}
     \begin{center}
@@ -75,8 +75,8 @@ then sum the contributions from all dipoles based on the material configurations
 %%%%%%%%%%%%%%
 \subsection{Potential from Electric Dipole}
 
-This is the standard model of electric dipole.
-Same calculations can be found in most textbooks.
+This is the classical model of electric dipole.
+Same calculations can be found in many textbooks.
 
 \begin{itemize}
     \item Both ends of the dipole have equal but opposite \it{point} charge $+q$ and $-q$.
@@ -93,21 +93,21 @@ The derivation of electric potential from a dipole is straightforward by Columb'
 while applying Taylor approximation in the middle step. 
 
 \begin{enumerate}
-    \item The total potential contributions from the two charges at position $\vvec{r}$ is
+    \item The total potential contributions from the two charges towards position $\vvec{r}$ is
     \aleq{
         V(\vvec{r}) 
         &= \frac{1}{4\pi\epsilon_0} \qty( \frac{q}{\norm{\vvec{r}_+}} 
         + \frac{-q}{\norm{\vvec{r}_-}})\\
         &= \frac{q}{4\pi\epsilon_0} 
             \qty(\frac{1}{\tkn{cosLaw1}{\cul[blue]{\sqrt{\norm{\vvec{r}}^2 + \qty|\frac{\vvec{d}}{2}|^2 - 2\norm{\vvec{r}}\qty|\frac{\vvec{d}}{2}|\cos\theta}}}}
-            - \frac{1}{\tkn{cosLaw2}{\cul[blue]{\sqrt{\norm{\vvec{r}}^2 + \qty|\frac{\vvec{d}}{2}|^2 + 2\norm{\vvec{r}}\qty|\frac{\vvec{d}}{2}|\cos\theta}}}})\\[3ex]
+            - \frac{1}{\tkn{cosLaw2}{\cul[blue]{\sqrt{\norm{\vvec{r}}^2 + \qty|\frac{\vvec{d}}{2}|^2 + 2\norm{\vvec{r}}\qty|\frac{\vvec{d}}{2}|\cos\theta}}}})\\[2ex]
             %
         &= \frac{q}{4\pi\epsilon_0 \norm{\vvec{r}}}
             \qty(\inv{\sqrt{1 + \inv{4}\frac{\norm{\vvec{d}}^2}{\norm{\vvec{r}}^2} - \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta}}
             - \inv{\sqrt{1 + \inv{4}\frac{\norm{\vvec{d}}^2}{\norm{\vvec{r}}^2} + \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta}})
     }
-    \addBentArrow[blue]{cosLaw1}{(3ex,-2ex)}{These are just cosine law}{(0,-3ex)}{(12ex,0.5ex)}
-    \addBentArrow[blue]{cosLaw2}{(-3ex,-2ex)}{}{(0,-3ex)}
+    \addBentArrow[blue]{cosLaw1}{(8ex,-2ex)}{\scriptsize These are just cosine law}{(0,-3ex)}{(7.1ex,0.5ex)}
+    \addBentArrow[blue]{cosLaw2}{(-8ex,-2ex)}{}{(0,-3ex)}
 
     \item Taylor expansion ``\cul[red]{$(1+x)^n \approx 1+nx$ for $x\ll 1$}" is always applied at this step. 
     Because we are only interested in the potential far from the dipole, $\frac{\norm{\vvec{d}}}{\norm{\vvec{r}}} \ll 1$, 
@@ -121,27 +121,30 @@ while applying Taylor approximation in the middle step.
     So the potential becomes
     \aleq{
         V(\vvec{r}) &= \frac{q}{4\pi\epsilon_0 \norm{\vvec{r}}}
-            \qty[\qty(1 + \half \cdot \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta)
-            - \qty(1 - \half \cdot \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta)]\\[1ex]
+            \qty[\qty(1 + \half \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta)
+            - \qty(1 - \half \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta)]\\[1ex]
         &= \frac{q}{4\pi\epsilon_0 \norm{\vvec{r}}}
-            \cdot \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta
+            \, \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}}\cos\theta
     }
     
     \item From geometry, $\theta$ is the angle between $\vvec{d}$ and $\vvec{r}$. 
     We can replace $\cos\theta$ by $\cos\theta = \frac{\vvec{d}\cdot\vvec{r}}{\norm{\vvec{d}}\norm{\vvec{r}}}$\
     \aleq{
         V(\vvec{r}) 
-        &= \frac{q}{4\pi\epsilon_0}
-            \cdot \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}^2} 
-            \cdot \frac{\vvec{d}\cdot\vvec{r}}{\norm{\vvec{d}}\norm{\vvec{r}}}\\
-        &= \frac{1}{4\pi\epsilon_0} \cdot \frac{q\vvec{d}}{\norm{\vvec{r}}^2} 
-            \cdot \cul[blue]{\tkn{unitVecR}{\frac{\vvec{r}}{\norm{\vvec{r}}}}}
+        &= \frac{q}{4\pi\epsilon_0}\, \frac{\norm{\vvec{d}}}{\norm{\vvec{r}}^2} 
+            \, \frac{\vvec{d}\cdot\vvec{r}}{\norm{\vvec{d}}\norm{\vvec{r}}}\\
+        &= \frac{1}{4\pi\epsilon_0} \, \frac{q\vvec{d}}{\norm{\vvec{r}}^2} 
+            \, \cul[blue]{\qty(\tkn{unitVecR}{\frac{\vvec{r}}{\norm{\vvec{r}}}})}
     }
     \addBentArrow[blue]{unitVecR}{(2ex,-2ex)}{\scriptsize Unit vector of $\vvec{r}$}{(0,-3ex)}{(5.5ex,0.7ex)}
     
-    We usually use symbol $\vvec{p}\defeq q\vvec{d}$ to denote \bf{electric dipole moment},
-    the unit source of electric dipole. 
-    Finally we reach the standard formula of electric potential from a dipole:
+    \item To emphasize that we now treat an electric dipoles as ``one unit of source", 
+    We define the \bf{electric dipole moment} $\vvec{p}$,
+    \aleq{
+        \Aboxed{\vvec{p}\ \defeq\ q\vvec{d}}
+    }
+
+    Finally we reach the standard formula of electric potential from an electric dipole:
     \aleq{
         \Aboxed{
             V(\vvec{r}) = \frac{1}{4\pi\epsilon_0}\frac{\vvec{p}\cdot\hhat{r}}{\norm{\vvec{r}}^2}
@@ -170,7 +173,7 @@ As a comparison with Columb's law formula from point charge
 
 \begin{itemize}
     \item Dipole is directional. 
-    Magnitude of potential depends on the charge on dipole AND the angle (dot product) between $\vvec{p}$ and $\hhat{r}$.
+    Magnitude of potential depends on the charges' magnitude AND the angle (dot product) between $\vvec{p}$ and $\hhat{r}$.
     \item Dependance on distance is $\inv{r^2}$.
 \end{itemize}
 
@@ -180,7 +183,7 @@ As a comparison with Columb's law formula from point charge
 \subsection{E-field from Electric Dipole}
 
 The standard derivation of E-field from dipole is through the relation $\vvec{E} = -\grad V$.
-It is nothing more than some boring vector calculus.  
+It is nothing more than some boring calculus.  
 Here I quote the final result:
 \aleq{
     \Aboxed{
@@ -189,11 +192,10 @@ Here I quote the final result:
 }
 
 And this formula is rarely used because vector calculation is annoying. 
-Skip it you like. 
 
 \begin{notation}[The boring derivation:]
     \begin{enumerate}
-        \item Turn $V(\vvec{r})$ into full x-y-z form by 
+        \item Derivation is possible with high school calculus if we turn all vectors into x-y-z form: 
         $\vvec{r}= x\hhat{x} + y\hhat{y} + z\hhat{z}$, $\norm{\vvec{r}} = \sqrt{x^2 + y^2 + z^2}$
         and $\vvec{p} = p_x \hhat{x} + p_y \hhat{y} + p_z \hhat{z}$:
         \aleq{
@@ -203,7 +205,7 @@ Skip it you like.
             \, = \, \frac{1}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}(p_x x + p_y y + p_z z)
         }
 
-        \item Calculating the $x$ term in gradient, $\hhat{x}\pdvv{x}(\cdots)$, we have
+        \item First the $x$ term in gradient, $\hhat{x}\pdvv{x}(\cdots)$, can be calculated by:
         \addBentArrow[blue]{quotient}{(-6ex,6ex)}{\scriptsize This is just quotient rule}{(0,3ex)}{(16ex,-3ex)}
         \addArrow[blue]{dipoleE1}{(20ex,5.7ex)}{}{(2ex,1.7ex)}
         \addArrow[blue]{dipoleE2}{(30ex,5.7ex)}{}{(3ex,1.7ex)}
@@ -223,16 +225,15 @@ Skip it you like.
         \item Summing all 3 components gives:
         \addArrow[blue]{dipoleE3}{(37ex,5.7ex)}{}{(1ex,1.7ex)}
         \addArrow[blue]{dipoleE4}{(-1ex,5ex)}{}{(0,2ex)}
-        \addBentArrow[red]{dipoleE5}{(7ex,-2ex)}{\scriptsize Take out magnitude to become unit vector}{(0,-1ex)}{(14ex,0.6ex)}
+        \addBentArrow[red]{dipoleE5}{(7ex,2.5ex)}{\scriptsize Take out magnitude to become unit vector}{(0,2ex)}{(14ex,-0.7ex)}
         \aleq{
-            -\grad V(\vvec{r}) &= -\inv{4\pi\epsilon_0} \qty(\hhat{x}\pdvv{x}+\hhat{y}\pdvv{y}+\hhat{z}\pdvv{z})
-                \qty[\frac{1}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}(p_x x + p_y y + p_z z)]\\[1ex]
+            -\grad V(\vvec{r}) &= -\qty(\gradRec{V})\\[1ex]
             &= -\inv{4\pi\epsilon_0} \inv{\norm{\vvec{r}}^5}
                 \qty[\cul[blue]{(p_x\hhat{x}+p_y\hhat{y}+p_z\hhat{z})} \norm{\vvec{r}}^2 - 3(\vvec{p}\cdot\vvec{r})\cul[blue]{(x\hhat{x}+y\hhat{y}+z\hhat{z})}]\\[1ex]
             &= \inv{4\pi\epsilon_0} \inv{\norm{\vvec{r}}^5} \qty[3(\vvec{p}\cdot\vvec{r})\tkn{dipoleE3}{\cul[blue]{\vvec{r}}} - \tkn{dipoleE4}{\cul[blue]{\vvec{p}}}\norm{\vvec{r}}^2]\\[1ex]
-            &= \inv{4\pi\epsilon_0} \inv{\norm{\vvec{r}}^5} \qty[3(\vvec{p}\cdot\red{\hhat{r}})\tkm{dipoleE5}\red{\hhat{r}} \cdot \red{\norm{\vvec{r}}^2} - \vvec{p}\norm{\vvec{r}}^2]\\[1ex]
+            &= \inv{4\pi\epsilon_0} \inv{\norm{\vvec{r}}^5} \qty[3(\vvec{p}\cdot\red{\hhat{r}})\tkm{dipoleE5}\red{\hhat{r}}\,\red{\norm{\vvec{r}}^2} - \vvec{p}\norm{\vvec{r}}^2]\\
             \Aboxed{
-                \vvec{E}(\vvec{r}) &= \inv{4\pi\epsilon_0} \inv{\norm{\vvec{r}}^3} \qty[3(\vvec{p}\cdot\hhat{r})\hhat{r} - \vvec{p}]
+                \vvec{E}(\vvec{r}) &= \inv{4\pi\epsilon_0} \frac{3(\vvec{p}\cdot\hhat{r})\hhat{r} - \vvec{p}}{\norm{\vvec{r}}^3}
             }
         }
     \end{enumerate}
@@ -245,8 +246,8 @@ Skip it you like.
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Describing Dipole Arrangement}
 
-In general, all dielectric material are made of many tiny electric dipoles.
-To analyze the material's electrostatic properties, 
+In general, all dielectric materials are made of many tiny electric dipoles.
+To analyze the material's electric properties, 
 we can begin with the property of a single dipole,
 then sum the contributions of all dipoles according to the dipole arrangement in the material.
 
@@ -254,7 +255,7 @@ then sum the contributions of all dipoles according to the dipole arrangement in
 
 For example, the electric potential created by the material can be treated as a sum of potentials from all dipoles.
 \aleq{
-    \cub[blue]{V(\vvec{r}) = \inv{4\pi\epsilon_0} \frac{\vvec{p}_i }{\norm{\vvec{r}}^2} \cdot \qty(\frac{\vvec{r}}{\norm{\vvec{r}}})}
+    \cub[blue]{V(\vvec{r}) = \inv{4\pi\epsilon_0} \frac{\vvec{p} }{\norm{\vvec{r}}^2} \cdot \qty(\frac{\vvec{r}}{\norm{\vvec{r}}})}
         {\text{By a single dipole from origin}}
     \qquad\Rightarrow\qquad
     \cub[red]{V(\vvec{r}) = \inv{4\pi\epsilon_0} \sum_{\substack{\text{All dipoles } i}} 
@@ -264,7 +265,7 @@ For example, the electric potential created by the material can be treated as a 
 
 \insertFig{single dipole point to r vs many dipoles at different ri to r}
 
-Here we introduce \cul[red]{two quantities that are used to describe dipole arrangements in material}.
+Here we introduce two quantities that describe electric dipole arrangements in materials.
 \begin{itemize}
     \item \bf{Polarization field} - $\vvec{P}(\vvec{r})$
     \item \bf{Bound charge distributions} - $\rho_b(\vvec{r})$ and $\sigma_b(\vvec{r})$
@@ -277,8 +278,8 @@ Here we introduce \cul[red]{two quantities that are used to describe dipole arra
 When the dipoles in the material are so dense such that we can treat them as a continuous distribution,
 we can replace 
 \begin{itemize}
-    \item Summmation of all dipoles \ $\Rightarrow$\  Volume integral over the whole object.
-    \item Discrete dipoles source \ $\Rightarrow$\ A vector distribution called \bf{polarization field} $\vvec{P}(\vvec{r})$.
+    \item Sum of all dipoles \ $\xRightarrow{\text{become}}$\  Volume integral over the whole object.
+    \item Discrete dipoles source \ $\xRightarrow{\text{become}}$\ A vector distribution called \bf{polarization field} $\vvec{P}(\vvec{r})$.
 \end{itemize}
 \aleq{
     \Aboxed{
@@ -289,7 +290,7 @@ we can replace
 
 \insertFig{dispole arrangement is similar to some vector field in the object}
 
-The polarization field $\vvec{P}(\vvec{r})$ can also be interpreted as \bf{dipole density} 
+The polarization field $\vvec{P}(\vvec{r})$ can also be interpreted as \bf{electric dipole density} 
 because its usage is similar to charge density $\rho(\vvec{r})$. 
 Comparing with the Coulomb's law for electric potential:
 \begin{itemize}
@@ -317,22 +318,22 @@ Comparing with the Coulomb's law for electric potential:
 %%%%%%%%%%%%%%
 \subsection{Bound Charge Distribution}
 
-Ultimately, dipoles are just pairs of charges.
-If dipoles are aligned non-uniformly in a material,
+Ultimately, electric dipoles are just pairs of charges.
+If the dipoles are aligned non-uniformly in a material,
 some regions may appear to have a higher density of positive heads than its surroundings, 
 and so as negative tails.
 
 \insertFig{dipole heads and tails non uniform}
 
 These regions with extra dipole heads / tails are described as \bf{bound charges} distribution in the material -
-they are always "bounded" to regions where there are more dipole heads/tails.
-So bound charge distribution is another way to describe the dipole arrangement in the material.
+they are always ``bounded" to regions where there are more dipole heads/tails.
+So bound charge distribution can be used to describe electric dipole arrangement in the material.
 
 %%%%%%%%%%%%%%
 \subsubsection{Mathematical Origin}
 
 With vector calculus, 
-the potential formula can be rewritten into a "charge densities form".
+the potential formula can be rewritten into a ``charge densities form".
 \aleq{
     V(\vvec{r}) &= \inv{4\pi\epsilon_0} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
         \frac{\vvec{P}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}^2} \cdot \qty(\frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}}) \dd[3]{\vvec{r}'}\\[1ex]
@@ -387,7 +388,7 @@ we identify the 2 source terms as the \bf{bound charge densities}:
 \end{itemize}
 
 
-Finally, the expression of the "charge densities" form is nothing more than saying that
+Finally, the expression of the ``charge densities form" is nothing more than saying that
 the electric potential from a material is the result of the two kinds of charges distributions.
 \aleq{
     V(\vvec{r})
@@ -402,7 +403,7 @@ the electric potential from a material is the result of the two kinds of charges
 
 \begin{notation}[The boring derivation:]
     \begin{enumerate}
-        \item Deriving the "charge densities" form begins with a vector calculus identity:
+        \item Deriving the ``charge densities" form begins with a vector calculus identity:
         \addArrow[blue]{potential1}{(-20ex,-4ex)}{\scriptsize Note: Differentiation\\[-1ex]\scriptsize is w.r.t. $x',y',z'$}
         {(0,-1ex)}{(3ex,-1ex)}
         \addBentArrow[blue]{potential2}{(5ex,2ex)}{\scriptsize This part is just a unit vector}
@@ -424,15 +425,15 @@ the electric potential from a material is the result of the two kinds of charges
             &= \inv{4\pi\epsilon_0} {\iiint}
             \frac{\vvec{P}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}^2} \cdot \qty(\frac{\vvec{r}-\vvec{r}'}{\norm{\vvec{r}-\vvec{r}'}}) \dd[3]{\vvec{r}'} \\[1ex]
             &= \inv{4\pi\epsilon_0} {\iiint}
-                \cus[blue]{\vvec{P}(\vvec{r}') \cdot \grad \qty(\inv{\norm{\vvec{r}-\vvec{r}'}})}{\scriptsize \vvec{V}\,\cdot\,\grad f} \dd[3]{\vvec{r}'}\\[0.5ex]
+                \cus[blue]{\vvec{P}(\vvec{r}') \cdot \grad \qty(\inv{\norm{\vvec{r}-\vvec{r}'}})}{\scriptsize \vvec{G}\,\cdot\,\grad f} \dd[3]{\vvec{r}'}\\[0.5ex]
             &= \inv{4\pi\epsilon_0} {\iiint}
-                \cus[blue]{\div \qty(\frac{\vvec{P}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}})}{\scriptsize \div(f\vvec{V})} 
-                - \cus[blue]{\frac{\div \vvec{P}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}}}{\scriptsize -f\div \vvec{V}} \dd[3]{\vvec{r}'}
+                \cus[blue]{\div \qty(\frac{\vvec{P}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}})}{\scriptsize \div(f\vvec{G})} 
+                - \cus[blue]{\frac{\div \vvec{P}(\vvec{r}')}{\norm{\vvec{r}-\vvec{r}'}}}{\scriptsize -f(\div \vvec{G})} \dd[3]{\vvec{r}'}
         }
         \vskip -1em
-        Here we used the product rule of divergence \fbox{$\div{(f\vvec{V})} = f\div\vvec{V} + \vvec{V}\cdot\grad f$}, 
-        where $f$ is a scalar function (like $\inv{\norm{\vvec{r}-\vvec{r}'}}$) and $\vvec{V}$ is a vector function (like $\vvec{P}$).
-        
+        Here used the product rule of divergence \fbox{$\div{(f\vvec{G})} = f(\div\vvec{G}) + (\grad f)\cdot \vvec{G}$}, 
+        where $f$ is a scalar function (like $\inv{\norm{\vvec{r}-\vvec{r}'}}$) and $\vvec{G}$ is a vector function (like $\vvec{P}$).
+
         \item Finally use divergence theorem to convert the \nth{1} term's volume integral into a surface integral over the volume's surface:
         \addArrow[blue]{potential3}{(1ex,5.5ex)}{\scriptsize Divergence theorem}
         {(0,2.5ex)}{(-9ex,-2.5ex)}
@@ -477,7 +478,7 @@ The bound charge densities are related to $\vvec{P}$ pretty much like normal cha
     
     \insertFig{contain region dipole head}
 
-    Recall that we can use sign of flux to identify converging/diverging vectors,
+    Recall that we can use sign of flux to identify positions with converging/diverging vector field,
     and divergence operator $\div$ is equivalent to finding flux per volume. 
     \aleq{
         \qty(\mstack{\text{Bound charge}\\\text{volume density}}) 
@@ -518,11 +519,11 @@ The bound charge densities are related to $\vvec{P}$ pretty much like normal cha
 
         \item The dipoles are usually randomly arranged, 
         or in patterns such that their effects cancel out.
-        Especially when the structure is observed far away.
+        Especially when the material is large.
     \end{itemize}
 
     To most material, \red{polarization effect is neligible unless it is placed under an external E-field},
-    which forces its dipoles to align and "stretch" them harder (increase the $\vvec{d}$ in dipole moment).
+    which forces its dipoles to align and ``stretch" them harder (increase the $\vvec{d}$ in dipole moment).
 \end{notation}
 
 
@@ -548,8 +549,8 @@ So the final dipole alignment might not always align with the external E-field!
 
 \insertFig{random spherical dipole + regular external E-field = irregular align ellipse dipole}
 
-The general theory about material's E-field response is by
-treating the polarization field $\vvec{P}$ (i.e. new dipole alignment) as some function to the total E-field $\vec{E}_\text{total}$,
+In a general theory about material's E-field response,
+one may treat the polarization field $\vvec{P}$ (i.e. new dipole alignment) as some function to the total E-field $\vec{E}_\text{total}$,
 \aleq{
     \vvec{P} \ =\ f(\vvec{E}_\text{total}) 
     \ \sim\  \cub[blue]{\vvec{a}^{(1)}_iE_i + \vvec{a}^{(2)}_{ij}E_iE_j + \vvec{a}^{(3)}_{ijk}E_iE_jE_k + \cdots}{\text{\scriptsize Like a Taylor expansion}}
@@ -567,7 +568,7 @@ such that new dipole alignment is directly proportional to the external E-field'
 
 \insertFig{dipoles uniform under external E-field}
 
-The linear model only contains 1 parameter - 
+The linear model only has 1 parameter to be determined from experiments - 
 the proportionality constant between $\vvec{P}$ and $\vvec{E}_\text{total}$.
 \aleq{
     \Aboxed{
@@ -575,12 +576,12 @@ the proportionality constant between $\vvec{P}$ and $\vvec{E}_\text{total}$.
     }
 }
 
-where $\chi_e$ is called \bf{electric susceptibility}, 
+Here the $\chi_e$ is called \bf{electric susceptibility}, 
 a pure number (no unit) whose value depends on the type of material.
 $\epsilon_0$ is multiplied to match the units. 
 \begin{itemize}
-    \item Vacuum has $\chi_e = 0$ by defintion, because there are no dipoles in a vacuum.
-    \item Most material has $\chi_e>0$, because normally dipole moments follow E-field's direction.
+    \item $\chi_e = 0$ for vacuum (by defintion), because there are no dipoles in a vacuum.
+    \item $\chi_e>0$ for most normal materials, because dipoles normally follow E-field's direction.
 \end{itemize}
 
 
@@ -597,14 +598,14 @@ now we look at the external E-field.
 \subsubsection{Free Charge Distribution}
 
 In order to create an external E-field around the material, 
-we need a "setup" to build an external source of charges. 
+we need a ``setup" to build an external source of charges. 
 For example, apply voltage between two very large parallel plates:
 
 \insertFig{free charge vs bound charge in dielectric setup}
 
-The charges that build up in the setup is given the name \bf{free charges},
+The charges that build up in the setup are given the name \bf{free charges},
 to distinguish from the bound charges (dipole alignment) in the material. 
-The are "free" because we can always control them by varying the setup,
+The are ``free" because we can always control them by varying the setup,
 making them known quantities in calculation.
 
 \insertFig{adjust parallel plate voltage -> adjust free charge amount}
@@ -618,14 +619,14 @@ For calculation, free charge densities are denoted like bound charges:
 
 \begin{itemize}
     \item \bf{\ul{Volume free charge density}} $\rho_f(\vvec{r})$ - 
-    Charges distribution \cul[red]{inside} the setup.
+    Charge distribution \cul[red]{inside} the setup.
 
     \item \bf{\ul{Surface free charge density}} $\sigma_f(\vvec{r})$ - 
-    Charges \cul[red]{on any surfaces} of the setup.
+    Charge \cul[red]{on any surfaces} of the setup.
 \end{itemize}
 
 \vskip 1ex
-In real practices, parallel plate setup is the most common way to create external E-field.
+In real practices, a pair of parallel plates is the most common setup to create external E-field.
 So surface free charge is mostly all you need. No reason to make things complicated.
 
 
@@ -637,8 +638,9 @@ Previously, we have relate bound charges to a vector field quantity - the polari
 Similarly, free charges distributions can be related with another vector field.
 From Gauss's law, 
 \aleq{
-    \epsilon_0\div \vvec{E}_\text{total}\ &=\ \quad\ \rho\,\quad =\ \qty(\mstack{\text{All}\\\text{charges}})\\[0.5ex]
-    &=\ \rho_f + \rho_b =\ \qty(\mstack{\text{Free charges}\\\text{on setup}}) + \qty(\mstack{\text{Bound charges}\\\text{on material}})\\[0.5ex]
+    \epsilon_0\div \vvec{E}_\text{total}\ 
+    &=\ \ \ \rho_\text{total}\ \  =\ \qty(\mstack{\text{All}\\\text{charges}})\\[0.5ex]
+    &=\ \rho_f + \rho_b \ =\ \qty(\mstack{\text{Free charges}\\\text{on setup}}) + \qty(\mstack{\text{Bound charges}\\\text{on material}})\\[0.5ex]
     &=\ \rho_f + (-\div \vvec{P})\\[0.5ex]
     \div(\epsilon_0 \vvec{E}_\text{total} + \vvec{P}) \ &=\ \rho_f
 }
@@ -694,13 +696,13 @@ But note that \red{this can be wrong for other models of dielectrics}.
     we cannot solve for $\vvec{D}$ exactly by free charge if we don't know the material's model. 
     This is because:
     \begin{itemize}
-        \item $\vvec{E}_\text{total}$ is guarenteed to be ``curl = 0" in electrostatics, 
+        \item $\vvec{E}_\text{total}$ is guarenteed to be ``curl-less" in electrostatics, 
         such that we can define a potential function $V$ and solve for $\vvec{E}_\text{total}$ uniquely.
 
-        \item $\vvec{P}$ may not be ``curl = 0" since the dipole arrangement can be arbituary, 
+        \item $\vvec{P}$ may not be ``curl-less" since the dipole arrangement can be arbituary, 
         e.g. if they arrange into some vortex-like pattern.
         Then by $\vvec{D} = \epsilon_0\vvec{E}_\text{total} + \vvec{P}$,
-        there is no guarenteed that $\vvec{D}$ is ``curl = 0" either.
+        there is no guarenteed that $\vvec{D}$ is ``curl-less" either.
     \end{itemize} 
 
     \insertFig{vortex dipole arrangement -> P field not curl 0}
@@ -709,9 +711,9 @@ But note that \red{this can be wrong for other models of dielectrics}.
     \aleq{
         \cbox{\mstack{\vvec{P} \text{ aligns}\\[0.2ex]\text{with }\vvec{E}_\text{total}}}
         \quad\Rightarrow\quad
-        \cbox{\mstack{\vvec{P} \text{ is}\\[1ex]\text{``curl = 0"}}}
+        \cbox{\mstack{\vvec{P} \text{ is}\\[1ex]\text{``curl-less"}}}
         \quad\Rightarrow\quad
-        \cbox{\mstack{\vvec{D} = \epsilon_0\vvec{E}_\text{total} + \vvec{P}\\[0.5ex]\text{is also ``curl = 0"}}}
+        \cbox{\mstack{\vvec{D} = \epsilon_0\vvec{E}_\text{total} + \vvec{P}\\[0.5ex]\text{is also ``curl-less"}}}
     }
 
     So it is fine to solve for $\vvec{D}$ like normal Gauss's law problems for linear dielectric.
@@ -732,7 +734,7 @@ In problems that involve dielectric,
     \item Actual calculation requires measurements from equipment setup. 
     In electrostatic experiments, usually the control/measure-able parameters are
     \begin{itemize}
-        \item \ul{Applied voltage} - Directly connect the setup with a power source.
+        \item \ul{Applied voltage} - Directly connect with a power source. All you need is a voltmeter.
         \item \ul{Free charge} - If the amount of charge is manually placed on the setup.
     \end{itemize}
 \end{itemize}
@@ -746,7 +748,7 @@ Note that
     \item Free charge can be used to determine to displacement field $\vvec{D}$.
 \end{itemize}
 
-Once we have chosen a model of the material, we can connect the two measurements by:
+Once we have chosen a model of the material, we can connect the two measurables by:
 \aleq{
     \vvec{D} = \epsilon_0\vvec{E}_\text{total} + f(\vvec{E}_\text{total})
 }
