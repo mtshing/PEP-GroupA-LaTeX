@@ -18,17 +18,25 @@
 
 \begin{overview}
     
-    This is all about finding the electrical properties of given configurations.
-    In general, 
+    This note reviews the 3 most basic electronic components: 
+    \begin{itemize}
+        \item Resistors
+        \item Capacitors
+        \item Inductors
+    \end{itemize}
+    and how to find these electrical parameters from a given configuration.
+    
+    %%%
+    The steps are very standard:
     \begin{itemize}
         \item \bf{\ul{Resistance}}: 
         Assume $V \ \xrightarrow{\text{Def.}}\ \vvec{E} \ \xrightarrow{\text{Ohm}}\ \vvec{J} \ \xrightarrow{\text{Def.}}\ I$. 
         Finally $R=\frac{V}{I}$
         \item \bf{\ul{Capacitance}}: 
-        Assume $Q \ \xrightarrow{\text{Gauss}}\ \vvec{E} \ \xrightarrow{\text{Def.}}\ V$.
+        Assume $Q_f \ \xrightarrow{\text{Gauss}}\ \vvec{E} \ \xrightarrow{\text{Def.}}\ V$.
         Finally $C=\frac{Q}{V}$
         \item \bf{\ul{Inductance}}: 
-        Assume $I \ \xrightarrow{\text{Ampere}}\ \vvec{B} \ \xrightarrow{\text{Faraday}}\ \epsilon$.
+        Assume $I_f \ \xrightarrow{\text{Ampere}}\ \vvec{B} \ \xrightarrow{\text{Faraday}}\ \epsilon$.
         Finally $L=\frac{\epsilon}{\dv{I}{t}}$
     \end{itemize}
 \end{overview}
@@ -40,17 +48,83 @@
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resistance}
 
-By definition, resistance is
+By definition, resistance $R$ of an electronic component is defined as
+\aleq{
+    R\ \defeq\ \dvv{R}{I} \ \sim\ \frac{\text{Voltage across}}{\text{Current passing through}}
+}
+
+% change rundown: Ohm law {conductivity microscopic} -> resistor in circuit {symbol + real pic + addition rule + some usage} -> find from config
+
+In circuit diagrams, components that carry resistance can be modeled as a \bf{resistor}.
+There are two kinds of symbols that are used to represent a resistor.
+
+\insertFig{resistor international vs US}
 
 
 %%%%%%%%%%%%%%
 \subsection{Ohm's Law}
 
+Most daily life material has a linear response between applied voltage and current. 
+
+\insertFig{line plot}
+
+% non-linear response example: semi-conductor diode
+
+In such case we will call the material as \bf{Ohmic material}. 
+
+% physical reason for having resistance? obstruction of electron flow in a material
+
+
 %%%%%%%%%%%%%%
 \subsection{Addition of Resistance}
 
+Multiple resistors can be combined to form an equivalent resistor of desired value.
+% begin{center} vline series parallel
+
+In series
+
+\insertFig{resistors in series}
+
+\aleq{
+    R_\text{equiv} = R_1 + R_2 + \cdots R_n
+}
+
+In parallel
+
+\insertFig{resistors in parallel}
+
+\aleq{
+    \inv{R_\text{equiv}} = \inv{R_1} + \inv{R_2} + \cdots + \inv{R_n} 
+}
+
+%The addition rules can be proven by Kirchoff's rules
+
+
 %%%%%%%%%%%%%%
-\subsection{Conductivity \& Microscopic Form of Ohm's Law}
+\subsubsection{Resistors in practice}
+
+
+
+%%%%%%%%%%%%%%
+\subsection{Conductivity \& Microscopic Ohm's Law}
+
+Resistance of an object is a property not only depends on the type of material, 
+but also depends on the object's shape. 
+To eliminate the shape's effect, 
+
+
+By the definition of voltage and current in terms of field-like quantities,
+
+\aleq{
+    \norm{V} = \int \vvec{E}\cdot \dd{\vvec{l}}
+    \qquad\text{and}\qquad
+    \norm{I} = \iint \vvec{J}\cdot \dd{\vvec{s}}
+}
+
+\subsubsection{Conductivity}
+
+
+
 
 %%%%%%%%%%%%%%
 \subsection{Finding Resistance from Configurations}
