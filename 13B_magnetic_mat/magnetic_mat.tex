@@ -19,15 +19,15 @@
 \begin{overview}
     \begin{itemize}
         \item Model of magnetic dipole
-        \item How to describe dipole arrangement: Magnetization field, bound currents
+        \item How to describe dipole arrangement: Magnetization field $\vvec{M}$, bound currents $\vvec{J}_b$, $\vvec{K}_b$
         \item Material under external $\vvec{B}$ field: 
         \begin{itemize}
             \item A special case of material model: \cul[red]{Linear magnetic material} 
-            \item Describe external field: Free currents, auxiliary field $\vvec{H}$
+            \item Describe external field: Free currents $\vvec{J}_f$, $\vvec{K}_f$, auxiliary field $\vvec{H}$
         \end{itemize}
     \end{itemize}
     \begin{center}
-        \red{\bf{\ul{If linear magnetic material is all you need, you can skip most of the maths.}}}
+        \red{{{(If linear magnetic material is all you need, feel free to skip all vector calculus)}}}
     \end{center}
 \end{overview}
 
@@ -38,116 +38,111 @@
 \section{Magnetic Dipole}
 
 %%%%%%%%%%%%%%
-\subsection{Magnetic Response in Materials}
+\subsection{Electron as Magnetic Source}
 
-In modern theory, magnetic response in atoms is purely a quantum mechanical effect.
-But before quantum mechanics being turned into a complete mathematics theory,
-scientists had been explaining magnetic response with a few semi-classical theories.
-
-%%%%%%%%%%%%%%
-\subsubsection{Electron as Magnetic Source}
-
-In an atom, the majority of magnetic response comes from the electrons.
-An electron behaves as a magnetic dipole in 2 ways:
+In atoms, interactions with B-field mainly come from electrons.
+They behaves as magnetic dipoles in 2 ways:
 \begin{itemize}
-    \item \bf{\ul{Orbital motion}} - Electron orbiting around the nucleus, 
-    equivalent to a tiny current loop.
+    \item \ul{Orbital motion} - Electrons orbit around the nucleus, 
+    which is equivalent to a current loop.
 
-    \item \bf{\ul{Spin}} - Electron carries a fundamental quantum property called \bf{spin},
-    which determines how it interacts with B-field.     
+    \insertFig{orbital motion}
+
+    \item \ul{Spin} - Electrons carry a fundamental quantum property called \bf{spin},
+    which determines how it interacts with B-field.
     It cannot be described fully by any classical picture.
+
+    \insertFig{electron spin}
+
+    % text side by side to the figure
+    Electron's spin is usually depicted as a rotating charged arrow, 
+    although electron is a \it{point} particle.
+
 \end{itemize}
 
-\insertFig{orbital motion + spin}
+To study the magnetic properties of materials,
+we can view the atoms as many \bf{magnetic dipoles},
+arranged according to the material structure.
 
-%Textbooks usually depict spin as a rotating charged sphere, although electron is a point particle.
+\insertFig{stacking dipoles}
 
-Magnetic response of an atom is the combined effect from both orbital motion and spin. 
-Depends on which effect dominates, 
-magnetic reponses can be classified into 2 types:
+Since magnetic dipoles emit B-field, theoretically all materials are sources of B-field.
+However the dipoles in real life are at atomic scale ($\sim 10^{-10}$ m) and 
+are usually packed in random orientations,
+the net field can be treated as zero if we view the dipoles from a very large distance.
+
+
+\insertFig{view at short distance vs long distance}
+% i can see the arrows/loop, holding magnifying glass
+% what? they are at the same pos, i cannot tell them apart, arm on waist
+
+So magnetic properties of materials are normally unobservable, 
+unless we apply an external B-field to align the dipoles in some direction,
+i.e. we \bf{magnetize} the material.
+
+\insertFig{many dipole from random direction flip to the same direction}
+
+In the classical model, atoms as magnetic dipole can interact with external B-field in opposite ways,
+depend on which of the electron behavior dorminates:
+
+\begin{center}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.17\linewidth}|
+        >{\centering\arraybackslash}m{0.36\linewidth}|
+        >{\centering\arraybackslash}m{0.36\linewidth}}
+        & 
+        \bf{Diamagnetism} % insert graphic
+        & 
+        \bf{Paramagnetism} % insert graphic
+        \\[1ex]
+        %
+        \hline
+        \makecell{\phantom{\scriptsize aaa}\\[-2ex] Dominated\\Behavior}
+        &
+        \makecell{\phantom{\scriptsize aaa}\\[-1ex] Orbital Motion}
+        &
+        \makecell{\phantom{\scriptsize aaa}\\[-1ex] Spin}
+        \\[2.5ex]
+        %
+        \hline
+        \makecell{\phantom{\scriptsize aaa}\\[-1ex]Response}
+        &
+        \makecell{\phantom{\scriptsize aaa}\\[-2ex] Dipoles align \cul[red]{opposite} to\\applied B-field}
+        &
+        \makecell{\phantom{\scriptsize aaa}\\[-2ex] Dipoles align the \cul[red]{same direction}\\as applied B-field}
+        \\[2.5ex]
+        %
+        \hline
+        Relative Magnitude
+        &
+        Weak
+        &
+        Much stronger
+        \\[1ex]
+        %
+        \hline
+        \makecell{\phantom{\scriptsize aaa}\\ Found in}
+        &
+        \makecell{\phantom{\scriptsize aaa}\\[-1.7ex] 
+            Most materials, where electrons\\with opposite spin all pair up\\such that spin effect is cancelled
+        }
+        &
+        \makecell{\phantom{\scriptsize aaa}\\[-0.4ex]
+            Materials with unusual bondings\\which contain unpaired electrons.
+        }
+        
+    \end{tabular}
+\end{center}
+
+The formal explanation requires quantum mechanics.
+But we may briefly explain why they lead to opposite behavior with classical pictures:
+
 \begin{itemize}
-    \item \bf{\ul{Diamagnetism}} - When orbital motion dominates. Exists on most non-metals.
-    \item \bf{\ul{Paramagnetism}} - When spin dominates. Exists on many metals, 
-    and some non-metals that contain chemical bonds with unpaired electrons.
+    \item Electron are points objects - they can flip their spins easily to align with B-field 
+    \item Orbital motion are real current loops - induced B-field is generated to oppose the external B-field,
+    which is equivalent to creating dipoles opposite to the external B-field.
 \end{itemize}
 
-In general, effects from spin is much stronger than that from orbital motion.
-However since chemical bonds are usually made of pairs of electrons with opposite spins (Pauli exclusion principle),
-such that the effect from spin cancels out, 
-making orbital motion the dominant effect.
-
-\insertFig{normal bond -> dia mat; unusual bond with unpair electron -> para mat}
-
-
-%%%%%%%%%%%%%%
-\subsubsection{Diamagnetism}
-
-In a diamagnetic material, 
-its chemical bonds do not contain any unpaired electrons 
-such that all effects from spin cancel. 
-
-(Pauli exclusion principle)
-
- and the magnetic response is only due to orbital motion of electrons.
-
-
-although the effect from spin being much stronger.
-However when atoms form chemical bonds, 
-effects of spin can be cancelled due to paring of electrons .
-
-
-When an external B-field is applied, 
-\red{electron orbital motion reacts by weakening the external B-field}.
-This is equivalent to creating magnetic dipoles in the material that point opposite to the external B-field.
-
-\insertFig{original -> weaken = create opposite dipole}
-
-In the semi-classical theory of diamagnetism, 
-the orbital motion of electron is characterized by:
-\begin{itemize}
-    \item Electron (charge $-q$) orbits around a nucleus with charge $+Zq$ 
-    ($Z$ = atomic number).
-
-    \item Orbit of electron is a circle of \cul[red]{fixed} radius $r$. 
-    (Bohr model of atom)
-
-\end{itemize}
-
-Diamagnetism is due to the \cul[red]{decrease in orbital speed under external B-field}.
-
-\begin{enumerate}
-    \item By Coulomb's law, first calculate the electon's original orbital speed $v$:
-    \aleq{
-        \frac{m v^2}{r} = \inv{4\pi\epsilon_0}\frac{Zq^2}{r^2}
-        \qquad\Rightarrow\qquad
-        v = \sqrt{\frac{Zq^2}{4\pi\epsilon_0 m r}}
-    }
-
-    \item When an external B-field $\vvec{B}$ is applied perpendicular to the orbital plane, 
-    the moving electron experiences a magnetic force $\vvec{F} = (-q)\vvec{v}\cross\vvec{B}$.
-
-    \insertFig{magnetic force on orbiting electron}
-
-    So the electron's orbital speed is changed to a new value $v'$.
-    Newton's law writes:
-    \aleq{
-        \frac{m v'^2}{r} &= \inv{4\pi\epsilon_0}\frac{Zq^2}{r^2} - qv'B \\
-        \Rightarrow\quad
-        v' &= \frac{-qB \ \tkn{orbit1}{\cul[red]{+}}\ \sqrt{(qB)^2+4\qty(\frac{m}{r})\qty(\frac{Zq^2}{4\pi\epsilon_0 r^2})}}{2\qty(\frac{m}{r})}\\
-        &=\, \sqrt{\frac{Zq^2}{4\pi\epsilon_0 r^2} +\qty(\frac{qBr}{2m})^2} \tkm{orbit2}- \frac{qB r}{2m} \\
-        & <\, \sqrt{\frac{Zq^2}{4\pi\epsilon_0 m r}}
-    }
-    
-\end{enumerate}
-
-
-
-
-
-%%%%%%%%%%%%%%
-\subsubsection{Paramagnetism}
-
-
+\insertFig{classical pic of dia/para}
 
 
 
@@ -159,20 +154,35 @@ Diamagnetism is due to the \cul[red]{decrease in orbital speed under external B-
         \item Dia-/paramagnetism comes from individual atoms' response to B-field.
         They can exist even if there is only one atom.
 
-        \item Ferromagnetism is due to the collective behavior of many atoms. 
-        It is actually a big topic in statistical mechanics.
+        \item Ferromagnetism is a collective behavior of many neighbouring atoms. 
+        Its discussion also requires statistical mechanics.
     \end{itemize}
 
-    On a ferromagnetic material, 
+    On ferromagnetic materials, atoms tend to align to the same direction naturally,
+    dividing the material into ``domains'' with the same dipole direction (typical size $\sim 10^{-6}$ m).
+
+    \insertFig{expanding domain}
+
+    When placed under an external B-field, 
+    the domains which aligns with the field expand to merge other domains, 
+    causing a strong and unify magnetization.
+
+    
     
 \end{notation}
 
 
-%%%%%%%%%%%%%%
-\subsection{Potential from Magnetic Dipole}
 
-This is the classical model of magnetic dipole.
-Same calculations can be found in many textbooks.
+
+%%%%%%%%%%%%%%
+\subsection{Fields of Magnetic Dipole}
+
+Since magnetic dipole is the basic unit of magnetic material, 
+we can first analyze the field emitted by a single dipole, 
+then sum the contributions from all dipoles according to the material structure.
+The classical model of magnetic dipole is as follows:
+
+\insertFig{magnetic dipole model}
 
 \begin{itemize}
     \item A circular loop of radius $R$, carrying current $I$.
@@ -181,9 +191,11 @@ Same calculations can be found in many textbooks.
     The position vector $\vvec{r}$ is referenced from the center of the dipole.
 \end{itemize}
 
-\insertFig{magnetic dipole model}
 
-The derivation of magnetic potential from a dipole is straightforward by Biot-Savart law,
+%%%%%%%%%%%%%%
+\subsubsection{Potential by Electric Dipole}
+
+Deriving magnetic potential from a dipole is straightforward by Biot-Savart law,
 while applying Taylor approximation in the middle step. 
 
 \begin{enumerate}
@@ -327,7 +339,7 @@ As a comparison with Biot-Savart law formula from current element,
 
 
 %%%%%%%%%%%%%%
-\subsection{B-field from Magnetic Dipole}
+\subsubsection{B-field from Magnetic Dipole}
 
 The standard derivation of B-field from dipole is through the relation $\vvec{B} = \curl \vvec{A}$.
 It is nothing more than some boring vector calculus.  
@@ -698,25 +710,17 @@ The bound current densities are related to $\vvec{M}$ pretty much like normal cu
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Material under External B-field}
 
-Now we study what will happen when a material is magnetized by an external B-field:
-\begin{enumerate}
-    \item External B-field acts on material, 
-    aligns the dipoles and changes their dipole moments.
-    
-    \item New dipoles alignment create a new B-field, which also affects surrounding dipoles.
-    
-    \item Alignment continues, until it reaches an equilibrium between external field and interactions between dipoles.
-    
-\end{enumerate}
+Recall that magnetic response of atoms is contributed by their electrons -
+by their orbital motion and spin.
+Depends on the contribution of each behavior and the material structure,
+dipole density in the material can vary by position.
+The final dipole alignment might not always align with the external B-field! 
 
-Theoretically, how the dipoles reponse to the external B-field is a complicated process 
-when all the bondings and interactions are involved - it highly depends on the material's structure.
-So the final dipole alignment might not always align with the external B-field! 
+\insertFig{many dipoles under external B-field, not fully align}
 
-\insertFig{random spherical dipole + regular external B-field = irregular align ellipse dipole}
-
-In a general theory about material's B-field response, 
-one may treat the magnetization field $\vvec{M}$ (i.e. new dipole alignment) as some function to the total B-field $\vec{B}_\text{total}$,
+In reality, fully model a material's response to B-field can be very complicated.
+The general theory assumes the magnetization field $\vvec{M}$ (i.e. new dipole alignment) 
+as some function to the total B-field $\vec{B}_\text{total}$,
 \aleq{
     \vvec{M} \ =\ f(\vvec{B}_\text{total}) 
     \ \sim\  \cub[blue]{\vvec{a}^{(1)}_iB_i + \vvec{a}^{(2)}_{ij}B_iB_j + \vvec{a}^{(3)}_{ijk}B_iB_jB_k + \cdots}{\text{\scriptsize Like a Taylor expansion}}
@@ -725,10 +729,16 @@ one may treat the magnetization field $\vvec{M}$ (i.e. new dipole alignment) as 
 This $f$ function \cul[red]{denotes a theoretical model that we have choosen} to investigate the material.
 And the \cul[red]{model parameters $\vvec{a}^{(1)}, \vvec{a}^{(2)}, \vvec{a}^{(3)}$... shall be determined from experiment}.
 
+\insertFig{random spherical dipole + regular external E-field = irregular align ellipse dipole}
+
+
+
+
+
 %%%%%%%%%%%%%%
 \subsection{Special Case: Linear Magnetic Material}
 
-Linear magnetic material is the simplest model of B-field response - where the dipoles are completely free to rotate,
+\bf{Linear magnetic material} is the simplest model of B-field response - where the dipoles are completely free to rotate,
 such that new dipole alignment is directly proportional to the external B-field's magnitude and direction.
 \cul[red]{This assumption is applicable to most daily life materials}.
 
@@ -976,7 +986,83 @@ then you are asked to find the other, and so as $\vvec{M}$ and bound currents.
 
 
 
+\iffalse
 
+Both behaviors exist on all atoms but their responses to external B-field are opposite. 
+Depends on which behavior dominates in the material,
+magnetic responses can be classified into 2 types:
+
+
+
+We will look into how the two behaviors result in dipoles of opposite responses
+to external B-field in later section.
+
+
+%%%%%%%%%%%%%%
+\subsection{Explaining Magnetic Response}
+
+In modern theories, one must use quantum mechanics to explain magnetic response of materials.
+But historically, there were some semi-classical theories before the quantum mechanical framework was fully developed. 
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Paramagnetism}
+
+Since electrons are purely point object, 
+they are ``free to rotate'' its spinning direction when placed under an external B-field.
+
+%%%%%%%%%%%%%%
+\subsubsection{Diamagnetism}
+
+Classically, the loop of electron orbital motion is considered as too large to flip. 
+
+
+When placed an external B-field, 
+electron orbital motion reacts by weakening the external B-field.
+This is equivalent to creating magnetic dipoles in the material that point opposite to the external B-field.
+
+\insertFig{original -> weaken = create opposite dipole}
+
+In the semi-classical theory of diamagnetism, 
+the orbital motion of electron is characterized by:
+\begin{itemize}
+    \item Electron (charge $-q$) orbits around a nucleus with charge $+Zq$ 
+    ($Z$ = atomic number).
+
+    \item Orbit of electron is a circle of \cul[red]{fixed} radius $r$. 
+    (Bohr model of atom)
+
+\end{itemize}
+
+Diamagnetism is due to the \cul[red]{decrease in orbital speed under external B-field}.
+
+\begin{enumerate}
+    \item By Coulomb's law, first calculate the electon's original orbital speed $v$:
+    \aleq{
+        \frac{m v^2}{r} = \inv{4\pi\epsilon_0}\frac{Zq^2}{r^2}
+        \qquad\Rightarrow\qquad
+        v = \sqrt{\frac{Zq^2}{4\pi\epsilon_0 m r}}
+    }
+
+    \item When an external B-field $\vvec{B}$ is applied perpendicular to the orbital plane, 
+    the moving electron experiences a magnetic force $\vvec{F} = (-q)\vvec{v}\cross\vvec{B}$.
+
+    \insertFig{magnetic force on orbiting electron}
+
+    So the electron's orbital speed is changed to a new value $v'$.
+    Newton's law writes:
+    \aleq{
+        \frac{m v'^2}{r} &= \inv{4\pi\epsilon_0}\frac{Zq^2}{r^2} - qv'B \\
+        \Rightarrow\quad
+        v' &= \frac{-qB \ \tkn{orbit1}{\cul[red]{+}}\ \sqrt{(qB)^2+4\qty(\frac{m}{r})\qty(\frac{Zq^2}{4\pi\epsilon_0 r^2})}}{2\qty(\frac{m}{r})}\\
+        &=\, \sqrt{\frac{Zq^2}{4\pi\epsilon_0 r^2} +\qty(\frac{qBr}{2m})^2} \tkm{orbit2}- \frac{qB r}{2m} \\
+        & <\, \sqrt{\frac{Zq^2}{4\pi\epsilon_0 m r}}
+    }
+    
+\end{enumerate}
+
+
+\fi
 
 
 

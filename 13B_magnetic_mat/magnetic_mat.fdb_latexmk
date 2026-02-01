@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1768832530.5258 "d:/mings/Documents/PhyO/latex_notes/13B_magnetic_mat/magnetic_mat.tex" "magnetic_mat.pdf" "magnetic_mat" 1768832534.56575 0
+["pdflatex"] 1769610943.18426 "d:/mings/Documents/PhyO/latex_notes/13B_magnetic_mat/magnetic_mat.tex" "magnetic_mat.pdf" "magnetic_mat" 1769610947.20163 0
   "../.common/common.sty" 1752750188 410 ad696bee90e8b54f932aad66b6d3e708 ""
   "../.common/format.sty" 1763634068 14861 4a9a2b1b1e6f575bca3291bb96f103b0 ""
   "../.common/math.sty" 1760786650 12457 db319448722ca9a3dbea4669df11783f ""
@@ -250,11 +250,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753178647 327988 b893e2557eac7b57bc6ef880c0f162bb ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1753178705 2251756 d170c6a192d362e13d5317a19fcebc57 ""
   "c:/texlive/2024/texmf.cnf" 1738920520 713 e69b156964470283e0530f5060668171 ""
-  "d:/mings/Documents/PhyO/latex_notes/13B_magnetic_mat/magnetic_mat.tex" 1768832529 44807 1df08651df7e10ae60fc2fb6369e8abb ""
-  "magnetic_mat.aux" 1768832533 7248 5e0e158d56d57fab461b5aefa44fb291 "pdflatex"
-  "magnetic_mat.out" 1768832533 3426 8406cd91e1cc709749a0150aaa37115e "pdflatex"
-  "magnetic_mat.sta" 1768832533 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
-  "magnetic_mat.tex" 1768832529 44807 1df08651df7e10ae60fc2fb6369e8abb ""
+  "d:/mings/Documents/PhyO/latex_notes/13B_magnetic_mat/magnetic_mat.tex" 1769610942 47661 158acb5dd40fa4942730fdd31d99fe75 ""
+  "magnetic_mat.aux" 1769610946 6716 bb0f351f98edcd8cf7068cf28f0190d7 "pdflatex"
+  "magnetic_mat.out" 1769610946 3140 412cc28056e4a790fe62ee4744ca79b9 "pdflatex"
+  "magnetic_mat.sta" 1769610946 45 5977ee01d6365feae7164ffda30d2c8b "pdflatex"
+  "magnetic_mat.tex" 1769610942 47661 158acb5dd40fa4942730fdd31d99fe75 ""
   (generated)
   "magnetic_mat.aux"
   "magnetic_mat.log"

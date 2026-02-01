@@ -19,15 +19,15 @@
 \begin{overview}
     \begin{itemize}
         \item Model of electric dipole
-        \item How to describe dipole arrangement: Polarization field, bound charges
+        \item How to describe dipole arrangement: Polarization field $\vvec{P}$, bound charges $\rho_b$, $\sigma_b$
         \item Material under external $\vvec{E}$ field: 
         \begin{itemize}
             \item A special case of material model: \cul[red]{Linear dielectric} 
-            \item Describe external field: Free charges, electric displacement field $\vvec{D}$
+            \item Describe external field: Free charges $\rho_f$, $\sigma_f$, electric displacement field $\vvec{D}$
         \end{itemize}
     \end{itemize}
     \begin{center}
-        \red{\bf{\ul{If linear dielectric is all you need, you can skip most of the maths.}}}
+        \red{{{(If linear dielectric is all you need, feel free to skip all vector calculus)}}}
     \end{center}
 \end{overview}
 
@@ -39,44 +39,58 @@
 \section{Electric Dipole}
 
 %%%%%%%%%%%%%%
-\subsection{Electric Response in Insulators}
+\subsection{Insulators as Mixture of Dipoles}
 
-From chemistry, we have learnt that atoms in non-metalic substance join together by sharing electrons.
+From chemistry, atoms in non-metalic substance join together by sharing electrons.
 The difference in atoms' electronegativity (i.e. strength of attracting outer shell electrons) 
 causes uneven charge distribution around the atoms. For example,
 
 \begin{itemize}
-    \item Ionic bond - One atom completely takes an electron from another, 
+    \item \ul{Ionic bond} - One atom completely takes an electron from another, 
     forming a pair of positive and negative ions.
+
     \insertFig{ionic bond}
 
-    \item Covalent bond - Bonding electrons are shared by atoms, 
-    but it may be pulled closer to one atom than the other. 
+    \item \ul{Covalent bond} - Bonding electrons are shared by two atoms, 
+    but the atom with higher electronegativity pulls the electrons closer to itself,
+    forming a polar covalent bond. 
+
     \insertFig{covalent bond}
 
 \end{itemize}
 
-In introductory physics, we will ignore the complicated atomic structure 
-and treat the material to be made of units of \bf{electric dipoles},
-which is made of a positive charged region and a negative charged region, 
-bounded within a small distance.
-
-\insertFig{complicated structure to single electric dipole}
-
-To model electric responses in non-metalic materials (i.e. insulators, also called \bf{dielectrics}), 
-we can first calculate the potential and field from a single electric dipole,
-then sum the contributions from all dipoles based on the material configurations.
+In the classical model, 
+we can view a non-metal object (i.e. insulator, also called \bf{dielectric}) as a structure of charges, 
+but using \bf{electric dipoles} as the basic unit.
 
 \insertFig{stacking dipoles in ionic bond/ covalent bond}
 
+Since electric dipoles emit E-field, theoretically all materials are sources of E-field.
+However the dipoles in real life are at atomic scale ($\sim 10^{-10}$ m) and 
+are usually packed in random orientations,
+the net field can be treated as zero if we view the dipoles from a very large distance.
 
+
+\insertFig{view at short distance vs long distance}
+% i can see the arrows/loop, holding magnifying glass
+% what? they are at the same pos, i cannot tell them apart, arm on waist
+
+So electric properties of materials are normally unobservable, 
+unless we apply an external E-field to align the dipoles in some direction,
+i.e. we \bf{polarize} the material.
+
+\insertFig{many dipole from random direction flip to the same direction}
 
 
 %%%%%%%%%%%%%%
-\subsection{Potential from Electric Dipole}
+\subsection{Fields of Electric Dipole}
 
-This is the classical model of electric dipole.
-Same calculations can be found in many textbooks.
+Since electric dipole is the basic unit of dielectric, 
+we can first analyze the field emitted by a single dipole, 
+then sum the contributions from all dipoles according to the material structure.
+Rhe classical model of electric dipole is as follows:
+
+\insertFig{electric dipole model}
 
 \begin{itemize}
     \item Both ends of the dipole have equal but opposite \it{point} charge $+q$ and $-q$.
@@ -87,9 +101,13 @@ Same calculations can be found in many textbooks.
     The position vector $\vvec{r}$ is referenced from the center of the dipole.
 \end{itemize}
 
-\insertFig{electric dipole model}
 
-The derivation of electric potential from a dipole is straightforward by Columb's law,
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Potential by Electric Dipole}
+
+Deriving electric potential from a dipole is straightforward by Coulomb's law,
 while applying Taylor approximation in the middle step. 
 
 \begin{enumerate}
@@ -180,7 +198,7 @@ As a comparison with Columb's law formula from point charge
 
 
 %%%%%%%%%%%%%%
-\subsection{E-field from Electric Dipole}
+\subsubsection{E-field by Electric Dipole}
 
 The standard derivation of E-field from dipole is through the relation $\vvec{E} = -\grad V$.
 It is nothing more than some boring calculus.  
@@ -532,25 +550,23 @@ The bound charge densities are related to $\vvec{P}$ pretty much like normal cha
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Material under External E-field}
 
-Now we study what will happen when a material is polarized by an external E-field:
-\begin{enumerate}
-    \item External E-field acts on material, 
-    aligns the dipoles and strengthens their dipole moments.
-    
-    \item New dipoles alignment create a new E-field, which also affects surrounding dipoles.
-    
-    \item Alignment continues, until it reaches an equilibrium between external field and interactions between dipoles.
-    
-\end{enumerate}
+If we place a single electric dipole under an external E-field,
+the dipole will rotate itself until it is in the same direction as the E-field. 
 
-Theoretically, how the dipoles reponse to the external E-field is a complicated process 
-when all the bondings and interactions are involved - it highly depends on the material's structure.
+\insertFig{single dipole under external E-field, flip}
+% Remember that the dipole's direction is from minus to positive
+
+However in a material structure, 
+bondings/interactions exist between dipoles,
+which prevent the dipoles from freely rotating. 
 So the final dipole alignment might not always align with the external E-field! 
 
-\insertFig{random spherical dipole + regular external E-field = irregular align ellipse dipole}
+\insertFig{many dipoles under external E-field, not fully align}
 
-In a general theory about material's E-field response,
-one may treat the polarization field $\vvec{P}$ (i.e. new dipole alignment) as some function to the total E-field $\vec{E}_\text{total}$,
+
+In reality, fully model a material's response to E-field can be very complicated.
+The general theory assumes the polarization field $\vvec{P}$ (i.e. new dipole alignment) 
+as some function to the total E-field $\vec{E}_\text{total}$:
 \aleq{
     \vvec{P} \ =\ f(\vvec{E}_\text{total}) 
     \ \sim\  \cub[blue]{\vvec{a}^{(1)}_iE_i + \vvec{a}^{(2)}_{ij}E_iE_j + \vvec{a}^{(3)}_{ijk}E_iE_jE_k + \cdots}{\text{\scriptsize Like a Taylor expansion}}
@@ -559,10 +575,12 @@ one may treat the polarization field $\vvec{P}$ (i.e. new dipole alignment) as s
 This $f$ function \cul[red]{denotes a theoretical model that we have choosen} to investigate the material.
 And the \cul[red]{model parameters $\vvec{a}^{(1)}, \vvec{a}^{(2)}, \vvec{a}^{(3)}$... shall be determined from experiment}.
 
+\insertFig{random spherical dipole + regular external E-field = irregular align ellipse dipole}
+
 %%%%%%%%%%%%%%
 \subsection{Special Case: Linear Dielectric}
 
-Linear dielectric is the simplest model of E-field reponse - where the dipoles are completely free to rotate,
+\bf{Linear dielectric} is the simplest model of E-field reponse - where the dipoles are completely free to rotate,
 such that new dipole alignment is directly proportional to the external E-field's magnitude and direction.
 \cul[red]{This assumption is applicable to most daily life materials}.
 
@@ -581,7 +599,7 @@ a pure number (no unit) whose value depends on the type of material.
 $\epsilon_0$ is multiplied to match the units. 
 \begin{itemize}
     \item $\chi_e = 0$ for vacuum (by defintion), because there are no dipoles in a vacuum.
-    \item $\chi_e>0$ for most normal materials, because dipoles normally follow E-field's direction.
+    \item $\chi_e>0$ for normal materials, because dipoles normally follow E-field's direction.
 \end{itemize}
 
 
