@@ -18,13 +18,13 @@
 
 \begin{overview}
     
-    This note reviews the 3 most basic electronic components: 
+    This note reviews the 3 basic electrical properties in electronic components: 
     \begin{itemize}
-        \item Resistors
-        \item Capacitors
-        \item Inductors
+        \item Resistance
+        \item Capacitance
+        \item Inductance
     \end{itemize}
-    and how to find these electrical parameters from a given configuration.
+    and how to compute them from a configuration.
     
     %%%
     The steps are very standard:
@@ -42,6 +42,11 @@
 \end{overview}
 
 
+
+% rewirte logic
+% why there is RCL
+% view from electronic guys: just compoents/ properties on components
+% model, calculation
 
 
 % content begins here
@@ -61,22 +66,55 @@ There are two kinds of symbols that are used to represent a resistor.
 \insertFig{resistor international vs US}
 
 
+
+
+
 %%%%%%%%%%%%%%
-\subsection{Ohm's Law}
+\subsection{Physics of Resistance}
 
-Most daily life material has a linear response between applied voltage and current. 
+Resistance of an object quantifies how much current can flow through it 
+when a voltage is applied across. 
 
+Objects carry electrical resistance when electrons are not allowed to free flow.
+In the classical model, materials are modelled as structures of solid balls of atoms.
+When electrons are driven by potential difference (voltage), 
+while some electrons can flow through by sliping through the gaps between atoms, 
+many of them will be bounced back, and re-accelerate until they pass through those gaps.
+
+\insertFig{electron bounce back and reaccelerate}
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Ohm's Law}
+
+Most daily life material has a \cul[red]{linear response} between applied voltage and current. 
+i.e. The material has a constant electrical resistance, which is also called Ohmic material. 
 \insertFig{line plot}
 
 % non-linear response example: semi-conductor diode
 
-In such case we will call the material as \bf{Ohmic material}. 
+%In such case we will call the material as \bf{Ohmic material}. 
 
 % physical reason for having resistance? obstruction of electron flow in a material
 
+However, non-Ohmic materials is also very common, e.g. semi-conductor devices.
+In such cases, resistance is ``instantaneous'' to applied voltage. 
+
+\insertFig{I(V) curve, R = dV/dI}
+
 
 %%%%%%%%%%%%%%
-\subsection{Addition of Resistance}
+\subsection{Conductance \& Microscopic Ohm's Law}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Addition of Resistance}
 
 Multiple resistors can be combined to form an equivalent resistor of desired value.
 % begin{center} vline series parallel
@@ -98,7 +136,7 @@ In parallel
 }
 
 %The addition rules can be proven by Kirchoff's rules
-
+p
 
 %%%%%%%%%%%%%%
 \subsubsection{Resistors in practice}
@@ -108,9 +146,10 @@ In parallel
 %%%%%%%%%%%%%%
 \subsection{Conductivity \& Microscopic Ohm's Law}
 
-Resistance of an object is a property not only depends on the type of material, 
+Since resistance of an object not only depends on the type of material, 
 but also depends on the object's shape. 
-To eliminate the shape's effect, 
+To identify the sole contribution due to different material,
+Here defines the \bf{conductance} of material.  
 
 
 By the definition of voltage and current in terms of field-like quantities,
@@ -125,10 +164,19 @@ By the definition of voltage and current in terms of field-like quantities,
 
 
 
+%%%%%%%%%%%%%%
+\subsection{Resistor as Electronic Component}
+
+Most circuit components carry a To electronics designer, 
+
+
 
 %%%%%%%%%%%%%%
 \subsection{Finding Resistance from Configurations}
 
+\begin{example}
+    
+\end{example}
 
 \linesep
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
