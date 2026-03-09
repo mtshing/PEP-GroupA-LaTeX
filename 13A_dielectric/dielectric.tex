@@ -41,9 +41,17 @@
 %%%%%%%%%%%%%%
 \subsection{Insulators as Mixture of Dipoles}
 
-From chemistry, atoms in non-metalic substance join together by sharing electrons.
+Every atom is intrinsically an electric dipole since its electrons' positions can fluctuate. 
+In Chemistry class, this is called \bf{instantaneous dipole},
+because the direction and magnitude of the dipole vary over time.
+
+\insertFig{instantaneous dipole in atom}
+
+Besides, chemical bondings between different types of atom can also form \bf{permanent dipole}.
 The difference in atoms' electronegativity (i.e. strength of attracting outer shell electrons) 
-causes uneven charge distribution around the atoms. For example,
+causes uneven charge distribution around the atoms. 
+These types of bondings exist only in insulator,i.e. \bf{dielectric}.
+For example,
 
 \begin{itemize}
     \item \ul{Ionic bond} - One atom completely takes an electron from another, 
@@ -59,25 +67,18 @@ causes uneven charge distribution around the atoms. For example,
 
 \end{itemize}
 
-In the classical model, 
-we can view a non-metal object (i.e. insulator, also called \bf{dielectric}) as a structure of charges, 
-but using \bf{electric dipoles} as the basic unit.
-
-\insertFig{stacking dipoles in ionic bond/ covalent bond}
-
-Since electric dipoles emit E-field, theoretically all materials are sources of E-field.
-However the dipoles in real life are at atomic scale ($\sim 10^{-10}$ m) and 
-are usually packed in random orientations,
-the net field can be treated as zero if we view the dipoles from a very large distance.
+Since electric dipoles emit E-field, theoretically all dielectrics are polar.
+However the dipoles in real life are so small ($\sim 10^{-10}$ m) and 
+are usually packed in random orientations.
+The net field can usually be treated as zero if we view the dipoles from a very large distance.
 
 
 \insertFig{view at short distance vs long distance}
 % i can see the arrows/loop, holding magnifying glass
 % what? they are at the same pos, i cannot tell them apart, arm on waist
 
-So electric properties of materials are normally unobservable, 
-unless we apply an external E-field to align the dipoles in some direction,
-i.e. we \bf{polarize} the material.
+So polarization of big objects are normally unobservable, 
+unless we apply an external E-field to align the dipoles in some direction/
 
 \insertFig{many dipole from random direction flip to the same direction}
 
@@ -170,8 +171,11 @@ while applying Taylor approximation in the middle step.
     }
 \end{enumerate}
 
-As a comparison with Columb's law formula from point charge 
+As a comparison with Columb's law formula from point charge $V(\vvec{r}) = \frac{1}{4\pi\epsilon_0}\frac{q}{\norm{\vvec{r}}}$, 
+potential from a dipole is decaying by $\inv{r^2}$ and is directional - 
+it depends on the charges' magnitude AND the angle (dot product) between $\vvec{p}$ and $\hhat{r}$.
 
+\iffalse
 \aleq{
     V(\vvec{r}) = \frac{1}{4\pi\epsilon_0}\frac{q}{\norm{\vvec{r}}}
 }
@@ -194,7 +198,7 @@ As a comparison with Columb's law formula from point charge
     Magnitude of potential depends on the charges' magnitude AND the angle (dot product) between $\vvec{p}$ and $\hhat{r}$.
     \item Dependance on distance is $\inv{r^2}$.
 \end{itemize}
-
+\fi
 
 
 %%%%%%%%%%%%%%
@@ -268,10 +272,6 @@ In general, all dielectric materials are made of many tiny electric dipoles.
 To analyze the material's electric properties, 
 we can begin with the property of a single dipole,
 then sum the contributions of all dipoles according to the dipole arrangement in the material.
-
-\insertFig{NaCl, H2O by dipole arrangement}
-
-For example, the electric potential created by the material can be treated as a sum of potentials from all dipoles.
 \aleq{
     \cub[blue]{V(\vvec{r}) = \inv{4\pi\epsilon_0} \frac{\vvec{p} }{\norm{\vvec{r}}^2} \cdot \qty(\frac{\vvec{r}}{\norm{\vvec{r}}})}
         {\text{By a single dipole from origin}}
@@ -329,8 +329,6 @@ Comparing with the Coulomb's law for electric potential:
         \quad\sim\quad \inv{4\pi\epsilon_0} \sum \frac{(\text{dipole density})}{(\text{distance})^2}\cdot \qty(\substack{\text{unit}\\\text{vector}})
     }
 \end{itemize}
-
-\insertFig{charge density vs dipole density in the same material}
 
 
 %%%%%%%%%%%%%%
@@ -409,13 +407,13 @@ we identify the 2 source terms as the \bf{bound charge densities}:
 Finally, the expression of the ``charge densities form" is nothing more than saying that
 the electric potential from a material is the result of the two kinds of charges distributions.
 \aleq{
-    V(\vvec{r})
-    &= \inv{4\pi\epsilon_0} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+    V(\vvec{r})\ 
+    &=\  \inv{4\pi\epsilon_0} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
         \frac{\red{\rho_b(\vvec{r}')}}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}
         \ +\ \inv{4\pi\epsilon_0} \underset{\substack{\substack{\text{Surface}\\\text{of material}}}}{\oiint}
         \frac{\red{\sigma_b(\vvec{r}')}}{\norm{\vvec{r}-\vvec{r}'}} \dd[2]{\vvec{r}'}\\[1ex]
         %
-    &= \ \ \,\qty(\mstack{\text{Contribution}\\\text{by charges inside}\\\text{the material}})
+    &=\ \ \ \,\qty(\mstack{\text{Contribution}\\\text{by charges inside}\\\text{the material}})
         \ \ +\ \  \qty(\mstack{\text{Contribution}\\\text{by charges on}\\\text{material's surface}})
 }
 
@@ -599,7 +597,7 @@ a pure number (no unit) whose value depends on the type of material.
 $\epsilon_0$ is multiplied to match the units. 
 \begin{itemize}
     \item $\chi_e = 0$ for vacuum (by defintion), because there are no dipoles in a vacuum.
-    \item $\chi_e>0$ for normal materials, because dipoles normally follow E-field's direction.
+    \item $\chi_e>0$ for most materials, because dipole moments normally follow E-field's direction.
 \end{itemize}
 
 

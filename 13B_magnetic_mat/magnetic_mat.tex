@@ -40,17 +40,19 @@
 %%%%%%%%%%%%%%
 \subsection{Electron as Magnetic Source}
 
-In atoms, interactions with B-field mainly come from electrons.
-They behaves as magnetic dipoles in 2 ways:
+Atoms's interactions with B-field are mostly from electrons.
+Although the \cul[red]{true explanations require quantum mechanics}, 
+We can discuss 2 semi-classical theories of how they act as magnetic dipoles:
 \begin{itemize}
-    \item \ul{Orbital motion} - Electrons orbit around the nucleus, 
-    which is equivalent to a current loop.
+    \item \ul{Orbital motion} - Electrons orbit around nucleus, 
+    similar to a constant current loop.
+
 
     \insertFig{orbital motion}
 
     \item \ul{Spin} - Electrons carry a fundamental quantum property called \bf{spin},
-    which determines how it interacts with B-field.
-    It cannot be described fully by any classical picture.
+    making them intrinsically a ``point'' magnetic dipole.
+    Spin cannot be described fully by any classical picture.
 
     \insertFig{electron spin}
 
@@ -60,14 +62,9 @@ They behaves as magnetic dipoles in 2 ways:
 
 \end{itemize}
 
-To study the magnetic properties of materials,
-we can view the atoms as many \bf{magnetic dipoles},
-arranged according to the material structure.
-
-\insertFig{stacking dipoles}
-
-Since magnetic dipoles emit B-field, theoretically all materials are sources of B-field.
-However the dipoles in real life are at atomic scale ($\sim 10^{-10}$ m) and 
+Since electrons are the souce of B-field,
+theoretically all materials are magnetic.
+However the dipoles in real life are so small ($\sim 10^{-10}$ m) and 
 are usually packed in random orientations,
 the net field can be treated as zero if we view the dipoles from a very large distance.
 
@@ -76,14 +73,13 @@ the net field can be treated as zero if we view the dipoles from a very large di
 % i can see the arrows/loop, holding magnifying glass
 % what? they are at the same pos, i cannot tell them apart, arm on waist
 
-So magnetic properties of materials are normally unobservable, 
-unless we apply an external B-field to align the dipoles in some direction,
-i.e. we \bf{magnetize} the material.
+So magnetization of big objects are normally unobservable, 
+unless we apply an external B-field to align the dipoles in some direction.
 
 \insertFig{many dipole from random direction flip to the same direction}
 
-In the classical model, atoms as magnetic dipole can interact with external B-field in opposite ways,
-depend on which of the electron behavior dorminates:
+In terms of responses, atoms as magnetic dipole can interact with external B-field in opposite ways,
+depend on which of the two electrons' contributions dorminates:
 
 \begin{center}
     \begin{tabular}{>{\centering\arraybackslash}m{0.17\linewidth}|
@@ -127,14 +123,14 @@ depend on which of the electron behavior dorminates:
         }
         &
         \makecell{\phantom{\scriptsize aaa}\\[-0.4ex]
-            Materials with unusual bondings\\which contain unpaired electrons.
+            Materials with unusual bondings\\that contain unpaired electrons.
         }
         
     \end{tabular}
 \end{center}
 
-The formal explanation requires quantum mechanics.
-But we may briefly explain why they lead to opposite behavior with classical pictures:
+Although the formal explanation requires quantum mechanics,
+we may still briefly explain why they lead to opposite behavior with classical pictures:
 
 \begin{itemize}
     \item Electron are points objects - they can flip their spins easily to align with B-field 
@@ -155,20 +151,19 @@ But we may briefly explain why they lead to opposite behavior with classical pic
         They can exist even if there is only one atom.
 
         \item Ferromagnetism is a collective behavior of many neighbouring atoms. 
-        Its discussion also requires statistical mechanics.
+        Its theory requires statistical mechanics too!
     \end{itemize}
 
-    On ferromagnetic materials, atoms tend to align to the same direction naturally,
-    dividing the material into ``domains'' with the same dipole direction (typical size $\sim 10^{-6}$ m).
+    On ferromagnetic materials, atoms tend to align to the same direction as their neighbours.
+    Atoms of the same dipole direction divide the material into ``domains''
+    (typical size $\sim 10^{-6}$ m).
 
-    \insertFig{expanding domain}
+    \insertFig{natural -> near magnetic -> expanding domain}
 
     When placed under an external B-field, 
     the domains which aligns with the field expand to merge other domains, 
     causing a strong and unify magnetization.
 
-    
-    
 \end{notation}
 
 
@@ -567,12 +562,12 @@ Finally, the expression of the ``current densities" form is nothing more than sa
 the magnetic potential from a material is the result of the two kinds of current distributions.
 \aleq{
     \vvec{A}(\vvec{r})
-    &= \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
+    \ &=\ \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Whole}\\\text{material}}}}{\iiint}
         \frac{\red{\vvec{J}_b(\vvec{r}')}}{\norm{\vvec{r}-\vvec{r}'}} \dd[3]{\vvec{r}'}
-        \ +\ \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Surface}\\\text{of material}}}}{\oiint}
+        \ +\ \ \frac{\mu_0}{4\pi} \underset{\substack{\substack{\text{Surface}\\\text{of material}}}}{\oiint}
         \frac{\red{\vvec{K}_b(\vvec{r}')}}{\norm{\vvec{r}-\vvec{r}'}} \dd[2]{\vvec{r}'}\\[1ex]
         %
-    &= \ \ \,\qty(\mstack{\text{Contribution}\\\text{by currents inside}\\\text{the material}})
+    &=\qty(\mstack{\text{Contribution}\\\text{by currents inside}\\\text{the material}})
         \ \ +\ \  \qty(\mstack{\text{Contribution}\\\text{by currents on}\\\text{material's surface}})
 }
 
@@ -920,7 +915,7 @@ In problems that involve magnetic material,
     In magnetostatic experiments, usually the control/measure-able parameters are
     \begin{itemize}
         \item \ul{Applied current} - Directly connect with a power source. All you need is an ammeter.
-        \item \ul{Total B-field} - Can be measured through magnetic force.
+        \item \ul{Total B-field} - Can be measured through \it{Hall effect}.
     \end{itemize}
 \end{itemize}
 
@@ -955,7 +950,7 @@ where
 \begin{itemize}
     \item $\mu$ = \bf{Absolute permeability}, or \bf{magnetic permeability}. Has the same unit as $\mu_0$.
 
-    \item $\mu_r$ = \bf{Relative permeability}. A pure number. $<1$ for diamagetism and $>1$ for paramagnetism. 
+    \item $\mu_r$ = \bf{Relative permeability}. A pure number. $\bcase{<1 &\text{ for diamagnetism}\\>1 &\text{ for paramagnetism}}$.
 
 \end{itemize}
 
@@ -965,9 +960,9 @@ Note that \red{$\vvec{H}$ only depends on applied current, i.e. can be easily co
     This is why the linear model is written as $\vvec{M} \propto \vvec{H}$ 
     instead of $\vvec{M} \propto \vvec{B}_\text{total}$.
 
-    \item $\chi_m$ is more oftenly tabulated in material handbooks and used in theories.
+    \item $\chi_m$ is more oftenly tabulated in material handbooks and also used in theories.
     This is because most material has very small $\chi_m$ (e.g. $10^{-5}$ for aluminum).
-    Tabulating $\mu_r = 1+\chi_m$ only makes the values harder to read.
+    Tabulating $\mu_r = 1+\chi_m$ will waste a lot space to print the `0's.
 \end{itemize}
 
 
