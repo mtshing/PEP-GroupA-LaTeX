@@ -36,6 +36,53 @@ The two Kirchhoff's laws are the fundamentals to every circuit-solving problem.
     \item Kirchhoff's Voltage Law (KVL)
 \end{itemize}
 
+%%%%%%%%%%%%%%
+\subsection{Kirchhof's Current Law}
+
+%\quote{Sum of all current entering and exiting a node must equal to 0}
+
+The same law has many other names depending on the text's background. 
+For example,
+\begin{itemize}
+    \item Circuit junction rule
+    \item Node rule
+\end{itemize}
+
+The physics of KCL is just conservation of charge - 
+the amount of charge that goes into a circuit line junction 
+must equal to the amount that comes out. 
+
+\aleq{
+    Q_\text{in} = Q_\text{out} 
+    \quad\Rightarrow\quad 
+    I_\text{in} = \dvv{Q_\text{in}}{t} = \dvv{Q_\text{out}}{t} = I_\text{out}
+}
+
+\insertFig{KCL}
+
+%%%%%%%%%%%%%%
+\subsection{Kirchhof's Voltage Law}
+
+%\quote{Sum of voltage rises and drop around a closed path must equal to 0}
+
+Similarly, the same law has many other names.
+For example, 
+\begin{itemize}
+    \item Circuit loop rule
+    \item Mesh law
+\end{itemize}
+
+The physics of KVL is just energy conservation - 
+when a charge travels along any loop in a circuit,
+the amount of electric energy it gains from voltage source 
+must equal to the amount it dissipates through electronic components.
+
+\aleq{
+    E_\text{gain} = E_\text{loss}
+    \quad\Rightarrow\quad
+    V_\text{gain} = \frac{E_\text{gain}}{Q} = \frac{E_\text{loss}}{Q} = V_\text{loss} 
+}
+
 
 
 \linesep
@@ -49,18 +96,91 @@ There are 3 different methods commonly found in textbooks:
     \item Impedance method
 \end{itemize}
 
-Solving with ODEs is the most fundamental approach,
-but it is also the most annoying. 
+Directly solving with ODEs is the most fundamental approach,
+but the calculation is the most annoying. 
 So electronic engineers developed the latter two methods to simplify their jobs.
 
 %%%%%%%%%%%%%%
 \subsection{System of ODEs}
 
+In a circuit that only contains power sources, resistors, capacitors and inductors, 
+we can express the voltage across each component as a time derivative of charge $Q$:
+\aleq{
+    \bcase{
+        C = \frac{Q}{V} \quad&\Rightarrow\quad V_C = \frac{Q}{C}\\
+        R = \frac{V}{I} \quad&\Rightarrow\quad V_R = RI = R\dvv{Q}{t}\\
+        L = \frac{\epsilon}{\dvv{I}{t}} \quad&\Rightarrow\quad V_L = L\dvv{I}{t} = L\dvv[2]{Q}{t}
+    }
+}
+
+Then the relations from KVL will become linear ODEs over $Q$,
+and relations from KCL connect the charge conservation on each junction of the circuit.
+
+\begin{example}
+    Consider the following circuit,
+
+    \insertFig{4 loops circuit}
+
+    \begin{enumerate}
+        \item We should always start labelling the current on each branch in case of confusion. 
+        Then we can write KCL on each of the junctions. 
+
+        \item Then for each loop, we can write one KVL equation. 
+
+    \end{enumerate}
+
+    So overall we have a system of 8 ODEs to be solved for this small circuit. 
+    Terrible!    
+
+\end{example}
+
+For the ease of life, we only solve ODEs when for the following 3 basic cases. 
+Otherwise, we should always try simplifing the circuit first. 
+
 %%%%%%%%%%%%%%
 \subsubsection{R-C Circuit}
 
+\insertFig{RC circuit with switch}
+
+When the circuit contains one resistor and one capacitor in series, 
+the KVL writes as 
+\aleq{
+    \frac[Q]{C} + R\dvv{Q}{t} = V(t) 
+} 
+
+The solution depends on the function of the power source. 
+The usual two cases we are interested in are
+\begin{enumerate}
+    \item \bf{Charging} - Initial charge on capacitor is $0$. 
+    At time $t=0$, switch is closed and voltage sharply changes from $0$ to $V_0$.
+    The solution for $t>0$ is 
+    \aleq{
+        \frac{Q}{C} + R\dvv{Q}{t} &= V_0\\
+        Q(t) = CV_0 + Q_0e^{\frac{-t}{RC}}
+    }
+
+    \insertFig{power source step function at t=0, shade out the part t<0}
+
+    \insertFig{charging curve}
+
+    \item \bf{Discharging} - Initial charge on the capcitor is $CV_0$.
+    At time $t=0$, switch is opened and voltage sharply changes from $V_0$ to $0$. 
+    The solution for $t>0$ is 
+    \aleq{
+        \frac{Q}{C} + R\dvv{Q}{t} &= 0\\
+    }
+    
+    \insertFig{power source step function at t=0, shade out the part t<0}
+    \insertFig{discharging curve}
+
+\end{enumerate}    
 %%%%%%%%%%%%%%
 \subsubsection{R-L Circuit}
+
+When the circuit contains one resistor and one inductor in series, 
+the KVL writes as 
+
+
 
 %%%%%%%%%%%%%%
 \subsubsection{R-C-L Circuit}
@@ -77,11 +197,76 @@ So electronic engineers developed the latter two methods to simplify their jobs.
 % Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Advanced Circuit Techniques}
 
-Here introduces several techniques for simplifying circuits that are used by electronic engineers very commonly,
-but are never taught to physics students (so it is easier to make you suffer).
+This section introduces a few more techniques for simplifying circuits.
+They are standard to electronic engineers,
+but are almost never taught to physics students (so it is easier to make you suffer).
+
+\begin{enumerate}
+    \item Thevenin-Norton equivalency
+    \item Superposition theorem
+    \item Y-$\Delta$ transformation
 
 %%%%%%%%%%%%%%
-\subsection{Thevenin - Norton Equivalency}
+\subsection{Thevenin-Norton Equivalency}
+
+Suppose that you are given a black box of circuit that only contains linear circuit components 
+(i.e. only R, C, L), and only 2 terminals are exposed for taking measurements.
+What properties can you tell from it?
+
+\insertFig{blackbox}
+
+There are 2 very similar theorems claiming that:
+
+Whatever the components are connected in the box, you can only model the circuit 
+as one power source plus one impedance component. 
+
+%%%%%%%%%%%%%%
+\subsubsection{Thevenin's Theorem}
+
+Thevenin's theorem: we can simplify the circuit as one voltage supply $V_th$ connecting with
+an impedance in series.
+
+\insertFig{thevenin theorem}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Norton's Theorem}
+
+The Norton's theorem says that we can simplify the circuit as one current supply connecting with 
+an impedance in parallel.
+
+\insertFig{norton theorem}
+
+
+%%%%%%%%%%%%%%
+\subsubsection{Equivalence of the Two Theorems}
+
+The power of the two theorems is that the two simplified circuits can be inter-converted. 
+
+\insertFig{Vth -> Ino with Ino = Vth/Z}
+
+\begin{proof}
+
+
+\end{proof}
+
+
+
+\begin{example}
+    Given the following circuit, 
+    we would like to find the voltage across the resistor $R_4$ after the switch is closed.
+
+    \insertFig{comlicate circuit}
+
+    First note that the voltage supply is not sinusoidal because of the switch,
+    so it is wrong to use impedance method; 
+    Solving ODE is possible but painful since the voltage supply term is a step function.
+
+    \insertFig{time graph of voltage on -> step function}
+
+
+\end{example}
+
 
 %%%%%%%%%%%%%%
 \subsubsection{Linear Circuit Blackbox}
